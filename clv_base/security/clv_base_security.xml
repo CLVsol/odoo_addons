@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="clv_base.group_base_user" model="res.groups">
+            <field name="name">Base User</field>
+        </record>
+
+        <record id="clv_base.group_base_suser" model="res.groups">
+            <field name="name">Base Super User</field>
+            <field name="implied_ids" eval="[(4, ref('clv_base.group_base_user'))]"/>
+        </record>
+
+        <record id="clv_base.group_base_manager" model="res.groups">
+            <field name="name">Base Manager</field>
+            <field name="implied_ids" eval="[(4, ref('clv_base.group_base_suser'))]"/>
+        </record>
+
+        <record id="clv_base.group_base_rmanager" model="res.groups">
+            <field name="name">Base Register Manager</field>
+            <field name="implied_ids" eval="[(4, ref('clv_base.group_base_manager'))]"/>
+        </record>
+
+        <record id="clv_base.group_base_smanager" model="res.groups">
+            <field name="name">Base Super Manager</field>
+            <field name="implied_ids" eval="[(4, ref('clv_base.group_base_rmanager'))]"/>
+        </record>
+
+     </data>
+</openerp>
