@@ -1,0 +1,564 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_patient
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-07 15:19+0000\n"
+"PO-Revision-Date: 2014-08-07 15:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_patient
+#: model:ir.actions.act_window,help:clv_patient.act_open_clv_patient_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new patient category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de paciente.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_patient
+#: model:ir.actions.act_window,help:clv_patient.act_open_clv_patient_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new patient.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo paciente.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_patient
+#: field:clv_patient,date_activation:0
+msgid "Activation date"
+msgstr "Data da Ativação"
+
+#. module: clv_patient
+#: field:clv_patient,active:0
+#: selection:clv_patient,state:0
+#: field:clv_patient.category,active:0
+#: selection:clv_patient.history,state:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: field:clv_patient,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Birth"
+msgstr "Nascimento"
+
+#. module: clv_patient
+#: field:clv_patient,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_patient
+#: field:clv_patient.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_patient
+#: field:clv_patient.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+#: field:clv_patient.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Citizenship & Other Info"
+msgstr "Nacionalidade & Outras Informações"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#. module: clv_patient
+#: field:clv_patient,create_uid:0
+#: field:clv_patient.category,create_uid:0
+#: field:clv_patient.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_patient
+#: field:clv_patient,create_date:0
+#: field:clv_patient.category,create_date:0
+#: field:clv_patient.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_patient
+#: field:clv_patient.history,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: clv_patient
+#: view:clv_patient.history:0
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_patient
+#: field:clv_patient.category,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Description..."
+msgstr "Description..."
+
+#. module: clv_patient
+#: sql_constraint:clv_patient.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_patient
+#: sql_constraint:clv_patient:0
+msgid "Error! The Patient Code must be unique!"
+msgstr "Error! The Patient Code must be unique!"
+
+#. module: clv_patient
+#: constraint:clv_patient.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Family"
+msgstr "Família"
+
+#. module: clv_patient
+#: field:clv_patient.category,complete_name:0
+msgid "Full Category"
+msgstr "Categoria Completa"
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: view:clv_patient.category:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_patient
+#: field:clv_patient,id:0
+#: field:clv_patient.category,id:0
+#: field:clv_patient.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_patient
+#: help:clv_patient.category,refresh_complete_name:0
+msgid "If checked, it will allow you to to refresh the stored category full name."
+msgstr "Se marcado, será possível renovar o nome completo da categoria armazenado."
+
+#. module: clv_patient
+#: help:clv_patient.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_patient
+#: help:clv_patient,active:0
+msgid "If unchecked, it will allow you to hide the patient without removing it."
+msgstr "Se desmarcado, será possível esconder o paciente sem removê-lo."
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_patient
+#: field:clv_patient,date_inactivation:0
+msgid "Inactivation date"
+msgstr "Data da Inativação"
+
+#. module: clv_patient
+#: selection:clv_patient,state:0
+#: selection:clv_patient.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_patient
+#: field:clv_patient,patient_date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_patient
+#: field:clv_patient,write_uid:0
+#: field:clv_patient.category,write_uid:0
+#: field:clv_patient.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_patient
+#: field:clv_patient,write_date:0
+#: field:clv_patient.category,write_date:0
+#: field:clv_patient.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_patient
+#: field:clv_patient.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a Esquerda"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_patient
+#: selection:clv_patient,state:0
+#: selection:clv_patient.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_patient
+#: field:clv_patient.category,notes:0
+#: field:clv_patient.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_patient
+#: view:clv_patient.history:0
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: view:clv_patient.category:0
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+#: field:clv_patient.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_patient
+#: help:clv_patient,person:0
+msgid "Person-related data of the patient"
+msgstr "Dados da Pessoa relacionada ao Paciente"
+
+#. module: clv_patient
+#: field:clv_annotation,patient_id:0
+#: view:clv_patient:0
+#: field:clv_patient.history,patient_id:0
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+#: model:ir.actions.act_window,name:clv_patient.act_open_clv_patient_category_view
+msgid "Patient Categories"
+msgstr "Categorias de Pacientes"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Patient Category"
+msgstr "Categoria de Paciente"
+
+#. module: clv_patient
+#: view:clv_patient.category:0
+msgid "Patient Category..."
+msgstr "Categoria de Paciente..."
+
+#. module: clv_patient
+#: field:clv_patient,patient_code:0
+msgid "Patient Code"
+msgstr "Código do Paciente"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Patient Code..."
+msgstr "Código do Paciente..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: field:clv_patient,history_ids:0
+#: view:clv_patient.history:0
+msgid "Patient History"
+msgstr "Histórico do Paciente"
+
+#. module: clv_patient
+#: view:clv_patient.history:0
+msgid "Patient..."
+msgstr "Paciente..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: view:clv_patient.category:0
+#: field:clv_patient.category,patient_ids:0
+#: view:clv_tag:0
+#: field:clv_tag,patient_ids:0
+#: model:ir.actions.act_window,name:clv_patient.act_open_clv_patient_view
+msgid "Patients"
+msgstr "Pacientes"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Personal Information"
+msgstr "Informações Pessoais"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Public Information"
+msgstr "Informações Públicas"
+
+#. module: clv_patient
+#: field:clv_patient.category,refresh_complete_name:0
+msgid "Refresh Full Category"
+msgstr "Renovar a Categoria Completa"
+
+#. module: clv_patient
+#: field:clv_person,patient_ids:0
+msgid "Related Patients"
+msgstr "Pacientes Relacionados"
+
+#. module: clv_patient
+#: field:clv_patient,name_related:0
+#: field:clv_patient,person:0
+msgid "Related Person"
+msgstr "Pessoa Relacionada"
+
+#. module: clv_patient
+#: field:clv_patient.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: view:clv_patient.category:0
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_patient
+#: view:clv_patient:0
+#: field:clv_patient,state:0
+#: field:clv_patient.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_patient
+#: field:clv_patient,date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
+
+#. module: clv_patient
+#: view:clv_patient.history:0
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_patient
+#: selection:clv_patient,state:0
+#: selection:clv_patient.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_patient
+#: field:clv_patient,date_suspension:0
+msgid "Suspension date"
+msgstr "Data da Suspensão"
+
+#. module: clv_patient
+#: view:clv_tag:0
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_patient
+#: field:clv_patient,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_patient
+#: view:clv_patient:0
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_patient
+#: help:clv_patient.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_patient
+#: help:clv_patient,patient_code:0
+msgid "Use \"/\" to get an automatic new Patient Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Paciente."
+
+#. module: clv_patient
+#: field:clv_patient.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_patient
+#: view:clv_patient.history:0
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_annotation
+msgid "clv_annotation"
+msgstr "clv_annotation"
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_patient
+msgid "clv_patient"
+msgstr "clv_patient"
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_patient_category
+msgid "clv_patient.category"
+msgstr "clv_patient.category"
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_patient_history
+msgid "clv_patient.history"
+msgstr "clv_patient.history"
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_person
+msgid "clv_person"
+msgstr "clv_person"
+
+#. module: clv_patient
+#: model:ir.model,name:clv_patient.model_clv_tag
+msgid "clv_tag"
+msgstr "clv_tag"
+
+#. module: clv_patient
+#: field:clv_patient,address_id:0
+msgid "Person Address"
+msgstr "Endereço"
+
+#. module: clv_patient
+#: field:clv_patient,person_email:0
+msgid "Person Email"
+msgstr "Email"
+
+#. module: clv_patient
+#: field:clv_patient,person_phone:0
+msgid "Person Phone"
+msgstr "Telefone"
+
+#. module: clv_patient
+#: field:clv_patient,mobile_phone:0
+msgid "Person Mobile"
+msgstr "Celular"
+
+#. module: clv_patient
+#: field:clv_patient,country_id:0
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#. module: clv_patient
+#: field:clv_patient,identification_id:0
+msgid "Person ID"
+msgstr "Identidade da Pessoa"
+
+#. module: clv_patient
+#: field:clv_patient,otherid:0
+msgid "Other ID"
+msgstr "Outra Identidade"
+
+#. module: clv_patient
+#: field:clv_patient,gender:0
+msgid "Gender"
+msgstr "Gênero"
+
+#. module: clv_patient
+#: field:clv_patient,marital:0
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+#. module: clv_patient
+#: field:clv_patient,spouse_id:0
+msgid "Spouse"
+msgstr "Cônjuge"
+
+#. module: clv_patient
+#: field:clv_patient,father_id:0
+msgid "Father"
+msgstr "Pai"
+
+#. module: clv_patient
+#: field:clv_patient,mother_id:0
+msgid "Mother"
+msgstr "Mãe"
+
+#. module: clv_patient
+#: field:clv_patient,responsible_id:0
+msgid "Responsible"
+msgstr "Responsável"
+
+#. module: clv_patient
+#: field:clv_patient,birthday:0
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#. module: clv_patient
+#: field:clv_patient,age:0
+msgid "Age"
+msgstr "Idade"
