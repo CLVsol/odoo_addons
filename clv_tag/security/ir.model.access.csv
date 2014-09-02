@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clv_tag_tag_user,clv_tag,model_clv_tag,clv_base.group_tag_user,1,0,0,0
+access_clv_tag_tag_manager,clv_tag,model_clv_tag,clv_base.group_tag_manager,1,1,1,0
+access_clv_tag_base_smanager,clv_tag,model_clv_tag,clv_base.group_base_smanager,1,1,1,1
+access_clv_tag_history_tag_user,clv_tag.history,model_clv_tag_history,clv_base.group_tag_user,1,0,0,0
+access_clv_tag_history_tag_manager,clv_tag.history,model_clv_tag_history,clv_base.group_tag_manager,1,1,1,0
+access_clv_tag_history_base_smanager,clv_tag.history,model_clv_tag_history,clv_base.group_base_smanager,1,1,1,1

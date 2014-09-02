@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_tag_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_tag.tree</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="notes" position="after">
+                    <field name="state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_tag_form_wkf" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <sheet string="Tag" position="before">
+                    <header>
+                        <button string="Revised" name="button_revised" states="draft,done" type="workflow" groups="clv_base.group_tag_manager"/>
+                        <button string="Done" name="button_done" states="draft,revised" type="workflow" groups="clv_base.group_tag_manager" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,done"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_tag_search_wkf" model="ir.ui.view">
+            <field name="name">clv_tag.search</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="notes" position="after">
+                    <field name="state" />
+                </field>
+                <filter string="Parent Tag" position="before">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}" />
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
