@@ -28,10 +28,7 @@ class clv_annotation_category(models.Model):
     code = fields.Char ('Category Code',size=128, required=False)
     description = fields.Char(string='Description', size=256)
     notes = fields.Text(string='Notes')
-    complete_name = fields.Char(string='Full Category', compute='_name_get_fnc', store=True, readonly=True)
-    refresh_complete_name = fields.Boolean('Refresh Full Category', 
-                            help="If checked, it will allow you to to refresh the stored category full name.",
-                            default=0)
+    complete_name = fields.Char(string='Full Category', compute='_name_get_fnc', store=False, readonly=True)
     child_ids = fields.One2many('clv_annotation.category', 'parent_id', 'Child Categories')
     active = fields.Boolean('Active', 
                             help="If unchecked, it will allow you to hide the category without removing it.",
@@ -95,7 +92,6 @@ class clv_annotation_category(models.Model):
         return dict(self.name_get())
 
     @api.one
-    @api.depends('name', 'parent_id', 'description', 'code', 'notes', 'active', 'refresh_complete_name')
     def _name_get_fnc(self):
         self.refresh_complete_name = 0
         complete_name =  self.name_get()
