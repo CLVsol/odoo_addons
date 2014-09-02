@@ -43,8 +43,6 @@
                             <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
                                     <field name="active"/>
-                                    <field name="complete_name"/>
-                                    <field name="refresh_complete_name"/>
                                 </group>
                             </page>
                         </notebook>
@@ -73,8 +71,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Person Category">
-                    <field name="complete_name"/>
                     <field name="name"/>
+                    <field name="parent_id"/>
                     <field name="code"/>
                     <field name="description"/>
                     <field name="notes"/>
