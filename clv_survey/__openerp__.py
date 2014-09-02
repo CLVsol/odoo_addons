@@ -47,9 +47,10 @@ user name and password for the invitation of the survey.
         'wizard/survey_print_answer.xml',
         'wizard/survey_browse_answer.xml',
         'wizard/survey_print.xml',
-        'wizard/survey_send_invitation.xml'
+        'wizard/survey_send_invitation.xml',
+        'survey_demo.xml',
     ],
-    'demo': ['survey_demo.xml'],
+    #'demo': ['survey_demo.xml'],
     'test': [
         'test/draft2open2close_survey.yml',
         'test/draft2open2close_request.yml',
