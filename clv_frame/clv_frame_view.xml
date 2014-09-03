@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_frame_tree" model="ir.ui.view">
+            <field name="name">clv_frame.tree</field>
+            <field name="model">clv_frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Frames">
+                    <field name="parent_id" invisible="1"/>
+                    <field name="complete_name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="is_movable"/>
+                    <field name="notes" colspan="4"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_form" model="ir.ui.view">
+            <field name="name">clv_frame.form</field>
+            <field name="model">clv_frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Frames" version="7.0">
+                    <sheet string="Frame">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="parent_id" class="oe_edit_only"/-->
+                            <label for="parent_id"/>
+                            <h2>
+                                <field name="parent_id" placeholder="Parent Frame..."/>
+                            </h2>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="name"/> (
+                                <field name="is_movable" class="oe_inline"/> <label for="is_movable" string="Is Movable?"/>)
+                            </div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Frame Name..."/>
+                            </h1>
+                          </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                          <label for="alias" class="oe_edit_only"/>
+                            <h2>
+                                <field name="alias" placeholder="Alias..."/>
+                            </h2>
+                            <label for="code" class="oe_edit_only"/>
+                            <h2>
+                                <field name="code" placeholder="Frame Code..."/>
+                            </h2>
+                            <label for="description" class="oe_edit_only"/>
+                            <h3>
+                                <field name="description" placeholder="Description..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="Information">
+                                <group>
+                                    <group string="Address Information">
+                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                                    </group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Children">
+                                <group>
+                                    <field name="child_ids" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_search" model="ir.ui.view">
+            <field name="name">clv_frame.search</field>
+            <field name="model">clv_frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Frame">
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Parent Frame" context="{'group_by': 'parent_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_clv_frame_view">
+            <field name="name">Frames</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_frame</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_frame_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new frame.
+              </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_clv_frame_view_form">
+            <field name="act_window_id" ref="act_open_clv_frame_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_frame_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_clv_frame_view_tree">
+            <field name="act_window_id" ref="act_open_clv_frame_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_frame_tree"/>
+        </record>
+
+    </data>
+</openerp>
