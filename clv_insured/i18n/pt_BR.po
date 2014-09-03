@@ -1,0 +1,565 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_insured
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-07 14:48+0000\n"
+"PO-Revision-Date: 2014-08-07 14:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_insured
+#: model:ir.actions.act_window,help:clv_insured.act_open_clv_insured_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insured category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de beneficiário.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insured
+#: model:ir.actions.act_window,help:clv_insured.act_open_clv_insured_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insured.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo beneficiário.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_insured
+#: field:clv_insured,date_activation:0
+msgid "Activation date"
+msgstr "Data da Ativação"
+
+#. module: clv_insured
+#: field:clv_insured,active:0
+#: selection:clv_insured,state:0
+#: field:clv_insured.category,active:0
+#: selection:clv_insured.history,state:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_insured
+#: field:clv_insured,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: field:clv_insured,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Birth"
+msgstr "Nascimento"
+
+#. module: clv_insured
+#: field:clv_insured,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_insured
+#: field:clv_insured.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_insured
+#: field:clv_insured.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+#: field:clv_insured.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Citizenship & Other Info"
+msgstr "Nacionalidade & Outras Informações"
+
+#. module: clv_insured
+#: help:clv_insured,alias:0
+msgid "Common name that the Insured is referred"
+msgstr "Nome comum com que o Beneficiário é conhecido"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#. module: clv_insured
+#: field:clv_insured,create_uid:0
+#: field:clv_insured.category,create_uid:0
+#: field:clv_insured.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_insured
+#: field:clv_insured,create_date:0
+#: field:clv_insured.category,create_date:0
+#: field:clv_insured.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_insured
+#: field:clv_insured.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_insured
+#: field:clv_insured,birthday:0
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#. module: clv_insured
+#: view:clv_insured.history:0
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_insured
+#: field:clv_insured.category,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_insured
+#: selection:clv_insured,marital:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: clv_insured
+#: sql_constraint:clv_insured.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_insured
+#: sql_constraint:clv_insured:0
+msgid "Error! The Insured Code must be unique!"
+msgstr "Erro! O Código do Beneficiário deve ser único!"
+
+#. module: clv_insured
+#: constraint:clv_insured.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_insured
+#: selection:clv_insured,gender:0
+msgid "Female"
+msgstr "Feminino"
+
+#. module: clv_insured
+#: field:clv_insured.category,complete_name:0
+msgid "Full Category"
+msgstr "Categoria Completa"
+
+#. module: clv_insured
+#: field:clv_insured,gender:0
+msgid "Gender"
+msgstr "Gênero"
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: view:clv_insured.category:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_insured
+#: field:clv_insured,address_home_id:0
+msgid "Home Address"
+msgstr "Endereço Pessoal"
+
+#. module: clv_insured
+#: field:clv_insured,id:0
+#: field:clv_insured.category,id:0
+#: field:clv_insured.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_insured
+#: help:clv_insured.category,refresh_complete_name:0
+msgid "If checked, it will allow you to to refresh the stored category full name."
+msgstr "Se marcado, será possível renovar o nome completo da categoria armazenado."
+
+#. module: clv_insured
+#: help:clv_insured.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_insured
+#: help:clv_insured,active:0
+msgid "If unchecked, it will allow you to hide the insured without removing it."
+msgstr "Se desmarcado, será possível esconder o beneficiário sem removê-lo."
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_insured
+#: field:clv_insured,date_inactivation:0
+msgid "Inactivation date"
+msgstr "Data da Inativação"
+
+#. module: clv_insured
+#: selection:clv_insured,state:0
+#: selection:clv_insured.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_insured
+#: field:clv_insured,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_insured
+#: field:clv_annotation,insured_id:0
+#: view:clv_insured:0
+#: field:clv_insured.history,insured_id:0
+msgid "Insured"
+msgstr "Beneficiário"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+#: model:ir.actions.act_window,name:clv_insured.act_open_clv_insured_category_view
+msgid "Insured Categories"
+msgstr "Categorias de Beneficiários"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Insured Category"
+msgstr "Categoria de Beneficiário"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Insured Category..."
+msgstr "Categoria de Beneficiário..."
+
+#. module: clv_insured
+#: field:clv_insured,code:0
+msgid "Insured Code"
+msgstr "Código do Beneficiário"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Insured Code..."
+msgstr "Código do Beneficiário..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: field:clv_insured,history_ids:0
+#: view:clv_insured.history:0
+msgid "Insured History"
+msgstr "Histórico do Beneficiário"
+
+#. module: clv_insured
+#: field:clv_insured,identification_id:0
+msgid "Insured ID"
+msgstr "Identidade do Beneficiário"
+
+#. module: clv_insured
+#: view:clv_insured.history:0
+msgid "Insured..."
+msgstr "Beneficiário..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: view:clv_insured.category:0
+#: field:clv_insured.category,insured_ids:0
+#: view:clv_tag:0
+#: field:clv_tag,insured_ids:0
+#: model:ir.actions.act_window,name:clv_insured.act_open_clv_insured_view
+msgid "Insureds"
+msgstr "Beneficiários"
+
+#. module: clv_insured
+#: field:clv_insured,write_uid:0
+#: field:clv_insured.category,write_uid:0
+#: field:clv_insured.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_insured
+#: field:clv_insured,write_date:0
+#: field:clv_insured.category,write_date:0
+#: field:clv_insured.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_insured
+#: field:clv_insured.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a Esquerda"
+
+#. module: clv_insured
+#: selection:clv_insured,gender:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: clv_insured
+#: field:clv_insured,marital:0
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+#. module: clv_insured
+#: selection:clv_insured,marital:0
+msgid "Married"
+msgstr "Casado"
+
+#. module: clv_insured
+#: field:clv_insured,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_insured
+#: field:clv_insured,country_id:0
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#. module: clv_insured
+#: selection:clv_insured,state:0
+#: selection:clv_insured.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_insured
+#: field:clv_insured,notes:0
+#: field:clv_insured.category,notes:0
+#: field:clv_insured.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_insured
+#: view:clv_insured.history:0
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_insured
+#: field:clv_insured,otherid:0
+msgid "Other ID"
+msgstr "Outra Identidade"
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: view:clv_insured.category:0
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+#: field:clv_insured.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_insured
+#: view:clv_insured.category:0
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Personal Information"
+msgstr "Informações Pessoais"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Public Information"
+msgstr "Informações Públicas"
+
+#. module: clv_insured
+#: field:clv_insured.category,refresh_complete_name:0
+msgid "Refresh Full Category"
+msgstr "Renovar a Categoria Completa"
+
+#. module: clv_insured
+#: field:clv_insured.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: view:clv_insured.category:0
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_insured
+#: selection:clv_insured,marital:0
+msgid "Single"
+msgstr "Solteiro"
+
+#. module: clv_insured
+#: view:clv_insured:0
+#: field:clv_insured,state:0
+#: field:clv_insured.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_insured
+#: field:clv_insured,date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
+
+#. module: clv_insured
+#: view:clv_insured.history:0
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_insured
+#: selection:clv_insured,state:0
+#: selection:clv_insured.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_insured
+#: field:clv_insured,date_suspension:0
+msgid "Suspension date"
+msgstr "Data da Suspensão"
+
+#. module: clv_insured
+#: view:clv_tag:0
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_insured
+#: field:clv_insured,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_insured
+#: view:clv_insured:0
+msgid "Tags..."
+msgstr "Tags..."
+
+#. module: clv_insured
+#: help:clv_insured.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_insured
+#: help:clv_insured,code:0
+msgid "Use \"/\" to get an automatic new Insured Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Beneficiário."
+
+#. module: clv_insured
+#: field:clv_insured.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_insured
+#: view:clv_insured.history:0
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_insured
+#: selection:clv_insured,marital:0
+msgid "Widower"
+msgstr "Viúvo"
+
+#. module: clv_insured
+#: field:clv_insured,work_email:0
+msgid "Work Email"
+msgstr "Email comercial"
+
+#. module: clv_insured
+#: field:clv_insured,mobile_phone:0
+msgid "Work Mobile"
+msgstr "Celular Comercial"
+
+#. module: clv_insured
+#: field:clv_insured,work_phone:0
+msgid "Work Phone"
+msgstr "Telefone Comercial"
+
+#. module: clv_insured
+#: field:clv_insured,address_id:0
+msgid "Working Address"
+msgstr "Endereço Comercial"
+
+#. module: clv_insured
+#: model:ir.model,name:clv_insured.model_clv_annotation
+msgid "clv_annotation"
+msgstr "clv_annotation"
+
+#. module: clv_insured
+#: model:ir.model,name:clv_insured.model_clv_insured
+msgid "clv_insured"
+msgstr "clv_insured"
+
+#. module: clv_insured
+#: model:ir.model,name:clv_insured.model_clv_insured_category
+msgid "clv_insured.category"
+msgstr "clv_insured.category"
+
+#. module: clv_insured
+#: model:ir.model,name:clv_insured.model_clv_insured_history
+msgid "clv_insured.history"
+msgstr "clv_insured.history"
+
+#. module: clv_insured
+#: model:ir.model,name:clv_insured.model_clv_tag
+msgid "clv_tag"
+msgstr "clv_tag"
+

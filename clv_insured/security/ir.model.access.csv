@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clv_insured_insured_user,clv_insured,model_clv_insured,clv_base.group_insured_user,1,0,0,0
+access_clv_insured_insured_manager,clv_insured,model_clv_insured,clv_base.group_insured_manager,1,1,1,0
+access_clv_insured_base_smanager,clv_insured,model_clv_insured,clv_base.group_base_smanager,1,1,1,1
+access_clv_insured_category_insured_user,clv_insured.category,model_clv_insured_category,clv_base.group_insured_user,1,0,0,0
+access_clv_insured_category_insured_manager,clv_insured.category,model_clv_insured_category,clv_base.group_insured_manager,1,1,1,0
+access_clv_insured_category_base_smanager,clv_insured.category,model_clv_insured_category,clv_base.group_base_smanager,1,1,1,1
+access_clv_insured_history_insured_user,clv_insured.history,model_clv_insured_history,clv_base.group_insured_user,1,0,0,0
+access_clv_insured_history_insured_manager,clv_insured.history,model_clv_insured_history,clv_base.group_insured_manager,1,1,1,0
+access_clv_insured_history_base_smanager,clv_insured.history,model_clv_insured_history,clv_base.group_base_smanager,1,1,1,1
