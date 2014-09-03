@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_place.seq_type_clv_place_category" model="ir.sequence.type">
+            <field name="name">Annotation Category Sequence</field>
+            <field name="code">clv_place.category.code</field>
+        </record>
+        
+        <record id="clv_place.seq_clv_place_category" model="ir.sequence">
+            <field name="name">Annotation Category Sequence</field>
+            <field name="code">clv_place.category.code</field>
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="7"/>
+            <field name="prefix">0509</field>
+        </record>
+
+    </data>
+</openerp>

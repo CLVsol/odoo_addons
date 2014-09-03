@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_place_form_seq" model="ir.ui.view">
+            <field name="name">clv_place.form</field>
+            <field name="model">clv_place</field>
+            <field name="inherit_id" ref="clv_place.view_clv_place_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Status" position="after">
+                    <group>
+                        <field name="level"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

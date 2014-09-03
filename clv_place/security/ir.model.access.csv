@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clv_place_place_user,clv_place,model_clv_place,clv_base.group_place_user,1,0,0,0
+access_clv_place_place_manager,clv_place,model_clv_place,clv_base.group_place_manager,1,1,1,0
+access_clv_place_base_smanager,clv_place,model_clv_place,clv_base.group_base_smanager,1,1,1,1
+access_clv_place_category_place_user,clv_place.category,model_clv_place_category,clv_base.group_place_user,1,0,0,0
+access_clv_place_category_place_manager,clv_place.category,model_clv_place_category,clv_base.group_place_manager,1,1,1,0
+access_clv_place_category_base_smanager,clv_place.category,model_clv_place_category,clv_base.group_base_smanager,1,1,1,1
+access_clv_place_history_place_user,clv_place.history,model_clv_place_history,clv_base.group_place_user,1,0,0,0
+access_clv_place_history_place_manager,clv_place.history,model_clv_place_history,clv_base.group_place_manager,1,1,1,0
+access_clv_place_history_base_smanager,clv_place.history,model_clv_place_history,clv_base.group_base_smanager,1,1,1,1
