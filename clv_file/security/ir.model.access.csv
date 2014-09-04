@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clv_file_clv_file_user,clv_file,model_clv_file,clv_base.group_file_user,1,0,0,0
+access_clv_file_clv_file_manager,clv_file,model_clv_file,clv_base.group_file_manager,1,1,1,0
+access_clv_file_smanager,clv_file,model_clv_file,clv_base.group_base_smanager,1,1,1,1
+access_clv_file_category_clv_file_user,clv_file.category,model_clv_file_category,clv_base.group_file_user,1,0,0,0
+access_clv_file_category_clv_file_manager,clv_file.category,model_clv_file_category,clv_base.group_file_manager,1,1,1,0
+access_clv_file_category_smanager,clv_file.category,model_clv_file_category,clv_base.group_base_smanager,1,1,1,1
+access_clv_file_history_clv_file_user,clv_file.history,model_clv_file_history,clv_base.group_file_user,1,0,0,0
+access_clv_file_history_clv_file_manager,clv_file.history,model_clv_file_history,clv_base.group_file_manager,1,1,1,0
+access_clv_file_history_clv_base_smanager,clv_file.history,model_clv_file_history,clv_base.group_base_smanager,1,1,1,1

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_file_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_file.tree</field>
+            <field name="model">clv_file</field>
+            <field name="inherit_id" ref="clv_file.view_clv_file_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="date"/>
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_file_form_wkf" model="ir.ui.view">
+            <field name="name">clv_file.form</field>
+            <field name="model">clv_file</field>
+            <field name="inherit_id" ref="clv_file.view_clv_file_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="File" position="before">
+                    <header>
+                        <button string="New" name="button_new" states="deleted" type="workflow" groups="clv_base.group_file_manager" class="oe_highlight"/>
+                        <button string="Getting" name="button_getting" states="new" type="workflow" groups="clv_base.group_file_manager" class="oe_highlight"/>
+                        <button string="Stored" name="button_stored" states="getting" type="workflow" groups="clv_base.group_file_manager" class="oe_highlight"/>
+                        <button string="Checked" name="button_checked" states="stored" type="workflow" groups="clv_base.group_file_manager" class="oe_highlight"/>
+                        <button string="Deleted" name="button_deleted" states="checked" type="workflow" groups="clv_base.group_file_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,getting,stored,checked,deleted"
+                        statusbar_colors='{"new":"red","getting":"red","stored":"red","checked":"blue"}'/>
+                    </header>
+                </sheet>
+                <label for="code" position="before">
+                    <!--label for="date" class="oe_edit_only"/-->
+                    <label for="date"/>
+                    <field name="date"/>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_file_search_wkf" model="ir.ui.view">
+            <field name="name">clv_file.search</field>
+            <field name="model">clv_file</field>
+            <field name="inherit_id" ref="clv_file.view_clv_file_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Stage" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

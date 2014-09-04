@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="workflow_clv_file" model="workflow">
+            <field name="name">clv_file.wkf</field>
+            <field name="osv">clv_file</field>
+            <field name="on_create" eval='True' />
+        </record>
+
+         <record id="act_new" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_file" />
+            <field name="flow_start" eval='True' />
+            <field name="name">new</field>
+            <field name="kind">function</field>
+            <field name="action">button_new()</field>
+        </record>
+
+        <record id="act_getting" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_file" />
+            <field name="name">getting</field>
+            <field name="kind">function</field>
+            <field name="action">button_getting()</field>
+        </record>
+
+        <record id="act_stored" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_file" />
+            <field name="name">stored</field>
+            <field name="kind">function</field>
+            <field name="action">button_stored()</field>
+        </record>
+
+        <record id="act_checked" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_file" />
+            <field name="name">checked</field>
+            <field name="kind">function</field>
+            <field name="action">button_checked()</field>
+        </record>
+
+        <record id="act_deleted" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_file" />
+            <field name="name">deleted</field>
+            <field name="kind">function</field>
+            <field name="action">button_deleted()</field>
+        </record>
+
+        <record id="t1" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_getting" />
+            <field name="signal">button_getting</field>
+        </record>
+
+        <record id="t2" model="workflow.transition">
+            <field name="act_from" ref="act_getting" />
+            <field name="act_to" ref="act_stored" />
+            <field name="signal">button_stored</field>
+        </record>
+
+        <record id="t3" model="workflow.transition">
+            <field name="act_from" ref="act_stored" />
+            <field name="act_to" ref="act_checked" />
+            <field name="signal">button_checked</field>
+        </record>
+
+        <record id="t4" model="workflow.transition">
+            <field name="act_from" ref="act_checked" />
+            <field name="act_to" ref="act_deleted" />
+            <field name="signal">button_deleted</field>
+        </record>
+
+        <record id="t5" model="workflow.transition">
+            <field name="act_from" ref="act_deleted" />
+            <field name="act_to" ref="act_new" />
+            <field name="signal">button_new</field>
+        </record>
+
+    </data>
+</openerp>
