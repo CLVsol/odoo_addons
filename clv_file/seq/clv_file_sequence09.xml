@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="seq_type_clv_file_code09" model="ir.sequence.type">
+            <field name="name">File Sequence 09</field>
+            <field name="code">clv_file.code09</field>
+        </record>
+        
+        <record id="seq_clv_file_code09" model="ir.sequence">
+            <field name="name">File Sequence 09</field>
+            <field name="code">clv_file.code09</field>
+            <field name="padding" eval="9"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_file_form_seq" model="ir.ui.view">
+            <field name="name">clv_file.form</field>
+            <field name="model">clv_file</field>
+            <field name="inherit_id" ref="clv_file.view_clv_file_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="date_inclusion" position="before">
+                    <field name="code_size"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

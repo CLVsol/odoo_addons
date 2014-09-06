@@ -32,11 +32,9 @@
                         statusbar_colors='{"new":"red","getting":"red","stored":"red","checked":"blue"}'/>
                     </header>
                 </sheet>
-                <label for="code" position="before">
-                    <!--label for="date" class="oe_edit_only"/-->
-                    <label for="date"/>
+                <field name="date_inclusion" position="before">
                     <field name="date"/>
-                </label>
+                </field>
             </field>
         </record>
 

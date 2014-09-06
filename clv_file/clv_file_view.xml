@@ -26,20 +26,24 @@
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
                             <label for="name" class="oe_edit_only"/>
-                            <h1>
+                            <h2>
                                 <field name="name" default_focus="1" placeholder="Name..."/>
-                            </h1>
+                            </h2>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
                         <div class="oe_title">
                             <label for="alias" class="oe_edit_only"/>
-                            <h2>
+                            <h3>
                                 <field name="alias" placeholder="Alias..."/>
-                            </h2>
+                            </h3>
                             <label for="code" class="oe_edit_only"/>
-                            <h2>
+                            <h3>
                                 <field name="code" placeholder="File Code..."/>
-                            </h2>
+                            </h3>
+                            <label for="path" class="oe_edit_only"/>
+                            <h3>
+                                <field name="path"/>
+                            </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
@@ -49,6 +53,12 @@
                                 <group>
                                     <group>
                                         <field name="date_inclusion"/>
+                                        <field name="parent_id"/>
+                                        <field name="url" widget="url" placeholder="e.g. www.openerp.com"/>
+                                        <field name="ct_url" widget="url"/>
+                                    </group>
+                                    <group>
+                                        <field name="description" nolabel="1" placeholder="Description..."/>
                                     </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
