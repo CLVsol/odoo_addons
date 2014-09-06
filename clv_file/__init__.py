@@ -18,6 +18,7 @@
 ################################################################################
 
 import clv_file
+import clv_file_image
 import category
 import clv_tag
 import clv_annotation

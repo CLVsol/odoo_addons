@@ -59,5 +59,5 @@ File
     'update_xml': [],
     'installable': True,
     'active': False,
-    'css': [],
+    'css': ['static/src/css/clv_file.css'],
 }

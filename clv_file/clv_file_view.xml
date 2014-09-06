@@ -5,12 +5,12 @@
         <record id="view_clv_file_tree" model="ir.ui.view">
             <field name="name">clv_file.tree</field>
             <field name="model">clv_file</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="File">
                     <field name="name"/>
-                    <field name="alias" />
-                    <field name="code" />
+                    <field name="alias"/>
+                    <field name="code"/>
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -19,7 +19,7 @@
         <record id="view_clv_file_form" model="ir.ui.view">
             <field name="name">clv_file.form</field>
             <field name="model">clv_file</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Files" version="7.0">
                     <sheet string="File">
@@ -31,6 +31,7 @@
                             </h2>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <field name="image_medium" widget="image"  class="oe_avatar oe_left"/>
                         <div class="oe_title">
                             <label for="alias" class="oe_edit_only"/>
                             <h3>
@@ -74,17 +75,79 @@
             </field>
         </record>
         
+        <record id="view_clv_file_kanban" model="ir.ui.view">
+            <field name="name">clv_file.kanban</field>
+            <field name="model">clv_file</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="has_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_clv_file_vignette">
+                                <div class="oe_clv_file_image">
+                                    <a type="open">
+                                        <t t-if="record.has_image.raw_value === true">
+                                            <img t-att-src="kanban_image('clv_file', 'image_medium', record.id.value)" class="oe_clv_file_picture"/>
+                                        </t>
+                                        <t t-if="record.has_image.raw_value === false">
+                                            <img t-att-src='_s + "/clv_file/static/img/file_image.png"' class="oe_kanban_image"/>
+                                            <!--t t-if="record.is_company.raw_value === true">
+                                                <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="oe_kanban_image"/>
+                                            </t-->
+                                            <!--t t-if="record.is_company.raw_value === false">
+                                                <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="oe_kanban_image"/>
+                                            </t-->
+                                        </t>
+                                    </a>
+                                    <!--a type="open">
+                                        <img t-att-src="kanban_image('clv_file', 'image_medium', record.id.value)" class="oe_clv_file_picture"/>
+                                    </a-->
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <!--h4 class="oe_partner_heading"><a type="open"><field name="name"/></a></h4-->
+                                    <h3><a type="open"><field name="name"/></a></h3>
+                                    <ul>
+                                        <li t-if="record.alias.raw_value">
+                                            <field name="alias"/>
+                                        </li>
+                                        <li t-if="record.code.raw_value">
+                                            <field name="code"/>
+                                        </li>
+                                        <li t-if="record.path.raw_value">
+                                            <field name="path"/>
+                                        </li>
+                                        <li t-if="record.category_ids.raw_value">
+                                            <field name="category_ids"/>
+                                        </li>
+                                        <li t-if="record.tag_ids.raw_value">
+                                            <field name="tag_ids"/>
+                                        </li>
+                                        <li t-if="record.state.raw_value">
+                                            <field name="state"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                $('.oe_clv_file_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_clv_file_picture_wide') } });
+                            </script>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    
         <record id="view_clv_file_search" model="ir.ui.view">
             <field name="name">clv_file.search</field>
             <field name="model">clv_file</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="File">
-                    <field name="name" />
-                    <field name="alias" />
-                    <field name="code" />
-                    <field name="notes" />
-                    <newline />
+                    <field name="name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+                    <newline/>
                     <group expand="0" string="Group By...">
                         <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
                     </group>
@@ -97,8 +160,8 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">clv_file</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_file_search" />
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_clv_file_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="help" type="html">
@@ -109,17 +172,24 @@
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_file_view_form">
-            <field name="act_window_id" ref="act_open_clv_file_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_file_view"/>
+            <field name="sequence" eval="30"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_file_form" />
+            <field name="view_id" ref="view_clv_file_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_file_view_tree">
-            <field name="act_window_id" ref="act_open_clv_file_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_file_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_file_tree" />
+            <field name="view_id" ref="view_clv_file_tree"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_file_view_kanban">
+            <field name="act_window_id" ref="act_open_clv_file_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_clv_file_kanban"/>
         </record>
         
     </data>
