@@ -17,12 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_file
-import clv_file_image
-import category
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import seq
-import img
+import clv_file_img

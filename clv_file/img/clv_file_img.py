@@ -20,7 +20,7 @@
 from openerp.osv import orm, fields
 from openerp import tools, api
 
-class clv_file_image(orm.Model):
+class clv_file(orm.Model):
     _inherit = 'clv_file'
 
     @api.multi

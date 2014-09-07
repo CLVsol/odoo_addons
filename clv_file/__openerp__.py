@@ -51,6 +51,7 @@ File
         'seq/clv_file_sequence09.xml',
         'seq/clv_file_sequence10.xml',
         'seq/clv_file_category_sequence.xml',
+        'img/clv_file_img_view.xml',
         ],
     'demo': [],
     'test': [],
