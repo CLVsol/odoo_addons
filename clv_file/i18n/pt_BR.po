@@ -309,24 +309,24 @@ msgstr "Configurações"
 
 #. module: clv_file
 #: view:clv_file:0
-msgid "Stage"
-msgstr "Estágio"
+msgid "Status"
+msgstr "Status"
 
 #. module: clv_file
 #: view:clv_file.history:0
-msgid "Stage..."
-msgstr "Estágio..."
+msgid "Status..."
+msgstr "Status..."
 
 #. module: clv_file
 #: field:clv_file,date:0
-msgid "State change date"
-msgstr "Data de alteração da situação"
+msgid "Status change date"
+msgstr "Data de alteração do status"
 
 #. module: clv_file
 #: field:clv_file,state:0
 #: field:clv_file.history,state:0
 msgid "Status"
-msgstr "Situação"
+msgstr "Status"
 
 #. module: clv_file
 #: view:clv_file:0

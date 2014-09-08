@@ -23,7 +23,7 @@ from datetime import *
 class clv_file(models.Model):
     _inherit = 'clv_file'
 
-    date = fields.Datetime("State change date", required=True, readonly=True)
+    date = fields.Datetime("Status change date", required=True, readonly=True)
     state = fields.Selection([('new','New'),
                               ('getting','Getting'),
                               ('stored','Stored'),
