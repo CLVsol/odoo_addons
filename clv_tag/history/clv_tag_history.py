@@ -40,15 +40,19 @@ class clv_tag(models.Model):
     _inherit = 'clv_tag'
 
     history_ids = fields.One2many('clv_tag.history', 'tag_id', 'Tag History', readonly=True)
+    active_history = fields.Boolean('Active History', 
+                                    help="If unchecked, it will allow you to disable the history without removing it.",
+                                    default=False)
 
     @api.one
     def insert_clv_tag_history(self, tag_id, state, notes):
-        vals = { 
-            'tag_id': tag_id,
-            'state': state,
-            'notes': notes,
-        }
-        self.pool.get('clv_tag.history').create(self._cr, self._uid, vals)
+        if self.active_history:
+            vals = { 
+                'tag_id': tag_id,
+                'state': state,
+                'notes': notes,
+            }
+            self.pool.get('clv_tag.history').create(self._cr, self._uid, vals)
 
     @api.multi
     def write(self, vals):

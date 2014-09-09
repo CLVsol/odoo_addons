@@ -9,7 +9,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
-                    <page string="History" groups="clv_base.group_base_suser">
+                    <page string="History" groups="clv_base.group_base_suser" attrs="{'invisible': ['|', ('active_history', '=', False)]}">
                         <field name="history_ids" colspan="4" nolabel="1">
                             <tree string="Place History">
                                 <!--field name="place_id"/-->
@@ -21,6 +21,9 @@
                         </field>
                     </page>
                 </page>
+                <field name="active" position="after">
+                    <field name="active_history"/>
+                </field>
             </field>
         </record>
 

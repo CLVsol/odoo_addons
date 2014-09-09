@@ -42,15 +42,19 @@ class clv_patient(models.Model):
     _inherit = 'clv_patient'
 
     history_ids = fields.One2many('clv_patient.history', 'patient_id', 'Patient History', readonly=True)
+    active_history = fields.Boolean('Active History', 
+                                    help="If unchecked, it will allow you to disable the history without removing it.",
+                                    default=False)
 
     @api.one
     def insert_clv_patient_history(self, patient_id, state, notes):
-        values = { 
-            'patient_id':  patient_id,
-            'state': state,
-            'notes': notes,
-        }
-        self.pool.get('clv_patient.history').create(self._cr, self._uid, values)
+        if self.active_history:
+            values = { 
+                'patient_id':  patient_id,
+                'state': state,
+                'notes': notes,
+            }
+            self.pool.get('clv_patient.history').create(self._cr, self._uid, values)
 
     @api.multi
     def write(self, values):
