@@ -19,53 +19,53 @@
 
 from openerp import models, fields, api
 from openerp.osv import osv
-from datetime import *
 
-class clv_frame(models.Model):
-    _name = "clv_frame"
+class clv_tray_category(models.Model):
+    _name = 'clv_tray.category'
 
-    name = fields.Char('Frame', required=True, size=64, translate=False)
-    alias = fields.Char('Alias', size=64, help='Common name that the frame is referred')
-    code = fields.Char(size=64, string='Frame Code', required=False)
+    name = fields.Char('Category', required=True, size=64, translate=True)
+    parent_id = fields.Many2one('clv_tray.category', 'Parent Category', select=True, ondelete='restrict')
+    code = fields.Char ('Category Code',size=128, required=False)
     description = fields.Char(string='Description', size=256)
-    parent_id = fields.Many2one('clv_frame', 'Parent Frame', select=True, ondelete='restrict')
-    complete_name = fields.Char(string='Full Frame', compute='_name_get_fnc', store=False, readonly=True)
-    child_ids = fields.One2many('clv_frame', 'parent_id', 'Child Frames')
-    is_movable = fields.Boolean('Is Movable', 
-                                help="Check if the frame is movable, otherwise it is immovable",
-                                default=False)
-    address_id = fields.Many2one('res.partner', 'Frame Address')
     notes = fields.Text(string='Notes')
-    date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
-                                     default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    complete_name = fields.Char(string='Full Category', compute='_name_get_fnc', store=False, readonly=True)
+    child_ids = fields.One2many('clv_tray.category', 'parent_id', 'Child Categories')
+    active = fields.Boolean('Active', 
+                            help="If unchecked, it will allow you to hide the category without removing it.",
+                            default=1)
     parent_left = fields.Integer('Left parent', select=True)
     parent_right = fields.Integer('Right parent', select=True)
-    active = fields.Boolean('Active', 
-                            help="If unchecked, it will allow you to hide the frame without removing it.",
-                            default=1)
+    tray_ids = fields.Many2many('clv_tray', 
+                                 'clv_tray_category_rel', 
+                                 'category_id', 
+                                 'tray_id', 
+                                 'Trays')
+
+    _sql_constraints = [
+        ('uniq_category_code', 'unique(code)', "Error! The Category Code must be unique!"),
+        ]
+
+    _constraints = [
+        (models.Model._check_recursion, 'Error! You can not create recursive categories.', ['parent_id'])
+        ]
+    
     _parent_store = True
     _parent_order = 'name'
     _order = 'parent_left'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Frame Code!')]
-
-    _constraints = [
-        (osv.osv._check_recursion, 'Error! You can not create recursive frames.', ['parent_id'])
-        ]
-
     @api.multi
     def name_get(self):
-        """Return the frame's display name, including their direct parent by default.
+        """Return the category's display name, including their direct parent by default.
 
-        :param dict context: the ``frame_display`` key can be
+        :param dict context: the ``category_display`` key can be
                              used to select the short version of the
-                             frame (without the direct parent),
+                             category (without the direct parent),
                              when set to ``'short'``. The default is
                              the long version."""
         if self._context is None:
             self._context = {}
-        if self._context.get('frame_display') == 'short':
-            return super(clv_frame, self).name_get()
+        if self._context.get('category_display') == 'short':
+            return super(clv_category, self).name_get()
         if isinstance(self._ids, (int, long)):
             self._ids = [self._ids]
         reads = self.read(['name', 'parent_id'])
@@ -81,11 +81,15 @@ class clv_frame(models.Model):
     def name_search(self, name, args=None, operator='ilike', limit=100):
         args = args or []
         if name:
-            # Be sure name_search is symetric to name_get
             name = name.split(' / ')[-1]
             args = [('name', operator, name)] + args
-        frames = self.search(args, limit=limit)
-        return frames.name_get()
+        categories = self.search(args, limit=limit)
+        return categories.name_get()
+
+
+    @api.multi
+    def _name_get_fnc(self, field_name, arg):
+        return dict(self.name_get())
 
     @api.one
     def _name_get_fnc(self):
@@ -96,9 +100,7 @@ class clv_frame(models.Model):
         else:
             self.complete_name = self.name
 
-    def onchange_address_id(self, cr, uid, ids, address, context=None):
-        if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'comm_phone': address.phone, 'mobile_phone': address.mobile}}
-        return {'value': {}}
+class clv_tray(models.Model):
+    _inherit = 'clv_tray'
 
+    category_id = fields.Many2one('clv_tray.category', 'Category')
