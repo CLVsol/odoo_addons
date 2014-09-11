@@ -22,11 +22,17 @@ from openerp import models, fields
 class clv_insured(models.Model):
     _inherit = 'clv_insured'
 
-    annotation_ids = fields.One2many('clv_annotation',
-                                     'insured_id',
-                                     'Annotations')
+    annotation_ids = fields.Many2many('clv_annotation', 
+                                      'clv_insured_annotation_rel', 
+                                      'insured_id', 
+                                      'annotation_id', 
+                                      'Annotations')
 
 class clv_annotation(models.Model):
     _inherit = 'clv_annotation'
 
-    insured_id = fields.Many2one ('clv_insured', 'Insured')
+    insured_ids = fields.Many2many('clv_insured', 
+                                   'clv_insured_annotation_rel', 
+                                   'annotation_id', 
+                                   'insured_id', 
+                                   'Insureds')

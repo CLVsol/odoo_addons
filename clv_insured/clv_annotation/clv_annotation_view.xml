@@ -24,9 +24,11 @@
             <field name="inherit_id" ref="clv_annotation.view_clv_annotation_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <group name="Annotation for" position="inside">
-                    <field name="insured_id" groups="clv_base.group_insured_user"/>
-                </group>
+                <page string="Annotation for" position="inside">
+                    <group string="Insureds" groups="clv_base.group_insured_user">
+                        <field name="insured_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </page>
             </field>
         </record>
 

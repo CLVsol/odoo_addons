@@ -22,11 +22,17 @@ from openerp import models, fields
 class clv_batch(models.Model):
     _inherit = 'clv_batch'
 
-    annotation_ids = fields.One2many('clv_annotation',
-                                     'batch_id',
-                                     'Annotations')
+    annotation_ids = fields.Many2many('clv_annotation', 
+                                      'clv_batch_annotation_rel', 
+                                      'batch_id', 
+                                      'annotation_id', 
+                                      'Annotations')
 
 class clv_annotation(models.Model):
     _inherit = 'clv_annotation'
 
-    batch_id = fields.Many2one ('clv_batch', 'Batch')
+    batch_ids = fields.Many2many('clv_batch', 
+                                 'clv_batch_annotation_rel', 
+                                 'annotation_id', 
+                                 'batch_id', 
+                                 'Batches')

@@ -22,11 +22,17 @@ from openerp import models, fields
 class clv_frame(models.Model):
     _inherit = 'clv_frame'
 
-    annotation_ids = fields.One2many('clv_annotation',
-                                     'frame_id',
-                                     'Annotations')
+    annotation_ids = fields.Many2many('clv_annotation', 
+                                      'clv_frame_annotation_rel', 
+                                      'frame_id', 
+                                      'annotation_id', 
+                                      'Annotations')
 
 class clv_annotation(models.Model):
     _inherit = 'clv_annotation'
 
-    frame_id = fields.Many2one ('clv_frame', 'Frame')
+    frame_ids = fields.Many2many('clv_frame', 
+                                 'clv_frame_annotation_rel', 
+                                 'annotation_id', 
+                                 'frame_id', 
+                                 'Frames')
