@@ -28,7 +28,7 @@
                             <!-- Put here related fields -->
                             <!--div class="oe_edit_only"-->
                             <div>
-                                <label for="name"/> (
+                                <label for="name"/>
                             </div>
                             <h1>
                                 <field name="name" default_focus="1" placeholder="Tray Name..."/>
