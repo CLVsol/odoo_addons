@@ -78,6 +78,9 @@
                                     <group string="Batch Size">
                                         <field name="size"/>
                                     </group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
