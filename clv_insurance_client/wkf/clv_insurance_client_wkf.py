@@ -17,4 +17,39 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insurance_history
+from openerp import models, fields, api
+from datetime import *
+
+class clv_insurance_client(models.Model):
+    _inherit = 'clv_insurance_client'
+
+    date = fields.Datetime("State change date", required=True, readonly=True)
+    state = fields.Selection([('new','New'),
+                              ('active','Active'),
+                              ('inactive','Inactive'),
+                              ('suspended','Suspended')
+                              ], string='Status', default='new', readonly=True, required=True, help="")
+
+    _defaults = {
+        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        }
+    
+    @api.one
+    def button_new(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'new'
+
+    @api.one
+    def button_activate(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'active'
+
+    @api.one
+    def button_inactivate(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'inactive'
+
+    @api.one
+    def button_suspend(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'suspended'

@@ -17,4 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insurance_history
+import clv_insurance_client
+import category
+import clv_annotation
+import clv_tag
+import wkf
+import history

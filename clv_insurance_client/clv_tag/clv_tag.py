@@ -17,4 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insurance_history
+from openerp import models, fields, api
+
+class clv_insurance_client(models.Model):
+    _inherit = 'clv_insurance_client'
+
+    tag_ids = fields.Many2many('clv_tag', 
+                               'clv_insurance_client_tag_rel', 
+                               'insurance_client_id', 
+                               'tag_id', 
+                               'Tags')
+
+class clv_tag(models.Model):
+    _inherit = 'clv_tag'
+
+    insurance_client_ids = fields.Many2many('clv_insurance_client', 
+                                            'clv_insurance_client_tag_rel', 
+                                            'tag_id', 
+                                            'insurance_client_id', 
+                                            'Insurance Clients')
