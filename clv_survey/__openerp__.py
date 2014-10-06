@@ -37,7 +37,7 @@ user name and password for the invitation of the survey.
     'depends': ['mail'],
     'data': [
         'survey_report.xml',
-        'survey_data.xml',
+        #'survey_data.xml',
         'wizard/survey_selection.xml',
         'wizard/survey_answer.xml',
         'security/survey_security.xml',
@@ -48,7 +48,7 @@ user name and password for the invitation of the survey.
         'wizard/survey_browse_answer.xml',
         'wizard/survey_print.xml',
         'wizard/survey_send_invitation.xml',
-        'survey_demo.xml',
+        #'survey_demo.xml',
     ],
     #'demo': ['survey_demo.xml'],
     'test': [
