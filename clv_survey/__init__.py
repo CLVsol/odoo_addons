@@ -19,6 +19,6 @@
 #
 ##############################################################################
 
-import survey
+import clv_survey
 import wizard
 import report

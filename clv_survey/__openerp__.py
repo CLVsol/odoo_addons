@@ -38,22 +38,22 @@ user name and password for the invitation of the survey.
         'mail'
         ],
     'data': [
-        'survey_report.xml',
-        #'survey_data.xml',
-        'wizard/survey_selection.xml',
-        'wizard/survey_answer.xml',
-        'security/survey_security.xml',
+        'clv_survey_report.xml',
+        #'clv_survey_data.xml',
+        'wizard/clv_survey_selection.xml',
+        'wizard/clv_survey_answer.xml',
+        'security/clv_survey_security.xml',
         'security/ir.model.access.csv',
-        'survey_view.xml',
-        'wizard/survey_print_statistics.xml',
-        'wizard/survey_print_answer.xml',
-        'wizard/survey_browse_answer.xml',
-        'wizard/survey_print.xml',
-        'wizard/survey_send_invitation.xml',
-        'survey_response_view.xml',
+        'clv_survey_view.xml',
+        'wizard/clv_survey_print_statistics.xml',
+        'wizard/clv_survey_print_answer.xml',
+        'wizard/clv_survey_browse_answer.xml',
+        'wizard/clv_survey_print.xml',
+        'wizard/clv_survey_send_invitation.xml',
+        'clv_survey_response_view.xml',
         ],
     'demo': [
-        #'survey_demo.xml'
+        #'clv_survey_demo.xml'
         ],
     'test': [
         'test/draft2open2close_survey.yml',
