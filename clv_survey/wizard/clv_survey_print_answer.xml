@@ -38,8 +38,5 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem name="Surveys Answers" action="action_view_clv_survey_print_answer" id="menu_print_clv_survey_answer"
-            parent="base.next_id_10" icon="STOCK_PRINT" groups="base.group_tool_manager"/>
-
     </data>
 </openerp>

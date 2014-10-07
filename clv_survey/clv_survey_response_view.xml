@@ -12,11 +12,5 @@
             <!--field name="search_view_id" ref="clv_survey_request_search"/-->
         </record>
 
-        <menuitem name="Survey Responses" id="menu_clv_survey_responses" 
-            parent="menu_clv_surveys"
-            groups="base.group_tool_manager"
-            sequence="10"
-            action="action_clv_survey_response_tree"/>
-
     </data>
 </openerp>
