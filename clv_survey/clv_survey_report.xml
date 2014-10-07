@@ -3,22 +3,22 @@
     <data>
 
         <report auto="False"
-                id="report_survey_form"
-                model="survey"
-                name="survey.form"
+                id="report_clv_survey_form"
+                model="clv_survey"
+                name="clv_survey.form"
                 string="Survey"/>
 
         <report auto="True"
-                id="survey_analysis"
-                model="survey"
-                name="survey.analysis"
+                id="clv_survey_analysis"
+                model="clv_survey"
+                name="clv_survey.analysis"
                 rml=""
                 string="Survey Statistics"/>
 
         <report auto="True"
-                id="survey_browse_response"
-                model="survey"
-                name="survey.browse.response"
+                id="clv_survey_browse_response"
+                model="clv_survey"
+                name="clv_survey.browse.response"
                 rml=""
                 string="Survey Answers"/>
     </data>

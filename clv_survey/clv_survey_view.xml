@@ -4,34 +4,34 @@
         <!-- Top menu item -->
         <menuitem name="Tools" id="base.menu_tools" sequence="120" groups="base.group_tool_user"/>
 
-        <menuitem name="Surveys" id="menu_surveys" parent="base.menu_tools" sequence="2" groups="base.group_tool_user,base.group_tool_manager,base.group_survey_user"/>
+        <menuitem name="Surveys" id="menu_clv_surveys" parent="base.menu_tools" sequence="2" groups="base.group_tool_user,base.group_tool_manager,base.group_clv_survey_user"/>
         
         <menuitem name="Reporting" parent="base.menu_tools"
             id="base.menu_lunch_reporting" sequence="6"/>
-        <menuitem name="Reporting" id="menu_reporting" parent="menu_surveys" sequence="60"/>
-        <menuitem id="base.next_id_10" name="Survey" parent="base.menu_reporting" sequence="1" groups="base.group_survey_user"/>
+        <menuitem name="Reporting" id="menu_reporting" parent="menu_clv_surveys" sequence="60"/>
+        <menuitem id="base.next_id_10" name="Survey" parent="base.menu_reporting" sequence="1" groups="base.group_clv_survey_user"/>
 
         <!--
             Survey
         -->
 
-        <record model="ir.ui.view" id="survey_form">
-            <field name="name">survey_form</field>
-            <field name="model">survey</field>
+        <record model="ir.ui.view" id="clv_survey_form">
+            <field name="name">clv_survey_form</field>
+            <field name="model">clv_survey</field>
             <field name="arch" type="xml">
                 <form string="Survey" version="7.0">
                 <header>
-                    <button name="survey_open" string="Open" states="cancel,close" type="object"/>
-                    <button name="survey_close" string="Close" states="open" type="object" class="oe_highlight"/>
-                    <button name="survey_cancel" string="Cancel Survey" states="open" type="object"/>
+                    <button name="clv_survey_open" string="Open" states="cancel,close" type="object"/>
+                    <button name="clv_survey_close" string="Close" states="open" type="object" class="oe_highlight"/>
+                    <button name="clv_survey_cancel" string="Cancel Survey" states="open" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="open,close"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box oe_right">
-                        <button name="test_survey" states="open,draft,close,cancel" string="Test Survey" type="object" icon="gtk-new" context="{'survey_id': active_id}" attrs="{'invisible':[('id','=',0)]}"/>
-                        <button name="fill_survey" states="open" string="Answer Survey" type="object" icon="gtk-execute" context="{'survey_id': active_id}" attrs="{'invisible':[('state','!=','open')]}"/>
-                        <button name="action_print_survey" states="open,draft,close,cancel" string="Print Answer" type="object"/>
-                        <button name="edit_survey" states="open,draft,close,cancel"
+                        <button name="test_clv_survey" states="open,draft,close,cancel" string="Test Survey" type="object" icon="gtk-new" context="{'survey_id': active_id}" attrs="{'invisible':[('id','=',0)]}"/>
+                        <button name="fill_clv_survey" states="open" string="Answer Survey" type="object" icon="gtk-execute" context="{'survey_id': active_id}" attrs="{'invisible':[('state','!=','open')]}"/>
+                        <button name="action_print_clv_survey" states="open,draft,close,cancel" string="Print Answer" type="object"/>
+                        <button name="edit_clv_survey" states="open,draft,close,cancel"
                             string="Edit Survey" type="object" context="{'active':True,'edit' : True,'survey_id': active_id}"/>
 
                     </div>
@@ -62,7 +62,7 @@
                                     <h1>
                                         <field name="title"/>
                                     </h1>
-                                    <field name="note" placeholder="Description on the survey page..."/>
+                                    <field name="note" placeholder="Description on the clv_survey page..."/>
                                     <newline/>
                                     <group>
                                         <label for="question_ids"/>
@@ -224,8 +224,8 @@
                                     <field name="date_close"/>
                                 </group>
                                 <group>
-                                    <field name="tot_start_survey"/>
-                                    <field name="tot_comp_survey"/>
+                                    <field name="tot_start_clv_survey"/>
+                                    <field name="tot_comp_clv_survey"/>
                                 </group>
                             </group>
                             <field name="history" colspan="4">
@@ -245,32 +245,32 @@
             </field>
         </record>
 
-        <record model ="ir.ui.view" id= "survey_tree">
-            <field name="name">survey_tree</field>
-            <field name="model">survey</field>
+        <record model ="ir.ui.view" id= "clv_survey_tree">
+            <field name="name">clv_survey_tree</field>
+            <field name="model">clv_survey</field>
             <field name="arch" type="xml">
                 <tree colors="gray:state == 'close'" string="Survey">
                     <field name="title"/>
                     <field name="type"/>
                     <field name="responsible_id"/>
                     <field name="date_open"  string="Open Date"/>
-                    <field name="tot_start_survey" string="Started"/>
-                    <field name="tot_comp_survey" string="Completed"/>
+                    <field name="tot_start_clv_survey" string="Started"/>
+                    <field name="tot_comp_clv_survey" string="Completed"/>
                     <field name="state"/>
-                    <button name="test_survey" states="open,draft,close,cancel"
+                    <button name="test_clv_survey" states="open,draft,close,cancel"
                         string="Test Survey" type="object" icon="gtk-new"
                         context="{'survey_id': active_id}"/>
-                    <button name="fill_survey" states="open"
+                    <button name="fill_clv_survey" states="open"
                         string="Answer Survey" type="object" icon="gtk-execute" context="{'survey_id': active_id}" attrs="{'invisible':[('state','!=','open')]}"/>                   
-                    <button name="action_print_survey" states="open,draft,close,cancel"
+                    <button name="action_print_clv_survey" states="open,draft,close,cancel"
                                     string="Print Answer" type="object" icon="gtk-print"/>
                 </tree>
             </field>
         </record>
 
-        <record id="survey_search" model="ir.ui.view">
-            <field name="name">survey_search</field>
-            <field name="model">survey</field>
+        <record id="clv_survey_search" model="ir.ui.view">
+            <field name="name">clv_survey_search</field>
+            <field name="model">clv_survey</field>
             <field name="arch" type="xml">
                 <search string="Search Survey">
                     <field name="title" string="Survey"/>
@@ -289,20 +289,20 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_survey_kanban">
-            <field name="name">event.survey.kanban</field>
-            <field name="model">survey</field>
+        <record model="ir.ui.view" id="view_clv_survey_kanban">
+            <field name="name">event.clv_survey.kanban</field>
+            <field name="model">clv_survey</field>
             <field name="arch" type="xml">
                 <kanban>
                     <field name="title"/>
                     <field name="date_open"/>
-                    <field name="tot_comp_survey"/>
+                    <field name="tot_comp_clv_survey"/>
                     <field name="max_response_limit"/>
                     <field name="responsible_id"/>
                     <field name="color"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_survey">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_clv_survey">
                                 <div class="oe_dropdown_toggle oe_dropdown_kanban">
                                     <span class="oe_e">i</span>
                                     <ul class="oe_dropdown_menu">
@@ -314,11 +314,11 @@
                                 <div class="oe_kanban_content">
                                     <h3 class="oe_kanban_ellipsis"><t t-esc="record.title.raw_value.toString()"></t></h3>
                                     <div>
-                                        Answers: <field name="tot_comp_survey"/>
+                                        Answers: <field name="tot_comp_clv_survey"/>
                                         <t t-if="record.max_response_limit.raw_value > 0"> / <field name="max_response_limit"/></t>
                                     </div>
                                     <br/>
-                                    <a name="fill_survey" type="object">Answer Survey</a>
+                                    <a name="fill_clv_survey" type="object">Answer Survey</a>
                                     <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="24" height="24" class="oe_kanban_avatar oe_right"/>
                                 </div>
                             </div>
@@ -328,39 +328,39 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_survey_form1">
+        <record model="ir.actions.act_window" id="action_clv_survey_form1">
             <field name="name">Surveys</field>
-            <field name="res_model">survey</field>
+            <field name="res_model">clv_survey</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
-            <field name="view_id" ref="view_survey_kanban"></field>
-            <field name="search_view_id" ref="survey_search"/>
+            <field name="view_id" ref="view_clv_survey_kanban"></field>
+            <field name="search_view_id" ref="clv_survey_search"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to create a new survey. 
+                Click to create a new clv_survey. 
               </p><p>
-                You can create survey for different purposes: recruitment
+                You can create clv_survey for different purposes: recruitment
                 interviews, employee's periodical evaluations, marketing
                 campaigns, etc.
               </p><p>
-                A survey is made of pages containing questions
+                A clv_survey is made of pages containing questions
                 of several types: text, multiple choices, etc.
               </p>
             </field>
         </record>
 
 
-        <menuitem name="Surveys" id="menu_survey_form"
-            action="action_survey_form1" parent="menu_surveys"
+        <menuitem name="Surveys" id="menu_clv_survey_form"
+            action="action_clv_survey_form1" parent="menu_clv_surveys"
             groups="base.group_tool_manager" sequence="1"/>
 
         <!--
             Survey Pages
         -->
 
-        <record model="ir.ui.view" id="survey_page_form">
-            <field name="name">survey_page_form</field>
-            <field name="model">survey.page</field>
+        <record model="ir.ui.view" id="clv_survey_page_form">
+            <field name="name">clv_survey_page_form</field>
+            <field name="model">clv_survey.page</field>
             <field name="arch" type="xml">
                 <form string="Survey Page" version="7.0">
                     <sheet>
@@ -373,7 +373,7 @@
                             <field name="sequence"/>
                         </group>
                         <group colspan="4">
-                            <field name="note" nolabel="1" placeholder="Description on the survey page..."/>
+                            <field name="note" nolabel="1" placeholder="Description on the clv_survey page..."/>
                         </group>
                         <group col="4">
                             <label for="question_ids"/>
@@ -527,9 +527,9 @@
         </record>
 
 
-        <record model="ir.ui.view" id="survey_page_tree">
-            <field name="name">survey_page_tree</field>
-            <field name="model">survey.page</field>
+        <record model="ir.ui.view" id="clv_survey_page_tree">
+            <field name="name">clv_survey_page_tree</field>
+            <field name="model">clv_survey.page</field>
             <field name="arch" type="xml">
                 <tree string="Survey Page">
                     <field name="sequence" string="Seq"/>
@@ -540,9 +540,9 @@
             </field>
         </record>
 
-        <record id="view_survey_page_filter" model="ir.ui.view">
-            <field name="name">survey.page.list.select</field>
-            <field name="model">survey.page</field>
+        <record id="view_clv_survey_page_filter" model="ir.ui.view">
+            <field name="name">clv_survey.page.list.select</field>
+            <field name="model">clv_survey.page</field>
             <field name="arch" type="xml">
                 <search string="Search Survey Page">
                     <field name="title" string="Page"/>
@@ -554,21 +554,21 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_survey_page_form">
+        <record model="ir.actions.act_window" id="action_clv_survey_page_form">
             <field name="name">Survey Pages</field>
-            <field name="res_model">survey.page</field>
+            <field name="res_model">clv_survey.page</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="survey_page_tree"></field>
+            <field name="view_id" ref="clv_survey_page_tree"></field>
         </record>
 
-        <menuitem name="Survey Pages" id="menu_survey_page_form1"
-            action="action_survey_page_form" parent="menu_surveys"
+        <menuitem name="Survey Pages" id="menu_clv_survey_page_form1"
+            action="action_clv_survey_page_form" parent="menu_clv_surveys"
             groups="base.group_no_one"/>
 
-        <record model="ir.ui.view" id="survey_page_wizard_test1">
-            <field name="name">survey_page_wizard_test</field>
-            <field name="model">survey.page</field>
+        <record model="ir.ui.view" id="clv_survey_page_wizard_test1">
+            <field name="name">clv_survey_page_wizard_test</field>
+            <field name="model">clv_survey.page</field>
             <field name="priority">20</field>
             <field name="arch" type="xml">
                 <form string="Survey Pages">
@@ -578,7 +578,7 @@
                     <field name="note" colspan="4" nolabel="1"/>
                       <group colspan="4">
                           <label string="" colspan="3"/>
-                        <button name="survey_save"  string="Ok" type="object" icon="gtk-go-forward"/>
+                        <button name="clv_survey_save"  string="Ok" type="object" icon="gtk-go-forward"/>
                     </group>
                 </form>
             </field>
@@ -588,9 +588,9 @@
             Survey Question
         -->
 
-        <record model="ir.ui.view" id="survey_question_form">
-            <field name="name">survey_question_form</field>
-            <field name="model">survey.question</field>
+        <record model="ir.ui.view" id="clv_survey_question_form">
+            <field name="name">clv_survey_question_form</field>
+            <field name="model">clv_survey.question</field>
             <field name="arch" type="xml">
                 <form string="Survey Question">
                     <field name="question" colspan="4"/>
@@ -726,27 +726,27 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_question_tree">
-            <field name="name">survey_question_tree</field>
-            <field name="model">survey.question</field>
+        <record model="ir.ui.view" id="clv_survey_question_tree">
+            <field name="name">clv_survey_question_tree</field>
+            <field name="model">clv_survey.question</field>
             <field name="arch" type="xml">
                 <tree string="Survey Question">
                     <field name="sequence" string="Seq"/>
                     <field name="question"/>
                     <field name="page_id"/>
-                    <field name="survey"/>
+                    <field name="clv_survey"/>
                     <field name="type"/>
                 </tree>
             </field>
         </record>
 
-        <record id="survey_question_search" model="ir.ui.view">
-            <field name="name">survey_question_search</field>
-            <field name="model">survey.question</field>
+        <record id="clv_survey_question_search" model="ir.ui.view">
+            <field name="name">clv_survey_question_search</field>
+            <field name="model">clv_survey.question</field>
             <field name="arch" type="xml">
                 <search string="Search Question">
                     <field name="question" string="Question"/>
-                    <field name="survey"/>
+                    <field name="clv_survey"/>
                     <field name="type"/>
                     <field name="page_id"/>
                     <group expand="0" string="Group By...">
@@ -756,18 +756,18 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_survey_question_form">
+        <record model="ir.actions.act_window" id="action_clv_survey_question_form">
             <field name="name">Survey Questions</field>
-            <field name="res_model">survey.question</field>
+            <field name="res_model">clv_survey.question</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="survey_question_tree"></field>
-             <field name="search_view_id" ref="survey_question_search"/>
+            <field name="view_id" ref="clv_survey_question_tree"></field>
+             <field name="search_view_id" ref="clv_survey_question_search"/>
         </record>
 
-        <record model="ir.ui.view" id="survey_question_wizard_test">
-            <field name="name">survey_question_wizard_test</field>
-            <field name="model">survey.question</field>
+        <record model="ir.ui.view" id="clv_survey_question_wizard_test">
+            <field name="name">clv_survey_question_wizard_test</field>
+            <field name="model">clv_survey.question</field>
             <field name="priority">20</field>
             <field name="arch" type="xml">
                 <form string="Survey Question">
@@ -902,7 +902,7 @@
                     </notebook>
                       <group colspan="4">
                           <label string="" colspan="3"/>
-                        <button name="survey_save"  string="Ok" type="object" icon="gtk-go-forward"/>
+                        <button name="clv_survey_save"  string="Ok" type="object" icon="gtk-go-forward"/>
                     </group>
                 </form>
             </field>
@@ -912,9 +912,9 @@
             Survey Answer
         -->
 
-        <record model ="ir.ui.view" id="survey_answer_form">
-            <field name="name">survey_answer_form</field>
-            <field name="model">survey.answer</field>
+        <record model ="ir.ui.view" id="clv_survey_answer_form">
+            <field name="name">clv_survey_answer_form</field>
+            <field name="model">clv_survey.answer</field>
             <field name="arch" type="xml">
                 <form string="Survey Answer">
                     <field name="answer" colspan="4"/>
@@ -932,9 +932,9 @@
         </record>
 
 
-        <record model="ir.ui.view" id= "survey_answer_tree">
-            <field name="name">survey_answer_tree</field>
-            <field name="model">survey.answer</field>
+        <record model="ir.ui.view" id= "clv_survey_answer_tree">
+            <field name="name">clv_survey_answer_tree</field>
+            <field name="model">clv_survey.answer</field>
             <field name="arch" type="xml">
                 <tree editable="bottom" string="Survey Answer">
                     <field name="sequence" string="Seq"/>
@@ -948,9 +948,9 @@
             Survey Response Line
         -->
 
-        <record model ="ir.ui.view" id= "survey_response_line_form">
-            <field name="name">survey_response_line_form</field>
-            <field name="model">survey.response.line</field>
+        <record model ="ir.ui.view" id= "clv_survey_response_line_form">
+            <field name="name">clv_survey_response_line_form</field>
+            <field name="model">clv_survey.response.line</field>
             <field name="arch" type="xml">
                 <form string="Survey Answer">
                     <field name="question_id"/>
@@ -988,9 +988,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_response_line_tree">
-            <field name="name">survey_response_line_tree</field>
-            <field name="model">survey.response.line</field>
+        <record model="ir.ui.view" id="clv_survey_response_line_tree">
+            <field name="name">clv_survey_response_line_tree</field>
+            <field name="model">clv_survey.response.line</field>
             <field name="arch" type="xml">
                 <tree string="Survey Answer Line">
                     <field name="page_id"/>
@@ -1005,9 +1005,9 @@
             Survey Response
         -->
 
-        <record model="ir.ui.view" id="survey_response_form">
-            <field name="name">survey_response_form</field>
-            <field name="model">survey.response</field>
+        <record model="ir.ui.view" id="clv_survey_response_form">
+            <field name="name">clv_survey_response_form</field>
+            <field name="model">clv_survey.response</field>
             <field name="arch" type="xml">
                 <form string="Survey Answer">
                     <field name="survey_id"/>
@@ -1020,9 +1020,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_response_tree">
-            <field name="name">survey_response_tree</field>
-            <field name="model">survey.response</field>
+        <record model="ir.ui.view" id="clv_survey_response_tree">
+            <field name="name">clv_survey_response_tree</field>
+            <field name="model">clv_survey.response</field>
             <field name="arch" type="xml">
                 <tree string="Survey Answer">
                     <field name="survey_id"/>
@@ -1038,9 +1038,9 @@
             Survey Response Answer
         -->
 
-        <record model="ir.ui.view" id="survey_response_answer_form">
-            <field name="name">survey_response_answer_form</field>
-            <field name="model">survey.response.answer</field>
+        <record model="ir.ui.view" id="clv_survey_response_answer_form">
+            <field name="name">clv_survey_response_answer_form</field>
+            <field name="model">clv_survey.response.answer</field>
             <field name="arch" type="xml">
                 <form string="Survey Answer">
                     <group colspan="4">
@@ -1057,9 +1057,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_response_answer_tree">
-            <field name="name">survey_response_answer_tree</field>
-            <field name="model">survey.response.answer</field>
+        <record model="ir.ui.view" id="clv_survey_response_answer_tree">
+            <field name="name">clv_survey_response_answer_tree</field>
+            <field name="model">clv_survey.response.answer</field>
             <field name="arch" type="xml">
                 <tree editable="top" string="Survey Answer">
                     <field name="answer_id"/>
@@ -1075,9 +1075,9 @@
             Survey Question Column Heading
     -->
 
-        <record model="ir.ui.view" id="survey_question_column_heading_form">
-            <field name="name">survey_question_column_heading_form</field>
-            <field name="model">survey.question.column.heading</field>
+        <record model="ir.ui.view" id="clv_survey_question_column_heading_form">
+            <field name="name">clv_survey_question_column_heading_form</field>
+            <field name="model">clv_survey.question.column.heading</field>
             <field name="arch" type="xml">
                 <form string="Column Heading">
                     <field name="title"/>
@@ -1095,9 +1095,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_question_column_heading_tree">
-            <field name="name">survey_question_column_heading_tree</field>
-            <field name="model">survey.question.column.heading</field>
+        <record model="ir.ui.view" id="clv_survey_question_column_heading_tree">
+            <field name="name">clv_survey_question_column_heading_tree</field>
+            <field name="model">clv_survey.question.column.heading</field>
             <field name="arch" type="xml">
                 <tree editable="bottom" string="Column Heading">
                     <field name="title"/>
@@ -1109,16 +1109,16 @@
             Survey Request
         -->
 
-        <record model="ir.ui.view" id="survey_request_form">
-            <field name="name">survey_request_form</field>
-            <field name="model">survey.request</field>
+        <record model="ir.ui.view" id="clv_survey_request_form">
+            <field name="name">clv_survey_request_form</field>
+            <field name="model">clv_survey.request</field>
             <field name="arch" type="xml">
                 <form string="Request" version="7.0">
                 <header>
-                    <button name="survey_req_draft" string="Set to Draft" states="cancel,done" type="object"/>
-                    <button name="survey_req_waiting_answer" string="Waiting Answer" states="draft" type="object" class="oe_highlight"/>
-                    <button name="survey_req_done" string="Done" states="waiting_answer" type="object" class="oe_highlight"/>
-                    <button name="survey_req_cancel" string="Cancel Request" states="waiting_answer" type="object"/>
+                    <button name="clv_survey_req_draft" string="Set to Draft" states="cancel,done" type="object"/>
+                    <button name="clv_survey_req_waiting_answer" string="Waiting Answer" states="draft" type="object" class="oe_highlight"/>
+                    <button name="clv_survey_req_done" string="Done" states="waiting_answer" type="object" class="oe_highlight"/>
+                    <button name="clv_survey_req_cancel" string="Cancel Request" states="waiting_answer" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,waiting_answer"/>
                 </header>
                 <sheet string="Survey Request">
@@ -1134,9 +1134,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_request_tree">
-            <field name="name">survey_request_tree</field>
-            <field name="model">survey.request</field>
+        <record model="ir.ui.view" id="clv_survey_request_tree">
+            <field name="name">clv_survey_request_tree</field>
+            <field name="model">clv_survey.request</field>
             <field name="arch" type="xml">
                 <tree string="Evaluation Plan Phase" colors="red:date_deadline&lt;current_date">
                     <field name="date_deadline"/>
@@ -1149,9 +1149,9 @@
             </field>
         </record>
 
-       <record id="survey_request_search" model="ir.ui.view">
-            <field name="name">survey_request_search</field>
-            <field name="model">survey.request</field>
+       <record id="clv_survey_request_search" model="ir.ui.view">
+            <field name="name">clv_survey_request_search</field>
+            <field name="model">clv_survey.request</field>
             <field name="arch" type="xml">
                 <search string="Search Survey">
                     <field name="email" string="Survey"/>
@@ -1171,27 +1171,27 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_survey_request_tree">
+        <record model="ir.actions.act_window" id="action_clv_survey_request_tree">
             <field name="name">Survey Requests</field>
-            <field name="res_model">survey.request</field>
+            <field name="res_model">clv_survey.request</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('user_id','=',uid)]</field>
-            <field name="view_id" ref="survey_request_tree"></field>
-            <field name="search_view_id" ref="survey_request_search"/>
+            <field name="view_id" ref="clv_survey_request_tree"></field>
+            <field name="search_view_id" ref="clv_survey_request_search"/>
         </record>
 
-        <menuitem name="Survey Requests" id="menu_survey_type_form1"
-            action="action_survey_request_tree" parent="menu_surveys"
+        <menuitem name="Survey Requests" id="menu_clv_survey_type_form1"
+            action="action_clv_survey_request_tree" parent="menu_clv_surveys"
             groups="base.group_tool_manager" sequence="3"/>
 
         <!--
             Survey Type
         -->
 
-        <record model="ir.ui.view" id="survey_type_form">
-            <field name="name">survey_type_form</field>
-            <field name="model">survey.type</field>
+        <record model="ir.ui.view" id="clv_survey_type_form">
+            <field name="name">clv_survey_type_form</field>
+            <field name="model">clv_survey.type</field>
             <field name="arch" type="xml">
                 <form string="Survey Type">
                     <field name="name"/>
@@ -1200,9 +1200,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_type_tree">
-            <field name="name">survey_type_tree</field>
-            <field name="model">survey.type</field>
+        <record model="ir.ui.view" id="clv_survey_type_tree">
+            <field name="name">clv_survey_type_tree</field>
+            <field name="model">clv_survey.type</field>
             <field name="arch" type="xml">
                 <tree string="Survey Type">
                     <field name="name"/>
@@ -1211,48 +1211,48 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_survey_type_form">
+        <record model="ir.actions.act_window" id="action_clv_survey_type_form">
             <field name="name">Survey Type</field>
-            <field name="res_model">survey.type</field>
+            <field name="res_model">clv_survey.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="survey_type_tree"></field>
+            <field name="view_id" ref="clv_survey_type_tree"></field>
         </record>
 
         <act_window
             context="{'search_default_survey_id': [active_id], 'default_survey_id': active_id}"
-            id="act_survey_pages"
+            id="act_clv_survey_pages"
             name="Pages"
-            res_model="survey.page"
-            src_model="survey"/>
+            res_model="clv_survey.page"
+            src_model="clv_survey"/>
 
         <act_window
-            context="{'search_default_survey': active_id, 'default_survey': active_id}"
-            id="act_survey_question"
+            context="{'search_default_clv_survey': active_id, 'default_clv_survey': active_id}"
+            id="act_clv_survey_question"
             name="Questions"
-            res_model="survey.question"
-            src_model="survey"/>
+            res_model="clv_survey.question"
+            src_model="clv_survey"/>
 
 
         <act_window
             context="{'search_default_page_id': active_id, 'default_page_id': active_id}"
-            id="act_survey_page_question"
+            id="act_clv_survey_page_question"
             name="Questions"
-            res_model="survey.question"
-            src_model="survey.page"/>
+            res_model="clv_survey.question"
+            src_model="clv_survey.page"/>
 
         <act_window domain="[('question_id', '=', active_id)]"
-            id="act_survey_answer"
+            id="act_clv_survey_answer"
             name="Answers"
-            res_model="survey.answer"
-            src_model="survey.question"/>
+            res_model="clv_survey.answer"
+            src_model="clv_survey.question"/>
 
         <act_window
             context="{'search_default_survey_id': active_id, 'default_survey_id': active_id}"
-            id="act_survey_request"
+            id="act_clv_survey_request"
             name="Survey Requests"
-            res_model="survey.request"
-            src_model="survey"/>
+            res_model="clv_survey.request"
+            src_model="clv_survey"/>
 
     </data>
 </openerp>

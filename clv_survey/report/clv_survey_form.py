@@ -24,7 +24,7 @@ from openerp import pooler, tools
 from openerp.report.interface import report_rml
 from openerp.tools import to_xml
 
-class survey_form(report_rml):
+class clv_survey_form(report_rml):
     def create(self, cr, uid, ids, datas, context):
         _divide_columns_for_matrix = 0.7
         _display_ans_in_rows = 5
@@ -146,21 +146,21 @@ class survey_form(report_rml):
             <paraStyle name="terp_default_9" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
         </stylesheet>
         <story>"""
-        surv_obj = pooler.get_pool(cr.dbname).get('survey')
-        for survey in surv_obj.browse(cr,uid,ids):
+        surv_obj = pooler.get_pool(cr.dbname).get('clv_survey')
+        for clv_survey in surv_obj.browse(cr,uid,ids):
             rml += """
             <blockTable colWidths='"""+_tbl_widths+"""' style="title_tbl">
-                <tr><td><para style="title">""" + to_xml(tools.ustr(survey.title)) + """</para><para style="P2"><font></font></para></td></tr>
+                <tr><td><para style="title">""" + to_xml(tools.ustr(clv_survey.title)) + """</para><para style="P2"><font></font></para></td></tr>
             </blockTable>"""
-            if survey.note:
+            if clv_survey.note:
                 rml += """
                 <para style="P2"></para>
                     <blockTable colWidths='"""+_tbl_widths+"""' style="note_table">
-                        <tr><td><para style="descriptive_text">""" + to_xml(tools.ustr(survey.note)) + """</para><para style="P2"><font></font></para></td></tr>
+                        <tr><td><para style="descriptive_text">""" + to_xml(tools.ustr(clv_survey.note)) + """</para><para style="P2"><font></font></para></td></tr>
                     </blockTable>"""
 
             seq = 0
-            for page in survey.page_ids:
+            for page in clv_survey.page_ids:
                 seq += 1
                 rml += """
                 <blockTable colWidths='"""+_tbl_widths+"""' style="page_tbl">
@@ -391,6 +391,6 @@ class survey_form(report_rml):
         pdf = create_doc(rml, title=self.title)
         return (pdf, report_type)
 
-survey_form('report.survey.form', 'survey','','')
+clv_survey_form('report.clv_survey.form', 'clv_survey','','')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

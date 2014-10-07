@@ -24,11 +24,11 @@ from lxml import etree
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
-class survey_name_wiz(osv.osv_memory):
-    _name = 'survey.name.wiz'
+class clv_survey_name_wiz(osv.osv_memory):
+    _name = 'clv_survey.name.wiz'
 
     _columns = {
-        'survey_id': fields.many2one('survey', 'Survey', required=True, ondelete='cascade', domain= [('state', '=', 'open')]),
+        'survey_id': fields.many2one('clv_survey', 'Survey', required=True, ondelete='cascade', domain= [('state', '=', 'open')]),
         'page_no': fields.integer('Page Number'),
         'note': fields.text("Description"),
         'page': fields.char('Page Position',size = 12),
@@ -46,10 +46,10 @@ class survey_name_wiz(osv.osv_memory):
     }
 
     def fields_view_get(self, cr, uid, view_id=None, view_type='form', context=None, toolbar=False, submenu=False):
-        res = super(survey_name_wiz, self).fields_view_get(cr, uid, view_id=view_id, view_type=view_type, context=context, toolbar=toolbar, submenu=False)
+        res = super(clv_survey_name_wiz, self).fields_view_get(cr, uid, view_id=view_id, view_type=view_type, context=context, toolbar=toolbar, submenu=False)
         if uid != 1:
-            survey_obj = self.pool.get('survey')
-            line_ids = survey_obj.search(cr, uid, [('invited_user_ids','in',uid)], context=context)
+            clv_survey_obj = self.pool.get('clv_survey')
+            line_ids = clv_survey_obj.search(cr, uid, [('invited_user_ids','in',uid)], context=context)
             domain = str([('id', 'in', line_ids)])
             doc = etree.XML(res['arch'])
             nodes = doc.xpath("//field[@name='survey_id']")
@@ -60,46 +60,44 @@ class survey_name_wiz(osv.osv_memory):
 
     def action_next(self, cr, uid, ids, context=None):
         """
-        Start the survey, Increment in started survey field but if set the max_response_limit of
-        survey then check the current user how many times start this survey. if current user max_response_limit
-        is reach then this user can not start this survey(Raise Exception).
+        Start the clv_survey, Increment in started clv_survey field but if set the max_response_limit of
+        clv_survey then check the current user how many times start this clv_survey. if current user max_response_limit
+        is reach then this user can not start this clv_survey(Raise Exception).
         """
-        survey_obj = self.pool.get('survey')
+        clv_survey_obj = self.pool.get('clv_survey')
         search_obj = self.pool.get('ir.ui.view')
         if context is None: context = {}
 
         this = self.browse(cr, uid, ids, context=context)[0]
         survey_id = this.survey_id.id
         context.update({'survey_id': survey_id, 'sur_name_id': this.id})
-        cr.execute('select count(id) from survey_history where user_id=%s\
+        cr.execute('select count(id) from clv_survey_history where user_id=%s\
                     and survey_id=%s' % (uid,survey_id))
 
         res = cr.fetchone()[0]
-        sur_rec = survey_obj.browse(cr,uid,survey_id,context=context)
+        sur_rec = clv_survey_obj.browse(cr,uid,survey_id,context=context)
         if sur_rec.response_user and res >= sur_rec.response_user:
-            raise osv.except_osv(_('Warning!'),_("You cannot give response for this survey more than %s times.") % (sur_rec.response_user))
+            raise osv.except_osv(_('Warning!'),_("You cannot give response for this clv_survey more than %s times.") % (sur_rec.response_user))
 
-        if sur_rec.max_response_limit and sur_rec.max_response_limit <= sur_rec.tot_start_survey:
-            raise osv.except_osv(_('Warning!'),_("You cannot give more responses. Please contact the author of this survey for further assistance."))
+        if sur_rec.max_response_limit and sur_rec.max_response_limit <= sur_rec.tot_start_clv_survey:
+            raise osv.except_osv(_('Warning!'),_("You cannot give more responses. Please contact the author of this clv_survey for further assistance."))
 
-        search_id = search_obj.search(cr,uid,[('model','=','survey.question.wiz'),('name','=','Survey Search')])
+        search_id = search_obj.search(cr,uid,[('model','=','clv_survey.question.wiz'),('name','=','Survey Search')])
         return {
             'view_type': 'form',
             "view_mode": 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'search_view_id': search_id[0],
             'context': context
         }
 
-    def on_change_survey(self, cr, uid, ids, survey_id, context=None):
+    def on_change_clv_survey(self, cr, uid, ids, survey_id, context=None):
         """
-            on change event of survey_id field, if note is available in selected survey then display this note in note fields.
+            on change event of survey_id field, if note is available in selected clv_survey then display this note in note fields.
         """
         if not survey_id:
             return {}
-        notes = self.pool.get('survey').read(cr, uid, survey_id, ['note'])['note']
+        notes = self.pool.get('clv_survey').read(cr, uid, survey_id, ['note'])['note']
         return {'value': {'note': notes}}
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
