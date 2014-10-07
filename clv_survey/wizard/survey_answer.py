@@ -414,7 +414,7 @@ class survey_question_wiz(osv.osv_memory):
                         response_id = surv_name_wiz.read(cr, uid, context.get('sur_name_id',False))['response']
                         report = self.create_report(cr, uid, [survey_id], 'report.survey.browse.response', survey_data.title,context)
                         attachments = {}
-                        pdf_filename = addons.get_module_resource('survey', 'report') + survey_data.title + ".pdf"
+                        pdf_filename = addons.get_module_resource('clv_survey', 'report') + survey_data.title + ".pdf"
                         if os.path.exists(pdf_filename):
                             file = open(pdf_filename)
                             file_data = ""
@@ -426,7 +426,7 @@ class survey_question_wiz(osv.osv_memory):
 
                             attachments[survey_data.title + ".pdf"] = file_data
                             file.close()
-                            os.remove(addons.get_module_resource('survey', 'report') + survey_data.title + ".pdf")
+                            os.remove(addons.get_module_resource('clv_survey', 'report') + survey_data.title + ".pdf")
                         context.update({'response_id':response_id})
                         user_email = user_obj.browse(cr, uid, uid, context).email
                         resp_email = survey_data.responsible_id and survey_data.responsible_id.email or False
@@ -469,7 +469,7 @@ class survey_question_wiz(osv.osv_memory):
             uid = 1
             service = netsvc.LocalService(report_name);
             (result, format) = service.create(cr, uid, res_ids, {}, context)
-            ret_file_name = addons.get_module_resource('survey', 'report') + file_name + '.pdf'
+            ret_file_name = addons.get_module_resource('clv_survey', 'report') + file_name + '.pdf'
             fp = open(ret_file_name, 'wb+');
             fp.write(result);
             fp.close();

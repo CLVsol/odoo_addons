@@ -349,11 +349,6 @@
             </field>
         </record>
 
-
-        <menuitem name="Surveys" id="menu_survey_form"
-            action="action_survey_form1" parent="menu_surveys"
-            groups="base.group_tool_manager" sequence="1"/>
-
         <!--
             Survey Pages
         -->
@@ -561,10 +556,6 @@
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="survey_page_tree"></field>
         </record>
-
-        <menuitem name="Survey Pages" id="menu_survey_page_form1"
-            action="action_survey_page_form" parent="menu_surveys"
-            groups="base.group_no_one"/>
 
         <record model="ir.ui.view" id="survey_page_wizard_test1">
             <field name="name">survey_page_wizard_test</field>
@@ -1180,10 +1171,6 @@
             <field name="view_id" ref="survey_request_tree"></field>
             <field name="search_view_id" ref="survey_request_search"/>
         </record>
-
-        <menuitem name="Survey Requests" id="menu_survey_type_form1"
-            action="action_survey_request_tree" parent="menu_surveys"
-            groups="base.group_tool_manager" sequence="3"/>
 
         <!--
             Survey Type

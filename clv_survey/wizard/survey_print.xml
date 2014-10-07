@@ -37,9 +37,5 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem name="Print Surveys" id="menu_print_survey_form" sequence="1"
-            action="action_view_survey_print" parent="base.next_id_10"
-            groups="base.group_tool_manager" icon="STOCK_PRINT"/>
-
     </data>
 </openerp>
