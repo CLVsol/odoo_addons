@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <report auto="False"
+                id="report_clv_survey_form"
+                model="clv_survey"
+                name="clv_survey.form"
+                string="Survey"/>
+
+        <report auto="True"
+                id="clv_survey_analysis"
+                model="clv_survey"
+                name="clv_survey.analysis"
+                rml=""
+                string="Survey Statistics"/>
+
+        <report auto="True"
+                id="clv_survey_browse_response"
+                model="clv_survey"
+                name="clv_survey.browse.response"
+                rml=""
+                string="Survey Answers"/>
+    </data>
+</openerp>

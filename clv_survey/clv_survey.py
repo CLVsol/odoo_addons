@@ -30,64 +30,63 @@ from openerp import netsvc, tools
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
-class survey_type(osv.osv):
-    _name = 'survey.type'
+class clv_survey_type(osv.osv):
+    _name = 'clv_survey.type'
     _description = 'Survey Type'
     _columns = {
         'name': fields.char("Name", size=128, required=1, translate=True),
         'code': fields.char("Code", size=64),
     }
-survey_type()
 
-class survey(osv.osv):
-    _name = 'survey'
+class clv_survey(osv.osv):
+    _name = 'clv_survey'
     _description = 'Survey'
     _rec_name = 'title'
 
     def default_get(self, cr, uid, fields, context=None):
-        data = super(survey, self).default_get(cr, uid, fields, context)
+        data = super(clv_survey, self).default_get(cr, uid, fields, context)
         return data
 
     _columns = {
         'id': fields.integer('ID'),
         'title': fields.char('Survey Title', size=128, required=1),
-        'page_ids': fields.one2many('survey.page', 'survey_id', 'Page'),
+        'page_ids': fields.one2many('clv_survey.page', 'survey_id', 'Page'),
         'date_open': fields.datetime('Survey Open Date', readonly=1),
         'date_close': fields.datetime('Survey Close Date', readonly=1),
         'max_response_limit': fields.integer('Maximum Answer Limit',
-                     help="Set to one if survey is answerable only once"),
+                     help="Set to one if clv_survey is answerable only once"),
         'response_user': fields.integer('Maximum Answer per User',
                      help="Set to one if  you require only one Answer per user"),
         'state': fields.selection([('open', 'Open'), ('cancel', 'Cancelled'),('close', 'Closed') ], 'Status', readonly=True),
-        'responsible_id': fields.many2one('res.users', 'Responsible', help="User responsible for survey"),
-        'tot_start_survey': fields.integer("Total Started Survey", readonly=1),
-        'tot_comp_survey': fields.integer("Total Completed Survey", readonly=1),
+        'responsible_id': fields.many2one('res.users', 'Responsible', help="User responsible for clv_survey"),
+        'tot_start_clv_survey': fields.integer("Total Started Survey", readonly=1),
+        'tot_comp_clv_survey': fields.integer("Total Completed Survey", readonly=1),
         'note': fields.text('Description', size=128),
-        'history': fields.one2many('survey.history', 'survey_id', 'History Lines', readonly=True),
-        'users': fields.many2many('res.users', 'survey_users_rel', 'sid', 'uid', 'Users'),
+        'history': fields.one2many('clv_survey.history', 'survey_id', 'History Lines', readonly=True),
+        'users': fields.many2many('res.users', 'clv_survey_users_rel', 'sid', 'uid', 'Users'),
         'send_response': fields.boolean('Email Notification on Answer'),
-        'type': fields.many2one('survey.type', 'Type'),
+        'type': fields.many2one('clv_survey.type', 'Type'),
         'color': fields.integer('Color Index'),
-        'invited_user_ids': fields.many2many('res.users', 'survey_invited_user_rel', 'sid', 'uid', 'Invited User'),
+        'invited_user_ids': fields.many2many('res.users', 'clv_survey_invited_user_rel', 'sid', 'uid', 'Invited User'),
     }
     _defaults = {
         'state': lambda * a: "open",
-        'tot_start_survey': lambda * a: 0,
-        'tot_comp_survey': lambda * a: 0,
+        'tot_start_clv_survey': lambda * a: 0,
+        'tot_comp_clv_survey': lambda * a: 0,
         'send_response': lambda * a: 1,
         'response_user': lambda * a:1,
         'date_open': fields.datetime.now,
     }
 
-    def survey_open(self, cr, uid, ids, arg):
+    def clv_survey_open(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, {'state': 'open', 'date_open': strftime("%Y-%m-%d %H:%M:%S")})
         return True
 
-    def survey_close(self, cr, uid, ids, arg):
+    def clv_survey_close(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, {'state': 'close', 'date_close': strftime("%Y-%m-%d %H:%M:%S") })
         return True
 
-    def survey_cancel(self, cr, uid, ids, arg):
+    def clv_survey_cancel(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, {'state': 'cancel' })
         return True
 
@@ -96,18 +95,18 @@ class survey(osv.osv):
         current_rec = self.read(cr, uid, ids, context=context)
         title = _("%s (copy)") % (current_rec.get('title'))
         vals.update({'title':title})
-        vals.update({'history':[],'tot_start_survey':0,'tot_comp_survey':0})
-        return super(survey, self).copy(cr, uid, ids, vals, context=context)
+        vals.update({'history':[],'tot_start_clv_survey':0,'tot_comp_clv_survey':0})
+        return super(clv_survey, self).copy(cr, uid, ids, vals, context=context)
 
-    def action_print_survey(self, cr, uid, ids, context=None):
+    def action_print_clv_survey(self, cr, uid, ids, context=None):
         """
-        If response is available then print this response otherwise print survey form(print template of the survey).
+        If response is available then print this response otherwise print clv_survey form(print template of the clv_survey).
         @param self: The object pointer
         @param cr: the current row, from the database cursor,
         @param uid: the current user’s ID for security checks,
         @param ids: List of Survey IDs
         @param context: A standard dictionary for contextual values
-        @return : Dictionary value for print survey form.
+        @return : Dictionary value for print clv_survey form.
         """
         if context is None:
             context = {}
@@ -116,17 +115,17 @@ class survey(osv.osv):
             response_id = context.get('response_id', 0)
             datas['ids'] = [context.get('survey_id', 0)]
         else:
-            response_id = self.pool.get('survey.response').search(cr, uid, [('survey_id','=', ids)], context=context)
+            response_id = self.pool.get('clv_survey.response').search(cr, uid, [('survey_id','=', ids)], context=context)
             datas['ids'] = ids
-        page_setting = {'orientation': 'vertical', 'without_pagebreak': 0, 'paper_size': 'letter', 'page_number': 1, 'survey_title': 1}
+        page_setting = {'orientation': 'vertical', 'without_pagebreak': 0, 'paper_size': 'letter', 'page_number': 1, 'clv_survey_title': 1}
         report = {}
         if response_id and response_id[0]:
             context.update({'survey_id': datas['ids']})
             datas['form'] = page_setting
-            datas['model'] = 'survey.print.answer'
+            datas['model'] = 'clv_survey.print.answer'
             report = {
                 'type': 'ir.actions.report.xml',
-                'report_name': 'survey.browse.response',
+                'report_name': 'clv_survey.browse.response',
                 'datas': datas,
                 'context' : context,
                 'nodestroy':True,
@@ -134,94 +133,91 @@ class survey(osv.osv):
         else:
 
             datas['form'] = page_setting
-            datas['model'] = 'survey.print'
+            datas['model'] = 'clv_survey.print'
             report = {
                 'type': 'ir.actions.report.xml',
-                'report_name': 'survey.form',
+                'report_name': 'clv_survey.form',
                 'datas': datas,
                 'context' : context,
                 'nodestroy':True,
             }
         return report
 
-    def fill_survey(self, cr, uid, ids, context=None):
+    def fill_clv_survey(self, cr, uid, ids, context=None):
         sur_obj = self.read(cr, uid, ids,['title', 'page_ids'], context=context)
         for sur in sur_obj:
             name = sur['title']
             pages = sur['page_ids']
             if not pages:
-                raise osv.except_osv(_('Warning!'), _('This survey has no question defined. Please define the questions and answers first.'))
+                raise osv.except_osv(_('Warning!'), _('This clv_survey has no question defined. Please define the questions and answers first.'))
             context.update({'active':False,'survey_id': ids[0]})
         return {
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'name': name,
             'context': context
         }
-    def test_survey(self, cr, uid, ids, context=None):
+    def test_clv_survey(self, cr, uid, ids, context=None):
         sur_obj = self.read(cr, uid, ids,['title','page_ids'], context=context)
         for sur in sur_obj:
             name = sur['title']
             pages = sur['page_ids']
             if not pages:
-                raise osv.except_osv(_('Warning!'), _('This survey has no pages defined. Please define pages first.'))
+                raise osv.except_osv(_('Warning!'), _('This clv_survey has no pages defined. Please define pages first.'))
             context.update({'active':False,'survey_id': ids[0]})
         return {
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'name': name,
             'context': context
         }
 
-    def edit_survey(self, cr, uid, ids, context=None):
+    def edit_clv_survey(self, cr, uid, ids, context=None):
         sur_obj = self.read(cr, uid, ids,['title','page_ids'], context=context)
         for sur in sur_obj:
             name = sur['title']
             pages = sur['page_ids']
             if not pages:
-                raise osv.except_osv(_('Warning!'), _('This survey has no question defined. Please define the questions and answers first.'))
+                raise osv.except_osv(_('Warning!'), _('This clv_survey has no question defined. Please define the questions and answers first.'))
             context.update({'survey_id': ids[0]})
         return {
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'name': name,
             'context': context
         }
 
-survey()
-
-class survey_history(osv.osv):
-    _name = 'survey.history'
+class clv_survey_history(osv.osv):
+    _name = 'clv_survey.history'
     _description = 'Survey History'
     _rec_name = 'date'
     _columns = {
-        'survey_id': fields.many2one('survey', 'Survey'),
+        'survey_id': fields.many2one('clv_survey', 'Survey'),
         'user_id': fields.many2one('res.users', 'User', readonly=True),
         'date': fields.datetime('Date started', readonly=1),
     }
     _defaults = {
          'date': lambda * a: datetime.datetime.now()
     }
-survey_history()
 
-class survey_page(osv.osv):
-    _name = 'survey.page'
+class clv_survey_page(osv.osv):
+    _name = 'clv_survey.page'
     _description = 'Survey Pages'
     _rec_name = 'title'
     _order = 'sequence'
     _columns = {
         'title': fields.char('Page Title', size=128, required=1),
-        'survey_id': fields.many2one('survey', 'Survey', ondelete='cascade'),
-        'question_ids': fields.one2many('survey.question', 'page_id', 'Questions'),
+        'survey_id': fields.many2one('clv_survey', 'Survey', ondelete='cascade'),
+        'question_ids': fields.one2many('clv_survey.question', 'page_id', 'Questions'),
         'sequence': fields.integer('Page Nr'),
         'note': fields.text('Description'),
     }
@@ -232,22 +228,22 @@ class survey_page(osv.osv):
     def default_get(self, cr, uid, fields, context=None):
         if context is None:
             context = {}
-        data = super(survey_page, self).default_get(cr, uid, fields, context)
+        data = super(clv_survey_page, self).default_get(cr, uid, fields, context)
         if context.has_key('survey_id'):
             data['survey_id'] = context.get('survey_id', False)
         return data
 
-    def survey_save(self, cr, uid, ids, context=None):
+    def clv_survey_save(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
         search_obj = self.pool.get('ir.ui.view')
-        search_id = search_obj.search(cr,uid,[('model','=','survey.question.wiz'),('name','=','Survey Search')])
-        surv_name_wiz = self.pool.get('survey.name.wiz')
+        search_id = search_obj.search(cr,uid,[('model','=','clv_survey.question.wiz'),('name','=','Survey Search')])
+        surv_name_wiz = self.pool.get('clv_survey.name.wiz')
         surv_name_wiz.write(cr, uid, [context.get('sur_name_id',False)], {'transfer':True, 'page_no' : context.get('page_number',0) })
         return {
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'search_view_id': search_id[0],
@@ -259,12 +255,10 @@ class survey_page(osv.osv):
         current_rec = self.read(cr, uid, ids, context=context)
         title = _("%s (copy)") % (current_rec.get('title'))
         vals.update({'title':title})
-        return super(survey_page, self).copy(cr, uid, ids, vals, context=context)
+        return super(clv_survey_page, self).copy(cr, uid, ids, vals, context=context)
 
-survey_page()
-
-class survey_question(osv.osv):
-    _name = 'survey.question'
+class clv_survey_question(osv.osv):
+    _name = 'clv_survey.question'
     _description = 'Survey Question'
     _rec_name = 'question'
     _order = 'sequence'
@@ -274,7 +268,7 @@ class survey_question(osv.osv):
             return {}
         val = {}
         cr.execute("select question_id, count(id) as Total_response from \
-                survey_response_line where state='done' and question_id IN %s\
+                clv_survey_response_line where state='done' and question_id IN %s\
                  group by question_id" ,(tuple(ids),))
         ids1 = copy.deepcopy(ids)
         for rec in  cr.fetchall():
@@ -285,9 +279,9 @@ class survey_question(osv.osv):
         return val
 
     _columns = {
-        'page_id': fields.many2one('survey.page', 'Survey Page', ondelete='cascade', required=1),
+        'page_id': fields.many2one('clv_survey.page', 'Survey Page', ondelete='cascade', required=1),
         'question':  fields.char('Question', size=128, required=1),
-        'answer_choice_ids': fields.one2many('survey.answer', 'question_id', 'Answer'),
+        'answer_choice_ids': fields.one2many('clv_survey.answer', 'question_id', 'Answer'),
         'is_require_answer': fields.boolean('Require Answer to Question'),
         'required_type': fields.selection([('all','All'), ('at least','At Least'), ('at most','At Most'), ('exactly','Exactly'), ('a range','A Range')], 'Respondent must answer'),
         'req_ans': fields.integer('#Required Answer'),
@@ -297,9 +291,9 @@ class survey_question(osv.osv):
         'allow_comment': fields.boolean('Allow Comment Field'),
         'sequence': fields.integer('Sequence'),
         'tot_resp': fields.function(_calc_response, string="Total Answer"),
-        'survey': fields.related('page_id', 'survey_id', type='many2one', relation='survey', string='Survey'),
+        'clv_survey': fields.related('page_id', 'survey_id', type='many2one', relation='clv_survey', string='Survey'),
         'descriptive_text': fields.text('Descriptive Text', size=255),
-        'column_heading_ids': fields.one2many('survey.question.column.heading', 'question_id',' Column heading'),
+        'column_heading_ids': fields.one2many('clv_survey.question.column.heading', 'question_id',' Column heading'),
         'type': fields.selection([('multiple_choice_only_one_ans','Multiple Choice (Only One Answer)'),
              ('multiple_choice_multiple_ans','Multiple Choice (Multiple Answer)'),
              ('matrix_of_choices_only_one_ans','Matrix of Choices (Only One Answers Per Row)'),
@@ -498,12 +492,12 @@ class survey_question(osv.osv):
                         raise osv.except_osv(_('Warning!'),_("You must enter one or more menu \
                                 choices in column heading (white spaces not allowed)."))
 
-        return super(survey_question, self).write(cr, uid, ids, vals, context=context)
+        return super(clv_survey_question, self).write(cr, uid, ids, vals, context=context)
 
     def create(self, cr, uid, vals, context=None):
         minimum_ans = 0
         maximum_ans = 0
-        page = self.pool.get('survey.page').browse(cr, uid, int(vals.get('page_id', 0)), context=context).title
+        page = self.pool.get('clv_survey.page').browse(cr, uid, int(vals.get('page_id', 0)), context=context).title
         if vals.has_key('answer_choice_ids') and  not len(vals['answer_choice_ids']):
             if vals.has_key('type') and vals['type'] not in ['descriptive_text', 'single_textbox', 'comment','table']:
                 raise osv.except_osv(_('Warning!'),_('You must enter one or more answers for question "%s" of page %s .') % (vals['question'], page))
@@ -534,20 +528,20 @@ class survey_question(osv.osv):
                 elif not col[2] or not col[2].has_key('menu_choice') or col[2]['menu_choice'].strip() == '':
                     raise osv.except_osv(_('Warning!'),_("You must enter one or more menu choices in column heading (white spaces not allowed)."))
 
-        res = super(survey_question, self).create(cr, uid, vals, context)
+        res = super(clv_survey_question, self).create(cr, uid, vals, context)
         return res
 
-    def survey_save(self, cr, uid, ids, context=None):
+    def clv_survey_save(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
         search_obj = self.pool.get('ir.ui.view')
-        search_id = search_obj.search(cr,uid,[('model','=','survey.question.wiz'),('name','=','Survey Search')])
-        surv_name_wiz = self.pool.get('survey.name.wiz')
+        search_id = search_obj.search(cr,uid,[('model','=','clv_survey.question.wiz'),('name','=','Survey Search')])
+        surv_name_wiz = self.pool.get('clv_survey.name.wiz')
         surv_name_wiz.write(cr, uid, [context.get('sur_name_id',False)], {'transfer':True, 'page_no' : context.get('page_number',False) })
         return {
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'survey.question.wiz',
+            'res_model': 'clv_survey.question.wiz',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'search_view_id': search_id[0],
@@ -557,16 +551,13 @@ class survey_question(osv.osv):
     def default_get(self, cr, uid, fields, context=None):
         if context is None:
             context = {}
-        data = super(survey_question, self).default_get(cr, uid, fields, context)
+        data = super(clv_survey_question, self).default_get(cr, uid, fields, context)
         if context.has_key('page_id'):
             data['page_id']= context.get('page_id', False)
         return data
 
-survey_question()
-
-
-class survey_question_column_heading(osv.osv):
-    _name = 'survey.question.column.heading'
+class clv_survey_question_column_heading(osv.osv):
+    _name = 'clv_survey.question.column.heading'
     _description = 'Survey Question Column Heading'
     _rec_name = 'title'
 
@@ -587,7 +578,7 @@ class survey_question_column_heading(osv.osv):
         'title': fields.char('Column Heading', size=128, required=1),
         'menu_choice': fields.text('Menu Choice'),
         'rating_weight': fields.integer('Weight'),
-        'question_id': fields.many2one('survey.question', 'Question', ondelete='cascade'),
+        'question_id': fields.many2one('clv_survey.question', 'Question', ondelete='cascade'),
         'in_visible_rating_weight': fields.boolean('Is Rating Scale Invisible ??'),
         'in_visible_menu_choice': fields.boolean('Is Menu Choice Invisible??')
     }
@@ -595,10 +586,9 @@ class survey_question_column_heading(osv.osv):
        'in_visible_rating_weight': _get_in_visible_rating_weight,
        'in_visible_menu_choice': _get_in_visible_menu_choice,
     }
-survey_question_column_heading()
 
-class survey_answer(osv.osv):
-    _name = 'survey.answer'
+class clv_survey_answer(osv.osv):
+    _name = 'clv_survey.answer'
     _description = 'Survey Answer'
     _rec_name = 'answer'
     _order = 'sequence'
@@ -607,9 +597,9 @@ class survey_answer(osv.osv):
         val = {}
         for rec in self.browse(cr, uid, ids, context=context):
             cr.execute("select count(question_id) ,(select count(answer_id) \
-                from survey_response_answer sra, survey_response_line sa \
+                from clv_survey_response_answer sra, clv_survey_response_line sa \
                 where sra.response_id = sa.id and sra.answer_id = %d \
-                and sa.state='done') as tot_ans from survey_response_line \
+                and sa.state='done') as tot_ans from clv_survey_response_line \
                 where question_id = %d and state = 'done'"\
                      % (rec.id, rec.question_id.id))
             res = cr.fetchone()
@@ -629,7 +619,7 @@ class survey_answer(osv.osv):
         return context.get('in_visible_answer_type', False)
 
     _columns = {
-        'question_id': fields.many2one('survey.question', 'Question', ondelete='cascade'),
+        'question_id': fields.many2one('clv_survey.question', 'Question', ondelete='cascade'),
         'answer': fields.char('Answer', size=128, required=1),
         'sequence': fields.integer('Sequence'),
         'response': fields.function(_calc_response_avg, string="#Answer", multi='sums'),
@@ -649,21 +639,19 @@ class survey_answer(osv.osv):
     def default_get(self, cr, uid, fields, context=None):
         if context is None:
             context = {}
-        data = super(survey_answer, self).default_get(cr, uid, fields, context)
+        data = super(clv_survey_answer, self).default_get(cr, uid, fields, context)
         return data
 
-survey_answer()
-
-class survey_response(osv.osv):
-    _name = "survey.response"
+class clv_survey_response(osv.osv):
+    _name = "clv_survey.response"
     _rec_name = 'date_create'
     _columns = {
-        'survey_id' : fields.many2one('survey', 'Survey', required=1, ondelete='cascade'),
+        'survey_id' : fields.many2one('clv_survey', 'Survey', required=1, ondelete='cascade'),
         'date_create' : fields.datetime('Create Date', required=1),
         'user_id' : fields.many2one('res.users', 'User'),
         'response_type' : fields.selection([('manually', 'Manually'), ('link', 'Link')], \
                                     'Answer Type', required=1, readonly=1),
-        'question_ids' : fields.one2many('survey.response.line', 'response_id', 'Answer'),
+        'question_ids' : fields.one2many('clv_survey.response.line', 'response_id', 'Answer'),
         'state' : fields.selection([('done', 'Finished '),('skip', 'Not Finished')], \
                             'Status', readonly=True),
     }
@@ -690,22 +678,20 @@ class survey_response(osv.osv):
     def copy(self, cr, uid, id, default=None, context=None):
         raise osv.except_osv(_('Warning!'),_('You cannot duplicate the resource!'))
 
-survey_response()
-
-class survey_response_line(osv.osv):
-    _name = 'survey.response.line'
+class clv_survey_response_line(osv.osv):
+    _name = 'clv_survey.response.line'
     _description = 'Survey Response Line'
     _rec_name = 'date_create'
     _columns = {
-        'response_id': fields.many2one('survey.response', 'Answer', ondelete='cascade'),
+        'response_id': fields.many2one('clv_survey.response', 'Answer', ondelete='cascade'),
         'date_create': fields.datetime('Create Date', required=1),
         'state': fields.selection([('draft', 'Draft'), ('done', 'Answered'),('skip', 'Skiped')],\
                                    'Status', readonly=True),
-        'question_id': fields.many2one('survey.question', 'Question'),
+        'question_id': fields.many2one('clv_survey.question', 'Question'),
         'page_id': fields.related('question_id', 'page_id', type='many2one', \
-                                  relation='survey.page', string='Page'),
-        'response_answer_ids': fields.one2many('survey.response.answer', 'response_id', 'Answer'),
-        'response_table_ids': fields.one2many('survey.tbl.column.heading', \
+                                  relation='clv_survey.page', string='Page'),
+        'response_answer_ids': fields.one2many('clv_survey.response.answer', 'response_id', 'Answer'),
+        'response_table_ids': fields.one2many('clv_survey.tbl.column.heading', \
                                     'response_table_id', 'Answer'),
         'comment': fields.text('Notes'),
         'single_text': fields.char('Text', size=255),
@@ -714,74 +700,66 @@ class survey_response_line(osv.osv):
         'state' : lambda * a: "draft",
     }
 
-survey_response_line()
-
-class survey_tbl_column_heading(osv.osv):
-    _name = 'survey.tbl.column.heading'
+class clv_survey_tbl_column_heading(osv.osv):
+    _name = 'clv_survey.tbl.column.heading'
     _order = 'name'
     _columns = {
         'name': fields.integer('Row Number'),
-        'column_id': fields.many2one('survey.question.column.heading', 'Column'),
+        'column_id': fields.many2one('clv_survey.question.column.heading', 'Column'),
         'value': fields.char('Value', size = 255),
-        'response_table_id': fields.many2one('survey.response.line', 'Answer', ondelete='cascade'),
+        'response_table_id': fields.many2one('clv_survey.response.line', 'Answer', ondelete='cascade'),
     }
 
-survey_tbl_column_heading()
-
-class survey_response_answer(osv.osv):
-    _name = 'survey.response.answer'
+class clv_survey_response_answer(osv.osv):
+    _name = 'clv_survey.response.answer'
     _description = 'Survey Answer'
     _rec_name = 'response_id'
     _columns = {
-        'response_id': fields.many2one('survey.response.line', 'Answer', ondelete='cascade'),
-        'answer_id': fields.many2one('survey.answer', 'Answer', required=1, ondelete='cascade'),
-        'column_id': fields.many2one('survey.question.column.heading','Column'),
+        'response_id': fields.many2one('clv_survey.response.line', 'Answer', ondelete='cascade'),
+        'answer_id': fields.many2one('clv_survey.answer', 'Answer', required=1, ondelete='cascade'),
+        'column_id': fields.many2one('clv_survey.question.column.heading','Column'),
         'answer': fields.char('Value', size =255),
         'value_choice': fields.char('Value Choice', size =255),
         'comment': fields.text('Notes'),
         'comment_field': fields.char('Comment', size = 255)
     }
 
-survey_response_answer()
-
 class res_users(osv.osv):
     _inherit = "res.users"
     _name = "res.users"
     _columns = {
-        'survey_id': fields.many2many('survey', 'survey_users_rel', 'uid', 'sid', 'Groups'),
+        'survey_id': fields.many2many('clv_survey', 'clv_survey_users_rel', 'uid', 'sid', 'Groups'),
     }
 
-res_users()
-
-class survey_request(osv.osv):
-    _name = "survey.request"
+class clv_survey_request(osv.osv):
+    _name = "clv_survey.request"
     _order = 'date_deadline'
     _rec_name = 'date_deadline'
     _columns = {
         'date_deadline': fields.date("Deadline date"),
         'user_id': fields.many2one("res.users", "User"),
         'email': fields.char("Email", size=64),
-        'survey_id': fields.many2one("survey", "Survey", required=1, ondelete='cascade'),
-        'response': fields.many2one('survey.response', 'Answer'),
+        'survey_id': fields.many2one("clv_survey", "Survey", required=1, ondelete='cascade'),
+        'response': fields.many2one('clv_survey.response', 'Answer'),
         'state': fields.selection([('draft','Draft'),('cancel', 'Cancelled'),('waiting_answer', 'Waiting Answer'),('done', 'Done')], 'Status', readonly=1)
     }
     _defaults = {
         'state': lambda * a: 'draft',
 #        'date_deadline': lambda * a :  (datetime.now() + relativedelta(months=+1)).strftime("%Y-%m-%d %H:%M:%S")
     }
-    def survey_req_waiting_answer(self, cr, uid, ids, arg):
+    def clv_survey_req_waiting_answer(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, { 'state' : 'waiting_answer'})
         return True
 
-    def survey_req_draft(self, cr, uid, ids, arg):
+    def clv_survey_req_draft(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, { 'state' : 'draft'})
         return True
 
-    def survey_req_done(self, cr, uid, ids, arg):
+    def clv_survey_req_done(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, { 'state' : 'done'})
         return True
 
-    def survey_req_cancel(self, cr, uid, ids, arg):
+    def clv_survey_req_cancel(self, cr, uid, ids, arg):
         self.write(cr, uid, ids, { 'state' : 'cancel'})
         return True
 
@@ -791,7 +769,3 @@ class survey_request(osv.osv):
             user = user_obj.browse(cr, uid, user_id, context=context)
             return {'value': {'email': user.email}}
         return {}
-
-survey_request()
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
