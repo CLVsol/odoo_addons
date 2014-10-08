@@ -48,18 +48,26 @@ user name and password for the invitation of the survey.
         'wizard/survey_browse_answer.xml',
         'wizard/survey_print.xml',
         'wizard/survey_send_invitation.xml',
-        #'survey_demo.xml',
-    ],
-    #'demo': ['survey_demo.xml'],
+        'survey_response_view.xml',
+        ],
+    'demo': [
+        'survey_demo.xml'
+        ],
     'test': [
         'test/draft2open2close_survey.yml',
         'test/draft2open2close_request.yml',
         'test/survey_question_type.yml',
         'test/survey_report.yml',
-    ],
+        ],
     'installable': True,
     'auto_install': False,
-    'images': ['images/survey_answers.jpeg','images/survey_pages.jpeg','images/surveys.jpeg'],   
-    'css': ['static/src/css/survey.css','static/css/survey.css'],
+    'images': [
+        'images/survey_answers.jpeg',
+        'images/survey_pages.jpeg',
+        'images/surveys.jpeg',
+        ],   
+    'css': [
+        'static/src/css/survey.css',
+        'static/css/survey.css',
+        ],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

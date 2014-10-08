@@ -74,7 +74,7 @@ class survey(osv.osv):
         'state': lambda * a: "open",
         'tot_start_survey': lambda * a: 0,
         'tot_comp_survey': lambda * a: 0,
-        'send_response': lambda * a: 1,
+        'send_response': lambda * a: 0,
         'response_user': lambda * a:1,
         'date_open': fields.datetime.now,
     }

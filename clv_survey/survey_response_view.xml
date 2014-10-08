@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_survey_response_tree">
+            <field name="name">Survey Responses</field>
+            <field name="res_model">survey.response</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--field name="domain">[('user_id','=',uid)]</field-->
+            <field name="view_id" ref="survey_response_tree"></field>
+            <!--field name="search_view_id" ref="survey_request_search"/-->
+        </record>
+
+    </data>
+</openerp>

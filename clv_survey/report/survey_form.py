@@ -391,6 +391,4 @@ class survey_form(report_rml):
         pdf = create_doc(rml, title=self.title)
         return (pdf, report_type)
 
-survey_form('report.survey.form', 'survey','','')
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+#survey_form('report.survey.form', 'survey','','')

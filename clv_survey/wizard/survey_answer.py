@@ -157,7 +157,7 @@ class survey_question_wiz(osv.osv_memory):
                         title = sur_rec.title
                     xml_form = etree.Element('form', {'string': tools.ustr(title)})
                     if context.has_key('active') and context.get('active',False) and context.has_key('edit'):
-                        context.update({'page_id' : tools.ustr(p_id),'page_number' : sur_name_rec.page_no , 'transfer' : sur_name_read.transfer})
+                        context.update({'page_id' : p_id,'page_number' : sur_name_rec.page_no , 'transfer' : sur_name_read.transfer})
                         xml_group3 = etree.SubElement(xml_form, 'group', {'col': '4', 'colspan': '4'})
                         etree.SubElement(xml_group3, 'button', {'string' :'Add Page','icon': "gtk-new", 'type' :'object','name':"action_new_page", 'context' : tools.ustr(context)})
                         etree.SubElement(xml_group3, 'button', {'string' :'Edit Page','icon': "gtk-edit", 'type' :'object','name':"action_edit_page", 'context' : tools.ustr(context)})
@@ -414,7 +414,7 @@ class survey_question_wiz(osv.osv_memory):
                         response_id = surv_name_wiz.read(cr, uid, context.get('sur_name_id',False))['response']
                         report = self.create_report(cr, uid, [survey_id], 'report.survey.browse.response', survey_data.title,context)
                         attachments = {}
-                        pdf_filename = addons.get_module_resource('survey', 'report') + survey_data.title + ".pdf"
+                        pdf_filename = addons.get_module_resource('clv_survey', 'report') + survey_data.title + ".pdf"
                         if os.path.exists(pdf_filename):
                             file = open(pdf_filename)
                             file_data = ""
@@ -426,7 +426,7 @@ class survey_question_wiz(osv.osv_memory):
 
                             attachments[survey_data.title + ".pdf"] = file_data
                             file.close()
-                            os.remove(addons.get_module_resource('survey', 'report') + survey_data.title + ".pdf")
+                            os.remove(addons.get_module_resource('clv_survey', 'report') + survey_data.title + ".pdf")
                         context.update({'response_id':response_id})
                         user_email = user_obj.browse(cr, uid, uid, context).email
                         resp_email = survey_data.responsible_id and survey_data.responsible_id.email or False
@@ -469,7 +469,7 @@ class survey_question_wiz(osv.osv_memory):
             uid = 1
             service = netsvc.LocalService(report_name);
             (result, format) = service.create(cr, uid, res_ids, {}, context)
-            ret_file_name = addons.get_module_resource('survey', 'report') + file_name + '.pdf'
+            ret_file_name = addons.get_module_resource('clv_survey', 'report') + file_name + '.pdf'
             fp = open(ret_file_name, 'wb+');
             fp.write(result);
             fp.close();
