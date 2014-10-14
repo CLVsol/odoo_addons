@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="Community" id="menu_community_root" 
+            groups="base.group_oehealth_comm_user" sequence="1"/>
+            
+        <menuitem id="menu_community_main" parent="menu_community_root" 
+            name="Community" sequence="0"/>
+        
+        <menuitem id="menu_community_config" parent="menu_community_root" 
+            name="Configuration" sequence="30" />
+
+    </data>
+</openerp>

@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_oehealth_medicament_category,oehealth.category.medicament,model_oehealth_medicament_category,base.group_oehealth_medicament_user,1,1,1,1
+access_oehealth_medicament,oehealth.medicament,model_oehealth_medicament,base.group_oehealth_medicament_user,1,1,1,1

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <!-- Impatient Registration details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form3">
+            <field name="name">oehealth.hospital.inpatient_registration.form</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="inherit_id" ref="oehealth_hospital.view_oehealth_hospital_impatient_registration_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Medication Templates">
+                        <field name="medirecon_medication_template_ids" colspan="4" nolabel="1">
+                            <!--tree string="Mourisk Questionnairies">
+                                <field name="patient" />
+                                <field name="inpatient_reg" />
+                                <field name="researcher" />
+                                <field name="date" />
+                                <field name="adherence" />
+                            </tree>
+                            <form string="Mourisk Questionnairie">
+                                <field name="patient" />
+                                <field name="inpatient_reg" />
+                                <field name="researcher" />
+                                <field name="date" />
+                                <field name="question01" />
+                                <field name="question02" />
+                                <field name="question03" />
+                                <field name="question04" />
+                                <field name="adherence" />
+                            </form-->
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+        <record id="view_oehealth_medirecon_medication_template_tree" model="ir.ui.view">
+            <field name="name">oehealth.medirecon.medication.template.tree</field>
+            <field name="model">oehealth.medirecon.medication.template</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Medication Templates">
+                    <field name="name" />
+                    <field name="medicament" />
+                    <field name="patient" />
+                    <field name="inpatient_reg" />
+                    <field name="researcher" />
+                    <field name="date" />
+                    <field name="info_source" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oehealth_medirecon_medication_template_form" model="ir.ui.view">
+            <field name="name">oehealth.medirecon.medication.template.form</field>
+            <field name="model">oehealth.medirecon.medication.template</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Medication Template">
+                    <group>
+                        <field name="name" />
+                        <field name="patient" />
+                        <field name="inpatient_reg" />
+                        <field name="researcher" />
+                        <field name="date" />
+                        <field name="info_source" />
+                        <field name="medicament" />
+                        <field name="dose" />
+                        <field name="dose_unit" />
+                        <field name="frequency" />
+                        <field name="frequency_unit" />
+                        <field name="frequency_prn" />
+                        <field name="indication" />
+                        <field name="start" />
+                        <field name="last_dose" />
+                        <field name="prescribed_at_admission" />
+                        <field name="problem" />
+                        <field name="intetional" />
+                        <field name="intervention" />
+                        <field name="prescribed_at_discharge" />
+                        <field name="problem2" />
+                        <field name="intetional2" />
+                        <field name="intervention2" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oehealth_medirecon_medication_template_search" model="ir.ui.view">
+            <field name="name">oehealth.medirecon.medication.template.search</field>
+            <field name="model">oehealth.medirecon.medication.template</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medication Template">
+                    <field name="patient" />
+                    <field name="inpatient_reg" />
+                    <field name="researcher" />
+                    <field name="medicament" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+                        <filter string="Inpatient regoistration" domain="[]" context="{'group_by':'inpatient_reg'}" />
+                        <filter string="Researcher" domain="[]" context="{'group_by':'researcher'}" />
+                        <filter string="Medicament" domain="[]" context="{'group_by':'medicament'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oehealth_medirecon_medication_template_view">
+            <field name="name">Medication Templates</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.medirecon.medication.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oehealth_medirecon_medication_template_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view"
+            id="act_open_oehealth_medirecon_medication_template_view_form">
+            <field name="act_window_id" ref="act_open_oehealth_medirecon_medication_template_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oehealth_medirecon_medication_template_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view"
+            id="act_open_oehealth_medirecon_medication_template_view_tree">
+            <field name="act_window_id" ref="act_open_oehealth_medirecon_medication_template_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oehealth_medirecon_medication_template_tree" />
+        </record>
+
+        <menuitem id="health_medirecon_medication_template" name="Medication Templates"
+            parent="health_medirecon_root" sequence="8"
+            action="act_open_oehealth_medirecon_medication_template_view" />
+
+    </data>
+</openerp>

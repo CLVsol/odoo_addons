@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="Health" id="oehealth.health_menu"
+            groups="base.group_oehealth_user" sequence="11"/>
+        
+        <menuitem name="Configuration" id="oehealth.health_config_menu" 
+            parent="oehealth.health_menu" sequence="90"/>
+
+    </data>
+</openerp>

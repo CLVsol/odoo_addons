@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <menuitem name="Lab Tests" id="oehealth_lab_tests_menu" 
+            parent="oehealth.health_menu" sequence="2"/>
+
+        <!-- Patient details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form">
+            <field name="name">oehealth.patient.form</field>
+            <field name="model">oehealth.patient</field>
+            <field name="inherit_id" ref="oehealth_patient.view_patient_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Lab Tests">
+                        <field name="lab_test_ids" colspan="4" nolabel="1">
+                            <tree string="Lab Tests">
+                                <field name="name" required="1"/>
+                                <field name="doctor_id"/>
+                                <field name="date"/>
+                                <field name="state"/>
+                                <field name="lab_test_id"/>
+                            </tree>
+                            <form string="Lab Tests">
+                                <field name="name"/>
+                                <field name="doctor_id"/>
+                                <field name="date"/>
+                                <field name="state"/>
+                                <field name="lab_test_id"/>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+        <!-- Lab Test units -->
+        
+        <record model="ir.ui.view" id="oehealth_lab_unit_form">
+            <field name="name">Lab Test Units</field>
+            <field name="model">oehealth.lab_test.units</field>
+            <!--field name="type">form</field-->
+            <field name="arch" type="xml">
+                <form string="Test Unit">
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="code"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="oehealth_lab_unit_tree">
+            <field name="name">Lab Test Units</field>
+            <field name="model">oehealth.lab_test.units</field>
+            <!--field name="type">tree</field-->
+            <field name="arch" type="xml">
+                <tree string="Lab Test Unit">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="oehealth_action_lab_test_unit">
+            <field name="name">Lab Test Units</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.lab_test.units</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+    
+        <record id="view_oehealth_lab_test_unit_search" model="ir.ui.view">
+            <field name="name">oehealth.lab_test.units.select</field>
+            <field name="model">oehealth.lab_test.units</field>
+            <!--field name="type">search</field-->
+            <field name="arch" type="xml">
+                <search string="Search Lab Test Units">
+    
+                    <separator orientation="vertical"/>
+                        <field name="name" select="1"/>
+                        <field name="code" select="1"/>
+                <newline/>
+    
+                </search>
+            </field>
+        </record>
+    
+        <menuitem action="oehealth_action_lab_test_unit" id="oehealth_lab_test_unit" 
+            parent="oehealth_lab_tests_menu"/>
+    
+        <!-- Lab Requests -->
+    
+        <record model="ir.ui.view" id="oehealth_lab_test_request_form">
+            <field name="name">Lab Test Requests</field>
+            <field name="model">oehealth.patient.lab_test</field>
+            <!--field name="type">form</field-->
+            <field name="arch" type="xml">
+                <form string="Lab Test Requests">
+                    <field name="name" required="1"/>
+                    <field name="date"/>
+                    <field name="patient_id" required="1"/>
+                    <field name="doctor_id"/>
+                    <field name="state"/>
+                    <field name="lab_test_id"></field>
+                </form>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="oehealth_lab_test_request_tree">
+            <field name="name">Lab Test Requests</field>
+            <field name="model">oehealth.patient.lab_test</field>
+            <!--field name="type">tree</field-->
+            <field name="arch" type="xml">
+                <tree string="Test Requests">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="state" readonly="1"/>
+                    <field name="lab_test_id"></field>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="oehealth_action_lab_test_request">
+            <field name="name">Lab Test Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.patient.lab_test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <menuitem action="oehealth_action_lab_test_request" id="oehealth_lab_test_request" 
+            parent="oehealth_lab_tests_menu"/>
+    
+        <record model="ir.actions.act_window" id="oehealth_action_draft_lab_test_request">
+            <field name="name">Draft Lab Test Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.patient.lab_test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft')]</field>
+        </record>
+    
+        <menuitem action="oehealth_action_draft_lab_test_request" 
+            id="oehealth_draft_lab_test_request" 
+            parent="oehealth_lab_test_request"/>
+    
+        <record model="ir.actions.act_window" id="oehealth_action_today_draft_lab_test_request">
+            <field name="name">Today's Draft Lab Test Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.patient.lab_test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft'),('date','&gt;=',time.strftime('%Y-%m-%d 00:00:01')),('date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]</field>
+        </record>
+    
+        <menuitem action="oehealth_action_today_draft_lab_test_request" 
+            id="oehealth_today_draft_lab_test_request" 
+            parent="oehealth_lab_test_request"/>
+    
+        <record id="view_oehealth_lab_test_filter" model="ir.ui.view">
+            <field name="name">Lab Tests Requests</field>
+            <field name="model">oehealth.patient.lab_test</field>
+            <!--field name="type">search</field-->
+            <field name="arch" type="xml">
+                <search string="Search Lab Tests Requests">
+                    <separator orientation="vertical"/>
+                        <field name="name" select="1"/>
+                        <field name="date" select="1"/>
+                        <field name="patient_id" select="1"/>
+                        <field name="doctor_id" select="1"/>
+                        <field name="state" select="1"/>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+       
+        <!-- Lab Test type -->
+        <record model="ir.ui.view" id="oehealth_lab_test_type_view">
+            <field name="name">Lab Test Type</field>
+            <field name="model">oehealth.lab_test.type</field>
+            <!--field name="type">form</field-->
+            <field name="arch" type="xml">
+                <form string="Lab Test Type">
+                    <notebook>
+                        <page string="Main Info">
+                            <field name="name" required="1"></field>
+                            <field name="code"></field>
+                            <field name="critearea" colspan="4" nolabel="1">
+                                <tree string="Test Cases">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="normal_range"/>
+                                    <field name="units"/>
+                                </tree>
+                                <form string="Test Cases">
+                                    <field name="name"/>
+                                    <field name="units"/>
+                                    <field name="sequence"/>
+                                    <newline/>
+                                    <field name="normal_range"/>
+                                </form>
+                            </field>
+                            <!--field name="product_id"/-->
+                        </page>
+                        <page string="Extra Info">
+                            <field name="info"></field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="oehealth_lab_test_type_tree">
+            <field name="name">Lab Test Types list</field>
+            <field name="model">oehealth.lab_test.type</field>
+            <!--field name="type">tree</field-->
+            <field name="arch" type="xml">
+                <tree string='Lab Test Type'>
+                    <field name="name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="oehealth_action_form_lab_test_type">
+            <!--field name="name">New Type of Lab Test</field-->
+            <field name="name">Lab Test Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.lab_test.type</field>
+            <!--field name="view_type">form</field-->
+            <field name="view_mode">tree,form</field>
+            <!--field name="view_id" ref="oehealth_lab_test_type_view"/-->
+            <field name="view_id" ref="oehealth_lab_test_type_tree"/>
+        </record>
+        
+        <record id="view_oehealth_lab_test_type_search" model="ir.ui.view">
+            <field name="name">oehealth.lab_test.type.select</field>
+            <field name="model">oehealth.lab_test.type</field>
+            <!--field name="type">search</field-->
+            <field name="arch" type="xml">
+                <search string="Search Lab Test Types">
+                    <separator orientation="vertical"/>
+                    <field name="name" select="1"/>
+                    <field name="code" select="1"/>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+        
+        <menuitem action="oehealth_action_form_lab_test_type" id="helth_conf_test" 
+            parent="oehealth_lab_tests_menu" />
+    
+        <!-- Lab Test -->
+        <record model="ir.ui.view" id="oehealth_lab_test_view">
+            <field name="name">Lab Test</field>
+            <field name="model">oehealth.lab_test</field>
+            <!--field name="type">form</field-->
+            <field name="arch" type="xml">
+                <form string="Laboratory Test">
+                   <notebook>
+                        <page string="Main Info">
+                            <field name="name" required="1"></field>
+                            <field name="test" required="1"></field>
+                            <field name="date_analysis"></field>
+                            <newline/>
+                            <field name="patient" required="1"></field>
+                            <field name="pathologist"></field>
+                            <newline/>
+                            <field name="date_requested"></field>
+                            <!--field name="requestor" required="1"></field-->
+                            <field name="requestor"></field>
+                            <field name="critearea" colspan="4" nolabel="1">
+                                <tree editable="top" string="Test Cases">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="result"/>
+                                    <field name="normal_range"/>
+                                    <field name="units"/>
+                                </tree>
+                                <form string="Test Cases">
+                                    <field name="name"/>
+                                    <field name="result"/>
+                                    <field name="units"/>
+                                    <field name="normal_range"/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Extra Info">
+                            <field name="results"></field>
+                            <newline/>
+                            <field name="diagnosis"></field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="oehealth_lab_test_tree">
+            <field name="name">Lab test type</field>
+            <field name="model">oehealth.lab_test</field>
+            <!--field name="type">tree</field-->
+            <field name="arch" type="xml">
+                <tree string='Lab test type'>
+                    <field name="name"></field>
+                    <field name="test"></field>
+                    <field name="patient"></field>
+                    <field name="date_analysis"></field>
+                </tree>
+            </field>
+        </record>
+         
+        <record model="ir.actions.act_window" id="oehealth_action_tree_lab_test">
+            <field name="name">Lab Tests Results</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.lab_test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="oehealth_lab_test_tree"/>
+        </record>
+        <menuitem action="oehealth_action_tree_lab_test" id="oehealth_action_lab_test_tree" 
+            parent="oehealth_lab_tests_menu" sequence="2"/>
+
+    </data>
+</openerp>

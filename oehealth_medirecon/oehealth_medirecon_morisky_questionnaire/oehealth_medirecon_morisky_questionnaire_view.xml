@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	    
+        <!-- Impatient Registration details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form1">
+            <field name="name">oehealth.hospital.inpatient_registration.form</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="inherit_id" ref="oehealth_hospital.view_oehealth_hospital_impatient_registration_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Morisk Questionnairies">
+                        <field name="medirecon_morisky_questionnaire_ids" colspan="4" nolabel="1">
+                            <!--tree string="Morisk Questionnairies">
+                                <field name="patient" />
+                                <field name="inpatient_reg" />
+                                <field name="researcher" />
+                                <field name="date" />
+                                <field name="adherence" />
+                            </tree>
+                            <form string="Morisk Questionnairie">
+                                <field name="patient" />
+                                <field name="inpatient_reg" />
+                                <field name="researcher" />
+                                <field name="date" />
+                                <field name="question01" />
+                                <field name="question02" />
+                                <field name="question03" />
+                                <field name="question04" />
+                                <field name="adherence" />
+                            </form-->
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+		<record id="view_oehealth_medirecon_morisky_questionnaire_tree" model="ir.ui.view">
+			<field name="name">oehealth.medirecon.morisky.questionnaire.tree</field>
+			<field name="model">oehealth.medirecon.morisky.questionnaire</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Morisk Questionnairies">
+					<field name="patient" />
+					<field name="inpatient_reg" />
+					<field name="researcher" />
+					<field name="date" />
+					<field name="adherence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_oehealth_medirecon_morisky_questionnaire_form" model="ir.ui.view">
+			<field name="name">oehealth.medirecon.morisky.questionnaire.form</field>
+			<field name="model">oehealth.medirecon.morisky.questionnaire</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Morisk Questionnaire">
+				    <group>
+                        <field name="patient" />
+                        <field name="inpatient_reg" />
+                        <field name="researcher" />
+                        <field name="date" />
+    					<field name="question01" />
+    					<field name="question02" />
+    					<field name="question03" />
+    					<field name="question04" />
+                        <field name="adherence" />
+                    </group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_oehealth_medirecon_morisky_questionnaire_search" model="ir.ui.view">
+			<field name="name">oehealth.medirecon.morisky.questionnaire.search</field>
+			<field name="model">oehealth.medirecon.morisky.questionnaire</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Morisk Questionnaire">
+					<field name="patient" />
+					<field name="inpatient_reg" />
+					<field name="researcher" />
+					<field name="adherence" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Inpatient regoistration" domain="[]" context="{'group_by':'inpatient_reg'}" />
+						<filter string="Researcher" domain="[]" context="{'group_by':'researcher'}" />
+						<filter string="Adherence" domain="[]" context="{'group_by':'adherence'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_oehealth_medirecon_morisky_questionnaire_view">
+			<field name="name">Morisk Questionnaire</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oehealth.medirecon.morisky.questionnaire</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oehealth_medirecon_morisky_questionnaire_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view"
+			id="act_open_oehealth_medirecon_morisky_questionnaire_view_form">
+			<field name="act_window_id" ref="act_open_oehealth_medirecon_morisky_questionnaire_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oehealth_medirecon_morisky_questionnaire_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view"
+			id="act_open_oehealth_medirecon_morisky_questionnaire_view_tree">
+			<field name="act_window_id" ref="act_open_oehealth_medirecon_morisky_questionnaire_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oehealth_medirecon_morisky_questionnaire_tree" />
+		</record>
+
+        <menuitem id="health_medirecon_morisky_questionnaire" name="Morisky Questionnairies"
+            parent="health_medirecon_root" sequence="8"
+            action="act_open_oehealth_medirecon_morisky_questionnaire_view" />
+
+	</data>
+</openerp>

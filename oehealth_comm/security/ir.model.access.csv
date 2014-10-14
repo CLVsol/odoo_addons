@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oehealth_comm_area,oehealth_comm.area,model_oehealth_comm_area,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_person_category,oehealth.person.category,model_oehealth_person_category,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_person_code,oehealth.person.code,model_oehealth_person_code,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_person_category,oehealth.person.category,model_oehealth_person_category,base.group_user,1,0,0,0
+access_oehealth_person,oehealth.person,model_oehealth_person,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_person_system,oehealth.person,model_oehealth_person,base.group_user,1,0,0,0
+access_oehealth_family,oehealth.family,model_oehealth_family,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_family_member,oehealth.family.member,model_oehealth_family_member,base.group_oehealth_comm_user,1,1,1,1
+access_oehealth_family_member_role,oehealth.family.member.role,model_oehealth_family_member_role,base.group_oehealth_comm_user,1,1,1,1

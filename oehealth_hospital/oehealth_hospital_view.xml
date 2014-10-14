@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <menuitem name="Hospital" id="oehealth_hospital_menu" 
+            parent="oehealth.health_menu" sequence="4"/>
+
+    </data>
+</openerp>

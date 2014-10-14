@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_oehealth_comm_person_patient_form">
+            <field name="name">oehealth.person.patient.form</field>
+            <field name="model">oehealth.person</field>
+            <field name="inherit_id" ref="oehealth_comm.view_person_form"/>
+            <field name="arch" type="xml">
+                <field name="category_ids" position="replace">
+                    <field name="is_patient"/>
+                    <label for="is_patient" string="Is a Patient?"/>
+                    <field name="category_ids" widget="many2many_tags" placeholder="Person Categories..."/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

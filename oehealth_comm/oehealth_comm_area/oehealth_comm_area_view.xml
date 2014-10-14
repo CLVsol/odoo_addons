@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Community Area -->
+        <record id="view_comm_area_form" model="ir.ui.view">
+            <field name="name">oehealth.comm_area.form</field>
+            <field name="model">oehealth.comm_area</field>
+            <field name="arch" type="xml">
+                <form string="Community Area" version="7.0">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_comm_area_tree" model="ir.ui.view">
+            <field name="name">oehealth.comm_area.tree</field>
+            <field name="model">oehealth.comm_area</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Companies">
+                    <field name="complete_name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_comm_area_filter" model="ir.ui.view">
+            <field name="name">Community Areas</field>
+            <field name="model">oehealth.comm_area</field>
+            <field name="arch" type="xml">
+                <search string="Community Areas">
+                    <field name="name" string="Community Area"/>
+                </search>
+             </field>
+        </record>
+
+        <record id="open_module_tree_comm_area" model="ir.actions.act_window">
+            <field name="name">Community Areas</field>
+            <field name="res_model">oehealth.comm_area</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="view_comm_area_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Community Area.
+              </p><p>
+                OpenERP's Community Area structure is used to manage all documents
+                related to persons by community areas.
+              </p>
+            </field>
+        </record>
+
+       <menuitem action="open_module_tree_comm_area" id="menu_oehealth_comm_area_tree" 
+           parent="oehealth_comm.menu_community_config" sequence="1"/>
+
+    </data>
+</openerp>

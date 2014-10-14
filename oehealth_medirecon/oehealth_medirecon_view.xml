@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="health_medirecon_root" name="Medicament Reconciliation" parent="oehealth.health_menu" 
+            sequence="11" />
+
+        <!-- Impatient Registration details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form">
+            <field name="name">oehealth.hospital.inpatient_registration.form</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="inherit_id" ref="oehealth_hospital.view_oehealth_hospital_impatient_registration_form"/>
+            <field name="arch" type="xml">
+                 <notebook position="inside">
+                    <page string="Medication Reconciliation">
+                        <group>
+                            <field name="adhesion"/>
+                            <field name="medicament_allergic"/>
+                            <field name="medicaments"/>
+                            <field name="medicament_provider"/>
+                            <field name="doctor"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

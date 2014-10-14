@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <!--menuitem name="Inpatient Administration" id="oehealth_hospital_inpatient_menu" parent="oehealth.health_menu" sequence="10"/-->
+
+        <!-- Patient details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form">
+            <field name="name">oehealth.patient.form</field>
+            <field name="model">oehealth.patient</field>
+            <field name="inherit_id" ref="oehealth_patient.view_patient_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Inpatient Registrations">
+                        <field name="inpatient_registration_ids" colspan="4" nolabel="1">
+                            <tree string="Inpatient Registrations">
+                                <field name="name"/>
+                                <field name="patient"/>
+                                <field name="admission_type"/>
+                                <field name="hospitalization_date"/>
+                                <field name="discharge_date"/>
+                                <field name="state"/>
+                            </tree>
+                            <form string="Inpatient Registrations">
+                                <!--field name="name" required="1"/-->
+                                <field name="name"/>
+                                <field name="admission_type"/>
+                                <field name="hospitalization_date"/>
+                                <field name="discharge_date"/>
+                                <field name="state"/>
+                                <field name="info"/>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+        <!--Impatient registration form view -->
+        <record id="view_oehealth_hospital_impatient_registration_form" model="ir.ui.view">
+            <field name="name">oehealth.hospital.inpatient_registration.form</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="arch" type="xml">
+                <form string="Inpatient Registration Information" version="7.0">
+                    <sheet>
+                        <group>
+                            <!--field name="name" required="1"></field-->
+                            <field name="name"></field>
+                            <field name="patient" required="1"></field>
+                        </group>
+                        <notebook>
+                            <page string="Administrative data">
+                                <group>
+<!--                                    
+                                    <group>
+                                        <field name="bed" required="1"></field>
+                                    </group>
+-->                                    
+                                    <newline/>
+                                    <group>
+                                        <!--field name="hospitalization_date" required="1" ></field-->
+                                        <field name="hospitalization_date"></field>
+                                        <!--field name="discharge_date" required="1"></field-->
+                                        <field name="discharge_date"></field>
+                                        <!--field name="attending_physician"></field-->
+                                        <!--field name="operating_physician"></field-->
+                                    </group>
+                                    <group>
+                                        <!--field name="admission_type" required="1"></field-->
+                                        <field name="admission_type"></field>
+                                        <field name="admission_area"></field>
+                                        <field name="admission_reason"></field>
+                                        <newline/>
+                                        <field name="info"></field>
+                                    </group>
+                                </group>
+                                <newline/>
+                                <group>
+                                    <group>
+                                        <field name="state" readonly="1"></field>
+                                        <button name="registration_confirm" states="free" string="Confirm Registration" icon="gtk-execute" type="object"/>
+                                    </group>
+                                    <group>
+                                        <button name="registration_cancel" states="confirmed" string="Cancel Registration" icon="gtk-cancel" type="object"/>
+                                        <button name="registration_admission" states="confirmed" string="Patient Admission" icon="gtk-execute" type="object"/>
+                                        <button name="patient_discharge" states="hospitalized" string="Discharge Patient" icon="gtk-go-forward" type="object"/>
+                                    </group>
+
+                                </group>
+                            </page>
+<!--                            
+                            <page string="Care Plan">
+                                <field name="nursing_plan"></field>
+                                <newline/>
+                                <field name="discharge_plan"></field>
+                            </page>
+-->                          
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oehealth_hospital_inpatient_registration_tree">
+            <field name="name">Patient Registration Info</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree colors="red:admission_type=='emergency';blue:admission_type=='maternity'" string='Inpatient Registration Info'>
+                        <field name="name"></field>
+                        <field name="patient"></field>
+                        <field name="hospitalization_date"></field>
+                        <field name="discharge_date"></field>
+                        <!--field name="bed"></field-->
+                        <field name="admission_type"></field>
+                        <field name="admission_area"></field>
+                        <field name="state"></field>
+                    </tree>
+                </field>
+        </record>
+    
+        <record id="view_oehealth_hospital_inpatient_registration_filter" model="ir.ui.view">
+            <field name="name">oehealth.hospital.inpatient_registration.select</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Hospitalizations">
+                    <separator orientation="vertical"/>
+                        <field name="name" select="1"/>
+                        <field name="patient" select="1"/>
+                        <field name="hospitalization_date" select="1"/>
+                        <field name="admission_type" select="1"/>
+                        <!--field name="bed" select="1"/-->
+                    <newline/>
+                </search>
+            </field>
+        </record>
+    
+        <record id="view_oehealth_hospital_inpatient" model="ir.ui.view">
+            <field name="name">oehealth.hospital.inpatient.calendar</field>
+            <field name="model">oehealth.hospital.inpatient_registration</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar string="Hospitalizations" color="patient" date_start="hospitalization_date" date_stop="discharge_date">
+                    <!--field name="bed"/-->
+                    <field name="patient"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oehealth_hospital_action_form_inpatient">
+            <field name="name">Inpatient Registration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.hospital.inpatient_registration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="oehealth_hospital_inpatient_registration_tree"/>
+        </record>
+
+        <menuitem action="oehealth_hospital_action_form_inpatient" 
+            id="oehealth_hospital_conf_inpatient_add" 
+            parent="oehealth_hospital_menu" sequence="10"/>
+
+    </data>
+</openerp>

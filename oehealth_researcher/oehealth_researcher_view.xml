@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	    
+		<record id="view_oehealth_researcher_tree" model="ir.ui.view">
+			<field name="name">oehealth.researcher.tree</field>
+			<field name="model">oehealth.researcher</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Researcher">
+					<field name="name" />
+					<field name="code" />
+					<!--field name="specialty" /-->
+					<field name="health_professional" />
+					<field name="institution" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_oehealth_researcher_form" model="ir.ui.view">
+			<field name="name">oehealth.researcher.form</field>
+			<field name="model">oehealth.researcher</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Researcher">
+					<field name="name" />
+					<field name="code" />
+					<!--field name="specialty" /-->
+					<field name="health_professional" />					
+					<field name="institution" />
+					<newline/>
+					<field name="info" colspan="4"/>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_oehealth_researcher_search" model="ir.ui.view">
+			<field name="name">oehealth.researcher.search</field>
+			<field name="model">oehealth.researcher</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Researcher">
+					<field name="name" />
+					<field name="code" />
+					<!--field name="specialty" /-->
+					<field name="health_professional" />
+					<field name="institution" />
+					<field name="info" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="ID" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Health Professional" domain="[]"
+							context="{'group_by':'health_professional'}" />
+						<!--filter string="Specialty" domain="[]"
+							context="{'group_by':'specialty'}" /-->
+						<filter string="Institution" domain="[]"
+							context="{'group_by':'institution'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_oehealth_researcher_view">
+			<field name="name">Researcher</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oehealth.researcher</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oehealth_researcher_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_oehealth_researcher_view_form">
+			<field name="act_window_id" ref="act_open_oehealth_researcher_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oehealth_researcher_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_oehealth_researcher_view_tree">
+			<field name="act_window_id" ref="act_open_oehealth_researcher_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oehealth_researcher_tree" />
+		</record>
+
+        <menuitem id="oehealth.health_physiciam_root" name="Researcher" 
+            parent="oehealth.health_config_menu" sequence="40" />
+
+        <menuitem id="oehealth_researcher" name=" Researcher" 
+            parent="oehealth.health_physiciam_root"
+            sequence="10" action="act_open_oehealth_researcher_view" />
+
+	</data>
+</openerp>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_oehealth_medirecon_medication_template,Oehealth.medirecon.medication.template,model_oehealth_medirecon_medication_template,base.group_oehealth_medirecon_user,1,1,1,1
+access_model_oehealth_medirecon_morisky_questionnaire,Oehealth.medirecon.morisky.questionnaire,model_oehealth_medirecon_morisky_questionnaire,base.group_oehealth_medirecon_user,1,1,1,1
