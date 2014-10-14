@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_authorization_tree" model="ir.ui.view">
+            <field name="name">oehealth.authorization.tree</field>
+            <field name="model">oehealth.authorization</field>
+            <field name="inherit_id" ref="oehealth_authorization.view_oehealth_authorization_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="gm_authorization_code"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_authorization_form" model="ir.ui.view">
+            <field name="name">oehealth.authorization.form</field>
+            <field name="model">oehealth.authorization</field>
+            <field name="inherit_id" ref="oehealth_authorization.view_oehealth_authorization_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Information" position="before">
+                    <group>
+                        <field name="gm_authorization_code"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_authorization_search" model="ir.ui.view">
+            <field name="name">oehealth.authorization.search</field>
+            <field name="model">oehealth.authorization</field>
+            <field name="inherit_id" ref="oehealth_authorization.view_oehealth_authorization_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="gm_authorization_code"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

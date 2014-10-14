@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_borderaux_row_tree" model="ir.ui.view">
+            <field name="name">oehealth.borderaux.row.tree</field>
+            <field name="model">oehealth.borderaux.row</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Borderaux Rows">
+                    <!--field name="borderaux_number" /-->
+                    <field name="borderaux_id" />
+                    <!--field name="authorization_id" /-->
+                    <field name="gm_authorization" />
+                    <field name="data_venda" />
+                    <field name="medicament_id" />
+                    <field name="prescriber_id" />
+                    <field name="insured_card_id" />
+                    <!--field name="insured_id" /-->
+                    <!--field name="patient_id" /-->
+                    <field name="estornado" />
+                    <field name="state" />
+                    <!--field name="category_ids" groups="oehealth_base.group_oehealth_suser"/-->
+                    <field name="tag_ids" groups="oehealth_base.group_oehealth_suser"/>
+                    <!--field name="borderaux_status" /-->
+                    <!--field name="borderaux_info" colspan="4"/-->
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_borderaux_row_form" model="ir.ui.view">
+            <field name="name">oehealth.borderaux.row.form</field>
+            <field name="model">oehealth.borderaux.row</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Borderaux Rows" version="7.0">
+                    <header>
+                        <button name="oehealth_borderaux_row_revised" string="Revised" states="new,okay" type="workflow" groups="oehealth_base.group_oehealth_borderaux_row_manager"/>
+                        <button name="oehealth_borderaux_row_waiting" string="Waiting" states="new,revised" type="workflow" groups="oehealth_base.group_oehealth_borderaux_row_manager"/>
+                        <button name="oehealth_borderaux_row_okay" string="Okay" states="new,revised,waiting" type="workflow" groups="oehealth_base.group_oehealth_borderaux_row_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,revised,waiting,okay"
+                        statusbar_colors='{"new":"blue","revised":"blue","waiting":"blue","okay":"blue"}' />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="borderaux_number"/>
+                            </div>
+                            <h1>
+                                <field name="borderaux_number" default_focus="1" placeholder="Borderaux Number..."/>
+                            </h1>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="gm_authorization"/>
+                            </div>
+                            <h2>
+                                <field name="gm_authorization" placeholder="GM Authorization..."/>
+                            </h2>
+                            <div class="oe_edit_only">
+                                <label for="category_ids" groups="oehealth_base.group_oehealth_suser"/>
+                            </div>
+                            <h2>
+                                <field name="category_ids" widget="many2many_tags" placeholder="Categories..." groups="oehealth_base.group_oehealth_suser"/>
+                            </h2>
+                            <div class="oe_edit_only">
+                                <label for="tag_ids" groups="oehealth_base.group_oehealth_suser"/>
+                            </div>
+                            <h2>
+                                <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="oehealth_base.group_oehealth_suser"/>
+                            </h2>
+                        </div>
+                        <notebook>
+                            <page string="Borderaux Rows Information">
+                                <group string="">
+                                    <field name="borderaux_id" />
+                                    <field name="authorization_id" />
+                                    <field name="insured_card_id" />
+                                    <field name="insured_id" />
+                                    <field name="patient_id" />
+                                    <field name="medicament_id" />
+                                    <field name="prescriber_id" />
+                                </group>
+                                <group string="">
+                                    <field name="numero_autoriz" />
+                                    <field name="data_limite_uso_medicamento" />
+                                    <field name="uso_continuo" />
+                                    <field name="medida_dia" />
+                                    <field name="unidade_dia" />
+                                    <field name="cod_prescritor" />
+                                    <field name="bor" />
+                                    <field name="numero_autoriz" />
+                                    <field name="data_venda" />
+                                    <field name="card_number" />
+                                    <field name="code" />
+                                    <field name="up" />
+                                    <field name="quant" />
+                                    <field name="produto_garantemed" />
+                                    <field name="uc" />
+                                    <field name="preco_consumidor" />
+                                    <field name="custo_fcia" />
+                                    <field name="pr_vda_sist" />
+                                    <field name="receb_usuar" />
+                                    <field name="saldo_a_receb" />
+                                    <field name="a_receber" />
+                                    <field name="prazo_compra" />
+                                    <field name="usuario" />
+                                    <field name="origem" />
+                                    <field name="crm_sp" />
+                                    <field name="principio_ativo" />
+                                    <field name="forma" />
+                                    <field name="preco_normal" />
+                                    <field name="tipo" />
+                                    <field name="pr_garantemed" />
+                                    <field name="estornado" />
+                                    <field name="total_autori" />
+                                </group>
+                                <group string="Information" />
+                                <div class="oe_edit_only">
+                                    <label for="borderaux_row_info"/>
+                                </div>
+                                <field name="borderaux_row_info" colspan="4" nolabel="1"/>
+                                <group groups="oehealth_base.group_oehealth_rmanager">
+                                    <group string="Creation" >
+                                        <field name="create_uid" string="User" />
+                                        <field name="create_date" string="Date" />
+                                    </group>
+                                    <group string="Last Update" >
+                                        <field name="write_uid" string="User" />
+                                        <field name="write_date" string="Date"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Annotations" groups="oehealth_base.group_oehealth_suser">
+                                <group>
+                                    <field name="annotation_ids" colspan="4" nolabel="1" />
+                                </group>
+                            </page>
+                            <page string="Settings" groups="oehealth_base.group_oehealth_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_borderaux_row_search" model="ir.ui.view">
+            <field name="name">oehealth.borderaux.row.search</field>
+            <field name="model">oehealth.borderaux.row</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Borderaux Rows">
+                    <field name="borderaux_id" />
+                    <field name="authorization_id" />
+                    <field name="gm_authorization" />
+                    <field name="medicament_id" />
+                    <field name="prescriber_id" />
+                    <field name="category_ids" />
+                    <field name="tag_ids" />
+                    <!--field name="borderaux_info" /-->
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Stage" domain="[]" context="{'group_by': 'state'}"/>
+                        <!--filter string="Borderaux Rows Status" domain="[]" context="{'group_by':'borderaux_status'}" /-->
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_oehealth_borderaux_row_view">
+            <field name="name">Borderaux Rows</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.borderaux.row</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oehealth_borderaux_row_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_oehealth_borderaux_row_view_form">
+            <field name="act_window_id" ref="act_open_oehealth_borderaux_row_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oehealth_borderaux_row_form" />
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_oehealth_borderaux_row_view_tree">
+            <field name="act_window_id" ref="act_open_oehealth_borderaux_row_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oehealth_borderaux_row_tree" />
+        </record>
+        
+        <menuitem name="Borderaux Rows" id="menu_health_garantemed_borderaux_borderaux_rows"
+            parent="oehealth_base.menu_health_garantemed_borderaux"
+            groups="oehealth_base.group_oehealth_borderaux_row_user"
+            sequence="10"
+            action="act_open_oehealth_borderaux_row_view" />
+
+    </data>
+</openerp>

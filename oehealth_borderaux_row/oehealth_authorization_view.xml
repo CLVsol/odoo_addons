@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_oehealth_authorization_form" model="ir.ui.view">
+            <field name="name">oehealth.authorization.form</field>
+            <field name="model">oehealth.authorization</field>
+            <field name="inherit_id" ref="oehealth_authorization.view_oehealth_authorization_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Borderaux Rows" >
+                        <group string="Borderaux Rows">
+                            <field name="borderaux_row_ids" colspan="4" nolabel="1">
+                                <!--tree>
+                                    <field name="patient_id"/>
+                                    <field name="health_entity_code" />
+                                </tree-->
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

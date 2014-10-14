@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_prescriber_form" model="ir.ui.view">
+            <field name="name">oehealth.prescriber.form</field>
+            <field name="model">oehealth.prescriber</field>
+            <field name="inherit_id" ref="oehealth_prescriber.view_oehealth_prescriber_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="date_prescriber_suspension" position="after">
+                    <field name="gm_prescriber_code" groups="oehealth_base.group_oehealth_gm_manager"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

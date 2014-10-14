@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!-- GaranteMed -->
+        <menuitem name="GaranteMed" id="menu_garantemed_root" 
+            sequence="16"/>
+            
+        <menuitem name= "Borderaux" id="menu_garantemed_borderaux_main" 
+            parent="menu_garantemed_root" 
+            sequence="10" />
+            
+        <menuitem name= "Borderaux Rows" id="menu_garantemed_borderaux_rows_main" 
+            parent="menu_garantemed_root" 
+            sequence="20" />
+            
+        <menuitem name="Configuration" id="menu_garantemed_config"  
+            parent="menu_garantemed_root"
+            sequence="90" />
+
+    </data>
+</openerp>
