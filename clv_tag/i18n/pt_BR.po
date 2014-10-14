@@ -1,0 +1,284 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_tag
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-29 16:43+0000\n"
+"PO-Revision-Date: 2014-07-29 16:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_tag
+#: model:ir.actions.act_window,help:clv_tag.act_open_clv_tag_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new tag.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova etiqueta.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_tag
+#: field:clv_tag,active:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Base Tag"
+msgstr "Etiqueta Base"
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: field:clv_tag,child_ids:0
+msgid "Child Tags"
+msgstr "Etiquetas Subordinadas"
+
+#. module: clv_tag
+#: field:clv_tag,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: clv_tag
+#: field:clv_tag,create_uid:0
+#: field:clv_tag.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_tag
+#: field:clv_tag,create_date:0
+#: field:clv_tag.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_tag
+#: field:clv_tag.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_tag
+#: view:clv_tag.history:0
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_tag
+#: field:clv_tag,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_tag
+#: constraint:clv_tag:0
+msgid "Error! You can not create recursive tags."
+msgstr "Erro! Não é possível criar etiquetas recursivas."
+
+#. module: clv_tag
+#: field:clv_tag,complete_name:0
+msgid "Full Tag"
+msgstr "Etiqueta Completa"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_tag
+#: field:clv_tag,id:0
+#: field:clv_tag.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_tag
+#: help:clv_tag,refresh_complete_name:0
+msgid "If checked, it will allow you to to refresh the stored full tag name."
+msgstr "Se marcado, será possível renovar o nome completo da etiqueta armazenado."
+
+#. module: clv_tag
+#: help:clv_tag,active:0
+msgid "If unchecked, it will allow you to hide the tag without removing it."
+msgstr "Se desmarcado, será possível esconder a etiqueta sem removê-la."
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Inactive Tags"
+msgstr "Etiquetas Inativas"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_tag
+#: field:clv_tag,write_uid:0
+#: field:clv_tag.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_tag
+#: field:clv_tag,write_date:0
+#: field:clv_tag.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_tag
+#: field:clv_tag,parent_left:0
+msgid "Left parent"
+msgstr "Superior a esquerda"
+
+#. module: clv_tag
+#: selection:clv_tag,state:0
+#: selection:clv_tag.history,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_tag
+#: field:clv_tag,notes:0
+#: field:clv_tag.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_tag
+#: view:clv_tag.history:0
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: selection:clv_tag,state:0
+#: selection:clv_tag.history,state:0
+msgid "Done"
+msgstr "Concluída"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: field:clv_tag,parent_id:0
+msgid "Parent Tag"
+msgstr "Etiqueta Superior"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Parent Tag..."
+msgstr "Etiqueta Superior..."
+
+#. module: clv_tag
+#: field:clv_tag,refresh_complete_name:0
+msgid "Refresh Full Tag"
+msgstr "Renovar Etiqueta Completa"
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: selection:clv_tag,state:0
+#: selection:clv_tag.history,state:0
+msgid "Revised"
+msgstr "Revisada"
+
+#. module: clv_tag
+#: field:clv_tag,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: field:clv_tag,state:0
+#: field:clv_tag.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_tag
+#: view:clv_tag.history:0
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: field:clv_tag,name:0
+#: field:clv_tag.history,tag_id:0
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Tag Code..."
+msgstr "Código da Etiqueta..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: field:clv_tag,history_ids:0
+#: view:clv_tag.history:0
+msgid "Tag History"
+msgstr "Histórico da Etiqueta"
+
+#. module: clv_tag
+#: view:clv_tag:0
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: view:clv_tag.history:0
+msgid "Tag..."
+msgstr "Etiqueta..."
+
+#. module: clv_tag
+#: view:clv_tag:0
+#: model:ir.actions.act_window,name:clv_tag.act_open_clv_tag_view
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_tag
+#: sql_constraint:clv_tag:0
+msgid "The Tag Code must be unique!"
+msgstr "O Código da Etiqueta deve ser único!"
+
+#. module: clv_tag
+#: help:clv_tag,code:0
+msgid "Use \"/\" to get an automatic new Code."
+msgstr "Use \"/\" parar gerar um novo Código automaticamente."
+
+#. module: clv_tag
+#: field:clv_tag.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_tag
+#: view:clv_tag.history:0
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_tag
+#: model:ir.model,name:clv_tag.model_clv_tag
+msgid "clv_tag"
+msgstr "clv_tag"
+
+#. module: clv_tag
+#: model:ir.model,name:clv_tag.model_clv_tag_history
+msgid "clv_tag.history"
+msgstr "clv_tag.history"
+
