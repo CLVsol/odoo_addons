@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_medicament_template_tree" model="ir.ui.view">
+            <field name="name">oehealth.medicament.template.tree</field>
+            <field name="model">oehealth.medicament.template</field>
+            <field name="inherit_id" ref="oehealth_medicament.view_oehealth_medicament_template_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="dispensation_id" />
+                    <field name="name" />
+                </field>
+                <field name="admin_times" position="after">
+                    <field name="pack_quantity" />
+                    <field name="refund_price" />
+                    <field name="total_refund_price" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_oehealth_medicament_template_form" model="ir.ui.view">
+            <field name="name">oehealth.medicament.template.form</field>
+            <field name="model">oehealth.medicament.template</field>
+            <field name="inherit_id" ref="oehealth_medicament.view_oehealth_medicament_template_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="dispensation_id" />
+                    <field name="name" />
+                </field>
+                <field name="admin_times" position="after">
+                    <field name="pack_quantity" />
+                    <field name="refund_price" />
+                    <field name="total_refund_price" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_oehealth_medicament_template_search" model="ir.ui.view">
+            <field name="name">oehealth.medicament.template.search</field>
+            <field name="model">oehealth.medicament.template</field>
+            <field name="inherit_id" ref="oehealth_medicament.view_oehealth_medicament_template_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medicament Template" position="inside">
+                    <field name="dispensation_id" />
+                </search>
+                <group string="Group By..." position="inside">
+                    <filter string="Dispensation ID" domain="[]" context="{'group_by':'dispensation_id'}" />
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

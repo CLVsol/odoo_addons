@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_dispensation_tree" model="ir.ui.view">
+            <field name="name">oehealth.dispensation.tree</field>
+            <field name="model">oehealth.dispensation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Dispensation">
+                    <field name="name" />
+                    <field name="dispensation_date" />
+                    <field name="prescription_date" />
+                    <field name="transcription_id" />
+                    <field name="prescriber_id" />
+                    <field name="pharmacy_id" />
+                    <field name="insured_card_id" />
+                    <field name="total_refund" />
+                    <field name="state"/>
+                    <field name="category_ids" groups="oehealth_base.group_oehealth_suser"/>
+                    <field name="tag_ids" groups="oehealth_base.group_oehealth_suser"/>
+                    <field name="notes" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_dispensation_form" model="ir.ui.view">
+            <field name="name">oehealth.dispensation.form</field>
+            <field name="model">oehealth.dispensation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Dispensation" version="7.0">
+                    <header>
+                        <button name="oehealth_dispensation_revised" string="Revised" states="new,okay" type="workflow" groups="oehealth_base.group_oehealth_dispensation_manager"/>
+                        <button name="oehealth_dispensation_waiting" string="Waiting" states="new,revised" type="workflow" groups="oehealth_base.group_oehealth_dispensation_manager"/>
+                        <button name="oehealth_dispensation_okay" string="Okay" states="new,revised,waiting" type="workflow" groups="oehealth_base.group_oehealth_dispensation_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,revised,waiting,okay"
+                        statusbar_colors='{"new":"blue","revised":"blue","waiting":"blue","okay":"blue"}' />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box oe_right">
+                            <!--button name="get_authorization" states="new,revised,waiting,okay" string="Get Authorization" 
+                                    type="object" icon="gtk-execute" context="{}" attrs="{}" class="oe_edit_only"/-->
+                            <button name="create_transcription" states="new,revised,waiting,okay" string="Create Transcription" 
+                                    type="object" icon="gtk-execute" context="{}" attrs="{}" class="oe_edit_only" groups="oehealth_base.group_oehealth_dispensation_manager"/>
+                            <button name="get_authorization" states="new,revised,waiting,okay" string="Get Authorization" 
+                                    type="object" icon="gtk-execute" context="{}" attrs="{}" class="oe_edit_only" groups="oehealth_base.group_oehealth_dispensation_manager"/>
+                        </div>
+                        <div string="Dispensation" class="oe_title">
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="name"/>
+                            </div>
+                            <h2>
+                                <field name="name" default_focus="1" placeholder="Dispensation ID..." />
+                            </h2>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="dispensation_date"/>
+                            </div>
+                            <h3>
+                                <field name="dispensation_date" placeholder="Dispensation Date..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="prescription_date"/>
+                            </div>
+                            <h3>
+                                <field name="prescription_date" placeholder="Prescription Date..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="prescriber_id"/>
+                            </div>
+                            <h3>
+                                <field name="prescriber_id" placeholder="Prescriber..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="pharmacy_id"/>
+                            </div>
+                            <h3>
+                                <field name="pharmacy_id" placeholder="Pharmacy..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="insured_card_id"/>
+                            </div>
+                            <h3>
+                                <field name="insured_card_id" placeholder="Insured Card..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="price_list_id"/>
+                            </div>
+                            <h3>
+                                <field name="price_list_id" placeholder="Price List..." />
+                            </h3>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="total_refund"/>
+                            </div>
+                            <h3>
+                                <field name="total_refund" />
+                            </h3>
+                            <div class="oe_edit_only">
+                                <label for="category_ids" groups="oehealth_base.group_oehealth_suser"/>
+                            </div>
+                            <h2>
+                                <field name="category_ids" widget="many2many_tags" placeholder="Categories..." groups="oehealth_base.group_oehealth_suser"/>
+                            </h2>
+                            <div class="oe_edit_only">
+                                <label for="tag_ids" groups="oehealth_base.group_oehealth_suser"/>
+                            </div>
+                            <h2>
+                                <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="oehealth_base.group_oehealth_suser"/>
+                            </h2>
+                            <!--div class="oe_edit_only"-->
+                            <div>
+                                <label for="transcription_id"/>
+                            </div>
+                            <h3>
+                                <field name="transcription_id" />
+                            </h3>
+                        </div>
+                        <group>
+                            <!--field name="patient_id" /-->
+                            <!--field name="pregnancy_warning" /-->
+                            <!--field name="pharmacy" /-->
+                            <!--field name="pbm_prescription_warning_ack" /-->
+                            <!--field name="user_id" /-->
+                            <newline/>
+                            <!--field name="dispensation_line" colspan="4"/-->
+							<field name="dispensation_line" colspan="4">
+							    <tree>
+				                    <field name="name" />
+				                    <field name="medicament" />
+				                    <!--field name="form" /-->
+				                    <!--field name="route" /-->
+				                    <field name="dose" />
+				                    <field name="dose_unit" />
+				                    <field name="quantity" />
+				                    <field name="frequency" />
+				                    <field name="frequency_unit" />
+				                    <field name="duration" />
+				                    <field name="duration_period" />
+				                    <!--field name="admin_times" /-->
+				                    <field name="pack_quantity" />
+				                    <field name="refund_price" />
+				                    <field name="total_refund_price" />
+							    </tree>
+							</field>
+							<newline/>
+                        </group>
+                        <notebook>
+                            <page string="Information" groups="oehealth_base.group_oehealth_suser">
+                                <group string="Notes"/>
+                                <div class="oe_edit_only">
+                                    <label for="notes"/>
+                                </div>
+                                <field name="notes" />
+                                <group groups="oehealth_base.group_oehealth_rmanager">
+                                    <group string="Creation" >
+                                        <field name="create_uid" string="User" />
+                                        <field name="create_date" string="Date" />
+                                    </group>
+                                    <group string="Last Update" >
+                                        <field name="write_uid" string="User" />
+                                        <field name="write_date" string="Date"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Annotations" groups="oehealth_base.group_oehealth_suser">
+                                <group>
+                                    <field name="annotation_ids" colspan="4" nolabel="1" />
+                                </group>
+                            </page>
+                            <page string="Settings" groups="oehealth_base.group_oehealth_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_oehealth_dispensation_search" model="ir.ui.view">
+            <field name="name">oehealth.dispensation.search</field>
+            <field name="model">oehealth.dispensation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Dispensation">
+                    <field name="name" />
+                    <field name="pharmacy_id" />
+                    <field name="prescriber_id" />
+                    <field name="prescription_date" />
+                    <field name="state" />
+                    <field name="notes"/>
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Pharmacy" domain="[]" context="{'group_by':'pharmacy_id'}" />
+                        <filter string="Prescriber" domain="[]" context="{'group_by':'prescriber_id'}" />
+                        <filter string="Prescription Date" domain="[]" context="{'group_by':'prescription_date'}" />
+                        <filter string="Stage" domain="[]" context="{'group_by':'state'}" />
+                        <filter string="Transcription ID" domain="[]" context="{'group_by':'transcription_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_oehealth_dispensation_view">
+            <field name="name">Dispensation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.dispensation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oehealth_dispensation_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_oehealth_dispensation_view_form">
+            <field name="act_window_id" ref="act_open_oehealth_dispensation_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oehealth_dispensation_form" />
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_oehealth_dispensation_view_tree">
+            <field name="act_window_id" ref="act_open_oehealth_dispensation_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oehealth_dispensation_tree" />
+        </record>
+        
+        <menuitem name="Dispensations" id="menu_health_medication_dispensation_dispensations"  
+            parent="oehealth_base.menu_health_medication_dispensation"
+            groups="oehealth_base.group_oehealth_dispensation_user"
+            sequence="10" 
+            action="act_open_oehealth_dispensation_view" />
+
+    </data>
+</openerp>
