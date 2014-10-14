@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_person_form" model="ir.ui.view">
+            <field name="name">oehealth.person.form</field>
+            <field name="model">oehealth.person</field>
+            <field name="inherit_id" ref="oehealth_person.view_oehealth_person_form" />
+            <field name="arch" type="xml">
+                <label for="street" position="replace">
+                    <label for="street" string="Address" readonly="True"/>
+                </label>
+                <field name="street" position="replace">
+                    <field name="street" readonly="True" style="width: 80%%"/>
+                    <field name="number" placeholder="number" readonly="True" style="width: 18%%"/>
+                </field>
+                <field name="street2" position="replace">
+                    <field name="street2" placeholder="complement" readonly="True" style="width: 49%%"/>
+                    <field name="district" placeholder="district" readonly="True" style="width: 49%%"/>
+                </field>
+                <field name="city" position="replace">
+                    <field name="city" invisible="1" readonly="True"/>
+                    <field name="l10n_br_city_id" placeholder="city" readonly="True" style="width: 61%%"/>
+                </field>
+                <field name="state_id" position="after">
+                </field>
+                <field name="zip" position="replace">
+                    <field name="zip" placeholder="CEP" readonly="True"/>
+                </field>
+                <field name="phone" position="replace">
+                    <field name="cpf" readonly="True"/>
+                    <field name="rg" readonly="True"/>
+                    <field name="rg_emitter" readonly="True"/>
+                    <field name="phone" readonly="True"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

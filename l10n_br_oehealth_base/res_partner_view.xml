@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_l10n_br_base_partner_filter">
+            <field name="name">l10n_br_base.partner.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_br_base.view_l10n_br_base_partner_filter" />
+            <field name="arch" type="xml">
+                <field name="cnpj_cpf" position="after">
+                    <field name="cpf" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_l10n_br_base_partner_tree">
+            <field name="name">l10n_br_base.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_br_base.view_l10n_br_base_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="cnpj_cpf" position="after">
+                    <field name="cnpj_cpf" />
+                    <field name="cpf" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_l10n_br_base_partner_form">
+            <field name="name">l10n_br_base.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_br_base.view_l10n_br_base_partner_form" />
+            <field name="arch" type="xml">
+                <!--field name="is_company" position="replace">
+                    <field name="is_company" on_change="onchange_mask_cnpj_cpf(is_company, cnpj_cpf)"
+                        class="oe_inline" />
+                </field-->
+                <field name="cnpj_cpf" position="after">
+                    <div class="oe_edit_only">
+                        <label for="cpf" string="CPF(2)" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    </div>
+                    <field colspan="4" name="cpf" on_change="onchange_mask_cpf(is_company, cpf)" placeholder="CPF(2)..." 
+                           attrs="{'invisible': [('is_company','=', True)]}" nolabel="1" />
+                    <div class="oe_edit_only">
+                        <label for="rg" string="RG" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    </div>
+                    <field colspan="4" name="rg" placeholder="RG..." style="width: 45%%" attrs="{'invisible': [('is_company','=', True)]}" nolabel="1" />
+                    <field colspan="4" name="rg_emitter" placeholder="Emitter..." style="width: 45%%" attrs="{'invisible': [('is_company','=', True)]}" nolabel="1" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="l10n_br_zip_view_partner_form2">
+            <field name="name">l10n_br_base.partner.form2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_br_zip.l10n_br_zip_view_partner_form2"/>
+            <field name="priority">33</field>
+            <field name="arch" type="xml">
+                <button name="zip_search" position="replace">
+                    <div class="oe_edit_only">
+                        <button name="zip_search" string="Buscar Endereço" type="object"/>
+                    </div>
+                </button>
+            </field>
+        </record>
+
+    </data>
+</openerp>
