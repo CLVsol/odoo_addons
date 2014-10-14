@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- JCAFB 2015 - Inquérito para detecção de Anemia -->
+        <record model="survey" id="QAN15">
+            <field name="title">[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia</field>
+            <field name="note">[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia</field>
+            <field name="responsible_id" ref="base.user_root"/>
+            <field name="type" ref="survey_type_JCAFB_2015"/>
+            <field name="color">5</field>
+        </record>
+
+            <record model="survey.page" id="QAN15_1">
+                <field name="title">[QAN15_1] Preâmbulo</field>
+                <field name="note">[QAN15_1] Preâmbulo</field>
+                <field name="survey_id" ref="QAN15"/>
+                <field eval="10" name="sequence"/>
+            </record>
+
+                 <record model="survey.question" id="QAN15_1_1">
+                    <field name="question">[QAN15_1_1] Identificação do Paciente</field>
+                    <field name="type">multiple_textboxes_diff_type</field>
+                    <field name="page_id" ref="QAN15_1"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Preencher o Nome e o Código.</field>
+                    <field name="required_type">exactly</field>
+                    <field name="req_ans">2</field>
+                </record>
+
+                    <record model="survey.answer" id="QAN15_1_1_1">
+                        <field name="answer">[QAN15_1_1_1] Nome</field>
+                        <field name="question_id" ref="QAN15_1_1"/>
+                        <field eval="10" name="sequence"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_1_1_2">
+                        <field name="answer">[QAN15_1_1_2] Código</field>
+                        <field name="question_id" ref="QAN15_1_1"/>
+                        <field eval="20" name="sequence"/>
+                        <field name="type">char</field>
+                    </record>
+
+                <record model="survey.question" id="QAN15_1_2">
+                    <field name="question">[QAN15_1_2] Aplicação do Questionário</field>
+                    <field name="type">multiple_textboxes_diff_type</field>
+                    <field name="page_id" ref="QAN15_1"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Preencher o Nome, o Código e a Data.</field>
+                    <field name="required_type">exactly</field>
+                    <field name="req_ans">3</field>
+                </record>
+
+                    <record model="survey.answer" id="QAN15_1_2_1">
+                        <field name="answer">[QAN15_1_2_1] Aplicado por</field>
+                        <field name="question_id" ref="QAN15_1_2"/>
+                        <field eval="10" name="sequence"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_1_2_2">
+                        <field name="answer">[QAN15_1_2_2] Código</field>
+                        <field name="question_id" ref="QAN15_1_2"/>
+                        <field eval="20" name="sequence"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_1_2_3">
+                        <field name="answer">[QAN15_1_2_3] Data</field>
+                        <field name="question_id" ref="QAN15_1_2"/>
+                        <field eval="30" name="sequence"/>
+                        <field name="type">date</field>
+                    </record>
+
+                <record model="survey.question" id="QAN15_1_3">
+                    <field name="question">[QAN15_1_3] Entrevistado</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QAN15_1"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Nome (Grau de Parentesco)</field>
+                </record>
+
+                    <record model="survey.answer" id="QAN15_1_3_1">
+                        <field name="answer">[QAN15_1_3_1] a) Responsável</field>
+                        <field name="question_id" ref="QAN15_1_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_1_3_2">
+                        <field name="answer">[QAN15_1_3_2] b) Paciente</field>
+                        <field name="question_id" ref="QAN15_1_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_1_3_3">
+                        <field name="answer">[QAN15_1_3_3] c) Cuidador</field>
+                        <field name="question_id" ref="QAN15_1_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+            <record model="survey.page" id="QAN15_2">
+                <field name="title">[QAN15_2] Questionário</field>
+                <field name="note">[QAN15_2] Questionário</field>
+                <field name="survey_id" ref="QAN15"/>
+                <field eval="20" name="sequence"/>
+            </record>
+
+    </data>
+</openerp>
