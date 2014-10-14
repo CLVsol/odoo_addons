@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_oehealth_physician,oehealth.physician,model_oehealth_physician,base.group_oehealth_physician_user,1,1,1,1

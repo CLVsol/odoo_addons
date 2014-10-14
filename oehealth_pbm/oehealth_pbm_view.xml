@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="PBM" id="oehealth_pbm.pbm_menu"
+            groups="base.group_oehealth_pbm_user" sequence="12"/>
+        
+        <menuitem name="Configuration" id="oehealth_pbm.pbm_config_menu" 
+            parent="oehealth_pbm.pbm_menu" sequence="90"/>
+
+    </data>
+</openerp>

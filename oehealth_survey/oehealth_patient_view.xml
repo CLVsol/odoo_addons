@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Patient details -->
+        <record model="ir.ui.view" id="view_oehealth_patient_form">
+            <field name="name">oehealth.patient.form</field>
+            <field name="model">oehealth.patient</field>
+            <field name="inherit_id" ref="oehealth_patient.view_patient_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Surveys">
+                        <field name="survey_ids" colspan="4" nolabel="1">
+                            <tree string="Survey Answer">
+                                <field name="survey_id"/>
+                                <field name="date_create"/>
+                                <field name="user_id"/>
+                                <field name="response_type"/>
+                                <field name="state"/>
+                            </tree>
+                            <form string="Survey Answer">
+                                <field name="survey_id"/>
+                                <field name="date_create"/>
+                                <field name="user_id"/>
+                                <field name="response_type"/>
+                                <field name="question_ids" nolabel="1" colspan="4" />
+                                <field name="state"/>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

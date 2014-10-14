@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insured Code form view -->
+        <record id="view_insured_code_form" model="ir.ui.view">
+            <field name="name">oehealth.pbm.insured.code.form</field>
+            <field name="model">oehealth.pbm.insured.code</field>
+            <field name="arch" type="xml">
+                <form string="Insured Code" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Insured Code..."/>
+                            </h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="This Insured Code">
+                                <group>
+                                    <group>
+                                        <field name="code_number"/>
+                                        <field name="active"/>
+                                    </group>
+                                    <group>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_insured_code_form" model="ir.actions.act_window">
+            <field name="name">Insured Codes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.pbm.insured.code</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+        <record id="action_insured_code_form" model="ir.actions.act_window">
+            <field name="name">Insured Codes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.pbm.insured.code</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">Manage the insured codes.</field>
+        </record>
+
+        <menuitem action="action_insured_code_form" id="menu_insured_code_form" 
+            name="Insured Codes" sequence="2"
+            parent="oehealth_pbm.pbm_config_menu"/>
+
+    </data>
+</openerp>

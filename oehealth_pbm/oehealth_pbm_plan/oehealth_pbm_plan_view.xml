@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="PBM Plans" id="oehealth_pbm_plans_menu" 
+            parent="oehealth_pbm.pbm_config_menu" sequence="9"/>
+
+        <!-- OePBM Plans -->
+        
+        <record id="view_oehealth_pbm_prescription_plan_filter" model="ir.ui.view">
+            <field name="name">PBM Plans</field>
+            <field name="model">oehealth.pbm.plan</field>
+            <field name="arch" type="xml">
+                <search string="PBM Plans">
+                    <field name="name" string="PBM Plan"/>
+                    <field name="company"/>
+                    <field name="alias" />
+                    <field name="cod_plan" />
+                    <field name="cod_oper" />
+                    <field name="notes"/>
+                    <group expand="0" string="Group By...">
+                        <!--filter string="Manager" icon="terp-personal" domain="[]" context="{'group_by':'parent_id'}"/-->
+                        <!--filter string="Coach" icon="terp-personal" domain="[]" context="{'group_by':'coach_id'}"/-->
+                        <!--filter string="Community Area" icon="terp-personal+" domain="[]" context="{'group_by':'community_area_id'}"/-->
+                        <!--filter string="Family" icon="terp-personal+" domain="[]" context="{'group_by':'family_id'}"/-->
+                        <!--filter string="Job" icon="terp-gtk-select-all" domain="[]" context="{'group_by':'job_id'}"/-->
+                        <!--filter string="Company" icon="terp-go-home" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/-->
+                    </group>
+                </search>
+             </field>
+         </record>
+
+        <record id="oehealth_pbm_plan_view" model="ir.ui.view">
+            <field name="name">oehealth.pbm.plan.form</field>
+            <field name="model">oehealth.pbm.plan</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <!--form string="PBM Plan" version="7.0"-->
+                <form string="PBM Plan">
+                    <field name="name" />
+                    <field name="company" />
+                    <field name="alias" />
+                    <field name="cod_plan" />
+                    <field name="cod_oper" />
+                    <newline/>
+                    <field name="notes" colspan="4"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oehealth_pbm_plan_tree" model="ir.ui.view">
+            <field name="name">oehealth.pbm.plan.tree</field>
+            <field name="model">oehealth.pbm.plan</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="PBM Plans">
+                    <field name="name" />
+                    <field name="company" />
+                    <field name="alias" />
+                    <field name="cod_plan" />
+                    <field name="cod_oper" />
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="oehealth_pbm_action_tree_pbm_plan">
+            <field name="name">PBM Plans</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.pbm.plan</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_oehealth_pbm_plan_tree"/>
+        </record>
+        
+        <menuitem action="oehealth_pbm_action_tree_pbm_plan" 
+            id="oehealth_pbm_edit_pbm_plan" parent="oehealth_pbm_plans_menu" sequence="2"/>
+        
+    </data>
+</openerp>

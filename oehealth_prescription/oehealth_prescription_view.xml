@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="Prescriptions" id="oehealth.health_config_prescriptions_menu" 
+            parent="oehealth.health_config_menu" sequence="10"/>
+            
+        <menuitem id="health_prescriptions_root" name="Prescriptions" parent="oehealth.health_menu" 
+            sequence="10" />
+
+    </data>
+</openerp>

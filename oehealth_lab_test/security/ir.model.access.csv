@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_oehealth_lab_test","oehealth.lab_test","model_oehealth_lab_test","base.group_oehealth_lab_test_user",1,1,1,1
+"access_oehealth_lab_test_units","oehealth.lab.test.units","model_oehealth_lab_test_units","base.group_oehealth_lab_test_user",1,1,1,1
+"access_oehealth_lab_test_critearea","oehealth_lab_test.critearea","model_oehealth_lab_test_critearea","base.group_oehealth_lab_test_user",1,1,1,1
+"access_oehealth_lab_test_type","oehealth.lab_test_type","model_oehealth_lab_test_type","base.group_oehealth_lab_test_user",1,1,1,1
+"access_oehealth_patient_lab_test","oehealth.patient.lab.test","model_oehealth_patient_lab_test","base.group_oehealth_lab_test_user",1,1,1,1

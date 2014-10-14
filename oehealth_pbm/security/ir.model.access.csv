@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_oehealth_pbm_plan,oehealth_pbm.plan,model_oehealth_pbm_plan,base.group_oehealth_pbm_user,1,1,1,1

@@ -1,0 +1,250 @@
+<openerp>
+    <data>
+
+        <!-- Patient form view -->
+        <record id="view_patient_form" model="ir.ui.view">
+            <field name="name">oehealth.patient.form</field>
+            <field name="model">oehealth.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patient" version="7.0">
+                    <sheet>
+                        <field name="image_medium" widget='image' class="oe_left oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="person_id"/>
+                            </h1>
+                            <label for="category_ids" class="oe_edit_only"/>
+                            <field name="category_ids" widget="many2many_tags" placeholder="Person Categories..."/>
+                            <field name="person_code" placeholder="Person Code..."/>
+                            <field name="patient_code" placeholder="Patient Code...."/>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="Public Information">
+                                <group>
+                                    <group>
+                                        <field name="community_area_id" />
+                                        <!--field name="role_id" /-->
+                                        <!--field name="coach_id"/-->
+                                    </group>
+                                    <group string="Contact Information">
+                                        <field name="partner_id" readonly="1" required="0" 
+                                               string="Address"
+                                               on_change="onchange_partner_id(partner_id)" 
+                                               context="{'show_address': 1}" 
+                                               options='{"always_reload": True, "highlight_first_line": True}' />
+                                    </group>
+                                    <!--group>
+                                        <field name="user_id" string="Related User"/>
+                                    </group-->
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <!--page string="Personal Information" groups="base.group_oehealth_user"-->
+                            <page string="Personal Information">
+                                <group>
+                                    <group string="Citizenship &amp; Other Info">
+                                        <field name="country_id" options='{"no_open": True}'/>
+                                        <field name="identification_id" />
+                                        <!--field name="passport_id" groups="base.group_oehealth_user"/-->
+                                        <!--field name="bank_account_id"/-->
+                                        <field name="otherid" groups="base.group_oehealth_user"/>
+                                    </group>
+                                    <!--group string="Contact Information">
+                                        <field name="partner_id" readonly="1" required="0" 
+                                               string="Address"
+                                               on_change="onchange_partner_id(partner_id)" 
+                                               context="{'show_address': 1}" 
+                                               options='{"always_reload": True, "highlight_first_line": True}' />
+                                    </group-->
+                                    <group string="Status">
+                                        <field name="gender"/>
+                                        <field name="marital"/>
+                                    </group>
+                                    <group string="Birth">
+                                        <field name="birthday"/>
+                                        <field name="age"/>
+                                        <!--field name="birth_l10n_br_city_id" class="oe_no_button" placeholder="Cidade" style="width: 60%%" options='{"no_open": True}'/-->
+                                        <!--field name="birth_state_id" class="oe_no_button" placeholder="Estado" style="width: 30%%" options='{"no_open": True}'/-->
+                                        <!--field name="birth_country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}'/-->
+                                    </group>
+                                    <group string="Family">
+                                        <field name="family_id" />
+                                        <field name="spouse_id" />
+                                        <field name="father_id" />
+                                        <field name="mother_id" />
+                                        <field name="responsible_id" />
+                                    </group>
+                                </group>
+                            </page>
+                            <!--page string="Community Settings">
+                                <group>
+                                    <group string="Active" name="active_group">
+                                        <field name="active"/>
+                                    </group>
+                                </group>
+                            </page-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oehealth_patient_filter" model="ir.ui.view">
+            <field name="name">Patients</field>
+            <field name="model">oehealth.patient</field>
+            <field name="arch" type="xml">
+                <search string="Patients">
+                    <field name="name" string="Patients"/>
+                    <field name="community_area_id" />
+                    <!--field name="category_ids"/-->
+                    <group expand="0" string="Group By...">
+                        <!--filter string="Leader" icon="terp-personal" domain="[]" context="{'group_by':'parent_id'}"/-->
+                        <!--filter string="Coach" icon="terp-personal" domain="[]" context="{'group_by':'coach_id'}"/-->
+                        <filter string="Community Area" icon="terp-personal+" domain="[]" context="{'group_by':'community_area_id'}"/>
+                        <!--filter string="Family" icon="terp-personal+" domain="[]" context="{'group_by':'family_id'}"/-->
+                        <!--filter string="role" icon="terp-gtk-select-all" domain="[]" context="{'group_by':'role_id'}"/-->
+                        <!--filter string="Community" icon="terp-go-home" domain="[]" context="{'group_by':'community_id'}" groups="base.group_multi_company"/-->
+                    </group>
+                </search>
+             </field>
+         </record>
+
+        <record model="ir.ui.view" id="oehealth_kanban_view_patients">
+            <field name="name">COMM - Community Kanban</field>
+            <field name="model">oehealth.patient</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--field name="last_login"/-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_patient_vignette">
+                                <div class="oe_patient_image">
+                                    <a type="open"><img t-att-src="kanban_image('oehealth.patient', 'image_medium', record.id.value)" class="oe_patient_picture"/></a>
+                                </div>
+                                <div class="oe_patient_details">
+                                    <h4>
+                                        <!--!a type="open"><field name="name"/><t t-if="record.login.raw_value"> (<field name="login"/>)</t></a-->
+                                        <field name="name"/>
+                                    </h4>
+                                    <ul>
+                                        <!--li id="last_login">
+                                            <span t-if="record.last_login.raw_value &amp;&amp; record.last_login.raw_value.is().today()" class="oe_kanban_button" style="font-size: 100%%">
+                                                  <t t-esc="record.last_login.raw_value.toString('HH:mm')"/>
+                                            </span>
+                                        </li-->
+                                        <!--li t-if="record.identification_id.raw_value">
+                                            <field name="identification_id"/>
+                                        </li-->
+                                        <li t-if="record.person_code.raw_value">
+                                            <field name="person_code"/>
+                                        </li>
+                                        <li t-if="record.patient_code.raw_value">
+                                            <field name="patient_code"/>
+                                        </li>
+                                        <!--li t-if="record.category_ids.raw_value"><field name="category_ids" widget="many2many_tags" placeholder="Tags..."/></li-->
+                                        <!--li t-if="record.coach_id.raw_value"><field name="coach_id"/></li-->
+                                        <!--li t-if="record.community_id.raw_value"><field name="community_id"/></li-->
+                                        <!--li t-if="record.category_ids.raw_value"><field name="category_ids"/></li-->
+                                        <!--li t-if="record.role_id.raw_value"><field name="role_id"/></li-->
+                                        <!--li t-if="record.work_location.raw_value"><field name="work_location"/></li-->
+                                        <!--li t-if="record.work_phone.raw_value">Tel: <field name="work_phone"/></li-->
+                                        <!--li t-if="record.mobile_phone.raw_value">Mobile: <field name="mobile_phone"/></li-->
+                                        <!--li t-if="record.work_email.raw_value"><a t-attf-href="mailto:#{record.work_email.value}"><field name="work_email"/></a></li-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                $('.oe_patient_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_patient_picture_wide') } });
+                            </script>
+                        </t>
+                    </templates>
+                </kanban>
+    
+            </field>
+        </record>
+
+        <record id="view_patient_tree" model="ir.ui.view">
+            <field name="name">oehealth.patient.category</field>
+            <field name="model">oehealth.patient</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Patients">
+                    <field name="name"/>
+                    <!--field name="person_code"/-->
+                    <!--field name="category_ids"/-->
+                    <!--field name="coach_id"/-->
+                    <!--field name="name_code"/-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_view_patient_list_my" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">oehealth.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_oehealth_patient_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new patient.
+              </p><p>
+                With just a quick glance on the OpenERP patient screen, you
+                can easily find all the information you need for each patient;
+                contact data, role position, availability, etc.
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="oehealth_patient_root" name="Patients" 
+            parent="oehealth.health_menu" sequence="10" />
+        
+        <menuitem action="open_view_patient_list_my" id="menu_open_view_patient_list_my" 
+            sequence="1" parent="oehealth_patient_root"/>
+
+        <!-- Patient architecture -->
+        <record id="view_partner_tree2" model="ir.ui.view">
+            <field name="name">oehealth.patient.tree</field>
+            <field name="model">oehealth.patient</field>
+            <field name="field_parent">child_ids</field>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Patients">
+                    <field name="name"/>
+                    <!--field name="work_phone"/-->
+                    <!--field name="work_email"/-->
+                    <!--field name="community_id" /-->
+                    <!--field name="community_area_id"/-->
+                    <!--field name="role_id"/-->
+                    <!--field name="coach_id" invisible="1"/-->
+                    <!--field name="parent_id" invisible="1"/-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="action2" model="ir.actions.act_window">
+            <field name="name">Leadership Hierarchy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oehealth.patient</field>
+            <field name="domain">[('id','in',active_ids)]</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="view_partner_tree2"/>
+        </record>
+
+        <ir_set>
+            <field eval="'action'" name="key"/>
+            <field eval="'client_action_multi'" name="key2"/>
+            <field eval="['oehealth.patient']" name="models"/>
+            <field name="name">Leadership Hierarchy</field>
+            <field eval="'ir.actions.act_window,'+str(action2)" name="value"/>
+            <field eval="True" name="isobject"/>
+            <field eval="True" name="replace"/>
+        </ir_set>
+
+    </data>
+</openerp>

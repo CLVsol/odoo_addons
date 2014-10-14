@@ -1,0 +1,23 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oecomm_survey_type_manager,oecom.survey.type.manager,model_oecomm_survey_type,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_tbl_column_heading_manager,oecom.survey.tbl.column.heading manager,model_oecomm_survey_tbl_column_heading,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_res_partner_user,oecom.survey.res.partner.user,base.model_res_partner,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_user,oecom.survey.user,model_oecomm_survey,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_page_user,oecom.survey.page user,model_oecomm_survey_page,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_question_user,oecom.survey.question user,model_oecomm_survey_question,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_answer_user,oecom.survey.answer user,model_oecomm_survey_answer,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_user,oecom.survey.response user,model_oecomm_survey_response,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_answer_user,oecom.survey.response.answer user,model_oecomm_survey_response_answer,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_history_user,oecom.survey.history.user,model_oecomm_survey_history,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_line_user,oecom.survey.response.line user,model_oecomm_survey_response_line,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_res_partner_user,oecom.survey.res.partner.user,base.model_res_partner,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_survey_user,oecom.survey.oecom.survey.user,model_oecomm_survey,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_page_survey_user,oecom.survey.page.oecom.survey.user,model_oecomm_survey_page,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_question_survey_user,oecom.survey.question.oecom.survey.user,model_oecomm_survey_question,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_answer_survey_user,oecom.survey.answer.oecom.survey.user,model_oecomm_survey_answer,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_survey_user,oecom.survey.response.oecom.survey.user,model_oecomm_survey_response,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_answer_survey_user,oecom.survey.response.answer.oecom.survey.user,model_oecomm_survey_response_answer,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_history_survey_user,oecom.survey.history.oecom.survey.user,model_oecomm_survey_history,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_response_line_survey_user,oecom.survey.response.line.oecom.survey.user,model_oecomm_survey_response_line,base.group_oecomm_survey_user,1,1,1,1
+access_oecomm_survey_question_column_heading_survey_user,oecom.survey.question.column.heading.oecom.survey.user,model_oecomm_survey_question_column_heading,base.group_oecomm_survey_user,1,0,0,0
+access_oecomm_survey_question_column_heading_user,oecom.survey.question.column.heading user,model_oecomm_survey_question_column_heading,base.group_oecomm_survey_user,1,1,1,1

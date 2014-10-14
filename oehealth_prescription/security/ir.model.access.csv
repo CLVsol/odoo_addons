@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_oehealth_medication_template,oehealth.medication.template,model_oehealth_medication_template,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_prescription_line,oehealth.prescription.line,model_oehealth_prescription_line,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_prescription_order,oehealth.prescription.order,model_oehealth_prescription_order,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_medication_dosage,oehealth.medication.dosage,model_oehealth_medication_dosage,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_drug_form,oehealth.drug.form,model_oehealth_drug_form,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_drug_route,oehealth.drug.route,model_oehealth_drug_route,base.group_oehealth_prescription_user,1,1,1,1
+access_oehealth_patient_medication,oehealth.patient.medication,model_oehealth_patient_medication,base.group_oehealth_prescription_user,1,1,1,1
