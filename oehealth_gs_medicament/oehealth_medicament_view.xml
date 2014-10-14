@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oehealth_medicament_form" model="ir.ui.view">
+            <field name="name">oehealth.medicament.form</field>
+            <field name="model">oehealth.medicament</field>
+            <field name="inherit_id" ref="oehealth_medicament.view_oehealth_medicament_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Status" position="before">
+                    <group>
+                        <field name="cod_prod"/>
+                        <field name="cod_abcfarma"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
