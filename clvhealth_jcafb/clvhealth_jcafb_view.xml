@@ -12,12 +12,12 @@
                 groups="clv_base.group_base_user"
                 sequence="10"/>
                 <!-- Base/Base/Annotations -->
-                <menuitem name="Annotations" id="menu_base_base_annotations"
+<!--                 <menuitem name="Annotations" id="menu_base_base_annotations"
                     parent="menu_base_base"
                     groups="clv_base.group_annotation_user"
                     sequence="10"
                     action="clv_annotation.act_open_clv_annotation_view"/>
-            <!-- Base/Configuration -->
+ -->            <!-- Base/Configuration -->
             <menuitem name="Configuration" id="menu_base_config"  
                 parent="menu_base"
                 groups="clv_base.group_base_manager"
@@ -29,12 +29,12 @@
                     sequence="10"
                     action="clv_tag.act_open_clv_tag_view"/>
                 <!-- Base/Configuration/Annotation Categories -->
-                <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
+<!--                 <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
                     parent="menu_base_config"
                     groups="clv_base.group_annotation_user"
                     sequence="20"
                     action="clv_annotation.act_open_clv_annotation_category_view"/>
-
+ -->
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
             groups="clv_base.group_base_user"
@@ -45,23 +45,23 @@
                 groups="clv_base.group_base_user"
                 sequence="10"/>
                 <!-- Community/Community/Persons -->
-                <menuitem name="Persons" id="menu_commutity_community_persons"
+<!--                 <menuitem name="Persons" id="menu_commutity_community_persons"
                     parent="menu_commutity_community"
                     groups="clv_base.group_person_user"
                     sequence="10"
                     action="clv_person.act_open_clv_person_view"/>
-            <!-- Community/Configuration -->
+ -->            <!-- Community/Configuration -->
             <menuitem name="Configuration" id="menu_commutity_config"  
                 parent="menu_commutity"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
                 <!-- Community/Configuration/Person Categories -->
-                <menuitem name="Person Categories" id="menu_commutity_config_person_categories"
+<!--                 <menuitem name="Person Categories" id="menu_commutity_config_person_categories"
                     parent="menu_commutity_config"
                     groups="clv_base.group_base_manager"
                     sequence="30"
                     action="clv_person.act_open_clv_person_category_view"/>
-
+ -->
         <!-- Health -->
         <menuitem name="Health" id="menu_health" 
             groups="clv_base.group_base_user"
@@ -72,75 +72,75 @@
                 groups="clv_base.group_base_user"
                 sequence="10"/>
                 <!-- Health/Health/Patients -->
-                <menuitem name="Patients" id="menu_health_health_persons"
+<!--                 <menuitem name="Patients" id="menu_health_health_persons"
                     parent="menu_health_health"
                     groups="clv_base.group_patient_user"
                     sequence="10"
                     action="clv_patient.act_open_clv_patient_view"/>
-                <!-- Health/Health/Lab Tests -->
-                <menuitem name="Lab Tests" id="menu_health_health_lab_tests"
+ -->                <!-- Health/Health/Lab Tests -->
+<!--                 <menuitem name="Lab Tests" id="menu_health_health_lab_tests"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
                     sequence="20"
                     action="clv_lab_test.clv_action_tree_lab_test"/>
-                <!-- Health/Health/Lab Test Requests -->
-                <menuitem name="Lab Test Requests" id="menu_health_health_lab_test_requests"
+ -->                <!-- Health/Health/Lab Test Requests -->
+<!--                 <menuitem name="Lab Test Requests" id="menu_health_health_lab_test_requests"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
                     sequence="30"
                     action="clv_lab_test.clv_action_lab_test_request"/>
-                <!-- Health/Health/Lab Test Draft Requests -->
-                <menuitem name="Lab Test Draft Requests" id="menu_health_health_lab_test_requests_draft_requests"
+ -->                <!-- Health/Health/Lab Test Draft Requests -->
+<!--                 <menuitem name="Lab Test Draft Requests" id="menu_health_health_lab_test_requests_draft_requests"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
                     sequence="40"
                     action="clv_lab_test.clv_action_draft_lab_test_request"/>
-                <!-- Health/Health/Lab Test-->
-                <menuitem name="Lab Test" id="menu_health_health_lab_test"
+ -->                <!-- Health/Health/Lab Test-->
+<!--                 <menuitem name="Lab Test" id="menu_health_health_lab_test"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
                     sequence="60"/>
-                <!-- Health/Health/Lab Test Today's Draft Requests -->
-                <menuitem name="Lab Test Today's Draft Requests" id="menu_health_health_lab_test_requests_today"
+ -->                <!-- Health/Health/Lab Test Today's Draft Requests -->
+<!--                 <menuitem name="Lab Test Today's Draft Requests" id="menu_health_health_lab_test_requests_today"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
                     sequence="50"
                     action="clv_lab_test.clv_action_today_draft_lab_test_request"/>
-            <!-- Health/Configuration -->
+ -->            <!-- Health/Configuration -->
             <menuitem name="Configuration" id="menu_health_config"  
                 parent="menu_health"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
                 <!-- Health/Configuration/Patient Categories -->
-                <menuitem name="Patient Categories" id="menu_health_config_patient_categories"
+<!--                 <menuitem name="Patient Categories" id="menu_health_config_patient_categories"
                     parent="menu_health_config"
                     groups="clv_base.group_base_manager"
                     sequence="30"
                     action="clv_patient.act_open_clv_patient_category_view"/>
-                <!-- Health/Configuration/Lab Test-->
-                <menuitem name="Lab Test" id="menu_health_config_lab_test"
+ -->                <!-- Health/Configuration/Lab Test-->
+<!--                 <menuitem name="Lab Test" id="menu_health_config_lab_test"
                     parent="menu_health_config"
                     groups="clv_base.group_base_manager"
                     sequence="60"/>
-                    <!-- Health/Configuration/Lab Test/Units-->
-                    <menuitem name="Units" id="menu_health_config_lab_test_units"
+ -->                    <!-- Health/Configuration/Lab Test/Units-->
+<!--                     <menuitem name="Units" id="menu_health_config_lab_test_units"
                         parent="menu_health_config_lab_test"
                         groups="clv_base.group_base_manager"
                         sequence="10"
                         action="clv_lab_test.act_open_clv_lab_test_unit_view"/>
-                    <!-- Health/Configuration/Lab Test/Outcomes-->
-                    <menuitem name="Outcomes" id="menu_health_config_lab_test_outcomes" 
+ -->                    <!-- Health/Configuration/Lab Test/Outcomes-->
+<!--                     <menuitem name="Outcomes" id="menu_health_config_lab_test_outcomes" 
                         parent="menu_health_config_lab_test"
                         groups="clv_base.group_base_manager"
                         sequence="20"
                         action="clv_lab_test.act_open_clv_lab_test_outcome_view"/>
-                    <!-- Health/Configuration/Lab Test/Types-->
-                    <menuitem name="Types" id="menu_health_config_lab_test_types"
+ -->                    <!-- Health/Configuration/Lab Test/Types-->
+<!--                     <menuitem name="Types" id="menu_health_config_lab_test_types"
                         parent="menu_health_config_lab_test"
                         groups="clv_base.group_base_manager"
                         sequence="30"
                         action="clv_lab_test.clv_action_form_lab_test_type"/>
-        
+ -->        
        <!-- Surveys -->
         <menuitem name="Surveys" id="menu_surveys" 
             groups="clv_base.group_base_user"
@@ -151,58 +151,58 @@
                 groups="clv_base.group_base_user"
                 sequence="10"/>
                 <!-- Surveys/Surveys/Surveys -->
-                <menuitem name="Surveys" id="menu_surveys_surveys_surveys"
+<!--                 <menuitem name="Surveys" id="menu_surveys_surveys_surveys"
                     parent="menu_surveys_surveys"
                     groups="clv_base.group_base_user"
                     sequence="10"
                     action="clv_survey.action_survey_form1"/>
-                <!-- Surveys/Surveys/Survey Requests -->
-                <menuitem name="Survey Requests" id="menu_surveys_surveys_survey_requests"
+ -->                <!-- Surveys/Surveys/Survey Requests -->
+<!--                 <menuitem name="Survey Requests" id="menu_surveys_surveys_survey_requests"
                     parent="menu_surveys_surveys"
                     groups="clv_base.group_base_user"
                     sequence="20"
                     action="clv_survey.action_survey_request_tree"/>
-                <!-- Surveys/Surveys/Survey Pages -->
-                <menuitem name="Survey Pages" id="menu_surveys_surveys_survey_pages"
+ -->                <!-- Surveys/Surveys/Survey Pages -->
+<!--                 <menuitem name="Survey Pages" id="menu_surveys_surveys_survey_pages"
                     parent="menu_surveys_surveys"
                     groups="clv_base.group_base_user"
                     sequence="30"
                     action="clv_survey.action_survey_page_form"/>
-                <!-- Surveys/Surveys/Survey Responses -->
-                <menuitem name="Survey Responses" id="menu_surveys_surveys_survey_responses"
+ -->                <!-- Surveys/Surveys/Survey Responses -->
+<!--                 <menuitem name="Survey Responses" id="menu_surveys_surveys_survey_responses"
                     parent="menu_surveys_surveys"
                     groups="clv_base.group_base_user"
                     sequence="40"
                     action="clv_survey.action_survey_response_tree"/>
-            <!-- Surveys/Reports -->
+ -->            <!-- Surveys/Reports -->
             <menuitem name="Reports" id="menu_surveys_reports"  
                 parent="menu_surveys"
                 groups="clv_base.group_base_user"
                 sequence="20"/>
                 <!-- Surveys/Reports/Print Surveys -->
-                <menuitem name="Print Surveys" id="menu_surveys_reports_print_surveys"
+<!--                 <menuitem name="Print Surveys" id="menu_surveys_reports_print_surveys"
                     parent="menu_surveys_reports"
                     groups="clv_base.group_base_user"
                     sequence="10"
                     action="clv_survey.action_view_survey_print"/>
-                <!-- Surveys/Reports/Surveys Statistics -->
-                <menuitem name="Surveys Statistics" id="menu_surveys_reports_surveys_statistics"
+ -->                <!-- Surveys/Reports/Surveys Statistics -->
+<!--                 <menuitem name="Surveys Statistics" id="menu_surveys_reports_surveys_statistics"
                     parent="menu_surveys_reports"
                     groups="clv_base.group_base_user"
                     sequence="20"
                     action="clv_survey.action_view_survey_print_statistics"/>
-                <!-- Surveys/Reports/Surveys Answers -->
-                <menuitem name="Surveys Answers" id="menu_surveys_reports_surveys_answers"
+ -->                <!-- Surveys/Reports/Surveys Answers -->
+<!--                 <menuitem name="Surveys Answers" id="menu_surveys_reports_surveys_answers"
                     parent="menu_surveys_reports"
                     groups="clv_base.group_base_user"
                     sequence="30"
                     action="clv_survey.action_view_survey_print_answer"/>
-                <!-- Surveys/Reports/Browse Answers -->
-                <menuitem name="Browse Answers" id="menu_surveys_reports_browse_answers"
+ -->                <!-- Surveys/Reports/Browse Answers -->
+<!--                 <menuitem name="Browse Answers" id="menu_surveys_reports_browse_answers"
                     parent="menu_surveys_reports"
                     groups="clv_base.group_base_user"
                     sequence="40"
                     action="clv_survey.action_browse_survey_response"/>
-
+ -->
     </data>
 </openerp>
