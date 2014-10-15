@@ -33,9 +33,9 @@ Tag Module used by all CLVsol Solutions.
         'clv_base',
         ],
     'data': [
-        # 'security/clv_tag_security.xml',
+        'security/clv_tag_security.xml',
         # 'security/ir.model.access.csv',
-        # 'clv_tag_view.xml',
+        'clv_tag_view.xml',
         # 'seq/clv_tag_sequence.xml',
         # 'wkf/clv_tag_workflow.xml',
         # 'wkf/clv_tag_wkf_view.xml',
