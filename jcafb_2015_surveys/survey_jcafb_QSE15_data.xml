@@ -2,12 +2,6 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- JCAFB 2015 survey type -->
-        <record model="survey.type" id="survey_type_JCAFB_2015">
-            <field name="name">JCAFB 2015</field>
-            <field name="code">JCAFB 2015</field>
-        </record>
-
         <!-- JCAFB 2015 - Questionário Socioeconômico -->
         <record model="survey" id="QSE15">
             <field name="title">[QSE15] JCAFB 2015 - Questionário Socioeconômico</field>
@@ -161,15 +155,21 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_2_1_6">
-                        <field name="answer">[QSE15_2_1_6] f) Não quis ou não soube responder</field>
+                        <field name="answer">[QSE15_2_1_6] f) Não sabe</field>
                         <field name="question_id" ref="QSE15_2_1"/>
                         <field name="sequence" eval="60"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_2_1_7">
-                        <field name="answer">[QSE15_2_1_7] f) Não se aplica</field>
+                        <field name="answer">[QSE15_2_1_7] g) Não quis responder</field>
                         <field name="question_id" ref="QSE15_2_1"/>
                         <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_2_1_8">
+                        <field name="answer">[QSE15_2_1_8] h) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_2_1"/>
+                        <field name="sequence" eval="80"/>
                     </record>
 
                 <record model="survey.question" id="QSE15_2_2">
@@ -1554,7 +1554,7 @@
                     </record>
 
                 <record model="survey.question" id="QSE15_5_5">
-                    <field name="question">[QSE15_5_5] Alguma vez um médico lhe disse que tem alguma doença? </field>
+                    <field name="question">[QSE15_5_5] Alguma vez um médico lhe disse que tem alguma doença?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_5"/>
                     <field eval="50" name="sequence"/>
@@ -1601,12 +1601,327 @@
                 <field eval="60" name="sequence"/>
             </record>
 
+                <record model="survey.question" id="QSE15_6_1">
+                    <field name="question">[QSE15_6_1] Planta alguma coisa para consumo? (vende, come..)</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_6"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_6_1_1">
+                        <field name="answer">[QSE15_6_1_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_6_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_1_2">
+                        <field name="answer">[QSE15_6_1_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_6_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_1_3">
+                        <field name="answer">[QSE15_6_1_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_6_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_1_4">
+                        <field name="answer">[QSE15_6_1_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_6_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_1_5">
+                        <field name="answer">[QSE15_6_1_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_6_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_6_2">
+                    <field name="question">[QSE15_6_2] Usa adubo?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_6"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_1">
+                        <field name="answer">[QSE15_6_2_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_2">
+                        <field name="answer">[QSE15_6_2_2] b) Sim, adubo orgânico com esterco</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_3">
+                        <field name="answer">[QSE15_6_2_3] c) Sim, adubo orgânico sem esterco</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_4">
+                        <field name="answer">[QSE15_6_2_4] d) Sim, adubo comprado</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_5">
+                        <field name="answer">[QSE15_6_2_5] e) Não sabe</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_6">
+                        <field name="answer">[QSE15_6_2_6] f) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_2_7">
+                        <field name="answer">[QSE15_6_2_7] g) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_6_2"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_6_3">
+                    <field name="question">[QSE15_6_3] Qual fonte de água utiliza para irrigar a horta?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_6"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_6_3_1">
+                        <field name="answer">[QSE15_6_3_1] a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSE15_6_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_3_2">
+                        <field name="answer">[QSE15_6_3_2] b) Outros (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSE15_6_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_3_3">
+                        <field name="answer">[QSE15_6_3_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_6_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_3_4">
+                        <field name="answer">[QSE15_6_3_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_6_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_6_3_5">
+                        <field name="answer">[QSE15_6_3_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_6_3"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
             <record model="survey.page" id="QSE15_7">
                 <field name="title">[QSE15_7] Água</field>
                 <field name="note">[QSE15_7] Água</field>
                 <field name="survey_id" ref="QSE15"/>
                 <field eval="70" name="sequence"/>
             </record>
+
+                <record model="survey.question" id="QSE15_7_1">
+                    <field name="question">[QSE15_7_1] De onde vem a água da casa?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_7"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_7_1_1">
+                        <field name="answer">[QSE15_7_1_1] a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSE15_7_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_1_2">
+                        <field name="answer">[QSE15_7_1_2] b) Outros (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSE15_7_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_1_3">
+                        <field name="answer">[QSE15_7_1_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_7_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_1_4">
+                        <field name="answer">[QSE15_7_1_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_7_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_1_5">
+                        <field name="answer">[QSE15_7_1_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_7_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_7_2">
+                    <field name="question">[QSE15_7_2] Existe contato das pessoas da casa com o local de armazenamento?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_7"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_7_2_1">
+                        <field name="answer">[QSE15_7_2_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_7_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_2_2">
+                        <field name="answer">[QSE15_7_2_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_7_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_2_3">
+                        <field name="answer">[QSE15_7_2_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_7_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_2_4">
+                        <field name="answer">[QSE15_7_2_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_7_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_2_5">
+                        <field name="answer">[QSE15_7_2_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_7_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_7_3">
+                    <field name="question">[QSE15_7_3] Na falta de água, onde a obtém?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_7"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_7_3_1">
+                        <field name="answer">[QSE15_7_3_1] a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSE15_7_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_3_2">
+                        <field name="answer">[QSE15_7_3_2] b) Outros (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSE15_7_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_3_3">
+                        <field name="answer">[QSE15_7_3_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_7_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_3_4">
+                        <field name="answer">[QSE15_7_3_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_7_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_7_3_5">
+                        <field name="answer">[QSE15_7_3_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_7_3"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_5_4">
+                    <field name="question">[QSE15_5_4] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_7"/>
+                    <field eval="40" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_1">
+                        <field name="answer">[QSE15_5_4_1] a) Filtração</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_2">
+                        <field name="answer">[QSE15_5_4_2] b) Fervura</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_3">
+                        <field name="answer">[QSE15_5_4_3] c) Hipoclorito</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_4">
+                        <field name="answer">[QSE15_5_4_4] d) Nenhum</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_5">
+                        <field name="answer">[QSE15_5_4_5] e) Outros</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_6">
+                        <field name="answer">[QSE15_5_4_6] f) Não sabe</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_7">
+                        <field name="answer">[QSE15_5_4_7] g) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_5_4_8">
+                        <field name="answer">[QSE15_5_4_8] h) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_5_4"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
 
             <record model="survey.page" id="QSE15_8">
                 <field name="title">[QSE15_8] Alimentação / Animais</field>
@@ -1615,12 +1930,755 @@
                 <field eval="80" name="sequence"/>
             </record>
 
+                <record model="survey.question" id="QSE15_8_1">
+                    <field name="question">[QSE15_8_1] Cria animais de estimação?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_1">
+                        <field name="answer">[QSE15_8_1_1] a) Não cria</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_2">
+                        <field name="answer">[QSE15_8_1_2] b) Galinha</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_3">
+                        <field name="answer">[QSE15_8_1_3] c) Porco</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_4">
+                        <field name="answer">[QSE15_8_1_4] d) Boi, vaca ou bezerro</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_5">
+                        <field name="answer">[QSE15_8_1_5] e) Gato</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_6">
+                        <field name="answer">[QSE15_8_1_6] f) Cachorro </field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_7">
+                        <field name="answer">[QSE15_8_1_7] g) Outros</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_8">
+                        <field name="answer">[QSE15_8_1_8] h) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_9">
+                        <field name="answer">[QSE15_8_1_9] i) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_1_10">
+                        <field name="answer">[QSE15_8_1_10] j) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_1"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_2">
+                    <field name="question">[QSE15_8_2] Como são criados?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_2_1">
+                        <field name="answer">[QSE15_8_2_1] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)</field>
+                        <field name="question_id" ref="QSE15_8_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_2_2">
+                        <field name="answer">[QSE15_8_2_2] b) Presos</field>
+                        <field name="question_id" ref="QSE15_8_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_2_3">
+                        <field name="answer">[QSE15_8_2_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_2_4">
+                        <field name="answer">[QSE15_8_2_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_2_5">
+                        <field name="answer">[QSE15_8_2_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_3">
+                    <field name="question">[QSE15_8_3] Cria animais para a alimentação?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_1">
+                        <field name="answer">[QSE15_8_3_1] a) Não cria animais</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_2">
+                        <field name="answer">[QSE15_8_3_2] b) Galinha</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_3">
+                        <field name="answer">[QSE15_8_3_3] c) Porco</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_4">
+                        <field name="answer">[QSE15_8_3_4] d) Boi, vaca ou bezerro</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_5">
+                        <field name="answer">[QSE15_8_3_5] e) Coelho</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_6">
+                        <field name="answer">[QSE15_8_3_6] f) Outros</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_7">
+                        <field name="answer">[QSE15_8_3_7] g) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_8">
+                        <field name="answer">[QSE15_8_3_8] h) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_3_9">
+                        <field name="answer">[QSE15_8_3_9] i) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_3"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_4">
+                    <field name="question">[QSE15_8_4] Como são criados?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="40" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_4_1">
+                        <field name="answer">[QSE15_8_4_1] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)</field>
+                        <field name="question_id" ref="QSE15_8_4"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_4_2">
+                        <field name="answer">[QSE15_8_4_2] b) Presos</field>
+                        <field name="question_id" ref="QSE15_8_4"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_4_3">
+                        <field name="answer">[QSE15_8_4_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_4"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_4_4">
+                        <field name="answer">[QSE15_8_4_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_4"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_4_5">
+                        <field name="answer">[QSE15_8_4_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_4"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_5">
+                    <field name="question">[QSE15_8_5] Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="50" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_1">
+                        <field name="answer">[QSE15_8_5_1] a) Criação própria</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_2">
+                        <field name="answer">[QSE15_8_5_2] b) Mercado/açougue</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_3">
+                        <field name="answer">[QSE15_8_5_3] c) Criador de confiança</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_4">
+                        <field name="answer">[QSE15_8_5_4] d) Outros</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_5">
+                        <field name="answer">[QSE15_8_5_5] e) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_6">
+                        <field name="answer">[QSE15_8_5_6] f) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_5_7">
+                        <field name="answer">[QSE15_8_5_7] g) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_5"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_6">
+                    <field name="question">[QSE15_8_6] Como você prepara a carne que consome?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="60" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_6_1">
+                        <field name="answer">[QSE15_8_6_1] a) Bem passada</field>
+                        <field name="question_id" ref="QSE15_8_6"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_6_2">
+                        <field name="answer">[QSE15_8_6_2] b) Mal passada / Crua</field>
+                        <field name="question_id" ref="QSE15_8_6"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_6_3">
+                        <field name="answer">[QSE15_8_6_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_6"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_6_4">
+                        <field name="answer">[QSE15_8_6_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_6"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_6_5">
+                        <field name="answer">[QSE15_8_6_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_6"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_8_7">
+                    <field name="question">[QSE15_8_7] Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_8"/>
+                    <field eval="70" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_1">
+                        <field name="answer">[QSE15_8_7_1] a) Lava em água corrente</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_2">
+                        <field name="answer">[QSE15_8_7_2] b) Põe de molho em água</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_3">
+                        <field name="answer">[QSE15_8_7_3] c) Põe de molho em água+vinagre</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_4">
+                        <field name="answer">[QSE15_8_7_4] d) Põe de molho em água+água sanitária / hipoclorito</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_5">
+                        <field name="answer">[QSE15_8_7_5] e) Nenhum </field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_6">
+                        <field name="answer">[QSE15_8_7_6] f) Não sabe</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_7">
+                        <field name="answer">[QSE15_8_7_7] g) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_8_7_8">
+                        <field name="answer">[QSE15_8_7_8] h) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_8_7"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
             <record model="survey.page" id="QSE15_9">
                 <field name="title">[QSE15_9] Medicamentos (geral)</field>
                 <field name="note">[QSE15_9] Medicamentos (geral)</field>
                 <field name="survey_id" ref="QSE15"/>
                 <field eval="90" name="sequence"/>
             </record>
+
+                <record model="survey.question" id="QSE15_9_1">
+                    <field name="question">[QSE15_9_1] Costumam tomar medicamentos sem receita médica?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se sim, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_1_1">
+                        <field name="answer">[QSE15_9_1_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_9_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_1_2">
+                        <field name="answer">[QSE15_9_1_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_9_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_1_3">
+                        <field name="answer">[QSE15_9_1_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_1_4">
+                        <field name="answer">[QSE15_9_1_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_1_5">
+                        <field name="answer">[QSE15_9_1_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_2">
+                    <field name="question">[QSE15_9_2] Possui remédios na residência?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_2_1">
+                        <field name="answer">[QSE15_9_2_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_9_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_2_2">
+                        <field name="answer">[QSE15_9_2_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_9_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_2_3">
+                        <field name="answer">[QSE15_9_2_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_2_4">
+                        <field name="answer">[QSE15_9_2_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_2_5">
+                        <field name="answer">[QSE15_9_2_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_3">
+                    <field name="question">[QSE15_9_3] Onde guarda os remédios?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, onde?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_1">
+                        <field name="answer">[QSE15_9_3_1] a) Na cozinha</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_2">
+                        <field name="answer">[QSE15_9_3_2] b) No banheiro</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_3">
+                        <field name="answer">[QSE15_9_3_3] c) No quarto</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_4">
+                        <field name="answer">[QSE15_9_3_4] d) Outros</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_5">
+                        <field name="answer">[QSE15_9_3_5] e) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_6">
+                        <field name="answer">[QSE15_9_3_6] f) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_3_7">
+                        <field name="answer">[QSE15_9_3_7] g) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_3"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_4">
+                    <field name="question">[QSE15_9_4] A criança tem acesso aos medicamentos? </field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="40" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_1">
+                        <field name="answer">[QSE15_9_4_1] a) Sim, ela sabe onde estão guardados e os alcança quando quiser</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_2">
+                        <field name="answer">[QSE15_9_4_2] b) Ela sabe onde estão, mas não tem acesso a eles</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_3">
+                        <field name="answer">[QSE15_9_4_3] c) Não, estão escondidos em um local de difícil acesso</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_4">
+                        <field name="answer">[QSE15_9_4_4] d) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_5">
+                        <field name="answer">[QSE15_9_4_5] e) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_4_6">
+                        <field name="answer">[QSE15_9_4_6] f) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_4"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_5">
+                    <field name="question">[QSE15_9_5] Como descarta os medicamentos?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="50" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_1">
+                        <field name="answer">[QSE15_9_5_1] a) Não descarta</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_2">
+                        <field name="answer">[QSE15_9_5_2] b) Lixo</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_3">
+                        <field name="answer">[QSE15_9_5_3] c) Vaso sanitário ou pia</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_4">
+                        <field name="answer">[QSE15_9_5_4] d) Plantas ou terra</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_5">
+                        <field name="answer">[QSE15_9_5_5] e) Devolve no Posto de Saúde</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_6">
+                        <field name="answer">[QSE15_9_5_6] f) Dá para algum conhecido </field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_7">
+                        <field name="answer">[QSE15_9_5_7] g) Outros</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_8">
+                        <field name="answer">[QSE15_9_5_8] h) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_9">
+                        <field name="answer">[QSE15_9_5_9] i) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_5_10">
+                        <field name="answer">[QSE15_9_5_10] j) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_5"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_6">
+                    <field name="question">[QSE15_9_6] O que utilizam quando alguém tem diarreia?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="60" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_1">
+                        <field name="answer">[QSE15_9_6_1] a) Soro caseiro</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_2">
+                        <field name="answer">[QSE15_9_6_2] b) Soro pronto</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_3">
+                        <field name="answer">[QSE15_9_6_3] c) Outros</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_4">
+                        <field name="answer">[QSE15_9_6_4] d) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_5">
+                        <field name="answer">[QSE15_9_6_5] e) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_6_6">
+                        <field name="answer">[QSE15_9_6_6] f) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_6"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_7">
+                    <field name="question">[QSE15_9_7] Conhece o soro caseiro?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="70" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_7_1">
+                        <field name="answer">[QSE15_9_7_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_9_7"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_7_2">
+                        <field name="answer">[QSE15_9_7_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_9_7"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_7_3">
+                        <field name="answer">[QSE15_9_7_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_7"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_7_4">
+                        <field name="answer">[QSE15_9_7_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_7"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_7_5">
+                        <field name="answer">[QSE15_9_7_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_7"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_9_8">
+                    <field name="question">[QSE15_9_8] Sabe como preparar?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_9"/>
+                    <field eval="80" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_9_8_1">
+                        <field name="answer">[QSE15_9_8_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_9_8"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_8_2">
+                        <field name="answer">[QSE15_9_8_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_9_8"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_8_3">
+                        <field name="answer">[QSE15_9_8_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_9_8"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_8_4">
+                        <field name="answer">[QSE15_9_8_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_9_8"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_9_8_5">
+                        <field name="answer">[QSE15_9_8_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_9_8"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
 
             <record model="survey.page" id="QSE15_10">
                 <field name="title">[QSE15_10] Parasitoses</field>
@@ -1629,12 +2687,518 @@
                 <field eval="100" name="sequence"/>
             </record>
 
+                <record model="survey.question" id="QSE15_10_1">
+                    <field name="question">[QSE15_10_1] Conhece algum verme (parasitose)?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_1">
+                        <field name="answer">[QSE15_10_1_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_2">
+                        <field name="answer">[QSE15_10_1_2] b) Barriga d'água, “xistose” (Esquistossomose)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_3">
+                        <field name="answer">[QSE15_10_1_3] c) "Bicha", “lombriga” (Ascaridíase)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_4">
+                        <field name="answer">[QSE15_10_1_4] d) "Amarelão" (Ancilostomose)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_5">
+                        <field name="answer">[QSE15_10_1_5] e) "Solitária (Teníase)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_6">
+                        <field name="answer">[QSE15_10_1_6] f) "Ameba"(Amebíase/Giardíase)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_7">
+                        <field name="answer">[QSE15_10_1_7] g) Coceira (Enterobíase)</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_8">
+                        <field name="answer">[QSE15_10_1_8] h) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_9">
+                        <field name="answer">[QSE15_10_1_9] i) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_1_10">
+                        <field name="answer">[QSE15_10_1_10] j) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_1"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_10_2">
+                    <field name="question">[QSE15_10_2] Sabe como se prevenir de pegar vermes?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_2_1">
+                        <field name="answer">[QSE15_10_2_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_10_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_2_2">
+                        <field name="answer">[QSE15_10_2_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_10_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_2_3">
+                        <field name="answer">[QSE15_10_2_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_2_4">
+                        <field name="answer">[QSE15_10_2_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_2_5">
+                        <field name="answer">[QSE15_10_2_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_10_3">
+                    <field name="question">[QSE15_10_3] Já fez exame de fezes?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Qual verme?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_1">
+                        <field name="answer">[QSE15_10_3_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_2">
+                        <field name="answer">[QSE15_10_3_2] b) Sim, resultado negativo para verme</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_3">
+                        <field name="answer">[QSE15_10_3_3] c) Sim, mas não sabe o resultado</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_4">
+                        <field name="answer">[QSE15_10_3_4] d) Sim, resultado positivo para verme</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_5">
+                        <field name="answer">[QSE15_10_3_5] e) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_6">
+                        <field name="answer">[QSE15_10_3_6] f) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_3_7">
+                        <field name="answer">[QSE15_10_3_7] g) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_3"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_10_4">
+                    <field name="question">[QSE15_10_4] Como descobriu que estava com a doença?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="40" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se outros, quais?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_1">
+                        <field name="answer">[QSE15_10_4_1] a) Saiu nas fezes</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_2">
+                        <field name="answer">[QSE15_10_4_2] b) Foi no médico</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_3">
+                        <field name="answer">[QSE15_10_4_3] c) Outros</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_4">
+                        <field name="answer">[QSE15_10_4_4] d) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_5">
+                        <field name="answer">[QSE15_10_4_5] e) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_4_6">
+                        <field name="answer">[QSE15_10_4_6] f) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_4"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_10_5">
+                    <field name="question">[QSE15_10_5] Já tomou vermífugo (lombrigueira)?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="50" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_1">
+                        <field name="answer">[QSE15_10_5_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_2">
+                        <field name="answer">[QSE15_10_5_2] b) Sim, há seis meses ou menos e “botou” verme</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_3">
+                        <field name="answer">[QSE15_10_5_3] c) Sim, há seis meses ou menos e “botou” verme</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_4">
+                        <field name="answer">[QSE15_10_5_4] d) Sim, há seis meses ou menos, mas não “botou” verme</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_5">
+                        <field name="answer">[QSE15_10_5_5] e) Sim, há mais de seis meses, mas não “botou” verme</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_6">
+                        <field name="answer">[QSE15_10_5_6] f) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_7">
+                        <field name="answer">[QSE15_10_5_7] g) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_5_8">
+                        <field name="answer">[QSE15_10_5_8] h) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_5"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_10_6">
+                    <field name="question">[QSE15_10_6] Alguém na casa já pegou verme? Qual?</field>
+                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="page_id" ref="QSE15_10"/>
+                    <field eval="60" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_1">
+                        <field name="answer">[QSE15_10_6_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_2">
+                        <field name="answer">[QSE15_10_6_2] b) Sim, mas não sabe qual verme</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_3">
+                        <field name="answer">[QSE15_10_6_3] c) "Solitária (Teníase)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_4">
+                        <field name="answer">[QSE15_10_6_4] d) "Ameba" (Amebíase)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_5">
+                        <field name="answer">[QSE15_10_6_5] e) “Giárdia” (Giardíase)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_6">
+                        <field name="answer">[QSE15_10_6_6] f) Coceira (Enterobíase)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_7">
+                        <field name="answer">[QSE15_10_6_7] g) "Amarelão" (Ancilostomose)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_8">
+                        <field name="answer">[QSE15_10_6_8] h) "Bicha", “lombriga” (Ascaridíase)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_9">
+                        <field name="answer">[QSE15_10_6_9] i) Barriga d'água, “xistose” (Esquistossomose)</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_10">
+                        <field name="answer">[QSE15_10_6_10] j) Não sabe</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_11">
+                        <field name="answer">[QSE15_10_6_11] k) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_10_6_12">
+                        <field name="answer">[QSE15_10_6_12] l) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_10_6"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
             <record model="survey.page" id="QSE15_11">
                 <field name="title">[QSE15_11] Aspecto Econômico</field>
                 <field name="note">[QSE15_11] Aspecto Econômico</field>
                 <field name="survey_id" ref="QSE15"/>
                 <field eval="110" name="sequence"/>
             </record>
+
+                <record model="survey.question" id="QSE15_11_1">
+                    <field name="question">[QSE15_11_1] O(A) Sr.(a) trabalha?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_11"/>
+                    <field eval="10" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_1">
+                        <field name="answer">[QSE15_11_1_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_2">
+                        <field name="answer">[QSE15_11_1_2] b) Não. É aposentado</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_3">
+                        <field name="answer">[QSE15_11_1_3] c) Sim</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_4">
+                        <field name="answer">[QSE15_11_1_4] d) Não sabe</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_5">
+                        <field name="answer">[QSE15_11_1_5] e) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_1_6">
+                        <field name="answer">[QSE15_11_1_6] f) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_11_1"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_11_2">
+                    <field name="question">[QSE15_11_2] O(A) Sr.(a) trabalha (remunerado) atualmente? </field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_11"/>
+                    <field eval="20" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Qual?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_11_2_1">
+                        <field name="answer">[QSE15_11_2_1] a) Não</field>
+                        <field name="question_id" ref="QSE15_11_2"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_2_2">
+                        <field name="answer">[QSE15_11_2_2] b) Sim</field>
+                        <field name="question_id" ref="QSE15_11_2"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_2_3">
+                        <field name="answer">[QSE15_11_2_3] c) Não sabe</field>
+                        <field name="question_id" ref="QSE15_11_2"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_2_4">
+                        <field name="answer">[QSE15_11_2_4] d) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_11_2"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_2_5">
+                        <field name="answer">[QSE15_11_2_5] e) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_11_2"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_11_3">
+                    <field name="question">[QSE15_11_3] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_11"/>
+                    <field eval="30" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Qual?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_11_3_1">
+                        <field name="answer">[QSE15_11_3_1] a) Valor</field>
+                        <field name="question_id" ref="QSE15_11_3"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_3_2">
+                        <field name="answer">[QSE15_11_3_2] b) Não sabe</field>
+                        <field name="question_id" ref="QSE15_11_3"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_3_3">
+                        <field name="answer">[QSE15_11_3_3] c) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_11_3"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_3_4">
+                        <field name="answer">[QSE15_11_3_4] d) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_11_3"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                <record model="survey.question" id="QSE15_11_4">
+                    <field name="question">[QSE15_11_4] Qual a renda total da família?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="QSE15_11"/>
+                    <field eval="40" name="sequence"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Qual?</field>
+                </record>
+
+                    <record model="survey.answer" id="QSE15_11_4_1">
+                        <field name="answer">[QSE15_11_4_1] a) Valor</field>
+                        <field name="question_id" ref="QSE15_11_4"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_4_2">
+                        <field name="answer">[QSE15_11_4_2] b) Não sabe</field>
+                        <field name="question_id" ref="QSE15_11_4"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_4_3">
+                        <field name="answer">[QSE15_11_4_3] c) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_11_4"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QSE15_11_4_4">
+                        <field name="answer">[QSE15_11_4_4] d) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_11_4"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
 
     </data>
 </openerp>

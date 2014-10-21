@@ -31,6 +31,7 @@ This module will install all the JCAF 2015 surveys.
         'survey',
         ],
     'data': [
+        'survey_jcafb_2015_data.xml',
         'survey_jcafb_QSE15_data.xml',
         'survey_jcafb_QMD15_data.xml',
         'survey_jcafb_QAN15_data.xml',
