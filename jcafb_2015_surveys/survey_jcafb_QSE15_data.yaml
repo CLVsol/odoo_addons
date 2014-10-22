@@ -2136,10 +2136,10 @@ QSE15:
                 question_id: QSE15_07_03
                 sequence: 50
 
-        QSE15_05_04:
+        QSE15_07_04:
             model: survey.question
-            id: QSE15_05_04
-            question: '[QSE15_05_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)'
+            id: QSE15_07_04
+            question: '[QSE15_07_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)'
             type: multiple_choice_multiple_ans
             page_id: QSE15_07
             sequence: 40
@@ -2150,60 +2150,60 @@ QSE15:
             is_comment_require: True
             comment_label: 'Se outros, quais?'
 
-            QSE15_05_04_01:
+            QSE15_07_04_01:
                 model: survey.answer
-                id: QSE15_05_04_01
-                answer: '[QSE15_05_04_01] a) Filtração'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_01
+                answer: '[QSE15_07_04_01] a) Filtração'
+                question_id: QSE15_07_04
                 sequence: 10
 
-            QSE15_05_04_02:
+            QSE15_07_04_02:
                 model: survey.answer
-                id: QSE15_05_04_02
-                answer: '[QSE15_05_04_02] b) Fervura'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_02
+                answer: '[QSE15_07_04_02] b) Fervura'
+                question_id: QSE15_07_04
                 sequence: 20
 
-            QSE15_05_04_03:
+            QSE15_07_04_03:
                 model: survey.answer
-                id: QSE15_05_04_03
-                answer: '[QSE15_05_04_03] c) Hipoclorito'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_03
+                answer: '[QSE15_07_04_03] c) Hipoclorito'
+                question_id: QSE15_07_04
                 sequence: 30
 
-            QSE15_05_04_04:
+            QSE15_07_04_04:
                 model: survey.answer
-                id: QSE15_05_04_04
-                answer: '[QSE15_05_04_04] d) Nenhum'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_04
+                answer: '[QSE15_07_04_04] d) Nenhum'
+                question_id: QSE15_07_04
                 sequence: 40
 
-            QSE15_05_04_05:
+            QSE15_07_04_05:
                 model: survey.answer
-                id: QSE15_05_04_05
-                answer: '[QSE15_05_04_05] e) Outros'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_05
+                answer: '[QSE15_07_04_05] e) Outros'
+                question_id: QSE15_07_04
                 sequence: 50
 
-            QSE15_05_04_06:
+            QSE15_07_04_06:
                 model: survey.answer
-                id: QSE15_05_04_06
-                answer: '[QSE15_05_04_06] f) Não sabe'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_06
+                answer: '[QSE15_07_04_06] f) Não sabe'
+                question_id: QSE15_07_04
                 sequence: 60
 
-            QSE15_05_04_07:
+            QSE15_07_04_07:
                 model: survey.answer
-                id: QSE15_05_04_07
-                answer: '[QSE15_05_04_07] g) Não quis responder'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_07
+                answer: '[QSE15_07_04_07] g) Não quis responder'
+                question_id: QSE15_07_04
                 sequence: 70
 
-            QSE15_05_04_08:
+            QSE15_07_04_08:
                 model: survey.answer
-                id: QSE15_05_04_08
-                answer: '[QSE15_05_04_08] h) Não se aplica'
-                question_id: QSE15_05_04
+                id: QSE15_07_04_08
+                answer: '[QSE15_07_04_08] h) Não se aplica'
+                question_id: QSE15_07_04
                 sequence: 80
 
     QSE15_08:
@@ -3127,7 +3127,7 @@ QSE15:
             QSE15_10_01_05:
                 model: survey.answer
                 id: QSE15_10_01_05
-                answer: '[QSE15_10_01_05] e) "Solitária (Teníase)'
+                answer: '[QSE15_10_01_05] e) "Solitária" (Teníase)'
                 question_id: QSE15_10_01
                 sequence: 50
 

@@ -1,0 +1,18 @@
+[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia
+    [QAN15_01] Preâmbulo
+        [QAN15_01_01] Identificação do Paciente
+            (multiple_textboxes_diff_type)
+            [QAN15_01_01_01] Nome____________________________________
+            [QAN15_01_01_02] Código____________________________________
+        [QAN15_01_02] Aplicação do Questionário
+            (multiple_textboxes_diff_type)
+            [QAN15_01_02_01] Aplicado por____________________________________
+            [QAN15_01_02_02] Código____________________________________
+            [QAN15_01_02_03] Data____________________________________
+        [QAN15_01_03] Entrevistado
+            (multiple_choice_only_one_ans)
+            [QAN15_01_03_01] a) Responsável
+            [QAN15_01_03_02] b) Paciente
+            [QAN15_01_03_03] c) Cuidador
+            Nome (Grau de Parentesco)____________________________________
+    [QAN15_02] Questionário

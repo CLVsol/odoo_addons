@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- JCAFB 2015 - Questionário Socioeconômico -->
+        <!-- [QSE15] JCAFB 2015 - Questionário Socioeconômico -->
         <record model="survey" id="QSE15">
             <field name="title">[QSE15] JCAFB 2015 - Questionário Socioeconômico</field>
             <field name="note">[QSE15] JCAFB 2015 - Questionário Socioeconômico</field>
@@ -15,14 +15,14 @@
                 <field name="title">[QSE15_01] Preâmbulo</field>
                 <field name="note">[QSE15_01] Preâmbulo</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="10" name="sequence"/>
+                <field name="sequence" eval="10"/>
             </record>
 
                 <record model="survey.question" id="QSE15_01_01">
                     <field name="question">[QSE15_01_01] Identificação do Paciente</field>
                     <field name="type">multiple_textboxes_diff_type</field>
                     <field name="page_id" ref="QSE15_01"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e o Código.</field>
                     <field name="required_type">exactly</field>
@@ -32,14 +32,14 @@
                     <record model="survey.answer" id="QSE15_01_01_01">
                         <field name="answer">[QSE15_01_01_01] Nome</field>
                         <field name="question_id" ref="QSE15_01_01"/>
-                        <field eval="10" name="sequence"/>
+                        <field name="sequence" eval="10"/>
                         <field name="type">char</field>
                     </record>
 
                     <record model="survey.answer" id="QSE15_01_01_02">
                         <field name="answer">[QSE15_01_01_02] Código</field>
                         <field name="question_id" ref="QSE15_01_01"/>
-                        <field eval="20" name="sequence"/>
+                        <field name="sequence" eval="20"/>
                         <field name="type">char</field>
                     </record>
 
@@ -47,7 +47,7 @@
                     <field name="question">[QSE15_01_02] Aplicação do Questionário</field>
                     <field name="type">multiple_textboxes_diff_type</field>
                     <field name="page_id" ref="QSE15_01"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome, o Código e a Data.</field>
                     <field name="required_type">exactly</field>
@@ -57,21 +57,21 @@
                     <record model="survey.answer" id="QSE15_01_02_01">
                         <field name="answer">[QSE15_01_02_01] Aplicado por</field>
                         <field name="question_id" ref="QSE15_01_02"/>
-                        <field eval="10" name="sequence"/>
+                        <field name="sequence" eval="10"/>
                         <field name="type">char</field>
                     </record>
 
                     <record model="survey.answer" id="QSE15_01_02_02">
                         <field name="answer">[QSE15_01_02_02] Código</field>
                         <field name="question_id" ref="QSE15_01_02"/>
-                        <field eval="20" name="sequence"/>
+                        <field name="sequence" eval="20"/>
                         <field name="type">char</field>
                     </record>
 
                     <record model="survey.answer" id="QSE15_01_02_03">
                         <field name="answer">[QSE15_01_02_03] Data</field>
                         <field name="question_id" ref="QSE15_01_02"/>
-                        <field eval="30" name="sequence"/>
+                        <field name="sequence" eval="30"/>
                         <field name="type">date</field>
                     </record>
 
@@ -79,7 +79,7 @@
                     <field name="question">[QSE15_01_03] Entrevistado</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_01"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
@@ -108,18 +108,18 @@
                 <field name="title">[QSE15_02] Aspectos Sociais</field>
                 <field name="note">[QSE15_02] Aspectos Sociais</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="20" name="sequence"/>
+                <field name="sequence" eval="20"/>
             </record>
 
                 <record model="survey.question" id="QSE15_02_01">
                     <field name="question">[QSE15_02_01] Onde a criança fica quando não está na escola?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
                     <field name="req_ans">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
                     <field name="comment_label">Se outros, onde?</field>
                 </record>
@@ -176,7 +176,7 @@
                     <field name="question">[QSE15_02_02] Escolaridade do cuidador</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -233,7 +233,7 @@
                     <field name="question">[QSE15_02_03] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -294,7 +294,7 @@
                     <field name="question">[QSE15_02_04] O(A) Sr.(a) é:</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -351,7 +351,7 @@
                     <field name="question">[QSE15_02_05] Quem mora com o Sr(a) na sua casa? (além do idoso)</field>
                     <field name="type">comment</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -360,7 +360,7 @@
                     <field name="question">[QSE15_02_06] O Sr(a) tem filhos?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="60" name="sequence"/>
+                    <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -396,10 +396,10 @@
                     </record>
 
                 <record model="survey.question" id="QSE15_02_07">
-                    <field name="question">[QSE15_02_07] Escolaridade (“Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?”)</field>
+                    <field name="question">[QSE15_02_07] Escolaridade ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="70" name="sequence"/>
+                    <field name="sequence" eval="70"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -480,7 +480,7 @@
                     <field name="question">[QSE15_02_08] O(A) Sr.(a) sabe ler e escrever um recado?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="80" name="sequence"/>
+                    <field name="sequence" eval="80"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -519,7 +519,7 @@
                     <field name="question">[QSE15_02_09] Qual destas opções o(a) descreve melhor:</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="90" name="sequence"/>
+                    <field name="sequence" eval="90"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -584,7 +584,7 @@
                     <field name="question">[QSE15_02_10] Qual é a sua religião?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field eval="90" name="sequence"/>
+                    <field name="sequence" eval="90"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -655,14 +655,14 @@
                 <field name="title">[QSE15_03] Hábitos</field>
                 <field name="note">[QSE15_03] Hábitos</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="30" name="sequence"/>
+                <field name="sequence" eval="30"/>
             </record>
 
                 <record model="survey.question" id="QSE15_03_01">
                     <field name="question">[QSE15_03_01] Como é o banheiro da casa?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -709,7 +709,7 @@
                     <field name="question">[QSE15_03_02] Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -756,7 +756,7 @@
                     <field name="question">[QSE15_03_03] Onde a criança costuma fazer cocô?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -811,7 +811,7 @@
                     <field name="question">[QSE15_03_04] A criança tem algum dos seguintes hábitos</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -864,7 +864,7 @@
                     <field name="question">[QSE15_03_05] O que costuma fazer no tempo livre?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -943,7 +943,7 @@
                     <field name="question">[QSE15_03_06] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="60" name="sequence"/>
+                    <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -984,7 +984,7 @@
                     <field name="question">[QSE15_03_07] Com que frequência caminha ou pratica exercícios?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="70" name="sequence"/>
+                    <field name="sequence" eval="70"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1059,7 +1059,7 @@
                     <field name="question">[QSE15_03_08] O(A) Sr.(a) tem ou teve o hábito de fumar?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="80" name="sequence"/>
+                    <field name="sequence" eval="80"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1104,7 +1104,7 @@
                     <field name="question">[QSE15_03_09] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_03"/>
-                    <field eval="90" name="sequence"/>
+                    <field name="sequence" eval="90"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1145,14 +1145,14 @@
                 <field name="title">[QSE15_04] Saúde</field>
                 <field name="note">[QSE15_04] Saúde</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="40" name="sequence"/>
+                <field name="sequence" eval="40"/>
             </record>
 
                 <record model="survey.question" id="QSE15_04_01">
                     <field name="question">[QSE15_04_01] Tem alguma dificuldade para:</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_04"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -1231,7 +1231,7 @@
                     <field name="question">[QSE15_04_02] A casa possui:</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_04"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -1296,7 +1296,7 @@
                     <field name="question">[QSE15_04_03] O(A) Sr.(a) diria que sua saúde é:</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_04"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1353,7 +1353,7 @@
                     <field name="question">[QSE15_04_04] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_04"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1398,14 +1398,14 @@
                 <field name="title">[QSE15_05] Médico</field>
                 <field name="note">[QSE15_05] Médico</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="50" name="sequence"/>
+                <field name="sequence" eval="50"/>
             </record>
 
                 <record model="survey.question" id="QSE15_05_01">
                     <field name="question">[QSE15_05_01] Que motivo(s) o leva(m) a procurar atendimento médico?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_05"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -1466,7 +1466,7 @@
                     <field name="question">[QSE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_05"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1507,7 +1507,7 @@
                     <field name="question">[QSE15_05_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?</field>
                     <field name="type">comment</field>
                     <field name="page_id" ref="QSE15_05"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1516,7 +1516,7 @@
                     <field name="question">[QSE15_05_04] O Sr. (a) teve alguma queda depois que completou 60 anos?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_05"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1557,7 +1557,7 @@
                     <field name="question">[QSE15_05_05] Alguma vez um médico lhe disse que tem alguma doença?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_05"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1598,14 +1598,14 @@
                 <field name="title">[QSE15_06] Horta</field>
                 <field name="note">[QSE15_06] Horta</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="60" name="sequence"/>
+                <field name="sequence" eval="60"/>
             </record>
 
                 <record model="survey.question" id="QSE15_06_01">
                     <field name="question">[QSE15_06_01] Planta alguma coisa para consumo? (vende, come..)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_06"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1644,7 +1644,7 @@
                     <field name="question">[QSE15_06_02] Usa adubo?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_06"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -1697,7 +1697,7 @@
                     <field name="question">[QSE15_06_03] Qual fonte de água utiliza para irrigar a horta?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_06"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1738,14 +1738,14 @@
                 <field name="title">[QSE15_07] Água</field>
                 <field name="note">[QSE15_07] Água</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="70" name="sequence"/>
+                <field name="sequence" eval="70"/>
             </record>
 
                 <record model="survey.question" id="QSE15_07_01">
                     <field name="question">[QSE15_07_01] De onde vem a água da casa?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_07"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1786,7 +1786,7 @@
                     <field name="question">[QSE15_07_02] Existe contato das pessoas da casa com o local de armazenamento?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_07"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -1825,7 +1825,7 @@
                     <field name="question">[QSE15_07_03] Na falta de água, onde a obtém?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_07"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -1862,11 +1862,11 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <record model="survey.question" id="QSE15_05_04">
-                    <field name="question">[QSE15_05_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)</field>
+                <record model="survey.question" id="QSE15_07_04">
+                    <field name="question">[QSE15_07_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_07"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -1875,51 +1875,51 @@
                     <field name="comment_label">Se outros, quais?</field>
                 </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_01">
-                        <field name="answer">[QSE15_05_04_01] a) Filtração</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_01">
+                        <field name="answer">[QSE15_07_04_01] a) Filtração</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_02">
-                        <field name="answer">[QSE15_05_04_02] b) Fervura</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_02">
+                        <field name="answer">[QSE15_07_04_02] b) Fervura</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_03">
-                        <field name="answer">[QSE15_05_04_03] c) Hipoclorito</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_03">
+                        <field name="answer">[QSE15_07_04_03] c) Hipoclorito</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_04">
-                        <field name="answer">[QSE15_05_04_04] d) Nenhum</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_04">
+                        <field name="answer">[QSE15_07_04_04] d) Nenhum</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_05">
-                        <field name="answer">[QSE15_05_04_05] e) Outros</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_05">
+                        <field name="answer">[QSE15_07_04_05] e) Outros</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="50"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_06">
-                        <field name="answer">[QSE15_05_04_06] f) Não sabe</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_06">
+                        <field name="answer">[QSE15_07_04_06] f) Não sabe</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="60"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_07">
-                        <field name="answer">[QSE15_05_04_07] g) Não quis responder</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_07">
+                        <field name="answer">[QSE15_07_04_07] g) Não quis responder</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="70"/>
                     </record>
 
-                    <record model="survey.answer" id="QSE15_05_04_08">
-                        <field name="answer">[QSE15_05_04_08] h) Não se aplica</field>
-                        <field name="question_id" ref="QSE15_05_04"/>
+                    <record model="survey.answer" id="QSE15_07_04_08">
+                        <field name="answer">[QSE15_07_04_08] h) Não se aplica</field>
+                        <field name="question_id" ref="QSE15_07_04"/>
                         <field name="sequence" eval="80"/>
                     </record>
 
@@ -1927,14 +1927,14 @@
                 <field name="title">[QSE15_08] Alimentação / Animais</field>
                 <field name="note">[QSE15_08] Alimentação / Animais</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="80" name="sequence"/>
+                <field name="sequence" eval="80"/>
             </record>
 
                 <record model="survey.question" id="QSE15_08_01">
                     <field name="question">[QSE15_08_01] Cria animais de estimação?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2005,7 +2005,7 @@
                     <field name="question">[QSE15_08_02] Como são criados?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2044,7 +2044,7 @@
                     <field name="question">[QSE15_08_03] Cria animais para a alimentação?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2109,7 +2109,7 @@
                     <field name="question">[QSE15_08_04] Como são criados?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2148,7 +2148,7 @@
                     <field name="question">[QSE15_08_05] Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -2203,7 +2203,7 @@
                     <field name="question">[QSE15_08_06] Como você prepara a carne que consome?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="60" name="sequence"/>
+                    <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2242,7 +2242,7 @@
                     <field name="question">[QSE15_08_07] Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_08"/>
-                    <field eval="70" name="sequence"/>
+                    <field name="sequence" eval="70"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -2301,14 +2301,14 @@
                 <field name="title">[QSE15_09] Medicamentos (geral)</field>
                 <field name="note">[QSE15_09] Medicamentos (geral)</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="90" name="sequence"/>
+                <field name="sequence" eval="90"/>
             </record>
 
                 <record model="survey.question" id="QSE15_09_01">
                     <field name="question">[QSE15_09_01] Costumam tomar medicamentos sem receita médica?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2349,7 +2349,7 @@
                     <field name="question">[QSE15_09_02] Possui remédios na residência?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2388,7 +2388,7 @@
                     <field name="question">[QSE15_09_03] Onde guarda os remédios?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -2443,7 +2443,7 @@
                     <field name="question">[QSE15_09_04] A criança tem acesso aos medicamentos? </field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2488,7 +2488,7 @@
                     <field name="question">[QSE15_09_05] Como descarta os medicamentos?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2559,7 +2559,7 @@
                     <field name="question">[QSE15_09_06] O que utilizam quando alguém tem diarreia?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="60" name="sequence"/>
+                    <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2606,7 +2606,7 @@
                     <field name="question">[QSE15_09_07] Conhece o soro caseiro?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="70" name="sequence"/>
+                    <field name="sequence" eval="70"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2645,7 +2645,7 @@
                     <field name="question">[QSE15_09_08] Sabe como preparar?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_09"/>
-                    <field eval="80" name="sequence"/>
+                    <field name="sequence" eval="80"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2684,14 +2684,14 @@
                 <field name="title">[QSE15_10] Parasitoses</field>
                 <field name="note">[QSE15_10] Parasitoses</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="100" name="sequence"/>
+                <field name="sequence" eval="100"/>
             </record>
 
                 <record model="survey.question" id="QSE15_10_01">
                     <field name="question">[QSE15_10_01] Conhece algum verme (parasitose)?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2703,13 +2703,13 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_01_02">
-                        <field name="answer">[QSE15_10_01_02] b) Barriga d'água, “xistose” (Esquistossomose)</field>
+                        <field name="answer">[QSE15_10_01_02] b) Barriga d água, "xistose" (Esquistossomose)</field>
                         <field name="question_id" ref="QSE15_10_01"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_01_03">
-                        <field name="answer">[QSE15_10_01_03] c) "Bicha", “lombriga” (Ascaridíase)</field>
+                        <field name="answer">[QSE15_10_01_03] c) "Bicha", "lombriga" (Ascaridíase)</field>
                         <field name="question_id" ref="QSE15_10_01"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -2721,7 +2721,7 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_01_05">
-                        <field name="answer">[QSE15_10_01_05] e) "Solitária (Teníase)</field>
+                        <field name="answer">[QSE15_10_01_05] e) "Solitária" (Teníase)</field>
                         <field name="question_id" ref="QSE15_10_01"/>
                         <field name="sequence" eval="50"/>
                     </record>
@@ -2760,7 +2760,7 @@
                     <field name="question">[QSE15_10_02] Sabe como se prevenir de pegar vermes?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2799,7 +2799,7 @@
                     <field name="question">[QSE15_10_03] Já fez exame de fezes?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -2854,7 +2854,7 @@
                     <field name="question">[QSE15_10_04] Como descobriu que estava com a doença?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -2901,7 +2901,7 @@
                     <field name="question">[QSE15_10_05] Já tomou vermífugo (lombrigueira)?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="50" name="sequence"/>
+                    <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="required_type">at least</field>
@@ -2915,25 +2915,25 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_05_02">
-                        <field name="answer">[QSE15_10_05_02] b) Sim, há seis meses ou menos e “botou” verme</field>
+                        <field name="answer">[QSE15_10_05_02] b) Sim, há seis meses ou menos e "botou" verme</field>
                         <field name="question_id" ref="QSE15_10_05"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_05_03">
-                        <field name="answer">[QSE15_10_05_03] c) Sim, há seis meses ou menos e “botou” verme</field>
+                        <field name="answer">[QSE15_10_05_03] c) Sim, há seis meses ou menos e "botou" verme</field>
                         <field name="question_id" ref="QSE15_10_05"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_05_04">
-                        <field name="answer">[QSE15_10_05_04] d) Sim, há seis meses ou menos, mas não “botou” verme</field>
+                        <field name="answer">[QSE15_10_05_04] d) Sim, há seis meses ou menos, mas não "botou" verme</field>
                         <field name="question_id" ref="QSE15_10_05"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_05_05">
-                        <field name="answer">[QSE15_10_05_05] e) Sim, há mais de seis meses, mas não “botou” verme</field>
+                        <field name="answer">[QSE15_10_05_05] e) Sim, há mais de seis meses, mas não "botou" verme</field>
                         <field name="question_id" ref="QSE15_10_05"/>
                         <field name="sequence" eval="50"/>
                     </record>
@@ -2960,7 +2960,7 @@
                     <field name="question">[QSE15_10_06] Alguém na casa já pegou verme? Qual?</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="QSE15_10"/>
-                    <field eval="60" name="sequence"/>
+                    <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -2978,7 +2978,7 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_06_03">
-                        <field name="answer">[QSE15_10_06_03] c) "Solitária (Teníase)</field>
+                        <field name="answer">[QSE15_10_06_03] c) "Solitária" (Teníase)</field>
                         <field name="question_id" ref="QSE15_10_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -2990,7 +2990,7 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_06_05">
-                        <field name="answer">[QSE15_10_06_05] e) “Giárdia” (Giardíase)</field>
+                        <field name="answer">[QSE15_10_06_05] e) "Giárdia" (Giardíase)</field>
                         <field name="question_id" ref="QSE15_10_06"/>
                         <field name="sequence" eval="50"/>
                     </record>
@@ -3008,13 +3008,13 @@
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_06_08">
-                        <field name="answer">[QSE15_10_06_08] h) "Bicha", “lombriga” (Ascaridíase)</field>
+                        <field name="answer">[QSE15_10_06_08] h) "Bicha", "lombriga" (Ascaridíase)</field>
                         <field name="question_id" ref="QSE15_10_06"/>
                         <field name="sequence" eval="80"/>
                     </record>
 
                     <record model="survey.answer" id="QSE15_10_06_09">
-                        <field name="answer">[QSE15_10_06_09] i) Barriga d'água, “xistose” (Esquistossomose)</field>
+                        <field name="answer">[QSE15_10_06_09] i) Barriga d água, "xistose" (Esquistossomose)</field>
                         <field name="question_id" ref="QSE15_10_06"/>
                         <field name="sequence" eval="90"/>
                     </record>
@@ -3041,14 +3041,14 @@
                 <field name="title">[QSE15_11] Aspecto Econômico</field>
                 <field name="note">[QSE15_11] Aspecto Econômico</field>
                 <field name="survey_id" ref="QSE15"/>
-                <field eval="110" name="sequence"/>
+                <field name="sequence" eval="110"/>
             </record>
 
                 <record model="survey.question" id="QSE15_11_01">
                     <field name="question">[QSE15_11_01] O(A) Sr.(a) trabalha?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_11"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                 </record>
@@ -3093,7 +3093,7 @@
                     <field name="question">[QSE15_11_02] O(A) Sr.(a) trabalha (remunerado) atualmente? </field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_11"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -3134,7 +3134,7 @@
                     <field name="question">[QSE15_11_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_11"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
@@ -3169,7 +3169,7 @@
                     <field name="question">[QSE15_11_04] Qual a renda total da família?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_11"/>
-                    <field eval="40" name="sequence"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>

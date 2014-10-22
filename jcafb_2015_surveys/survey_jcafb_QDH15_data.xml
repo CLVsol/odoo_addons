@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
+        <!-- [QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
         <record model="survey" id="QDH15">
             <field name="title">[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
             <field name="note">[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
@@ -11,132 +11,132 @@
             <field name="color">5</field>
         </record>
 
-            <record model="survey.page" id="QDH15_1">
-                <field name="title">[QDH15_1] Preâmbulo</field>
-                <field name="note">[QDH15_1] Preâmbulo</field>
+            <record model="survey.page" id="QDH15_01">
+                <field name="title">[QDH15_01] Preâmbulo</field>
+                <field name="note">[QDH15_01] Preâmbulo</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="10" name="sequence"/>
+                <field name="sequence" eval="10"/>
             </record>
 
-                 <record model="survey.question" id="QDH15_1_1">
-                    <field name="question">[QDH15_1_1] Identificação do Paciente</field>
+                <record model="survey.question" id="QDH15_01_01">
+                    <field name="question">[QDH15_01_01] Identificação do Paciente</field>
                     <field name="type">multiple_textboxes_diff_type</field>
-                    <field name="page_id" ref="QDH15_1"/>
-                    <field eval="10" name="sequence"/>
+                    <field name="page_id" ref="QDH15_01"/>
+                    <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e o Código.</field>
                     <field name="required_type">exactly</field>
                     <field name="req_ans">2</field>
                 </record>
 
-                    <record model="survey.answer" id="QDH15_1_1_1">
-                        <field name="answer">[QDH15_1_1_1] Nome</field>
-                        <field name="question_id" ref="QDH15_1_1"/>
-                        <field eval="10" name="sequence"/>
+                    <record model="survey.answer" id="QDH15_01_01_01">
+                        <field name="answer">[QDH15_01_01_01] Nome</field>
+                        <field name="question_id" ref="QDH15_01_01"/>
+                        <field name="sequence" eval="10"/>
                         <field name="type">char</field>
                     </record>
 
-                    <record model="survey.answer" id="QDH15_1_1_2">
-                        <field name="answer">[QDH15_1_1_2] Código</field>
-                        <field name="question_id" ref="QDH15_1_1"/>
-                        <field eval="20" name="sequence"/>
+                    <record model="survey.answer" id="QDH15_01_01_02">
+                        <field name="answer">[QDH15_01_01_02] Código</field>
+                        <field name="question_id" ref="QDH15_01_01"/>
+                        <field name="sequence" eval="20"/>
                         <field name="type">char</field>
                     </record>
 
-                <record model="survey.question" id="QDH15_1_2">
-                    <field name="question">[QDH15_1_2] Aplicação do Questionário</field>
+                <record model="survey.question" id="QDH15_01_02">
+                    <field name="question">[QDH15_01_02] Aplicação do Geral</field>
                     <field name="type">multiple_textboxes_diff_type</field>
-                    <field name="page_id" ref="QDH15_1"/>
-                    <field eval="20" name="sequence"/>
+                    <field name="page_id" ref="QDH15_01"/>
+                    <field name="sequence" eval="20"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome, o Código e a Data.</field>
                     <field name="required_type">exactly</field>
                     <field name="req_ans">3</field>
                 </record>
 
-                    <record model="survey.answer" id="QDH15_1_2_1">
-                        <field name="answer">[QDH15_1_2_1] Aplicado por</field>
-                        <field name="question_id" ref="QDH15_1_2"/>
-                        <field eval="10" name="sequence"/>
+                    <record model="survey.answer" id="QDH15_01_02_01">
+                        <field name="answer">[QDH15_01_02_01] Aplicado por</field>
+                        <field name="question_id" ref="QDH15_01_02"/>
+                        <field name="sequence" eval="10"/>
                         <field name="type">char</field>
                     </record>
 
-                    <record model="survey.answer" id="QDH15_1_2_2">
-                        <field name="answer">[QDH15_1_2_2] Código</field>
-                        <field name="question_id" ref="QDH15_1_2"/>
-                        <field eval="20" name="sequence"/>
+                    <record model="survey.answer" id="QDH15_01_02_02">
+                        <field name="answer">[QDH15_01_02_02] Código</field>
+                        <field name="question_id" ref="QDH15_01_02"/>
+                        <field name="sequence" eval="20"/>
                         <field name="type">char</field>
                     </record>
 
-                    <record model="survey.answer" id="QDH15_1_2_3">
-                        <field name="answer">[QDH15_1_2_3] Data</field>
-                        <field name="question_id" ref="QDH15_1_2"/>
-                        <field eval="30" name="sequence"/>
+                    <record model="survey.answer" id="QDH15_01_02_03">
+                        <field name="answer">[QDH15_01_02_03] Data</field>
+                        <field name="question_id" ref="QDH15_01_02"/>
+                        <field name="sequence" eval="30"/>
                         <field name="type">date</field>
                     </record>
 
-                <record model="survey.question" id="QDH15_1_3">
-                    <field name="question">[QDH15_1_3] Entrevistado</field>
+                <record model="survey.question" id="QDH15_01_03">
+                    <field name="question">[QDH15_01_03] Entrevistado</field>
                     <field name="type">multiple_choice_only_one_ans</field>
-                    <field name="page_id" ref="QDH15_1"/>
-                    <field eval="30" name="sequence"/>
+                    <field name="page_id" ref="QDH15_01"/>
+                    <field name="sequence" eval="30"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
                     <field name="comment_label">Nome (Grau de Parentesco)</field>
                 </record>
 
-                    <record model="survey.answer" id="QDH15_1_3_1">
-                        <field name="answer">[QDH15_1_3_1] a) Responsável</field>
-                        <field name="question_id" ref="QDH15_1_3"/>
+                    <record model="survey.answer" id="QDH15_01_03_01">
+                        <field name="answer">[QDH15_01_03_01] a) Responsável</field>
+                        <field name="question_id" ref="QDH15_01_03"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="survey.answer" id="QDH15_1_3_2">
-                        <field name="answer">[QDH15_1_3_2] b) Paciente</field>
-                        <field name="question_id" ref="QDH15_1_3"/>
+                    <record model="survey.answer" id="QDH15_01_03_02">
+                        <field name="answer">[QDH15_01_03_02] b) Paciente</field>
+                        <field name="question_id" ref="QDH15_01_03"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="survey.answer" id="QDH15_1_3_3">
-                        <field name="answer">[QDH15_1_3_3] c) Cuidador</field>
-                        <field name="question_id" ref="QDH15_1_3"/>
+                    <record model="survey.answer" id="QDH15_01_03_03">
+                        <field name="answer">[QDH15_01_03_03] c) Cuidador</field>
+                        <field name="question_id" ref="QDH15_01_03"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
-            <record model="survey.page" id="QDH15_2">
-                <field name="title">[QDH15_2] Geral</field>
-                <field name="note">[QDH15_2] Geral</field>
+            <record model="survey.page" id="QDH15_02">
+                <field name="title">[QDH15_02] Geral</field>
+                <field name="note">[QDH15_02] Geral</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="20" name="sequence"/>
+                <field name="sequence" eval="20"/>
             </record>
 
-            <record model="survey.page" id="QDH15_3">
-                <field name="title">[QDH15_3] Histórico de DHC</field>
-                <field name="note">[QDH15_3] Histórico de DHC</field>
+            <record model="survey.page" id="QDH15_03">
+                <field name="title">[QDH15_03] Histórico de DHC</field>
+                <field name="note">[QDH15_03] Histórico de DHC</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="30" name="sequence"/>
+                <field name="sequence" eval="30"/>
             </record>
 
-            <record model="survey.page" id="QDH15_4">
-                <field name="title">[QDH15_4] Histórico Familiar</field>
-                <field name="note">[QDH15_4] Histórico Familiar</field>
+            <record model="survey.page" id="QDH15_04">
+                <field name="title">[QDH15_04] Histórico Familiar</field>
+                <field name="note">[QDH15_04] Histórico Familiar</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="40" name="sequence"/>
+                <field name="sequence" eval="40"/>
             </record>
 
-            <record model="survey.page" id="QDH15_5">
-                <field name="title">[QDH15_5] Hábitos de Vida</field>
-                <field name="note">[QDH15_5] Hábitos de Vida</field>
+            <record model="survey.page" id="QDH15_05">
+                <field name="title">[QDH15_05] Hábitos de Vida</field>
+                <field name="note">[QDH15_05] Hábitos de Vida</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="50" name="sequence"/>
+                <field name="sequence" eval="50"/>
             </record>
 
-            <record model="survey.page" id="QDH15_6">
-                <field name="title">[QDH15_6] Hábitos Alimentares</field>
-                <field name="note">[QDH15_6] Hábitos Alimentares</field>
+            <record model="survey.page" id="QDH15_06">
+                <field name="title">[QDH15_06] Hábitos Alimentares</field>
+                <field name="note">[QDH15_06] Hábitos Alimentares</field>
                 <field name="survey_id" ref="QDH15"/>
-                <field eval="60" name="sequence"/>
+                <field name="sequence" eval="60"/>
             </record>
 
     </data>

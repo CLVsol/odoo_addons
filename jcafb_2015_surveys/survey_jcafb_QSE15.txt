@@ -309,17 +309,6 @@
             [QSE15_06_03_05] e) Não se aplica
             Se outros, quais?____________________________________
     [QSE15_07] Água
-        [QSE15_05_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)
-            (multiple_choice_multiple_ans)
-            [QSE15_05_04_01] a) Filtração
-            [QSE15_05_04_02] b) Fervura
-            [QSE15_05_04_03] c) Hipoclorito
-            [QSE15_05_04_04] d) Nenhum
-            [QSE15_05_04_05] e) Outros
-            [QSE15_05_04_06] f) Não sabe
-            [QSE15_05_04_07] g) Não quis responder
-            [QSE15_05_04_08] h) Não se aplica
-            Se outros, quais?____________________________________
         [QSE15_07_01] De onde vem a água da casa?
             (multiple_choice_only_one_ans)
             [QSE15_07_01_01] a) Reservatório da prefeitura
@@ -342,6 +331,17 @@
             [QSE15_07_03_03] c) Não sabe
             [QSE15_07_03_04] d) Não quis responder
             [QSE15_07_03_05] e) Não se aplica
+            Se outros, quais?____________________________________
+        [QSE15_07_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)
+            (multiple_choice_multiple_ans)
+            [QSE15_07_04_01] a) Filtração
+            [QSE15_07_04_02] b) Fervura
+            [QSE15_07_04_03] c) Hipoclorito
+            [QSE15_07_04_04] d) Nenhum
+            [QSE15_07_04_05] e) Outros
+            [QSE15_07_04_06] f) Não sabe
+            [QSE15_07_04_07] g) Não quis responder
+            [QSE15_07_04_08] h) Não se aplica
             Se outros, quais?____________________________________
     [QSE15_08] Alimentação / Animais
         [QSE15_08_01] Cria animais de estimação?
@@ -487,7 +487,7 @@
             [QSE15_10_01_02] b) Barriga d água, "xistose" (Esquistossomose)
             [QSE15_10_01_03] c) "Bicha", "lombriga" (Ascaridíase)
             [QSE15_10_01_04] d) "Amarelão" (Ancilostomose)
-            [QSE15_10_01_05] e) "Solitária (Teníase)
+            [QSE15_10_01_05] e) "Solitária" (Teníase)
             [QSE15_10_01_06] f) "Ameba"(Amebíase/Giardíase)
             [QSE15_10_01_07] g) Coceira (Enterobíase)
             [QSE15_10_01_08] h) Não sabe

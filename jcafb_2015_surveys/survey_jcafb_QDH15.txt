@@ -1,0 +1,22 @@
+[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia
+    [QDH15_01] Preâmbulo
+        [QDH15_01_01] Identificação do Paciente
+            (multiple_textboxes_diff_type)
+            [QDH15_01_01_01] Nome____________________________________
+            [QDH15_01_01_02] Código____________________________________
+        [QDH15_01_02] Aplicação do Geral
+            (multiple_textboxes_diff_type)
+            [QDH15_01_02_01] Aplicado por____________________________________
+            [QDH15_01_02_02] Código____________________________________
+            [QDH15_01_02_03] Data____________________________________
+        [QDH15_01_03] Entrevistado
+            (multiple_choice_only_one_ans)
+            [QDH15_01_03_01] a) Responsável
+            [QDH15_01_03_02] b) Paciente
+            [QDH15_01_03_03] c) Cuidador
+            Nome (Grau de Parentesco)____________________________________
+    [QDH15_02] Geral
+    [QDH15_03] Histórico de DHC
+    [QDH15_04] Histórico Familiar
+    [QDH15_05] Hábitos de Vida
+    [QDH15_06] Hábitos Alimentares
