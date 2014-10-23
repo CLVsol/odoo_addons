@@ -1,27 +1,20 @@
 QSE15:
     model: survey
-    id: QSE15
-    title: '[QSE15] JCAFB 2015 - Questionário Socioeconômico'
-    note: '[QSE15] JCAFB 2015 - Questionário Socioeconômico'
+    title: 'JCAFB 2015 - Questionário Socioeconômico'
+    note: 'JCAFB 2015 - Questionário Socioeconômico'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
 
     QSE15_01:
         model: survey.page
-        id: QSE15_01
-        title: '[QSE15_01] Preâmbulo'
-        note: '[QSE15_01] Preâmbulo'
-        survey_id: QSE15
-        sequence: 10
+        title: 'Preâmbulo'
+        note: 'Preâmbulo'
 
         QSE15_01_01:
             model: survey.question
-            id: QSE15_01_01
-            question: '[QSE15_01_01] Identificação do Paciente'
+            question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
-            page_id: QSE15_01
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e o Código.'
             required_type: exactly
@@ -29,27 +22,18 @@ QSE15:
 
             QSE15_01_01_01:
                 model: survey.answer
-                id: QSE15_01_01_01
-                answer: '[QSE15_01_01_01] Nome'
-                question_id: QSE15_01_01
-                sequence: 10
+                answer: 'Nome'
                 type: char
 
             QSE15_01_01_02:
                 model: survey.answer
-                id: QSE15_01_01_02
-                answer: '[QSE15_01_01_02] Código'
-                question_id: QSE15_01_01
-                sequence: 20
+                answer: 'Código'
                 type: char
 
         QSE15_01_02:
             model: survey.question
-            id: QSE15_01_02
-            question: '[QSE15_01_02] Aplicação do Questionário'
+            question: 'Aplicação do Questionário'
             type: multiple_textboxes_diff_type
-            page_id: QSE15_01
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome, o Código e a Data.'
             required_type: exactly
@@ -57,35 +41,23 @@ QSE15:
 
             QSE15_01_02_01:
                 model: survey.answer
-                id: QSE15_01_02_01
-                answer: '[QSE15_01_02_01] Aplicado por'
-                question_id: QSE15_01_02
-                sequence: 10
+                answer: 'Aplicado por'
                 type: char
 
             QSE15_01_02_02:
                 model: survey.answer
-                id: QSE15_01_02_02
-                answer: '[QSE15_01_02_02] Código'
-                question_id: QSE15_01_02
-                sequence: 20
+                answer: 'Código'
                 type: char
 
             QSE15_01_02_03:
                 model: survey.answer
-                id: QSE15_01_02_03
-                answer: '[QSE15_01_02_03] Data'
-                question_id: QSE15_01_02
-                sequence: 30
+                answer: 'Data'
                 type: date
 
         QSE15_01_03:
             model: survey.question
-            id: QSE15_01_03
-            question: '[QSE15_01_03] Entrevistado'
+            question: 'Entrevistado'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_01
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
@@ -93,40 +65,25 @@ QSE15:
 
             QSE15_01_03_01:
                 model: survey.answer
-                id: QSE15_01_03_01
-                answer: '[QSE15_01_03_01] a) Responsável'
-                question_id: QSE15_01_03
-                sequence: 10
+                answer: 'a) Responsável'
 
             QSE15_01_03_02:
                 model: survey.answer
-                id: QSE15_01_03_02
-                answer: '[QSE15_01_03_02] b) Paciente'
-                question_id: QSE15_01_03
-                sequence: 20
+                answer: 'b) Paciente'
 
             QSE15_01_03_03:
                 model: survey.answer
-                id: QSE15_01_03_03
-                answer: '[QSE15_01_03_03] c) Cuidador'
-                question_id: QSE15_01_03
-                sequence: 30
+                answer: 'c) Cuidador'
 
     QSE15_02:
         model: survey.page
-        id: QSE15_02
-        title: '[QSE15_02] Aspectos Sociais'
-        note: '[QSE15_02] Aspectos Sociais'
-        survey_id: QSE15
-        sequence: 20
+        title: 'Aspectos Sociais'
+        note: 'Aspectos Sociais'
 
         QSE15_02_01:
             model: survey.question
-            id: QSE15_02_01
-            question: '[QSE15_02_01] Onde a criança fica quando não está na escola?'
+            question: 'Onde a criança fica quando não está na escola?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_02
-            sequence: 10
             is_require_answer: 1
             required_type: at least
             req_ans: 1
@@ -136,133 +93,79 @@ QSE15:
 
             QSE15_02_01_01:
                 model: survey.answer
-                id: QSE15_02_01_01
-                answer: '[QSE15_02_01_01] a) Creche'
-                question_id: QSE15_02_01
-                sequence: 10
+                answer: 'a) Creche'
 
             QSE15_02_01_02:
                 model: survey.answer
-                id: QSE15_02_01_02
-                answer: '[QSE15_02_01_02] b) Projeto social (espaço amigo, etc...)'
-                question_id: QSE15_02_01
-                sequence: 20
+                answer: 'b) Projeto social (espaço amigo, etc...)'
 
             QSE15_02_01_03:
                 model: survey.answer
-                id: QSE15_02_01_03
-                answer: '[QSE15_02_01_03] c) Casa de familiares'
-                question_id: QSE15_02_01
-                sequence: 30
+                answer: 'c) Casa de familiares'
 
             QSE15_02_01_04:
                 model: survey.answer
-                id: QSE15_02_01_04
-                answer: '[QSE15_02_01_04] d) Em casa'
-                question_id: QSE15_02_01
-                sequence: 40
+                answer: 'd) Em casa'
 
             QSE15_02_01_05:
                 model: survey.answer
-                id: QSE15_02_01_05
-                answer: '[QSE15_02_01_05] e) Outros'
-                question_id: QSE15_02_01
-                sequence: 50
+                answer: 'e) Outros'
 
             QSE15_02_01_06:
                 model: survey.answer
-                id: QSE15_02_01_06
-                answer: '[QSE15_02_01_06] f) Não sabe'
-                question_id: QSE15_02_01
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_02_01_07:
                 model: survey.answer
-                id: QSE15_02_01_07
-                answer: '[QSE15_02_01_07] g) Não quis responder'
-                question_id: QSE15_02_01
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_02_01_08:
                 model: survey.answer
-                id: QSE15_02_01_08
-                answer: '[QSE15_02_01_08] h) Não se aplica'
-                question_id: QSE15_02_01
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_02_02:
             model: survey.question
-            id: QSE15_02_02
-            question: '[QSE15_02_02] Escolaridade do cuidador'
+            question: 'Escolaridade do cuidador'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_02_02_01:
                 model: survey.answer
-                id: QSE15_02_02_01
-                answer: '[QSE15_02_02_01] a) 0 anos'
-                question_id: QSE15_02_02
-                sequence: 10
+                answer: 'a) 0 anos'
 
             QSE15_02_02_02:
                 model: survey.answer
-                id: QSE15_02_02_02
-                answer: '[QSE15_02_02_02] b) 1 a 3 anos'
-                question_id: QSE15_02_02
-                sequence: 20
+                answer: 'b) 1 a 3 anos'
 
             QSE15_02_02_03:
                 model: survey.answer
-                id: QSE15_02_02_03
-                answer: '[QSE15_02_02_03] c) 4 a 11 anos'
-                question_id: QSE15_02_02
-                sequence: 30
+                answer: 'c) 4 a 11 anos'
 
             QSE15_02_02_04:
                 model: survey.answer
-                id: QSE15_02_02_04
-                answer: '[QSE15_02_02_04] d) 12 a 22 anos'
-                question_id: QSE15_02_02
-                sequence: 40
+                answer: 'd) 12 a 22 anos'
 
             QSE15_02_02_05:
                 model: survey.answer
-                id: QSE15_02_02_05
-                answer: '[QSE15_02_02_05] e) 22 anos ou mais'
-                question_id: QSE15_02_02
-                sequence: 50
+                answer: 'e) 22 anos ou mais'
 
             QSE15_02_02_06:
                 model: survey.answer
-                id: QSE15_02_02_06
-                answer: '[QSE15_02_02_06] f) Não sabe'
-                question_id: QSE15_02_02
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_02_02_07:
                 model: survey.answer
-                id: QSE15_02_02_07
-                answer: '[QSE15_02_02_07] g) Não quis responder'
-                question_id: QSE15_02_02
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_02_02_08:
                 model: survey.answer
-                id: QSE15_02_02_08
-                answer: '[QSE15_02_02_08] h) Não se aplica'
-                question_id: QSE15_02_02
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_02_03:
             model: survey.question
-            id: QSE15_02_03
-            question: '[QSE15_02_03] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?'
+            question: 'Qual a relação de parentesco do cuidador com o(a) Sr.(a)?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_02
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -272,327 +175,195 @@ QSE15:
 
             QSE15_02_03_01:
                 model: survey.answer
-                id: QSE15_02_03_01
-                answer: '[QSE15_02_03_01] a) Não possui Cuidador'
-                question_id: QSE15_02_03
-                sequence: 10
+                answer: 'a) Não possui Cuidador'
 
             QSE15_02_03_02:
                 model: survey.answer
-                id: QSE15_02_03_02
-                answer: '[QSE15_02_03_02] b) Filho'
-                question_id: QSE15_02_03
-                sequence: 20
+                answer: 'b) Filho'
 
             QSE15_02_03_03:
                 model: survey.answer
-                id: QSE15_02_03_03
-                answer: '[QSE15_02_03_03] c) Cônjuge'
-                question_id: QSE15_02_03
-                sequence: 30
+                answer: 'c) Cônjuge'
 
             QSE15_02_03_04:
                 model: survey.answer
-                id: QSE15_02_03_04
-                answer: '[QSE15_02_03_04] d) Neto(a)'
-                question_id: QSE15_02_03
-                sequence: 40
+                answer: 'd) Neto(a)'
 
             QSE15_02_03_05:
                 model: survey.answer
-                id: QSE15_02_03_05
-                answer: '[QSE15_02_03_05] e) Irmão(ã)'
-                question_id: QSE15_02_03
-                sequence: 50
+                answer: 'e) Irmão(ã)'
 
             QSE15_02_03_06:
                 model: survey.answer
-                id: QSE15_02_03_06
-                answer: '[QSE15_02_03_06] f) Outro familiar'
-                question_id: QSE15_02_03
-                sequence: 60
+                answer: 'f) Outro familiar'
 
             QSE15_02_03_07:
                 model: survey.answer
-                id: QSE15_02_03_07
-                answer: '[QSE15_02_03_07] g) Não familiar (sem laços consanguíneos)'
-                question_id: QSE15_02_03
-                sequence: 70
+                answer: 'g) Não familiar (sem laços consanguíneos)'
 
             QSE15_02_03_08:
                 model: survey.answer
-                id: QSE15_02_03_08
-                answer: '[QSE15_02_03_08] h) Não se aplica'
-                question_id: QSE15_02_03
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_02_04:
             model: survey.question
-            id: QSE15_02_04
-            question: '[QSE15_02_04] O(A) Sr.(a) é:'
+            question: 'O(A) Sr.(a) é:'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_02_04_01:
                 model: survey.answer
-                id: QSE15_02_04_01
-                answer: '[QSE15_02_04_01] a) Solteiro(a)'
-                question_id: QSE15_02_04
-                sequence: 10
+                answer: 'a) Solteiro(a)'
 
             QSE15_02_04_02:
                 model: survey.answer
-                id: QSE15_02_04_02
-                answer: '[QSE15_02_04_02] b) Casado(a) ou unido(a)'
-                question_id: QSE15_02_04
-                sequence: 20
+                answer: 'b) Casado(a) ou unido(a)'
 
             QSE15_02_04_03:
                 model: survey.answer
-                id: QSE15_02_04_03
-                answer: '[QSE15_02_04_03] c) Viúvo(a)'
-                question_id: QSE15_02_04
-                sequence: 30
+                answer: 'c) Viúvo(a)'
 
             QSE15_02_04_04:
                 model: survey.answer
-                id: QSE15_02_04_04
-                answer: '[QSE15_02_04_04] d) Separado(a)'
-                question_id: QSE15_02_04
-                sequence: 40
+                answer: 'd) Separado(a)'
 
             QSE15_02_04_05:
                 model: survey.answer
-                id: QSE15_02_04_05
-                answer: '[QSE15_02_04_05] e) Divorciado (a)'
-                question_id: QSE15_02_04
-                sequence: 50
+                answer: 'e) Divorciado (a)'
 
             QSE15_02_04_06:
                 model: survey.answer
-                id: QSE15_02_04_06
-                answer: '[QSE15_02_04_06] f) Não sabe'
-                question_id: QSE15_02_04
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_02_04_07:
                 model: survey.answer
-                id: QSE15_02_04_07
-                answer: '[QSE15_02_04_07] g) Não quis responder'
-                question_id: QSE15_02_04
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_02_04_08:
                 model: survey.answer
-                id: QSE15_02_04_08
-                answer: '[QSE15_02_04_08] h) Não se aplica'
-                question_id: QSE15_02_04
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_02_05:
             model: survey.question
-            id: QSE15_02_05
-            question: '[QSE15_02_05] Quem mora com o Sr(a) na sua casa? (além do idoso)'
+            question: 'Quem mora com o Sr(a) na sua casa? (além do idoso)'
             type: comment
-            page_id: QSE15_02
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
         QSE15_02_06:
             model: survey.question
-            id: QSE15_02_06
-            question: '[QSE15_02_06] O Sr(a) tem filhos?'
+            question: 'O Sr(a) tem filhos?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 60
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_02_06_01:
                 model: survey.answer
-                id: QSE15_02_06_01
-                answer: '[QSE15_02_06_01] a) Não'
-                question_id: QSE15_02_06
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_02_06_02:
                 model: survey.answer
-                id: QSE15_02_06_02
-                answer: '[QSE15_02_06_02] b) Sim'
-                question_id: QSE15_02_06
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_02_06_03:
                 model: survey.answer
-                id: QSE15_02_06_03
-                answer: '[QSE15_02_06_03] c) Não sabe'
-                question_id: QSE15_02_06
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_02_06_04:
                 model: survey.answer
-                id: QSE15_02_06_04
-                answer: '[QSE15_02_06_04] d) Não quis responder'
-                question_id: QSE15_02_06
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_02_06_05:
                 model: survey.answer
-                id: QSE15_02_06_05
-                answer: '[QSE15_02_06_05] e) Não se aplica'
-                question_id: QSE15_02_06
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_02_07:
             model: survey.question
-            id: QSE15_02_07
-            question: '[QSE15_02_07] Escolaridade ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")'
+            question: 'Escolaridade ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 70
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_02_07_01:
                 model: survey.answer
-                id: QSE15_02_07_01
-                answer: '[QSE15_02_07_01] a) É analfabeto'
-                question_id: QSE15_02_07
-                sequence: 10
+                answer: 'a) É analfabeto'
 
             QSE15_02_07_02:
                 model: survey.answer
-                id: QSE15_02_07_02
-                answer: '[QSE15_02_07_02] b) Não é analfabeto, mas não frequentou a escola'
-                question_id: QSE15_02_07
-                sequence: 20
+                answer: 'b) Não é analfabeto, mas não frequentou a escola'
 
             QSE15_02_07_03:
                 model: survey.answer
-                id: QSE15_02_07_03
-                answer: '[QSE15_02_07_03] c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário'
-                question_id: QSE15_02_07
-                sequence: 30
+                answer: 'c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário'
 
             QSE15_02_07_04:
                 model: survey.answer
-                id: QSE15_02_07_04
-                answer: '[QSE15_02_07_04] d) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio'
-                question_id: QSE15_02_07
-                sequence: 40
+                answer: 'd) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio'
 
             QSE15_02_07_05:
                 model: survey.answer
-                id: QSE15_02_07_05
-                answer: '[QSE15_02_07_05] e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto'
-                question_id: QSE15_02_07
-                sequence: 50
+                answer: 'e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto'
 
             QSE15_02_07_06:
                 model: survey.answer
-                id: QSE15_02_07_06
-                answer: '[QSE15_02_07_06] f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo'
-                question_id: QSE15_02_07
-                sequence: 60
+                answer: 'f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo'
 
             QSE15_02_07_07:
                 model: survey.answer
-                id: QSE15_02_07_07
-                answer: '[QSE15_02_07_07] g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)'
-                question_id: QSE15_02_07
-                sequence: 70
+                answer: 'g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)'
 
             QSE15_02_07_08:
                 model: survey.answer
-                id: QSE15_02_07_08
-                answer: '[QSE15_02_07_08] h) Ensino Superior incompleto'
-                question_id: QSE15_02_07
-                sequence: 80
+                answer: 'h) Ensino Superior incompleto'
 
             QSE15_02_07_09:
                 model: survey.answer
-                id: QSE15_02_07_09
-                answer: '[QSE15_02_07_09] i) Ensino Superior completo'
-                question_id: QSE15_02_07
-                sequence: 90
+                answer: 'i) Ensino Superior completo'
 
             QSE15_02_07_10:
                 model: survey.answer
-                id: QSE15_02_07_10
-                answer: '[QSE15_02_07_10] j) Não sabe'
-                question_id: QSE15_02_07
-                sequence: 100
+                answer: 'j) Não sabe'
 
             QSE15_02_07_11:
                 model: survey.answer
-                id: QSE15_02_07_11
-                answer: '[QSE15_02_07_11] k) Não quis responder'
-                question_id: QSE15_02_07
-                sequence: 110
+                answer: 'k) Não quis responder'
 
             QSE15_02_07_12:
                 model: survey.answer
-                id: QSE15_02_07_12
-                answer: '[QSE15_02_07_12] l) Não se aplica'
-                question_id: QSE15_02_07
-                sequence: 120
+                answer: 'l) Não se aplica'
 
         QSE15_02_08:
             model: survey.question
-            id: QSE15_02_08
-            question: '[QSE15_02_08] O(A) Sr.(a) sabe ler e escrever um recado?'
+            question: 'O(A) Sr.(a) sabe ler e escrever um recado?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 80
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_02_08_01:
                 model: survey.answer
-                id: QSE15_02_08_01
-                answer: '[QSE15_02_08_01] a) Não'
-                question_id: QSE15_02_08
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_02_08_02:
                 model: survey.answer
-                id: QSE15_02_08_02
-                answer: '[QSE15_02_08_02] b) Sim'
-                question_id: QSE15_02_08
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_02_08_03:
                 model: survey.answer
-                id: QSE15_02_08_03
-                answer: '[QSE15_02_08_03] c) Não sabe'
-                question_id: QSE15_02_08
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_02_08_04:
                 model: survey.answer
-                id: QSE15_02_08_04
-                answer: '[QSE15_02_08_04] d) Não quis responder'
-                question_id: QSE15_02_08
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_02_08_05:
                 model: survey.answer
-                id: QSE15_02_08_05
-                answer: '[QSE15_02_08_05] e) Não se aplica'
-                question_id: QSE15_02_08
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_02_09:
             model: survey.question
-            id: QSE15_02_09
-            question: '[QSE15_02_09] Qual destas opções o(a) descreve melhor:'
+            question: 'Qual destas opções o(a) descreve melhor:'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 90
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -600,74 +371,44 @@ QSE15:
 
             QSE15_02_09_01:
                 model: survey.answer
-                id: QSE15_02_09_01
-                answer: '[QSE15_02_09_01] a) Branco(a)'
-                question_id: QSE15_02_09
-                sequence: 10
+                answer: 'a) Branco(a)'
 
             QSE15_02_09_02:
                 model: survey.answer
-                id: QSE15_02_09_02
-                answer: '[QSE15_02_09_02] b) Negro(a)'
-                question_id: QSE15_02_09
-                sequence: 20
+                answer: 'b) Negro(a)'
 
             QSE15_02_09_03:
                 model: survey.answer
-                id: QSE15_02_09_03
-                answer: '[QSE15_02_09_03] c) Pardo(a)'
-                question_id: QSE15_02_09
-                sequence: 30
+                answer: 'c) Pardo(a)'
 
             QSE15_02_09_04:
                 model: survey.answer
-                id: QSE15_02_09_04
-                answer: '[QSE15_02_09_04] d) Amarelo(a)'
-                question_id: QSE15_02_09
-                sequence: 40
+                answer: 'd) Amarelo(a)'
 
             QSE15_02_09_05:
                 model: survey.answer
-                id: QSE15_02_09_05
-                answer: '[QSE15_02_09_05] e) Indígena'
-                question_id: QSE15_02_09
-                sequence: 50
+                answer: 'e) Indígena'
 
             QSE15_02_09_06:
                 model: survey.answer
-                id: QSE15_02_09_06
-                answer: '[QSE15_02_09_06] f) Outro(a)'
-                question_id: QSE15_02_09
-                sequence: 60
+                answer: 'f) Outro(a)'
 
             QSE15_02_09_07:
                 model: survey.answer
-                id: QSE15_02_09_07
-                answer: '[QSE15_02_09_07] g) Não sabe'
-                question_id: QSE15_02_09
-                sequence: 70
+                answer: 'g) Não sabe'
 
             QSE15_02_09_08:
                 model: survey.answer
-                id: QSE15_02_09_08
-                answer: '[QSE15_02_09_08] h) Não quis responder'
-                question_id: QSE15_02_09
-                sequence: 80
+                answer: 'h) Não quis responder'
 
             QSE15_02_09_09:
                 model: survey.answer
-                id: QSE15_02_09_09
-                answer: '[QSE15_02_09_09] i) Não se aplica'
-                question_id: QSE15_02_09
-                sequence: 90
+                answer: 'i) Não se aplica'
 
         QSE15_02_10:
             model: survey.question
-            id: QSE15_02_10
-            question: '[QSE15_02_10] Qual é a sua religião?'
+            question: 'Qual é a sua religião?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_02
-            sequence: 90
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -675,89 +416,53 @@ QSE15:
 
             QSE15_02_10_01:
                 model: survey.answer
-                id: QSE15_02_10_01
-                answer: '[QSE15_02_10_01] a) Católica Apostólica Romana'
-                question_id: QSE15_02_10
-                sequence: 10
+                answer: 'a) Católica Apostólica Romana'
 
             QSE15_02_10_02:
                 model: survey.answer
-                id: QSE15_02_10_02
-                answer: '[QSE15_02_10_02] b) Evangélica'
-                question_id: QSE15_02_10
-                sequence: 20
+                answer: 'b) Evangélica'
 
             QSE15_02_10_03:
                 model: survey.answer
-                id: QSE15_02_10_03
-                answer: '[QSE15_02_10_03] c) Espírita'
-                question_id: QSE15_02_10
-                sequence: 30
+                answer: 'c) Espírita'
 
             QSE15_02_10_04:
                 model: survey.answer
-                id: QSE15_02_10_04
-                answer: '[QSE15_02_10_04] d) Umbanda'
-                question_id: QSE15_02_10
-                sequence: 40
+                answer: 'd) Umbanda'
 
             QSE15_02_10_05:
                 model: survey.answer
-                id: QSE15_02_10_05
-                answer: '[QSE15_02_10_05] e) Candomblé'
-                question_id: QSE15_02_10
-                sequence: 50
+                answer: 'e) Candomblé'
 
             QSE15_02_10_06:
                 model: survey.answer
-                id: QSE15_02_10_06
-                answer: '[QSE15_02_10_06] f) Outra'
-                question_id: QSE15_02_10
-                sequence: 60
+                answer: 'f) Outra'
 
             QSE15_02_10_07:
                 model: survey.answer
-                id: QSE15_02_10_07
-                answer: '[QSE15_02_10_07] g) Sem religião'
-                question_id: QSE15_02_10
-                sequence: 70
+                answer: 'g) Sem religião'
 
             QSE15_02_10_08:
                 model: survey.answer
-                id: QSE15_02_10_08
-                answer: '[QSE15_02_10_08] h) Não sabe'
-                question_id: QSE15_02_10
-                sequence: 80
+                answer: 'h) Não sabe'
 
             QSE15_02_10_09:
                 model: survey.answer
-                id: QSE15_02_10_09
-                answer: '[QSE15_02_10_09] i) Não quis responder'
-                question_id: QSE15_02_10
-                sequence: 90
+                answer: 'i) Não quis responder'
 
             QSE15_02_10_10:
                 model: survey.answer
-                id: QSE15_02_10_10
-                answer: '[QSE15_02_10_10] j) Não se aplica'
-                question_id: QSE15_02_10
-                sequence: 100
+                answer: 'j) Não se aplica'
 
     QSE15_03:
         model: survey.page
-        id: QSE15_03
-        title: '[QSE15_03] Hábitos'
-        note: '[QSE15_03] Hábitos'
-        survey_id: QSE15
-        sequence: 30
+        title: 'Hábitos'
+        note: 'Hábitos'
 
         QSE15_03_01:
             model: survey.question
-            id: QSE15_03_01
-            question: '[QSE15_03_01] Como é o banheiro da casa?'
+            question: 'Como é o banheiro da casa?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -765,53 +470,32 @@ QSE15:
 
             QSE15_03_01_01:
                 model: survey.answer
-                id: QSE15_03_01_01
-                answer: '[QSE15_03_01_01] a) Banheiro com rede de esgoto'
-                question_id: QSE15_03_01
-                sequence: 10
+                answer: 'a) Banheiro com rede de esgoto'
 
             QSE15_03_01_02:
                 model: survey.answer
-                id: QSE15_03_01_02
-                answer: '[QSE15_03_01_02] b) Banheiro que dá na fossa'
-                question_id: QSE15_03_01
-                sequence: 20
+                answer: 'b) Banheiro que dá na fossa'
 
             QSE15_03_01_03:
                 model: survey.answer
-                id: QSE15_03_01_03
-                answer: '[QSE15_03_01_03] c) Outro'
-                question_id: QSE15_03_01
-                sequence: 30
+                answer: 'c) Outro'
 
             QSE15_03_01_04:
                 model: survey.answer
-                id: QSE15_03_01_04
-                answer: '[QSE15_03_01_04] d) Não sabe'
-                question_id: QSE15_03_01
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_03_01_05:
                 model: survey.answer
-                id: QSE15_03_01_05
-                answer: '[QSE15_03_01_05] e) Não quis responder'
-                question_id: QSE15_03_01
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_03_01_06:
                 model: survey.answer
-                id: QSE15_03_01_06
-                answer: '[QSE15_03_01_06] f) Não se aplica'
-                question_id: QSE15_03_01
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_03_02:
             model: survey.question
-            id: QSE15_03_02
-            question: '[QSE15_03_02] Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
+            question: 'Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -819,53 +503,32 @@ QSE15:
 
             QSE15_03_02_01:
                 model: survey.answer
-                id: QSE15_03_02_01
-                answer: '[QSE15_03_02_01] a) Não'
-                question_id: QSE15_03_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_03_02_02:
                 model: survey.answer
-                id: QSE15_03_02_02
-                answer: '[QSE15_03_02_02] b) Sim'
-                question_id: QSE15_03_02
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_03_02_03:
                 model: survey.answer
-                id: QSE15_03_02_03
-                answer: '[QSE15_03_02_03] c) Às vezes'
-                question_id: QSE15_03_02
-                sequence: 30
+                answer: 'c) Às vezes'
 
             QSE15_03_02_04:
                 model: survey.answer
-                id: QSE15_03_02_04
-                answer: '[QSE15_03_02_04] d) Não sabe'
-                question_id: QSE15_03_02
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_03_02_05:
                 model: survey.answer
-                id: QSE15_03_02_05
-                answer: '[QSE15_03_02_05] e) Não quis responder'
-                question_id: QSE15_03_02
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_03_02_06:
                 model: survey.answer
-                id: QSE15_03_02_06
-                answer: '[QSE15_03_02_06] f) Não se aplica'
-                question_id: QSE15_03_02
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_03_03:
             model: survey.question
-            id: QSE15_03_03
-            question: '[QSE15_03_03] Onde a criança costuma fazer cocô?'
+            question: 'Onde a criança costuma fazer cocô?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_03
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -875,60 +538,36 @@ QSE15:
 
             QSE15_03_03_01:
                 model: survey.answer
-                id: QSE15_03_03_01
-                answer: '[QSE15_03_03_01] a) Vaso sanitário'
-                question_id: QSE15_03_03
-                sequence: 10
+                answer: 'a) Vaso sanitário'
 
             QSE15_03_03_02:
                 model: survey.answer
-                id: QSE15_03_03_02
-                answer: '[QSE15_03_03_02] b) Penico (se sim, onde joga o cocô?)'
-                question_id: QSE15_03_03
-                sequence: 20
+                answer: 'b) Penico (se sim, onde joga o cocô?)'
 
             QSE15_03_03_03:
                 model: survey.answer
-                id: QSE15_03_03_03
-                answer: '[QSE15_03_03_03] c) Fralda (se sim, onde joga a fralda suja?)'
-                question_id: QSE15_03_03
-                sequence: 30
+                answer: 'c) Fralda (se sim, onde joga a fralda suja?)'
 
             QSE15_03_03_04:
                 model: survey.answer
-                id: QSE15_03_03_04
-                answer: '[QSE15_03_03_04] d) Outros (quintal, mato, etc). Onde?(a)'
-                question_id: QSE15_03_03
-                sequence: 40
+                answer: 'd) Outros (quintal, mato, etc). Onde?(a)'
 
             QSE15_03_03_05:
                 model: survey.answer
-                id: QSE15_03_03_05
-                answer: '[QSE15_03_03_05] e) Não sabe'
-                question_id: QSE15_03_03
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_03_03_06:
                 model: survey.answer
-                id: QSE15_03_03_06
-                answer: '[QSE15_03_03_06] f) Não quis responder'
-                question_id: QSE15_03_03
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_03_03_07:
                 model: survey.answer
-                id: QSE15_03_03_07
-                answer: '[QSE15_03_03_07] g) Não se aplica'
-                question_id: QSE15_03_03
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_03_04:
             model: survey.question
-            id: QSE15_03_04
-            question: '[QSE15_03_04] A criança tem algum dos seguintes hábitos'
+            question: 'A criança tem algum dos seguintes hábitos'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_03
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -936,60 +575,36 @@ QSE15:
 
             QSE15_03_04_01:
                 model: survey.answer
-                id: QSE15_03_04_01
-                answer: '[QSE15_03_04_01] a) Lava as mãos antes das refeições'
-                question_id: QSE15_03_04
-                sequence: 10
+                answer: 'a) Lava as mãos antes das refeições'
 
             QSE15_03_04_02:
                 model: survey.answer
-                id: QSE15_03_04_02
-                answer: '[QSE15_03_04_02] b) Lava as mãos após utilizar o banheiro'
-                question_id: QSE15_03_04
-                sequence: 20
+                answer: 'b) Lava as mãos após utilizar o banheiro'
 
             QSE15_03_04_03:
                 model: survey.answer
-                id: QSE15_03_04_03
-                answer: '[QSE15_03_04_03] c) Anda calçada'
-                question_id: QSE15_03_04
-                sequence: 30
+                answer: 'c) Anda calçada'
 
             QSE15_03_04_04:
                 model: survey.answer
-                id: QSE15_03_04_04
-                answer: '[QSE15_03_04_04] d) Nenhum'
-                question_id: QSE15_03_04
-                sequence: 40
+                answer: 'd) Nenhum'
 
             QSE15_03_04_05:
                 model: survey.answer
-                id: QSE15_03_04_05
-                answer: '[QSE15_03_04_05] e) Não sabe'
-                question_id: QSE15_03_04
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_03_04_06:
                 model: survey.answer
-                id: QSE15_03_04_06
-                answer: '[QSE15_03_04_06] f) Não quis responder'
-                question_id: QSE15_03_04
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_03_04_07:
                 model: survey.answer
-                id: QSE15_03_04_07
-                answer: '[QSE15_03_04_07] g) Não se aplica'
-                question_id: QSE15_03_04
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_03_05:
             model: survey.question
-            id: QSE15_03_05
-            question: '[QSE15_03_05] O que costuma fazer no tempo livre?'
+            question: 'O que costuma fazer no tempo livre?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_03
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -999,88 +614,52 @@ QSE15:
 
             QSE15_03_05_01:
                 model: survey.answer
-                id: QSE15_03_05_01
-                answer: '[QSE15_03_05_01] a) Caminha pela cidade'
-                question_id: QSE15_03_05
-                sequence: 10
+                answer: 'a) Caminha pela cidade'
 
             QSE15_03_05_02:
                 model: survey.answer
-                id: QSE15_03_05_02
-                answer: '[QSE15_03_05_02] b) Pratica exercícios físicos'
-                question_id: QSE15_03_05
-                sequence: 20
+                answer: 'b) Pratica exercícios físicos'
 
             QSE15_03_05_03:
                 model: survey.answer
-                id: QSE15_03_05_03
-                answer: '[QSE15_03_05_03] c) Faz trabalhos manuais'
-                question_id: QSE15_03_05
-                sequence: 30
+                answer: 'c) Faz trabalhos manuais'
 
             QSE15_03_05_04:
                 model: survey.answer
-                id: QSE15_03_05_04
-                answer: '[QSE15_03_05_04] d) Sai para conversar com as pessoas'
-                question_id: QSE15_03_05
-                sequence: 40
+                answer: 'd) Sai para conversar com as pessoas'
 
             QSE15_03_05_05:
                 model: survey.answer
-                id: QSE15_03_05_05
-                answer: '[QSE15_03_05_05] e) Fica dentro de casa descansando'
-                question_id: QSE15_03_05
-                sequence: 50
+                answer: 'e) Fica dentro de casa descansando'
 
             QSE15_03_05_06:
                 model: survey.answer
-                id: QSE15_03_05_06
-                answer: '[QSE15_03_05_06] f) Frequenta grupos de atividades'
-                question_id: QSE15_03_05
-                sequence: 60
+                answer: 'f) Frequenta grupos de atividades'
 
             QSE15_03_05_07:
                 model: survey.answer
-                id: QSE15_03_05_07
-                answer: '[QSE15_03_05_07] g) Cuida da casa'
-                question_id: QSE15_03_05
-                sequence: 70
+                answer: 'g) Cuida da casa'
 
             QSE15_03_05_08:
                 model: survey.answer
-                id: QSE15_03_05_08
-                answer: '[QSE15_03_05_08] h) Outra atividade'
-                question_id: QSE15_03_05
-                sequence: 80
+                answer: 'h) Outra atividade'
 
             QSE15_03_05_09:
                 model: survey.answer
-                id: QSE15_03_05_09
-                answer: '[QSE15_03_05_09] i) Não sabe'
-                question_id: QSE15_03_05
-                sequence: 90
+                answer: 'i) Não sabe'
 
             QSE15_03_05_10:
                 model: survey.answer
-                id: QSE15_03_05_10
-                answer: '[QSE15_03_05_10] j) Não quis responder'
-                question_id: QSE15_03_05
-                sequence: 100
+                answer: 'j) Não quis responder'
 
             QSE15_03_05_11:
                 model: survey.answer
-                id: QSE15_03_05_11
-                answer: '[QSE15_03_05_11] k) Não se aplica'
-                question_id: QSE15_03_05
-                sequence: 110
+                answer: 'k) Não se aplica'
 
         QSE15_03_06:
             model: survey.question
-            id: QSE15_03_06
-            question: '[QSE15_03_06] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?'
+            question: 'O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 60
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1088,185 +667,110 @@ QSE15:
 
             QSE15_03_06_01:
                 model: survey.answer
-                id: QSE15_03_06_01
-                answer: '[QSE15_03_06_01] a) Sim. Qual'
-                question_id: QSE15_03_06
-                sequence: 10
+                answer: 'a) Sim. Qual'
 
             QSE15_03_06_02:
                 model: survey.answer
-                id: QSE15_03_06_02
-                answer: '[QSE15_03_06_02] b) Não'
-                question_id: QSE15_03_06
-                sequence: 20
+                answer: 'b) Não'
 
             QSE15_03_06_03:
                 model: survey.answer
-                id: QSE15_03_06_03
-                answer: '[QSE15_03_06_03] c) Não sabe'
-                question_id: QSE15_03_06
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_03_06_04:
                 model: survey.answer
-                id: QSE15_03_06_04
-                answer: '[QSE15_03_06_04] d) Não quis responder'
-                question_id: QSE15_03_06
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_03_06_05:
                 model: survey.answer
-                id: QSE15_03_06_05
-                answer: '[QSE15_03_06_05] e) Não se aplica'
-                question_id: QSE15_03_06
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_03_07:
             model: survey.question
-            id: QSE15_03_07
-            question: '[QSE15_03_07] Com que frequência caminha ou pratica exercícios?'
+            question: 'Com que frequência caminha ou pratica exercícios?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 70
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_03_07_01:
                 model: survey.answer
-                id: QSE15_03_07_01
-                answer: '[QSE15_03_07_01] a) 1x por semana'
-                question_id: QSE15_03_07
-                sequence: 10
+                answer: 'a) 1x por semana'
 
             QSE15_03_07_02:
                 model: survey.answer
-                id: QSE15_03_07_02
-                answer: '[QSE15_03_07_02] b) 2x por semana'
-                question_id: QSE15_03_07
-                sequence: 20
+                answer: 'b) 2x por semana'
 
             QSE15_03_07_03:
                 model: survey.answer
-                id: QSE15_03_07_03
-                answer: '[QSE15_03_07_03] c) 3x por semana'
-                question_id: QSE15_03_07
-                sequence: 30
+                answer: 'c) 3x por semana'
 
             QSE15_03_07_04:
                 model: survey.answer
-                id: QSE15_03_07_04
-                answer: '[QSE15_03_07_04] d) 4x por semana'
-                question_id: QSE15_03_07
-                sequence: 40
+                answer: 'd) 4x por semana'
 
             QSE15_03_07_05:
                 model: survey.answer
-                id: QSE15_03_07_05
-                answer: '[QSE15_03_07_05] e) 5x por semana'
-                question_id: QSE15_03_07
-                sequence: 50
+                answer: 'e) 5x por semana'
 
             QSE15_03_07_06:
                 model: survey.answer
-                id: QSE15_03_07_06
-                answer: '[QSE15_03_07_06] f) 6x por semana'
-                question_id: QSE15_03_07
-                sequence: 60
+                answer: 'f) 6x por semana'
 
             QSE15_03_07_07:
                 model: survey.answer
-                id: QSE15_03_07_07
-                answer: '[QSE15_03_07_07] g) Todos os dias'
-                question_id: QSE15_03_07
-                sequence: 70
+                answer: 'g) Todos os dias'
 
             QSE15_03_07_08:
                 model: survey.answer
-                id: QSE15_03_07_08
-                answer: '[QSE15_03_07_08] h) Não caminha nem pratica exercícios físicos'
-                question_id: QSE15_03_07
-                sequence: 80
+                answer: 'h) Não caminha nem pratica exercícios físicos'
 
             QSE15_03_07_09:
                 model: survey.answer
-                id: QSE15_03_07_09
-                answer: '[QSE15_03_07_09] i) Não sabe'
-                question_id: QSE15_03_07
-                sequence: 90
+                answer: 'i) Não sabe'
 
             QSE15_03_07_10:
                 model: survey.answer
-                id: QSE15_03_07_10
-                answer: '[QSE15_03_07_10] j) Não quis responder'
-                question_id: QSE15_03_07
-                sequence: 100
+                answer: 'j) Não quis responder'
 
             QSE15_03_07_11:
                 model: survey.answer
-                id: QSE15_03_07_11
-                answer: '[QSE15_03_07_11] k) Não se aplica'
-                question_id: QSE15_03_07
-                sequence: 110
+                answer: 'k) Não se aplica'
 
         QSE15_03_08:
             model: survey.question
-            id: QSE15_03_08
-            question: '[QSE15_03_08] O(A) Sr.(a) tem ou teve o hábito de fumar?'
+            question: 'O(A) Sr.(a) tem ou teve o hábito de fumar?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 80
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_03_08_01:
                 model: survey.answer
-                id: QSE15_03_08_01
-                answer: '[QSE15_03_08_01] a) Nunca fumou'
-                question_id: QSE15_03_08
-                sequence: 10
+                answer: 'a) Nunca fumou'
 
             QSE15_03_08_02:
                 model: survey.answer
-                id: QSE15_03_08_02
-                answer: '[QSE15_03_08_02] b) Fuma atualmente'
-                question_id: QSE15_03_08
-                sequence: 20
+                answer: 'b) Fuma atualmente'
 
             QSE15_03_08_03:
                 model: survey.answer
-                id: QSE15_03_08_03
-                answer: '[QSE15_03_08_03] c) Já fumou, mas não fuma atualmente'
-                question_id: QSE15_03_08
-                sequence: 30
+                answer: 'c) Já fumou, mas não fuma atualmente'
 
             QSE15_03_08_04:
                 model: survey.answer
-                id: QSE15_03_08_04
-                answer: '[QSE15_03_08_04] d) Não sabe'
-                question_id: QSE15_03_08
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_03_08_05:
                 model: survey.answer
-                id: QSE15_03_08_05
-                answer: '[QSE15_03_08_05] e) Não quis responder'
-                question_id: QSE15_03_08
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_03_08_06:
                 model: survey.answer
-                id: QSE15_03_08_06
-                answer: '[QSE15_03_08_06] f) Não se aplica'
-                question_id: QSE15_03_08
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_03_09:
             model: survey.question
-            id: QSE15_03_09
-            question: '[QSE15_03_09] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?'
+            question: 'O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_03
-            sequence: 90
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1274,54 +778,33 @@ QSE15:
 
             QSE15_03_09_01:
                 model: survey.answer
-                id: QSE15_03_09_01
-                answer: '[QSE15_03_09_01] a) Não'
-                question_id: QSE15_03_09
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_03_09_02:
                 model: survey.answer
-                id: QSE15_03_09_02
-                answer: '[QSE15_03_09_02] b) Sim'
-                question_id: QSE15_03_09
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_03_09_03:
                 model: survey.answer
-                id: QSE15_03_09_03
-                answer: '[QSE15_03_09_03] c) Não sabe'
-                question_id: QSE15_03_09
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_03_09_04:
                 model: survey.answer
-                id: QSE15_03_09_04
-                answer: '[QSE15_03_09_04] d) Não quis responder'
-                question_id: QSE15_03_09
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_03_09_05:
                 model: survey.answer
-                id: QSE15_03_09_05
-                answer: '[QSE15_03_09_05] e) Não se aplica'
-                question_id: QSE15_03_09
-                sequence: 50
+                answer: 'e) Não se aplica'
 
     QSE15_04:
         model: survey.page
-        id: QSE15_04
-        title: '[QSE15_04] Saúde'
-        note: '[QSE15_04] Saúde'
-        survey_id: QSE15
-        sequence: 40
+        title: 'Saúde'
+        note: 'Saúde'
 
         QSE15_04_01:
             model: survey.question
-            id: QSE15_04_01
-            question: '[QSE15_04_01] Tem alguma dificuldade para:'
+            question: 'Tem alguma dificuldade para:'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_04
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -1331,88 +814,52 @@ QSE15:
 
             QSE15_04_01_01:
                 model: survey.answer
-                id: QSE15_04_01_01
-                answer: '[QSE15_04_01_01] a) Falar'
-                question_id: QSE15_04_01
-                sequence: 10
+                answer: 'a) Falar'
 
             QSE15_04_01_02:
                 model: survey.answer
-                id: QSE15_04_01_02
-                answer: '[QSE15_04_01_02] b) Engolir'
-                question_id: QSE15_04_01
-                sequence: 20
+                answer: 'b) Engolir'
 
             QSE15_04_01_03:
                 model: survey.answer
-                id: QSE15_04_01_03
-                answer: '[QSE15_04_01_03] c) Enxergar'
-                question_id: QSE15_04_01
-                sequence: 30
+                answer: 'c) Enxergar'
 
             QSE15_04_01_04:
                 model: survey.answer
-                id: QSE15_04_01_04
-                answer: '[QSE15_04_01_04] d) Escutar'
-                question_id: QSE15_04_01
-                sequence: 40
+                answer: 'd) Escutar'
 
             QSE15_04_01_05:
                 model: survey.answer
-                id: QSE15_04_01_05
-                answer: '[QSE15_04_01_05] e) Movimenta-se'
-                question_id: QSE15_04_01
-                sequence: 50
+                answer: 'e) Movimenta-se'
 
             QSE15_04_01_06:
                 model: survey.answer
-                id: QSE15_04_01_06
-                answer: '[QSE15_04_01_06] f) Urinar'
-                question_id: QSE15_04_01
-                sequence: 60
+                answer: 'f) Urinar'
 
             QSE15_04_01_07:
                 model: survey.answer
-                id: QSE15_04_01_07
-                answer: '[QSE15_04_01_07] g) Outras'
-                question_id: QSE15_04_01
-                sequence: 70
+                answer: 'g) Outras'
 
             QSE15_04_01_08:
                 model: survey.answer
-                id: QSE15_04_01_08
-                answer: '[QSE15_04_01_08] h) Não tem dificuldades'
-                question_id: QSE15_04_01
-                sequence: 80
+                answer: 'h) Não tem dificuldades'
 
             QSE15_04_01_09:
                 model: survey.answer
-                id: QSE15_04_01_09
-                answer: '[QSE15_04_01_09] i) Não sabe'
-                question_id: QSE15_04_01
-                sequence: 90
+                answer: 'i) Não sabe'
 
             QSE15_04_01_10:
                 model: survey.answer
-                id: QSE15_04_01_10
-                answer: '[QSE15_04_01_10] j) Não quis responder'
-                question_id: QSE15_04_01
-                sequence: 100
+                answer: 'j) Não quis responder'
 
             QSE15_04_01_11:
                 model: survey.answer
-                id: QSE15_04_01_11
-                answer: '[QSE15_04_01_11] k) Não se aplica'
-                question_id: QSE15_04_01
-                sequence: 110
+                answer: 'k) Não se aplica'
 
         QSE15_04_02:
             model: survey.question
-            id: QSE15_04_02
-            question: '[QSE15_04_02] A casa possui:'
+            question: 'A casa possui:'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_04
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -1420,200 +867,119 @@ QSE15:
 
             QSE15_04_02_01:
                 model: survey.answer
-                id: QSE15_04_02_01
-                answer: '[QSE15_04_02_01] a) Degraus/desníveis'
-                question_id: QSE15_04_02
-                sequence: 10
+                answer: 'a) Degraus/desníveis'
 
             QSE15_04_02_02:
                 model: survey.answer
-                id: QSE15_04_02_02
-                answer: '[QSE15_04_02_02] b) Tapetes'
-                question_id: QSE15_04_02
-                sequence: 20
+                answer: 'b) Tapetes'
 
             QSE15_04_02_03:
                 model: survey.answer
-                id: QSE15_04_02_03
-                answer: '[QSE15_04_02_03] c) Locais com piso escorregadio'
-                question_id: QSE15_04_02
-                sequence: 30
+                answer: 'c) Locais com piso escorregadio'
 
             QSE15_04_02_04:
                 model: survey.answer
-                id: QSE15_04_02_04
-                answer: '[QSE15_04_02_04] d) Móveis ou objetos que dificultam a circulação'
-                question_id: QSE15_04_02
-                sequence: 40
+                answer: 'd) Móveis ou objetos que dificultam a circulação'
 
             QSE15_04_02_05:
                 model: survey.answer
-                id: QSE15_04_02_05
-                answer: '[QSE15_04_02_05] e) Armários ou prateleiras muito altas'
-                question_id: QSE15_04_02
-                sequence: 50
+                answer: 'e) Armários ou prateleiras muito altas'
 
             QSE15_04_02_06:
                 model: survey.answer
-                id: QSE15_04_02_06
-                answer: '[QSE15_04_02_06] f) Nenhuma das alternativas citadas'
-                question_id: QSE15_04_02
-                sequence: 60
+                answer: 'f) Nenhuma das alternativas citadas'
 
             QSE15_04_02_07:
                 model: survey.answer
-                id: QSE15_04_02_07
-                answer: '[QSE15_04_02_07] g) Não sabe'
-                question_id: QSE15_04_02
-                sequence: 70
+                answer: 'g) Não sabe'
 
             QSE15_04_02_08:
                 model: survey.answer
-                id: QSE15_04_02_08
-                answer: '[QSE15_04_02_08] h) Não quis responder'
-                question_id: QSE15_04_02
-                sequence: 80
+                answer: 'h) Não quis responder'
 
             QSE15_04_02_09:
                 model: survey.answer
-                id: QSE15_04_02_09
-                answer: '[QSE15_04_02_09] i) Não se aplica'
-                question_id: QSE15_04_02
-                sequence: 90
+                answer: 'i) Não se aplica'
 
         QSE15_04_03:
             model: survey.question
-            id: QSE15_04_03
-            question: '[QSE15_04_03] O(A) Sr.(a) diria que sua saúde é:'
+            question: 'O(A) Sr.(a) diria que sua saúde é:'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_04
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_04_03_01:
                 model: survey.answer
-                id: QSE15_04_03_01
-                answer: '[QSE15_04_03_01] a) Muito boa'
-                question_id: QSE15_04_03
-                sequence: 10
+                answer: 'a) Muito boa'
 
             QSE15_04_03_02:
                 model: survey.answer
-                id: QSE15_04_03_02
-                answer: '[QSE15_04_03_02] b) Boa'
-                question_id: QSE15_04_03
-                sequence: 20
+                answer: 'b) Boa'
 
             QSE15_04_03_03:
                 model: survey.answer
-                id: QSE15_04_03_03
-                answer: '[QSE15_04_03_03] c) Regular'
-                question_id: QSE15_04_03
-                sequence: 30
+                answer: 'c) Regular'
 
             QSE15_04_03_04:
                 model: survey.answer
-                id: QSE15_04_03_04
-                answer: '[QSE15_04_03_04] d) Ruim'
-                question_id: QSE15_04_03
-                sequence: 40
+                answer: 'd) Ruim'
 
             QSE15_04_03_05:
                 model: survey.answer
-                id: QSE15_04_03_05
-                answer: '[QSE15_04_03_05] e) Muito ruim'
-                question_id: QSE15_04_03
-                sequence: 50
+                answer: 'e) Muito ruim'
 
             QSE15_04_03_06:
                 model: survey.answer
-                id: QSE15_04_03_06
-                answer: '[QSE15_04_03_06] f) Não sabe'
-                question_id: QSE15_04_03
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_04_03_07:
                 model: survey.answer
-                id: QSE15_04_03_07
-                answer: '[QSE15_04_03_07] g) Não quis responder'
-                question_id: QSE15_04_03
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_04_03_08:
                 model: survey.answer
-                id: QSE15_04_03_08
-                answer: '[QSE15_04_03_08] h) Não se aplica'
-                question_id: QSE15_04_03
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_04_04:
             model: survey.question
-            id: QSE15_04_04
-            question: '[QSE15_04_04] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é'
+            question: 'Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_04
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_04_04_01:
                 model: survey.answer
-                id: QSE15_04_04_01
-                answer: '[QSE15_04_04_01] a) Melhor'
-                question_id: QSE15_04_04
-                sequence: 10
+                answer: 'a) Melhor'
 
             QSE15_04_04_02:
                 model: survey.answer
-                id: QSE15_04_04_02
-                answer: '[QSE15_04_04_02] b) Igual'
-                question_id: QSE15_04_04
-                sequence: 20
+                answer: 'b) Igual'
 
             QSE15_04_04_03:
                 model: survey.answer
-                id: QSE15_04_04_03
-                answer: '[QSE15_04_04_03] c) Pior'
-                question_id: QSE15_04_04
-                sequence: 30
+                answer: 'c) Pior'
 
             QSE15_04_04_04:
                 model: survey.answer
-                id: QSE15_04_04_04
-                answer: '[QSE15_04_04_04] d) Não sabe'
-                question_id: QSE15_04_04
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_04_04_05:
                 model: survey.answer
-                id: QSE15_04_04_05
-                answer: '[QSE15_04_04_05] e) Não quis responder'
-                question_id: QSE15_04_04
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_04_04_06:
                 model: survey.answer
-                id: QSE15_04_04_06
-                answer: '[QSE15_04_04_06] f) Não se aplica'
-                question_id: QSE15_04_04
-                sequence: 60
+                answer: 'f) Não se aplica'
 
     QSE15_05:
         model: survey.page
-        id: QSE15_05
-        title: '[QSE15_05] Médico'
-        note: '[QSE15_05] Médico'
-        survey_id: QSE15
-        sequence: 50
+        title: 'Médico'
+        note: 'Médico'
 
         QSE15_05_01:
             model: survey.question
-            id: QSE15_05_01
-            question: '[QSE15_05_01] Que motivo(s) o leva(m) a procurar atendimento médico?'
+            question: 'Que motivo(s) o leva(m) a procurar atendimento médico?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_05
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -1623,67 +989,40 @@ QSE15:
 
             QSE15_05_01_01:
                 model: survey.answer
-                id: QSE15_05_01_01
-                answer: '[QSE15_05_01_01] a) Somente quando está doente'
-                question_id: QSE15_05_01
-                sequence: 10
+                answer: 'a) Somente quando está doente'
 
             QSE15_05_01_02:
                 model: survey.answer
-                id: QSE15_05_01_02
-                answer: '[QSE15_05_01_02] b) Realizam tratamento'
-                question_id: QSE15_05_01
-                sequence: 20
+                answer: 'b) Realizam tratamento'
 
             QSE15_05_01_03:
                 model: survey.answer
-                id: QSE15_05_01_03
-                answer: '[QSE15_05_01_03] c) Exames de rotina'
-                question_id: QSE15_05_01
-                sequence: 30
+                answer: 'c) Exames de rotina'
 
             QSE15_05_01_04:
                 model: survey.answer
-                id: QSE15_05_01_04
-                answer: '[QSE15_05_01_04] d) Ocorrência de acidente'
-                question_id: QSE15_05_01
-                sequence: 40
+                answer: 'd) Ocorrência de acidente'
 
             QSE15_05_01_05:
                 model: survey.answer
-                id: QSE15_05_01_05
-                answer: '[QSE15_05_01_05] e) Outros'
-                question_id: QSE15_05_01
-                sequence: 50
+                answer: 'e) Outros'
 
             QSE15_05_01_06:
                 model: survey.answer
-                id: QSE15_05_01_06
-                answer: '[QSE15_05_01_06] f) Não sabe'
-                question_id: QSE15_05_01
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_05_01_07:
                 model: survey.answer
-                id: QSE15_05_01_07
-                answer: '[QSE15_05_01_07] g) Não quis responder'
-                question_id: QSE15_05_01
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_05_01_08:
                 model: survey.answer
-                id: QSE15_05_01_08
-                answer: '[QSE15_05_01_08] h) Não se aplica'
-                question_id: QSE15_05_01
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_05_02:
             model: survey.question
-            id: QSE15_05_02
-            question: '[QSE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)'
+            question: 'Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_05
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1691,56 +1030,35 @@ QSE15:
 
             QSE15_05_02_01:
                 model: survey.answer
-                id: QSE15_05_02_01
-                answer: '[QSE15_05_02_01] a) Sim'
-                question_id: QSE15_05_02
-                sequence: 10
+                answer: 'a) Sim'
 
             QSE15_05_02_02:
                 model: survey.answer
-                id: QSE15_05_02_02
-                answer: '[QSE15_05_02_02] b) Não'
-                question_id: QSE15_05_02
-                sequence: 20
+                answer: 'b) Não'
 
             QSE15_05_02_03:
                 model: survey.answer
-                id: QSE15_05_02_03
-                answer: '[QSE15_05_02_03] c) Não sabe'
-                question_id: QSE15_05_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_05_02_04:
                 model: survey.answer
-                id: QSE15_05_02_04
-                answer: '[QSE15_05_02_04] d) Não quis responder'
-                question_id: QSE15_05_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_05_02_05:
                 model: survey.answer
-                id: QSE15_05_02_05
-                answer: '[QSE15_05_02_05] e) Não se aplica'
-                question_id: QSE15_05_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_05_03:
             model: survey.question
-            id: QSE15_05_03
-            question: '[QSE15_05_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?'
+            question: 'Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?'
             type: comment
-            page_id: QSE15_05
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
         QSE15_05_04:
             model: survey.question
-            id: QSE15_05_04
-            question: '[QSE15_05_04] O Sr. (a) teve alguma queda depois que completou 60 anos?'
+            question: 'O Sr. (a) teve alguma queda depois que completou 60 anos?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_05
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1748,46 +1066,28 @@ QSE15:
 
             QSE15_05_04_01:
                 model: survey.answer
-                id: QSE15_05_04_01
-                answer: '[QSE15_05_04_01] a) Não'
-                question_id: QSE15_05_04
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_05_04_02:
                 model: survey.answer
-                id: QSE15_05_04_02
-                answer: '[QSE15_05_04_02] b) Sim'
-                question_id: QSE15_05_04
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_05_04_03:
                 model: survey.answer
-                id: QSE15_05_04_03
-                answer: '[QSE15_05_04_03] c) Não sabe'
-                question_id: QSE15_05_04
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_05_04_04:
                 model: survey.answer
-                id: QSE15_05_04_04
-                answer: '[QSE15_05_04_04] d) Não quis responder'
-                question_id: QSE15_05_04
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_05_04_05:
                 model: survey.answer
-                id: QSE15_05_04_05
-                answer: '[QSE15_05_04_05] e) Não se aplica'
-                question_id: QSE15_05_04
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_05_05:
             model: survey.question
-            id: QSE15_05_05
-            question: '[QSE15_05_05] Alguma vez um médico lhe disse que tem alguma doença?'
+            question: 'Alguma vez um médico lhe disse que tem alguma doença?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_05
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1795,99 +1095,60 @@ QSE15:
 
             QSE15_05_05_01:
                 model: survey.answer
-                id: QSE15_05_05_01
-                answer: '[QSE15_05_05_01] a) Não'
-                question_id: QSE15_05_05
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_05_05_02:
                 model: survey.answer
-                id: QSE15_05_05_02
-                answer: '[QSE15_05_05_02] b) Sim'
-                question_id: QSE15_05_05
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_05_05_03:
                 model: survey.answer
-                id: QSE15_05_05_03
-                answer: '[QSE15_05_05_03] c) Não sabe'
-                question_id: QSE15_05_05
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_05_05_04:
                 model: survey.answer
-                id: QSE15_05_05_04
-                answer: '[QSE15_05_05_04] d) Não quis responder'
-                question_id: QSE15_05_05
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_05_05_05:
                 model: survey.answer
-                id: QSE15_05_05_05
-                answer: '[QSE15_05_05_05] e) Não se aplica'
-                question_id: QSE15_05_05
-                sequence: 50
+                answer: 'e) Não se aplica'
 
     QSE15_06:
         model: survey.page
-        id: QSE15_06
-        title: '[QSE15_06] Horta'
-        note: '[QSE15_06] Horta'
-        survey_id: QSE15
-        sequence: 60
+        title: 'Horta'
+        note: 'Horta'
 
         QSE15_06_01:
             model: survey.question
-            id: QSE15_06_01
-            question: '[QSE15_06_01] Planta alguma coisa para consumo? (vende, come..)'
+            question: 'Planta alguma coisa para consumo? (vende, come..)'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_06
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_06_01_01:
                 model: survey.answer
-                id: QSE15_06_01_01
-                answer: '[QSE15_06_01_01] a) Não'
-                question_id: QSE15_06_01
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_06_01_02:
                 model: survey.answer
-                id: QSE15_06_01_02
-                answer: '[QSE15_06_01_02] b) Sim'
-                question_id: QSE15_06_01
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_06_01_03:
                 model: survey.answer
-                id: QSE15_06_01_03
-                answer: '[QSE15_06_01_03] c) Não sabe'
-                question_id: QSE15_06_01
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_06_01_04:
                 model: survey.answer
-                id: QSE15_06_01_04
-                answer: '[QSE15_06_01_04] d) Não quis responder'
-                question_id: QSE15_06_01
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_06_01_05:
                 model: survey.answer
-                id: QSE15_06_01_05
-                answer: '[QSE15_06_01_05] e) Não se aplica'
-                question_id: QSE15_06_01
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_06_02:
             model: survey.question
-            id: QSE15_06_02
-            question: '[QSE15_06_02] Usa adubo?'
+            question: 'Usa adubo?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_06
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -1895,60 +1156,36 @@ QSE15:
 
             QSE15_06_02_01:
                 model: survey.answer
-                id: QSE15_06_02_01
-                answer: '[QSE15_06_02_01] a) Não'
-                question_id: QSE15_06_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_06_02_02:
                 model: survey.answer
-                id: QSE15_06_02_02
-                answer: '[QSE15_06_02_02] b) Sim, adubo orgânico com esterco'
-                question_id: QSE15_06_02
-                sequence: 20
+                answer: 'b) Sim, adubo orgânico com esterco'
 
             QSE15_06_02_03:
                 model: survey.answer
-                id: QSE15_06_02_03
-                answer: '[QSE15_06_02_03] c) Sim, adubo orgânico sem esterco'
-                question_id: QSE15_06_02
-                sequence: 30
+                answer: 'c) Sim, adubo orgânico sem esterco'
 
             QSE15_06_02_04:
                 model: survey.answer
-                id: QSE15_06_02_04
-                answer: '[QSE15_06_02_04] d) Sim, adubo comprado'
-                question_id: QSE15_06_02
-                sequence: 40
+                answer: 'd) Sim, adubo comprado'
 
             QSE15_06_02_05:
                 model: survey.answer
-                id: QSE15_06_02_05
-                answer: '[QSE15_06_02_05] e) Não sabe'
-                question_id: QSE15_06_02
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_06_02_06:
                 model: survey.answer
-                id: QSE15_06_02_06
-                answer: '[QSE15_06_02_06] f) Não quis responder'
-                question_id: QSE15_06_02
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_06_02_07:
                 model: survey.answer
-                id: QSE15_06_02_07
-                answer: '[QSE15_06_02_07] g) Não se aplica'
-                question_id: QSE15_06_02
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_06_03:
             model: survey.question
-            id: QSE15_06_03
-            question: '[QSE15_06_03] Qual fonte de água utiliza para irrigar a horta?'
+            question: 'Qual fonte de água utiliza para irrigar a horta?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_06
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -1956,54 +1193,33 @@ QSE15:
 
             QSE15_06_03_01:
                 model: survey.answer
-                id: QSE15_06_03_01
-                answer: '[QSE15_06_03_01] a) Reservatório da prefeitura'
-                question_id: QSE15_06_03
-                sequence: 10
+                answer: 'a) Reservatório da prefeitura'
 
             QSE15_06_03_02:
                 model: survey.answer
-                id: QSE15_06_03_02
-                answer: '[QSE15_06_03_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-                question_id: QSE15_06_03
-                sequence: 20
+                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
 
             QSE15_06_03_03:
                 model: survey.answer
-                id: QSE15_06_03_03
-                answer: '[QSE15_06_03_03] c) Não sabe'
-                question_id: QSE15_06_03
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_06_03_04:
                 model: survey.answer
-                id: QSE15_06_03_04
-                answer: '[QSE15_06_03_04] d) Não quis responder'
-                question_id: QSE15_06_03
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_06_03_05:
                 model: survey.answer
-                id: QSE15_06_03_05
-                answer: '[QSE15_06_03_05] e) Não se aplica'
-                question_id: QSE15_06_03
-                sequence: 50
+                answer: 'e) Não se aplica'
 
     QSE15_07:
         model: survey.page
-        id: QSE15_07
-        title: '[QSE15_07] Água'
-        note: '[QSE15_07] Água'
-        survey_id: QSE15
-        sequence: 70
+        title: 'Água'
+        note: 'Água'
 
         QSE15_07_01:
             model: survey.question
-            id: QSE15_07_01
-            question: '[QSE15_07_01] De onde vem a água da casa?'
+            question: 'De onde vem a água da casa?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_07
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2011,91 +1227,55 @@ QSE15:
 
             QSE15_07_01_01:
                 model: survey.answer
-                id: QSE15_07_01_01
-                answer: '[QSE15_07_01_01] a) Reservatório da prefeitura'
-                question_id: QSE15_07_01
-                sequence: 10
+                answer: 'a) Reservatório da prefeitura'
 
             QSE15_07_01_02:
                 model: survey.answer
-                id: QSE15_07_01_02
-                answer: '[QSE15_07_01_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-                question_id: QSE15_07_01
-                sequence: 20
+                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
 
             QSE15_07_01_03:
                 model: survey.answer
-                id: QSE15_07_01_03
-                answer: '[QSE15_07_01_03] c) Não sabe'
-                question_id: QSE15_07_01
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_07_01_04:
                 model: survey.answer
-                id: QSE15_07_01_04
-                answer: '[QSE15_07_01_04] d) Não quis responder'
-                question_id: QSE15_07_01
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_07_01_05:
                 model: survey.answer
-                id: QSE15_07_01_05
-                answer: '[QSE15_07_01_05] e) Não se aplica'
-                question_id: QSE15_07_01
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_07_02:
             model: survey.question
-            id: QSE15_07_02
-            question: '[QSE15_07_02] Existe contato das pessoas da casa com o local de armazenamento?'
+            question: 'Existe contato das pessoas da casa com o local de armazenamento?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_07
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_07_02_01:
                 model: survey.answer
-                id: QSE15_07_02_01
-                answer: '[QSE15_07_02_01] a) Não'
-                question_id: QSE15_07_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_07_02_02:
                 model: survey.answer
-                id: QSE15_07_02_02
-                answer: '[QSE15_07_02_02] b) Sim'
-                question_id: QSE15_07_02
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_07_02_03:
                 model: survey.answer
-                id: QSE15_07_02_03
-                answer: '[QSE15_07_02_03] c) Não sabe'
-                question_id: QSE15_07_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_07_02_04:
                 model: survey.answer
-                id: QSE15_07_02_04
-                answer: '[QSE15_07_02_04] d) Não quis responder'
-                question_id: QSE15_07_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_07_02_05:
                 model: survey.answer
-                id: QSE15_07_02_05
-                answer: '[QSE15_07_02_05] e) Não se aplica'
-                question_id: QSE15_07_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_07_03:
             model: survey.question
-            id: QSE15_07_03
-            question: '[QSE15_07_03] Na falta de água, onde a obtém?'
+            question: 'Na falta de água, onde a obtém?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_07
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2103,46 +1283,28 @@ QSE15:
 
             QSE15_07_03_01:
                 model: survey.answer
-                id: QSE15_07_03_01
-                answer: '[QSE15_07_03_01] a) Reservatório da prefeitura'
-                question_id: QSE15_07_03
-                sequence: 10
+                answer: 'a) Reservatório da prefeitura'
 
             QSE15_07_03_02:
                 model: survey.answer
-                id: QSE15_07_03_02
-                answer: '[QSE15_07_03_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-                question_id: QSE15_07_03
-                sequence: 20
+                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
 
             QSE15_07_03_03:
                 model: survey.answer
-                id: QSE15_07_03_03
-                answer: '[QSE15_07_03_03] c) Não sabe'
-                question_id: QSE15_07_03
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_07_03_04:
                 model: survey.answer
-                id: QSE15_07_03_04
-                answer: '[QSE15_07_03_04] d) Não quis responder'
-                question_id: QSE15_07_03
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_07_03_05:
                 model: survey.answer
-                id: QSE15_07_03_05
-                answer: '[QSE15_07_03_05] e) Não se aplica'
-                question_id: QSE15_07_03
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_07_04:
             model: survey.question
-            id: QSE15_07_04
-            question: '[QSE15_07_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)'
+            question: 'Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_07
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -2152,75 +1314,45 @@ QSE15:
 
             QSE15_07_04_01:
                 model: survey.answer
-                id: QSE15_07_04_01
-                answer: '[QSE15_07_04_01] a) Filtração'
-                question_id: QSE15_07_04
-                sequence: 10
+                answer: 'a) Filtração'
 
             QSE15_07_04_02:
                 model: survey.answer
-                id: QSE15_07_04_02
-                answer: '[QSE15_07_04_02] b) Fervura'
-                question_id: QSE15_07_04
-                sequence: 20
+                answer: 'b) Fervura'
 
             QSE15_07_04_03:
                 model: survey.answer
-                id: QSE15_07_04_03
-                answer: '[QSE15_07_04_03] c) Hipoclorito'
-                question_id: QSE15_07_04
-                sequence: 30
+                answer: 'c) Hipoclorito'
 
             QSE15_07_04_04:
                 model: survey.answer
-                id: QSE15_07_04_04
-                answer: '[QSE15_07_04_04] d) Nenhum'
-                question_id: QSE15_07_04
-                sequence: 40
+                answer: 'd) Nenhum'
 
             QSE15_07_04_05:
                 model: survey.answer
-                id: QSE15_07_04_05
-                answer: '[QSE15_07_04_05] e) Outros'
-                question_id: QSE15_07_04
-                sequence: 50
+                answer: 'e) Outros'
 
             QSE15_07_04_06:
                 model: survey.answer
-                id: QSE15_07_04_06
-                answer: '[QSE15_07_04_06] f) Não sabe'
-                question_id: QSE15_07_04
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_07_04_07:
                 model: survey.answer
-                id: QSE15_07_04_07
-                answer: '[QSE15_07_04_07] g) Não quis responder'
-                question_id: QSE15_07_04
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_07_04_08:
                 model: survey.answer
-                id: QSE15_07_04_08
-                answer: '[QSE15_07_04_08] h) Não se aplica'
-                question_id: QSE15_07_04
-                sequence: 80
+                answer: 'h) Não se aplica'
 
     QSE15_08:
         model: survey.page
-        id: QSE15_08
-        title: '[QSE15_08] Alimentação / Animais'
-        note: '[QSE15_08] Alimentação / Animais'
-        survey_id: QSE15
-        sequence: 80
+        title: 'Alimentação / Animais'
+        note: 'Alimentação / Animais'
 
         QSE15_08_01:
             model: survey.question
-            id: QSE15_08_01
-            question: '[QSE15_08_01] Cria animais de estimação?'
+            question: 'Cria animais de estimação?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_08
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2228,126 +1360,75 @@ QSE15:
 
             QSE15_08_01_01:
                 model: survey.answer
-                id: QSE15_08_01_01
-                answer: '[QSE15_08_01_01] a) Não cria'
-                question_id: QSE15_08_01
-                sequence: 10
+                answer: 'a) Não cria'
 
             QSE15_08_01_02:
                 model: survey.answer
-                id: QSE15_08_01_02
-                answer: '[QSE15_08_01_02] b) Galinha'
-                question_id: QSE15_08_01
-                sequence: 20
+                answer: 'b) Galinha'
 
             QSE15_08_01_03:
                 model: survey.answer
-                id: QSE15_08_01_03
-                answer: '[QSE15_08_01_03] c) Porco'
-                question_id: QSE15_08_01
-                sequence: 30
+                answer: 'c) Porco'
 
             QSE15_08_01_04:
                 model: survey.answer
-                id: QSE15_08_01_04
-                answer: '[QSE15_08_01_04] d) Boi, vaca ou bezerro'
-                question_id: QSE15_08_01
-                sequence: 40
+                answer: 'd) Boi, vaca ou bezerro'
 
             QSE15_08_01_05:
                 model: survey.answer
-                id: QSE15_08_01_05
-                answer: '[QSE15_08_01_05] e) Gato'
-                question_id: QSE15_08_01
-                sequence: 50
+                answer: 'e) Gato'
 
             QSE15_08_01_06:
                 model: survey.answer
-                id: QSE15_08_01_06
-                answer: '[QSE15_08_01_06] f) Cachorro '
-                question_id: QSE15_08_01
-                sequence: 60
+                answer: 'f) Cachorro '
 
             QSE15_08_01_07:
                 model: survey.answer
-                id: QSE15_08_01_07
-                answer: '[QSE15_08_01_07] g) Outros'
-                question_id: QSE15_08_01
-                sequence: 70
+                answer: 'g) Outros'
 
             QSE15_08_01_08:
                 model: survey.answer
-                id: QSE15_08_01_08
-                answer: '[QSE15_08_01_08] h) Não sabe'
-                question_id: QSE15_08_01
-                sequence: 80
+                answer: 'h) Não sabe'
 
             QSE15_08_01_09:
                 model: survey.answer
-                id: QSE15_08_01_09
-                answer: '[QSE15_08_01_09] i) Não quis responder'
-                question_id: QSE15_08_01
-                sequence: 90
+                answer: 'i) Não quis responder'
 
             QSE15_08_01_10:
                 model: survey.answer
-                id: QSE15_08_01_10
-                answer: '[QSE15_08_01_10] j) Não se aplica'
-                question_id: QSE15_08_01
-                sequence: 100
+                answer: 'j) Não se aplica'
 
         QSE15_08_02:
             model: survey.question
-            id: QSE15_08_02
-            question: '[QSE15_08_02] Como são criados?'
+            question: 'Como são criados?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_08
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_08_02_01:
                 model: survey.answer
-                id: QSE15_08_02_01
-                answer: '[QSE15_08_02_01] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
-                question_id: QSE15_08_02
-                sequence: 10
+                answer: 'a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
 
             QSE15_08_02_02:
                 model: survey.answer
-                id: QSE15_08_02_02
-                answer: '[QSE15_08_02_02] b) Presos'
-                question_id: QSE15_08_02
-                sequence: 20
+                answer: 'b) Presos'
 
             QSE15_08_02_03:
                 model: survey.answer
-                id: QSE15_08_02_03
-                answer: '[QSE15_08_02_03] c) Não sabe'
-                question_id: QSE15_08_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_08_02_04:
                 model: survey.answer
-                id: QSE15_08_02_04
-                answer: '[QSE15_08_02_04] d) Não quis responder'
-                question_id: QSE15_08_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_08_02_05:
                 model: survey.answer
-                id: QSE15_08_02_05
-                answer: '[QSE15_08_02_05] e) Não se aplica'
-                question_id: QSE15_08_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_08_03:
             model: survey.question
-            id: QSE15_08_03
-            question: '[QSE15_08_03] Cria animais para a alimentação?'
+            question: 'Cria animais para a alimentação?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_08
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2355,119 +1436,71 @@ QSE15:
 
             QSE15_08_03_01:
                 model: survey.answer
-                id: QSE15_08_03_01
-                answer: '[QSE15_08_03_01] a) Não cria animais'
-                question_id: QSE15_08_03
-                sequence: 10
+                answer: 'a) Não cria animais'
 
             QSE15_08_03_02:
                 model: survey.answer
-                id: QSE15_08_03_02
-                answer: '[QSE15_08_03_02] b) Galinha'
-                question_id: QSE15_08_03
-                sequence: 20
+                answer: 'b) Galinha'
 
             QSE15_08_03_03:
                 model: survey.answer
-                id: QSE15_08_03_03
-                answer: '[QSE15_08_03_03] c) Porco'
-                question_id: QSE15_08_03
-                sequence: 30
+                answer: 'c) Porco'
 
             QSE15_08_03_04:
                 model: survey.answer
-                id: QSE15_08_03_04
-                answer: '[QSE15_08_03_04] d) Boi, vaca ou bezerro'
-                question_id: QSE15_08_03
-                sequence: 40
+                answer: 'd) Boi, vaca ou bezerro'
 
             QSE15_08_03_05:
                 model: survey.answer
-                id: QSE15_08_03_05
-                answer: '[QSE15_08_03_05] e) Coelho'
-                question_id: QSE15_08_03
-                sequence: 50
+                answer: 'e) Coelho'
 
             QSE15_08_03_06:
                 model: survey.answer
-                id: QSE15_08_03_06
-                answer: '[QSE15_08_03_06] f) Outros'
-                question_id: QSE15_08_03
-                sequence: 60
+                answer: 'f) Outros'
 
             QSE15_08_03_07:
                 model: survey.answer
-                id: QSE15_08_03_07
-                answer: '[QSE15_08_03_07] g) Não sabe'
-                question_id: QSE15_08_03
-                sequence: 70
+                answer: 'g) Não sabe'
 
             QSE15_08_03_08:
                 model: survey.answer
-                id: QSE15_08_03_08
-                answer: '[QSE15_08_03_08] h) Não quis responder'
-                question_id: QSE15_08_03
-                sequence: 80
+                answer: 'h) Não quis responder'
 
             QSE15_08_03_09:
                 model: survey.answer
-                id: QSE15_08_03_09
-                answer: '[QSE15_08_03_09] i) Não se aplica'
-                question_id: QSE15_08_03
-                sequence: 90
+                answer: 'i) Não se aplica'
 
         QSE15_08_04:
             model: survey.question
-            id: QSE15_08_04
-            question: '[QSE15_08_04] Como são criados?'
+            question: 'Como são criados?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_08
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_08_04_01:
                 model: survey.answer
-                id: QSE15_08_04_01
-                answer: '[QSE15_08_04_01] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
-                question_id: QSE15_08_04
-                sequence: 10
+                answer: 'a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
 
             QSE15_08_04_02:
                 model: survey.answer
-                id: QSE15_08_04_02
-                answer: '[QSE15_08_04_02] b) Presos'
-                question_id: QSE15_08_04
-                sequence: 20
+                answer: 'b) Presos'
 
             QSE15_08_04_03:
                 model: survey.answer
-                id: QSE15_08_04_03
-                answer: '[QSE15_08_04_03] c) Não sabe'
-                question_id: QSE15_08_04
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_08_04_04:
                 model: survey.answer
-                id: QSE15_08_04_04
-                answer: '[QSE15_08_04_04] d) Não quis responder'
-                question_id: QSE15_08_04
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_08_04_05:
                 model: survey.answer
-                id: QSE15_08_04_05
-                answer: '[QSE15_08_04_05] e) Não se aplica'
-                question_id: QSE15_08_04
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_08_05:
             model: survey.question
-            id: QSE15_08_05
-            question: '[QSE15_08_05] Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)'
+            question: 'Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_08
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -2477,105 +1510,63 @@ QSE15:
 
             QSE15_08_05_01:
                 model: survey.answer
-                id: QSE15_08_05_01
-                answer: '[QSE15_08_05_01] a) Criação própria'
-                question_id: QSE15_08_05
-                sequence: 10
+                answer: 'a) Criação própria'
 
             QSE15_08_05_02:
                 model: survey.answer
-                id: QSE15_08_05_02
-                answer: '[QSE15_08_05_02] b) Mercado/açougue'
-                question_id: QSE15_08_05
-                sequence: 20
+                answer: 'b) Mercado/açougue'
 
             QSE15_08_05_03:
                 model: survey.answer
-                id: QSE15_08_05_03
-                answer: '[QSE15_08_05_03] c) Criador de confiança'
-                question_id: QSE15_08_05
-                sequence: 30
+                answer: 'c) Criador de confiança'
 
             QSE15_08_05_04:
                 model: survey.answer
-                id: QSE15_08_05_04
-                answer: '[QSE15_08_05_04] d) Outros'
-                question_id: QSE15_08_05
-                sequence: 40
+                answer: 'd) Outros'
 
             QSE15_08_05_05:
                 model: survey.answer
-                id: QSE15_08_05_05
-                answer: '[QSE15_08_05_05] e) Não sabe'
-                question_id: QSE15_08_05
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_08_05_06:
                 model: survey.answer
-                id: QSE15_08_05_06
-                answer: '[QSE15_08_05_06] f) Não quis responder'
-                question_id: QSE15_08_05
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_08_05_07:
                 model: survey.answer
-                id: QSE15_08_05_07
-                answer: '[QSE15_08_05_07] g) Não se aplica'
-                question_id: QSE15_08_05
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_08_06:
             model: survey.question
-            id: QSE15_08_06
-            question: '[QSE15_08_06] Como você prepara a carne que consome?'
+            question: 'Como você prepara a carne que consome?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_08
-            sequence: 60
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_08_06_01:
                 model: survey.answer
-                id: QSE15_08_06_01
-                answer: '[QSE15_08_06_01] a) Bem passada'
-                question_id: QSE15_08_06
-                sequence: 10
+                answer: 'a) Bem passada'
 
             QSE15_08_06_02:
                 model: survey.answer
-                id: QSE15_08_06_02
-                answer: '[QSE15_08_06_02] b) Mal passada / Crua'
-                question_id: QSE15_08_06
-                sequence: 20
+                answer: 'b) Mal passada / Crua'
 
             QSE15_08_06_03:
                 model: survey.answer
-                id: QSE15_08_06_03
-                answer: '[QSE15_08_06_03] c) Não sabe'
-                question_id: QSE15_08_06
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_08_06_04:
                 model: survey.answer
-                id: QSE15_08_06_04
-                answer: '[QSE15_08_06_04] d) Não quis responder'
-                question_id: QSE15_08_06
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_08_06_05:
                 model: survey.answer
-                id: QSE15_08_06_05
-                answer: '[QSE15_08_06_05] e) Não se aplica'
-                question_id: QSE15_08_06
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_08_07:
             model: survey.question
-            id: QSE15_08_07
-            question: '[QSE15_08_07] Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)'
+            question: 'Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_08
-            sequence: 70
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -2583,75 +1574,45 @@ QSE15:
 
             QSE15_08_07_01:
                 model: survey.answer
-                id: QSE15_08_07_01
-                answer: '[QSE15_08_07_01] a) Lava em água corrente'
-                question_id: QSE15_08_07
-                sequence: 10
+                answer: 'a) Lava em água corrente'
 
             QSE15_08_07_02:
                 model: survey.answer
-                id: QSE15_08_07_02
-                answer: '[QSE15_08_07_02] b) Põe de molho em água'
-                question_id: QSE15_08_07
-                sequence: 20
+                answer: 'b) Põe de molho em água'
 
             QSE15_08_07_03:
                 model: survey.answer
-                id: QSE15_08_07_03
-                answer: '[QSE15_08_07_03] c) Põe de molho em água+vinagre'
-                question_id: QSE15_08_07
-                sequence: 30
+                answer: 'c) Põe de molho em água+vinagre'
 
             QSE15_08_07_04:
                 model: survey.answer
-                id: QSE15_08_07_04
-                answer: '[QSE15_08_07_04] d) Põe de molho em água+água sanitária / hipoclorito'
-                question_id: QSE15_08_07
-                sequence: 40
+                answer: 'd) Põe de molho em água+água sanitária / hipoclorito'
 
             QSE15_08_07_05:
                 model: survey.answer
-                id: QSE15_08_07_05
-                answer: '[QSE15_08_07_05] e) Nenhum '
-                question_id: QSE15_08_07
-                sequence: 50
+                answer: 'e) Nenhum '
 
             QSE15_08_07_06:
                 model: survey.answer
-                id: QSE15_08_07_06
-                answer: '[QSE15_08_07_06] f) Não sabe'
-                question_id: QSE15_08_07
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_08_07_07:
                 model: survey.answer
-                id: QSE15_08_07_07
-                answer: '[QSE15_08_07_07] g) Não quis responder'
-                question_id: QSE15_08_07
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_08_07_08:
                 model: survey.answer
-                id: QSE15_08_07_08
-                answer: '[QSE15_08_07_08] h) Não se aplica'
-                question_id: QSE15_08_07
-                sequence: 80
+                answer: 'h) Não se aplica'
 
     QSE15_09:
         model: survey.page
-        id: QSE15_09
-        title: '[QSE15_09] Medicamentos (geral)'
-        note: '[QSE15_09] Medicamentos (geral)'
-        survey_id: QSE15
-        sequence: 90
+        title: 'Medicamentos (geral)'
+        note: 'Medicamentos (geral)'
 
         QSE15_09_01:
             model: survey.question
-            id: QSE15_09_01
-            question: '[QSE15_09_01] Costumam tomar medicamentos sem receita médica?'
+            question: 'Costumam tomar medicamentos sem receita médica?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_09
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2659,91 +1620,55 @@ QSE15:
 
             QSE15_09_01_01:
                 model: survey.answer
-                id: QSE15_09_01_01
-                answer: '[QSE15_09_01_01] a) Não'
-                question_id: QSE15_09_01
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_09_01_02:
                 model: survey.answer
-                id: QSE15_09_01_02
-                answer: '[QSE15_09_01_02] b) Sim'
-                question_id: QSE15_09_01
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_09_01_03:
                 model: survey.answer
-                id: QSE15_09_01_03
-                answer: '[QSE15_09_01_03] c) Não sabe'
-                question_id: QSE15_09_01
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_09_01_04:
                 model: survey.answer
-                id: QSE15_09_01_04
-                answer: '[QSE15_09_01_04] d) Não quis responder'
-                question_id: QSE15_09_01
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_09_01_05:
                 model: survey.answer
-                id: QSE15_09_01_05
-                answer: '[QSE15_09_01_05] e) Não se aplica'
-                question_id: QSE15_09_01
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_09_02:
             model: survey.question
-            id: QSE15_09_02
-            question: '[QSE15_09_02] Possui remédios na residência?'
+            question: 'Possui remédios na residência?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_09
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_09_02_01:
                 model: survey.answer
-                id: QSE15_09_02_01
-                answer: '[QSE15_09_02_01] a) Não'
-                question_id: QSE15_09_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_09_02_02:
                 model: survey.answer
-                id: QSE15_09_02_02
-                answer: '[QSE15_09_02_02] b) Sim'
-                question_id: QSE15_09_02
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_09_02_03:
                 model: survey.answer
-                id: QSE15_09_02_03
-                answer: '[QSE15_09_02_03] c) Não sabe'
-                question_id: QSE15_09_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_09_02_04:
                 model: survey.answer
-                id: QSE15_09_02_04
-                answer: '[QSE15_09_02_04] d) Não quis responder'
-                question_id: QSE15_09_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_09_02_05:
                 model: survey.answer
-                id: QSE15_09_02_05
-                answer: '[QSE15_09_02_05] e) Não se aplica'
-                question_id: QSE15_09_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_09_03:
             model: survey.question
-            id: QSE15_09_03
-            question: '[QSE15_09_03] Onde guarda os remédios?'
+            question: 'Onde guarda os remédios?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_09
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -2753,112 +1678,67 @@ QSE15:
 
             QSE15_09_03_01:
                 model: survey.answer
-                id: QSE15_09_03_01
-                answer: '[QSE15_09_03_01] a) Na cozinha'
-                question_id: QSE15_09_03
-                sequence: 10
+                answer: 'a) Na cozinha'
 
             QSE15_09_03_02:
                 model: survey.answer
-                id: QSE15_09_03_02
-                answer: '[QSE15_09_03_02] b) No banheiro'
-                question_id: QSE15_09_03
-                sequence: 20
+                answer: 'b) No banheiro'
 
             QSE15_09_03_03:
                 model: survey.answer
-                id: QSE15_09_03_03
-                answer: '[QSE15_09_03_03] c) No quarto'
-                question_id: QSE15_09_03
-                sequence: 30
+                answer: 'c) No quarto'
 
             QSE15_09_03_04:
                 model: survey.answer
-                id: QSE15_09_03_04
-                answer: '[QSE15_09_03_04] d) Outros'
-                question_id: QSE15_09_03
-                sequence: 40
+                answer: 'd) Outros'
 
             QSE15_09_03_05:
                 model: survey.answer
-                id: QSE15_09_03_05
-                answer: '[QSE15_09_03_05] e) Não sabe'
-                question_id: QSE15_09_03
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_09_03_06:
                 model: survey.answer
-                id: QSE15_09_03_06
-                answer: '[QSE15_09_03_06] f) Não quis responder'
-                question_id: QSE15_09_03
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_09_03_07:
                 model: survey.answer
-                id: QSE15_09_03_07
-                answer: '[QSE15_09_03_07] g) Não se aplica'
-                question_id: QSE15_09_03
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_09_04:
             model: survey.question
-            id: QSE15_09_04
-            question: '[QSE15_09_04] A criança tem acesso aos medicamentos? '
+            question: 'A criança tem acesso aos medicamentos? '
             type: multiple_choice_only_one_ans
-            page_id: QSE15_09
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_09_04_01:
                 model: survey.answer
-                id: QSE15_09_04_01
-                answer: '[QSE15_09_04_01] a) Sim, ela sabe onde estão guardados e os alcança quando quiser'
-                question_id: QSE15_09_04
-                sequence: 10
+                answer: 'a) Sim, ela sabe onde estão guardados e os alcança quando quiser'
 
             QSE15_09_04_02:
                 model: survey.answer
-                id: QSE15_09_04_02
-                answer: '[QSE15_09_04_02] b) Ela sabe onde estão, mas não tem acesso a eles'
-                question_id: QSE15_09_04
-                sequence: 20
+                answer: 'b) Ela sabe onde estão, mas não tem acesso a eles'
 
             QSE15_09_04_03:
                 model: survey.answer
-                id: QSE15_09_04_03
-                answer: '[QSE15_09_04_03] c) Não, estão escondidos em um local de difícil acesso'
-                question_id: QSE15_09_04
-                sequence: 30
+                answer: 'c) Não, estão escondidos em um local de difícil acesso'
 
             QSE15_09_04_04:
                 model: survey.answer
-                id: QSE15_09_04_04
-                answer: '[QSE15_09_04_04] d) Não sabe'
-                question_id: QSE15_09_04
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_09_04_05:
                 model: survey.answer
-                id: QSE15_09_04_05
-                answer: '[QSE15_09_04_05] e) Não quis responder'
-                question_id: QSE15_09_04
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_09_04_06:
                 model: survey.answer
-                id: QSE15_09_04_06
-                answer: '[QSE15_09_04_06] f) Não se aplica'
-                question_id: QSE15_09_04
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_09_05:
             model: survey.question
-            id: QSE15_09_05
-            question: '[QSE15_09_05] Como descarta os medicamentos?'
+            question: 'Como descarta os medicamentos?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_09
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2866,81 +1746,48 @@ QSE15:
 
             QSE15_09_05_01:
                 model: survey.answer
-                id: QSE15_09_05_01
-                answer: '[QSE15_09_05_01] a) Não descarta'
-                question_id: QSE15_09_05
-                sequence: 10
+                answer: 'a) Não descarta'
 
             QSE15_09_05_02:
                 model: survey.answer
-                id: QSE15_09_05_02
-                answer: '[QSE15_09_05_02] b) Lixo'
-                question_id: QSE15_09_05
-                sequence: 20
+                answer: 'b) Lixo'
 
             QSE15_09_05_03:
                 model: survey.answer
-                id: QSE15_09_05_03
-                answer: '[QSE15_09_05_03] c) Vaso sanitário ou pia'
-                question_id: QSE15_09_05
-                sequence: 30
+                answer: 'c) Vaso sanitário ou pia'
 
             QSE15_09_05_04:
                 model: survey.answer
-                id: QSE15_09_05_04
-                answer: '[QSE15_09_05_04] d) Plantas ou terra'
-                question_id: QSE15_09_05
-                sequence: 40
+                answer: 'd) Plantas ou terra'
 
             QSE15_09_05_05:
                 model: survey.answer
-                id: QSE15_09_05_05
-                answer: '[QSE15_09_05_05] e) Devolve no Posto de Saúde'
-                question_id: QSE15_09_05
-                sequence: 50
+                answer: 'e) Devolve no Posto de Saúde'
 
             QSE15_09_05_06:
                 model: survey.answer
-                id: QSE15_09_05_06
-                answer: '[QSE15_09_05_06] f) Dá para algum conhecido '
-                question_id: QSE15_09_05
-                sequence: 60
+                answer: 'f) Dá para algum conhecido '
 
             QSE15_09_05_07:
                 model: survey.answer
-                id: QSE15_09_05_07
-                answer: '[QSE15_09_05_07] g) Outros'
-                question_id: QSE15_09_05
-                sequence: 70
+                answer: 'g) Outros'
 
             QSE15_09_05_08:
                 model: survey.answer
-                id: QSE15_09_05_08
-                answer: '[QSE15_09_05_08] h) Não sabe'
-                question_id: QSE15_09_05
-                sequence: 80
+                answer: 'h) Não sabe'
 
             QSE15_09_05_09:
                 model: survey.answer
-                id: QSE15_09_05_09
-                answer: '[QSE15_09_05_09] i) Não quis responder'
-                question_id: QSE15_09_05
-                sequence: 90
+                answer: 'i) Não quis responder'
 
             QSE15_09_05_10:
                 model: survey.answer
-                id: QSE15_09_05_10
-                answer: '[QSE15_09_05_10] j) Não se aplica'
-                question_id: QSE15_09_05
-                sequence: 100
+                answer: 'j) Não se aplica'
 
         QSE15_09_06:
             model: survey.question
-            id: QSE15_09_06
-            question: '[QSE15_09_06] O que utilizam quando alguém tem diarreia?'
+            question: 'O que utilizam quando alguém tem diarreia?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_09
-            sequence: 60
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -2948,276 +1795,165 @@ QSE15:
 
             QSE15_09_06_01:
                 model: survey.answer
-                id: QSE15_09_06_01
-                answer: '[QSE15_09_06_01] a) Soro caseiro'
-                question_id: QSE15_09_06
-                sequence: 10
+                answer: 'a) Soro caseiro'
 
             QSE15_09_06_02:
                 model: survey.answer
-                id: QSE15_09_06_02
-                answer: '[QSE15_09_06_02] b) Soro pronto'
-                question_id: QSE15_09_06
-                sequence: 20
+                answer: 'b) Soro pronto'
 
             QSE15_09_06_03:
                 model: survey.answer
-                id: QSE15_09_06_03
-                answer: '[QSE15_09_06_03] c) Outros'
-                question_id: QSE15_09_06
-                sequence: 30
+                answer: 'c) Outros'
 
             QSE15_09_06_04:
                 model: survey.answer
-                id: QSE15_09_06_04
-                answer: '[QSE15_09_06_04] d) Não sabe'
-                question_id: QSE15_09_06
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_09_06_05:
                 model: survey.answer
-                id: QSE15_09_06_05
-                answer: '[QSE15_09_06_05] e) Não quis responder'
-                question_id: QSE15_09_06
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_09_06_06:
                 model: survey.answer
-                id: QSE15_09_06_06
-                answer: '[QSE15_09_06_06] f) Não se aplica'
-                question_id: QSE15_09_06
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_09_07:
             model: survey.question
-            id: QSE15_09_07
-            question: '[QSE15_09_07] Conhece o soro caseiro?'
+            question: 'Conhece o soro caseiro?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_09
-            sequence: 70
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_09_07_01:
                 model: survey.answer
-                id: QSE15_09_07_01
-                answer: '[QSE15_09_07_01] a) Não'
-                question_id: QSE15_09_07
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_09_07_02:
                 model: survey.answer
-                id: QSE15_09_07_02
-                answer: '[QSE15_09_07_02] b) Sim'
-                question_id: QSE15_09_07
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_09_07_03:
                 model: survey.answer
-                id: QSE15_09_07_03
-                answer: '[QSE15_09_07_03] c) Não sabe'
-                question_id: QSE15_09_07
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_09_07_04:
                 model: survey.answer
-                id: QSE15_09_07_04
-                answer: '[QSE15_09_07_04] d) Não quis responder'
-                question_id: QSE15_09_07
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_09_07_05:
                 model: survey.answer
-                id: QSE15_09_07_05
-                answer: '[QSE15_09_07_05] e) Não se aplica'
-                question_id: QSE15_09_07
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_09_08:
             model: survey.question
-            id: QSE15_09_08
-            question: '[QSE15_09_08] Sabe como preparar?'
+            question: 'Sabe como preparar?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_09
-            sequence: 80
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_09_08_01:
                 model: survey.answer
-                id: QSE15_09_08_01
-                answer: '[QSE15_09_08_01] a) Não'
-                question_id: QSE15_09_08
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_09_08_02:
                 model: survey.answer
-                id: QSE15_09_08_02
-                answer: '[QSE15_09_08_02] b) Sim'
-                question_id: QSE15_09_08
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_09_08_03:
                 model: survey.answer
-                id: QSE15_09_08_03
-                answer: '[QSE15_09_08_03] c) Não sabe'
-                question_id: QSE15_09_08
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_09_08_04:
                 model: survey.answer
-                id: QSE15_09_08_04
-                answer: '[QSE15_09_08_04] d) Não quis responder'
-                question_id: QSE15_09_08
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_09_08_05:
                 model: survey.answer
-                id: QSE15_09_08_05
-                answer: '[QSE15_09_08_05] e) Não se aplica'
-                question_id: QSE15_09_08
-                sequence: 50
+                answer: 'e) Não se aplica'
 
     QSE15_10:
         model: survey.page
-        id: QSE15_10
-        title: '[QSE15_10] Parasitoses'
-        note: '[QSE15_10] Parasitoses'
-        survey_id: QSE15
-        sequence: 100
+        title: 'Parasitoses'
+        note: 'Parasitoses'
 
         QSE15_10_01:
             model: survey.question
-            id: QSE15_10_01
-            question: '[QSE15_10_01] Conhece algum verme (parasitose)?'
+            question: 'Conhece algum verme (parasitose)?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_10
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_10_01_01:
                 model: survey.answer
-                id: QSE15_10_01_01
-                answer: '[QSE15_10_01_01] a) Não'
-                question_id: QSE15_10_01
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_10_01_02:
                 model: survey.answer
-                id: QSE15_10_01_02
-                answer: '[QSE15_10_01_02] b) Barriga d água, "xistose" (Esquistossomose)'
-                question_id: QSE15_10_01
-                sequence: 20
+                answer: 'b) Barriga d água, "xistose" (Esquistossomose)'
 
             QSE15_10_01_03:
                 model: survey.answer
-                id: QSE15_10_01_03
-                answer: '[QSE15_10_01_03] c) "Bicha", "lombriga" (Ascaridíase)'
-                question_id: QSE15_10_01
-                sequence: 30
+                answer: 'c) "Bicha", "lombriga" (Ascaridíase)'
 
             QSE15_10_01_04:
                 model: survey.answer
-                id: QSE15_10_01_04
-                answer: '[QSE15_10_01_04] d) "Amarelão" (Ancilostomose)'
-                question_id: QSE15_10_01
-                sequence: 40
+                answer: 'd) "Amarelão" (Ancilostomose)'
 
             QSE15_10_01_05:
                 model: survey.answer
-                id: QSE15_10_01_05
-                answer: '[QSE15_10_01_05] e) "Solitária" (Teníase)'
-                question_id: QSE15_10_01
-                sequence: 50
+                answer: 'e) "Solitária" (Teníase)'
 
             QSE15_10_01_06:
                 model: survey.answer
-                id: QSE15_10_01_06
-                answer: '[QSE15_10_01_06] f) "Ameba"(Amebíase/Giardíase)'
-                question_id: QSE15_10_01
-                sequence: 60
+                answer: 'f) "Ameba"(Amebíase/Giardíase)'
 
             QSE15_10_01_07:
                 model: survey.answer
-                id: QSE15_10_01_07
-                answer: '[QSE15_10_01_07] g) Coceira (Enterobíase)'
-                question_id: QSE15_10_01
-                sequence: 70
+                answer: 'g) Coceira (Enterobíase)'
 
             QSE15_10_01_08:
                 model: survey.answer
-                id: QSE15_10_01_08
-                answer: '[QSE15_10_01_08] h) Não sabe'
-                question_id: QSE15_10_01
-                sequence: 80
+                answer: 'h) Não sabe'
 
             QSE15_10_01_09:
                 model: survey.answer
-                id: QSE15_10_01_09
-                answer: '[QSE15_10_01_09] i) Não quis responder'
-                question_id: QSE15_10_01
-                sequence: 90
+                answer: 'i) Não quis responder'
 
             QSE15_10_01_10:
                 model: survey.answer
-                id: QSE15_10_01_10
-                answer: '[QSE15_10_01_10] j) Não se aplica'
-                question_id: QSE15_10_01
-                sequence: 100
+                answer: 'j) Não se aplica'
 
         QSE15_10_02:
             model: survey.question
-            id: QSE15_10_02
-            question: '[QSE15_10_02] Sabe como se prevenir de pegar vermes?'
+            question: 'Sabe como se prevenir de pegar vermes?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_10
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_10_02_01:
                 model: survey.answer
-                id: QSE15_10_02_01
-                answer: '[QSE15_10_02_01] a) Não'
-                question_id: QSE15_10_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_10_02_02:
                 model: survey.answer
-                id: QSE15_10_02_02
-                answer: '[QSE15_10_02_02] b) Sim'
-                question_id: QSE15_10_02
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_10_02_03:
                 model: survey.answer
-                id: QSE15_10_02_03
-                answer: '[QSE15_10_02_03] c) Não sabe'
-                question_id: QSE15_10_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_10_02_04:
                 model: survey.answer
-                id: QSE15_10_02_04
-                answer: '[QSE15_10_02_04] d) Não quis responder'
-                question_id: QSE15_10_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_10_02_05:
                 model: survey.answer
-                id: QSE15_10_02_05
-                answer: '[QSE15_10_02_05] e) Não se aplica'
-                question_id: QSE15_10_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_10_03:
             model: survey.question
-            id: QSE15_10_03
-            question: '[QSE15_10_03] Já fez exame de fezes?'
+            question: 'Já fez exame de fezes?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_10
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -3227,60 +1963,36 @@ QSE15:
 
             QSE15_10_03_01:
                 model: survey.answer
-                id: QSE15_10_03_01
-                answer: '[QSE15_10_03_01] a) Não'
-                question_id: QSE15_10_03
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_10_03_02:
                 model: survey.answer
-                id: QSE15_10_03_02
-                answer: '[QSE15_10_03_02] b) Sim, resultado negativo para verme'
-                question_id: QSE15_10_03
-                sequence: 20
+                answer: 'b) Sim, resultado negativo para verme'
 
             QSE15_10_03_03:
                 model: survey.answer
-                id: QSE15_10_03_03
-                answer: '[QSE15_10_03_03] c) Sim, mas não sabe o resultado'
-                question_id: QSE15_10_03
-                sequence: 30
+                answer: 'c) Sim, mas não sabe o resultado'
 
             QSE15_10_03_04:
                 model: survey.answer
-                id: QSE15_10_03_04
-                answer: '[QSE15_10_03_04] d) Sim, resultado positivo para verme'
-                question_id: QSE15_10_03
-                sequence: 40
+                answer: 'd) Sim, resultado positivo para verme'
 
             QSE15_10_03_05:
                 model: survey.answer
-                id: QSE15_10_03_05
-                answer: '[QSE15_10_03_05] e) Não sabe'
-                question_id: QSE15_10_03
-                sequence: 50
+                answer: 'e) Não sabe'
 
             QSE15_10_03_06:
                 model: survey.answer
-                id: QSE15_10_03_06
-                answer: '[QSE15_10_03_06] f) Não quis responder'
-                question_id: QSE15_10_03
-                sequence: 60
+                answer: 'f) Não quis responder'
 
             QSE15_10_03_07:
                 model: survey.answer
-                id: QSE15_10_03_07
-                answer: '[QSE15_10_03_07] g) Não se aplica'
-                question_id: QSE15_10_03
-                sequence: 70
+                answer: 'g) Não se aplica'
 
         QSE15_10_04:
             model: survey.question
-            id: QSE15_10_04
-            question: '[QSE15_10_04] Como descobriu que estava com a doença?'
+            question: 'Como descobriu que estava com a doença?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_10
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -3288,53 +2000,32 @@ QSE15:
 
             QSE15_10_04_01:
                 model: survey.answer
-                id: QSE15_10_04_01
-                answer: '[QSE15_10_04_01] a) Saiu nas fezes'
-                question_id: QSE15_10_04
-                sequence: 10
+                answer: 'a) Saiu nas fezes'
 
             QSE15_10_04_02:
                 model: survey.answer
-                id: QSE15_10_04_02
-                answer: '[QSE15_10_04_02] b) Foi no médico'
-                question_id: QSE15_10_04
-                sequence: 20
+                answer: 'b) Foi no médico'
 
             QSE15_10_04_03:
                 model: survey.answer
-                id: QSE15_10_04_03
-                answer: '[QSE15_10_04_03] c) Outros'
-                question_id: QSE15_10_04
-                sequence: 30
+                answer: 'c) Outros'
 
             QSE15_10_04_04:
                 model: survey.answer
-                id: QSE15_10_04_04
-                answer: '[QSE15_10_04_04] d) Não sabe'
-                question_id: QSE15_10_04
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_10_04_05:
                 model: survey.answer
-                id: QSE15_10_04_05
-                answer: '[QSE15_10_04_05] e) Não quis responder'
-                question_id: QSE15_10_04
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_10_04_06:
                 model: survey.answer
-                id: QSE15_10_04_06
-                answer: '[QSE15_10_04_06] f) Não se aplica'
-                question_id: QSE15_10_04
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_10_05:
             model: survey.question
-            id: QSE15_10_05
-            question: '[QSE15_10_05] Já tomou vermífugo (lombrigueira)?'
+            question: 'Já tomou vermífugo (lombrigueira)?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_10
-            sequence: 50
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
@@ -3342,221 +2033,131 @@ QSE15:
 
             QSE15_10_05_01:
                 model: survey.answer
-                id: QSE15_10_05_01
-                answer: '[QSE15_10_05_01] a) Não'
-                question_id: QSE15_10_05
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_10_05_02:
                 model: survey.answer
-                id: QSE15_10_05_02
-                answer: '[QSE15_10_05_02] b) Sim, há seis meses ou menos e "botou" verme'
-                question_id: QSE15_10_05
-                sequence: 20
+                answer: 'b) Sim, há seis meses ou menos e "botou" verme'
 
             QSE15_10_05_03:
                 model: survey.answer
-                id: QSE15_10_05_03
-                answer: '[QSE15_10_05_03] c) Sim, há seis meses ou menos e "botou" verme'
-                question_id: QSE15_10_05
-                sequence: 30
+                answer: 'c) Sim, há seis meses ou menos e "botou" verme'
 
             QSE15_10_05_04:
                 model: survey.answer
-                id: QSE15_10_05_04
-                answer: '[QSE15_10_05_04] d) Sim, há seis meses ou menos, mas não "botou" verme'
-                question_id: QSE15_10_05
-                sequence: 40
+                answer: 'd) Sim, há seis meses ou menos, mas não "botou" verme'
 
             QSE15_10_05_05:
                 model: survey.answer
-                id: QSE15_10_05_05
-                answer: '[QSE15_10_05_05] e) Sim, há mais de seis meses, mas não "botou" verme'
-                question_id: QSE15_10_05
-                sequence: 50
+                answer: 'e) Sim, há mais de seis meses, mas não "botou" verme'
 
             QSE15_10_05_06:
                 model: survey.answer
-                id: QSE15_10_05_06
-                answer: '[QSE15_10_05_06] f) Não sabe'
-                question_id: QSE15_10_05
-                sequence: 60
+                answer: 'f) Não sabe'
 
             QSE15_10_05_07:
                 model: survey.answer
-                id: QSE15_10_05_07
-                answer: '[QSE15_10_05_07] g) Não quis responder'
-                question_id: QSE15_10_05
-                sequence: 70
+                answer: 'g) Não quis responder'
 
             QSE15_10_05_08:
                 model: survey.answer
-                id: QSE15_10_05_08
-                answer: '[QSE15_10_05_08] h) Não se aplica'
-                question_id: QSE15_10_05
-                sequence: 80
+                answer: 'h) Não se aplica'
 
         QSE15_10_06:
             model: survey.question
-            id: QSE15_10_06
-            question: '[QSE15_10_06] Alguém na casa já pegou verme? Qual?'
+            question: 'Alguém na casa já pegou verme? Qual?'
             type: multiple_choice_multiple_ans
-            page_id: QSE15_10
-            sequence: 60
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_10_06_01:
                 model: survey.answer
-                id: QSE15_10_06_01
-                answer: '[QSE15_10_06_01] a) Não'
-                question_id: QSE15_10_06
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_10_06_02:
                 model: survey.answer
-                id: QSE15_10_06_02
-                answer: '[QSE15_10_06_02] b) Sim, mas não sabe qual verme'
-                question_id: QSE15_10_06
-                sequence: 20
+                answer: 'b) Sim, mas não sabe qual verme'
 
             QSE15_10_06_03:
                 model: survey.answer
-                id: QSE15_10_06_03
-                answer: '[QSE15_10_06_03] c) "Solitária" (Teníase)'
-                question_id: QSE15_10_06
-                sequence: 30
+                answer: 'c) "Solitária" (Teníase)'
 
             QSE15_10_06_04:
                 model: survey.answer
-                id: QSE15_10_06_04
-                answer: '[QSE15_10_06_04] d) "Ameba" (Amebíase)'
-                question_id: QSE15_10_06
-                sequence: 40
+                answer: 'd) "Ameba" (Amebíase)'
 
             QSE15_10_06_05:
                 model: survey.answer
-                id: QSE15_10_06_05
-                answer: '[QSE15_10_06_05] e) "Giárdia" (Giardíase)'
-                question_id: QSE15_10_06
-                sequence: 50
+                answer: 'e) "Giárdia" (Giardíase)'
 
             QSE15_10_06_06:
                 model: survey.answer
-                id: QSE15_10_06_06
-                answer: '[QSE15_10_06_06] f) Coceira (Enterobíase)'
-                question_id: QSE15_10_06
-                sequence: 60
+                answer: 'f) Coceira (Enterobíase)'
 
             QSE15_10_06_07:
                 model: survey.answer
-                id: QSE15_10_06_07
-                answer: '[QSE15_10_06_07] g) "Amarelão" (Ancilostomose)'
-                question_id: QSE15_10_06
-                sequence: 70
+                answer: 'g) "Amarelão" (Ancilostomose)'
 
             QSE15_10_06_08:
                 model: survey.answer
-                id: QSE15_10_06_08
-                answer: '[QSE15_10_06_08] h) "Bicha", "lombriga" (Ascaridíase)'
-                question_id: QSE15_10_06
-                sequence: 80
+                answer: 'h) "Bicha", "lombriga" (Ascaridíase)'
 
             QSE15_10_06_09:
                 model: survey.answer
-                id: QSE15_10_06_09
-                answer: '[QSE15_10_06_09] i) Barriga d água, "xistose" (Esquistossomose)'
-                question_id: QSE15_10_06
-                sequence: 90
+                answer: 'i) Barriga d água, "xistose" (Esquistossomose)'
 
             QSE15_10_06_10:
                 model: survey.answer
-                id: QSE15_10_06_10
-                answer: '[QSE15_10_06_10] j) Não sabe'
-                question_id: QSE15_10_06
-                sequence: 100
+                answer: 'j) Não sabe'
 
             QSE15_10_06_11:
                 model: survey.answer
-                id: QSE15_10_06_11
-                answer: '[QSE15_10_06_11] k) Não quis responder'
-                question_id: QSE15_10_06
-                sequence: 110
+                answer: 'k) Não quis responder'
 
             QSE15_10_06_12:
                 model: survey.answer
-                id: QSE15_10_06_12
-                answer: '[QSE15_10_06_12] l) Não se aplica'
-                question_id: QSE15_10_06
-                sequence: 120
+                answer: 'l) Não se aplica'
 
     QSE15_11:
         model: survey.page
-        id: QSE15_11
-        title: '[QSE15_11] Aspecto Econômico'
-        note: '[QSE15_11] Aspecto Econômico'
-        survey_id: QSE15
-        sequence: 110
+        title: 'Aspecto Econômico'
+        note: 'Aspecto Econômico'
 
         QSE15_11_01:
             model: survey.question
-            id: QSE15_11_01
-            question: '[QSE15_11_01] O(A) Sr.(a) trabalha?'
+            question: 'O(A) Sr.(a) trabalha?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_11
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QSE15_11_01_01:
                 model: survey.answer
-                id: QSE15_11_01_01
-                answer: '[QSE15_11_01_01] a) Não'
-                question_id: QSE15_11_01
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_11_01_02:
                 model: survey.answer
-                id: QSE15_11_01_02
-                answer: '[QSE15_11_01_02] b) Não. É aposentado'
-                question_id: QSE15_11_01
-                sequence: 20
+                answer: 'b) Não. É aposentado'
 
             QSE15_11_01_03:
                 model: survey.answer
-                id: QSE15_11_01_03
-                answer: '[QSE15_11_01_03] c) Sim'
-                question_id: QSE15_11_01
-                sequence: 30
+                answer: 'c) Sim'
 
             QSE15_11_01_04:
                 model: survey.answer
-                id: QSE15_11_01_04
-                answer: '[QSE15_11_01_04] d) Não sabe'
-                question_id: QSE15_11_01
-                sequence: 40
+                answer: 'd) Não sabe'
 
             QSE15_11_01_05:
                 model: survey.answer
-                id: QSE15_11_01_05
-                answer: '[QSE15_11_01_05] e) Não quis responder'
-                question_id: QSE15_11_01
-                sequence: 50
+                answer: 'e) Não quis responder'
 
             QSE15_11_01_06:
                 model: survey.answer
-                id: QSE15_11_01_06
-                answer: '[QSE15_11_01_06] f) Não se aplica'
-                question_id: QSE15_11_01
-                sequence: 60
+                answer: 'f) Não se aplica'
 
         QSE15_11_02:
             model: survey.question
-            id: QSE15_11_02
-            question: '[QSE15_11_02] O(A) Sr.(a) trabalha (remunerado) atualmente? '
+            question: 'O(A) Sr.(a) trabalha (remunerado) atualmente? '
             type: multiple_choice_only_one_ans
-            page_id: QSE15_11
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -3564,46 +2165,28 @@ QSE15:
 
             QSE15_11_02_01:
                 model: survey.answer
-                id: QSE15_11_02_01
-                answer: '[QSE15_11_02_01] a) Não'
-                question_id: QSE15_11_02
-                sequence: 10
+                answer: 'a) Não'
 
             QSE15_11_02_02:
                 model: survey.answer
-                id: QSE15_11_02_02
-                answer: '[QSE15_11_02_02] b) Sim'
-                question_id: QSE15_11_02
-                sequence: 20
+                answer: 'b) Sim'
 
             QSE15_11_02_03:
                 model: survey.answer
-                id: QSE15_11_02_03
-                answer: '[QSE15_11_02_03] c) Não sabe'
-                question_id: QSE15_11_02
-                sequence: 30
+                answer: 'c) Não sabe'
 
             QSE15_11_02_04:
                 model: survey.answer
-                id: QSE15_11_02_04
-                answer: '[QSE15_11_02_04] d) Não quis responder'
-                question_id: QSE15_11_02
-                sequence: 40
+                answer: 'd) Não quis responder'
 
             QSE15_11_02_05:
                 model: survey.answer
-                id: QSE15_11_02_05
-                answer: '[QSE15_11_02_05] e) Não se aplica'
-                question_id: QSE15_11_02
-                sequence: 50
+                answer: 'e) Não se aplica'
 
         QSE15_11_03:
             model: survey.question
-            id: QSE15_11_03
-            question: '[QSE15_11_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?'
+            question: 'Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_11
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -3611,39 +2194,24 @@ QSE15:
 
             QSE15_11_03_01:
                 model: survey.answer
-                id: QSE15_11_03_01
-                answer: '[QSE15_11_03_01] a) Valor'
-                question_id: QSE15_11_03
-                sequence: 10
+                answer: 'a) Valor'
 
             QSE15_11_03_02:
                 model: survey.answer
-                id: QSE15_11_03_02
-                answer: '[QSE15_11_03_02] b) Não sabe'
-                question_id: QSE15_11_03
-                sequence: 20
+                answer: 'b) Não sabe'
 
             QSE15_11_03_03:
                 model: survey.answer
-                id: QSE15_11_03_03
-                answer: '[QSE15_11_03_03] c) Não quis responder'
-                question_id: QSE15_11_03
-                sequence: 30
+                answer: 'c) Não quis responder'
 
             QSE15_11_03_04:
                 model: survey.answer
-                id: QSE15_11_03_04
-                answer: '[QSE15_11_03_04] d) Não se aplica'
-                question_id: QSE15_11_03
-                sequence: 40
+                answer: 'd) Não se aplica'
 
         QSE15_11_04:
             model: survey.question
-            id: QSE15_11_04
-            question: '[QSE15_11_04] Qual a renda total da família?'
+            question: 'Qual a renda total da família?'
             type: multiple_choice_only_one_ans
-            page_id: QSE15_11
-            sequence: 40
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
@@ -3651,28 +2219,16 @@ QSE15:
 
             QSE15_11_04_01:
                 model: survey.answer
-                id: QSE15_11_04_01
-                answer: '[QSE15_11_04_01] a) Valor'
-                question_id: QSE15_11_04
-                sequence: 10
+                answer: 'a) Valor'
 
             QSE15_11_04_02:
                 model: survey.answer
-                id: QSE15_11_04_02
-                answer: '[QSE15_11_04_02] b) Não sabe'
-                question_id: QSE15_11_04
-                sequence: 20
+                answer: 'b) Não sabe'
 
             QSE15_11_04_03:
                 model: survey.answer
-                id: QSE15_11_04_03
-                answer: '[QSE15_11_04_03] c) Não quis responder'
-                question_id: QSE15_11_04
-                sequence: 30
+                answer: 'c) Não quis responder'
 
             QSE15_11_04_04:
                 model: survey.answer
-                id: QSE15_11_04_04
-                answer: '[QSE15_11_04_04] d) Não se aplica'
-                question_id: QSE15_11_04
-                sequence: 40
+                answer: 'd) Não se aplica'

@@ -584,7 +584,7 @@
                     <field name="question">[QSE15_02_10] Qual é a sua religião?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QSE15_02"/>
-                    <field name="sequence" eval="90"/>
+                    <field name="sequence" eval="100"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>

@@ -20,51 +20,39 @@
 
 import yaml
 
-def level_3_process_1(doc, xml_file, txt_file, mneumonic, key1, key2, key3, key4):
+def survey_answer(doc, xml_file, txt_file, key1, key2, key3, key4, question_type, answer_sequence):
 
-    _answer_ = doc[key1][key2][key3][key4]['answer'].encode("utf-8")
+    _answer_ = '[' + key4 + '] ' + doc[key1][key2][key3][key4]['answer'].encode("utf-8")
     _model_ = doc[key1][key2][key3][key4]['model']
-    _id_ = doc[key1][key2][key3][key4]['id']
-    _question_id_ = doc[key1][key2][key3][key4]['question_id']
-    _sequence_ = str(doc[key1][key2][key3][key4]['sequence'])
-    _type_ = doc[key1][key2][key3][key4]['type']
+    _id_ = key4
+    _question_id_ = key3
+    _sequence_ = str(answer_sequence)
 
-    txt_file.write('            %s____________________________________\n' % (_answer_))
+    if  question_type == 'multiple_textboxes_diff_type':
+        txt_file.write('            %s____________________________________\n' % (_answer_))
+    else:
+        txt_file.write('            %s\n' % (_answer_))
 
     xml_file.write('                    <record model="%s" id="%s">\n' % (_model_, _id_))
     xml_file.write('                        <field name="answer">%s</field>\n' % (_answer_))
     xml_file.write('                        <field name="question_id" ref="%s"/>\n' % (_question_id_))
     xml_file.write('                        <field name="sequence" eval="%s"/>\n' % (_sequence_))
-    xml_file.write('                        <field name="type">%s</field>\n' % (_type_))
+    try:
+        _type_ = doc[key1][key2][key3][key4]['type']
+        xml_file.write('                        <field name="type">%s</field>\n' % (_type_))
+    except Exception, e:
+        pass
     xml_file.write('                    </record>\n')
     xml_file.write('\n')
 
-def level_3_process_2(doc, xml_file, txt_file, mneumonic, key1, key2, key3, key4):
+def survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence):
 
-
-    _answer_ = doc[key1][key2][key3][key4]['answer'].encode("utf-8")
-    _model_ = doc[key1][key2][key3][key4]['model']
-    _id_ = doc[key1][key2][key3][key4]['id']
-    _question_id_ = doc[key1][key2][key3][key4]['question_id']
-    _sequence_ = str(doc[key1][key2][key3][key4]['sequence'])
-
-    txt_file.write('            %s\n' % (_answer_))
-
-    xml_file.write('                    <record model="%s" id="%s">\n' % (_model_, _id_))
-    xml_file.write('                        <field name="answer">%s</field>\n' % (_answer_))
-    xml_file.write('                        <field name="question_id" ref="%s"/>\n' % (_question_id_))
-    xml_file.write('                        <field name="sequence" eval="%s"/>\n' % (_sequence_))
-    xml_file.write('                    </record>' + '\n')
-    xml_file.write('\n')
-
-def level_3_process(doc, xml_file, txt_file, mneumonic, key1, key2, key3):
-
-    _question_ = doc[key1][key2][key3]['question'].encode("utf-8")
+    _question_ = '[' + key3 + '] ' + doc[key1][key2][key3]['question'].encode("utf-8")
     _type_ = doc[key1][key2][key3]['type']
     _model_ = doc[key1][key2][key3]['model']
-    _id_ = doc[key1][key2][key3]['id']
-    _page_id_ = doc[key1][key2][key3]['page_id']
-    _sequence_ = str(doc[key1][key2][key3]['sequence'])
+    _id_ = key3
+    _page_id_ = key2
+    _sequence_ = str(question_sequence)
     _is_require_answer_ = str(doc[key1][key2][key3]['is_require_answer'])
     _req_error_msg_ = doc[key1][key2][key3]['req_error_msg'].encode("utf-8")
 
@@ -108,35 +96,34 @@ def level_3_process(doc, xml_file, txt_file, mneumonic, key1, key2, key3):
     if  _type_ == 'comment':
         txt_file.write('            ' + '____________________________________\n')
 
-    if  _type_ == 'multiple_textboxes_diff_type':
-        for key4 in sorted(doc[key1][key2][key3].keys()):
-            if not key4.find(mneumonic):
-                print '            ', key4
-                level_3_process_1(doc, xml_file, txt_file, mneumonic, key1, key2, key3, key4)
-
     else:
+        answer_sequence = 0
         for key4 in sorted(doc[key1][key2][key3].keys()):
-            if not key4.find(mneumonic):
-
-                print '            ', key4
-                level_3_process_2(doc, xml_file, txt_file, mneumonic, key1, key2, key3, key4)
+            try:
+                _model_ = doc[key1][key2][key3][key4]['model']
+                print '            ', key4, _model_
+                if _model_ == 'survey.answer':
+                    answer_sequence += 10
+                    survey_answer(doc, xml_file, txt_file, key1, key2, key3, key4, _type_, answer_sequence)
+            except Exception, e:
+                pass
 
     try:
         _is_comment_require_ = doc[key1][key2][key3]['is_comment_require']
         if doc[key1][key2][key3]['is_comment_require'] == True:
             _comment_label_ = doc[key1][key2][key3]['comment_label']
             txt_file.write('            %s____________________________________\n' % _comment_label_)
-    except:
+    except Exception, e:
         pass
 
-def level_2_process(doc, xml_file, txt_file, mneumonic, key1, key2):
+def survey_page(doc, xml_file, txt_file, key1, key2, page_sequence):
 
-    _title_ = doc[key1][key2]['title'].encode("utf-8")
+    _title_ = '[' + key2 + '] ' + doc[key1][key2]['title'].encode("utf-8")
     _model_ = doc[key1][key2]['model']
-    _id_ = doc[key1][key2]['id']
-    _note_ = doc[key1][key2]['note'].encode("utf-8")
-    _survey_id_ = doc[key1][key2]['survey_id']
-    _sequence_ = str(doc[key1][key2]['sequence'])
+    _id_ = key2
+    _note_ = '[' + key2 + '] ' + doc[key1][key2]['note'].encode("utf-8")
+    _survey_id_ = key1
+    _sequence_ = str(page_sequence)
 
     txt_file.write('    %s\n' % (_title_))
 
@@ -148,17 +135,23 @@ def level_2_process(doc, xml_file, txt_file, mneumonic, key1, key2):
     xml_file.write('            </record>' + '\n')
     xml_file.write('\n')
 
+    question_sequence = 0
     for key3 in sorted(doc[key1][key2].keys()):
-        if not key3.find(mneumonic):
-            print '        ', key3
-            level_3_process(doc, xml_file, txt_file, mneumonic, key1, key2, key3)
+        try:
+            _model_ = doc[key1][key2][key3]['model']
+            print '        ', key3, _model_
+            if _model_ == 'survey.question':
+                question_sequence += 10
+                survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence)
+        except Exception, e:
+            pass
 
-def level_1_process(doc, xml_file, txt_file, mneumonic, key1):
+def survey(doc, xml_file, txt_file, key1):
 
-    _title_ = doc[key1]['title'].encode("utf-8")
+    _title_ = '[' + key1 + '] ' + doc[key1]['title'].encode("utf-8")
     _model_ = doc[key1]['model']
-    _id_ = doc[key1]['id']
-    _note_ = doc[key1]['note'].encode("utf-8")
+    _id_ = key1
+    _note_ = '[' + key1 + '] ' + doc[key1]['note'].encode("utf-8")
     _responsible__id_ = doc[key1]['responsible_id']
     _type_ = doc[key1]['type']
     _color_ = str(doc[key1]['color'])
@@ -175,12 +168,18 @@ def level_1_process(doc, xml_file, txt_file, mneumonic, key1):
     xml_file.write('        </record>\n')
     xml_file.write('\n')
     
+    page_sequence = 0
     for key2 in sorted(doc[key1].keys()):
-        if not key2.find(mneumonic):
-            print '    ', key2
-            level_2_process(doc, xml_file, txt_file, mneumonic, key1, key2)
+        try:
+            _model_ = doc[key1][key2]['model']
+            print '    ', key2, _model_
+            if _model_ == 'survey.page':
+                page_sequence += 10
+                survey_page(doc, xml_file, txt_file, key1, key2, page_sequence)
+        except Exception, e:
+            pass
 
-def survey_process(yaml_filename, xml_filename, txt_filename, mneumonic):
+def survey_process_yaml(yaml_filename, xml_filename, txt_filename):
 
     yaml_file = open(yaml_filename, 'r')
     doc = yaml.load(yaml_file)
@@ -194,8 +193,10 @@ def survey_process(yaml_filename, xml_filename, txt_filename, mneumonic):
     xml_file.write('\n')
 
     for key1 in sorted(doc.keys()):
-        print key1
-        level_1_process(doc, xml_file, txt_file, mneumonic, key1)
+        _model_ = doc[key1]['model']
+        print key1, _model_
+        if _model_ == 'survey':
+            survey(doc, xml_file, txt_file, key1)
 
     xml_file.write('    </data>\n')
     xml_file.write('</openerp>\n')
@@ -211,35 +212,31 @@ if __name__ == '__main__':
     from time import time
     start = time()
 
-    print '--> Executing survey_process.py ...'
+    print '--> Executing survey_process_yaml.py ...'
 
     yaml_filename = 'survey_jcafb_QSE15_data.yaml'
     xml_filename = 'survey_jcafb_QSE15_data.xml'
     txt_filename = 'survey_jcafb_QSE15.txt'
-    mneumonic = 'QSE15_'
-    print '--> Executing survey_process(%s, %s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename, mneumonic)
-    survey_process(yaml_filename, xml_filename, txt_filename, mneumonic)
+    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QMD15_data.yaml'
     xml_filename = 'survey_jcafb_QMD15_data.xml'
     txt_filename = 'survey_jcafb_QMD15.txt'
-    mneumonic = 'QMD15_'
-    print '--> Executing survey_process(%s, %s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename, mneumonic)
-    survey_process(yaml_filename, xml_filename, txt_filename, mneumonic)
+    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QAN15_data.yaml'
     xml_filename = 'survey_jcafb_QAN15_data.xml'
     txt_filename = 'survey_jcafb_QAN15.txt'
-    mneumonic = 'QAN15_'
-    print '--> Executing survey_process(%s, %s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename, mneumonic)
-    survey_process(yaml_filename, xml_filename, txt_filename, mneumonic)
+    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QDH15_data.yaml'
     xml_filename = 'survey_jcafb_QDH15_data.xml'
     txt_filename = 'survey_jcafb_QDH15.txt'
-    mneumonic = 'QDH15_'
-    print '--> Executing survey_process(%s, %s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename, mneumonic)
-    survey_process(yaml_filename, xml_filename, txt_filename, mneumonic)
+    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
 
-    print '--> survey_process.py'
+    print '--> survey_process_yaml.py'
     print '--> Execution time:', secondsToStr(time() - start)

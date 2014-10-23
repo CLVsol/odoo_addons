@@ -1,27 +1,20 @@
 QDH15:
     model: survey
-    id: QDH15
-    title: '[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
-    note: '[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    title: 'JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    note: 'JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
 
     QDH15_01:
         model: survey.page
-        id: QDH15_01
-        title: '[QDH15_01] Preâmbulo'
-        note: '[QDH15_01] Preâmbulo'
-        survey_id: QDH15
-        sequence: 10
+        title: 'Preâmbulo'
+        note: 'Preâmbulo'
 
         QDH15_01_01:
             model: survey.question
-            id: QDH15_01_01
-            question: '[QDH15_01_01] Identificação do Paciente'
+            question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
-            page_id: QDH15_01
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e o Código.'
             required_type: exactly
@@ -29,27 +22,18 @@ QDH15:
 
             QDH15_01_01_01:
                 model: survey.answer
-                id: QDH15_01_01_01
-                answer: '[QDH15_01_01_01] Nome'
-                question_id: QDH15_01_01
-                sequence: 10
+                answer: 'Nome'
                 type: char
 
             QDH15_01_01_02:
                 model: survey.answer
-                id: QDH15_01_01_02
-                answer: '[QDH15_01_01_02] Código'
-                question_id: QDH15_01_01
-                sequence: 20
+                answer: 'Código'
                 type: char
 
         QDH15_01_02:
             model: survey.question
-            id: QDH15_01_02
-            question: '[QDH15_01_02] Aplicação do Geral'
+            question: 'Aplicação do Geral'
             type: multiple_textboxes_diff_type
-            page_id: QDH15_01
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome, o Código e a Data.'
             required_type: exactly
@@ -57,35 +41,23 @@ QDH15:
 
             QDH15_01_02_01:
                 model: survey.answer
-                id: QDH15_01_02_01
-                answer: '[QDH15_01_02_01] Aplicado por'
-                question_id: QDH15_01_02
-                sequence: 10
+                answer: 'Aplicado por'
                 type: char
 
             QDH15_01_02_02:
                 model: survey.answer
-                id: QDH15_01_02_02
-                answer: '[QDH15_01_02_02] Código'
-                question_id: QDH15_01_02
-                sequence: 20
+                answer: 'Código'
                 type: char
 
             QDH15_01_02_03:
                 model: survey.answer
-                id: QDH15_01_02_03
-                answer: '[QDH15_01_02_03] Data'
-                question_id: QDH15_01_02
-                sequence: 30
+                answer: 'Data'
                 type: date
 
         QDH15_01_03:
             model: survey.question
-            id: QDH15_01_03
-            question: '[QDH15_01_03] Entrevistado'
+            question: 'Entrevistado'
             type: multiple_choice_only_one_ans
-            page_id: QDH15_01
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
@@ -93,61 +65,37 @@ QDH15:
 
             QDH15_01_03_01:
                 model: survey.answer
-                id: QDH15_01_03_01
-                answer: '[QDH15_01_03_01] a) Responsável'
-                question_id: QDH15_01_03
-                sequence: 10
+                answer: 'a) Responsável'
 
             QDH15_01_03_02:
                 model: survey.answer
-                id: QDH15_01_03_02
-                answer: '[QDH15_01_03_02] b) Paciente'
-                question_id: QDH15_01_03
-                sequence: 20
+                answer: 'b) Paciente'
 
             QDH15_01_03_03:
                 model: survey.answer
-                id: QDH15_01_03_03
-                answer: '[QDH15_01_03_03] c) Cuidador'
-                question_id: QDH15_01_03
-                sequence: 30
+                answer: 'c) Cuidador'
 
     QDH15_02:
         model: survey.page
-        id: QDH15_02
-        title: '[QDH15_02] Geral'
-        note: '[QDH15_02] Geral'
-        survey_id: QDH15
-        sequence: 20
+        title: 'Geral'
+        note: 'Geral'
 
     QDH15_03:
         model: survey.page
-        id: QDH15_03
-        title: '[QDH15_03] Histórico de DHC'
-        note: '[QDH15_03] Histórico de DHC'
-        survey_id: QDH15
-        sequence: 30
+        title: 'Histórico de DHC'
+        note: 'Histórico de DHC'
 
     QDH15_04:
         model: survey.page
-        id: QDH15_04
-        title: '[QDH15_04] Histórico Familiar'
-        note: '[QDH15_04] Histórico Familiar'
-        survey_id: QDH15
-        sequence: 40
+        title: 'Histórico Familiar'
+        note: 'Histórico Familiar'
 
     QDH15_05:
         model: survey.page
-        id: QDH15_05
-        title: '[QDH15_05] Hábitos de Vida'
-        note: '[QDH15_05] Hábitos de Vida'
-        survey_id: QDH15
-        sequence: 50
+        title: 'Hábitos de Vida'
+        note: 'Hábitos de Vida'
 
     QDH15_06:
         model: survey.page
-        id: QDH15_06
-        title: '[QDH15_06] Hábitos Alimentares'
-        note: '[QDH15_06] Hábitos Alimentares'
-        survey_id: QDH15
-        sequence: 60
+        title: 'Hábitos Alimentares'
+        note: 'Hábitos Alimentares'

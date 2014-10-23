@@ -1,27 +1,20 @@
 QMD15:
     model: survey
-    id: QMD15
-    title: '[QMD15] JCAFB 2015 - Questionário Medicamentos'
-    note: '[QMD15] JCAFB 2015 - Questionário Medicamentos'
+    title: 'JCAFB 2015 - Questionário Medicamentos'
+    note: 'JCAFB 2015 - Questionário Medicamentos'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
 
     QMD15_01:
         model: survey.page
-        id: QMD15_01
-        title: '[QMD15_01] Preâmbulo'
-        note: '[QMD15_01] Preâmbulo'
-        survey_id: QMD15
-        sequence: 10
+        title: 'Preâmbulo'
+        note: 'Preâmbulo'
 
         QMD15_01_01:
             model: survey.question
-            id: QMD15_01_01
-            question: '[QMD15_01_01] Identificação do Paciente'
+            question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
-            page_id: QMD15_01
-            sequence: 10
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e o Código.'
             required_type: exactly
@@ -29,27 +22,18 @@ QMD15:
 
             QMD15_01_01_01:
                 model: survey.answer
-                id: QMD15_01_01_01
-                answer: '[QMD15_01_01_01] Nome'
-                question_id: QMD15_01_01
-                sequence: 10
+                answer: 'Nome'
                 type: char
 
             QMD15_01_01_02:
                 model: survey.answer
-                id: QMD15_01_01_02
-                answer: '[QMD15_01_01_02] Código'
-                question_id: QMD15_01_01
-                sequence: 20
+                answer: 'Código'
                 type: char
 
         QMD15_01_02:
             model: survey.question
-            id: QMD15_01_02
-            question: '[QMD15_01_02] Aplicação do Questionário'
+            question: 'Aplicação do Questionário'
             type: multiple_textboxes_diff_type
-            page_id: QMD15_01
-            sequence: 20
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome, o Código e a Data.'
             required_type: exactly
@@ -57,35 +41,23 @@ QMD15:
 
             QMD15_01_02_01:
                 model: survey.answer
-                id: QMD15_01_02_01
-                answer: '[QMD15_01_02_01] Aplicado por'
-                question_id: QMD15_01_02
-                sequence: 10
+                answer: 'Aplicado por'
                 type: char
 
             QMD15_01_02_02:
                 model: survey.answer
-                id: QMD15_01_02_02
-                answer: '[QMD15_01_02_02] Código'
-                question_id: QMD15_01_02
-                sequence: 20
+                answer: 'Código'
                 type: char
 
             QMD15_01_02_03:
                 model: survey.answer
-                id: QMD15_01_02_03
-                answer: '[QMD15_01_02_03] Data'
-                question_id: QMD15_01_02
-                sequence: 30
+                answer: 'Data'
                 type: date
 
         QMD15_01_03:
             model: survey.question
-            id: QMD15_01_03
-            question: '[QMD15_01_03] Entrevistado'
+            question: 'Entrevistado'
             type: multiple_choice_only_one_ans
-            page_id: QMD15_01
-            sequence: 30
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
@@ -93,29 +65,17 @@ QMD15:
 
             QMD15_01_03_01:
                 model: survey.answer
-                id: QMD15_01_03_01
-                answer: '[QMD15_01_03_01] a) Responsável'
-                question_id: QMD15_01_03
-                sequence: 10
+                answer: 'a) Responsável'
 
             QMD15_01_03_02:
                 model: survey.answer
-                id: QMD15_01_03_02
-                answer: '[QMD15_01_03_02] b) Paciente'
-                question_id: QMD15_01_03
-                sequence: 20
+                answer: 'b) Paciente'
 
             QMD15_01_03_03:
                 model: survey.answer
-                id: QMD15_01_03_03
-                answer: '[QMD15_01_03_03] c) Cuidador'
-                question_id: QMD15_01_03
-                sequence: 30
+                answer: 'c) Cuidador'
 
     QMD15_02:
         model: survey.page
-        id: QMD15_02
-        title: '[QMD15_02] Questionário'
-        note: '[QMD15_02] Questionário'
-        survey_id: QMD15
-        sequence: 20
+        title: 'Questionário'
+        note: 'Questionário'
