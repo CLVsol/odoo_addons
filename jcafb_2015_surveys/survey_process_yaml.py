@@ -20,13 +20,22 @@
 
 import yaml
 
-def survey_answer(doc, xml_file, txt_file, key1, key2, key3, key4, question_type, answer_sequence):
+def survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, answer_sequence):
 
-    _answer_ = '[' + key4 + '] ' + doc[key1][key2][key3][key4]['answer'].encode("utf-8")
+    _answer_ = doc[key1][key2][key3][key4]['answer'].encode("utf-8")
     _model_ = doc[key1][key2][key3][key4]['model']
-    _id_ = key4
-    _question_id_ = key3
+    if answer_sequence < 100:
+        _id_ = question_id + '_0' + str(answer_sequence / 10)
+    else:
+        _id_ = question_id + '_' + str(answer_sequence / 10)
+    _question_id_ = question_id
     _sequence_ = str(answer_sequence)
+
+    yaml_out_file.write('            %s:\n' % (_id_))
+    yaml_out_file.write('                model: %s\n' % (_model_))
+    yaml_out_file.write('                answer: \'%s\'\n' % (_answer_))
+
+    _answer_ = '[' + _id_ + '] ' + _answer_
 
     if  question_type == 'multiple_textboxes_diff_type':
         txt_file.write('            %s____________________________________\n' % (_answer_))
@@ -39,22 +48,38 @@ def survey_answer(doc, xml_file, txt_file, key1, key2, key3, key4, question_type
     xml_file.write('                        <field name="sequence" eval="%s"/>\n' % (_sequence_))
     try:
         _type_ = doc[key1][key2][key3][key4]['type']
+        yaml_out_file.write('                type: %s\n' % (_type_))
         xml_file.write('                        <field name="type">%s</field>\n' % (_type_))
     except Exception, e:
         pass
+
+    yaml_out_file.write('\n')
+
     xml_file.write('                    </record>\n')
     xml_file.write('\n')
 
-def survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence):
+def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, page_id, question_sequence):
 
-    _question_ = '[' + key3 + '] ' + doc[key1][key2][key3]['question'].encode("utf-8")
+    _question_ = doc[key1][key2][key3]['question'].encode("utf-8")
     _type_ = doc[key1][key2][key3]['type']
     _model_ = doc[key1][key2][key3]['model']
-    _id_ = key3
-    _page_id_ = key2
+    if question_sequence < 100:
+        _id_ = page_id + '_0' + str(question_sequence / 10)
+    else:
+        _id_ = page_id + '_' + str(question_sequence / 10)
+    _page_id_ = page_id
     _sequence_ = str(question_sequence)
     _is_require_answer_ = str(doc[key1][key2][key3]['is_require_answer'])
     _req_error_msg_ = doc[key1][key2][key3]['req_error_msg'].encode("utf-8")
+
+    yaml_out_file.write('        %s:\n' % (_id_))
+    yaml_out_file.write('            model: %s\n' % (_model_))
+    yaml_out_file.write('            question: \'%s\'\n' % (_question_))
+    yaml_out_file.write('            type: %s\n' % (_type_))
+    yaml_out_file.write('            is_require_answer: %s\n' % (_is_require_answer_))
+    yaml_out_file.write('            req_error_msg: \'%s\'\n' % (_req_error_msg_))
+
+    _question_ = '[' + _id_ + '] ' + _question_
 
     txt_file.write('        %s\n' % (_question_))
     txt_file.write('            (%s)\n' % (_type_))
@@ -69,26 +94,32 @@ def survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence
 
     try:
         _required_type_ = doc[key1][key2][key3]['required_type']
+        yaml_out_file.write('            required_type: %s\n' % (_required_type_))
         xml_file.write('                    <field name="required_type">%s</field>\n' % (_required_type_))
     except Exception, e:
         print '             Missing: "%s"' % (e)
     
     try:
         _req_ans_ = str(doc[key1][key2][key3]['req_ans'])
+        yaml_out_file.write('            req_ans: %s\n' % (_req_ans_))
         xml_file.write('                    <field name="req_ans">%s</field>\n' % (_req_ans_))
     except Exception, e:
         print '             Missing: "%s"' % (e)
     try:
         _is_comment_require_ = str(doc[key1][key2][key3]['is_comment_require'])
+        yaml_out_file.write('            is_comment_require: %s\n' % (_is_comment_require_))
         xml_file.write('                    <field name="is_comment_require">%s</field>\n' % (_is_comment_require_))
     except Exception, e:
         print '             Missing: "%s"' % (e)
     
     try:
         _comment_label_ = doc[key1][key2][key3]['comment_label'].encode("utf-8")
+        yaml_out_file.write('            comment_label: \'%s\'\n' % (_comment_label_))
         xml_file.write('                    <field name="comment_label">%s</field>\n' % (_comment_label_))
     except Exception, e:
         print '             Missing: "%s"' % (e)
+
+    yaml_out_file.write('\n')
 
     xml_file.write('                </record>\n')
     xml_file.write('\n')
@@ -104,7 +135,7 @@ def survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence
                 print '            ', key4, _model_
                 if _model_ == 'survey.answer':
                     answer_sequence += 10
-                    survey_answer(doc, xml_file, txt_file, key1, key2, key3, key4, _type_, answer_sequence)
+                    survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
             except Exception, e:
                 pass
 
@@ -116,14 +147,26 @@ def survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence
     except Exception, e:
         pass
 
-def survey_page(doc, xml_file, txt_file, key1, key2, page_sequence):
+def survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, survey_id, page_sequence):
 
-    _title_ = '[' + key2 + '] ' + doc[key1][key2]['title'].encode("utf-8")
+    _title_ = doc[key1][key2]['title'].encode("utf-8")
     _model_ = doc[key1][key2]['model']
-    _id_ = key2
-    _note_ = '[' + key2 + '] ' + doc[key1][key2]['note'].encode("utf-8")
+    if page_sequence < 100:
+        _id_ = survey_id + '_0' + str(page_sequence / 10)
+    else:
+        _id_ = survey_id + '_' + str(page_sequence / 10)
+    _note_ = doc[key1][key2]['note'].encode("utf-8")
     _survey_id_ = key1
     _sequence_ = str(page_sequence)
+
+    yaml_out_file.write('    %s:\n' % (_id_))
+    yaml_out_file.write('        model: %s\n' % (_model_))
+    yaml_out_file.write('        title: \'%s\'\n' % (_title_))
+    yaml_out_file.write('        note: \'%s\'\n' % (_note_))
+    yaml_out_file.write('\n')
+
+    _title_ = '[' + _id_ + '] ' + _title_
+    _note_ = '[' + _id_ + '] ' + _note_
 
     txt_file.write('    %s\n' % (_title_))
 
@@ -142,19 +185,31 @@ def survey_page(doc, xml_file, txt_file, key1, key2, page_sequence):
             print '        ', key3, _model_
             if _model_ == 'survey.question':
                 question_sequence += 10
-                survey_question(doc, xml_file, txt_file, key1, key2, key3, question_sequence)
+                survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, _id_, question_sequence)
         except Exception, e:
             pass
 
-def survey(doc, xml_file, txt_file, key1):
+def survey(doc, yaml_out_file, xml_file, txt_file, key1):
 
-    _title_ = '[' + key1 + '] ' + doc[key1]['title'].encode("utf-8")
+    _title_ = doc[key1]['title'].encode("utf-8")
     _model_ = doc[key1]['model']
     _id_ = key1
-    _note_ = '[' + key1 + '] ' + doc[key1]['note'].encode("utf-8")
+    _note_ = doc[key1]['note'].encode("utf-8")
     _responsible__id_ = doc[key1]['responsible_id']
     _type_ = doc[key1]['type']
     _color_ = str(doc[key1]['color'])
+
+    yaml_out_file.write('%s:\n' % (key1))
+    yaml_out_file.write('    model: %s\n' % (_model_))
+    yaml_out_file.write('    title: \'%s\'\n' % (_title_))
+    yaml_out_file.write('    note: \'%s\'\n' % (_note_))
+    yaml_out_file.write('    responsible_id: %s\n' % (_responsible__id_))
+    yaml_out_file.write('    type: %s\n' % (_type_))
+    yaml_out_file.write('    color: %s\n' % (_color_))
+    yaml_out_file.write('\n')
+
+    _title_ = '[' + _id_ + '] ' + _title_
+    _note_ = '[' + _id_ + '] ' + _note_
 
     txt_file.write('%s\n' % (_title_))
     
@@ -175,15 +230,16 @@ def survey(doc, xml_file, txt_file, key1):
             print '    ', key2, _model_
             if _model_ == 'survey.page':
                 page_sequence += 10
-                survey_page(doc, xml_file, txt_file, key1, key2, page_sequence)
+                survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, key1, page_sequence)
         except Exception, e:
             pass
 
-def survey_process_yaml(yaml_filename, xml_filename, txt_filename):
+def survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename):
 
     yaml_file = open(yaml_filename, 'r')
     doc = yaml.load(yaml_file)
 
+    yaml_out_file = open(yaml_out_filename, "w")
     txt_file = open(txt_filename, "w")
     xml_file = open(xml_filename, "w")
 
@@ -196,11 +252,13 @@ def survey_process_yaml(yaml_filename, xml_filename, txt_filename):
         _model_ = doc[key1]['model']
         print key1, _model_
         if _model_ == 'survey':
-            survey(doc, xml_file, txt_file, key1)
+            survey(doc, yaml_out_file, xml_file, txt_file, key1)
 
     xml_file.write('    </data>\n')
     xml_file.write('</openerp>\n')
 
+    yaml_file.close()
+    yaml_out_file.close()
     txt_file.close()
     xml_file.close()
 
@@ -215,28 +273,32 @@ if __name__ == '__main__':
     print '--> Executing survey_process_yaml.py ...'
 
     yaml_filename = 'survey_jcafb_QSE15_data.yaml'
+    yaml_out_filename = 'survey_jcafb_QSE15_data_out.yaml'
     xml_filename = 'survey_jcafb_QSE15_data.xml'
     txt_filename = 'survey_jcafb_QSE15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QMD15_data.yaml'
+    yaml_out_filename = 'survey_jcafb_QMD15_data_out.yaml'
     xml_filename = 'survey_jcafb_QMD15_data.xml'
     txt_filename = 'survey_jcafb_QMD15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QAN15_data.yaml'
+    yaml_out_filename = 'survey_jcafb_QAN15_data_out.yaml'
     xml_filename = 'survey_jcafb_QAN15_data.xml'
     txt_filename = 'survey_jcafb_QAN15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
     yaml_filename = 'survey_jcafb_QDH15_data.yaml'
+    yaml_out_filename = 'survey_jcafb_QDH15_data_out.yaml'
     xml_filename = 'survey_jcafb_QDH15_data.xml'
     txt_filename = 'survey_jcafb_QDH15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
     print '--> survey_process_yaml.py'
     print '--> Execution time:', secondsToStr(time() - start)

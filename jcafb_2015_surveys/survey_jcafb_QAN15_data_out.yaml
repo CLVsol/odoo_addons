@@ -1,0 +1,82 @@
+QAN15:
+    model: survey
+    title: 'JCAFB 2015 - Inquérito para detecção de Anemia'
+    note: 'JCAFB 2015 - Inquérito para detecção de Anemia'
+    responsible_id: base.user_root
+    type: survey_type_JCAFB_2015
+    color: 5
+
+    QAN15_01:
+        model: survey.page
+        title: 'Preâmbulo'
+        note: 'Preâmbulo'
+
+        QAN15_01_01:
+            model: survey.question
+            question: 'Identificação do Paciente'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o Nome e o Código.'
+            required_type: exactly
+            req_ans: 2
+
+            QAN15_01_01_01:
+                model: survey.answer
+                answer: 'Nome'
+                type: char
+
+            QAN15_01_01_02:
+                model: survey.answer
+                answer: 'Código'
+                type: char
+
+        QAN15_01_02:
+            model: survey.question
+            question: 'Aplicação do Questionário'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o Nome, o Código e a Data.'
+            required_type: exactly
+            req_ans: 3
+
+            QAN15_01_02_01:
+                model: survey.answer
+                answer: 'Aplicado por'
+                type: char
+
+            QAN15_01_02_02:
+                model: survey.answer
+                answer: 'Código'
+                type: char
+
+            QAN15_01_02_03:
+                model: survey.answer
+                answer: 'Data'
+                type: date
+
+        QAN15_01_03:
+            model: survey.question
+            question: 'Entrevistado'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Informar quem respondeu ao questionário.'
+            is_comment_require: True
+            comment_label: 'Nome (Grau de Parentesco)'
+
+            QAN15_01_03_01:
+                model: survey.answer
+                answer: 'a) Responsável'
+
+            QAN15_01_03_02:
+                model: survey.answer
+                answer: 'b) Paciente'
+
+            QAN15_01_03_03:
+                model: survey.answer
+                answer: 'c) Cuidador'
+
+    QAN15_02:
+        model: survey.page
+        title: 'Questionário'
+        note: 'Questionário'
+
