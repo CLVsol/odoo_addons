@@ -17,7 +17,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+#from openerp import models, fields, api
+from openerp.osv import fields, osv
 
 def format_code(code_seq):
     code = map(int, str(code_seq))
@@ -49,28 +50,54 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_tag(models.Model):
+#class clv_tag(models.Model):
+class clv_tag(osv.osv):
     _inherit = 'clv_tag'
 
-    code = fields.Char('Code', size=64, select=1, required=False, readonly=False, default='/',
-                       help='Use "/" to get an automatic new Code.')
+    # code = fields.Char('Code', size=64, select=1, required=False, readonly=False, default='/',
+    #                    help='Use "/" to get an automatic new Code.')
+
+    _columns = {
+        'code': fields.char('Code', size=64, select=1, required=False, readonly=False, default='/',
+                          help='Use "/" to get an automatic new Code.'),
+        }
     
-    @api.model
-    def create(self, vals):
+    _defaults = {
+        'code': '/',
+        }
+    
+     #@api.model
+    #def create(self, vals):
+    def create(self, cr, uid, vals, context=None):
+        # if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
+        #     code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_tag.code')
+        #     vals['code'] = format_code(code_seq)
+        # return super(clv_tag, self).create(vals)
+        if context is None:
+            context = {}
         if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_tag.code')
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_tag.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_tag, self).create(vals)
+        return super(clv_tag, self).create(cr, uid, vals, context)
 
-    @api.multi
-    def write(self, vals):
-        if 'code' in vals and vals['code'] == '/':
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_tag.code')
+    #@api.multi
+    #def write(self, vals):
+    def write(self, cr, uid, ids, vals, context=None):
+        # if 'code' in vals and vals['code'] == '/':
+        #     code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_tag.code')
+        #     vals['code'] = format_code(code_seq)
+        # return super(clv_tag, self).write(vals)
+        if context is None:
+            context = {}
+        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_tag.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_tag, self).write(vals)
+        return super(clv_tag, self).write(cr, uid, ids, vals, context)
 
-    @api.one
-    def copy(self, default=None):
+    #@api.one
+    #def copy(self, default=None):
+    def copy(self, cr, uid, id, default={}, context=None):
         default = dict(default or {})
         default.update({'code': '/',})
-        return super(clv_tag, self).copy(default)
+        # return super(clv_tag, self).copy(default)
+        return super(clv_tag, self).copy(cr, uid, id, default, context)
