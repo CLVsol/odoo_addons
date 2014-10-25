@@ -19,5 +19,5 @@
 
 import clv_tag
 import seq
-# import wkf
+import wkf
 # import history
