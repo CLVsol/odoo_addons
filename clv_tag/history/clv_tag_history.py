@@ -24,7 +24,7 @@ class clv_tag_history(osv.osv):
     _name = 'clv_tag.history'
 
     _columns = {
-        'tag_id': fields.many2one('clv_tag', 'Tag', required=True),
+        'tag_id': fields.many2one('clv_tag', 'Tag', required=True, ondelete='cascade'),
         'user_id':fields.many2one ('res.users', 'User', required=True),
         'date': fields.datetime("Date", required=True),
         'state': fields.selection([('draft','Draft'),
@@ -52,7 +52,7 @@ class clv_tag(osv.osv):
         }
     
     _defaults = {
-        'active_history': False
+        'active_history': True
         }
 
 
@@ -73,7 +73,7 @@ class clv_tag(osv.osv):
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if (not 'state' in vals) and (not 'date' in vals):
+        if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
             for tag in self.browse(cr, uid, ids):
                 if 'active_history' in vals:
