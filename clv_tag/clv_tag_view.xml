@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_tag_form" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="arch" type="xml">
+                <form string="Tags" version="7.0">
+                    <sheet string="Tag">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                        </div>
+                        <div class="oe_title">
+                            <label for="parent_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="parent_id" placeholder="Parent Tag..."/>
+                            </h2>
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Tag..."/>
+                            </h1>
+                            <label for="code" class="oe_edit_only"/>
+                            <h2>
+                                <field name="code" placeholder="Tag Code..."/>
+                            </h2>
+                            <label for="description" class="oe_edit_only"/>
+                            <h3>
+                                <field name="description" placeholder="Description..."/>
+                            </h3>
+                        </div>
+                        <notebook>
+                            <page string="Information">
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Child Tags">
+                                <group>
+                                    <field name="child_ids" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Tag for">
+                                <group name="Tag for">
+                                    <!-- Put here related objects -->
+                                </group>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_tag_tree" model="ir.ui.view">
+            <field name="name">clv_tag.tree</field>
+            <field name="model">clv_tag</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="complete_name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_tag_search" model="ir.ui.view">
+            <field name="name">clv_tag.search</field>
+            <field name="model">clv_tag</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Base Tag">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <filter string="Inactive Tags" name="active" domain="[('active','=',0)]" help="Inactive Tags"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Parent Tag" domain="[]" context="{'group_by':'parent_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_tag_view">
+            <field name="name">Tags</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_tag</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_tag_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new tag.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tag_view_form">
+            <field name="act_window_id" ref="act_open_clv_tag_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_tag_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tag_view_tree">
+            <field name="act_window_id" ref="act_open_clv_tag_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_tag_tree"/>
+        </record>
+        
+    </data>
+</openerp>
