@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 
 def format_code(code_seq):
     code = map(int, str(code_seq))
@@ -49,28 +49,35 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_annotation(models.Model):
+class clv_annotation(osv.osv):
     _inherit = 'clv_annotation'
 
-    code = fields.Char('Reference', size=64, select=1, required=False, readonly=False, default='/',
-                       help='Use "/" to get an automatic new Reference.')
+    _columns = {
+        'code': fields.char('Reference', size=64, select=1, required=False, readonly=False, default='/',
+                            help='Use "/" to get an automatic new Reference.'),
+        }
     
-    @api.model
-    def create(self, vals):
+    _defaults = {
+        'code': '/',
+        }
+    
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
         if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_annotation.code')
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_annotation.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_annotation, self).create(vals)
+        return super(clv_annotation, self).create(cr, uid, vals, context)
 
-    @api.multi
-    def write(self, vals):
-        if 'code' in vals and vals['code'] == '/':
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_annotation.code')
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_annotation.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_annotation, self).write(vals)
+        return super(clv_annotation, self).write(cr, uid, ids, vals, context)
 
-    @api.one
-    def copy(self, default=None):
+    def copy(self, cr, uid, id, default={}, context=None):
         default = dict(default or {})
         default.update({'code': '/',})
-        return super(clv_annotation, self).copy(default)
+        return super(clv_annotation, self).copy(cr, uid, id, default, context)

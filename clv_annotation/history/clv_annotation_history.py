@@ -17,74 +17,87 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 from datetime import *
 
-class clv_annotation_history(models.Model):
+class clv_annotation_history(osv.osv):
     _name = 'clv_annotation.history'
 
-    annotation_id = fields.Many2one('clv_annotation', 'Annotation', required=True)
-    user_id = fields.Many2one ('res.users', 'User', required=True)
-    date = fields.Datetime("Date", required=True)
-    state = fields.Selection([('draft','Draft'),
-                              ('revised','Revised'),
-                              ('waiting','Waiting'),
-                              ('done','Done')
-                              ], string='Status', default='draft', readonly=True, required=True, help="")
-    notes = fields.Text(string='Notes')
+    _columns = {
+        'annotation_id': fields.many2one('clv_annotation', 'Annotation', required=True, ondelete='cascade'),
+        'user_id':fields.many2one ('res.users', 'User', required=True),
+        'date': fields.datetime("Date", required=True),
+        'state': fields.selection([('draft','Draft'),
+                                   ('revised','Revised'),
+                                   ('waiting','Waiting'),
+                                   ('done','Done')
+                                   ], string='Status', readonly=True, required=True, help=""),
+        'notes': fields.text(string='Notes'),
+        }
     
-    _order = "date desc"
-
     _defaults = {
-        'user_id': lambda obj,cr,uid,context: uid, 
+        'user_id': lambda self: self._uid,
         'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'state': 'draft',
         }
 
-class clv_annotation(models.Model):
+    _order = "date desc"
+
+class clv_annotation(osv.osv):
     _inherit = 'clv_annotation'
 
-    history_ids = fields.One2many('clv_annotation.history', 'annotation_id', 'Annotation History', readonly=True)
-    active_history = fields.Boolean('Active History', 
-                                    help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+    _columns = {
+        'history_ids': fields.one2many('clv_annotation.history', 'annotation_id', 'Annotation History', readonly=True),
+        'active_history': fields.boolean('Active History', 
+                                         help="If unchecked, it will allow you to disable the history without removing it."),
+        }
+    
+    _defaults = {
+        'active_history': True
+        }
 
-    @api.one
-    def insert_clv_annotation_history(self, annotation_id, state, notes):
-        if self.active_history:
-            values = { 
-                'annotation_id':  annotation_id,
+    def insert_clv_annotation_history(self, cr, uid, active_history, annotation_id, state, notes, context=None):
+        if context is None:
+            context = {}
+        date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        if active_history:
+            vals = { 
+                'annotation_id': annotation_id,
+                'user_id': uid,
+                'date': date,
                 'state': state,
                 'notes': notes,
             }
-            self.pool.get('clv_annotation.history').create(self._cr, self._uid, values)
+            self.pool.get('clv_annotation.history').create(cr, uid, vals, context)
 
-    @api.multi
-    def write(self, values):
-        if (not 'state' in values) and (not 'date' in values):
-            notes = values.keys()
-            self.insert_clv_annotation_history(self.id, self.state, notes)
-        return super(clv_annotation, self).write(values)
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
+            notes = vals.keys()
+            for annotation in self.browse(cr, uid, ids):
+                if 'active_history' in vals:
+                    self.insert_clv_annotation_history(cr, uid, True, annotation.id, annotation.state, notes)
+                else:
+                    self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, annotation.state, notes)
+        return super(clv_annotation, self).write(cr, uid, ids, vals, context)
 
-    @api.one
-    def button_draft(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'draft'
-        self.insert_clv_annotation_history(self.id, 'draft', '')
+    def button_draft(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'draft'})
+        for annotation in self.browse(cr, uid, ids):
+            self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, 'draft', '')
 
-    @api.one
-    def button_revised(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'revised'
-        self.insert_clv_annotation_history(self.id, 'revised', '')
+    def button_revised(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'revised'})
+        for annotation in self.browse(cr, uid, ids):
+            self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, 'revised', '')
 
-    @api.one
-    def button_waiting(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'waiting'
-        self.insert_clv_annotation_history(self.id, 'waiting', '')
+    def button_waiting(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'waiting'})
+        for annotation in self.browse(cr, uid, ids):
+            self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, 'waiting', '')
 
-    @api.one
-    def button_done(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'done'
-        self.insert_clv_annotation_history(self.id, 'done', '')
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
+        for annotation in self.browse(cr, uid, ids):
+            self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, 'done', '')
