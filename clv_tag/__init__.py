@@ -18,6 +18,6 @@
 ################################################################################
 
 import clv_tag
-# import seq
-# import wkf
-# import history
+import seq
+import wkf
+import history

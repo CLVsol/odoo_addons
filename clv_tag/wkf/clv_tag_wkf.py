@@ -17,25 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 from datetime import *
 
-class clv_tag(models.Model):
+class clv_tag(osv.osv):
     _inherit = 'clv_tag'
 
-    state = fields.Selection([('draft','Draft'),
-                              ('revised','Revised'),
-                              ('done','Done')
-                              ], string='Status', default='draft', readonly=True, required=True, help="")
+    _columns = {
+        'state': fields.selection([('draft','Draft'),
+                                   ('revised','Revised'),
+                                   ('done','Done')
+                                   ], string='Status', readonly=True, required=True, help="")
+        }
+    
+    _defaults = {
+        'state': 'draft',
+        }
 
-    @api.one
-    def button_draft(self):
-        self.state = 'draft'
+    def button_draft(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'draft'})
 
-    @api.one
-    def button_revised(self):
-        self.state = 'revised'
+    def button_revised(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'revised'})
 
-    @api.one
-    def button_done(self):
-        self.state = 'done'
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
