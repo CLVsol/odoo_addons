@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_annotation_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_annotation.tree</field>
+            <field name="model">clv_annotation</field>
+            <field name="inherit_id" ref="clv_annotation.view_clv_annotation_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_annotation_form_wkf" model="ir.ui.view">
+            <field name="name">clv_annotation.form</field>
+            <field name="model">clv_annotation</field>
+            <field name="inherit_id" ref="clv_annotation.view_clv_annotation_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <sheet string="Annotation" position="before">
+                    <header>
+                        <button string="Revised" name="button_revised" states="draft,waiting,done" type="workflow" groups="clv_base.group_annotation_manager"/>
+                        <button string="Waiting" name="button_waiting" states="draft,revised" type="workflow" groups="clv_base.group_annotation_manager"/>
+                        <button string="Done" name="button_done" states="draft,revised,waiting" type="workflow" groups="clv_base.group_annotation_manager" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_annotation_search_wkf" model="ir.ui.view">
+            <field name="name">clv_annotation.search</field>
+            <field name="model">clv_annotation</field>
+            <field name="inherit_id" ref="clv_annotation.view_clv_annotation_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+                <filter string="Date" position="before">
+                    <filter string="Stage" domain="[]" context="{'group_by':'state'}" />
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
