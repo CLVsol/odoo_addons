@@ -17,9 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 
-class clv_tag(models.Model):
+class clv_tag(osv.osv):
     _inherit = 'clv_tag'
 
     _defaults = {

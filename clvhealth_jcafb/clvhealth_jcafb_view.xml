@@ -12,12 +12,12 @@
                 groups="clv_base.group_base_user"
                 sequence="10"/>
                 <!-- Base/Base/Annotations -->
-<!--                 <menuitem name="Annotations" id="menu_base_base_annotations"
+                <menuitem name="Annotations" id="menu_base_base_annotations"
                     parent="menu_base_base"
                     groups="clv_base.group_annotation_user"
                     sequence="10"
                     action="clv_annotation.act_open_clv_annotation_view"/>
- -->            <!-- Base/Configuration -->
+            <!-- Base/Configuration -->
             <menuitem name="Configuration" id="menu_base_config"  
                 parent="menu_base"
                 groups="clv_base.group_base_manager"
@@ -29,12 +29,12 @@
                     sequence="10"
                     action="clv_tag.act_open_clv_tag_view"/>
                 <!-- Base/Configuration/Annotation Categories -->
-<!--                 <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
+                <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
                     parent="menu_base_config"
                     groups="clv_base.group_annotation_user"
                     sequence="20"
                     action="clv_annotation.act_open_clv_annotation_category_view"/>
- -->
+
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
             groups="clv_base.group_base_user"
