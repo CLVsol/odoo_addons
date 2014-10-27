@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_tree" model="ir.ui.view">
+            <field name="name">clv_person.tree</field>
+            <field name="model">clv_person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Person">
+                    <field name="name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <field name="birthday" />
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_person_form" model="ir.ui.view">
+            <field name="name">clv_person.form</field>
+            <field name="model">clv_person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Persons" version="7.0">
+                    <sheet string="Person">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="alias" class="oe_edit_only"/-->
+                            <label for="alias"/>
+                            <h2>
+                                <field name="alias" placeholder="Alias..."/>
+                            </h2>
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h3>
+                                <field name="code" placeholder="Person Code..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="Public Information">
+                                <group>
+                                    <group string="Contact Information">
+                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                                        <field name="person_email" widget="email"/>
+                                        <field name="person_phone"/>
+                                        <field name="mobile_phone"/>
+                                    </group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Personal Information" groups="clv_base.group_base_suser">
+                                <group>
+                                    <group string="Citizenship &amp; Other Info">
+                                        <field name="country_id" options='{"no_open": True}'/>
+                                        <field name="identification_id"/>
+                                        <field name="otherid"/>
+                                    </group>
+                                    <group string="Family">
+                                        <field name="spouse_id"/>
+                                        <field name="father_id"/>
+                                        <field name="mother_id"/>
+                                        <field name="responsible_id"/>
+                                    </group>
+                                    <group string="Status">
+                                        <field name="gender"/>
+                                        <field name="marital"/>
+                                    </group>
+                                    <group string="Birth">
+                                        <field name="birthday"/>
+                                        <field name="age"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_person_search" model="ir.ui.view">
+            <field name="name">clv_person.search</field>
+            <field name="model">clv_person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Person">
+                    <field name="name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_person_view">
+            <field name="name">Persons</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_person</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_person_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new person.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_person_view_form">
+            <field name="act_window_id" ref="act_open_clv_person_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_person_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_person_view_tree">
+            <field name="act_window_id" ref="act_open_clv_person_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_person_tree"/>
+        </record>
+        
+    </data>
+</openerp>
