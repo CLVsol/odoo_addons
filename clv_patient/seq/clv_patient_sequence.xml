@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_patient.seq_type_clv_patient" model="ir.sequence.type">
+            <field name="name">Patient Sequence</field>
+            <field name="code">clv_patient.code</field>
+        </record>
+        
+        <record id="clv_patient.seq_clv_patient" model="ir.sequence">
+            <field name="name">Patient Sequence</field>
+            <field name="code">clv_patient.code</field>
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="9"/>
+            <field name="prefix">03</field>
+        </record>
+
+    </data>
+</openerp>
