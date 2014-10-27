@@ -17,9 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import orm, fields
+from openerp.osv import fields, osv
 
-class clv_person(orm.Model):
+class clv_person(osv.osv):
     _inherit = 'clv_person'
 
     _columns = {

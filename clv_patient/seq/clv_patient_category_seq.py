@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 
 def format_code(code_seq):
     code = map(int, str(code_seq))
@@ -49,28 +49,35 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_patient_category(models.Model):
+class clv_patient_category(osv.osv):
     _inherit = 'clv_patient.category'
 
-    code = fields.Char('Category Code', size=64, select=1, required=False, readonly=False, default='/',
-                       help='Use "/" to get an automatic new Category Code.')
+    _columns = {
+        'code': fields.char('Category Code', size=64, select=1, required=False, readonly=False, default='/',
+                            help='Use "/" to get an automatic new Category Code.'),
+        }
     
-    @api.model
-    def create(self, vals):
+    _defaults = {
+        'code': '/',
+        }
+    
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
         if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_patient.category.code')
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_patient.category.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_patient_category, self).create(vals)
+        return super(clv_patient_category, self).create(cr, uid, vals, context)
 
-    @api.multi
-    def write(self, vals):
-        if 'code' in vals and vals['code'] == '/':
-            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_patient.category.code')
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_patient.category.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_patient_category, self).write(vals)
+        return super(clv_patient_category, self).write(cr, uid, ids, vals, context)
 
-    @api.one
-    def copy(self, default=None):
+    def copy(self, cr, uid, id, default={}, context=None):
         default = dict(default or {})
         default.update({'code': '/',})
-        return super(clv_patient_category, self).copy(default)
+        return super(clv_patient_category, self).copy(cr, uid, id, default, context)

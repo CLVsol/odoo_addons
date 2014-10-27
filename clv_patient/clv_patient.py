@@ -17,11 +17,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import api
-from openerp.osv import osv, fields
+from openerp.osv import fields, osv
 from datetime import datetime
 
-class clv_patient(osv.Model):
+class clv_patient(osv.osv):
     _name = 'clv_patient'
     _inherits={
                'clv_person': 'person',

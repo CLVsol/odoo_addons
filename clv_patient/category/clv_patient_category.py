@@ -17,58 +17,27 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from openerp.osv import osv
+from openerp.osv import fields, osv
 
-class clv_patient_category(models.Model):
+class clv_patient_category(osv.osv):
     _name = 'clv_patient.category'
 
-    name = fields.Char('Category', required=True, size=64, translate=True)
-    parent_id = fields.Many2one('clv_patient.category', 'Parent Category', select=True, ondelete='restrict')
-    code = fields.Char ('Category Code',size=128, required=False)
-    description = fields.Char(string='Description', size=256)
-    notes = fields.Text(string='Notes')
-    complete_name = fields.Char(string='Full Category', compute='_name_get_fnc', store=False, readonly=True)
-    child_ids = fields.One2many('clv_patient.category', 'parent_id', 'Child Categories')
-    active = fields.Boolean('Active', 
-                            help="If unchecked, it will allow you to hide the category without removing it.",
-                            default=1)
-    parent_left = fields.Integer('Left parent', select=True)
-    parent_right = fields.Integer('Right parent', select=True)
-    patient_ids = fields.Many2many('clv_patient', 
-                                  'clv_patient_category_rel', 
-                                  'category_id', 
-                                  'patient_id', 
-                                  'Patients')
-
-    _sql_constraints = [
-        ('uniq_category_code', 'unique(code)', "Error! The Category Code must be unique!"),
-        ]
-
-    _constraints = [
-        (models.Model._check_recursion, 'Error! You can not create recursive categories.', ['parent_id'])
-        ]
-    
-    _parent_store = True
-    _parent_order = 'name'
-    _order = 'parent_left'
-
-    @api.multi
-    def name_get(self):
-        """Return the category's display name, including their direct parent by default.
+    def name_get(self, cr, uid, ids, context=None):
+        """Return the tag's display name, including their direct
+           parent by default.
 
         :param dict context: the ``category_display`` key can be
                              used to select the short version of the
-                             category (without the direct parent),
+                             tag (without the direct parent),
                              when set to ``'short'``. The default is
                              the long version."""
-        if self._context is None:
-            self._context = {}
-        if self._context.get('category_display') == 'short':
-            return super(clv_category, self).name_get()
-        if isinstance(self._ids, (int, long)):
-            self._ids = [self._ids]
-        reads = self.read(['name', 'parent_id'])
+        if context is None:
+            context = {}
+        if context.get('category_display') == 'short':
+            return super(tag, self).name_get(cr, uid, ids, context=context)
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
         res = []
         for record in reads:
             name = record['name']
@@ -77,34 +46,64 @@ class clv_patient_category(models.Model):
             res.append((record['id'], name))
         return res
 
-    @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        args = args or []
+    def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
+        if not args:
+            args = []
+        if not context:
+            context = {}
         if name:
             name = name.split(' / ')[-1]
-            args = [('name', operator, name)] + args
-        categories = self.search(args, limit=limit)
-        return categories.name_get()
-
-
-    @api.multi
-    def _name_get_fnc(self, field_name, arg):
-        return dict(self.name_get())
-
-    @api.one
-    def _name_get_fnc(self):
-        self.refresh_complete_name = 0
-        complete_name =  self.name_get()
-        if complete_name:
-            self.complete_name = complete_name[0][1]
+            ids = self.search(cr, uid, [('name', operator, name)] + args, limit=limit, context=context)
         else:
-            self.complete_name = self.name
+            ids = self.search(cr, uid, args, limit=limit, context=context)
+        return self.name_get(cr, uid, ids, context)
 
-class clv_patient(models.Model):
+    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_get(cr, uid, ids, context=context)
+        return dict(res)
+
+    _columns = {
+        'name': fields.char('Category', required=True, size=64, translate=True),
+        'parent_id': fields.many2one('clv_patient.category', 'Parent Category', select=True, ondelete='restrict'),
+        'code': fields.char ('Category Code',size=128, required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes': fields.text(string='Notes'),
+        'complete_name': fields.function(_name_get_fnc, type="char", string='Full Category', store=False),
+        'child_ids': fields.one2many('clv_patient.category', 'parent_id', 'Child Categories'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the category without removing it."),
+        'parent_left': fields.integer('Left parent', select=True),
+        'parent_right': fields.integer('Right parent', select=True),
+        'patient_ids': fields.many2many('clv_patient', 
+                                       'clv_patient_category_rel', 
+                                       'category_id', 
+                                       'patient_id', 
+                                       'patients'),
+        }
+
+    _sql_constraints = [
+        ('uniq_category_code', 'unique(code)', "Error! The Category Code must be unique!"),
+        ]
+
+    _constraints = [
+        (osv.osv._check_recursion, 'Error! You can not create recursive categories.', ['parent_id'])
+        ]
+    
+    _defaults = {
+        'active': 1,
+        }
+    
+    _parent_store = True
+    _parent_order = 'name'
+    _order = 'parent_left'
+
+class clv_patient(osv.osv):
     _inherit = 'clv_patient'
 
-    category_ids = fields.Many2many('clv_patient.category', 
-                                    'clv_patient_category_rel', 
-                                    'patient_id', 
-                                    'category_id', 
-                                    'Categories')
+    _columns = {
+        'category_ids': fields.many2many('clv_patient.category', 
+                                         'clv_patient_category_rel', 
+                                         'patient_id', 
+                                         'category_id', 
+                                         'Categories'),
+        }
