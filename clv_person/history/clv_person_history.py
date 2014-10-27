@@ -17,81 +17,97 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 from datetime import *
-import time
+#import time
 
-class clv_person_history(models.Model):
+class clv_person_history(osv.osv):
     _name = 'clv_person.history'
 
-    person_id = fields.Many2one('clv_person', 'Person', required=True)
-    user_id = fields.Many2one ('res.users', 'User', required=True,
-                               default=lambda self: self._uid)
-    date = fields.Datetime("Date", required=True,
-                           default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    state = fields.Selection([('new','New'),
-                              ('active','Active'),
-                              ('inactive','Inactive'),
-                              ('suspended','Suspended')
-                              ], string='Status', default='new', readonly=True, required=True, help="")
-    notes = fields.Text(string='Notes')
-    
     _order = "date desc"
 
-class clv_person(models.Model):
+    _columns = {
+        'person_id': fields.many2one('clv_person', 'person', required=True, ondelete='cascade'),
+        'user_id':fields.many2one ('res.users', 'User', required=True),
+        'date': fields.datetime("Date", required=True),
+        'state': fields.selection([('new','New'),
+                                   ('active','active'),
+                                   ('inactive','Inactive'),
+                                   ('suspended','Suspended'),
+                                   ], string='Status', readonly=True, required=True, help=""),
+        'notes': fields.text(string='Notes'),
+        }
+    
+    _defaults = {
+        'user_id': lambda self: self._uid,
+        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'state': 'new',
+        }
+
+    _order = "date desc"
+
+class clv_person(osv.osv):
     _inherit = 'clv_person'
 
-    history_ids = fields.One2many('clv_person.history', 'person_id', 'Person History', readonly=True)
-    active_history = fields.Boolean('Active History', 
-                                    help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+    _columns = {
+        'history_ids': fields.one2many('clv_person.history', 'person_id', 'person History', readonly=True),
+        'active_history': fields.boolean('active History', 
+                                         help="If unchecked, it will allow you to disable the history without removing it."),
+        }
+    
+    _defaults = {
+        'active_history': True
+        }
 
-    @api.one
-    def insert_clv_person_history(self, person_id, state, notes):
-        if self.active_history:
-            values = { 
-                'person_id':  person_id,
+    def insert_clv_person_history(self, cr, uid, active_history, person_id, state, notes, context=None):
+        if context is None:
+            context = {}
+        date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        if active_history:
+            vals = { 
+                'person_id': person_id,
+                'user_id': uid,
+                'date': date,
                 'state': state,
                 'notes': notes,
             }
-            self.pool.get('clv_person.history').create(self._cr, self._uid, values)
+            self.pool.get('clv_person.history').create(cr, uid, vals, context)
 
-    @api.multi
-    def write(self, values):
-        if (not 'state' in values) and (not 'date' in values):
-            notes = values.keys()
-            self.insert_clv_person_history(self.id, self.state, notes)
-        return super(clv_person, self).write(values)
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
+            notes = vals.keys()
+            for person in self.browse(cr, uid, ids):
+                if 'active_history' in vals:
+                    self.insert_clv_person_history(cr, uid, True, person.id, person.state, notes)
+                else:
+                    self.insert_clv_person_history(cr, uid, person.active_history, person.id, person.state, notes)
+        return super(clv_person, self).write(cr, uid, ids, vals, context)
 
-    @api.one
-    def button_new(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'new'
-        self.insert_clv_person_history(self.id, 'new', '')
+    def button_new(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'state': 'new'})
+        for person in self.browse(cr, uid, ids):
+            self.insert_clv_person_history(cr, uid, person.active_history, person.id, 'new', '')
 
-    @api.one
-    def button_activate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_activation:
-            self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'active'
-        self.insert_clv_person_history(self.id, 'active', '')
+    def button_activate(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'active'})
+        for person in self.browse(cr, uid, ids):
+            self.insert_clv_person_history(cr, uid, person.active_history, person.id, 'active', '')
 
-    @api.one
-    def button_inactivate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_inactivation:
-            self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'inactive'
-        self.insert_clv_person_history(self.id, 'inactive', '')
+    def button_inactivate(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'inactive'})
+        for person in self.browse(cr, uid, ids):
+            self.insert_clv_person_history(cr, uid, person.active_history, person.id, 'inactive', '')
 
-    @api.one
-    def button_suspend(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_suspension:
-            self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'suspended'
-        self.insert_clv_person_history(self.id, 'suspended', '')
+    def button_suspend(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'suspended'})
+        for person in self.browse(cr, uid, ids):
+            self.insert_clv_person_history(cr, uid, person.active_history, person.id, 'suspended', '')

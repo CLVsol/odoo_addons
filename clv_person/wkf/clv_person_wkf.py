@@ -17,49 +17,44 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 from datetime import *
-import time
 
-class clv_person(models.Model):
+class clv_person(osv.osv):
     _inherit = 'clv_person'
 
-    date = fields.Datetime("Status change date", required=True, readonly=True,
-                           default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    date_activation = fields.Datetime("Activation date", required=False, readonly=False)
-    date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
-    date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
-    state = fields.Selection([('new','New'),
-                              ('active','Active'),
-                              ('inactive','Inactive'),
-                              ('suspended','Suspended')
-                              ], string='Status', default='new', readonly=True, required=True, help="")
+    _columns = {
+        'date': fields.datetime("Status change date", required=True, readonly=True),
+        'date_activation': fields.datetime("Activation date", required=False, readonly=False),
+        'date_inactivation': fields.datetime("Inactivation date", required=False, readonly=False),
+        'date_suspension': fields.datetime("Suspension date", required=False, readonly=False),
+        'state': fields.selection([('new','New'),
+                                   ('active','Active'),
+                                   ('inactive','Inactive'),
+                                   ('suspended','Suspended')
+                                   ], string='Status', readonly=True, required=True, help=""),
+        }
+    
+    _defaults = {
+        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'state': 'new',
+        }
 
-    @api.one
-    def button_new(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'new'
+    def button_new(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'state': 'new'})
 
-    @api.one
-    def button_activate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_activation:
-            self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'active'
+    def button_active(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'active'})
 
-    @api.one
-    def button_inactivate(self):
-        if not self.date_inactivation:
-            self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'inactive'
+    def button_inactive(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'inactive'})
 
-    @api.one
-    def button_suspend(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_suspension:
-            self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'suspended'
+    def button_suspended(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
+                                  'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'state': 'suspended'})

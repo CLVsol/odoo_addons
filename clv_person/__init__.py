@@ -18,9 +18,9 @@
 ################################################################################
 
 import clv_person
-# import category
-# import clv_tag
-# import clv_annotation
-# import seq
-# import wkf
-# import history
+import category
+import clv_tag
+import clv_annotation
+import seq
+import wkf
+import history
