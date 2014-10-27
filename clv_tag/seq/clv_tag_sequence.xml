@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_tag.seq_type_clv_tag" model="ir.sequence.type">
+            <field name="name">Tag Sequence</field>
+            <field name="code">clv_tag.code</field>
+        </record>
+        
+        <record id="clv_tag.seq_clv_tag" model="ir.sequence">
+            <field name="name">Tag Sequence</field>
+            <field name="code">clv_tag.code</field>
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="9"/>
+            <field name="prefix">00</field>
+        </record>
+
+    </data>
+</openerp>
