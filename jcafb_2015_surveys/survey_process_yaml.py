@@ -142,7 +142,7 @@ def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, pa
     try:
         _is_comment_require_ = doc[key1][key2][key3]['is_comment_require']
         if doc[key1][key2][key3]['is_comment_require'] == True:
-            _comment_label_ = doc[key1][key2][key3]['comment_label']
+            _comment_label_ = doc[key1][key2][key3]['comment_label'].encode("utf-8")
             txt_file.write('            %s____________________________________\n' % _comment_label_)
     except Exception, e:
         pass

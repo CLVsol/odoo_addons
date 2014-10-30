@@ -247,9 +247,45 @@ QSE15:
         QSE15_02_05:
             model: survey.question
             question: 'Quem mora com o Sr(a) na sua casa? (além do idoso)'
-            type: comment
+            type: multiple_choice_multiple_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
+            required_type: at least
+            req_ans: 1
+            is_comment_require: True
+            comment_label: 'Especificar quando necessário'
+
+            QSE15_02_05_01:
+                model: survey.answer
+                answer: 'a) Ninguém. Moro sozinho.'
+
+            QSE15_02_05_02:
+                model: survey.answer
+                answer: 'b) Familiar - esposa '
+
+            QSE15_02_05_03:
+                model: survey.answer
+                answer: 'c) Familiar(es) – Outro(s)'
+
+            QSE15_02_05_04:
+                model: survey.answer
+                answer: 'd) Amigo(s)'
+
+            QSE15_02_05_05:
+                model: survey.answer
+                answer: 'e) Outra resposta'
+
+            QSE15_02_05_06:
+                model: survey.answer
+                answer: 'f) Não sabe'
+
+            QSE15_02_05_07:
+                model: survey.answer
+                answer: 'g) Não quis responder'
+
+            QSE15_02_05_08:
+                model: survey.answer
+                answer: 'h) Não se aplica'
 
         QSE15_02_06:
             model: survey.question
@@ -774,7 +810,7 @@ QSE15:
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
-            comment_label: 'Se sim, Quanto por dia? (Especificar o tipo de bebida e a quantidade)'
+            comment_label: 'Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).'
 
             QSE15_03_09_01:
                 model: survey.answer
@@ -782,19 +818,35 @@ QSE15:
 
             QSE15_03_09_02:
                 model: survey.answer
-                answer: 'b) Sim'
+                answer: 'b) Sim, esporadicamente (menos que 1 vez por mês)'
 
             QSE15_03_09_03:
                 model: survey.answer
-                answer: 'c) Não sabe'
+                answer: 'c) Sim, 1 vez por mês'
 
             QSE15_03_09_04:
                 model: survey.answer
-                answer: 'd) Não quis responder'
+                answer: 'd) Sim, 1 vez por semana (ou em finais de semana)'
 
             QSE15_03_09_05:
                 model: survey.answer
-                answer: 'e) Não se aplica'
+                answer: 'e) Sim, todos os dias'
+
+            QSE15_03_09_06:
+                model: survey.answer
+                answer: 'f) Outra resposta'
+
+            QSE15_03_09_07:
+                model: survey.answer
+                answer: 'g) Não sabe'
+
+            QSE15_03_09_08:
+                model: survey.answer
+                answer: 'h) Não quis responder'
+
+            QSE15_03_09_09:
+                model: survey.answer
+                answer: 'i) Não se aplica'
 
     QSE15_04:
         model: survey.page
@@ -830,7 +882,7 @@ QSE15:
 
             QSE15_04_01_05:
                 model: survey.answer
-                answer: 'e) Movimenta-se'
+                answer: 'e) Movimentar-se'
 
             QSE15_04_01_06:
                 model: survey.answer
@@ -1051,9 +1103,47 @@ QSE15:
         QSE15_05_03:
             model: survey.question
             question: 'Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?'
-            type: comment
+            type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
+            is_comment_require: True
+            comment_label: 'Se a resposta for "Outra resposta", especificar'
+
+            QSE15_05_03_01:
+                model: survey.answer
+                answer: 'a) Nenhuma '
+
+            QSE15_05_03_02:
+                model: survey.answer
+                answer: 'b) 1 a 2 vezes'
+
+            QSE15_05_03_03:
+                model: survey.answer
+                answer: 'c) 3 a 4 vezes'
+
+            QSE15_05_03_04:
+                model: survey.answer
+                answer: 'd) 1 vez a cada 2 meses'
+
+            QSE15_05_03_05:
+                model: survey.answer
+                answer: 'e) 1 vez por mês'
+
+            QSE15_05_03_06:
+                model: survey.answer
+                answer: 'f) Outra resposta'
+
+            QSE15_05_03_07:
+                model: survey.answer
+                answer: 'g) Não sabe'
+
+            QSE15_05_03_08:
+                model: survey.answer
+                answer: 'h) Não quis responder'
+
+            QSE15_05_03_09:
+                model: survey.answer
+                answer: 'i) Não se aplica'
 
         QSE15_05_04:
             model: survey.question
@@ -1436,7 +1526,7 @@ QSE15:
 
             QSE15_08_03_01:
                 model: survey.answer
-                answer: 'a) Não cria animais'
+                answer: 'a) Não cria'
 
             QSE15_08_03_02:
                 model: survey.answer
@@ -1510,31 +1600,35 @@ QSE15:
 
             QSE15_08_05_01:
                 model: survey.answer
-                answer: 'a) Criação própria'
+                answer: 'a) Não consome carne'
 
             QSE15_08_05_02:
                 model: survey.answer
-                answer: 'b) Mercado/açougue'
+                answer: 'b) Criação própria'
 
             QSE15_08_05_03:
                 model: survey.answer
-                answer: 'c) Criador de confiança'
+                answer: 'c) Mercado/açougue'
 
             QSE15_08_05_04:
                 model: survey.answer
-                answer: 'd) Outros'
+                answer: 'd) Criador de confiança'
 
             QSE15_08_05_05:
                 model: survey.answer
-                answer: 'e) Não sabe'
+                answer: 'e) Outros'
 
             QSE15_08_05_06:
                 model: survey.answer
-                answer: 'f) Não quis responder'
+                answer: 'f) Não sabe'
 
             QSE15_08_05_07:
                 model: survey.answer
-                answer: 'g) Não se aplica'
+                answer: 'g) Não quis responder'
+
+            QSE15_08_05_08:
+                model: survey.answer
+                answer: 'h) Não se aplica'
 
         QSE15_08_06:
             model: survey.question
@@ -1795,27 +1889,31 @@ QSE15:
 
             QSE15_09_06_01:
                 model: survey.answer
-                answer: 'a) Soro caseiro'
+                answer: 'a) Nada. Espera passar'
 
             QSE15_09_06_02:
                 model: survey.answer
-                answer: 'b) Soro pronto'
+                answer: 'b) Soro caseiro'
 
             QSE15_09_06_03:
                 model: survey.answer
-                answer: 'c) Outros'
+                answer: 'c) Soro pronto'
 
             QSE15_09_06_04:
                 model: survey.answer
-                answer: 'd) Não sabe'
+                answer: 'd) Outros'
 
             QSE15_09_06_05:
                 model: survey.answer
-                answer: 'e) Não quis responder'
+                answer: 'e) Não sabe'
 
             QSE15_09_06_06:
                 model: survey.answer
-                answer: 'f) Não se aplica'
+                answer: 'f) Não quis responder'
+
+            QSE15_09_06_07:
+                model: survey.answer
+                answer: 'g) Não se aplica'
 
         QSE15_09_07:
             model: survey.question
@@ -2000,36 +2098,38 @@ QSE15:
 
             QSE15_10_04_01:
                 model: survey.answer
-                answer: 'a) Saiu nas fezes'
+                answer: 'a) Com resultado de exame de fezes'
 
             QSE15_10_04_02:
                 model: survey.answer
-                answer: 'b) Foi no médico'
+                answer: 'b) Saiu nas fezes'
 
             QSE15_10_04_03:
                 model: survey.answer
-                answer: 'c) Outros'
+                answer: 'c) Foi no médico'
 
             QSE15_10_04_04:
                 model: survey.answer
-                answer: 'd) Não sabe'
+                answer: 'd) Outros'
 
             QSE15_10_04_05:
                 model: survey.answer
-                answer: 'e) Não quis responder'
+                answer: 'e) Não sabe'
 
             QSE15_10_04_06:
                 model: survey.answer
-                answer: 'f) Não se aplica'
+                answer: 'f) Não quis responder'
+
+            QSE15_10_04_07:
+                model: survey.answer
+                answer: 'g) Não se aplica'
 
         QSE15_10_05:
             model: survey.question
             question: 'Já tomou vermífugo (lombrigueira)?'
-            type: multiple_choice_multiple_ans
+            type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
 
             QSE15_10_05_01:
                 model: survey.answer
@@ -2041,11 +2141,11 @@ QSE15:
 
             QSE15_10_05_03:
                 model: survey.answer
-                answer: 'c) Sim, há seis meses ou menos e "botou" verme'
+                answer: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
 
             QSE15_10_05_04:
                 model: survey.answer
-                answer: 'd) Sim, há seis meses ou menos, mas não "botou" verme'
+                answer: 'd) Sim, há mais de seis meses, e "botou" verme'
 
             QSE15_10_05_05:
                 model: survey.answer
