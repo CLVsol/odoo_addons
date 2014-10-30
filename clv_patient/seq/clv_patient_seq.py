@@ -72,7 +72,7 @@ class clv_patient(osv.osv):
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if not 'patient_code' in vals or ('patient_code' in vals and vals['patient_code'] == '/'):
+        if ('patient_code' in vals and vals['patient_code'] == '/'):
             code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_patient.code')
             vals['patient_code'] = format_code(code_seq)
         return super(clv_patient, self).write(cr, uid, ids, vals, context)

@@ -72,7 +72,7 @@ class clv_tag(osv.osv):
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
+        if ('code' in vals and vals['code'] == '/'):
             code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_tag.code')
             vals['code'] = format_code(code_seq)
         return super(clv_tag, self).write(cr, uid, ids, vals, context)
