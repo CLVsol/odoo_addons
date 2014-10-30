@@ -1,0 +1,603 @@
+[CSE15] JCAFB 2015 - Questionário Socioeconômico (Crianças)
+    [CSE15_01] Preâmbulo
+        [CSE15_01_01] Identificação do Paciente
+            (multiple_textboxes_diff_type)
+            [CSE15_01_01_01] Nome____________________________________
+            [CSE15_01_01_02] Código____________________________________
+        [CSE15_01_02] Aplicação do Questionário
+            (multiple_textboxes_diff_type)
+            [CSE15_01_02_01] Aplicado por____________________________________
+            [CSE15_01_02_02] Código____________________________________
+            [CSE15_01_02_03] Data____________________________________
+        [CSE15_01_03] Entrevistado
+            (multiple_choice_only_one_ans)
+            [CSE15_01_03_01] a) Responsável
+            [CSE15_01_03_02] b) Paciente
+            [CSE15_01_03_03] c) Cuidador
+            Nome (Grau de Parentesco)____________________________________
+    [CSE15_02] Aspectos Sociais
+        [CSE15_02_01] Onde a criança fica quando não está na escola?
+            (multiple_choice_multiple_ans)
+            [CSE15_02_01_01] a) Creche
+            [CSE15_02_01_02] b) Projeto social (espaço amigo, etc...)
+            [CSE15_02_01_03] c) Casa de familiares
+            [CSE15_02_01_04] d) Em casa
+            [CSE15_02_01_05] e) Outros
+            [CSE15_02_01_06] f) Não sabe
+            [CSE15_02_01_07] g) Não quis responder
+            [CSE15_02_01_08] h) Não se aplica
+            Se outros, onde?____________________________________
+        [CSE15_02_02] Escolaridade do cuidador
+            (multiple_choice_only_one_ans)
+            [CSE15_02_02_01] a) 0 anos
+            [CSE15_02_02_02] b) 1 a 3 anos
+            [CSE15_02_02_03] c) 4 a 11 anos
+            [CSE15_02_02_04] d) 12 a 22 anos
+            [CSE15_02_02_05] e) 22 anos ou mais
+            [CSE15_02_02_06] f) Não sabe
+            [CSE15_02_02_07] g) Não quis responder
+            [CSE15_02_02_08] h) Não se aplica
+        [CSE15_02_03] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?
+            (multiple_choice_multiple_ans)
+            [CSE15_02_03_01] a) Não possui Cuidador
+            [CSE15_02_03_02] b) Filho
+            [CSE15_02_03_03] c) Cônjuge
+            [CSE15_02_03_04] d) Neto(a)
+            [CSE15_02_03_05] e) Irmão(ã)
+            [CSE15_02_03_06] f) Outro familiar
+            [CSE15_02_03_07] g) Não familiar (sem laços consanguíneos)
+            [CSE15_02_03_08] h) Não se aplica
+            Se outro familiar, qual a relação de parentesco?____________________________________
+        [CSE15_02_04] O(A) Sr.(a) é:
+            (multiple_choice_only_one_ans)
+            [CSE15_02_04_01] a) Solteiro(a)
+            [CSE15_02_04_02] b) Casado(a) ou unido(a)
+            [CSE15_02_04_03] c) Viúvo(a)
+            [CSE15_02_04_04] d) Separado(a)
+            [CSE15_02_04_05] e) Divorciado (a)
+            [CSE15_02_04_06] f) Não sabe
+            [CSE15_02_04_07] g) Não quis responder
+            [CSE15_02_04_08] h) Não se aplica
+        [CSE15_02_05] Quem mora com o Sr(a) na sua casa? (além do idoso)
+            (multiple_choice_multiple_ans)
+            [CSE15_02_05_01] a) Ninguém. Moro sozinho.
+            [CSE15_02_05_02] b) Familiar - esposa 
+            [CSE15_02_05_03] c) Familiar(es) – Outro(s)
+            [CSE15_02_05_04] d) Amigo(s)
+            [CSE15_02_05_05] e) Outra resposta
+            [CSE15_02_05_06] f) Não sabe
+            [CSE15_02_05_07] g) Não quis responder
+            [CSE15_02_05_08] h) Não se aplica
+            Especificar quando necessário____________________________________
+        [CSE15_02_06] O Sr(a) tem filhos?
+            (multiple_choice_only_one_ans)
+            [CSE15_02_06_01] a) Não
+            [CSE15_02_06_02] b) Sim
+            [CSE15_02_06_03] c) Não sabe
+            [CSE15_02_06_04] d) Não quis responder
+            [CSE15_02_06_05] e) Não se aplica
+        [CSE15_02_07] Escolaridade ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
+            (multiple_choice_only_one_ans)
+            [CSE15_02_07_01] a) É analfabeto
+            [CSE15_02_07_02] b) Não é analfabeto, mas não frequentou a escola
+            [CSE15_02_07_03] c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário
+            [CSE15_02_07_04] d) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio
+            [CSE15_02_07_05] e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto
+            [CSE15_02_07_06] f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo
+            [CSE15_02_07_07] g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)
+            [CSE15_02_07_08] h) Ensino Superior incompleto
+            [CSE15_02_07_09] i) Ensino Superior completo
+            [CSE15_02_07_10] j) Não sabe
+            [CSE15_02_07_11] k) Não quis responder
+            [CSE15_02_07_12] l) Não se aplica
+        [CSE15_02_08] O(A) Sr.(a) sabe ler e escrever um recado?
+            (multiple_choice_only_one_ans)
+            [CSE15_02_08_01] a) Não
+            [CSE15_02_08_02] b) Sim
+            [CSE15_02_08_03] c) Não sabe
+            [CSE15_02_08_04] d) Não quis responder
+            [CSE15_02_08_05] e) Não se aplica
+        [CSE15_02_09] Qual destas opções o(a) descreve melhor:
+            (multiple_choice_only_one_ans)
+            [CSE15_02_09_01] a) Branco(a)
+            [CSE15_02_09_02] b) Negro(a)
+            [CSE15_02_09_03] c) Pardo(a)
+            [CSE15_02_09_04] d) Amarelo(a)
+            [CSE15_02_09_05] e) Indígena
+            [CSE15_02_09_06] f) Outro(a)
+            [CSE15_02_09_07] g) Não sabe
+            [CSE15_02_09_08] h) Não quis responder
+            [CSE15_02_09_09] i) Não se aplica
+            Se outro, qual?____________________________________
+        [CSE15_02_10] Qual é a sua religião?
+            (multiple_choice_only_one_ans)
+            [CSE15_02_10_01] a) Católica Apostólica Romana
+            [CSE15_02_10_02] b) Evangélica
+            [CSE15_02_10_03] c) Espírita
+            [CSE15_02_10_04] d) Umbanda
+            [CSE15_02_10_05] e) Candomblé
+            [CSE15_02_10_06] f) Outra
+            [CSE15_02_10_07] g) Sem religião
+            [CSE15_02_10_08] h) Não sabe
+            [CSE15_02_10_09] i) Não quis responder
+            [CSE15_02_10_10] j) Não se aplica
+            Se outra, qual?____________________________________
+    [CSE15_03] Hábitos
+        [CSE15_03_01] Como é o banheiro da casa?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_01_01] a) Banheiro com rede de esgoto
+            [CSE15_03_01_02] b) Banheiro que dá na fossa
+            [CSE15_03_01_03] c) Outro
+            [CSE15_03_01_04] d) Não sabe
+            [CSE15_03_01_05] e) Não quis responder
+            [CSE15_03_01_06] f) Não se aplica
+            Se outro, como?____________________________________
+        [CSE15_03_02] Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_02_01] a) Não
+            [CSE15_03_02_02] b) Sim
+            [CSE15_03_02_03] c) Às vezes
+            [CSE15_03_02_04] d) Não sabe
+            [CSE15_03_02_05] e) Não quis responder
+            [CSE15_03_02_06] f) Não se aplica
+            Se outro, como?____________________________________
+        [CSE15_03_03] Onde a criança costuma fazer cocô?
+            (multiple_choice_multiple_ans)
+            [CSE15_03_03_01] a) Vaso sanitário
+            [CSE15_03_03_02] b) Penico (se sim, onde joga o cocô?)
+            [CSE15_03_03_03] c) Fralda (se sim, onde joga a fralda suja?)
+            [CSE15_03_03_04] d) Outros (quintal, mato, etc). Onde?(a)
+            [CSE15_03_03_05] e) Não sabe
+            [CSE15_03_03_06] f) Não quis responder
+            [CSE15_03_03_07] g) Não se aplica
+            Complementação da resposta:____________________________________
+        [CSE15_03_04] A criança tem algum dos seguintes hábitos
+            (multiple_choice_multiple_ans)
+            [CSE15_03_04_01] a) Lava as mãos antes das refeições
+            [CSE15_03_04_02] b) Lava as mãos após utilizar o banheiro
+            [CSE15_03_04_03] c) Anda calçada
+            [CSE15_03_04_04] d) Nenhum
+            [CSE15_03_04_05] e) Não sabe
+            [CSE15_03_04_06] f) Não quis responder
+            [CSE15_03_04_07] g) Não se aplica
+        [CSE15_03_05] O que costuma fazer no tempo livre?
+            (multiple_choice_multiple_ans)
+            [CSE15_03_05_01] a) Caminha pela cidade
+            [CSE15_03_05_02] b) Pratica exercícios físicos
+            [CSE15_03_05_03] c) Faz trabalhos manuais
+            [CSE15_03_05_04] d) Sai para conversar com as pessoas
+            [CSE15_03_05_05] e) Fica dentro de casa descansando
+            [CSE15_03_05_06] f) Frequenta grupos de atividades
+            [CSE15_03_05_07] g) Cuida da casa
+            [CSE15_03_05_08] h) Outra atividade
+            [CSE15_03_05_09] i) Não sabe
+            [CSE15_03_05_10] j) Não quis responder
+            [CSE15_03_05_11] k) Não se aplica
+            Se outra atividade, qual?____________________________________
+        [CSE15_03_06] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_06_01] a) Sim. Qual
+            [CSE15_03_06_02] b) Não
+            [CSE15_03_06_03] c) Não sabe
+            [CSE15_03_06_04] d) Não quis responder
+            [CSE15_03_06_05] e) Não se aplica
+            Se realiza, qual?____________________________________
+        [CSE15_03_07] Com que frequência caminha ou pratica exercícios?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_07_01] a) 1x por semana
+            [CSE15_03_07_02] b) 2x por semana
+            [CSE15_03_07_03] c) 3x por semana
+            [CSE15_03_07_04] d) 4x por semana
+            [CSE15_03_07_05] e) 5x por semana
+            [CSE15_03_07_06] f) 6x por semana
+            [CSE15_03_07_07] g) Todos os dias
+            [CSE15_03_07_08] h) Não caminha nem pratica exercícios físicos
+            [CSE15_03_07_09] i) Não sabe
+            [CSE15_03_07_10] j) Não quis responder
+            [CSE15_03_07_11] k) Não se aplica
+        [CSE15_03_08] O(A) Sr.(a) tem ou teve o hábito de fumar?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_08_01] a) Nunca fumou
+            [CSE15_03_08_02] b) Fuma atualmente
+            [CSE15_03_08_03] c) Já fumou, mas não fuma atualmente
+            [CSE15_03_08_04] d) Não sabe
+            [CSE15_03_08_05] e) Não quis responder
+            [CSE15_03_08_06] f) Não se aplica
+        [CSE15_03_09] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?
+            (multiple_choice_only_one_ans)
+            [CSE15_03_09_01] a) Não
+            [CSE15_03_09_02] b) Sim, esporadicamente (menos que 1 vez por mês)
+            [CSE15_03_09_03] c) Sim, 1 vez por mês
+            [CSE15_03_09_04] d) Sim, 1 vez por semana (ou em finais de semana)
+            [CSE15_03_09_05] e) Sim, todos os dias
+            [CSE15_03_09_06] f) Outra resposta
+            [CSE15_03_09_07] g) Não sabe
+            [CSE15_03_09_08] h) Não quis responder
+            [CSE15_03_09_09] i) Não se aplica
+            Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).____________________________________
+    [CSE15_04] Saúde
+        [CSE15_04_01] Tem alguma dificuldade para:
+            (multiple_choice_multiple_ans)
+            [CSE15_04_01_01] a) Falar
+            [CSE15_04_01_02] b) Engolir
+            [CSE15_04_01_03] c) Enxergar
+            [CSE15_04_01_04] d) Escutar
+            [CSE15_04_01_05] e) Movimentar-se
+            [CSE15_04_01_06] f) Urinar
+            [CSE15_04_01_07] g) Outras
+            [CSE15_04_01_08] h) Não tem dificuldades
+            [CSE15_04_01_09] i) Não sabe
+            [CSE15_04_01_10] j) Não quis responder
+            [CSE15_04_01_11] k) Não se aplica
+            Se outras, quais?____________________________________
+        [CSE15_04_02] A casa possui:
+            (multiple_choice_multiple_ans)
+            [CSE15_04_02_01] a) Degraus/desníveis
+            [CSE15_04_02_02] b) Tapetes
+            [CSE15_04_02_03] c) Locais com piso escorregadio
+            [CSE15_04_02_04] d) Móveis ou objetos que dificultam a circulação
+            [CSE15_04_02_05] e) Armários ou prateleiras muito altas
+            [CSE15_04_02_06] f) Nenhuma das alternativas citadas
+            [CSE15_04_02_07] g) Não sabe
+            [CSE15_04_02_08] h) Não quis responder
+            [CSE15_04_02_09] i) Não se aplica
+        [CSE15_04_03] O(A) Sr.(a) diria que sua saúde é:
+            (multiple_choice_only_one_ans)
+            [CSE15_04_03_01] a) Muito boa
+            [CSE15_04_03_02] b) Boa
+            [CSE15_04_03_03] c) Regular
+            [CSE15_04_03_04] d) Ruim
+            [CSE15_04_03_05] e) Muito ruim
+            [CSE15_04_03_06] f) Não sabe
+            [CSE15_04_03_07] g) Não quis responder
+            [CSE15_04_03_08] h) Não se aplica
+        [CSE15_04_04] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é
+            (multiple_choice_only_one_ans)
+            [CSE15_04_04_01] a) Melhor
+            [CSE15_04_04_02] b) Igual
+            [CSE15_04_04_03] c) Pior
+            [CSE15_04_04_04] d) Não sabe
+            [CSE15_04_04_05] e) Não quis responder
+            [CSE15_04_04_06] f) Não se aplica
+    [CSE15_05] Médico
+        [CSE15_05_01] Que motivo(s) o leva(m) a procurar atendimento médico?
+            (multiple_choice_multiple_ans)
+            [CSE15_05_01_01] a) Somente quando está doente
+            [CSE15_05_01_02] b) Realizam tratamento
+            [CSE15_05_01_03] c) Exames de rotina
+            [CSE15_05_01_04] d) Ocorrência de acidente
+            [CSE15_05_01_05] e) Outros
+            [CSE15_05_01_06] f) Não sabe
+            [CSE15_05_01_07] g) Não quis responder
+            [CSE15_05_01_08] h) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)
+            (multiple_choice_only_one_ans)
+            [CSE15_05_02_01] a) Sim
+            [CSE15_05_02_02] b) Não
+            [CSE15_05_02_03] c) Não sabe
+            [CSE15_05_02_04] d) Não quis responder
+            [CSE15_05_02_05] e) Não se aplica
+            Se não, quantas vezes?____________________________________
+        [CSE15_05_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?
+            (multiple_choice_only_one_ans)
+            [CSE15_05_03_01] a) Nenhuma 
+            [CSE15_05_03_02] b) 1 a 2 vezes
+            [CSE15_05_03_03] c) 3 a 4 vezes
+            [CSE15_05_03_04] d) 1 vez a cada 2 meses
+            [CSE15_05_03_05] e) 1 vez por mês
+            [CSE15_05_03_06] f) Outra resposta
+            [CSE15_05_03_07] g) Não sabe
+            [CSE15_05_03_08] h) Não quis responder
+            [CSE15_05_03_09] i) Não se aplica
+            Se a resposta for "Outra resposta", especificar____________________________________
+        [CSE15_05_04] O Sr. (a) teve alguma queda depois que completou 60 anos?
+            (multiple_choice_only_one_ans)
+            [CSE15_05_04_01] a) Não
+            [CSE15_05_04_02] b) Sim
+            [CSE15_05_04_03] c) Não sabe
+            [CSE15_05_04_04] d) Não quis responder
+            [CSE15_05_04_05] e) Não se aplica
+            Se sim, quantas vezes?____________________________________
+        [CSE15_05_05] Alguma vez um médico lhe disse que tem alguma doença?
+            (multiple_choice_only_one_ans)
+            [CSE15_05_05_01] a) Não
+            [CSE15_05_05_02] b) Sim
+            [CSE15_05_05_03] c) Não sabe
+            [CSE15_05_05_04] d) Não quis responder
+            [CSE15_05_05_05] e) Não se aplica
+            Se sim, quais?____________________________________
+    [CSE15_06] Horta
+        [CSE15_06_01] Planta alguma coisa para consumo? (vende, come..)
+            (multiple_choice_only_one_ans)
+            [CSE15_06_01_01] a) Não
+            [CSE15_06_01_02] b) Sim
+            [CSE15_06_01_03] c) Não sabe
+            [CSE15_06_01_04] d) Não quis responder
+            [CSE15_06_01_05] e) Não se aplica
+        [CSE15_06_02] Usa adubo?
+            (multiple_choice_multiple_ans)
+            [CSE15_06_02_01] a) Não
+            [CSE15_06_02_02] b) Sim, adubo orgânico com esterco
+            [CSE15_06_02_03] c) Sim, adubo orgânico sem esterco
+            [CSE15_06_02_04] d) Sim, adubo comprado
+            [CSE15_06_02_05] e) Não sabe
+            [CSE15_06_02_06] f) Não quis responder
+            [CSE15_06_02_07] g) Não se aplica
+        [CSE15_06_03] Qual fonte de água utiliza para irrigar a horta?
+            (multiple_choice_only_one_ans)
+            [CSE15_06_03_01] a) Reservatório da prefeitura
+            [CSE15_06_03_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).
+            [CSE15_06_03_03] c) Não sabe
+            [CSE15_06_03_04] d) Não quis responder
+            [CSE15_06_03_05] e) Não se aplica
+            Se outros, quais?____________________________________
+    [CSE15_07] Água
+        [CSE15_07_01] De onde vem a água da casa?
+            (multiple_choice_only_one_ans)
+            [CSE15_07_01_01] a) Reservatório da prefeitura
+            [CSE15_07_01_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).
+            [CSE15_07_01_03] c) Não sabe
+            [CSE15_07_01_04] d) Não quis responder
+            [CSE15_07_01_05] e) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_07_02] Existe contato das pessoas da casa com o local de armazenamento?
+            (multiple_choice_only_one_ans)
+            [CSE15_07_02_01] a) Não
+            [CSE15_07_02_02] b) Sim
+            [CSE15_07_02_03] c) Não sabe
+            [CSE15_07_02_04] d) Não quis responder
+            [CSE15_07_02_05] e) Não se aplica
+        [CSE15_07_03] Na falta de água, onde a obtém?
+            (multiple_choice_only_one_ans)
+            [CSE15_07_03_01] a) Reservatório da prefeitura
+            [CSE15_07_03_02] b) Outros (Poço, lagoa, córrego, cisterna, etc).
+            [CSE15_07_03_03] c) Não sabe
+            [CSE15_07_03_04] d) Não quis responder
+            [CSE15_07_03_05] e) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_07_04] Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)
+            (multiple_choice_multiple_ans)
+            [CSE15_07_04_01] a) Filtração
+            [CSE15_07_04_02] b) Fervura
+            [CSE15_07_04_03] c) Hipoclorito
+            [CSE15_07_04_04] d) Nenhum
+            [CSE15_07_04_05] e) Outros
+            [CSE15_07_04_06] f) Não sabe
+            [CSE15_07_04_07] g) Não quis responder
+            [CSE15_07_04_08] h) Não se aplica
+            Se outros, quais?____________________________________
+    [CSE15_08] Alimentação / Animais
+        [CSE15_08_01] Cria animais de estimação?
+            (multiple_choice_multiple_ans)
+            [CSE15_08_01_01] a) Não cria
+            [CSE15_08_01_02] b) Galinha
+            [CSE15_08_01_03] c) Porco
+            [CSE15_08_01_04] d) Boi, vaca ou bezerro
+            [CSE15_08_01_05] e) Gato
+            [CSE15_08_01_06] f) Cachorro 
+            [CSE15_08_01_07] g) Outros
+            [CSE15_08_01_08] h) Não sabe
+            [CSE15_08_01_09] i) Não quis responder
+            [CSE15_08_01_10] j) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_08_02] Como são criados?
+            (multiple_choice_only_one_ans)
+            [CSE15_08_02_01] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)
+            [CSE15_08_02_02] b) Presos
+            [CSE15_08_02_03] c) Não sabe
+            [CSE15_08_02_04] d) Não quis responder
+            [CSE15_08_02_05] e) Não se aplica
+        [CSE15_08_03] Cria animais para a alimentação?
+            (multiple_choice_multiple_ans)
+            [CSE15_08_03_01] a) Não cria
+            [CSE15_08_03_02] b) Galinha
+            [CSE15_08_03_03] c) Porco
+            [CSE15_08_03_04] d) Boi, vaca ou bezerro
+            [CSE15_08_03_05] e) Coelho
+            [CSE15_08_03_06] f) Outros
+            [CSE15_08_03_07] g) Não sabe
+            [CSE15_08_03_08] h) Não quis responder
+            [CSE15_08_03_09] i) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_08_04] Como são criados?
+            (multiple_choice_only_one_ans)
+            [CSE15_08_04_01] a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)
+            [CSE15_08_04_02] b) Presos
+            [CSE15_08_04_03] c) Não sabe
+            [CSE15_08_04_04] d) Não quis responder
+            [CSE15_08_04_05] e) Não se aplica
+        [CSE15_08_05] Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)
+            (multiple_choice_multiple_ans)
+            [CSE15_08_05_01] a) Não consome carne
+            [CSE15_08_05_02] b) Criação própria
+            [CSE15_08_05_03] c) Mercado/açougue
+            [CSE15_08_05_04] d) Criador de confiança
+            [CSE15_08_05_05] e) Outros
+            [CSE15_08_05_06] f) Não sabe
+            [CSE15_08_05_07] g) Não quis responder
+            [CSE15_08_05_08] h) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_08_06] Como você prepara a carne que consome?
+            (multiple_choice_only_one_ans)
+            [CSE15_08_06_01] a) Bem passada
+            [CSE15_08_06_02] b) Mal passada / Crua
+            [CSE15_08_06_03] c) Não sabe
+            [CSE15_08_06_04] d) Não quis responder
+            [CSE15_08_06_05] e) Não se aplica
+        [CSE15_08_07] Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)
+            (multiple_choice_multiple_ans)
+            [CSE15_08_07_01] a) Lava em água corrente
+            [CSE15_08_07_02] b) Põe de molho em água
+            [CSE15_08_07_03] c) Põe de molho em água+vinagre
+            [CSE15_08_07_04] d) Põe de molho em água+água sanitária / hipoclorito
+            [CSE15_08_07_05] e) Nenhum 
+            [CSE15_08_07_06] f) Não sabe
+            [CSE15_08_07_07] g) Não quis responder
+            [CSE15_08_07_08] h) Não se aplica
+    [CSE15_09] Medicamentos (geral)
+        [CSE15_09_01] Costumam tomar medicamentos sem receita médica?
+            (multiple_choice_only_one_ans)
+            [CSE15_09_01_01] a) Não
+            [CSE15_09_01_02] b) Sim
+            [CSE15_09_01_03] c) Não sabe
+            [CSE15_09_01_04] d) Não quis responder
+            [CSE15_09_01_05] e) Não se aplica
+            Se sim, quais?____________________________________
+        [CSE15_09_02] Possui remédios na residência?
+            (multiple_choice_only_one_ans)
+            [CSE15_09_02_01] a) Não
+            [CSE15_09_02_02] b) Sim
+            [CSE15_09_02_03] c) Não sabe
+            [CSE15_09_02_04] d) Não quis responder
+            [CSE15_09_02_05] e) Não se aplica
+        [CSE15_09_03] Onde guarda os remédios?
+            (multiple_choice_multiple_ans)
+            [CSE15_09_03_01] a) Na cozinha
+            [CSE15_09_03_02] b) No banheiro
+            [CSE15_09_03_03] c) No quarto
+            [CSE15_09_03_04] d) Outros
+            [CSE15_09_03_05] e) Não sabe
+            [CSE15_09_03_06] f) Não quis responder
+            [CSE15_09_03_07] g) Não se aplica
+            Se outros, onde?____________________________________
+        [CSE15_09_04] A criança tem acesso aos medicamentos? 
+            (multiple_choice_only_one_ans)
+            [CSE15_09_04_01] a) Sim, ela sabe onde estão guardados e os alcança quando quiser
+            [CSE15_09_04_02] b) Ela sabe onde estão, mas não tem acesso a eles
+            [CSE15_09_04_03] c) Não, estão escondidos em um local de difícil acesso
+            [CSE15_09_04_04] d) Não sabe
+            [CSE15_09_04_05] e) Não quis responder
+            [CSE15_09_04_06] f) Não se aplica
+        [CSE15_09_05] Como descarta os medicamentos?
+            (multiple_choice_multiple_ans)
+            [CSE15_09_05_01] a) Não descarta
+            [CSE15_09_05_02] b) Lixo
+            [CSE15_09_05_03] c) Vaso sanitário ou pia
+            [CSE15_09_05_04] d) Plantas ou terra
+            [CSE15_09_05_05] e) Devolve no Posto de Saúde
+            [CSE15_09_05_06] f) Dá para algum conhecido 
+            [CSE15_09_05_07] g) Outros
+            [CSE15_09_05_08] h) Não sabe
+            [CSE15_09_05_09] i) Não quis responder
+            [CSE15_09_05_10] j) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_09_06] O que utilizam quando alguém tem diarreia?
+            (multiple_choice_multiple_ans)
+            [CSE15_09_06_01] a) Nada. Espera passar
+            [CSE15_09_06_02] b) Soro caseiro
+            [CSE15_09_06_03] c) Soro pronto
+            [CSE15_09_06_04] d) Outros
+            [CSE15_09_06_05] e) Não sabe
+            [CSE15_09_06_06] f) Não quis responder
+            [CSE15_09_06_07] g) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_09_07] Conhece o soro caseiro?
+            (multiple_choice_only_one_ans)
+            [CSE15_09_07_01] a) Não
+            [CSE15_09_07_02] b) Sim
+            [CSE15_09_07_03] c) Não sabe
+            [CSE15_09_07_04] d) Não quis responder
+            [CSE15_09_07_05] e) Não se aplica
+        [CSE15_09_08] Sabe como preparar?
+            (multiple_choice_only_one_ans)
+            [CSE15_09_08_01] a) Não
+            [CSE15_09_08_02] b) Sim
+            [CSE15_09_08_03] c) Não sabe
+            [CSE15_09_08_04] d) Não quis responder
+            [CSE15_09_08_05] e) Não se aplica
+    [CSE15_10] Parasitoses
+        [CSE15_10_01] Conhece algum verme (parasitose)?
+            (multiple_choice_multiple_ans)
+            [CSE15_10_01_01] a) Não
+            [CSE15_10_01_02] b) Barriga d água, "xistose" (Esquistossomose)
+            [CSE15_10_01_03] c) "Bicha", "lombriga" (Ascaridíase)
+            [CSE15_10_01_04] d) "Amarelão" (Ancilostomose)
+            [CSE15_10_01_05] e) "Solitária" (Teníase)
+            [CSE15_10_01_06] f) "Ameba"(Amebíase/Giardíase)
+            [CSE15_10_01_07] g) Coceira (Enterobíase)
+            [CSE15_10_01_08] h) Não sabe
+            [CSE15_10_01_09] i) Não quis responder
+            [CSE15_10_01_10] j) Não se aplica
+        [CSE15_10_02] Sabe como se prevenir de pegar vermes?
+            (multiple_choice_only_one_ans)
+            [CSE15_10_02_01] a) Não
+            [CSE15_10_02_02] b) Sim
+            [CSE15_10_02_03] c) Não sabe
+            [CSE15_10_02_04] d) Não quis responder
+            [CSE15_10_02_05] e) Não se aplica
+        [CSE15_10_03] Já fez exame de fezes?
+            (multiple_choice_multiple_ans)
+            [CSE15_10_03_01] a) Não
+            [CSE15_10_03_02] b) Sim, resultado negativo para verme
+            [CSE15_10_03_03] c) Sim, mas não sabe o resultado
+            [CSE15_10_03_04] d) Sim, resultado positivo para verme
+            [CSE15_10_03_05] e) Não sabe
+            [CSE15_10_03_06] f) Não quis responder
+            [CSE15_10_03_07] g) Não se aplica
+            Qual verme?____________________________________
+        [CSE15_10_04] Como descobriu que estava com a doença?
+            (multiple_choice_multiple_ans)
+            [CSE15_10_04_01] a) Com resultado de exame de fezes
+            [CSE15_10_04_02] b) Saiu nas fezes
+            [CSE15_10_04_03] c) Foi no médico
+            [CSE15_10_04_04] d) Outros
+            [CSE15_10_04_05] e) Não sabe
+            [CSE15_10_04_06] f) Não quis responder
+            [CSE15_10_04_07] g) Não se aplica
+            Se outros, quais?____________________________________
+        [CSE15_10_05] Já tomou vermífugo (lombrigueira)?
+            (multiple_choice_only_one_ans)
+            [CSE15_10_05_01] a) Não
+            [CSE15_10_05_02] b) Sim, há seis meses ou menos e "botou" verme
+            [CSE15_10_05_03] c) Sim, há seis meses ou menos, mas não "botou" verme
+            [CSE15_10_05_04] d) Sim, há mais de seis meses, e "botou" verme
+            [CSE15_10_05_05] e) Sim, há mais de seis meses, mas não "botou" verme
+            [CSE15_10_05_06] f) Não sabe
+            [CSE15_10_05_07] g) Não quis responder
+            [CSE15_10_05_08] h) Não se aplica
+        [CSE15_10_06] Alguém na casa já pegou verme? Qual?
+            (multiple_choice_multiple_ans)
+            [CSE15_10_06_01] a) Não
+            [CSE15_10_06_02] b) Sim, mas não sabe qual verme
+            [CSE15_10_06_03] c) "Solitária" (Teníase)
+            [CSE15_10_06_04] d) "Ameba" (Amebíase)
+            [CSE15_10_06_05] e) "Giárdia" (Giardíase)
+            [CSE15_10_06_06] f) Coceira (Enterobíase)
+            [CSE15_10_06_07] g) "Amarelão" (Ancilostomose)
+            [CSE15_10_06_08] h) "Bicha", "lombriga" (Ascaridíase)
+            [CSE15_10_06_09] i) Barriga d água, "xistose" (Esquistossomose)
+            [CSE15_10_06_10] j) Não sabe
+            [CSE15_10_06_11] k) Não quis responder
+            [CSE15_10_06_12] l) Não se aplica
+    [CSE15_11] Aspecto Econômico
+        [CSE15_11_01] O(A) Sr.(a) trabalha?
+            (multiple_choice_only_one_ans)
+            [CSE15_11_01_01] a) Não
+            [CSE15_11_01_02] b) Não. É aposentado
+            [CSE15_11_01_03] c) Sim
+            [CSE15_11_01_04] d) Não sabe
+            [CSE15_11_01_05] e) Não quis responder
+            [CSE15_11_01_06] f) Não se aplica
+        [CSE15_11_02] O(A) Sr.(a) trabalha (remunerado) atualmente? 
+            (multiple_choice_only_one_ans)
+            [CSE15_11_02_01] a) Não
+            [CSE15_11_02_02] b) Sim
+            [CSE15_11_02_03] c) Não sabe
+            [CSE15_11_02_04] d) Não quis responder
+            [CSE15_11_02_05] e) Não se aplica
+            Qual?____________________________________
+        [CSE15_11_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?
+            (multiple_choice_only_one_ans)
+            [CSE15_11_03_01] a) Valor
+            [CSE15_11_03_02] b) Não sabe
+            [CSE15_11_03_03] c) Não quis responder
+            [CSE15_11_03_04] d) Não se aplica
+            Qual?____________________________________
+        [CSE15_11_04] Qual a renda total da família?
+            (multiple_choice_only_one_ans)
+            [CSE15_11_04_01] a) Valor
+            [CSE15_11_04_02] b) Não sabe
+            [CSE15_11_04_03] c) Não quis responder
+            [CSE15_11_04_04] d) Não se aplica
+            Qual?____________________________________
