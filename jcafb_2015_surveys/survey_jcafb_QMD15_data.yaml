@@ -113,11 +113,11 @@ QMD15:
 
             QMD15_02_01_06:
                 model: survey.answer
-                answer: 'e) Não quis responder'
+                answer: 'f) Não quis responder'
 
             QMD15_02_01_07:
                 model: survey.answer
-                answer: 'e) Não se aplica'
+                answer: 'g) Não se aplica'
 
         QMD15_02_02:
             model: survey.question

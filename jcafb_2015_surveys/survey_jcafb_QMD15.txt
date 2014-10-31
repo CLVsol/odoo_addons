@@ -23,8 +23,8 @@
             [QMD15_02_01_03] c) Administra sozinho
             [QMD15_02_01_04] d) Outra pessoa
             [QMD15_02_01_05] e) Não sabe
-            [QMD15_02_01_06] e) Não quis responder
-            [QMD15_02_01_07] e) Não se aplica
+            [QMD15_02_01_06] f) Não quis responder
+            [QMD15_02_01_07] g) Não se aplica
             Se outra pessoa, especificar____________________________________
         [QMD15_02_02] Pratica automedicação?
             (multiple_choice_only_one_ans)

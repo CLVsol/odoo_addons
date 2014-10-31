@@ -155,13 +155,13 @@
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_01_06">
-                        <field name="answer">[QMD15_02_01_06] e) Não quis responder</field>
+                        <field name="answer">[QMD15_02_01_06] f) Não quis responder</field>
                         <field name="question_id" ref="QMD15_02_01"/>
                         <field name="sequence" eval="60"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_01_07">
-                        <field name="answer">[QMD15_02_01_07] e) Não se aplica</field>
+                        <field name="answer">[QMD15_02_01_07] g) Não se aplica</field>
                         <field name="question_id" ref="QMD15_02_01"/>
                         <field name="sequence" eval="70"/>
                     </record>
