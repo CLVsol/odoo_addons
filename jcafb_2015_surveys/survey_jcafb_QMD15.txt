@@ -16,3 +16,89 @@
             [QMD15_01_03_03] c) Cuidador
             Nome (Grau de Parentesco)____________________________________
     [QMD15_02] Questionário
+        [QMD15_02_01] Quem administra os medicamentos do(a) Sr.(a)?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_01_01] a) Cuidador não remunerado
+            [QMD15_02_01_02] b) Cuidador remunerado
+            [QMD15_02_01_03] c) Administra sozinho
+            [QMD15_02_01_04] d) Outra pessoa
+            [QMD15_02_01_05] e) Não sabe
+            [QMD15_02_01_06] e) Não quis responder
+            [QMD15_02_01_07] e) Não se aplica
+            Se outra pessoa, especificar____________________________________
+        [QMD15_02_02] Pratica automedicação?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_02_01] a) Não
+            [QMD15_02_02_02] b) Sim
+            [QMD15_02_02_03] c) Não sabe
+            [QMD15_02_02_04] d) Não quis responder
+            [QMD15_02_02_05] e) Não se aplica
+        [QMD15_02_03] O(a) Sr.(a) tomou medicamentos, sem prescrição, nos últimos 15 dias?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_03_01] a) Não
+            [QMD15_02_03_02] b) Sim (especificar)
+            [QMD15_02_03_03] c) Não sabe
+            [QMD15_02_03_04] d) Não quis responder
+            [QMD15_02_03_05] e) Não se aplica
+            Se sim, especificar____________________________________
+        [QMD15_02_04] De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_04_01] a) Pelo tamanho
+            [QMD15_02_04_02] b) Pela cor
+            [QMD15_02_04_03] c) Pela forma
+            [QMD15_02_04_04] d) Pelo nome
+            [QMD15_02_04_05] e) Pela embalagem
+            [QMD15_02_04_06] f) Outro (especificar)
+            [QMD15_02_04_07] g) Não identifica
+            [QMD15_02_04_08] h) Não sabe
+            [QMD15_02_04_09] i) Não quis responder
+            [QMD15_02_04_10] j) Não se aplica
+            Se "Outro", especificar____________________________________
+        [QMD15_02_05] De que modo o(a) Sr.(a) adquire os medicamentos que utiliza?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_05_01] a) Farmácia
+            [QMD15_02_05_02] b) Posto
+            [QMD15_02_05_03] c) Outro (especificar)
+            [QMD15_02_05_04] d) Não sabe
+            [QMD15_02_05_05] e) Não quis responder
+            [QMD15_02_05_06] f) Não se aplica
+            Se "Outro", especificar____________________________________
+        [QMD15_02_06] De modo geral, como o(a) Sr.(a) descarta/joga fora os seus medicamentos vencidos ou que já não utiliza mais?(Pode assinalar mais de uma alternativa)
+            (multiple_choice_multiple_ans)
+            [QMD15_02_06_01] a) Unidade básica de saúde
+            [QMD15_02_06_02] b) Lixo comum
+            [QMD15_02_06_03] c) Pia/vaso sanitário
+            [QMD15_02_06_04] d) Outro (especificar)
+            [QMD15_02_06_05] e) Não sabe
+            [QMD15_02_06_06] f) Não quis responder
+            [QMD15_02_06_07] g) Não se aplica
+            Se "Outro", especificar____________________________________
+        [QMD15_02_07] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_07_01] a) Não
+            [QMD15_02_07_02] b) Sim (especificar)
+            [QMD15_02_07_03] c) Não sabe
+            [QMD15_02_07_04] d) Não quis responder
+            [QMD15_02_07_05] e) Não se aplica
+            Se sim, especificar____________________________________
+        [QMD15_02_08] O idoso possui diagnóstico de hipertensão?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_08_01] a) Não
+            [QMD15_02_08_02] b) Sim
+            [QMD15_02_08_03] c) Não sabe
+            [QMD15_02_08_04] d) Não quis responder
+            [QMD15_02_08_05] e) Não se aplica
+        [QMD15_02_09] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_09_01] a) Não
+            [QMD15_02_09_02] b) Sim
+            [QMD15_02_09_03] c) Não sabe
+            [QMD15_02_09_04] d) Não quis responder
+            [QMD15_02_09_05] e) Não se aplica
+        [QMD15_02_10] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_10_01] a) Não
+            [QMD15_02_10_02] b) Sim
+            [QMD15_02_10_03] c) Não sabe
+            [QMD15_02_10_04] d) Não quis responder
+            [QMD15_02_10_05] e) Não se aplica
