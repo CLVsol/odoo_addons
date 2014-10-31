@@ -27,7 +27,7 @@ class clv_tag(osv.osv):
                                        'clv_person_clv_tag_rel', 
                                        'tag_id', 
                                        'person_id', 
-                                       'persons'),
+                                       'Persons'),
         }
 
 class clv_person(osv.osv):
