@@ -17,14 +17,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-# import product_product
-# import clv_annotation
-# import clv_medicament_category
-# import clv_medicament_manufacturer
-# import clv_medicament_therapeutic_class
-# import clv_medicament_active_component
-# import clv_medicament
-# import clv_tag
-# import clv_drug_form
-# import clv_drug_route
-# import clv_medicament_template
+from openerp.osv import orm, fields
+
+class clv_annotation(orm.Model):
+    _inherit = 'clv_annotation'
+
+    _columns = {
+        'medicament_id' : fields.many2one ('clv_medicament', 'Medicament'),
+    }
+
+clv_annotation()

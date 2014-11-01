@@ -21,16 +21,16 @@ from osv import osv
 from osv import fields
 
 
-class oehealth_drug_form(osv.Model):
-    _name = 'oehealth.drug.form'
+class clv_drug_route(osv.Model):
+    _name = 'clv_drug.route'
 
     _columns = {
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Form', required=True,
+        'name': fields.char(size=256, string='Unit', required=True,
                             translate=True),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
-
-oehealth_drug_form()
+    
+clv_drug_route()

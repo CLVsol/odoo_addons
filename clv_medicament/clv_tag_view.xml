@@ -2,10 +2,10 @@
 <openerp>
     <data>
         
-        <record id="view_oehealth_tag_form" model="ir.ui.view">
-            <field name="name">oehealth.tag.form</field>
-            <field name="model">oehealth.tag</field>
-            <field name="inherit_id" ref="oehealth_tag.view_oehealth_tag_form"/>
+        <record id="view_clv_tag_form" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <page string="Settings" position="before">

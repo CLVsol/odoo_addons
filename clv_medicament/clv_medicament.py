@@ -20,8 +20,8 @@
 from osv import osv
 from osv import fields
 
-class oehealth_medicament(osv.Model):
-    _name = 'oehealth.medicament'
+class clv_medicament(osv.Model):
+    _name = 'clv_medicament'
     _description = "Medicament"
     _inherits={
                'product.product': 'product_id',
@@ -94,11 +94,11 @@ class oehealth_medicament(osv.Model):
         #we need a related field in order to be able to sort the medicament by name
         'name_product': fields.related('product_id', 'name', type='char', string='Related Product', 
                                        readonly=True, store=True),
-        'medicament_category': fields.many2one('oehealth.medicament.category',
+        'medicament_category': fields.many2one('clv_medicament.category',
                                                'Medicament Category',select=True),
         'medicament_code': fields.char(size=64, string='Code', required=False),
         'medicament_name': fields.char(size=256, string='Name'),
-        'active_component': fields.many2one('oehealth.medicament.active_component', string='Active Component', 
+        'active_component': fields.many2one('clv_medicament.active_component', string='Active Component', 
                                              help='Medicament Active Component'),
         'active_component_name': fields.related('active_component', 'name', type='char', string='Related Active Component', 
                                                 readonly=True, store=True),
@@ -158,7 +158,7 @@ class oehealth_medicament(osv.Model):
         'date_medicament_activation' : fields.date('Medicament Activation Date'),
         'date_medicament_inactivation' : fields.date('Medicament Inactivation Date'),
         'date_medicament_suspension' : fields.date('Medicament Suspension Date'),
-        'medicament_annotation_ids': fields.one2many('oehealth.annotation',
+        'medicament_annotation_ids': fields.one2many('clv_annotation',
                                                      'medicament_id',
                                                      'Medicament Annotations'),
         'medicament_rgss': fields.selection([('U', 'Undefined'),
@@ -167,8 +167,8 @@ class oehealth_medicament(osv.Model):
                                              ('S', 'Similar'),
                                              ], string='Medicament Status',
                                                   select=True, sort=False, required=False, translate=True),
-        'medicament_tag_ids': fields.many2many('oehealth.tag', 
-                                               'oehealth_medicament_tag_rel', 
+        'medicament_tag_ids': fields.many2many('clv_tag', 
+                                               'clv_medicament_tag_rel', 
                                                'medicament_id', 
                                                'tag_id', 
                                                'Tags'),
@@ -187,9 +187,9 @@ class oehealth_medicament(osv.Model):
                                    ('revised','Revised'),
                                    ('waiting','Waiting'),
                                    ('okay','Okay')], 'Stage', readonly=True),
-        'therapeutic_class': fields.many2one('oehealth.medicament.therapeutic_class', string='Therapeutic Class', 
+        'therapeutic_class': fields.many2one('clv_medicament.therapeutic_class', string='Therapeutic Class', 
                                              help='Medicament Therapeutic Class'),
-        'manufacturer': fields.many2one('oehealth.medicament.manufacturer', string='Manufacturer', 
+        'manufacturer': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
                                         help='Medicament Manufacturer'),
         'create_uid': fields.function(_compute_create_uid, method=True, type='char', string='Create User',),
         'create_date': fields.function(_compute_create_date, method=True, type='datetime', string='Create Date',),
@@ -213,7 +213,7 @@ class oehealth_medicament(osv.Model):
         if context is None:
             context = {}
         if not 'medicament_code' in vals or vals['medicament_code'] == '/':
-            val = self.pool.get('ir.sequence').get(cr, uid, 'oehealth.medicament.code')
+            val = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament.code')
             code = map(int, str(val))
             code_len = len(code)
             while len(code) < 14:
@@ -241,16 +241,16 @@ class oehealth_medicament(osv.Model):
                 vals['medicament_code'] = code_str[15 - code_len:21]
             elif code_len > 12 and code_len <= 14:
                 vals['medicament_code'] = code_str[14 - code_len:21]
-        return super(oehealth_medicament, self).create(cr, uid, vals, context)
+        return super(clv_medicament, self).create(cr, uid, vals, context)
 
     # def write(self, cr, uid, ids, vals, context=None):
     #     if context is None:
     #         context = {}
     #     medicaments_without_code = self.search(cr, uid, [('medicament_code', 'in', [False, '/']),('id', 'in', ids)], context=context)
     #     direct_write_ids = set(ids) - set(medicaments_without_code)
-    #     super(oehealth_medicament, self).write(cr, uid, list(direct_write_ids), vals, context)
+    #     super(clv_medicament, self).write(cr, uid, list(direct_write_ids), vals, context)
     #     for group_id in medicaments_without_code:
-    #         val = self.pool.get('ir.sequence').get(cr, uid, 'oehealth.medicament.code')
+    #         val = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament.code')
     #         code = map(int, str(val))
     #         code_len = len(code)
     #         while len(code) < 14:
@@ -278,23 +278,23 @@ class oehealth_medicament(osv.Model):
     #             vals['medicament_code'] = code_str[15 - code_len:21]
     #         elif code_len > 12 and code_len <= 14:
     #             vals['medicament_code'] = code_str[14 - code_len:21]
-    #         super(oehealth_medicament, self).write(cr, uid, group_id, vals, context)
+    #         super(clv_medicament, self).write(cr, uid, group_id, vals, context)
     #     return True
 
-    def oehealth_medicament_new(self, cr, uid, ids):
+    def clv_medicament_new(self, cr, uid, ids):
          self.write(cr, uid, ids, {'state': 'new'})
          return True
 
-    def oehealth_medicament_revised(self, cr, uid, ids):
+    def clv_medicament_revised(self, cr, uid, ids):
          self.write(cr, uid, ids, {'state': 'revised'})
          return True
 
-    def oehealth_medicament_waiting(self, cr, uid, ids):
+    def clv_medicament_waiting(self, cr, uid, ids):
          self.write(cr, uid, ids, {'state': 'waiting'})
          return True
 
-    def oehealth_medicament_okay(self, cr, uid, ids):
+    def clv_medicament_okay(self, cr, uid, ids):
          self.write(cr, uid, ids, {'state': 'okay'})
          return True
 
-oehealth_medicament()
+clv_medicament()

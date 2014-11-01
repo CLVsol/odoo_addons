@@ -21,8 +21,8 @@ from osv import osv
 from osv import fields
 
 
-class oehealth_medicament_category(osv.osv):
-    _name = 'oehealth.medicament.category'
+class clv_medicament_category(osv.osv):
+    _name = 'clv_medicament.category'
     _description = 'Medicament Categories'
 
     def name_get(self, cr, uid, ids, context=None):
@@ -37,7 +37,7 @@ class oehealth_medicament_category(osv.osv):
         if context is None:
             context = {}
         if context.get('medicament_category_display') == 'short':
-            return super(oehealth_medicament_category, self).name_get(cr, uid, ids, context=context)
+            return super(clv_medicament_category, self).name_get(cr, uid, ids, context=context)
         if isinstance(ids, (int, long)):
             ids = [ids]
         reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
@@ -68,16 +68,16 @@ class oehealth_medicament_category(osv.osv):
 
     _columns = {
         'name': fields.char('Category', required=True, size=64, translate=True),
-        'parent_id': fields.many2one('oehealth.medicament.category', 'Parent Category', select=True, ondelete='cascade'),
+        'parent_id': fields.many2one('clv_medicament.category', 'Parent Category', select=True, ondelete='cascade'),
         'description': fields.text(string='Description'),
         'info': fields.text(string='Info'),
         'complete_name': fields.function(_name_get_fnc, type="char", string='Category'),
-        'child_ids': fields.one2many('oehealth.medicament.category', 'parent_id', 'Child Categories'),
+        'child_ids': fields.one2many('clv_medicament.category', 'parent_id', 'Child Categories'),
         'active': fields.boolean('Active', help="The active field allows you to hide the category without removing it."),
         'parent_left': fields.integer('Left parent', select=True),
         'parent_right': fields.integer('Right parent', select=True),
-        'medicament_ids': fields.many2many('oehealth.medicament', 
-                                           'oehealth_medicament_category_rel', 
+        'medicament_ids': fields.many2many('clv_medicament', 
+                                           'clv_medicament_category_rel', 
                                            'category_id', 
                                            'medicament_id', 
                                            'Medicaments'),
@@ -92,4 +92,4 @@ class oehealth_medicament_category(osv.osv):
     _parent_order = 'name'
     _order = 'parent_left'
 
-oehealth_medicament_category()
+clv_medicament_category()

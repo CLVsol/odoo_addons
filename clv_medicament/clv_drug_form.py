@@ -17,17 +17,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import orm, fields
+from osv import osv
+from osv import fields
 
-class oehealth_tag(orm.Model):
-    _inherit = 'oehealth.tag'
+
+class clv_drug_form(osv.Model):
+    _name = 'clv_drug.form'
 
     _columns = {
-        'medicament_ids': fields.many2many('oehealth.medicament', 
-                                           'oehealth_medicament_tag_rel', 
-                                           'tag_id', 
-                                           'medicament_id', 
-                                           'Medicaments'),
+        'code': fields.char(size=256, string='Code'),
+        'name': fields.char(size=256, string='Form', required=True,
+                            translate=True),
     }
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 
-oehealth_tag()
+clv_drug_form()

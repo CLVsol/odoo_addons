@@ -21,8 +21,8 @@ from osv import osv
 from osv import fields
 
 
-class oehealth_medicament_template(osv.Model):
-    _name = 'oehealth.medicament.template'
+class clv_medicament_template(osv.Model):
+    _name = 'clv_medicament.template'
     _description = "Medicament Template"
 
     def _compute_create_uid(self, cr, uid, ids, field_name, arg, context={}):
@@ -60,13 +60,13 @@ class oehealth_medicament_template(osv.Model):
     _columns = {
         'name': fields.char(string='Medicament Template Code', size=64, required=True,  
                             help='Medicament Template Code'),
-        'medicament': fields.many2one('oehealth.medicament',
+        'medicament': fields.many2one('clv_medicament',
                                       string='Medicament',
                                       required=True, 
                                       help='Prescribed Medicament'),
-        'form': fields.many2one('oehealth.drug.form', string='Form', 
+        'form': fields.many2one('clv_drug.form', string='Form', 
                                  help='Drug form, such as tablet or gel'),
-        'route': fields.many2one('oehealth.drug.route',
+        'route': fields.many2one('clv_drug.route',
                                  string='Administration Route', 
                                  help='Drug administration route code.'),
         'dose': fields.float(string='Dose', 
@@ -121,7 +121,7 @@ class oehealth_medicament_template(osv.Model):
         if context is None:
             context = {}
         if not 'name' in vals or vals['name'] == '/':
-            val = self.pool.get('ir.sequence').get(cr, uid, 'oehealth.medicament_tmpl.code')
+            val = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament_tmpl.code')
             code = map(int, str(val))
             code_len = len(code)
             while len(code) < 14:
@@ -149,6 +149,6 @@ class oehealth_medicament_template(osv.Model):
                 vals['name'] = code_str[15 - code_len:21]
             elif code_len > 12 and code_len <= 14:
                 vals['name'] = code_str[14 - code_len:21]
-        return super(oehealth_medicament_template, self).create(cr, uid, vals, context)
+        return super(clv_medicament_template, self).create(cr, uid, vals, context)
 
-oehealth_medicament_template()
+clv_medicament_template()

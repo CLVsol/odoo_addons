@@ -2,14 +2,14 @@
 <openerp>
     <data noupdate="1">
 
-        <record id="seq_type_oehealth_medicament" model="ir.sequence.type">
+        <record id="seq_type_clv_medicament" model="ir.sequence.type">
             <field name="name">Health Medicament Sequence</field>
-            <field name="code">oehealth.medicament.code</field>
+            <field name="code">clv_medicament.code</field>
         </record>
         
-        <record id="seq_oehealth_medicament" model="ir.sequence">
+        <record id="seq_clv_medicament" model="ir.sequence">
             <field name="name">Health Medicament Sequence</field>
-            <field name="code">oehealth.medicament.code</field>
+            <field name="code">clv_medicament.code</field>
             <field name="padding" eval="9"/>
             <field name="prefix">00000</field>
         </record>
