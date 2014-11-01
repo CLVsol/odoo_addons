@@ -17,17 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import product_product
-import clv_medicament
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-# import clv_medicament_manufacturer
-# import clv_medicament_therapeutic_class
-# import clv_medicament_active_component
-# import clv_drug_form
-# import clv_drug_route
-# import clv_medicament_template
+import clv_medicament_category

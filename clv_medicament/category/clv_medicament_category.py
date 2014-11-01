@@ -17,27 +17,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from osv import osv
-from osv import fields
-
+from openerp.osv import fields, osv
 
 class clv_medicament_category(osv.osv):
     _name = 'clv_medicament.category'
-    _description = 'Medicament Categories'
 
     def name_get(self, cr, uid, ids, context=None):
-        """Return the category's display name, including their direct
+        """Return the tag's display name, including their direct
            parent by default.
 
-        :param dict context: the ``medicament_category_display`` key can be
+        :param dict context: the ``category_display`` key can be
                              used to select the short version of the
-                             category (without the direct parent),
+                             tag (without the direct parent),
                              when set to ``'short'``. The default is
                              the long version."""
         if context is None:
             context = {}
-        if context.get('medicament_category_display') == 'short':
-            return super(clv_medicament_category, self).name_get(cr, uid, ids, context=context)
+        if context.get('category_display') == 'short':
+            return super(tag, self).name_get(cr, uid, ids, context=context)
         if isinstance(ids, (int, long)):
             ids = [ids]
         reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
@@ -61,35 +58,52 @@ class clv_medicament_category(osv.osv):
             ids = self.search(cr, uid, args, limit=limit, context=context)
         return self.name_get(cr, uid, ids, context)
 
-
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
 
     _columns = {
         'name': fields.char('Category', required=True, size=64, translate=True),
-        'parent_id': fields.many2one('clv_medicament.category', 'Parent Category', select=True, ondelete='cascade'),
-        'description': fields.text(string='Description'),
-        'info': fields.text(string='Info'),
-        'complete_name': fields.function(_name_get_fnc, type="char", string='Category'),
+        'parent_id': fields.many2one('clv_medicament.category', 'Parent Category', select=True, ondelete='restrict'),
+        'code': fields.char ('Category Code',size=128, required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes': fields.text(string='Notes'),
+        'complete_name': fields.function(_name_get_fnc, type="char", string='Full Category', store=False),
         'child_ids': fields.one2many('clv_medicament.category', 'parent_id', 'Child Categories'),
-        'active': fields.boolean('Active', help="The active field allows you to hide the category without removing it."),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the category without removing it."),
         'parent_left': fields.integer('Left parent', select=True),
         'parent_right': fields.integer('Right parent', select=True),
         'medicament_ids': fields.many2many('clv_medicament', 
-                                           'clv_medicament_category_rel', 
-                                           'category_id', 
-                                           'medicament_id', 
-                                           'Medicaments'),
-    }
+                                       'clv_medicament_category_rel', 
+                                       'category_id', 
+                                       'medicament_id', 
+                                       'medicaments'),
+        }
+
+    _sql_constraints = [
+        ('uniq_category_code', 'unique(code)', "Error! The Category Code must be unique!"),
+        ]
+
     _constraints = [
         (osv.osv._check_recursion, 'Error! You can not create recursive categories.', ['parent_id'])
-    ]
+        ]
+    
     _defaults = {
         'active': 1,
-    }
+        }
+    
     _parent_store = True
     _parent_order = 'name'
     _order = 'parent_left'
 
-clv_medicament_category()
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
+
+    _columns = {
+        'category_ids': fields.many2many('clv_medicament.category', 
+                                         'clv_medicament_category_rel', 
+                                         'medicament_id', 
+                                         'category_id', 
+                                         'Categories'),
+        }

@@ -17,13 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import orm, fields
-
-class clv_annotation(orm.Model):
-    _inherit = 'clv_annotation'
-
-    _columns = {
-        'medicament_id' : fields.many2one ('clv_medicament', 'Medicament'),
-    }
-
-clv_annotation()
+import clv_tag

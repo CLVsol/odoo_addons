@@ -25,5 +25,3 @@ class product_template_medicament (osv.osv):
     _columns = {
         'is_medicament' : fields.boolean('Is Medicament', help="Check if the product is a medicament"),
     }
-
-product_template_medicament()

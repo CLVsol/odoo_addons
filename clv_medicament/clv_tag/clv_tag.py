@@ -17,17 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import product_product
-import clv_medicament
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-# import clv_medicament_manufacturer
-# import clv_medicament_therapeutic_class
-# import clv_medicament_active_component
-# import clv_drug_form
-# import clv_drug_route
-# import clv_medicament_template
+from openerp.osv import fields, osv
+
+class clv_tag(osv.osv):
+    _inherit = 'clv_tag'
+
+    _columns = {
+        'medicament_ids': fields.many2many('clv_medicament', 
+                                           'clv_medicament_clv_tag_rel', 
+                                           'tag_id', 
+                                           'medicament_id', 
+                                           'Medicaments'),
+        }
+
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_medicament_clv_tag_rel', 
+                                    'medicament_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }

@@ -5,165 +5,117 @@
         <record id="view_clv_medicament_tree" model="ir.ui.view">
             <field name="name">clv_medicament.tree</field>
             <field name="model">clv_medicament</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament">
-                    <field name="name" />
-                    <field name="medicament_code" />
-                    <field name="medicament_name" />
-                    <field name="active_component" />
-                    <field name="presentation" />
-                    <field name="therapeutic_class" />
-                    <field name="manufacturer" />
-                    <field name="ean13" />
-                    <field name="state" />
-                    <field name="medicament_category" />
-                    <field name="medicament_tag_ids" />
-                    <field name="medicament_status" />
-                    <field name="medicament_notes" colspan="4"/>
-                </tree>
+                    <field name="name"/>
+                    <field name="medicament_name"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+
+<!--                     <field name="active_component"/>
+                    <field name="presentation"/>
+                    <field name="therapeutic_class"/>
+                    <field name="manufacturer"/>
+                    <field name="ean13"/>
+                    <field name="state"/>
+                    <field name="medicament_category"/>
+                    <field name="medicament_tag_ids"/>
+                    <field name="medicament_status"/>
+ -->                </tree>
             </field>
         </record>
         
         <record id="view_clv_medicament_form" model="ir.ui.view">
             <field name="name">clv_medicament.form</field>
             <field name="model">clv_medicament</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Medicaments" version="7.0">
-                    <header>
-                        <button name="clv_medicament_revised" string="Revised" states="new,okay" type="workflow" groups="clv_base.group_clv_medicament_manager"/>
-                        <button name="clv_medicament_waiting" string="Waiting" states="new,revised" type="workflow" groups="clv_base.group_clv_medicament_manager"/>
-                        <button name="clv_medicament_okay" string="Okay" states="new,revised,waiting" type="workflow" groups="clv_base.group_clv_medicament_manager"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,revised,waiting,okay"
-                        statusbar_colors='{"new":"blue","revised":"blue","waiting":"blue","okay":"blue"}' />
-                    </header>
-                    <sheet>
-                        <div string="Medicament" class="oe_title">
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="product_id"/>
-                            </div>
-                            <h2>
+                    <sheet string="Medicament">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="product_id"/>
+                            <h1>
                                 <field name="product_id" default_focus="1" placeholder="Product Name..."/>
-                            </h2>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="medicament_code"/>
-                            </div>
-                            <h3>
-                                <field name="medicament_code" placeholder="Code..."/>
-                            </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="ean13"/>
-                            </div>
-                            <h3>
-                                <field name="ean13" placeholder="EAN13 Code..."/>
-                            </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="medicament_name"/>
-                            </div>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="medicament_name" class="oe_edit_only"/-->
+                            <label for="medicament_name"/>
                             <h2>
                                 <field name="medicament_name" placeholder="Name..."/>
                             </h2>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="active_component"/>
-                            </div>
-                            <h2>
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h3>
+                                <field name="code" placeholder="Medicament Code..."/>
+                            </h3>
+                            <!--label for="ean13" class="oe_edit_only"/-->
+                            <label for="ean13"/>
+                            <h3>
+                                <field name="ean13" placeholder="EAN13 Code..."/>
+                            </h3>
+                            <!--label for="active_component" class="oe_edit_only"/-->
+<!--                             <label for="active_component"/>
+                            <h3>
                                 <field name="active_component" placeholder="Active Component..."/>
-                            </h2>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="concentration"/>
-                            </div>
+                            </h3>
+ -->                            <!--label for="concentration" class="oe_edit_only"/-->
+                            <label for="concentration"/>
                             <h3>
                                 <field name="concentration" placeholder="Concentration..."/>
                             </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="pres2"/>
-                            </div>
+                            <!--label for="pres2" class="oe_edit_only"/-->
+                            <label for="pres2"/>
                             <h3>
                                 <field name="pres2" placeholder="Presentation Quantity..."/>
                             </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="pres3"/>
-                            </div>
+                            <!--label for="pres3" class="oe_edit_only"/-->
+                            <label for="pres3"/>
                             <h3>
                                 <field name="pres3" placeholder="Presentation Form..."/>
                             </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="presentation"/>
-                            </div>
+                            <!--label for="presentation" class="oe_edit_only"/-->
+                            <label for="presentation"/>
                             <h3>
-                                <field name="presentation" placeholder="Presentention..."/>
+                                <field name="presentation" placeholder="Presentation..."/>
                             </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="therapeutic_class"/>
-                            </div>
+                            <!--label for="therapeutic_class" class="oe_edit_only"/-->
+<!--                             <label for="therapeutic_class"/>
                             <h3>
                                 <field name="therapeutic_class" placeholder="Therapeutic Class..."/>
                             </h3>
-                            <!--div class="oe_edit_only"-->
-                            <div>
-                                <label for="manufacturer"/>
-                            </div>
+ -->                            <!--label for="manufacturer" class="oe_edit_only"/-->
+<!--                             <label for="manufacturer"/>
                             <h3>
                                 <field name="manufacturer" placeholder="Manufacturer..."/>
                             </h3>
-                            <div class="oe_edit_only">
-                                <label for="medicament_category"/>
-                            </div>
-                            <h3>
-                                <field name="medicament_category" placeholder="Medicament Category..."/>
-                            </h3>
-                            <div class="oe_edit_only">
-                                <label for="medicament_tag_ids"/>
-                            </div>
-                            <h3>
-                                <field name="medicament_tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_clv_suser"/>
-                            </h3>
+ -->                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Information">
-                                <group string="Status">
-                                    <field name="medicament_status" />
-                                    <field name="date_medicament_inclusion" />
-                                    <field name="date_medicament_activation" />
-                                    <field name="date_medicament_inactivation" />
-                                    <field name="date_medicament_suspension" />
-                                </group>
-                                <group string="Information" />
-                                <div class="oe_edit_only">
-                                    <label for="medicament_notes"/>
-                                </div>
-                                <field name="medicament_notes" colspan="4" nolabel="1"/>
-                                <group groups="clv_base.group_clv_rmanager">
-                                    <group string="Creation" >
-                                        <field name="create_uid" string="User" />
-                                        <field name="create_date" string="Date" />
-                                    </group>
-                                    <group string="Last Update" >
-                                        <field name="write_uid" string="User" />
-                                        <field name="write_date" string="Date"/>
-                                    </group>
-                                </group>
-                            </page>
-                            <page string="Annotations" groups="clv_base.group_clv_suser">
+                            <page string="Public Information">
                                 <group>
-                                    <field name="medicament_annotation_ids" colspan="4" nolabel="1" />
+<!--                                     <group string="Contact Information">
+                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                                        <field name="medicament_email" widget="email"/>
+                                        <field name="medicament_phone"/>
+                                        <field name="mobile_phone"/>
+                                    </group>
+ -->                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
                                 </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
-                            <page string="Settings" groups="clv_base.group_clv_manager">
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
                                     <field name="active"/>
-                                    <field name="is_medicament" />
+                                    <field name="is_medicament"/>
                                 </group>
                             </page>
                         </notebook>
@@ -175,29 +127,29 @@
         <record id="view_clv_medicament_search" model="ir.ui.view">
             <field name="name">clv_medicament.search</field>
             <field name="model">clv_medicament</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament">
-                    <field name="name" />
-                    <field name="active_component" />
-                    <field name="therapeutic_class" />
-                    <field name="manufacturer" />
-                    <field name="medicament_code" />
-                    <field name="ean13" />
-                    <field name="medicament_name" />
-                    <field name="medicament_category" />
-                    <field name="medicament_tag_ids" />
-                    <field name="medicament_status" />
-                    <field name="medicament_notes" />
-                    <newline />
+                    <field name="name"/>
+                    <field name="medicament_name"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+
+<!--                     <field name="active_component"/>
+                    <field name="therapeutic_class"/>
+                    <field name="manufacturer"/>
+                    <field name="ean13"/>
+                    <field name="medicament_category"/>
+                    <field name="medicament_tag_ids"/>
+ -->                    <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Stage" domain="[]" context="{'group_by': 'state'}"/>
-                        <filter string="Medicament Status" domain="[]" context="{'group_by':'medicament_status'}" />
-                        <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}" />
-                        <filter string="Medicament Category" domain="[]" context="{'group_by':'medicament_category'}" />
-                        <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}" />
-                        <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}" />
-                    </group>
+                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+
+<!--                         <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
+                        <filter string="Medicament Category" domain="[]" context="{'group_by':'medicament_category'}"/>
+                        <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}"/>
+                        <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}"/>
+ -->                    </group>
                 </search>
             </field>
         </record>
@@ -208,38 +160,29 @@
             <field name="res_model">clv_medicament</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_medicament_search" />
+            <field name="search_view_id" ref="view_clv_medicament_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new medicament.
+              </p>
+            </field>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_medicament_view_form">
-            <field name="act_window_id" ref="act_open_clv_medicament_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_medicament_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_medicament_form" />
+            <field name="view_id" ref="view_clv_medicament_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_medicament_view_tree">
-            <field name="act_window_id" ref="act_open_clv_medicament_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_medicament_view"/>
+            <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_medicament_tree" />
+            <field name="view_id" ref="view_clv_medicament_tree"/>
         </record>
         
-        <!--menuitem name="Medicaments" id="menu_health_medication_medicament_medicaments" 
-            parent="clv_base.menu_health_medication_medicament"
-            sequence="10"/-->
-            
-        <menuitem name="Medicaments" id="menu_health_config_medication_medicaments" 
-            parent="clv_base.menu_health_config_medication"
-            sequence="10"/>
-            
-        <menuitem name="Medicaments" id="menu_health_medication_medicament_medicaments"
-            parent="clv_base.menu_health_medication_medicament"
-            groups="clv_base.group_clv_medicament_user"
-            sequence="10"
-            action="act_open_clv_medicament_view" />
-
     </data>
 </openerp>
