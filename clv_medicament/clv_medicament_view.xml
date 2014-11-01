@@ -9,12 +9,11 @@
             <field name="arch" type="xml">
                 <tree string="Medicament">
                     <field name="name"/>
-                    <field name="medicament_name"/>
+                    <!--field name="medicament_name"/-->
                     <field name="code"/>
                     <field name="notes"/>
 
-<!--                     <field name="active_component"/>
-                    <field name="presentation"/>
+<!--                     <field name="presentation"/>
                     <field name="therapeutic_class"/>
                     <field name="manufacturer"/>
                     <field name="ean13"/>
@@ -58,25 +57,20 @@
                             <h3>
                                 <field name="ean13" placeholder="EAN13 Code..."/>
                             </h3>
-                            <!--label for="active_component" class="oe_edit_only"/-->
-<!--                             <label for="active_component"/>
-                            <h3>
-                                <field name="active_component" placeholder="Active Component..."/>
-                            </h3>
- -->                            <!--label for="concentration" class="oe_edit_only"/-->
+                            <!--label for="concentration" class="oe_edit_only"/-->
                             <label for="concentration"/>
                             <h3>
                                 <field name="concentration" placeholder="Concentration..."/>
                             </h3>
-                            <!--label for="pres2" class="oe_edit_only"/-->
-                            <label for="pres2"/>
+                            <!--label for="pres_quantity" class="oe_edit_only"/-->
+                            <label for="pres_quantity"/>
                             <h3>
-                                <field name="pres2" placeholder="Presentation Quantity..."/>
+                                <field name="pres_quantity" placeholder="Presentation Quantity..."/>
                             </h3>
-                            <!--label for="pres3" class="oe_edit_only"/-->
-                            <label for="pres3"/>
+                            <!--label for="pres_form" class="oe_edit_only"/-->
+                            <label for="pres_form"/>
                             <h3>
-                                <field name="pres3" placeholder="Presentation Form..."/>
+                                <field name="pres_form" placeholder="Presentation Form..."/>
                             </h3>
                             <!--label for="presentation" class="oe_edit_only"/-->
                             <label for="presentation"/>
@@ -135,8 +129,7 @@
                     <field name="code"/>
                     <field name="notes"/>
 
-<!--                     <field name="active_component"/>
-                    <field name="therapeutic_class"/>
+<!--                     <field name="therapeutic_class"/>
                     <field name="manufacturer"/>
                     <field name="ean13"/>
                     <field name="medicament_category"/>

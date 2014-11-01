@@ -2,38 +2,25 @@
 <openerp>
     <data>
 
-        <record id="view_clv_medicament_category_form" model="ir.ui.view">
-            <field name="name">Medicament Category</field>
-            <field name="model">clv_medicament.category</field>
+        <record id="view_clv_medicament_active_component_form" model="ir.ui.view">
+            <field name="name">Active Component</field>
+            <field name="model">clv_medicament.active_component</field>
             <field name="arch" type="xml">
-                <form string="Medicament Categories" version="7.0">
+                <form string="Active Components" version="7.0">
                     <sheet>
                         <div class="oe_title">
-                            <label for="parent_id" class="oe_edit_only"/>
-                            <h2>
-                                <field name="parent_id" placeholder="Parent Category..."/>
-                            </h2>
                             <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Medicament Category..."/>
+                                <field name="name" default_focus="1" placeholder="Active Component..."/>
                             </h1>
                             <label for="code" class="oe_edit_only"/>
                             <h2>
                                 <field name="code" placeholder="Category Code..."/>
                             </h2>
-                            <label for="description" class="oe_edit_only"/>
-                            <h3>
-                                <field name="description" placeholder="Description..."/>
-                            </h3>
                         </div>
                         <notebook>
                             <page string="Information">
-                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
-                            </page>
-                            <page string="Child Categories">
-                                <group>
-                                    <field name="child_ids" colspan="4" nolabel="1"/>
-                                </group>
+                                <field name="info" placeholder="Other Information ..." colspan="4"/>
                             </page>
                             <page string="Medicaments">
                                 <group>
@@ -51,105 +38,104 @@
             </field>
         </record>
         
-        <record id="view_clv_medicament_category_tree" model="ir.ui.view">
-            <field name="name">clv_medicament.category.tree</field>
-            <field name="model">clv_medicament.category</field>
+        <record id="view_clv_medicament_active_component_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.tree</field>
+            <field name="model">clv_medicament.active_component</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Medicament Categories">
-                    <field name="complete_name"/>
+                <tree string="Active Components">
+                    <field name="name"/>
                     <field name="code"/>
-                    <field name="description"/>
-                    <field name="notes"/>
+                    <field name="info"/>
                 </tree>
             </field>
         </record>
         
-        <record id="view_clv_medicament_category_search" model="ir.ui.view">
-            <field name="name">clv_medicament.category.search</field>
-            <field name="model">clv_medicament.category</field>
+        <record id="view_clv_medicament_active_component_search" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.search</field>
+            <field name="model">clv_medicament.active_component</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Medicament Category">
+                <search string="Active Component">
                     <field name="name"/>
-                    <field name="parent_id"/>
                     <field name="code"/>
-                    <field name="description"/>
-                    <field name="notes"/>
+                    <field name="info"/>
                     <separator/>
-                    <filter string="Inactive Categories" name="active" domain="[('active','=',0)]" help="Inactive Categories"/>
+                    <filter string="Inactive Active Components" name="active" domain="[('active','=',0)]" help="Inactive Active Components"/>
                     <group expand="0" string="Group By...">
-                        <filter string="Parent Category" domain="[]" context="{'group_by':'parent_id'}"/>
+                        <!--filter string="Parent Category" domain="[]" context="{'group_by':'parent_id'}"/-->
                     </group>
                 </search>
             </field>
         </record>
-        <record model="ir.actions.act_window" id="act_open_clv_medicament_category_view">
-            <field name="name">Medicament Categories</field>
+
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_active_component_view">
+            <field name="name">Active Components</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_medicament.category</field>
+            <field name="res_model">clv_medicament.active_component</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_medicament_category_search"/>
+            <field name="search_view_id" ref="view_clv_medicament_active_component_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="view_id" eval="False"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new medicament category.
+                Click to add a new medicament active_component.
               </p>
             </field>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_category_view_form">
-            <field name="act_window_id" ref="act_open_clv_medicament_category_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_active_component_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_active_component_view"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_medicament_category_form"/>
+            <field name="view_id" ref="view_clv_medicament_active_component_form"/>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_category_view_tree">
-            <field name="act_window_id" ref="act_open_clv_medicament_category_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_active_component_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_active_component_view"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_medicament_category_tree"/>
+            <field name="view_id" ref="view_clv_medicament_active_component_tree"/>
         </record>
         
-        <record id="view_clv_medicament_tree_category" model="ir.ui.view">
+        <record id="view_clv_medicament_tree_active_component" model="ir.ui.view">
             <field name="name">clv_medicament.tree</field>
             <field name="model">clv_medicament</field>
             <field name="inherit_id" ref="view_clv_medicament_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="code" position="after">
-                    <field name="category_ids"/>
+                <field name="code" position="before">
+                    <field name="active_component"/>
                 </field>
             </field>
         </record>
 
-        <record id="view_clv_medicament_form_category" model="ir.ui.view">
+        <record id="view_clv_medicament_form_active_component" model="ir.ui.view">
             <field name="name">clv_medicament.form</field>
             <field name="model">clv_medicament</field>
             <field name="inherit_id" ref="view_clv_medicament_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <label for="product_id" position="before">
-                    <label for="category_ids" class="oe_edit_only"/>
+                <label for="concentration" position="before">
+                    <!--label for="active_component" class="oe_edit_only"/-->
+                    <label for="active_component"/>
                     <h2>
-                        <field name="category_ids" widget="many2many_tags" placeholder="Categories..."/>
+                        <field name="active_component" placeholder="Active Component..."/>
                     </h2>
                 </label>
             </field>
         </record>
 
-        <record id="view_clv_medicament_search_category" model="ir.ui.view">
+        <record id="view_clv_medicament_search_active_component" model="ir.ui.view">
             <field name="name">clv_medicament.search</field>
             <field name="model">clv_medicament</field>
             <field name="inherit_id" ref="view_clv_medicament_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="code" position="after">
-                    <field name="category_ids"/>
+                    <field name="active_component"/>
                 </field>
             </field>
         </record>

@@ -25,9 +25,9 @@ import clv_annotation
 import seq
 import wkf
 import history
+import active_component
 # import clv_medicament_manufacturer
 # import clv_medicament_therapeutic_class
-# import clv_medicament_active_component
 # import clv_drug_form
 # import clv_drug_route
 # import clv_medicament_template

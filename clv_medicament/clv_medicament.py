@@ -26,55 +26,20 @@ class clv_medicament(osv.osv):
         'product.product': 'product_id',
         }
 
-    # # def name_get(self, cr, uid, ids, context={}):
-    # #     if not len(ids):
-    # #         return []
-    # #     reads = self.read(cr, uid, ids, ['name_active_component'], context=context)
-    # #     res = []
-    # #     for record in reads:
-    # #         name = record['name_active_component']
-    # #         res.append((record['id'], name))
-    # #     return res
-    
-    # # def name_active_component_get(self, cr, uid, ids, context=None):
-    # #     if context is None:
-    # #         context = {}
-    # #     if isinstance(ids, (int, long)):
-    # #         ids = [ids]
-    # #     reads = self.read(cr, uid, ids, ['name', 'active_component_name'], context=context)
-    # #     res = []
-    # #     for record in reads:
-    # #         name = record['name']
-    # #         if record['active_component_name']:
-    # #             name = name + ' (' + record['active_component_name'] + ')'
-    # #         res.append((record['id'], name))
-    # #     return res
-
-    # def _name_active_component_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-    #     res = self.name_active_component_get(cr, uid, ids, context=context)
-    #     return dict(res)
-
     _columns = {
         'product_id': fields.many2one('product.product', 'Product', required=True,
                                       ondelete='cascade', help='Product-related data of the medicament'),
         #we need a related field in order to be able to sort the medicament by name
         'name_product': fields.related('product_id', 'name', type='char', string='Related Product', 
                                        readonly=True, store=True),
-        # 'medicament_category': fields.many2one('clv_medicament.category',
-        #                                        'Medicament Category',select=True),
         'code': fields.char(size=64, string='Medicament Code', required=False),
         'medicament_name': fields.char(size=256, string='Name'),
-        # 'active_component': fields.many2one('clv_medicament.active_component', string='Active Component', 
-        #                                      help='Medicament Active Component'),
-        # 'active_component_name': fields.related('active_component', 'name', type='char', string='Related Active Component', 
-        #                                         readonly=True, store=True),
         'concentration': fields.char(size=256, string='Concentration'),
         'presentation': fields.char(size=256, string='Presentation'),
-        'pres2': fields.integer(string='Presentation Quantity'),
-        'pres3': fields.char(size=256, string='Presentation Form'),
+        'pres_quantity': fields.integer(string='Presentation Quantity'),
+        'pres_form': fields.char(size=256, string='Presentation Form'),
         'composition': fields.text(string='Composition', help='Components'),
-        # 'name_active_component': fields.function(_name_active_component_get_fnc, type="char", string='Name (Active Component)'),
-        'indications': fields.text(string='Indication', help='Indications'),
+        # 'indications': fields.text(string='Indication', help='Indications'),
         # 'therapeutic_action': fields.char(size=256,
         #                                   string='Therapeutic effect', 
         #                                   help='Therapeutic action'),
@@ -144,10 +109,6 @@ class clv_medicament(osv.osv):
         #                                        ('I', 'Inactivated'),
         #                                        ('S', 'Suspended'),
         #                                        ], string='Medicament Status', select=True, sort=False),
-        # 'state': fields.selection([('new','New'),
-        #                            ('revised','Revised'),
-        #                            ('waiting','Waiting'),
-        #                            ('okay','Okay')], 'Stage', readonly=True),
         # 'therapeutic_class': fields.many2one('clv_medicament.therapeutic_class', string='Therapeutic Class', 
         #                                      help='Medicament Therapeutic Class'),
         # 'manufacturer': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
@@ -159,11 +120,8 @@ class clv_medicament(osv.osv):
     _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!')]
 
     _defaults = {
-        # 'medicament_code': '/',
         'active': 1,
         'is_medicament': True,
-        # 'medicament_status': 'U',
-        # 'state': 'new',
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
     
