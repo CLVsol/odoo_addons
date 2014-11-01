@@ -23,20 +23,20 @@ class clv_tag(osv.osv):
     _inherit = 'clv_tag'
 
     _columns = {
-        'person_ids': fields.many2many('clv_person', 
-                                       'clv_person_clv_tag_rel', 
-                                       'tag_id', 
-                                       'person_id', 
-                                       'Persons'),
+        'medicament_ids': fields.many2many('clv_medicament', 
+                                           'clv_medicament_clv_tag_rel', 
+                                           'tag_id', 
+                                           'medicament_id', 
+                                           'Medicaments'),
         }
 
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
 
     _columns = {
         'tag_ids': fields.many2many('clv_tag', 
-                                    'clv_person_clv_tag_rel', 
-                                    'person_id', 
+                                    'clv_medicament_clv_tag_rel', 
+                                    'medicament_id', 
                                     'tag_id', 
                                     'Tags'),
         }

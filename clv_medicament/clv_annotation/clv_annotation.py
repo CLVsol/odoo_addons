@@ -19,24 +19,24 @@
 
 from openerp.osv import fields, osv
 
-class clv_tag(osv.osv):
-    _inherit = 'clv_tag'
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
 
     _columns = {
-        'person_ids': fields.many2many('clv_person', 
-                                       'clv_person_clv_tag_rel', 
-                                       'tag_id', 
-                                       'person_id', 
-                                       'Persons'),
+        'annotation_ids': fields.many2many('clv_annotation', 
+                                           'clv_medicament_annotation_rel', 
+                                           'medicament_id', 
+                                           'annotation_id', 
+                                           'Annotations')
         }
 
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
+class clv_annotation(osv.osv):
+    _inherit = 'clv_annotation'
 
     _columns = {
-        'tag_ids': fields.many2many('clv_tag', 
-                                    'clv_person_clv_tag_rel', 
-                                    'person_id', 
-                                    'tag_id', 
-                                    'Tags'),
+        'medicament_ids': fields.many2many('clv_medicament', 
+                                           'clv_medicament_annotation_rel', 
+                                           'annotation_id', 
+                                           'medicament_id', 
+                                           'Medicaments')
         }

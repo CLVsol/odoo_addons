@@ -17,26 +17,23 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
+from osv import osv
+from osv import fields
 
-class clv_tag(osv.osv):
-    _inherit = 'clv_tag'
 
-    _columns = {
-        'person_ids': fields.many2many('clv_person', 
-                                       'clv_person_clv_tag_rel', 
-                                       'tag_id', 
-                                       'person_id', 
-                                       'Persons'),
-        }
-
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
+class clv_medicament_manufacturer(osv.osv):
+    _name = 'clv_medicament.manufacturer'
+    _description = 'Medicament Manufacturer'
 
     _columns = {
-        'tag_ids': fields.many2many('clv_tag', 
-                                    'clv_person_clv_tag_rel', 
-                                    'person_id', 
-                                    'tag_id', 
-                                    'Tags'),
-        }
+        'name': fields.char(size=256, string='Manufacturer', required=True),
+        'code': fields.char(size=256, string='Code'),
+        'info': fields.text(string='Info'),
+        'active': fields.boolean('Active', help="The active field allows you to hide the manufacturer without removing it."),
+    }
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
+    ]
+
+clv_medicament_manufacturer()
