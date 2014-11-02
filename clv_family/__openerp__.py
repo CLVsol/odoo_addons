@@ -17,9 +17,45 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_person
-#import clv_family
-import clv_patient
-import clv_medicament
+{
+    'name': 'Family',
+    'version': '1.0',
+    'author': 'Carlos Eduardo Vercelino - CLVsol',
+    'category': 'Generic Modules/Others',
+    'license': 'AGPL-3',
+    'website': 'http://clvsol.com',
+    'description': '''
+Family
+======
+    ''',
+    'images': [],
+    'depends': [
+        'clv_base',
+        'clv_tag',
+        'clv_annotation',
+        'clv_person',
+        ],
+    'data': [
+        'security/clv_family_security.xml',
+        #'security/ir.model.access.csv',
+        'clv_family_view.xml',
+        'category/clv_family_category_view.xml',
+        'clv_tag/clv_tag_view.xml',
+        'clv_annotation/clv_annotation_view.xml',
+        'seq/clv_family_sequence.xml',
+        'seq/clv_family_category_sequence.xml',
+        'wkf/clv_family_workflow.xml',
+        'wkf/clv_family_wkf_view.xml',
+        'history/clv_family_history_view.xml',
+        'member/clv_family_member_view.xml',
+        'member/clv_family_member_role_view.xml',
+        ],
+    'demo': [],
+    'test': [],
+    'init_xml': [],
+    'test': [],
+    'update_xml': [],
+    'installable': True,
+    'active': False,
+    'css': [],
+}

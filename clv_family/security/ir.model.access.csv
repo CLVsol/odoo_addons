@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clv_family_family_user,clv_family,model_clv_family,clv_base.group_family_user,1,0,0,0
+access_clv_family_family_manager,clv_family,model_clv_family,clv_base.group_family_manager,1,1,1,0
+access_clv_family_base_smanager,clv_family,model_clv_family,clv_base.group_base_smanager,1,1,1,1
+access_clv_family_category_family_user,clv_family.category,model_clv_family_category,clv_base.group_family_user,1,0,0,0
+access_clv_family_category_family_manager,clv_family.category,model_clv_family_category,clv_base.group_family_manager,1,1,1,0
+access_clv_family_category_base_smanager,clv_family.category,model_clv_family_category,clv_base.group_base_smanager,1,1,1,1
+access_clv_family_member_family_user,clv_family.member,model_clv_family_member,clv_base.group_family_user,1,0,0,0
+access_clv_family_member_family_manager,clv_family.member,model_clv_family_member,clv_base.group_family_manager,1,1,1,0
+access_clv_family_member_base_smanager,clv_family.member,model_clv_family_member,clv_base.group_base_smanager,1,1,1,1
+access_clv_family_member_role_family_user,clv_family.member.role,model_clv_family_member_role,clv_base.group_family_user,1,0,0,0
+access_clv_family_member_role_family_manager,clv_family.member.role,model_clv_family_member_role,clv_base.group_family_manager,1,1,1,0
+access_clv_family_member_role_base_smanager,clv_family.member.role,model_clv_family_member_role,clv_base.group_base_smanager,1,1,1,1

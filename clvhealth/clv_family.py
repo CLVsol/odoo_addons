@@ -17,9 +17,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_person
-#import clv_family
-import clv_patient
-import clv_medicament
+from openerp.osv import fields, osv
+
+class clv_family(osv.osv):
+    _inherit = 'clv_family'
+
+    _defaults = {
+        'active_history': True, 
+        }

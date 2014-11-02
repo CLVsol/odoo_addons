@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_family.seq_type_clv_family" model="ir.sequence.type">
+            <field name="name">Family Sequence</field>
+            <field name="code">clv_family.code</field>
+        </record>
+        
+        <record id="clv_family.seq_clv_family" model="ir.sequence">
+            <field name="name">Family Sequence</field>
+            <field name="code">clv_family.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>
