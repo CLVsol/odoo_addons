@@ -17,9 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_person
-#import clv_family
-import clv_patient
-import clv_medicament
+from openerp.osv import fields, osv
+
+class clv_family(osv.osv):
+    _inherit = 'clv_family'
+
+    _columns = {
+        'annotation_ids': fields.many2many('clv_annotation', 
+                                           'clv_family_annotation_rel', 
+                                           'family_id', 
+                                           'annotation_id', 
+                                           'Annotations')
+        }
+
+class clv_annotation(osv.osv):
+    _inherit = 'clv_annotation'
+
+    _columns = {
+        'family_ids': fields.many2many('clv_family', 
+                                       'clv_family_annotation_rel', 
+                                       'annotation_id', 
+                                       'family_id', 
+                                       'Families')
+        }

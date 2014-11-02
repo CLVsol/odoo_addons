@@ -17,9 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_person
-#import clv_family
-import clv_patient
-import clv_medicament
+from openerp.osv import fields, osv
+
+class clv_family_member(osv.osv):
+    _name = 'clv_family.member'
+
+    _columns = {
+        'family_id': fields.many2one('clv_family', string='Family',
+                                        help='Family', required=False),
+        'person_id': fields.many2one('clv_person', string='Person'),
+        'role': fields.many2one('clv_family.member.role', 'Role', required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the member without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+class clv_family(osv.osv):
+    _inherit = 'clv_family'
+
+    _columns = {
+        'member_ids': fields.one2many('clv_family.member',
+                                      'family_id',
+                                      'Members'),
+    }
+
+class clv_person(osv.osv):
+    _inherit = 'clv_person'
+
+    _columns = {
+        'family_ids': fields.one2many('clv_family.member',
+                                      'person_id',
+                                      'Families'),
+        }
+
