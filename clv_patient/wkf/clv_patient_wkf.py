@@ -44,17 +44,17 @@ class clv_patient(osv.osv):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
                                   'state': 'new'})
 
-    def button_active(self, cr, uid, ids):
+    def button_activate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'active'})
 
-    def button_inactive(self, cr, uid, ids):
+    def button_inactivate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
                                   'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'inactive'})
 
-    def button_suspended(self, cr, uid, ids):
+    def button_suspend(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
                                   'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'suspended'})
