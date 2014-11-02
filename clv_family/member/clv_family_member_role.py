@@ -17,11 +17,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_family
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import member
+from openerp.osv import fields, osv
+
+class clv_family_member_role(osv.osv):
+    _name = 'clv_family.member.role'
+
+    _columns = {
+        'name': fields.char(size=256, 
+                            string='Family Member Role', required=True, 
+                            help='Role of a Member in an Family'),
+        'description': fields.text(string='Description'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the role without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }

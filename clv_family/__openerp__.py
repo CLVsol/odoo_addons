@@ -33,6 +33,7 @@ Family
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_person',
         ],
     'data': [
         'security/clv_family_security.xml',
@@ -46,6 +47,8 @@ Family
         'wkf/clv_family_workflow.xml',
         'wkf/clv_family_wkf_view.xml',
         'history/clv_family_history_view.xml',
+        'member/clv_family_member_view.xml',
+        'member/clv_family_member_role_view.xml',
         ],
     'demo': [],
     'test': [],
