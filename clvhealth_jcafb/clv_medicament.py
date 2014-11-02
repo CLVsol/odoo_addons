@@ -19,8 +19,8 @@
 
 from openerp.osv import fields, osv
 
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
 
     _defaults = {
         'active_history': True, 

@@ -35,6 +35,7 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         'clv_patient',
         # 'clv_lab_test',
         'clv_survey',
+        'clv_medicament',
         ],
     'data': [
         'clvhealth_jcafb_view.xml',
@@ -45,6 +46,8 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         'clv_person_category_sequence.xml',
         'clv_patient_sequence.xml',
         'clv_patient_category_sequence.xml',
+        'clv_medicament_sequence.xml',
+        'clv_medicament_category_sequence.xml',
         # 'survey_jcafb_data.xml',
         ],
     'test': [],

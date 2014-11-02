@@ -17,9 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp.osv import fields, osv
 
-class clv_patient(models.Model):
+class clv_patient(osv.osv):
     _inherit = 'clv_patient'
 
     _defaults = {

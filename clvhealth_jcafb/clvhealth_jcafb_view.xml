@@ -38,7 +38,7 @@
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
             groups="clv_base.group_base_user"
-            sequence="13"/>
+            sequence="12"/>
             <!-- Community/Community -->
             <menuitem name="Community" id="menu_commutity_community"  
                 parent="menu_commutity"
@@ -65,7 +65,7 @@
         <!-- Health -->
         <menuitem name="Health" id="menu_health" 
             groups="clv_base.group_base_user"
-            sequence="14"/>
+            sequence="13"/>
             <!-- Health/Health -->
             <menuitem name="Health" id="menu_health_health"  
                 parent="menu_health"
@@ -144,7 +144,7 @@
        <!-- Surveys -->
         <menuitem name="Surveys" id="menu_surveys" 
             groups="clv_base.group_base_user"
-            sequence="15"/>
+            sequence="14"/>
             <!-- Surveys/Surveys -->
             <menuitem name="Surveys" id="menu_surveys_surveys"  
                 parent="menu_surveys"
@@ -203,6 +203,49 @@
                     groups="clv_base.group_base_user"
                     sequence="40"
                     action="clv_survey.action_browse_survey_response"/>
+
+        <!-- Pharmacy -->
+        <menuitem name="Pharmacy" id="menu_pharmacy" 
+            groups="clv_base.group_base_user"
+            sequence="15"/>
+            <!-- Pharmacy/Pharmacy -->
+            <menuitem name="Pharmacy" id="menu_pharmacy_pharmacy"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_user"
+                sequence="10" />
+            <!-- Pharmacy/Medicament -->
+            <menuitem name="Medicament" id="menu_pharmacy_medicament"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_user"
+                sequence="20"/>
+                <!-- Pharmacy/Medicament/Medicaments -->
+                <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_patient_user"
+                    sequence="10"
+                    action="clv_medicament.act_open_clv_medicament_view"/>
+            <!-- Pharmacy/Configuration -->
+            <menuitem name="Configuration" id="menu_pharmacy_config"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_manager"
+                sequence="90" />
+                <!-- Pharmacy/Configuration/Medicament -->
+                <menuitem name="Medicament" id="menu_pharmacy_config_medicament"  
+                    parent="menu_pharmacy_config"
+                    groups="clv_base.group_base_user"
+                    sequence="20"/>
+                    <!-- Pharmacy/Configuration/Medicament/Categories -->
+                    <menuitem name="Categories" id="menu_pharmacy_config_medicament_categories"
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_medicament.act_open_clv_medicament_category_view"/>
+                    <!-- Pharmacy/Configuration/Medicament/Active Components -->
+                    <menuitem name="Active Components" id="menu_pharmacy_config_medicament_active_components"
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="20"
+                        action="clv_medicament.act_open_clv_medicament_active_component_view"/>
 
     </data>
 </openerp>
