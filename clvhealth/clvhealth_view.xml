@@ -51,12 +51,12 @@
                     sequence="10"
                     action="clv_community.act_open_clv_community_view"/>
  -->                <!-- Community/Community/Families -->
-<!--                 <menuitem name="Families" id="menu_commutity_community_families"
+                <menuitem name="Families" id="menu_commutity_community_families"
                     parent="menu_commutity_community"
                     groups="clv_base.group_family_user"
                     sequence="20"
                     action="clv_family.act_open_clv_family_view"/>
- -->                <!-- Community/Community/Persons -->
+                <!-- Community/Community/Persons -->
                 <menuitem name="Persons" id="menu_commutity_community_persons"
                     parent="menu_commutity_community"
                     groups="clv_base.group_person_user"
@@ -74,12 +74,12 @@
                     sequence="10"
                     action="clv_community.act_open_clv_community_category_view"/>
  -->                <!-- Community/Configuration/Family Categories -->
-<!--                 <menuitem name="Family Categories" id="menu_commutity_config_family_categories"
+                <menuitem name="Family Categories" id="menu_commutity_config_family_categories"
                     parent="menu_commutity_config"
                     groups="clv_base.group_base_manager"
                     sequence="20"
                     action="clv_family.act_open_clv_family_category_view"/>
- -->                <!-- Community/Configuration/Person Categories -->
+                <!-- Community/Configuration/Person Categories -->
                 <menuitem name="Person Categories" id="menu_commutity_config_person_categories"
                     parent="menu_commutity_config"
                     groups="clv_base.group_base_manager"
