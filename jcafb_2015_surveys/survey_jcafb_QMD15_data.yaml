@@ -414,3 +414,94 @@ QMD15:
                 model: survey.answer
                 answer: 'e) Não se aplica'
 
+        QMD15_02_11:
+            model: survey.question
+            question: 'O que utilizam quando alguém tem diarreia?'
+            type: multiple_choice_multiple_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+            is_comment_require: True
+            comment_label: 'Se outros, quais?'
+
+            QMD15_02_11_01:
+                model: survey.answer
+                answer: 'a) Nada. Espera passar'
+
+            QMD15_02_11_02:
+                model: survey.answer
+                answer: 'b) Soro caseiro'
+
+            QMD15_02_11_03:
+                model: survey.answer
+                answer: 'c) Soro pronto'
+
+            QMD15_02_11_04:
+                model: survey.answer
+                answer: 'd) Outros'
+
+            QMD15_02_11_05:
+                model: survey.answer
+                answer: 'e) Não sabe'
+
+            QMD15_02_11_06:
+                model: survey.answer
+                answer: 'f) Não quis responder'
+
+            QMD15_02_11_07:
+                model: survey.answer
+                answer: 'g) Não se aplica'
+
+        QMD15_02_12:
+            model: survey.question
+            question: 'Conhece o soro caseiro?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QMD15_02_12_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QMD15_02_12_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QMD15_02_12_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QMD15_02_12_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QMD15_02_12_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QMD15_02_13:
+            model: survey.question
+            question: 'Sabe como preparar?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QMD15_02_13_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QMD15_02_13_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QMD15_02_13_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QMD15_02_13_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QMD15_02_13_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+

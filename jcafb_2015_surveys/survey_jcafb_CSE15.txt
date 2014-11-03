@@ -26,7 +26,7 @@
             [CSE15_02_01_07] g) Não quis responder
             [CSE15_02_01_08] h) Não se aplica
             Se outros, onde?____________________________________
-        [CSE15_02_02] Escolaridade do cuidador
+        [CSE15_02_02] Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):
             (multiple_choice_only_one_ans)
             [CSE15_02_02_01] a) 0 anos
             [CSE15_02_02_02] b) 1 a 3 anos

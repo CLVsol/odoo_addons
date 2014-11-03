@@ -77,6 +77,266 @@ QAN15:
 
     QAN15_02:
         model: survey.page
-        title: 'Questionário'
-        note: 'Questionário'
+        title: 'Valores de Medições'
+        note: 'Valores de Medições'
+
+        QAN15_02_01:
+            model: survey.question
+            question: 'Peso (kg)'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o Valor e o Responsável.'
+            required_type: exactly
+            req_ans: 2
+
+            QAN15_02_01_01:
+                model: survey.answer
+                answer: 'Valor:'
+                type: char
+
+            QAN15_02_01_02:
+                model: survey.answer
+                answer: 'Responsável:'
+                type: char
+
+        QAN15_02_02:
+            model: survey.question
+            question: 'Altura (cm)'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o Valor e o Responsável.'
+            required_type: exactly
+            req_ans: 2
+
+            QAN15_02_02_01:
+                model: survey.answer
+                answer: 'Valor:'
+                type: char
+
+            QAN15_02_02_02:
+                model: survey.answer
+                answer: 'Responsável:'
+                type: char
+
+        QAN15_02_03:
+            model: survey.question
+            question: 'Valor da Hemoglobina (g/dL)'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o Valor e o Responsável.'
+            required_type: exactly
+            req_ans: 2
+
+            QAN15_02_03_01:
+                model: survey.answer
+                answer: 'Valor:'
+                type: char
+
+            QAN15_02_03_02:
+                model: survey.answer
+                answer: 'Responsável:'
+                type: char
+
+        QAN15_02_04:
+            model: survey.question
+            question: 'Horário da coleta:'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher o horário da coleta.'
+            required_type: exactly
+            req_ans: 1
+
+            QAN15_02_04_01:
+                model: survey.answer
+                answer: 'Horário'
+                type: datetime
+
+        QAN15_02_05:
+            model: survey.question
+            question: 'Já realizou exame para diagnosticar Anemia?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QAN15_02_05_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QAN15_02_05_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QAN15_02_05_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QAN15_02_05_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QAN15_02_05_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QAN15_02_06:
+            model: survey.question
+            question: 'Já teve Anemia diagnosticada?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QAN15_02_06_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QAN15_02_06_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QAN15_02_06_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QAN15_02_06_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QAN15_02_06_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QAN15_02_07:
+            model: survey.question
+            question: 'Se sim, o que fez para curar?'
+            type: multiple_choice_multiple_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+            required_type: at least
+            req_ans: 1
+            is_comment_require: True
+            comment_label: 'Se "Outras", especificar'
+
+            QAN15_02_07_01:
+                model: survey.answer
+                answer: 'a) Medicamentos'
+
+            QAN15_02_07_02:
+                model: survey.answer
+                answer: 'b) Alimentação adequada'
+
+            QAN15_02_07_03:
+                model: survey.answer
+                answer: 'c) Vitaminas'
+
+            QAN15_02_07_04:
+                model: survey.answer
+                answer: 'd) Outras (especificar)'
+
+            QAN15_02_07_05:
+                model: survey.answer
+                answer: 'e) Nada'
+
+            QAN15_02_07_06:
+                model: survey.answer
+                answer: 'f) Outro (especificar)'
+
+            QAN15_02_07_07:
+                model: survey.answer
+                answer: 'g) Não identifica'
+
+            QAN15_02_07_08:
+                model: survey.answer
+                answer: 'h) Não sabe'
+
+            QAN15_02_07_09:
+                model: survey.answer
+                answer: 'i) Não quis responder'
+
+            QAN15_02_07_10:
+                model: survey.answer
+                answer: 'j) Não se aplica'
+
+        QAN15_02_08:
+            model: survey.question
+            question: 'Ainda tem?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QAN15_02_08_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QAN15_02_08_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QAN15_02_08_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QAN15_02_08_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QAN15_02_08_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QAN15_02_09:
+            model: survey.question
+            question: 'Toma algum cuidado para evitar a Anemia?'
+            type: multiple_choice_multiple_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+            required_type: at least
+            req_ans: 1
+            is_comment_require: True
+            comment_label: 'Se "Outras", especificar'
+
+            QAN15_02_09_01:
+                model: survey.answer
+                answer: 'a) Consumo de feijão'
+
+            QAN15_02_09_02:
+                model: survey.answer
+                answer: 'b) Consumo de verduras verdes escuras'
+
+            QAN15_02_09_03:
+                model: survey.answer
+                answer: 'c) Consumo de frutas'
+
+            QAN15_02_09_04:
+                model: survey.answer
+                answer: 'd) Consumo de carne vermelha'
+
+            QAN15_02_09_05:
+                model: survey.answer
+                answer: 'e) Não toma nenhum cuidado'
+
+            QAN15_02_09_06:
+                model: survey.answer
+                answer: 'f) Não sabe'
+
+            QAN15_02_09_07:
+                model: survey.answer
+                answer: 'i) Não quis responder'
+
+            QAN15_02_09_08:
+                model: survey.answer
+                answer: 'j) Não se aplica'
+
+        QAN15_02_10:
+            model: survey.question
+            question: 'Alimentos que a criança consome:'
+            type: multiple_textboxes_diff_type
+            is_require_answer: 1
+            req_error_msg: 'Preencher os alimentos que a criança consome.'
+            required_type: exactly
+            req_ans: 1
+
+            QAN15_02_10_01:
+                model: survey.answer
+                answer: 'Alimentos'
+                type: char
 

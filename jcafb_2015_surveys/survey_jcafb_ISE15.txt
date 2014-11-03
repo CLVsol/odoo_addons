@@ -15,27 +15,29 @@
             [ISE15_01_03_02] c) Cuidador
             Nome (Grau de Parentesco)____________________________________
     [ISE15_02] Aspectos Sociais
-        [ISE15_02_01] Escolaridade do cuidador
-            (multiple_choice_only_one_ans)
-            [ISE15_02_01_01] a) 0 anos
-            [ISE15_02_01_02] b) 1 a 3 anos
-            [ISE15_02_01_03] c) 4 a 11 anos
-            [ISE15_02_01_04] d) 12 a 22 anos
-            [ISE15_02_01_05] e) 22 anos ou mais
-            [ISE15_02_01_06] f) Não sabe
-            [ISE15_02_01_07] g) Não quis responder
-            [ISE15_02_01_08] h) Não se aplica
-        [ISE15_02_02] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?
+        [ISE15_02_01] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?
             (multiple_choice_multiple_ans)
-            [ISE15_02_02_01] a) Não possui Cuidador
-            [ISE15_02_02_02] b) Filho
-            [ISE15_02_02_03] c) Cônjuge
-            [ISE15_02_02_04] d) Neto(a)
-            [ISE15_02_02_05] e) Irmão(ã)
-            [ISE15_02_02_06] f) Outro familiar
-            [ISE15_02_02_07] g) Não familiar (sem laços consanguíneos)
-            [ISE15_02_02_08] h) Não se aplica
+            [ISE15_02_01_01] a) Não possui Cuidador
+            [ISE15_02_01_02] b) Filho
+            [ISE15_02_01_03] c) Cônjuge
+            [ISE15_02_01_04] d) Neto(a)
+            [ISE15_02_01_05] e) Irmão(ã)
+            [ISE15_02_01_06] f) Outro familiar
+            [ISE15_02_01_07] g) Não familiar (sem laços consanguíneos)
+            [ISE15_02_01_08] h) Não sabe
+            [ISE15_02_01_09] i) Não quis responder
+            [ISE15_02_01_10] j) Não se aplica
             Se outro familiar, qual a relação de parentesco?____________________________________
+        [ISE15_02_02] Tempo de Escolaridade do cuidador
+            (multiple_choice_only_one_ans)
+            [ISE15_02_02_01] a) 0 anos
+            [ISE15_02_02_02] b) 1 a 3 anos
+            [ISE15_02_02_03] c) 4 a 11 anos
+            [ISE15_02_02_04] d) 12 a 22 anos
+            [ISE15_02_02_05] e) 22 anos ou mais
+            [ISE15_02_02_06] f) Não sabe
+            [ISE15_02_02_07] g) Não quis responder
+            [ISE15_02_02_08] h) Não se aplica
         [ISE15_02_03] O(A) Sr.(a) é:
             (multiple_choice_only_one_ans)
             [ISE15_02_03_01] a) Solteiro(a)
@@ -64,7 +66,7 @@
             [ISE15_02_05_03] c) Não sabe
             [ISE15_02_05_04] d) Não quis responder
             [ISE15_02_05_05] e) Não se aplica
-        [ISE15_02_06] Escolaridade ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
+        [ISE15_02_06] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
             (multiple_choice_only_one_ans)
             [ISE15_02_06_01] a) É analfabeto
             [ISE15_02_06_02] b) Não é analfabeto, mas não frequentou a escola
@@ -395,116 +397,91 @@
             [ISE15_08_07_06] f) Não sabe
             [ISE15_08_07_07] g) Não quis responder
             [ISE15_08_07_08] h) Não se aplica
-    [ISE15_09] Medicamentos (geral)
-        [ISE15_09_01] O que utilizam quando alguém tem diarreia?
+    [ISE15_09] Parasitoses
+        [ISE15_09_01] Conhece algum verme (parasitose)?
             (multiple_choice_multiple_ans)
-            [ISE15_09_01_01] a) Nada. Espera passar
-            [ISE15_09_01_02] b) Soro caseiro
-            [ISE15_09_01_03] c) Soro pronto
-            [ISE15_09_01_04] d) Outros
-            [ISE15_09_01_05] e) Não sabe
-            [ISE15_09_01_06] f) Não quis responder
-            [ISE15_09_01_07] g) Não se aplica
-            Se outros, quais?____________________________________
-        [ISE15_09_02] Conhece o soro caseiro?
+            [ISE15_09_01_01] a) Não
+            [ISE15_09_01_02] b) Barriga d água, "xistose" (Esquistossomose)
+            [ISE15_09_01_03] c) "Bicha", "lombriga" (Ascaridíase)
+            [ISE15_09_01_04] d) "Amarelão" (Ancilostomose)
+            [ISE15_09_01_05] e) "Solitária" (Teníase)
+            [ISE15_09_01_06] f) "Ameba"(Amebíase/Giardíase)
+            [ISE15_09_01_07] g) Coceira (Enterobíase)
+            [ISE15_09_01_08] h) Não sabe
+            [ISE15_09_01_09] i) Não quis responder
+            [ISE15_09_01_10] j) Não se aplica
+        [ISE15_09_02] Sabe como se prevenir de pegar vermes?
             (multiple_choice_only_one_ans)
             [ISE15_09_02_01] a) Não
             [ISE15_09_02_02] b) Sim
             [ISE15_09_02_03] c) Não sabe
             [ISE15_09_02_04] d) Não quis responder
             [ISE15_09_02_05] e) Não se aplica
-        [ISE15_09_03] Sabe como preparar?
-            (multiple_choice_only_one_ans)
-            [ISE15_09_03_01] a) Não
-            [ISE15_09_03_02] b) Sim
-            [ISE15_09_03_03] c) Não sabe
-            [ISE15_09_03_04] d) Não quis responder
-            [ISE15_09_03_05] e) Não se aplica
-    [ISE15_10] Parasitoses
-        [ISE15_10_01] Conhece algum verme (parasitose)?
+        [ISE15_09_03] Já fez exame de fezes?
             (multiple_choice_multiple_ans)
+            [ISE15_09_03_01] a) Não
+            [ISE15_09_03_02] b) Sim, resultado negativo para verme
+            [ISE15_09_03_03] c) Sim, mas não sabe o resultado
+            [ISE15_09_03_04] d) Sim, resultado positivo para verme
+            [ISE15_09_03_05] e) Não sabe
+            [ISE15_09_03_06] f) Não quis responder
+            [ISE15_09_03_07] g) Não se aplica
+            Qual verme?____________________________________
+        [ISE15_09_04] Como descobriu que estava com a doença?
+            (multiple_choice_multiple_ans)
+            [ISE15_09_04_01] a) Com resultado de exame de fezes
+            [ISE15_09_04_02] b) Saiu nas fezes
+            [ISE15_09_04_03] c) Foi no médico
+            [ISE15_09_04_04] d) Outros
+            [ISE15_09_04_05] e) Não sabe
+            [ISE15_09_04_06] f) Não quis responder
+            [ISE15_09_04_07] g) Não se aplica
+            Se outros, quais?____________________________________
+        [ISE15_09_05] Já tomou vermífugo (lombrigueira)?
+            (multiple_choice_only_one_ans)
+            [ISE15_09_05_01] a) Não
+            [ISE15_09_05_02] b) Sim, há seis meses ou menos e "botou" verme
+            [ISE15_09_05_03] c) Sim, há seis meses ou menos, mas não "botou" verme
+            [ISE15_09_05_04] d) Sim, há mais de seis meses, e "botou" verme
+            [ISE15_09_05_05] e) Sim, há mais de seis meses, mas não "botou" verme
+            [ISE15_09_05_06] f) Não sabe
+            [ISE15_09_05_07] g) Não quis responder
+            [ISE15_09_05_08] h) Não se aplica
+        [ISE15_09_06] Alguém na casa já pegou verme? Qual?
+            (multiple_choice_multiple_ans)
+            [ISE15_09_06_01] a) Não
+            [ISE15_09_06_02] b) Sim, mas não sabe qual verme
+            [ISE15_09_06_03] c) "Solitária" (Teníase)
+            [ISE15_09_06_04] d) "Ameba" (Amebíase)
+            [ISE15_09_06_05] e) "Giárdia" (Giardíase)
+            [ISE15_09_06_06] f) Coceira (Enterobíase)
+            [ISE15_09_06_07] g) "Amarelão" (Ancilostomose)
+            [ISE15_09_06_08] h) "Bicha", "lombriga" (Ascaridíase)
+            [ISE15_09_06_09] i) Barriga d água, "xistose" (Esquistossomose)
+            [ISE15_09_06_10] j) Não sabe
+            [ISE15_09_06_11] k) Não quis responder
+            [ISE15_09_06_12] l) Não se aplica
+    [ISE15_10] Aspecto Econômico
+        [ISE15_10_01] O(A) Sr.(a) trabalha?
+            (multiple_choice_only_one_ans)
             [ISE15_10_01_01] a) Não
-            [ISE15_10_01_02] b) Barriga d água, "xistose" (Esquistossomose)
-            [ISE15_10_01_03] c) "Bicha", "lombriga" (Ascaridíase)
-            [ISE15_10_01_04] d) "Amarelão" (Ancilostomose)
-            [ISE15_10_01_05] e) "Solitária" (Teníase)
-            [ISE15_10_01_06] f) "Ameba"(Amebíase/Giardíase)
-            [ISE15_10_01_07] g) Coceira (Enterobíase)
-            [ISE15_10_01_08] h) Não sabe
-            [ISE15_10_01_09] i) Não quis responder
-            [ISE15_10_01_10] j) Não se aplica
-        [ISE15_10_02] Sabe como se prevenir de pegar vermes?
+            [ISE15_10_01_02] b) Não. É aposentado
+            [ISE15_10_01_03] c) Sim
+            [ISE15_10_01_04] d) Não sabe
+            [ISE15_10_01_05] e) Não quis responder
+            [ISE15_10_01_06] f) Não se aplica
+        [ISE15_10_02] O(A) Sr.(a) trabalha (remunerado) atualmente? 
             (multiple_choice_only_one_ans)
             [ISE15_10_02_01] a) Não
             [ISE15_10_02_02] b) Sim
             [ISE15_10_02_03] c) Não sabe
             [ISE15_10_02_04] d) Não quis responder
             [ISE15_10_02_05] e) Não se aplica
-        [ISE15_10_03] Já fez exame de fezes?
-            (multiple_choice_multiple_ans)
-            [ISE15_10_03_01] a) Não
-            [ISE15_10_03_02] b) Sim, resultado negativo para verme
-            [ISE15_10_03_03] c) Sim, mas não sabe o resultado
-            [ISE15_10_03_04] d) Sim, resultado positivo para verme
-            [ISE15_10_03_05] e) Não sabe
-            [ISE15_10_03_06] f) Não quis responder
-            [ISE15_10_03_07] g) Não se aplica
-            Qual verme?____________________________________
-        [ISE15_10_04] Como descobriu que estava com a doença?
-            (multiple_choice_multiple_ans)
-            [ISE15_10_04_01] a) Com resultado de exame de fezes
-            [ISE15_10_04_02] b) Saiu nas fezes
-            [ISE15_10_04_03] c) Foi no médico
-            [ISE15_10_04_04] d) Outros
-            [ISE15_10_04_05] e) Não sabe
-            [ISE15_10_04_06] f) Não quis responder
-            [ISE15_10_04_07] g) Não se aplica
-            Se outros, quais?____________________________________
-        [ISE15_10_05] Já tomou vermífugo (lombrigueira)?
-            (multiple_choice_only_one_ans)
-            [ISE15_10_05_01] a) Não
-            [ISE15_10_05_02] b) Sim, há seis meses ou menos e "botou" verme
-            [ISE15_10_05_03] c) Sim, há seis meses ou menos, mas não "botou" verme
-            [ISE15_10_05_04] d) Sim, há mais de seis meses, e "botou" verme
-            [ISE15_10_05_05] e) Sim, há mais de seis meses, mas não "botou" verme
-            [ISE15_10_05_06] f) Não sabe
-            [ISE15_10_05_07] g) Não quis responder
-            [ISE15_10_05_08] h) Não se aplica
-        [ISE15_10_06] Alguém na casa já pegou verme? Qual?
-            (multiple_choice_multiple_ans)
-            [ISE15_10_06_01] a) Não
-            [ISE15_10_06_02] b) Sim, mas não sabe qual verme
-            [ISE15_10_06_03] c) "Solitária" (Teníase)
-            [ISE15_10_06_04] d) "Ameba" (Amebíase)
-            [ISE15_10_06_05] e) "Giárdia" (Giardíase)
-            [ISE15_10_06_06] f) Coceira (Enterobíase)
-            [ISE15_10_06_07] g) "Amarelão" (Ancilostomose)
-            [ISE15_10_06_08] h) "Bicha", "lombriga" (Ascaridíase)
-            [ISE15_10_06_09] i) Barriga d água, "xistose" (Esquistossomose)
-            [ISE15_10_06_10] j) Não sabe
-            [ISE15_10_06_11] k) Não quis responder
-            [ISE15_10_06_12] l) Não se aplica
-    [ISE15_11] Aspecto Econômico
-        [ISE15_11_01] O(A) Sr.(a) trabalha?
-            (multiple_choice_only_one_ans)
-            [ISE15_11_01_01] a) Não
-            [ISE15_11_01_02] b) Não. É aposentado
-            [ISE15_11_01_03] c) Sim
-            [ISE15_11_01_04] d) Não sabe
-            [ISE15_11_01_05] e) Não quis responder
-            [ISE15_11_01_06] f) Não se aplica
-        [ISE15_11_02] O(A) Sr.(a) trabalha (remunerado) atualmente? 
-            (multiple_choice_only_one_ans)
-            [ISE15_11_02_01] a) Não
-            [ISE15_11_02_02] b) Sim
-            [ISE15_11_02_03] c) Não sabe
-            [ISE15_11_02_04] d) Não quis responder
-            [ISE15_11_02_05] e) Não se aplica
             Qual?____________________________________
-        [ISE15_11_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?
+        [ISE15_10_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?
             (multiple_choice_only_one_ans)
-            [ISE15_11_03_01] a) Valor
-            [ISE15_11_03_02] b) Não sabe
-            [ISE15_11_03_03] c) Não quis responder
-            [ISE15_11_03_04] d) Não se aplica
+            [ISE15_10_03_01] a) Valor
+            [ISE15_10_03_02] b) Não sabe
+            [ISE15_10_03_03] c) Não quis responder
+            [ISE15_10_03_04] d) Não se aplica
             Qual?____________________________________

@@ -102,3 +102,27 @@
             [QMD15_02_10_03] c) Não sabe
             [QMD15_02_10_04] d) Não quis responder
             [QMD15_02_10_05] e) Não se aplica
+        [QMD15_02_11] O que utilizam quando alguém tem diarreia?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_11_01] a) Nada. Espera passar
+            [QMD15_02_11_02] b) Soro caseiro
+            [QMD15_02_11_03] c) Soro pronto
+            [QMD15_02_11_04] d) Outros
+            [QMD15_02_11_05] e) Não sabe
+            [QMD15_02_11_06] f) Não quis responder
+            [QMD15_02_11_07] g) Não se aplica
+            Se outros, quais?____________________________________
+        [QMD15_02_12] Conhece o soro caseiro?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_12_01] a) Não
+            [QMD15_02_12_02] b) Sim
+            [QMD15_02_12_03] c) Não sabe
+            [QMD15_02_12_04] d) Não quis responder
+            [QMD15_02_12_05] e) Não se aplica
+        [QMD15_02_13] Sabe como preparar?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_13_01] a) Não
+            [QMD15_02_13_02] b) Sim
+            [QMD15_02_13_03] c) Não sabe
+            [QMD15_02_13_04] d) Não quis responder
+            [QMD15_02_13_05] e) Não se aplica

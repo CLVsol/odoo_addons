@@ -121,7 +121,7 @@ CSE15:
 
         CSE15_02_02:
             model: survey.question
-            question: 'Escolaridade do cuidador'
+            question: 'Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'

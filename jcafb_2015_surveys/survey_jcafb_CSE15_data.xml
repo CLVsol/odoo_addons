@@ -167,7 +167,7 @@
                     </record>
 
                 <record model="survey.question" id="CSE15_02_02">
-                    <field name="question">[CSE15_02_02] Escolaridade do cuidador</field>
+                    <field name="question">[CSE15_02_02] Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="CSE15_02"/>
                     <field name="sequence" eval="20"/>
