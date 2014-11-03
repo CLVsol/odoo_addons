@@ -17,5 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_family_member_role
-import clv_family_member
+import clv_family_person_role
+import clv_family_person
