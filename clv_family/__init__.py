@@ -24,4 +24,4 @@ import clv_annotation
 import seq
 import wkf
 import history
-import member
+import clv_person
