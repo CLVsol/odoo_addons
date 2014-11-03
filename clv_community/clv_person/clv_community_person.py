@@ -17,46 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVhealth',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the necessary modules for the CLVhealth solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_family',
-        'clv_community',
-        'clv_patient',
-        #'clv_survey',
-        'clv_medicament',
-        'disable_openerp_online',
-        'mass_editing',
-        ],
-    'data': [
-        'clvhealth_view.xml',
-        'clv_tag_sequence.xml',
-        'clv_annotation_sequence.xml',
-        'clv_annotation_category_sequence.xml',
-        'clv_person_sequence.xml',
-        'clv_person_category_sequence.xml',
-        'clv_family_sequence.xml',
-        'clv_family_category_sequence.xml',
-        'clv_community_sequence.xml',
-        'clv_community_category_sequence.xml',
-        'clv_patient_sequence.xml',
-        'clv_patient_category_sequence.xml',
-        'clv_medicament_sequence.xml',
-        'clv_medicament_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_community_person(osv.osv):
+    _name = 'clv_community.person'
+
+    _columns = {
+        'community_id': fields.many2one('clv_community', string='Community',
+                                        help='Community', required=False),
+        'person_id': fields.many2one('clv_person', string='Person'),
+        'role': fields.many2one('clv_community.person_role', 'Role', required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the person without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+class clv_community(osv.osv):
+    _inherit = 'clv_community'
+
+    _columns = {
+        'person_ids': fields.one2many('clv_community.person',
+                                      'community_id',
+                                      'Persons'),
+    }
+
+class clv_person(osv.osv):
+    _inherit = 'clv_person'
+
+    _columns = {
+        'community_ids': fields.one2many('clv_community.person',
+                                         'person_id',
+                                         'Families'),
+        }
+

@@ -19,38 +19,19 @@
 
 from openerp.osv import fields, osv
 
-class clv_family_member(osv.osv):
-    _name = 'clv_family.member'
+class clv_community_family_role(osv.osv):
+    _name = 'clv_community.family_role'
 
     _columns = {
-        'family_id': fields.many2one('clv_family', string='Family',
-                                        help='Family', required=False),
-        'person_id': fields.many2one('clv_person', string='Person'),
-        'role': fields.many2one('clv_family.member.role', 'Role', required=False),
+        'name': fields.char(size=256, 
+                            string='Community Family Role', required=True, 
+                            help='Role of a Family in an Community'),
+        'description': fields.text(string='Description'),
         'notes': fields.text(string='Notes'),
         'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the member without removing it."),
+                                 help="If unchecked, it will allow you to hide the role without removing it."),
         }
 
     _defaults = {
         'active': 1,
         }
-    
-class clv_family(osv.osv):
-    _inherit = 'clv_family'
-
-    _columns = {
-        'member_ids': fields.one2many('clv_family.member',
-                                      'family_id',
-                                      'Members'),
-    }
-
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
-
-    _columns = {
-        'family_ids': fields.one2many('clv_family.member',
-                                      'person_id',
-                                      'Families'),
-        }
-

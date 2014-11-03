@@ -17,46 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVhealth',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the necessary modules for the CLVhealth solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_family',
-        'clv_community',
-        'clv_patient',
-        #'clv_survey',
-        'clv_medicament',
-        'disable_openerp_online',
-        'mass_editing',
-        ],
-    'data': [
-        'clvhealth_view.xml',
-        'clv_tag_sequence.xml',
-        'clv_annotation_sequence.xml',
-        'clv_annotation_category_sequence.xml',
-        'clv_person_sequence.xml',
-        'clv_person_category_sequence.xml',
-        'clv_family_sequence.xml',
-        'clv_family_category_sequence.xml',
-        'clv_community_sequence.xml',
-        'clv_community_category_sequence.xml',
-        'clv_patient_sequence.xml',
-        'clv_patient_category_sequence.xml',
-        'clv_medicament_sequence.xml',
-        'clv_medicament_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_community(osv.osv):
+    _inherit = 'clv_community'
+
+    _columns = {
+        'annotation_ids': fields.many2many('clv_annotation', 
+                                           'clv_community_annotation_rel', 
+                                           'community_id', 
+                                           'annotation_id', 
+                                           'Annotations')
+        }
+
+class clv_annotation(osv.osv):
+    _inherit = 'clv_annotation'
+
+    _columns = {
+        'community_ids': fields.many2many('clv_community', 
+                                          'clv_community_annotation_rel', 
+                                          'annotation_id', 
+                                          'community_id', 
+                                          'Communities')
+        }
