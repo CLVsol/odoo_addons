@@ -55,6 +55,18 @@
                         groups="clv_base.group_community_user"
                         sequence="10"
                         action="clv_community.act_open_clv_community_view"/>
+                    <!-- Community/Community/Community/Families -->
+                    <menuitem name="Families" id="menu_commutity_community_community_families"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="20"
+                        action="clv_community.act_open_clv_community_family_view"/>
+                    <!-- Community/Community/Community/Persons -->
+                    <menuitem name="Persons" id="menu_commutity_community_community_persons"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="30"
+                        action="clv_community.act_open_clv_community_person_view"/>
                 <!-- Community/Community/Family -->
                 <menuitem name="Family" id="menu_commutity_community_family"
                     parent="menu_commutity_community"
@@ -94,6 +106,18 @@
                         groups="clv_base.group_base_manager"
                         sequence="10"
                         action="clv_community.act_open_clv_community_category_view"/>
+                    <!-- Community/Configuration/Community/Family Roles -->
+                    <menuitem name="Family Roles" id="menu_commutity_config_community_family_roles"
+                        parent="menu_commutity_config_community"
+                        groups="clv_base.group_base_manager"
+                        sequence="20"
+                        action="clv_community.act_open_clv_community_family_role_view"/>
+                    <!-- Community/Configuration/Community/Person Roles -->
+                    <menuitem name="Person Roles" id="menu_commutity_config_community_person_roles"
+                        parent="menu_commutity_config_community"
+                        groups="clv_base.group_base_manager"
+                        sequence="30"
+                        action="clv_community.act_open_clv_community_person_role_view"/>
                 <!-- Community/Configuration/Family -->
                 <menuitem name="Family" id="menu_commutity_config_family"
                     parent="menu_commutity_config"
