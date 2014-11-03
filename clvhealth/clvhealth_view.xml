@@ -44,13 +44,18 @@
                 parent="menu_commutity"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Community/Community/Communities -->
-<!--                 <menuitem name="Communities" id="menu_commutity_community_communities"
+                <!-- Community/Community/Community -->
+                <menuitem name="Community" id="menu_commutity_community_community"
                     parent="menu_commutity_community"
-                    groups="clv_base.group_community_user"
-                    sequence="10"
-                    action="clv_community.act_open_clv_community_view"/>
- -->                <!-- Community/Community/Family -->
+                    groups="clv_base.group_family_user"
+                    sequence="10"/>
+                    <!-- Community/Community/Communities -->
+                    <menuitem name="Communities" id="menu_commutity_community_community_communities"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="10"
+                        action="clv_community.act_open_clv_community_view"/>
+                <!-- Community/Community/Family -->
                 <menuitem name="Family" id="menu_commutity_community_family"
                     parent="menu_commutity_community"
                     groups="clv_base.group_family_user"
@@ -78,13 +83,18 @@
                 parent="menu_commutity"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
-                <!-- Community/Configuration/Community Categories -->
-<!--                 <menuitem name="Community Categories" id="menu_commutity_config_community_categories"
+                <!-- Community/Configuration/Community -->
+                <menuitem name="Community" id="menu_commutity_config_community"
                     parent="menu_commutity_config"
-                    groups="clv_base.group_base_manager"
-                    sequence="10"
-                    action="clv_community.act_open_clv_community_category_view"/>
- -->                <!-- Community/Configuration/Family -->
+                    groups="clv_base.group_family_user"
+                    sequence="10"/>
+                    <!-- Community/Configuration/Community/Categories -->
+                    <menuitem name="Categories" id="menu_commutity_config_community_categories"
+                        parent="menu_commutity_config_community"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_community.act_open_clv_community_category_view"/>
+                <!-- Community/Configuration/Family -->
                 <menuitem name="Family" id="menu_commutity_config_family"
                     parent="menu_commutity_config"
                     groups="clv_base.group_family_user"

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_community_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_community.tree</field>
+            <field name="model">clv_community</field>
+            <field name="inherit_id" ref="clv_community.view_clv_community_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="date"/>
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_community_form_wkf" model="ir.ui.view">
+            <field name="name">clv_community.form</field>
+            <field name="model">clv_community</field>
+            <field name="inherit_id" ref="clv_community.view_clv_community_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Community" position="before">
+                    <header>
+                        <button string="Activate" name="button_activate" states="new,inactive,suspended" type="workflow" groups="clv_base.group_community_manager" class="oe_highlight"/>
+                        <button string="Inactivate" name="button_inactivate" states="new,active,suspended" type="workflow" groups="clv_base.group_community_manager"/>
+                        <button string="Suspend" name="button_suspend" states="new,active,inactive" type="workflow" groups="clv_base.group_community_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,active,inactive,suspended"/>
+                    </header>
+                </sheet>
+                <field name="date_inclusion" position="before">
+                    <field name="date"/>
+                    <field name="date_activation"/>
+                    <field name="date_inactivation"/>
+                    <field name="date_suspension"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_community_search_wkf" model="ir.ui.view">
+            <field name="name">clv_community.search</field>
+            <field name="model">clv_community</field>
+            <field name="inherit_id" ref="clv_community.view_clv_community_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
