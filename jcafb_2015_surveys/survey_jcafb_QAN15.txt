@@ -75,6 +75,32 @@
             [QAN15_02_09_08] h) Não quis responder
             [QAN15_02_09_09] i) Não se aplica
             Se "Outro", especificar____________________________________
-        [QAN15_02_10] Alimentos que a criança consome:
-            (multiple_textboxes_diff_type)
-            [QAN15_02_10_01] Alimentos____________________________________
+        [QAN15_02_10] Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)
+            (matrix_of_choices_only_one_ans)
+            [QAN15_02_10_01] Feijão (leguminosas)
+            [QAN15_02_10_02] Fígado de boi
+            [QAN15_02_10_03] Carnes vermelhas
+            [QAN15_02_10_04] Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)
+            [QAN15_02_10_05] Carne branca (peixe, frango)
+            [QAN15_02_10_06] Miúdos (rim, coração)
+            [QAN15_02_10_07] 0 dias
+            [QAN15_02_10_08] 1-2 dias
+            [QAN15_02_10_09] 3-4 dias
+            [QAN15_02_10_10] 5 ou mais dias
+            [QAN15_02_10_11] Não respondeu
+            [QAN15_02_10_12] Não sabe
+            [QAN15_02_10_13] Não se aplica
+        [QAN15_02_11] Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)
+            (matrix_of_choices_only_one_ans)
+            [QAN15_02_11_01] Suco de limão, laranja, acerola, junto da refeição
+            [QAN15_02_11_02] Laranja, após a refeição
+            [QAN15_02_11_03] Leite e queijo (laticínios)
+            [QAN15_02_11_04] Espinafre
+            [QAN15_02_11_05] Refrigerante a base de cola
+            [QAN15_02_11_06] 0 dias
+            [QAN15_02_11_07] 1-2 dias
+            [QAN15_02_11_08] 3-4 dias
+            [QAN15_02_11_09] 5 ou mais dias
+            [QAN15_02_11_10] Não respondeu
+            [QAN15_02_11_11] Não sabe
+            [QAN15_02_11_12] Não se aplica

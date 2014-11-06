@@ -20,6 +20,35 @@
 
 import yaml
 
+def survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, collumn_sequence):
+
+    _title_ = doc[key1][key2][key3][key4]['title'].encode("utf-8")
+    _model_ = doc[key1][key2][key3][key4]['model']
+    if collumn_sequence < 100:
+        _id_ = question_id + '_0' + str(collumn_sequence / 10)
+    else:
+        _id_ = question_id + '_' + str(collumn_sequence / 10)
+    _question_id_ = question_id
+    _sequence_ = str(collumn_sequence)
+
+    yaml_out_file.write('            %s:\n' % (_id_))
+    yaml_out_file.write('                model: %s\n' % (_model_))
+    yaml_out_file.write('                title: \'%s\'\n' % (_title_))
+
+    _title_ = '[' + _id_ + '] ' + _title_
+
+    txt_file.write('            %s\n' % (_title_))
+
+    xml_file.write('                    <record model="%s" id="%s">\n' % (_model_, _id_))
+    xml_file.write('                        <field name="title">%s</field>\n' % (_title_))
+    xml_file.write('                        <field name="question_id" ref="%s"/>\n' % (_question_id_))
+    #xml_file.write('                        <field name="sequence" eval="%s"/>\n' % (_sequence_))
+
+    yaml_out_file.write('\n')
+
+    xml_file.write('                    </record>\n')
+    xml_file.write('\n')
+
 def survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, answer_sequence):
 
     _answer_ = doc[key1][key2][key3][key4]['answer'].encode("utf-8")
@@ -136,6 +165,9 @@ def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, pa
                 if _model_ == 'survey.answer':
                     answer_sequence += 10
                     survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
+                if _model_ == 'survey.question.column.heading':
+                    answer_sequence += 10
+                    survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
             except Exception, e:
                 pass
 

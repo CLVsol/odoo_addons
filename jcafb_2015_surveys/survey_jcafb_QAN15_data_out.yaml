@@ -324,15 +324,115 @@ QAN15:
 
         QAN15_02_10:
             model: survey.question
-            question: 'Alimentos que a criança consome:'
-            type: multiple_textboxes_diff_type
+            question: 'Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)'
+            type: matrix_of_choices_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Preencher os alimentos que a criança consome.'
-            required_type: exactly
-            req_ans: 1
 
             QAN15_02_10_01:
                 model: survey.answer
-                answer: 'Alimentos'
-                type: char
+                answer: 'Feijão (leguminosas)'
+
+            QAN15_02_10_02:
+                model: survey.answer
+                answer: 'Fígado de boi'
+
+            QAN15_02_10_03:
+                model: survey.answer
+                answer: 'Carnes vermelhas'
+
+            QAN15_02_10_04:
+                model: survey.answer
+                answer: 'Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)'
+
+            QAN15_02_10_05:
+                model: survey.answer
+                answer: 'Carne branca (peixe, frango)'
+
+            QAN15_02_10_06:
+                model: survey.answer
+                answer: 'Miúdos (rim, coração)'
+
+            QAN15_02_10_07:
+                model: survey.question.column.heading
+                title: '0 dias'
+
+            QAN15_02_10_08:
+                model: survey.question.column.heading
+                title: '1-2 dias'
+
+            QAN15_02_10_09:
+                model: survey.question.column.heading
+                title: '3-4 dias'
+
+            QAN15_02_10_10:
+                model: survey.question.column.heading
+                title: '5 ou mais dias'
+
+            QAN15_02_10_11:
+                model: survey.question.column.heading
+                title: 'Não respondeu'
+
+            QAN15_02_10_12:
+                model: survey.question.column.heading
+                title: 'Não sabe'
+
+            QAN15_02_10_13:
+                model: survey.question.column.heading
+                title: 'Não se aplica'
+
+        QAN15_02_11:
+            model: survey.question
+            question: 'Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)'
+            type: matrix_of_choices_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Preencher os alimentos que a criança consome.'
+
+            QAN15_02_11_01:
+                model: survey.answer
+                answer: 'Suco de limão, laranja, acerola, junto da refeição'
+
+            QAN15_02_11_02:
+                model: survey.answer
+                answer: 'Laranja, após a refeição'
+
+            QAN15_02_11_03:
+                model: survey.answer
+                answer: 'Leite e queijo (laticínios)'
+
+            QAN15_02_11_04:
+                model: survey.answer
+                answer: 'Espinafre'
+
+            QAN15_02_11_05:
+                model: survey.answer
+                answer: 'Refrigerante a base de cola'
+
+            QAN15_02_11_06:
+                model: survey.question.column.heading
+                title: '0 dias'
+
+            QAN15_02_11_07:
+                model: survey.question.column.heading
+                title: '1-2 dias'
+
+            QAN15_02_11_08:
+                model: survey.question.column.heading
+                title: '3-4 dias'
+
+            QAN15_02_11_09:
+                model: survey.question.column.heading
+                title: '5 ou mais dias'
+
+            QAN15_02_11_10:
+                model: survey.question.column.heading
+                title: 'Não respondeu'
+
+            QAN15_02_11_11:
+                model: survey.question.column.heading
+                title: 'Não sabe'
+
+            QAN15_02_11_12:
+                model: survey.question.column.heading
+                title: 'Não se aplica'
 

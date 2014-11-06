@@ -450,21 +450,157 @@
                     </record>
 
                 <record model="survey.question" id="QAN15_02_10">
-                    <field name="question">[QAN15_02_10] Alimentos que a criança consome:</field>
-                    <field name="type">multiple_textboxes_diff_type</field>
+                    <field name="question">[QAN15_02_10] Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)</field>
+                    <field name="type">matrix_of_choices_only_one_ans</field>
                     <field name="page_id" ref="QAN15_02"/>
                     <field name="sequence" eval="100"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher os alimentos que a criança consome.</field>
-                    <field name="required_type">exactly</field>
-                    <field name="req_ans">1</field>
                 </record>
 
                     <record model="survey.answer" id="QAN15_02_10_01">
-                        <field name="answer">[QAN15_02_10_01] Alimentos</field>
+                        <field name="answer">[QAN15_02_10_01] Feijão (leguminosas)</field>
                         <field name="question_id" ref="QAN15_02_10"/>
                         <field name="sequence" eval="10"/>
-                        <field name="type">char</field>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_10_02">
+                        <field name="answer">[QAN15_02_10_02] Fígado de boi</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_10_03">
+                        <field name="answer">[QAN15_02_10_03] Carnes vermelhas</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_10_04">
+                        <field name="answer">[QAN15_02_10_04] Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_10_05">
+                        <field name="answer">[QAN15_02_10_05] Carne branca (peixe, frango)</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_10_06">
+                        <field name="answer">[QAN15_02_10_06] Miúdos (rim, coração)</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_07">
+                        <field name="title">[QAN15_02_10_07] 0 dias</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_08">
+                        <field name="title">[QAN15_02_10_08] 1-2 dias</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_09">
+                        <field name="title">[QAN15_02_10_09] 3-4 dias</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_10">
+                        <field name="title">[QAN15_02_10_10] 5 ou mais dias</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_11">
+                        <field name="title">[QAN15_02_10_11] Não respondeu</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_12">
+                        <field name="title">[QAN15_02_10_12] Não sabe</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_10_13">
+                        <field name="title">[QAN15_02_10_13] Não se aplica</field>
+                        <field name="question_id" ref="QAN15_02_10"/>
+                    </record>
+
+                <record model="survey.question" id="QAN15_02_11">
+                    <field name="question">[QAN15_02_11] Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)</field>
+                    <field name="type">matrix_of_choices_only_one_ans</field>
+                    <field name="page_id" ref="QAN15_02"/>
+                    <field name="sequence" eval="110"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Preencher os alimentos que a criança consome.</field>
+                </record>
+
+                    <record model="survey.answer" id="QAN15_02_11_01">
+                        <field name="answer">[QAN15_02_11_01] Suco de limão, laranja, acerola, junto da refeição</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_11_02">
+                        <field name="answer">[QAN15_02_11_02] Laranja, após a refeição</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_11_03">
+                        <field name="answer">[QAN15_02_11_03] Leite e queijo (laticínios)</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_11_04">
+                        <field name="answer">[QAN15_02_11_04] Espinafre</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.answer" id="QAN15_02_11_05">
+                        <field name="answer">[QAN15_02_11_05] Refrigerante a base de cola</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_06">
+                        <field name="title">[QAN15_02_11_06] 0 dias</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_07">
+                        <field name="title">[QAN15_02_11_07] 1-2 dias</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_08">
+                        <field name="title">[QAN15_02_11_08] 3-4 dias</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_09">
+                        <field name="title">[QAN15_02_11_09] 5 ou mais dias</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_10">
+                        <field name="title">[QAN15_02_11_10] Não respondeu</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_11">
+                        <field name="title">[QAN15_02_11_11] Não sabe</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_12">
+                        <field name="title">[QAN15_02_11_12] Não se aplica</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
     </data>
