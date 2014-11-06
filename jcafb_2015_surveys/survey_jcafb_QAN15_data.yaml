@@ -214,7 +214,7 @@ QAN15:
             required_type: at least
             req_ans: 1
             is_comment_require: True
-            comment_label: 'Se "Outras", especificar'
+            comment_label: 'Se "Outras medidas", especificar'
 
             QAN15_02_07_01:
                 model: survey.answer
@@ -230,7 +230,7 @@ QAN15:
 
             QAN15_02_07_04:
                 model: survey.answer
-                answer: 'd) Outras (especificar)'
+                answer: 'd) Outras medidas'
 
             QAN15_02_07_05:
                 model: survey.answer
@@ -238,23 +238,15 @@ QAN15:
 
             QAN15_02_07_06:
                 model: survey.answer
-                answer: 'f) Outro (especificar)'
+                answer: 'f) Não sabe'
 
             QAN15_02_07_07:
                 model: survey.answer
-                answer: 'g) Não identifica'
+                answer: 'g) Não quis responder'
 
             QAN15_02_07_08:
                 model: survey.answer
-                answer: 'h) Não sabe'
-
-            QAN15_02_07_09:
-                model: survey.answer
-                answer: 'i) Não quis responder'
-
-            QAN15_02_07_10:
-                model: survey.answer
-                answer: 'j) Não se aplica'
+                answer: 'h) Não se aplica'
 
         QAN15_02_08:
             model: survey.question
@@ -292,7 +284,7 @@ QAN15:
             required_type: at least
             req_ans: 1
             is_comment_require: True
-            comment_label: 'Se "Outras", especificar'
+            comment_label: 'Se "Outro", especificar'
 
             QAN15_02_09_01:
                 model: survey.answer
@@ -312,19 +304,23 @@ QAN15:
 
             QAN15_02_09_05:
                 model: survey.answer
-                answer: 'e) Não toma nenhum cuidado'
+                answer: 'e) Outro (especificar) '
 
             QAN15_02_09_06:
                 model: survey.answer
-                answer: 'f) Não sabe'
+                answer: 'f) Não toma nenhum cuidado'
 
             QAN15_02_09_07:
                 model: survey.answer
-                answer: 'i) Não quis responder'
+                answer: 'g) Não sabe'
 
             QAN15_02_09_08:
                 model: survey.answer
-                answer: 'j) Não se aplica'
+                answer: 'h) Não quis responder'
+
+            QAN15_02_09_09:
+                model: survey.answer
+                answer: 'i) Não se aplica'
 
         QAN15_02_10:
             model: survey.question
@@ -335,7 +331,7 @@ QAN15:
             required_type: exactly
             req_ans: 1
 
-            QAN15_02_04_01:
+            QAN15_02_10_01:
                 model: survey.answer
                 answer: 'Alimentos'
                 type: char

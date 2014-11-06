@@ -50,14 +50,12 @@
             [QAN15_02_07_01] a) Medicamentos
             [QAN15_02_07_02] b) Alimentação adequada
             [QAN15_02_07_03] c) Vitaminas
-            [QAN15_02_07_04] d) Outras (especificar)
+            [QAN15_02_07_04] d) Outras medidas
             [QAN15_02_07_05] e) Nada
-            [QAN15_02_07_06] f) Outro (especificar)
-            [QAN15_02_07_07] g) Não identifica
-            [QAN15_02_07_08] h) Não sabe
-            [QAN15_02_07_09] i) Não quis responder
-            [QAN15_02_07_10] j) Não se aplica
-            Se "Outras", especificar____________________________________
+            [QAN15_02_07_06] f) Não sabe
+            [QAN15_02_07_07] g) Não quis responder
+            [QAN15_02_07_08] h) Não se aplica
+            Se "Outras medidas", especificar____________________________________
         [QAN15_02_08] Ainda tem?
             (multiple_choice_only_one_ans)
             [QAN15_02_08_01] a) Não
@@ -71,11 +69,12 @@
             [QAN15_02_09_02] b) Consumo de verduras verdes escuras
             [QAN15_02_09_03] c) Consumo de frutas
             [QAN15_02_09_04] d) Consumo de carne vermelha
-            [QAN15_02_09_05] e) Não toma nenhum cuidado
-            [QAN15_02_09_06] f) Não sabe
-            [QAN15_02_09_07] i) Não quis responder
-            [QAN15_02_09_08] j) Não se aplica
-            Se "Outras", especificar____________________________________
+            [QAN15_02_09_05] e) Outro (especificar) 
+            [QAN15_02_09_06] f) Não toma nenhum cuidado
+            [QAN15_02_09_07] g) Não sabe
+            [QAN15_02_09_08] h) Não quis responder
+            [QAN15_02_09_09] i) Não se aplica
+            Se "Outro", especificar____________________________________
         [QAN15_02_10] Alimentos que a criança consome:
             (multiple_textboxes_diff_type)
             [QAN15_02_10_01] Alimentos____________________________________
