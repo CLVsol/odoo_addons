@@ -126,3 +126,18 @@
             [QMD15_02_13_03] c) Não sabe
             [QMD15_02_13_04] d) Não quis responder
             [QMD15_02_13_05] e) Não se aplica
+    [QMD15_03] Tabela de Medicamentos
+        [QMD15_03_01] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver.
+            (table)
+            [QMD15_03_01_01] Medicamentos
+            [QMD15_03_01_02] Receita válida
+            [QMD15_03_01_03] Como foi prescrito na receita? (posologia, modo de uso)
+            [QMD15_03_01_04] Onde o Sr.(a) adquire esse medicamento?
+            [QMD15_03_01_05] Para que o Sr.(a) acha tem que tomar/utilizar este medicamento? (perguntar, não apenas ler na receita)
+            [QMD15_03_01_06] Como o Sr.(a) conserva este medicamento?
+            [QMD15_03_01_07] Como o Sr.(a) toma/utiliza este medicamento?* (perguntar, não apenas ler na receita)
+            [QMD15_03_01_08] Quantas vezes o Sr.(a) esqueceu de tomar este medicamento nos últimos 15 dias?
+            [QMD15_03_01_09] Há quanto tempo o Sr.(a) utiliza este medicamento? (pode-se colocar faixas de tempo)
+            [QMD15_03_01_10] O medicamento está dentro do prazo de validade?
+            [QMD15_03_01_11] Adere?
+            [QMD15_03_01_12] Conhecimento sobre indicação?

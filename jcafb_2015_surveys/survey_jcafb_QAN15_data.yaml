@@ -353,31 +353,31 @@ QAN15:
                 model: survey.answer
                 answer: 'Miúdos (rim, coração)'
 
-            QAN15_02_10_51:
+            QAN15_02_10_07:
                 model: survey.question.column.heading
                 title: '0 dias'
 
-            QAN15_02_10_52:
+            QAN15_02_10_08:
                 model: survey.question.column.heading
                 title: '1-2 dias'
 
-            QAN15_02_10_53:
+            QAN15_02_10_09:
                 model: survey.question.column.heading
                 title: '3-4 dias'
 
-            QAN15_02_10_54:
+            QAN15_02_10_10:
                 model: survey.question.column.heading
                 title: '5 ou mais dias'
 
-            QAN15_02_10_55:
+            QAN15_02_10_11:
                 model: survey.question.column.heading
                 title: 'Não respondeu'
 
-            QAN15_02_10_56:
+            QAN15_02_10_12:
                 model: survey.question.column.heading
                 title: 'Não sabe'
 
-            QAN15_02_10_57:
+            QAN15_02_10_13:
                 model: survey.question.column.heading
                 title: 'Não se aplica'
 
@@ -408,34 +408,35 @@ QAN15:
                 model: survey.answer
                 answer: 'Café'
 
-            QAN15_02_11_05:
+            QAN15_02_11_06:
                 model: survey.answer
                 answer: 'Refrigerante a base de cola'
 
-            QAN15_02_11_51:
+            QAN15_02_11_07:
                 model: survey.question.column.heading
                 title: '0 dias'
 
-            QAN15_02_11_52:
+            QAN15_02_11_08:
                 model: survey.question.column.heading
                 title: '1-2 dias'
 
-            QAN15_02_11_53:
+            QAN15_02_11_09:
                 model: survey.question.column.heading
                 title: '3-4 dias'
 
-            QAN15_02_11_54:
+            QAN15_02_11_10:
                 model: survey.question.column.heading
                 title: '5 ou mais dias'
 
-            QAN15_02_11_55:
+            QAN15_02_11_11:
                 model: survey.question.column.heading
                 title: 'Não respondeu'
 
-            QAN15_02_11_56:
+            QAN15_02_11_12:
                 model: survey.question.column.heading
                 title: 'Não sabe'
 
-            QAN15_02_11_57:
+            QAN15_02_11_13:
                 model: survey.question.column.heading
                 title: 'Não se aplica'
+

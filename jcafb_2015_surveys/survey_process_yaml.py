@@ -148,6 +148,13 @@ def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, pa
     except Exception, e:
         print '             Missing: "%s"' % (e)
 
+    try:
+        _no_of_rows_ = doc[key1][key2][key3]['no_of_rows']
+        yaml_out_file.write('            no_of_rows: %s\n' % (_no_of_rows_))
+        xml_file.write('                    <field name="no_of_rows">%s</field>\n' % (_no_of_rows_))
+    except Exception, e:
+        pass
+
     yaml_out_file.write('\n')
 
     xml_file.write('                </record>\n')

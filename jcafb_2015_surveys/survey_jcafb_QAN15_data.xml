@@ -563,43 +563,49 @@
                     </record>
 
                     <record model="survey.answer" id="QAN15_02_11_05">
-                        <field name="answer">[QAN15_02_11_05] Refrigerante a base de cola</field>
+                        <field name="answer">[QAN15_02_11_05] Café</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                         <field name="sequence" eval="50"/>
                     </record>
 
-                    <record model="survey.question.column.heading" id="QAN15_02_11_06">
-                        <field name="title">[QAN15_02_11_06] 0 dias</field>
+                    <record model="survey.answer" id="QAN15_02_11_06">
+                        <field name="answer">[QAN15_02_11_06] Refrigerante a base de cola</field>
                         <field name="question_id" ref="QAN15_02_11"/>
+                        <field name="sequence" eval="60"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_07">
-                        <field name="title">[QAN15_02_11_07] 1-2 dias</field>
+                        <field name="title">[QAN15_02_11_07] 0 dias</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_08">
-                        <field name="title">[QAN15_02_11_08] 3-4 dias</field>
+                        <field name="title">[QAN15_02_11_08] 1-2 dias</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_09">
-                        <field name="title">[QAN15_02_11_09] 5 ou mais dias</field>
+                        <field name="title">[QAN15_02_11_09] 3-4 dias</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_10">
-                        <field name="title">[QAN15_02_11_10] Não respondeu</field>
+                        <field name="title">[QAN15_02_11_10] 5 ou mais dias</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_11">
-                        <field name="title">[QAN15_02_11_11] Não sabe</field>
+                        <field name="title">[QAN15_02_11_11] Não respondeu</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 
                     <record model="survey.question.column.heading" id="QAN15_02_11_12">
-                        <field name="title">[QAN15_02_11_12] Não se aplica</field>
+                        <field name="title">[QAN15_02_11_12] Não sabe</field>
+                        <field name="question_id" ref="QAN15_02_11"/>
+                    </record>
+
+                    <record model="survey.question.column.heading" id="QAN15_02_11_13">
+                        <field name="title">[QAN15_02_11_13] Não se aplica</field>
                         <field name="question_id" ref="QAN15_02_11"/>
                     </record>
 

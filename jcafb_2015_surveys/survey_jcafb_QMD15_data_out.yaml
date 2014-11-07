@@ -505,3 +505,64 @@ QMD15:
                 model: survey.answer
                 answer: 'e) Não se aplica'
 
+    QMD15_03:
+        model: survey.page
+        title: 'Tabela de Medicamentos'
+        note: 'Tabela de Medicamentos'
+
+        QMD15_03_01:
+            model: survey.question
+            question: 'Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver.'
+            type: table
+            is_require_answer: 1
+            req_error_msg: 'Preencher os medicamentos que o paciente utilizou.'
+            no_of_rows: 20
+
+            QMD15_03_01_01:
+                model: survey.question.column.heading
+                title: 'Medicamentos'
+
+            QMD15_03_01_02:
+                model: survey.question.column.heading
+                title: 'Receita válida'
+
+            QMD15_03_01_03:
+                model: survey.question.column.heading
+                title: 'Como foi prescrito na receita? (posologia, modo de uso)'
+
+            QMD15_03_01_04:
+                model: survey.question.column.heading
+                title: 'Onde o Sr.(a) adquire esse medicamento?'
+
+            QMD15_03_01_05:
+                model: survey.question.column.heading
+                title: 'Para que o Sr.(a) acha tem que tomar/utilizar este medicamento? (perguntar, não apenas ler na receita)'
+
+            QMD15_03_01_06:
+                model: survey.question.column.heading
+                title: 'Como o Sr.(a) conserva este medicamento?'
+
+            QMD15_03_01_07:
+                model: survey.question.column.heading
+                title: 'Como o Sr.(a) toma/utiliza este medicamento?* (perguntar, não apenas ler na receita)'
+
+            QMD15_03_01_08:
+                model: survey.question.column.heading
+                title: 'Quantas vezes o Sr.(a) esqueceu de tomar este medicamento nos últimos 15 dias?'
+
+            QMD15_03_01_09:
+                model: survey.question.column.heading
+                title: 'Há quanto tempo o Sr.(a) utiliza este medicamento? (pode-se colocar faixas de tempo)'
+
+            QMD15_03_01_10:
+                model: survey.question.column.heading
+                title: 'O medicamento está dentro do prazo de validade?'
+
+            QMD15_03_01_11:
+                model: survey.question.column.heading
+                title: 'Adere?'
+
+            QMD15_03_01_12:
+                model: survey.question.column.heading
+                title: 'Conhecimento sobre indicação?'
+
