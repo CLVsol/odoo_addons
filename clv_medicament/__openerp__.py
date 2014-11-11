@@ -37,7 +37,7 @@ Medicament
         ],
     'data': [
         'security/clv_medicament_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'product_product_view.xml',
         'clv_medicament_view.xml',
         'category/clv_medicament_category_view.xml',
