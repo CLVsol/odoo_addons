@@ -318,6 +318,13 @@ if __name__ == '__main__':
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
+    yaml_filename = 'survey_jcafb_FSE15.yaml'
+    yaml_out_filename = 'survey_jcafb_FSE15_out.yaml'
+    xml_filename = 'survey_jcafb_FSE15.xml'
+    txt_filename = 'survey_jcafb_FSE15.txt'
+    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+
     yaml_filename = 'survey_jcafb_ISE15.yaml'
     yaml_out_filename = 'survey_jcafb_ISE15_out.yaml'
     xml_filename = 'survey_jcafb_ISE15.xml'

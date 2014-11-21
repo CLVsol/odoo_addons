@@ -1,4 +1,4 @@
-[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia
+[QDH15] JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia
     [QDH15_01] Preâmbulo
         [QDH15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)
@@ -14,7 +14,8 @@
             [QDH15_01_03_01] a) Responsável
             [QDH15_01_03_02] b) Paciente
             [QDH15_01_03_03] c) Cuidador
-            Nome (Grau de Parentesco)____________________________________
+            [QDH15_01_03_04] d) Outro
+            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar.____________________________________
     [QDH15_02] Geral
         [QDH15_02_01] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
             (multiple_choice_only_one_ans)
@@ -55,8 +56,8 @@
         [QDH15_03_04] Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)
             (multiple_choice_only_one_ans)
             [QDH15_03_04_01] a) Normal (H:&#60;94 cm; M:&#60;80 cm)
-            [QDH15_03_04_02] b) Risco aumentado (H:=&#62;94 cm; M:=&#62;80 cm)
-            [QDH15_03_04_03] c) Risco aumentado substancialmente (H:=&#62;102 cm; M:=&#62;88 cm))
+            [QDH15_03_04_02] b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)
+            [QDH15_03_04_03] c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))
             [QDH15_03_04_04] d) Não interpretado (justificar em observações)
             [QDH15_03_04_05] e) Não se aplica
             Observações:____________________________________
@@ -64,13 +65,13 @@
             (multiple_textboxes_diff_type)
             [QDH15_03_05_01] Valor:____________________________________
             [QDH15_03_05_02] Responsável:____________________________________
-        [QDH15_03_06] Interpretação do valor de Glicemia (segundo a Assoc.Americana de Diabetes/Soc.Bras.de Diabetes)
+        [QDH15_03_06] Interpretação do valor de Glicemia (Assosciação Americana de Diabetes (2014))
             (multiple_choice_only_one_ans)
-            [QDH15_03_06_01] a) Normal (=&#60;99 mg/dL)
-            [QDH15_03_06_02] b) Pré-diabetes = risco aumentado para diabetes (100 - 125 mg/dL)
-            [QDH15_03_06_03] c) Diabetes (&#62;=126 mg/dL)
-            [QDH15_03_06_04] d) Não interpretado (Jejum menor que 8 hs ou maior que 14 hs)
-            [QDH15_03_06_05] e) Outras situações (especificar)
+            [QDH15_03_06_01] a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)
+            [QDH15_03_06_02] b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-25 mg/dL)
+            [QDH15_03_06_03] c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )
+            [QDH15_03_06_04] d) Normal para jejum INFERIOR a 8 hs (até 140 mg/dL)
+            [QDH15_03_06_05] e) Não avaliado (justificar)
             [QDH15_03_06_06] f) Não se aplica
             Outras situações:____________________________________
         [QDH15_03_07] Pressão arterial autom. (mmHg)
@@ -81,11 +82,11 @@
             (multiple_textboxes_diff_type)
             [QDH15_03_08_01] Valor:____________________________________
             [QDH15_03_08_02] Responsável:____________________________________
-        [QDH15_03_09] Interpretação do valor de Pressão Arterial (segundo Diretrizes Brasileiras de HIPERTENSÃO Arterial de 2010)
+        [QDH15_03_09] Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)
             (multiple_choice_only_one_ans)
-            [QDH15_03_09_01] a) Normal (PAS até 130 mmHg e PAD até 85 mmHg)
-            [QDH15_03_09_02] b) Limítrofe (PAS=130-139 mmHg e PAD=85-89 mmHg)
-            [QDH15_03_09_03] c) Alta (PAS=ou&#62;140 mmHg e PAD=ou&#62;90 mmHg)
+            [QDH15_03_09_01] a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)
+            [QDH15_03_09_02] b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)
+            [QDH15_03_09_03] c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)
             [QDH15_03_09_04] d) Não interpretado (justificar em "Observações")
             [QDH15_03_09_05] e) Não se aplica
             Observações:____________________________________
@@ -93,11 +94,11 @@
             (multiple_textboxes_diff_type)
             [QDH15_03_10_01] Valor:____________________________________
             [QDH15_03_10_02] Responsável:____________________________________
-        [QDH15_03_11] Interpretação do valor de Colesterol (Adulto &#62; 20 anos, seg. a Soc. Bras. de Cardiologia (V Diretriz Bras. de Dislipidemias e Prevenção da Aterosclerose))
+        [QDH15_03_11] Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)
             (multiple_choice_only_one_ans)
-            [QDH15_03_11_01] a) Desejável: &#60; 200 mg/dL
-            [QDH15_03_11_02] b) Limítrofe: 200 – 239 mg/dL
-            [QDH15_03_11_03] c) Elevado: &#62; 240  mg/dL
+            [QDH15_03_11_01] a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL
+            [QDH15_03_11_02] b) Limítrofe:Acima de 20 anos:200–39 mg/dL;2-19 anos:150-169 mg/dL
+            [QDH15_03_11_03] c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL
             [QDH15_03_11_04] d) Não interpretado (justificar em "Observações")
             [QDH15_03_11_05] e) Não se aplica
             Observações:____________________________________
@@ -105,18 +106,18 @@
             (multiple_textboxes_diff_type)
             [QDH15_03_12_01] Valor:____________________________________
             [QDH15_03_12_02] Responsável:____________________________________
-        [QDH15_03_13] Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos: &#62; 65 anos)
+        [QDH15_03_13] Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)
             (multiple_choice_only_one_ans)
-            [QDH15_03_13_01] a) Baixo peso (Adultos:&#60; 18,5; Idosos (M e F): &#60; 21,9)
+            [QDH15_03_13_01] a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)
             [QDH15_03_13_02] b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)
             [QDH15_03_13_03] c) Sobrepeso (Pré-obeso) (Adultos: 25,0 a 29,9; Idosos(M): 27,1 a 30,0/Idosos(F): 27,1 a 32,0)
             [QDH15_03_13_04] d) Obesidade Grau I (Adultos: 30,0 a 34,9; Idosos(M): 30,1,1 a 35,0/Idosos(F): 32,1 a 37,0)
             [QDH15_03_13_05] e) Obesidade Grau II (Adultos: 35,0 a 39,9; Idosos(M): 35,1 a 39,0/Idosos(F): 37,1 a 41,9)
-            [QDH15_03_13_06] f) Obesidade Grau III (Adultos: &#62; 40,0; Idosos(M): &#62; 40,0/Idosos(F): &#62; 42,0)
+            [QDH15_03_13_06] f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)
             [QDH15_03_13_07] g) Não interpretado (justificar em "Observações")
             [QDH15_03_13_08] h) Não se aplica
             Observações:____________________________________
-        [QDH15_03_14] Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (Não precisa especificar se não se sentir confortável)
+        [QDH15_03_14] Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (se possível, especificar)
             (multiple_choice_only_one_ans)
             [QDH15_03_14_01] a) Sim (especificar em "Observações", se possível)
             [QDH15_03_14_02] b) Não

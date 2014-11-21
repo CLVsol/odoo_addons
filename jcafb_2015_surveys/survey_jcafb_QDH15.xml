@@ -2,10 +2,10 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- [QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
+        <!-- [QDH15] JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
         <record model="survey" id="QDH15">
-            <field name="title">[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
-            <field name="note">[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
+            <field name="title">[QDH15] JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
+            <field name="note">[QDH15] JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
             <field name="responsible_id" ref="base.user_root"/>
             <field name="type" ref="survey_type_JCAFB_2015"/>
             <field name="color">5</field>
@@ -83,7 +83,7 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
-                    <field name="comment_label">Nome (Grau de Parentesco)</field>
+                    <field name="comment_label">Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar.</field>
                 </record>
 
                     <record model="survey.answer" id="QDH15_01_03_01">
@@ -102,6 +102,12 @@
                         <field name="answer">[QDH15_01_03_03] c) Cuidador</field>
                         <field name="question_id" ref="QDH15_01_03"/>
                         <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.answer" id="QDH15_01_03_04">
+                        <field name="answer">[QDH15_01_03_04] d) Outro</field>
+                        <field name="question_id" ref="QDH15_01_03"/>
+                        <field name="sequence" eval="40"/>
                     </record>
 
             <record model="survey.page" id="QDH15_02">
@@ -339,13 +345,13 @@
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_04_02">
-                        <field name="answer">[QDH15_03_04_02] b) Risco aumentado (H:=&#62;94 cm; M:=&#62;80 cm)</field>
+                        <field name="answer">[QDH15_03_04_02] b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)</field>
                         <field name="question_id" ref="QDH15_03_04"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_04_03">
-                        <field name="answer">[QDH15_03_04_03] c) Risco aumentado substancialmente (H:=&#62;102 cm; M:=&#62;88 cm))</field>
+                        <field name="answer">[QDH15_03_04_03] c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))</field>
                         <field name="question_id" ref="QDH15_03_04"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -388,7 +394,7 @@
                     </record>
 
                 <record model="survey.question" id="QDH15_03_06">
-                    <field name="question">[QDH15_03_06] Interpretação do valor de Glicemia (segundo a Assoc.Americana de Diabetes/Soc.Bras.de Diabetes)</field>
+                    <field name="question">[QDH15_03_06] Interpretação do valor de Glicemia (Assosciação Americana de Diabetes (2014))</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="60"/>
@@ -399,31 +405,31 @@
                 </record>
 
                     <record model="survey.answer" id="QDH15_03_06_01">
-                        <field name="answer">[QDH15_03_06_01] a) Normal (=&#60;99 mg/dL)</field>
+                        <field name="answer">[QDH15_03_06_01] a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)</field>
                         <field name="question_id" ref="QDH15_03_06"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_06_02">
-                        <field name="answer">[QDH15_03_06_02] b) Pré-diabetes = risco aumentado para diabetes (100 - 125 mg/dL)</field>
+                        <field name="answer">[QDH15_03_06_02] b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-25 mg/dL)</field>
                         <field name="question_id" ref="QDH15_03_06"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_06_03">
-                        <field name="answer">[QDH15_03_06_03] c) Diabetes (&#62;=126 mg/dL)</field>
+                        <field name="answer">[QDH15_03_06_03] c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )</field>
                         <field name="question_id" ref="QDH15_03_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_06_04">
-                        <field name="answer">[QDH15_03_06_04] d) Não interpretado (Jejum menor que 8 hs ou maior que 14 hs)</field>
+                        <field name="answer">[QDH15_03_06_04] d) Normal para jejum INFERIOR a 8 hs (até 140 mg/dL)</field>
                         <field name="question_id" ref="QDH15_03_06"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_06_05">
-                        <field name="answer">[QDH15_03_06_05] e) Outras situações (especificar)</field>
+                        <field name="answer">[QDH15_03_06_05] e) Não avaliado (justificar)</field>
                         <field name="question_id" ref="QDH15_03_06"/>
                         <field name="sequence" eval="50"/>
                     </record>
@@ -485,7 +491,7 @@
                     </record>
 
                 <record model="survey.question" id="QDH15_03_09">
-                    <field name="question">[QDH15_03_09] Interpretação do valor de Pressão Arterial (segundo Diretrizes Brasileiras de HIPERTENSÃO Arterial de 2010)</field>
+                    <field name="question">[QDH15_03_09] Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="90"/>
@@ -496,19 +502,19 @@
                 </record>
 
                     <record model="survey.answer" id="QDH15_03_09_01">
-                        <field name="answer">[QDH15_03_09_01] a) Normal (PAS até 130 mmHg e PAD até 85 mmHg)</field>
+                        <field name="answer">[QDH15_03_09_01] a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)</field>
                         <field name="question_id" ref="QDH15_03_09"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_09_02">
-                        <field name="answer">[QDH15_03_09_02] b) Limítrofe (PAS=130-139 mmHg e PAD=85-89 mmHg)</field>
+                        <field name="answer">[QDH15_03_09_02] b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)</field>
                         <field name="question_id" ref="QDH15_03_09"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_09_03">
-                        <field name="answer">[QDH15_03_09_03] c) Alta (PAS=ou&#62;140 mmHg e PAD=ou&#62;90 mmHg)</field>
+                        <field name="answer">[QDH15_03_09_03] c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)</field>
                         <field name="question_id" ref="QDH15_03_09"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -551,7 +557,7 @@
                     </record>
 
                 <record model="survey.question" id="QDH15_03_11">
-                    <field name="question">[QDH15_03_11] Interpretação do valor de Colesterol (Adulto &#62; 20 anos, seg. a Soc. Bras. de Cardiologia (V Diretriz Bras. de Dislipidemias e Prevenção da Aterosclerose))</field>
+                    <field name="question">[QDH15_03_11] Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="110"/>
@@ -562,19 +568,19 @@
                 </record>
 
                     <record model="survey.answer" id="QDH15_03_11_01">
-                        <field name="answer">[QDH15_03_11_01] a) Desejável: &#60; 200 mg/dL</field>
+                        <field name="answer">[QDH15_03_11_01] a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL</field>
                         <field name="question_id" ref="QDH15_03_11"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_11_02">
-                        <field name="answer">[QDH15_03_11_02] b) Limítrofe: 200 – 239 mg/dL</field>
+                        <field name="answer">[QDH15_03_11_02] b) Limítrofe:Acima de 20 anos:200–39 mg/dL;2-19 anos:150-169 mg/dL</field>
                         <field name="question_id" ref="QDH15_03_11"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_11_03">
-                        <field name="answer">[QDH15_03_11_03] c) Elevado: &#62; 240  mg/dL</field>
+                        <field name="answer">[QDH15_03_11_03] c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL</field>
                         <field name="question_id" ref="QDH15_03_11"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -597,9 +603,9 @@
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="120"/>
                     <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Preencher o Valor, a Interpretação do Valor e o Responsável.</field>
+                    <field name="req_error_msg">Preencher o Valor e o Responsável.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">3</field>
+                    <field name="req_ans">2</field>
                 </record>
 
                     <record model="survey.answer" id="QDH15_03_12_01">
@@ -617,7 +623,7 @@
                     </record>
 
                 <record model="survey.question" id="QDH15_03_13">
-                    <field name="question">[QDH15_03_13] Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos: &#62; 65 anos)</field>
+                    <field name="question">[QDH15_03_13] Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="130"/>
@@ -628,7 +634,7 @@
                 </record>
 
                     <record model="survey.answer" id="QDH15_03_13_01">
-                        <field name="answer">[QDH15_03_13_01] a) Baixo peso (Adultos:&#60; 18,5; Idosos (M e F): &#60; 21,9)</field>
+                        <field name="answer">[QDH15_03_13_01] a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)</field>
                         <field name="question_id" ref="QDH15_03_13"/>
                         <field name="sequence" eval="10"/>
                     </record>
@@ -658,7 +664,7 @@
                     </record>
 
                     <record model="survey.answer" id="QDH15_03_13_06">
-                        <field name="answer">[QDH15_03_13_06] f) Obesidade Grau III (Adultos: &#62; 40,0; Idosos(M): &#62; 40,0/Idosos(F): &#62; 42,0)</field>
+                        <field name="answer">[QDH15_03_13_06] f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)</field>
                         <field name="question_id" ref="QDH15_03_13"/>
                         <field name="sequence" eval="60"/>
                     </record>
@@ -676,7 +682,7 @@
                     </record>
 
                 <record model="survey.question" id="QDH15_03_14">
-                    <field name="question">[QDH15_03_14] Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (Não precisa especificar se não se sentir confortável)</field>
+                    <field name="question">[QDH15_03_14] Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (se possível, especificar)</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="140"/>

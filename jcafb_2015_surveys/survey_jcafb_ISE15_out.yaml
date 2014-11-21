@@ -1,7 +1,7 @@
 ISE15:
     model: survey
-    title: 'JCAFB 2015 - Questionário Socioeconômico (Idosos)'
-    note: 'JCAFB 2015 - Questionário Socioeconômico (Idosos)'
+    title: 'JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)'
+    note: 'JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
@@ -16,18 +16,23 @@ ISE15:
             question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
-            req_error_msg: 'Preencher o Nome e o Código.'
+            req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
             req_ans: 2
 
             ISE15_01_01_01:
                 model: survey.answer
-                answer: 'Nome'
+                answer: 'Nome do Paciente'
                 type: char
 
             ISE15_01_01_02:
                 model: survey.answer
-                answer: 'Código'
+                answer: 'Código do Paciente'
+                type: char
+
+            ISE15_01_01_03:
+                model: survey.answer
+                answer: 'Código da Família'
                 type: char
 
         ISE15_01_02:
@@ -61,15 +66,19 @@ ISE15:
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
-            comment_label: 'Nome (Grau de Parentesco)'
+            comment_label: 'Nome e, se a resposta for "Outro", especificar'
 
             ISE15_01_03_01:
                 model: survey.answer
-                answer: 'b) Paciente'
+                answer: 'a Paciente'
 
             ISE15_01_03_02:
                 model: survey.answer
-                answer: 'c) Cuidador'
+                answer: 'b) Cuidador'
+
+            ISE15_01_03_03:
+                model: survey.answer
+                answer: 'c) Outro'
 
     ISE15_02:
         model: survey.page
@@ -458,39 +467,6 @@ ISE15:
 
         ISE15_03_01:
             model: survey.question
-            question: 'Como é o banheiro da casa?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outro, como?'
-
-            ISE15_03_01_01:
-                model: survey.answer
-                answer: 'a) Banheiro com rede de esgoto'
-
-            ISE15_03_01_02:
-                model: survey.answer
-                answer: 'b) Banheiro que dá na fossa'
-
-            ISE15_03_01_03:
-                model: survey.answer
-                answer: 'c) Outro'
-
-            ISE15_03_01_04:
-                model: survey.answer
-                answer: 'd) Não sabe'
-
-            ISE15_03_01_05:
-                model: survey.answer
-                answer: 'e) Não quis responder'
-
-            ISE15_03_01_06:
-                model: survey.answer
-                answer: 'f) Não se aplica'
-
-        ISE15_03_02:
-            model: survey.question
             question: 'O que costuma fazer no tempo livre?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -500,51 +476,51 @@ ISE15:
             is_comment_require: True
             comment_label: 'Se outra atividade, qual?'
 
-            ISE15_03_02_01:
+            ISE15_03_01_01:
                 model: survey.answer
                 answer: 'a) Caminha pela cidade'
 
-            ISE15_03_02_02:
+            ISE15_03_01_02:
                 model: survey.answer
                 answer: 'b) Pratica exercícios físicos'
 
-            ISE15_03_02_03:
+            ISE15_03_01_03:
                 model: survey.answer
                 answer: 'c) Faz trabalhos manuais'
 
-            ISE15_03_02_04:
+            ISE15_03_01_04:
                 model: survey.answer
                 answer: 'd) Sai para conversar com as pessoas'
 
-            ISE15_03_02_05:
+            ISE15_03_01_05:
                 model: survey.answer
                 answer: 'e) Fica dentro de casa descansando'
 
-            ISE15_03_02_06:
+            ISE15_03_01_06:
                 model: survey.answer
                 answer: 'f) Frequenta grupos de atividades'
 
-            ISE15_03_02_07:
+            ISE15_03_01_07:
                 model: survey.answer
                 answer: 'g) Cuida da casa'
 
-            ISE15_03_02_08:
+            ISE15_03_01_08:
                 model: survey.answer
                 answer: 'h) Outra atividade'
 
-            ISE15_03_02_09:
+            ISE15_03_01_09:
                 model: survey.answer
                 answer: 'i) Não sabe'
 
-            ISE15_03_02_10:
+            ISE15_03_01_10:
                 model: survey.answer
                 answer: 'j) Não quis responder'
 
-            ISE15_03_02_11:
+            ISE15_03_01_11:
                 model: survey.answer
                 answer: 'k) Não se aplica'
 
-        ISE15_03_03:
+        ISE15_03_02:
             model: survey.question
             question: 'O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?'
             type: multiple_choice_only_one_ans
@@ -553,109 +529,109 @@ ISE15:
             is_comment_require: True
             comment_label: 'Se realiza, qual?'
 
-            ISE15_03_03_01:
+            ISE15_03_02_01:
                 model: survey.answer
                 answer: 'a) Sim. Qual'
 
-            ISE15_03_03_02:
+            ISE15_03_02_02:
                 model: survey.answer
                 answer: 'b) Não'
 
-            ISE15_03_03_03:
+            ISE15_03_02_03:
                 model: survey.answer
                 answer: 'c) Não sabe'
 
-            ISE15_03_03_04:
+            ISE15_03_02_04:
                 model: survey.answer
                 answer: 'd) Não quis responder'
 
-            ISE15_03_03_05:
+            ISE15_03_02_05:
                 model: survey.answer
                 answer: 'e) Não se aplica'
 
-        ISE15_03_04:
+        ISE15_03_03:
             model: survey.question
             question: 'Com que frequência caminha ou pratica exercícios?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
-            ISE15_03_04_01:
+            ISE15_03_03_01:
                 model: survey.answer
                 answer: 'a) 1x por semana'
 
-            ISE15_03_04_02:
+            ISE15_03_03_02:
                 model: survey.answer
                 answer: 'b) 2x por semana'
 
-            ISE15_03_04_03:
+            ISE15_03_03_03:
                 model: survey.answer
                 answer: 'c) 3x por semana'
 
-            ISE15_03_04_04:
+            ISE15_03_03_04:
                 model: survey.answer
                 answer: 'd) 4x por semana'
 
-            ISE15_03_04_05:
+            ISE15_03_03_05:
                 model: survey.answer
                 answer: 'e) 5x por semana'
 
-            ISE15_03_04_06:
+            ISE15_03_03_06:
                 model: survey.answer
                 answer: 'f) 6x por semana'
 
-            ISE15_03_04_07:
+            ISE15_03_03_07:
                 model: survey.answer
                 answer: 'g) Todos os dias'
 
-            ISE15_03_04_08:
+            ISE15_03_03_08:
                 model: survey.answer
                 answer: 'h) Não caminha nem pratica exercícios físicos'
 
-            ISE15_03_04_09:
+            ISE15_03_03_09:
                 model: survey.answer
                 answer: 'i) Não sabe'
 
-            ISE15_03_04_10:
+            ISE15_03_03_10:
                 model: survey.answer
                 answer: 'j) Não quis responder'
 
-            ISE15_03_04_11:
+            ISE15_03_03_11:
                 model: survey.answer
                 answer: 'k) Não se aplica'
 
-        ISE15_03_05:
+        ISE15_03_04:
             model: survey.question
             question: 'O(A) Sr.(a) tem ou teve o hábito de fumar?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
-            ISE15_03_05_01:
+            ISE15_03_04_01:
                 model: survey.answer
                 answer: 'a) Nunca fumou'
 
-            ISE15_03_05_02:
+            ISE15_03_04_02:
                 model: survey.answer
                 answer: 'b) Fuma atualmente'
 
-            ISE15_03_05_03:
+            ISE15_03_04_03:
                 model: survey.answer
                 answer: 'c) Já fumou, mas não fuma atualmente'
 
-            ISE15_03_05_04:
+            ISE15_03_04_04:
                 model: survey.answer
                 answer: 'd) Não sabe'
 
-            ISE15_03_05_05:
+            ISE15_03_04_05:
                 model: survey.answer
                 answer: 'e) Não quis responder'
 
-            ISE15_03_05_06:
+            ISE15_03_04_06:
                 model: survey.answer
                 answer: 'f) Não se aplica'
 
-        ISE15_03_06:
+        ISE15_03_05:
             model: survey.question
             question: 'O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?'
             type: multiple_choice_only_one_ans
@@ -664,39 +640,39 @@ ISE15:
             is_comment_require: True
             comment_label: 'Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).'
 
-            ISE15_03_06_01:
+            ISE15_03_05_01:
                 model: survey.answer
                 answer: 'a) Não'
 
-            ISE15_03_06_02:
+            ISE15_03_05_02:
                 model: survey.answer
                 answer: 'b) Sim, esporadicamente (menos que 1 vez por mês)'
 
-            ISE15_03_06_03:
+            ISE15_03_05_03:
                 model: survey.answer
                 answer: 'c) Sim, 1 vez por mês'
 
-            ISE15_03_06_04:
+            ISE15_03_05_04:
                 model: survey.answer
                 answer: 'd) Sim, 1 vez por semana (ou em finais de semana)'
 
-            ISE15_03_06_05:
+            ISE15_03_05_05:
                 model: survey.answer
                 answer: 'e) Sim, todos os dias'
 
-            ISE15_03_06_06:
+            ISE15_03_05_06:
                 model: survey.answer
                 answer: 'f) Outra resposta'
 
-            ISE15_03_06_07:
+            ISE15_03_05_07:
                 model: survey.answer
                 answer: 'g) Não sabe'
 
-            ISE15_03_06_08:
+            ISE15_03_05_08:
                 model: survey.answer
                 answer: 'h) Não quis responder'
 
-            ISE15_03_06_09:
+            ISE15_03_05_09:
                 model: survey.answer
                 answer: 'i) Não se aplica'
 
@@ -762,116 +738,71 @@ ISE15:
 
         ISE15_04_02:
             model: survey.question
-            question: 'A casa possui:'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-
-            ISE15_04_02_01:
-                model: survey.answer
-                answer: 'a) Degraus/desníveis'
-
-            ISE15_04_02_02:
-                model: survey.answer
-                answer: 'b) Tapetes'
-
-            ISE15_04_02_03:
-                model: survey.answer
-                answer: 'c) Locais com piso escorregadio'
-
-            ISE15_04_02_04:
-                model: survey.answer
-                answer: 'd) Móveis ou objetos que dificultam a circulação'
-
-            ISE15_04_02_05:
-                model: survey.answer
-                answer: 'e) Armários ou prateleiras muito altas'
-
-            ISE15_04_02_06:
-                model: survey.answer
-                answer: 'f) Nenhuma das alternativas citadas'
-
-            ISE15_04_02_07:
-                model: survey.answer
-                answer: 'g) Não sabe'
-
-            ISE15_04_02_08:
-                model: survey.answer
-                answer: 'h) Não quis responder'
-
-            ISE15_04_02_09:
-                model: survey.answer
-                answer: 'i) Não se aplica'
-
-        ISE15_04_03:
-            model: survey.question
             question: 'O(A) Sr.(a) diria que sua saúde é:'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
-            ISE15_04_03_01:
+            ISE15_04_02_01:
                 model: survey.answer
                 answer: 'a) Muito boa'
 
-            ISE15_04_03_02:
+            ISE15_04_02_02:
                 model: survey.answer
                 answer: 'b) Boa'
 
-            ISE15_04_03_03:
+            ISE15_04_02_03:
                 model: survey.answer
                 answer: 'c) Regular'
 
-            ISE15_04_03_04:
+            ISE15_04_02_04:
                 model: survey.answer
                 answer: 'd) Ruim'
 
-            ISE15_04_03_05:
+            ISE15_04_02_05:
                 model: survey.answer
                 answer: 'e) Muito ruim'
 
-            ISE15_04_03_06:
+            ISE15_04_02_06:
                 model: survey.answer
                 answer: 'f) Não sabe'
 
-            ISE15_04_03_07:
+            ISE15_04_02_07:
                 model: survey.answer
                 answer: 'g) Não quis responder'
 
-            ISE15_04_03_08:
+            ISE15_04_02_08:
                 model: survey.answer
                 answer: 'h) Não se aplica'
 
-        ISE15_04_04:
+        ISE15_04_03:
             model: survey.question
             question: 'Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
-            ISE15_04_04_01:
+            ISE15_04_03_01:
                 model: survey.answer
                 answer: 'a) Melhor'
 
-            ISE15_04_04_02:
+            ISE15_04_03_02:
                 model: survey.answer
                 answer: 'b) Igual'
 
-            ISE15_04_04_03:
+            ISE15_04_03_03:
                 model: survey.answer
                 answer: 'c) Pior'
 
-            ISE15_04_04_04:
+            ISE15_04_03_04:
                 model: survey.answer
                 answer: 'd) Não sabe'
 
-            ISE15_04_04_05:
+            ISE15_04_03_05:
                 model: survey.answer
                 answer: 'e) Não quis responder'
 
-            ISE15_04_04_06:
+            ISE15_04_03_06:
                 model: survey.answer
                 answer: 'f) Não se aplica'
 
@@ -1057,303 +988,212 @@ ISE15:
 
     ISE15_06:
         model: survey.page
-        title: 'Horta'
-        note: 'Horta'
+        title: 'Alimentação'
+        note: 'Alimentação'
 
         ISE15_06_01:
             model: survey.question
-            question: 'Planta alguma coisa para consumo? (vende, come..)'
+            question: 'Como o Sr(a) costuma consumir a carne?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             ISE15_06_01_01:
                 model: survey.answer
-                answer: 'a) Não'
+                answer: 'a) Não consome carne'
 
             ISE15_06_01_02:
                 model: survey.answer
-                answer: 'b) Sim'
+                answer: 'b) Bem passada'
 
             ISE15_06_01_03:
                 model: survey.answer
-                answer: 'c) Não sabe'
+                answer: 'c) Mal passada / Crua'
 
             ISE15_06_01_04:
                 model: survey.answer
-                answer: 'd) Não quis responder'
+                answer: 'd) Não sabe'
 
             ISE15_06_01_05:
                 model: survey.answer
-                answer: 'e) Não se aplica'
+                answer: 'e) Não quis responder'
 
-        ISE15_06_02:
-            model: survey.question
-            question: 'Usa adubo?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-
-            ISE15_06_02_01:
+            ISE15_06_01_06:
                 model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_06_02_02:
-                model: survey.answer
-                answer: 'b) Sim, adubo orgânico com esterco'
-
-            ISE15_06_02_03:
-                model: survey.answer
-                answer: 'c) Sim, adubo orgânico sem esterco'
-
-            ISE15_06_02_04:
-                model: survey.answer
-                answer: 'd) Sim, adubo comprado'
-
-            ISE15_06_02_05:
-                model: survey.answer
-                answer: 'e) Não sabe'
-
-            ISE15_06_02_06:
-                model: survey.answer
-                answer: 'f) Não quis responder'
-
-            ISE15_06_02_07:
-                model: survey.answer
-                answer: 'g) Não se aplica'
-
-        ISE15_06_03:
-            model: survey.question
-            question: 'Qual fonte de água utiliza para irrigar a horta?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_06_03_01:
-                model: survey.answer
-                answer: 'a) Reservatório da prefeitura'
-
-            ISE15_06_03_02:
-                model: survey.answer
-                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-
-            ISE15_06_03_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_06_03_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_06_03_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
+                answer: 'f) Não se aplica'
 
     ISE15_07:
         model: survey.page
-        title: 'Água'
-        note: 'Água'
+        title: 'Parasitoses'
+        note: 'Parasitoses'
 
         ISE15_07_01:
             model: survey.question
-            question: 'De onde vem a água da casa?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_07_01_01:
-                model: survey.answer
-                answer: 'a) Reservatório da prefeitura'
-
-            ISE15_07_01_02:
-                model: survey.answer
-                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-
-            ISE15_07_01_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_07_01_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_07_01_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_07_02:
-            model: survey.question
-            question: 'Existe contato das pessoas da casa com o local de armazenamento?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_07_02_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_07_02_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            ISE15_07_02_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_07_02_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_07_02_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_07_03:
-            model: survey.question
-            question: 'Na falta de água, onde a obtém?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_07_03_01:
-                model: survey.answer
-                answer: 'a) Reservatório da prefeitura'
-
-            ISE15_07_03_02:
-                model: survey.answer
-                answer: 'b) Outros (Poço, lagoa, córrego, cisterna, etc).'
-
-            ISE15_07_03_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_07_03_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_07_03_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_07_04:
-            model: survey.question
-            question: 'Antes do consumo de água, realiza os tratamentos abaixo? (pode-se marcar mais de uma opção)'
+            question: ' O Sr(a) já fez exame de fezes?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             required_type: at least
             req_ans: 1
             is_comment_require: True
+            comment_label: 'Qual verme?'
+
+            ISE15_07_01_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            ISE15_07_01_02:
+                model: survey.answer
+                answer: 'b) Sim, resultado negativo para verme'
+
+            ISE15_07_01_03:
+                model: survey.answer
+                answer: 'c) Sim, mas não sabe o resultado'
+
+            ISE15_07_01_04:
+                model: survey.answer
+                answer: 'd) Sim, resultado positivo para verme'
+
+            ISE15_07_01_05:
+                model: survey.answer
+                answer: 'e) Não sabe'
+
+            ISE15_07_01_06:
+                model: survey.answer
+                answer: 'f) Não quis responder'
+
+            ISE15_07_01_07:
+                model: survey.answer
+                answer: 'g) Não se aplica'
+
+        ISE15_07_02:
+            model: survey.question
+            question: 'Como descobriu que estava com a doença?'
+            type: multiple_choice_multiple_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+            is_comment_require: True
             comment_label: 'Se outros, quais?'
 
-            ISE15_07_04_01:
+            ISE15_07_02_01:
                 model: survey.answer
-                answer: 'a) Filtração'
+                answer: 'a) Com resultado de exame de fezes'
 
-            ISE15_07_04_02:
+            ISE15_07_02_02:
                 model: survey.answer
-                answer: 'b) Fervura'
+                answer: 'b) Saiu nas fezes'
 
-            ISE15_07_04_03:
+            ISE15_07_02_03:
                 model: survey.answer
-                answer: 'c) Hipoclorito'
+                answer: 'c) Foi no médico'
 
-            ISE15_07_04_04:
+            ISE15_07_02_04:
                 model: survey.answer
-                answer: 'd) Nenhum'
+                answer: 'd) Outros'
 
-            ISE15_07_04_05:
+            ISE15_07_02_05:
                 model: survey.answer
-                answer: 'e) Outros'
+                answer: 'e) Não sabe'
 
-            ISE15_07_04_06:
+            ISE15_07_02_06:
+                model: survey.answer
+                answer: 'f) Não quis responder'
+
+            ISE15_07_02_07:
+                model: survey.answer
+                answer: 'g) Não se aplica'
+
+        ISE15_07_03:
+            model: survey.question
+            question: 'Já tomou vermífugo (lombrigueira)?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            ISE15_07_03_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            ISE15_07_03_02:
+                model: survey.answer
+                answer: 'b) Sim, há seis meses ou menos e "botou" verme'
+
+            ISE15_07_03_03:
+                model: survey.answer
+                answer: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
+
+            ISE15_07_03_04:
+                model: survey.answer
+                answer: 'd) Sim, há mais de seis meses, e "botou" verme'
+
+            ISE15_07_03_05:
+                model: survey.answer
+                answer: 'e) Sim, há mais de seis meses, mas não "botou" verme'
+
+            ISE15_07_03_06:
                 model: survey.answer
                 answer: 'f) Não sabe'
 
-            ISE15_07_04_07:
+            ISE15_07_03_07:
                 model: survey.answer
                 answer: 'g) Não quis responder'
 
-            ISE15_07_04_08:
+            ISE15_07_03_08:
                 model: survey.answer
                 answer: 'h) Não se aplica'
 
     ISE15_08:
         model: survey.page
-        title: 'Alimentação / Animais'
-        note: 'Alimentação / Animais'
+        title: 'Aspecto Econômico'
+        note: 'Aspecto Econômico'
 
         ISE15_08_01:
             model: survey.question
-            question: 'Cria animais de estimação?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_08_01_01:
-                model: survey.answer
-                answer: 'a) Não cria'
-
-            ISE15_08_01_02:
-                model: survey.answer
-                answer: 'b) Galinha'
-
-            ISE15_08_01_03:
-                model: survey.answer
-                answer: 'c) Porco'
-
-            ISE15_08_01_04:
-                model: survey.answer
-                answer: 'd) Boi, vaca ou bezerro'
-
-            ISE15_08_01_05:
-                model: survey.answer
-                answer: 'e) Gato'
-
-            ISE15_08_01_06:
-                model: survey.answer
-                answer: 'f) Cachorro '
-
-            ISE15_08_01_07:
-                model: survey.answer
-                answer: 'g) Outros'
-
-            ISE15_08_01_08:
-                model: survey.answer
-                answer: 'h) Não sabe'
-
-            ISE15_08_01_09:
-                model: survey.answer
-                answer: 'i) Não quis responder'
-
-            ISE15_08_01_10:
-                model: survey.answer
-                answer: 'j) Não se aplica'
-
-        ISE15_08_02:
-            model: survey.question
-            question: 'Como são criados?'
+            question: 'O(A) Sr.(a) trabalha?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
+            ISE15_08_01_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            ISE15_08_01_02:
+                model: survey.answer
+                answer: 'b) Não. É aposentado'
+
+            ISE15_08_01_03:
+                model: survey.answer
+                answer: 'c) Sim'
+
+            ISE15_08_01_04:
+                model: survey.answer
+                answer: 'd) Não sabe'
+
+            ISE15_08_01_05:
+                model: survey.answer
+                answer: 'e) Não quis responder'
+
+            ISE15_08_01_06:
+                model: survey.answer
+                answer: 'f) Não se aplica'
+
+        ISE15_08_02:
+            model: survey.question
+            question: 'O(A) Sr.(a) trabalha (remunerado) atualmente? '
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+            is_comment_require: True
+            comment_label: 'Qual?'
+
             ISE15_08_02_01:
                 model: survey.answer
-                answer: 'a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
+                answer: 'a) Não'
 
             ISE15_08_02_02:
                 model: survey.answer
-                answer: 'b) Presos'
+                answer: 'b) Sim'
 
             ISE15_08_02_03:
                 model: survey.answer
@@ -1369,523 +1209,26 @@ ISE15:
 
         ISE15_08_03:
             model: survey.question
-            question: 'Cria animais para a alimentação?'
-            type: multiple_choice_multiple_ans
+            question: 'Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)?'
+            type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
-            comment_label: 'Se outros, quais?'
+            comment_label: 'Qual?'
 
             ISE15_08_03_01:
                 model: survey.answer
-                answer: 'a) Não cria'
+                answer: 'a) Valor'
 
             ISE15_08_03_02:
                 model: survey.answer
-                answer: 'b) Galinha'
+                answer: 'b) Não sabe'
 
             ISE15_08_03_03:
                 model: survey.answer
-                answer: 'c) Porco'
-
-            ISE15_08_03_04:
-                model: survey.answer
-                answer: 'd) Boi, vaca ou bezerro'
-
-            ISE15_08_03_05:
-                model: survey.answer
-                answer: 'e) Coelho'
-
-            ISE15_08_03_06:
-                model: survey.answer
-                answer: 'f) Outros'
-
-            ISE15_08_03_07:
-                model: survey.answer
-                answer: 'g) Não sabe'
-
-            ISE15_08_03_08:
-                model: survey.answer
-                answer: 'h) Não quis responder'
-
-            ISE15_08_03_09:
-                model: survey.answer
-                answer: 'i) Não se aplica'
-
-        ISE15_08_04:
-            model: survey.question
-            question: 'Como são criados?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_08_04_01:
-                model: survey.answer
-                answer: 'a) Soltos (ou seja, vai pra rua, ou fora de cercados e chiqueiros)'
-
-            ISE15_08_04_02:
-                model: survey.answer
-                answer: 'b) Presos'
-
-            ISE15_08_04_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_08_04_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_08_04_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_08_05:
-            model: survey.question
-            question: 'Costuma consumir carne proveniente de: (pode-se marcar mais de uma opção)'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_08_05_01:
-                model: survey.answer
-                answer: 'a) Não consome carne'
-
-            ISE15_08_05_02:
-                model: survey.answer
-                answer: 'b) Criação própria'
-
-            ISE15_08_05_03:
-                model: survey.answer
-                answer: 'c) Mercado/açougue'
-
-            ISE15_08_05_04:
-                model: survey.answer
-                answer: 'd) Criador de confiança'
-
-            ISE15_08_05_05:
-                model: survey.answer
-                answer: 'e) Outros'
-
-            ISE15_08_05_06:
-                model: survey.answer
-                answer: 'f) Não sabe'
-
-            ISE15_08_05_07:
-                model: survey.answer
-                answer: 'g) Não quis responder'
-
-            ISE15_08_05_08:
-                model: survey.answer
-                answer: 'h) Não se aplica'
-
-        ISE15_08_06:
-            model: survey.question
-            question: 'Como você prepara a carne que consome?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_08_06_01:
-                model: survey.answer
-                answer: 'a) Bem passada'
-
-            ISE15_08_06_02:
-                model: survey.answer
-                answer: 'b) Mal passada / Crua'
-
-            ISE15_08_06_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_08_06_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_08_06_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_08_07:
-            model: survey.question
-            question: 'Ao preparar os alimentos crus: (pode-se marcar mais de uma opção)'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-
-            ISE15_08_07_01:
-                model: survey.answer
-                answer: 'a) Lava em água corrente'
-
-            ISE15_08_07_02:
-                model: survey.answer
-                answer: 'b) Põe de molho em água'
-
-            ISE15_08_07_03:
-                model: survey.answer
-                answer: 'c) Põe de molho em água+vinagre'
-
-            ISE15_08_07_04:
-                model: survey.answer
-                answer: 'd) Põe de molho em água+água sanitária / hipoclorito'
-
-            ISE15_08_07_05:
-                model: survey.answer
-                answer: 'e) Nenhum '
-
-            ISE15_08_07_06:
-                model: survey.answer
-                answer: 'f) Não sabe'
-
-            ISE15_08_07_07:
-                model: survey.answer
-                answer: 'g) Não quis responder'
-
-            ISE15_08_07_08:
-                model: survey.answer
-                answer: 'h) Não se aplica'
-
-    ISE15_09:
-        model: survey.page
-        title: 'Parasitoses'
-        note: 'Parasitoses'
-
-        ISE15_09_01:
-            model: survey.question
-            question: 'Conhece algum verme (parasitose)?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_09_01_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_09_01_02:
-                model: survey.answer
-                answer: 'b) Barriga d água, "xistose" (Esquistossomose)'
-
-            ISE15_09_01_03:
-                model: survey.answer
-                answer: 'c) "Bicha", "lombriga" (Ascaridíase)'
-
-            ISE15_09_01_04:
-                model: survey.answer
-                answer: 'd) "Amarelão" (Ancilostomose)'
-
-            ISE15_09_01_05:
-                model: survey.answer
-                answer: 'e) "Solitária" (Teníase)'
-
-            ISE15_09_01_06:
-                model: survey.answer
-                answer: 'f) "Ameba"(Amebíase/Giardíase)'
-
-            ISE15_09_01_07:
-                model: survey.answer
-                answer: 'g) Coceira (Enterobíase)'
-
-            ISE15_09_01_08:
-                model: survey.answer
-                answer: 'h) Não sabe'
-
-            ISE15_09_01_09:
-                model: survey.answer
-                answer: 'i) Não quis responder'
-
-            ISE15_09_01_10:
-                model: survey.answer
-                answer: 'j) Não se aplica'
-
-        ISE15_09_02:
-            model: survey.question
-            question: 'Sabe como se prevenir de pegar vermes?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_09_02_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_09_02_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            ISE15_09_02_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_09_02_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_09_02_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_09_03:
-            model: survey.question
-            question: 'Já fez exame de fezes?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-            is_comment_require: True
-            comment_label: 'Qual verme?'
-
-            ISE15_09_03_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_09_03_02:
-                model: survey.answer
-                answer: 'b) Sim, resultado negativo para verme'
-
-            ISE15_09_03_03:
-                model: survey.answer
-                answer: 'c) Sim, mas não sabe o resultado'
-
-            ISE15_09_03_04:
-                model: survey.answer
-                answer: 'd) Sim, resultado positivo para verme'
-
-            ISE15_09_03_05:
-                model: survey.answer
-                answer: 'e) Não sabe'
-
-            ISE15_09_03_06:
-                model: survey.answer
-                answer: 'f) Não quis responder'
-
-            ISE15_09_03_07:
-                model: survey.answer
-                answer: 'g) Não se aplica'
-
-        ISE15_09_04:
-            model: survey.question
-            question: 'Como descobriu que estava com a doença?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            ISE15_09_04_01:
-                model: survey.answer
-                answer: 'a) Com resultado de exame de fezes'
-
-            ISE15_09_04_02:
-                model: survey.answer
-                answer: 'b) Saiu nas fezes'
-
-            ISE15_09_04_03:
-                model: survey.answer
-                answer: 'c) Foi no médico'
-
-            ISE15_09_04_04:
-                model: survey.answer
-                answer: 'd) Outros'
-
-            ISE15_09_04_05:
-                model: survey.answer
-                answer: 'e) Não sabe'
-
-            ISE15_09_04_06:
-                model: survey.answer
-                answer: 'f) Não quis responder'
-
-            ISE15_09_04_07:
-                model: survey.answer
-                answer: 'g) Não se aplica'
-
-        ISE15_09_05:
-            model: survey.question
-            question: 'Já tomou vermífugo (lombrigueira)?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_09_05_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_09_05_02:
-                model: survey.answer
-                answer: 'b) Sim, há seis meses ou menos e "botou" verme'
-
-            ISE15_09_05_03:
-                model: survey.answer
-                answer: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
-
-            ISE15_09_05_04:
-                model: survey.answer
-                answer: 'd) Sim, há mais de seis meses, e "botou" verme'
-
-            ISE15_09_05_05:
-                model: survey.answer
-                answer: 'e) Sim, há mais de seis meses, mas não "botou" verme'
-
-            ISE15_09_05_06:
-                model: survey.answer
-                answer: 'f) Não sabe'
-
-            ISE15_09_05_07:
-                model: survey.answer
-                answer: 'g) Não quis responder'
-
-            ISE15_09_05_08:
-                model: survey.answer
-                answer: 'h) Não se aplica'
-
-        ISE15_09_06:
-            model: survey.question
-            question: 'Alguém na casa já pegou verme? Qual?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_09_06_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_09_06_02:
-                model: survey.answer
-                answer: 'b) Sim, mas não sabe qual verme'
-
-            ISE15_09_06_03:
-                model: survey.answer
-                answer: 'c) "Solitária" (Teníase)'
-
-            ISE15_09_06_04:
-                model: survey.answer
-                answer: 'd) "Ameba" (Amebíase)'
-
-            ISE15_09_06_05:
-                model: survey.answer
-                answer: 'e) "Giárdia" (Giardíase)'
-
-            ISE15_09_06_06:
-                model: survey.answer
-                answer: 'f) Coceira (Enterobíase)'
-
-            ISE15_09_06_07:
-                model: survey.answer
-                answer: 'g) "Amarelão" (Ancilostomose)'
-
-            ISE15_09_06_08:
-                model: survey.answer
-                answer: 'h) "Bicha", "lombriga" (Ascaridíase)'
-
-            ISE15_09_06_09:
-                model: survey.answer
-                answer: 'i) Barriga d água, "xistose" (Esquistossomose)'
-
-            ISE15_09_06_10:
-                model: survey.answer
-                answer: 'j) Não sabe'
-
-            ISE15_09_06_11:
-                model: survey.answer
-                answer: 'k) Não quis responder'
-
-            ISE15_09_06_12:
-                model: survey.answer
-                answer: 'l) Não se aplica'
-
-    ISE15_10:
-        model: survey.page
-        title: 'Aspecto Econômico'
-        note: 'Aspecto Econômico'
-
-        ISE15_10_01:
-            model: survey.question
-            question: 'O(A) Sr.(a) trabalha?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            ISE15_10_01_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_10_01_02:
-                model: survey.answer
-                answer: 'b) Não. É aposentado'
-
-            ISE15_10_01_03:
-                model: survey.answer
-                answer: 'c) Sim'
-
-            ISE15_10_01_04:
-                model: survey.answer
-                answer: 'd) Não sabe'
-
-            ISE15_10_01_05:
-                model: survey.answer
-                answer: 'e) Não quis responder'
-
-            ISE15_10_01_06:
-                model: survey.answer
-                answer: 'f) Não se aplica'
-
-        ISE15_10_02:
-            model: survey.question
-            question: 'O(A) Sr.(a) trabalha (remunerado) atualmente? '
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Qual?'
-
-            ISE15_10_02_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            ISE15_10_02_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            ISE15_10_02_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            ISE15_10_02_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            ISE15_10_02_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        ISE15_10_03:
-            model: survey.question
-            question: 'Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s)?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Qual?'
-
-            ISE15_10_03_01:
-                model: survey.answer
-                answer: 'a) Valor'
-
-            ISE15_10_03_02:
-                model: survey.answer
-                answer: 'b) Não sabe'
-
-            ISE15_10_03_03:
-                model: survey.answer
                 answer: 'c) Não quis responder'
 
-            ISE15_10_03_04:
+            ISE15_08_03_04:
                 model: survey.answer
                 answer: 'd) Não se aplica'
 

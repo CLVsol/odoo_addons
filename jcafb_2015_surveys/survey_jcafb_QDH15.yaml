@@ -1,7 +1,7 @@
 QDH15:
     model: survey
-    title: 'JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
-    note: 'JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    title: 'JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    note: 'JCAFB 2015 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
@@ -61,7 +61,7 @@ QDH15:
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
-            comment_label: 'Nome (Grau de Parentesco)'
+            comment_label: 'Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar.'
 
             QDH15_01_03_01:
                 model: survey.answer
@@ -74,6 +74,10 @@ QDH15:
             QDH15_01_03_03:
                 model: survey.answer
                 answer: 'c) Cuidador'
+
+            QDH15_01_03_04:
+                model: survey.answer
+                answer: 'd) Outro'
 
     QDH15_02:
         model: survey.page
@@ -245,11 +249,11 @@ QDH15:
 
             QDH15_03_04_02:
                 model: survey.answer
-                answer: 'b) Risco aumentado (H:=&#62;94 cm; M:=&#62;80 cm)'
+                answer: 'b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)'
 
             QDH15_03_04_03:
                 model: survey.answer
-                answer: 'c) Risco aumentado substancialmente (H:=&#62;102 cm; M:=&#62;88 cm))'
+                answer: 'c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))'
 
             QDH15_03_04_04:
                 model: survey.answer
@@ -280,7 +284,7 @@ QDH15:
 
         QDH15_03_06:
             model: survey.question
-            question: 'Interpretação do valor de Glicemia (segundo a Assoc.Americana de Diabetes/Soc.Bras.de Diabetes)'
+            question: 'Interpretação do valor de Glicemia (Assosciação Americana de Diabetes (2014))'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Responder.'
@@ -289,23 +293,23 @@ QDH15:
 
             QDH15_03_06_01:
                 model: survey.answer
-                answer: 'a) Normal (=&#60;99 mg/dL)'
+                answer: 'a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)'
 
             QDH15_03_06_02:
                 model: survey.answer
-                answer: 'b) Pré-diabetes = risco aumentado para diabetes (100 - 125 mg/dL)'
+                answer: 'b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-25 mg/dL)'
 
             QDH15_03_06_03:
                 model: survey.answer
-                answer: 'c) Diabetes (&#62;=126 mg/dL)'
+                answer: 'c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )'
 
             QDH15_03_06_04:
                 model: survey.answer
-                answer: 'd) Não interpretado (Jejum menor que 8 hs ou maior que 14 hs)'
+                answer: 'd) Normal para jejum INFERIOR a 8 hs (até 140 mg/dL)'
 
             QDH15_03_06_05:
                 model: survey.answer
-                answer: 'e) Outras situações (especificar)'
+                answer: 'e) Não avaliado (justificar)'
 
             QDH15_03_06_06:
                 model: survey.answer
@@ -351,7 +355,7 @@ QDH15:
 
         QDH15_03_09:
             model: survey.question
-            question: 'Interpretação do valor de Pressão Arterial (segundo Diretrizes Brasileiras de HIPERTENSÃO Arterial de 2010)'
+            question: 'Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Responder.'
@@ -360,15 +364,15 @@ QDH15:
 
             QDH15_03_09_01:
                 model: survey.answer
-                answer: 'a) Normal (PAS até 130 mmHg e PAD até 85 mmHg)'
+                answer: 'a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)'
 
             QDH15_03_09_02:
                 model: survey.answer
-                answer: 'b) Limítrofe (PAS=130-139 mmHg e PAD=85-89 mmHg)'
+                answer: 'b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)'
 
             QDH15_03_09_03:
                 model: survey.answer
-                answer: 'c) Alta (PAS=ou&#62;140 mmHg e PAD=ou&#62;90 mmHg)'
+                answer: 'c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)'
 
             QDH15_03_09_04:
                 model: survey.answer
@@ -399,7 +403,7 @@ QDH15:
 
         QDH15_03_11:
             model: survey.question
-            question: 'Interpretação do valor de Colesterol (Adulto &#62; 20 anos, seg. a Soc. Bras. de Cardiologia (V Diretriz Bras. de Dislipidemias e Prevenção da Aterosclerose))'
+            question: 'Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Responder.'
@@ -408,15 +412,15 @@ QDH15:
 
             QDH15_03_11_01:
                 model: survey.answer
-                answer: 'a) Desejável: &#60; 200 mg/dL'
+                answer: 'a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL'
 
             QDH15_03_11_02:
                 model: survey.answer
-                answer: 'b) Limítrofe: 200 – 239 mg/dL'
+                answer: 'b) Limítrofe:Acima de 20 anos:200–39 mg/dL;2-19 anos:150-169 mg/dL'
 
             QDH15_03_11_03:
                 model: survey.answer
-                answer: 'c) Elevado: &#62; 240  mg/dL'
+                answer: 'c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL'
 
             QDH15_03_11_04:
                 model: survey.answer
@@ -431,9 +435,9 @@ QDH15:
             question: 'IMC (kg/m²) (=Peso/(Altura x Altura))'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
-            req_error_msg: 'Preencher o Valor, a Interpretação do Valor e o Responsável.'
+            req_error_msg: 'Preencher o Valor e o Responsável.'
             required_type: exactly
-            req_ans: 3
+            req_ans: 2
 
             QDH15_03_12_01:
                 model: survey.answer
@@ -447,7 +451,7 @@ QDH15:
 
         QDH15_03_13:
             model: survey.question
-            question: 'Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos: &#62; 65 anos)'
+            question: 'Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Responder.'
@@ -456,7 +460,7 @@ QDH15:
 
             QDH15_03_13_01:
                 model: survey.answer
-                answer: 'a) Baixo peso (Adultos:&#60; 18,5; Idosos (M e F): &#60; 21,9)'
+                answer: 'a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)'
 
             QDH15_03_13_02:
                 model: survey.answer
@@ -476,7 +480,7 @@ QDH15:
 
             QDH15_03_13_06:
                 model: survey.answer
-                answer: 'f) Obesidade Grau III (Adultos: &#62; 40,0; Idosos(M): &#62; 40,0/Idosos(F): &#62; 42,0)'
+                answer: 'f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)'
 
             QDH15_03_13_07:
                 model: survey.answer
@@ -488,7 +492,7 @@ QDH15:
 
         QDH15_03_14:
             model: survey.question
-            question: 'Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (Não precisa especificar se não se sentir confortável)'
+            question: 'Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (se possível, especificar)'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Responder.'
