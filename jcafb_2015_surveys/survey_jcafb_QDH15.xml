@@ -2,10 +2,10 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- [QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
+        <!-- [QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
         <record model="survey" id="QDH15">
-            <field name="title">[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
-            <field name="note">[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
+            <field name="title">[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
+            <field name="note">[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
             <field name="responsible_id" ref="base.user_root"/>
             <field name="type" ref="survey_type_JCAFB_2015"/>
             <field name="color">5</field>

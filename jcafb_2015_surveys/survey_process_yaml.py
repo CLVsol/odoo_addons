@@ -311,44 +311,44 @@ if __name__ == '__main__':
 
     print '--> Executing survey_process_yaml.py ...'
 
-    yaml_filename = 'survey_jcafb_QSE15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_QSE15_data_out.yaml'
-    xml_filename = 'survey_jcafb_QSE15_data.xml'
+    yaml_filename = 'survey_jcafb_QSE15.yaml'
+    yaml_out_filename = 'survey_jcafb_QSE15_out.yaml'
+    xml_filename = 'survey_jcafb_QSE15.xml'
     txt_filename = 'survey_jcafb_QSE15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_ISE15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_ISE15_data_out.yaml'
-    xml_filename = 'survey_jcafb_ISE15_data.xml'
+    yaml_filename = 'survey_jcafb_ISE15.yaml'
+    yaml_out_filename = 'survey_jcafb_ISE15_out.yaml'
+    xml_filename = 'survey_jcafb_ISE15.xml'
     txt_filename = 'survey_jcafb_ISE15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_CSE15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_CSE15_data_out.yaml'
-    xml_filename = 'survey_jcafb_CSE15_data.xml'
+    yaml_filename = 'survey_jcafb_CSE15.yaml'
+    yaml_out_filename = 'survey_jcafb_CSE15_out.yaml'
+    xml_filename = 'survey_jcafb_CSE15.xml'
     txt_filename = 'survey_jcafb_CSE15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QMD15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_QMD15_data_out.yaml'
-    xml_filename = 'survey_jcafb_QMD15_data.xml'
+    yaml_filename = 'survey_jcafb_QMD15.yaml'
+    yaml_out_filename = 'survey_jcafb_QMD15_out.yaml'
+    xml_filename = 'survey_jcafb_QMD15.xml'
     txt_filename = 'survey_jcafb_QMD15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QAN15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_QAN15_data_out.yaml'
-    xml_filename = 'survey_jcafb_QAN15_data.xml'
+    yaml_filename = 'survey_jcafb_QAN15.yaml'
+    yaml_out_filename = 'survey_jcafb_QAN15_out.yaml'
+    xml_filename = 'survey_jcafb_QAN15.xml'
     txt_filename = 'survey_jcafb_QAN15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QDH15_data.yaml'
-    yaml_out_filename = 'survey_jcafb_QDH15_data_out.yaml'
-    xml_filename = 'survey_jcafb_QDH15_data.xml'
+    yaml_filename = 'survey_jcafb_QDH15.yaml'
+    yaml_out_filename = 'survey_jcafb_QDH15_out.yaml'
+    xml_filename = 'survey_jcafb_QDH15.xml'
     txt_filename = 'survey_jcafb_QDH15.txt'
     print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
     survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)

@@ -1,4 +1,4 @@
-[QDH15] JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia
+[QDH15] JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia
     [QDH15_01] Preâmbulo
         [QDH15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)

@@ -1,7 +1,7 @@
 QAN15:
     model: survey
-    title: 'JCAFB 2015 - Inquérito para detecção de Anemia'
-    note: 'JCAFB 2015 - Inquérito para detecção de Anemia'
+    title: 'JCAFB 2015 - Questionário para detecção de Anemia'
+    note: 'JCAFB 2015 - Questionário para detecção de Anemia'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5

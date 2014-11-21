@@ -1,4 +1,4 @@
-[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia
+[QAN15] JCAFB 2015 - Questionário para detecção de Anemia
     [QAN15_01] Preâmbulo
         [QAN15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)

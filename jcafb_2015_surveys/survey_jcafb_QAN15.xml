@@ -2,10 +2,10 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- [QAN15] JCAFB 2015 - Inquérito para detecção de Anemia -->
+        <!-- [QAN15] JCAFB 2015 - Questionário para detecção de Anemia -->
         <record model="survey" id="QAN15">
-            <field name="title">[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia</field>
-            <field name="note">[QAN15] JCAFB 2015 - Inquérito para detecção de Anemia</field>
+            <field name="title">[QAN15] JCAFB 2015 - Questionário para detecção de Anemia</field>
+            <field name="note">[QAN15] JCAFB 2015 - Questionário para detecção de Anemia</field>
             <field name="responsible_id" ref="base.user_root"/>
             <field name="type" ref="survey_type_JCAFB_2015"/>
             <field name="color">5</field>

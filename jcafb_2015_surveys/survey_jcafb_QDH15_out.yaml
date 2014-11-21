@@ -1,7 +1,7 @@
 QDH15:
     model: survey
-    title: 'JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
-    note: 'JCAFB 2015 - Inquérito para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    title: 'JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    note: 'JCAFB 2015 - Questionário para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
