@@ -84,12 +84,23 @@
                         groups="clv_base.group_family_user"
                         sequence="20"
                         action="clv_family.act_open_clv_family_person_view"/>
-                <!-- Community/Community/Persons -->
-                <menuitem name="Persons" id="menu_commutity_community_persons"
+                <!-- Community/Community/Person -->
+                <menuitem name="Person" id="menu_commutity_community_person"
                     parent="menu_commutity_community"
-                    groups="clv_base.group_person_user"
-                    sequence="30"
-                    action="clv_person.act_open_clv_person_view"/>
+                    groups="clv_base.group_family_user"
+                    sequence="30"/>
+	                <!-- Community/Community/Persons -->
+	                <menuitem name="Persons" id="menu_commutity_community_person_persons"
+	                    parent="menu_commutity_community_person"
+	                    groups="clv_base.group_person_user"
+	                    sequence="10"
+	                    action="clv_person.act_open_clv_person_view"/>
+	                <!-- Community/Community/Persons (Management) -->
+	                <menuitem name="Persons (Management)" id="menu_commutity_community_person_persons_mng"
+	                    parent="menu_commutity_community_person"
+	                    groups="clv_base.group_person_mng_user"
+	                    sequence="20"
+	                    action="clv_person_mng.act_open_clv_person_mng_view"/>
             <!-- Community/Configuration -->
             <menuitem name="Configuration" id="menu_commutity_config"  
                 parent="menu_commutity"

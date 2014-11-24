@@ -32,6 +32,7 @@ This module will install all the necessary modules for the CLVhealth solution.
         'clv_tag',
         'clv_annotation',
         'clv_person',
+        'clv_person_mng',
         'clv_family',
         'clv_community',
         'clv_patient',

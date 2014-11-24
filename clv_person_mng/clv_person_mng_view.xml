@@ -145,11 +145,5 @@
             <field name="view_id" ref="view_clv_person_mng_tree"/>
         </record>
         
-                <!-- Community/Community/Persons (Management) -->
-                <menuitem name="Persons (Management)" id="menu_commutity_community_person_mng"
-                    parent="clvhealth_jcafb.menu_commutity_community"
-                    groups="clv_base.group_person_mng_user"
-                    sequence="40"
-                    action="clv_person_mng.act_open_clv_person_mng_view"/>
     </data>
 </openerp>
