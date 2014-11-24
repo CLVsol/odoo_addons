@@ -24,22 +24,29 @@
                     <field name="page_id" ref="QMD15_01"/>
                     <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Preencher o Nome e o Código.</field>
+                    <field name="req_error_msg">Preencher o Nome e os Códigos.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">2</field>
+                    <field name="req_ans">3</field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_01_01_01">
-                        <field name="answer">[QMD15_01_01_01] Nome</field>
+                        <field name="answer">[QMD15_01_01_01] Nome do Paciente</field>
                         <field name="question_id" ref="QMD15_01_01"/>
                         <field name="sequence" eval="10"/>
                         <field name="type">char</field>
                     </record>
 
                     <record model="survey.answer" id="QMD15_01_01_02">
-                        <field name="answer">[QMD15_01_01_02] Código</field>
+                        <field name="answer">[QMD15_01_01_02] Código do Paciente</field>
                         <field name="question_id" ref="QMD15_01_01"/>
                         <field name="sequence" eval="20"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="survey.answer" id="QMD15_01_01_03">
+                        <field name="answer">[QMD15_01_01_03] Código da Família</field>
+                        <field name="question_id" ref="QMD15_01_01"/>
+                        <field name="sequence" eval="30"/>
                         <field name="type">char</field>
                     </record>
 
@@ -83,23 +90,23 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
-                    <field name="comment_label">Nome (Grau de Parentesco)</field>
+                    <field name="comment_label">Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco </field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_01_03_01">
-                        <field name="answer">[QMD15_01_03_01] a) Responsável</field>
+                        <field name="answer">[QMD15_01_03_01] a) Paciente</field>
                         <field name="question_id" ref="QMD15_01_03"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_01_03_02">
-                        <field name="answer">[QMD15_01_03_02] b) Paciente</field>
+                        <field name="answer">[QMD15_01_03_02] b) Cuidador</field>
                         <field name="question_id" ref="QMD15_01_03"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_01_03_03">
-                        <field name="answer">[QMD15_01_03_03] c) Cuidador</field>
+                        <field name="answer">[QMD15_01_03_03] c) Outra pessoa (especificar)</field>
                         <field name="question_id" ref="QMD15_01_03"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -322,118 +329,92 @@
                     </record>
 
                 <record model="survey.question" id="QMD15_02_05">
-                    <field name="question">[QMD15_02_05] De que modo o(a) Sr.(a) adquire os medicamentos que utiliza?</field>
-                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="question">[QMD15_02_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QMD15_02"/>
                     <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="required_type">at least</field>
-                    <field name="req_ans">1</field>
                     <field name="is_comment_require">True</field>
-                    <field name="comment_label">Se "Outro", especificar</field>
+                    <field name="comment_label">Se sim, especificar</field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_02_05_01">
-                        <field name="answer">[QMD15_02_05_01] a) Farmácia</field>
+                        <field name="answer">[QMD15_02_05_01] a) Não</field>
                         <field name="question_id" ref="QMD15_02_05"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_05_02">
-                        <field name="answer">[QMD15_02_05_02] b) Posto</field>
+                        <field name="answer">[QMD15_02_05_02] b) Sim (especificar)</field>
                         <field name="question_id" ref="QMD15_02_05"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_05_03">
-                        <field name="answer">[QMD15_02_05_03] c) Outro (especificar)</field>
+                        <field name="answer">[QMD15_02_05_03] c) Não sabe</field>
                         <field name="question_id" ref="QMD15_02_05"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_05_04">
-                        <field name="answer">[QMD15_02_05_04] d) Não sabe</field>
+                        <field name="answer">[QMD15_02_05_04] d) Não quis responder</field>
                         <field name="question_id" ref="QMD15_02_05"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_05_05">
-                        <field name="answer">[QMD15_02_05_05] e) Não quis responder</field>
+                        <field name="answer">[QMD15_02_05_05] e) Não se aplica</field>
                         <field name="question_id" ref="QMD15_02_05"/>
                         <field name="sequence" eval="50"/>
                     </record>
 
-                    <record model="survey.answer" id="QMD15_02_05_06">
-                        <field name="answer">[QMD15_02_05_06] f) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_05"/>
-                        <field name="sequence" eval="60"/>
-                    </record>
-
                 <record model="survey.question" id="QMD15_02_06">
-                    <field name="question">[QMD15_02_06] De modo geral, como o(a) Sr.(a) descarta/joga fora os seus medicamentos vencidos ou que já não utiliza mais?(Pode assinalar mais de uma alternativa)</field>
-                    <field name="type">multiple_choice_multiple_ans</field>
+                    <field name="question">[QMD15_02_06] O idoso possui diagnóstico de hipertensão?</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QMD15_02"/>
                     <field name="sequence" eval="60"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="required_type">at least</field>
-                    <field name="req_ans">1</field>
-                    <field name="is_comment_require">True</field>
-                    <field name="comment_label">Se "Outro", especificar</field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_02_06_01">
-                        <field name="answer">[QMD15_02_06_01] a) Unidade básica de saúde</field>
+                        <field name="answer">[QMD15_02_06_01] a) Não</field>
                         <field name="question_id" ref="QMD15_02_06"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_06_02">
-                        <field name="answer">[QMD15_02_06_02] b) Lixo comum</field>
+                        <field name="answer">[QMD15_02_06_02] b) Sim</field>
                         <field name="question_id" ref="QMD15_02_06"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_06_03">
-                        <field name="answer">[QMD15_02_06_03] c) Pia/vaso sanitário</field>
+                        <field name="answer">[QMD15_02_06_03] c) Não sabe</field>
                         <field name="question_id" ref="QMD15_02_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_06_04">
-                        <field name="answer">[QMD15_02_06_04] d) Outro (especificar)</field>
+                        <field name="answer">[QMD15_02_06_04] d) Não quis responder</field>
                         <field name="question_id" ref="QMD15_02_06"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_06_05">
-                        <field name="answer">[QMD15_02_06_05] e) Não sabe</field>
+                        <field name="answer">[QMD15_02_06_05] e) Não se aplica</field>
                         <field name="question_id" ref="QMD15_02_06"/>
                         <field name="sequence" eval="50"/>
                     </record>
 
-                    <record model="survey.answer" id="QMD15_02_06_06">
-                        <field name="answer">[QMD15_02_06_06] f) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_06"/>
-                        <field name="sequence" eval="60"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_06_07">
-                        <field name="answer">[QMD15_02_06_07] g) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_06"/>
-                        <field name="sequence" eval="70"/>
-                    </record>
-
                 <record model="survey.question" id="QMD15_02_07">
-                    <field name="question">[QMD15_02_07] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?</field>
+                    <field name="question">[QMD15_02_07] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QMD15_02"/>
                     <field name="sequence" eval="70"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="is_comment_require">True</field>
-                    <field name="comment_label">Se sim, especificar</field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_02_07_01">
@@ -443,7 +424,7 @@
                     </record>
 
                     <record model="survey.answer" id="QMD15_02_07_02">
-                        <field name="answer">[QMD15_02_07_02] b) Sim (especificar)</field>
+                        <field name="answer">[QMD15_02_07_02] b) Sim</field>
                         <field name="question_id" ref="QMD15_02_07"/>
                         <field name="sequence" eval="20"/>
                     </record>
@@ -467,12 +448,14 @@
                     </record>
 
                 <record model="survey.question" id="QMD15_02_08">
-                    <field name="question">[QMD15_02_08] O idoso possui diagnóstico de hipertensão?</field>
+                    <field name="question">[QMD15_02_08] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="QMD15_02"/>
                     <field name="sequence" eval="80"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="required_type">at least</field>
+                    <field name="req_ans">1</field>
                 </record>
 
                     <record model="survey.answer" id="QMD15_02_08_01">
@@ -502,217 +485,6 @@
                     <record model="survey.answer" id="QMD15_02_08_05">
                         <field name="answer">[QMD15_02_08_05] e) Não se aplica</field>
                         <field name="question_id" ref="QMD15_02_08"/>
-                        <field name="sequence" eval="50"/>
-                    </record>
-
-                <record model="survey.question" id="QMD15_02_09">
-                    <field name="question">[QMD15_02_09] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?</field>
-                    <field name="type">multiple_choice_only_one_ans</field>
-                    <field name="page_id" ref="QMD15_02"/>
-                    <field name="sequence" eval="90"/>
-                    <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                </record>
-
-                    <record model="survey.answer" id="QMD15_02_09_01">
-                        <field name="answer">[QMD15_02_09_01] a) Não</field>
-                        <field name="question_id" ref="QMD15_02_09"/>
-                        <field name="sequence" eval="10"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_09_02">
-                        <field name="answer">[QMD15_02_09_02] b) Sim</field>
-                        <field name="question_id" ref="QMD15_02_09"/>
-                        <field name="sequence" eval="20"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_09_03">
-                        <field name="answer">[QMD15_02_09_03] c) Não sabe</field>
-                        <field name="question_id" ref="QMD15_02_09"/>
-                        <field name="sequence" eval="30"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_09_04">
-                        <field name="answer">[QMD15_02_09_04] d) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_09"/>
-                        <field name="sequence" eval="40"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_09_05">
-                        <field name="answer">[QMD15_02_09_05] e) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_09"/>
-                        <field name="sequence" eval="50"/>
-                    </record>
-
-                <record model="survey.question" id="QMD15_02_10">
-                    <field name="question">[QMD15_02_10] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?</field>
-                    <field name="type">multiple_choice_only_one_ans</field>
-                    <field name="page_id" ref="QMD15_02"/>
-                    <field name="sequence" eval="100"/>
-                    <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="required_type">at least</field>
-                    <field name="req_ans">1</field>
-                </record>
-
-                    <record model="survey.answer" id="QMD15_02_10_01">
-                        <field name="answer">[QMD15_02_10_01] a) Não</field>
-                        <field name="question_id" ref="QMD15_02_10"/>
-                        <field name="sequence" eval="10"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_10_02">
-                        <field name="answer">[QMD15_02_10_02] b) Sim</field>
-                        <field name="question_id" ref="QMD15_02_10"/>
-                        <field name="sequence" eval="20"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_10_03">
-                        <field name="answer">[QMD15_02_10_03] c) Não sabe</field>
-                        <field name="question_id" ref="QMD15_02_10"/>
-                        <field name="sequence" eval="30"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_10_04">
-                        <field name="answer">[QMD15_02_10_04] d) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_10"/>
-                        <field name="sequence" eval="40"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_10_05">
-                        <field name="answer">[QMD15_02_10_05] e) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_10"/>
-                        <field name="sequence" eval="50"/>
-                    </record>
-
-                <record model="survey.question" id="QMD15_02_11">
-                    <field name="question">[QMD15_02_11] O que utilizam quando alguém tem diarreia?</field>
-                    <field name="type">multiple_choice_multiple_ans</field>
-                    <field name="page_id" ref="QMD15_02"/>
-                    <field name="sequence" eval="110"/>
-                    <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="is_comment_require">True</field>
-                    <field name="comment_label">Se outros, quais?</field>
-                </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_01">
-                        <field name="answer">[QMD15_02_11_01] a) Nada. Espera passar</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="10"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_02">
-                        <field name="answer">[QMD15_02_11_02] b) Soro caseiro</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="20"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_03">
-                        <field name="answer">[QMD15_02_11_03] c) Soro pronto</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="30"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_04">
-                        <field name="answer">[QMD15_02_11_04] d) Outros</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="40"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_05">
-                        <field name="answer">[QMD15_02_11_05] e) Não sabe</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="50"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_06">
-                        <field name="answer">[QMD15_02_11_06] f) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="60"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_11_07">
-                        <field name="answer">[QMD15_02_11_07] g) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_11"/>
-                        <field name="sequence" eval="70"/>
-                    </record>
-
-                <record model="survey.question" id="QMD15_02_12">
-                    <field name="question">[QMD15_02_12] Conhece o soro caseiro?</field>
-                    <field name="type">multiple_choice_only_one_ans</field>
-                    <field name="page_id" ref="QMD15_02"/>
-                    <field name="sequence" eval="120"/>
-                    <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                </record>
-
-                    <record model="survey.answer" id="QMD15_02_12_01">
-                        <field name="answer">[QMD15_02_12_01] a) Não</field>
-                        <field name="question_id" ref="QMD15_02_12"/>
-                        <field name="sequence" eval="10"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_12_02">
-                        <field name="answer">[QMD15_02_12_02] b) Sim</field>
-                        <field name="question_id" ref="QMD15_02_12"/>
-                        <field name="sequence" eval="20"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_12_03">
-                        <field name="answer">[QMD15_02_12_03] c) Não sabe</field>
-                        <field name="question_id" ref="QMD15_02_12"/>
-                        <field name="sequence" eval="30"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_12_04">
-                        <field name="answer">[QMD15_02_12_04] d) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_12"/>
-                        <field name="sequence" eval="40"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_12_05">
-                        <field name="answer">[QMD15_02_12_05] e) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_12"/>
-                        <field name="sequence" eval="50"/>
-                    </record>
-
-                <record model="survey.question" id="QMD15_02_13">
-                    <field name="question">[QMD15_02_13] Sabe como preparar?</field>
-                    <field name="type">multiple_choice_only_one_ans</field>
-                    <field name="page_id" ref="QMD15_02"/>
-                    <field name="sequence" eval="130"/>
-                    <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Esta questão precisa ser respondida.</field>
-                </record>
-
-                    <record model="survey.answer" id="QMD15_02_13_01">
-                        <field name="answer">[QMD15_02_13_01] a) Não</field>
-                        <field name="question_id" ref="QMD15_02_13"/>
-                        <field name="sequence" eval="10"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_13_02">
-                        <field name="answer">[QMD15_02_13_02] b) Sim</field>
-                        <field name="question_id" ref="QMD15_02_13"/>
-                        <field name="sequence" eval="20"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_13_03">
-                        <field name="answer">[QMD15_02_13_03] c) Não sabe</field>
-                        <field name="question_id" ref="QMD15_02_13"/>
-                        <field name="sequence" eval="30"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_13_04">
-                        <field name="answer">[QMD15_02_13_04] d) Não quis responder</field>
-                        <field name="question_id" ref="QMD15_02_13"/>
-                        <field name="sequence" eval="40"/>
-                    </record>
-
-                    <record model="survey.answer" id="QMD15_02_13_05">
-                        <field name="answer">[QMD15_02_13_05] e) Não se aplica</field>
-                        <field name="question_id" ref="QMD15_02_13"/>
                         <field name="sequence" eval="50"/>
                     </record>
 

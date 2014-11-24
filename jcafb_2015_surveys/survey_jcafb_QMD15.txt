@@ -2,8 +2,9 @@
     [QMD15_01] Preâmbulo
         [QMD15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)
-            [QMD15_01_01_01] Nome____________________________________
-            [QMD15_01_01_02] Código____________________________________
+            [QMD15_01_01_01] Nome do Paciente____________________________________
+            [QMD15_01_01_02] Código do Paciente____________________________________
+            [QMD15_01_01_03] Código da Família____________________________________
         [QMD15_01_02] Aplicação do Questionário
             (multiple_textboxes_diff_type)
             [QMD15_01_02_01] Aplicado por____________________________________
@@ -11,10 +12,10 @@
             [QMD15_01_02_03] Data____________________________________
         [QMD15_01_03] Entrevistado
             (multiple_choice_only_one_ans)
-            [QMD15_01_03_01] a) Responsável
-            [QMD15_01_03_02] b) Paciente
-            [QMD15_01_03_03] c) Cuidador
-            Nome (Grau de Parentesco)____________________________________
+            [QMD15_01_03_01] a) Paciente
+            [QMD15_01_03_02] b) Cuidador
+            [QMD15_01_03_03] c) Outra pessoa (especificar)
+            Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco ____________________________________
     [QMD15_02] Questionário
         [QMD15_02_01] Quem administra os medicamentos do(a) Sr.(a)?
             (multiple_choice_multiple_ans)
@@ -54,78 +55,35 @@
             [QMD15_02_04_09] i) Não quis responder
             [QMD15_02_04_10] j) Não se aplica
             Se "Outro", especificar____________________________________
-        [QMD15_02_05] De que modo o(a) Sr.(a) adquire os medicamentos que utiliza?
-            (multiple_choice_multiple_ans)
-            [QMD15_02_05_01] a) Farmácia
-            [QMD15_02_05_02] b) Posto
-            [QMD15_02_05_03] c) Outro (especificar)
-            [QMD15_02_05_04] d) Não sabe
-            [QMD15_02_05_05] e) Não quis responder
-            [QMD15_02_05_06] f) Não se aplica
-            Se "Outro", especificar____________________________________
-        [QMD15_02_06] De modo geral, como o(a) Sr.(a) descarta/joga fora os seus medicamentos vencidos ou que já não utiliza mais?(Pode assinalar mais de uma alternativa)
-            (multiple_choice_multiple_ans)
-            [QMD15_02_06_01] a) Unidade básica de saúde
-            [QMD15_02_06_02] b) Lixo comum
-            [QMD15_02_06_03] c) Pia/vaso sanitário
-            [QMD15_02_06_04] d) Outro (especificar)
-            [QMD15_02_06_05] e) Não sabe
-            [QMD15_02_06_06] f) Não quis responder
-            [QMD15_02_06_07] g) Não se aplica
-            Se "Outro", especificar____________________________________
-        [QMD15_02_07] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
+        [QMD15_02_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_05_01] a) Não
+            [QMD15_02_05_02] b) Sim (especificar)
+            [QMD15_02_05_03] c) Não sabe
+            [QMD15_02_05_04] d) Não quis responder
+            [QMD15_02_05_05] e) Não se aplica
+            Se sim, especificar____________________________________
+        [QMD15_02_06] O idoso possui diagnóstico de hipertensão?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_06_01] a) Não
+            [QMD15_02_06_02] b) Sim
+            [QMD15_02_06_03] c) Não sabe
+            [QMD15_02_06_04] d) Não quis responder
+            [QMD15_02_06_05] e) Não se aplica
+        [QMD15_02_07] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?
             (multiple_choice_only_one_ans)
             [QMD15_02_07_01] a) Não
-            [QMD15_02_07_02] b) Sim (especificar)
+            [QMD15_02_07_02] b) Sim
             [QMD15_02_07_03] c) Não sabe
             [QMD15_02_07_04] d) Não quis responder
             [QMD15_02_07_05] e) Não se aplica
-            Se sim, especificar____________________________________
-        [QMD15_02_08] O idoso possui diagnóstico de hipertensão?
+        [QMD15_02_08] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?
             (multiple_choice_only_one_ans)
             [QMD15_02_08_01] a) Não
             [QMD15_02_08_02] b) Sim
             [QMD15_02_08_03] c) Não sabe
             [QMD15_02_08_04] d) Não quis responder
             [QMD15_02_08_05] e) Não se aplica
-        [QMD15_02_09] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?
-            (multiple_choice_only_one_ans)
-            [QMD15_02_09_01] a) Não
-            [QMD15_02_09_02] b) Sim
-            [QMD15_02_09_03] c) Não sabe
-            [QMD15_02_09_04] d) Não quis responder
-            [QMD15_02_09_05] e) Não se aplica
-        [QMD15_02_10] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?
-            (multiple_choice_only_one_ans)
-            [QMD15_02_10_01] a) Não
-            [QMD15_02_10_02] b) Sim
-            [QMD15_02_10_03] c) Não sabe
-            [QMD15_02_10_04] d) Não quis responder
-            [QMD15_02_10_05] e) Não se aplica
-        [QMD15_02_11] O que utilizam quando alguém tem diarreia?
-            (multiple_choice_multiple_ans)
-            [QMD15_02_11_01] a) Nada. Espera passar
-            [QMD15_02_11_02] b) Soro caseiro
-            [QMD15_02_11_03] c) Soro pronto
-            [QMD15_02_11_04] d) Outros
-            [QMD15_02_11_05] e) Não sabe
-            [QMD15_02_11_06] f) Não quis responder
-            [QMD15_02_11_07] g) Não se aplica
-            Se outros, quais?____________________________________
-        [QMD15_02_12] Conhece o soro caseiro?
-            (multiple_choice_only_one_ans)
-            [QMD15_02_12_01] a) Não
-            [QMD15_02_12_02] b) Sim
-            [QMD15_02_12_03] c) Não sabe
-            [QMD15_02_12_04] d) Não quis responder
-            [QMD15_02_12_05] e) Não se aplica
-        [QMD15_02_13] Sabe como preparar?
-            (multiple_choice_only_one_ans)
-            [QMD15_02_13_01] a) Não
-            [QMD15_02_13_02] b) Sim
-            [QMD15_02_13_03] c) Não sabe
-            [QMD15_02_13_04] d) Não quis responder
-            [QMD15_02_13_05] e) Não se aplica
     [QMD15_03] Tabela de Medicamentos
         [QMD15_03_01] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver.
             (table)

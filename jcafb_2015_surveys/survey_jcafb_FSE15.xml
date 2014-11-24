@@ -841,7 +841,7 @@
                     </record>
 
                 <record model="survey.question" id="FSE15_05_06">
-                    <field name="question">[FSE15_05_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam</field>
+                    <field name="question">[FSE15_05_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="FSE15_05"/>
                     <field name="sequence" eval="60"/>
@@ -1390,7 +1390,7 @@
                     </record>
 
                     <record model="survey.answer" id="FSE15_07_02_03">
-                        <field name="answer">[FSE15_07_02_03] c) Não sabe</field>
+                        <field name="answer">[FSE15_07_02_03] c) Não sabe responder</field>
                         <field name="question_id" ref="FSE15_07_02"/>
                         <field name="sequence" eval="30"/>
                     </record>

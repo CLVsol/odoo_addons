@@ -13,12 +13,12 @@ CSE15:
 
         CSE15_01_01:
             model: survey.question
-            question: 'Identificação do Paciente'
+            question: 'Identificação da Criança'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
-            req_ans: 2
+            req_ans: 3
 
             CSE15_01_01_01:
                 model: survey.answer
@@ -65,7 +65,7 @@ CSE15:
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
-            comment_label: 'Nome e, se a resposta for "Outro", especificar'
+            comment_label: 'Nome e grau de parentesco e, se a resposta for "Outro", especificar'
 
             CSE15_01_03_01:
                 model: survey.answer
@@ -168,7 +168,7 @@ CSE15:
 
         CSE15_02_03:
             model: survey.question
-            question: 'Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
+            question: 'A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
@@ -240,7 +240,7 @@ CSE15:
 
         CSE15_02_05:
             model: survey.question
-            question: 'A criança tem algum dos seguintes hábitos'
+            question: 'A criança tem algum dos seguintes hábitos:'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
@@ -249,15 +249,15 @@ CSE15:
 
             CSE15_02_05_01:
                 model: survey.answer
-                answer: 'a) Lava as mãos antes das refeições'
+                answer: 'a) Lavar as mãos antes das refeições'
 
             CSE15_02_05_02:
                 model: survey.answer
-                answer: 'b) Lava as mãos após utilizar o banheiro'
+                answer: 'b) Lavar as mãos após utilizar o banheiro'
 
             CSE15_02_05_03:
                 model: survey.answer
-                answer: 'c) Anda calçada'
+                answer: 'c) Andar calçada'
 
             CSE15_02_05_04:
                 model: survey.answer

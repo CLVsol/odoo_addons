@@ -2,8 +2,9 @@
     [QAN15_01] Preâmbulo
         [QAN15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)
-            [QAN15_01_01_01] Nome____________________________________
-            [QAN15_01_01_02] Código____________________________________
+            [QAN15_01_01_01] Nome do Paciente:____________________________________
+            [QAN15_01_01_02] Código do Paciente____________________________________
+            [QAN15_01_01_03] Código da Família:____________________________________
         [QAN15_01_02] Aplicação do Questionário
             (multiple_textboxes_diff_type)
             [QAN15_01_02_01] Aplicado por____________________________________
@@ -14,8 +15,9 @@
             [QAN15_01_03_01] a) Responsável
             [QAN15_01_03_02] b) Paciente
             [QAN15_01_03_03] c) Cuidador
-            Nome (Grau de Parentesco)____________________________________
-    [QAN15_02] Valores de Medições
+            [QAN15_01_03_04] d) Outro
+            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar: ____________________________________
+    [QAN15_02] Valores de Medições e Interpretação dos Resultados
         [QAN15_02_01] Peso (kg)
             (multiple_textboxes_diff_type)
             [QAN15_02_01_01] Valor:____________________________________
@@ -24,84 +26,93 @@
             (multiple_textboxes_diff_type)
             [QAN15_02_02_01] Valor:____________________________________
             [QAN15_02_02_02] Responsável:____________________________________
-        [QAN15_02_03] Valor da Hemoglobina (g/dL)
+        [QAN15_02_03] Horário da coleta:
             (multiple_textboxes_diff_type)
-            [QAN15_02_03_01] Valor:____________________________________
+            [QAN15_02_03_01] Horário____________________________________
             [QAN15_02_03_02] Responsável:____________________________________
-        [QAN15_02_04] Horário da coleta:
+        [QAN15_02_04] Valor da Hemoglobina (g/dL)
             (multiple_textboxes_diff_type)
-            [QAN15_02_04_01] Horário____________________________________
-        [QAN15_02_05] Já realizou exame para diagnosticar Anemia?
+            [QAN15_02_04_01] Valor:____________________________________
+            [QAN15_02_04_02] Responsável:____________________________________
+        [QAN15_02_05] Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009) 
             (multiple_choice_only_one_ans)
-            [QAN15_02_05_01] a) Não
-            [QAN15_02_05_02] b) Sim
-            [QAN15_02_05_03] c) Não sabe
-            [QAN15_02_05_04] d) Não quis responder
-            [QAN15_02_05_05] e) Não se aplica
-        [QAN15_02_06] Já teve Anemia diagnosticada?
+            [QAN15_02_05_01] a) Normal
+            [QAN15_02_05_02] b) Abaixo do normal (anemia)
+            [QAN15_02_05_03] c) Acima do normal
+            Observações:____________________________________
+    [QAN15_03] Histórico
+        [QAN15_03_01] Já realizou exame para diagnosticar Anemia?
             (multiple_choice_only_one_ans)
-            [QAN15_02_06_01] a) Não
-            [QAN15_02_06_02] b) Sim
-            [QAN15_02_06_03] c) Não sabe
-            [QAN15_02_06_04] d) Não quis responder
-            [QAN15_02_06_05] e) Não se aplica
-        [QAN15_02_07] Se sim, o que fez para curar?
+            [QAN15_03_01_01] a) Não
+            [QAN15_03_01_02] b) Sim
+            [QAN15_03_01_03] c) Não sabe
+            [QAN15_03_01_04] d) Não quis responder
+            [QAN15_03_01_05] e) Não se aplica
+        [QAN15_03_02] Já teve Anemia diagnosticada?
+            (multiple_choice_only_one_ans)
+            [QAN15_03_02_01] a) Não
+            [QAN15_03_02_02] b) Sim
+            [QAN15_03_02_03] c) Não sabe
+            [QAN15_03_02_04] d) Não quis responder
+            [QAN15_03_02_05] e) Não se aplica
+        [QAN15_03_03] Se sim, o que fez para curar?
             (multiple_choice_multiple_ans)
-            [QAN15_02_07_01] a) Medicamentos
-            [QAN15_02_07_02] b) Alimentação adequada
-            [QAN15_02_07_03] c) Vitaminas
-            [QAN15_02_07_04] d) Outras medidas
-            [QAN15_02_07_05] e) Nada
-            [QAN15_02_07_06] f) Não sabe
-            [QAN15_02_07_07] g) Não quis responder
-            [QAN15_02_07_08] h) Não se aplica
+            [QAN15_03_03_01] a) Medicamentos
+            [QAN15_03_03_02] b) Alimentação adequada
+            [QAN15_03_03_03] c) Vitaminas
+            [QAN15_03_03_04] d) Outras medidas
+            [QAN15_03_03_05] e) Nada
+            [QAN15_03_03_06] f) Não sabe
+            [QAN15_03_03_07] g) Não quis responder
+            [QAN15_03_03_08] h) Não se aplica
             Se "Outras medidas", especificar____________________________________
-        [QAN15_02_08] Ainda tem?
+        [QAN15_03_04] Ainda tem?
             (multiple_choice_only_one_ans)
-            [QAN15_02_08_01] a) Não
-            [QAN15_02_08_02] b) Sim
-            [QAN15_02_08_03] c) Não sabe
-            [QAN15_02_08_04] d) Não quis responder
-            [QAN15_02_08_05] e) Não se aplica
-        [QAN15_02_09] Toma algum cuidado para evitar a Anemia?
+            [QAN15_03_04_01] a) Não
+            [QAN15_03_04_02] b) Sim
+            [QAN15_03_04_03] c) Não sabe
+            [QAN15_03_04_04] d) Não quis responder
+            [QAN15_03_04_05] e) Não se aplica
+        [QAN15_03_05] Toma algum cuidado para evitar a Anemia?
             (multiple_choice_multiple_ans)
-            [QAN15_02_09_01] a) Consumo de feijão
-            [QAN15_02_09_02] b) Consumo de verduras verdes escuras
-            [QAN15_02_09_03] c) Consumo de frutas
-            [QAN15_02_09_04] d) Consumo de carne vermelha
-            [QAN15_02_09_05] e) Outro (especificar) 
-            [QAN15_02_09_06] f) Não toma nenhum cuidado
-            [QAN15_02_09_07] g) Não sabe
-            [QAN15_02_09_08] h) Não quis responder
-            [QAN15_02_09_09] i) Não se aplica
+            [QAN15_03_05_01] a) Consumo de feijão
+            [QAN15_03_05_02] b) Consumo de verduras verde-escuras
+            [QAN15_03_05_03] c) Consumo de frutas
+            [QAN15_03_05_04] d) Consumo de carne vermelha
+            [QAN15_03_05_05] e) Outro (especificar) 
+            [QAN15_03_05_06] f) Não toma nenhum cuidado
+            [QAN15_03_05_07] g) Não sabe
+            [QAN15_03_05_08] h) Não quis responder
+            [QAN15_03_05_09] i) Não se aplica
             Se "Outro", especificar____________________________________
-        [QAN15_02_10] Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)
+    [QAN15_04] Alimentação
+        [QAN15_04_01] Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)
             (matrix_of_choices_only_one_ans)
-            [QAN15_02_10_01] Feijão (leguminosas)
-            [QAN15_02_10_02] Fígado de boi
-            [QAN15_02_10_03] Carnes vermelhas
-            [QAN15_02_10_04] Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)
-            [QAN15_02_10_05] Carne branca (peixe, frango)
-            [QAN15_02_10_06] Miúdos (rim, coração)
-            [QAN15_02_10_07] 0 dias
-            [QAN15_02_10_08] 1-2 dias
-            [QAN15_02_10_09] 3-4 dias
-            [QAN15_02_10_10] 5 ou mais dias
-            [QAN15_02_10_11] Não respondeu
-            [QAN15_02_10_12] Não sabe
-            [QAN15_02_10_13] Não se aplica
-        [QAN15_02_11] Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)
+            [QAN15_04_01_01] Feijão (leguminosas)
+            [QAN15_04_01_02] Fígado de boi
+            [QAN15_04_01_03] Carnes vermelhas
+            [QAN15_04_01_04] Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)
+            [QAN15_04_01_05] Carne branca (peixe, frango)
+            [QAN15_04_01_06] Miúdos (rim, coração)
+            [QAN15_04_01_07] 0 dias ou raramente
+            [QAN15_04_01_08] 1-2 dias
+            [QAN15_04_01_09] 3-4 dias
+            [QAN15_04_01_10] 5 ou mais dias
+            [QAN15_04_01_11] Não respondeu
+            [QAN15_04_01_12] Não sabe
+            [QAN15_04_01_13] Não se aplica
+        [QAN15_04_02] Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)
             (matrix_of_choices_only_one_ans)
-            [QAN15_02_11_01] Suco de limão, laranja, acerola, junto da refeição
-            [QAN15_02_11_02] Laranja, após a refeição
-            [QAN15_02_11_03] Leite e queijo (laticínios)
-            [QAN15_02_11_04] Espinafre
-            [QAN15_02_11_05] Café
-            [QAN15_02_11_06] Refrigerante a base de cola
-            [QAN15_02_11_07] 0 dias
-            [QAN15_02_11_08] 1-2 dias
-            [QAN15_02_11_09] 3-4 dias
-            [QAN15_02_11_10] 5 ou mais dias
-            [QAN15_02_11_11] Não respondeu
-            [QAN15_02_11_12] Não sabe
-            [QAN15_02_11_13] Não se aplica
+            [QAN15_04_02_01] Suco de limão, laranja, acerola, junto da refeição
+            [QAN15_04_02_02] Laranja, após a refeição
+            [QAN15_04_02_03] Leite e queijo (laticínios)
+            [QAN15_04_02_04] Espinafre
+            [QAN15_04_02_05] Café
+            [QAN15_04_02_06] Refrigerante a base de cola
+            [QAN15_04_02_07] 0 dias ou raramente
+            [QAN15_04_02_08] 1-2 dias
+            [QAN15_04_02_09] 3-4 dias
+            [QAN15_04_02_10] 5 ou mais dias
+            [QAN15_04_02_11] Não respondeu
+            [QAN15_04_02_12] Não sabe
+            [QAN15_04_02_13] Não se aplica

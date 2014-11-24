@@ -1,4 +1,4 @@
-[ISE15] JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)
+[ISE15] JCAFB 2015 - Questionário Socioeconômico Individual (Idosos)
     [ISE15_01] Preâmbulo
         [ISE15_01_01] Identificação do Paciente
             (multiple_textboxes_diff_type)
@@ -79,9 +79,11 @@
             [ISE15_02_06_07] g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)
             [ISE15_02_06_08] h) Ensino Superior incompleto
             [ISE15_02_06_09] i) Ensino Superior completo
-            [ISE15_02_06_10] j) Não sabe
-            [ISE15_02_06_11] k) Não quis responder
-            [ISE15_02_06_12] l) Não se aplica
+            [ISE15_02_06_10] j) Especialização
+            [ISE15_02_06_11] k) Pós-graduação (Mestrado/Doutorado)
+            [ISE15_02_06_12] l) Não sabe
+            [ISE15_02_06_13] m) Não quis responder
+            [ISE15_02_06_14] n) Não se aplica
         [ISE15_02_07] O(A) Sr.(a) sabe ler e escrever um recado?
             (multiple_choice_only_one_ans)
             [ISE15_02_07_01] a) Não
@@ -215,7 +217,7 @@
             [ISE15_05_01_07] g) Não quis responder
             [ISE15_05_01_08] h) Não se aplica
             Se outros, quais?____________________________________
-        [ISE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)
+        [ISE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente (todo mês)? 
             (multiple_choice_only_one_ans)
             [ISE15_05_02_01] a) Sim
             [ISE15_05_02_02] b) Não
@@ -294,7 +296,7 @@
     [ISE15_08] Aspecto Econômico
         [ISE15_08_01] O(A) Sr.(a) trabalha?
             (multiple_choice_only_one_ans)
-            [ISE15_08_01_01] a) Não
+            [ISE15_08_01_01] a) Não (e não é aposentado)
             [ISE15_08_01_02] b) Não. É aposentado
             [ISE15_08_01_03] c) Sim
             [ISE15_08_01_04] d) Não sabe

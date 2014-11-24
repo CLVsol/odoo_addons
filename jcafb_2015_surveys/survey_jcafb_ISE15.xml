@@ -2,10 +2,10 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- [ISE15] JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos) -->
+        <!-- [ISE15] JCAFB 2015 - Questionário Socioeconômico Individual (Idosos) -->
         <record model="survey" id="ISE15">
-            <field name="title">[ISE15] JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)</field>
-            <field name="note">[ISE15] JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)</field>
+            <field name="title">[ISE15] JCAFB 2015 - Questionário Socioeconômico Individual (Idosos)</field>
+            <field name="note">[ISE15] JCAFB 2015 - Questionário Socioeconômico Individual (Idosos)</field>
             <field name="responsible_id" ref="base.user_root"/>
             <field name="type" ref="survey_type_JCAFB_2015"/>
             <field name="color">5</field>
@@ -26,7 +26,7 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e os Códigos.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">2</field>
+                    <field name="req_ans">3</field>
                 </record>
 
                     <record model="survey.answer" id="ISE15_01_01_01">
@@ -469,21 +469,33 @@
                     </record>
 
                     <record model="survey.answer" id="ISE15_02_06_10">
-                        <field name="answer">[ISE15_02_06_10] j) Não sabe</field>
+                        <field name="answer">[ISE15_02_06_10] j) Especialização</field>
                         <field name="question_id" ref="ISE15_02_06"/>
                         <field name="sequence" eval="100"/>
                     </record>
 
                     <record model="survey.answer" id="ISE15_02_06_11">
-                        <field name="answer">[ISE15_02_06_11] k) Não quis responder</field>
+                        <field name="answer">[ISE15_02_06_11] k) Pós-graduação (Mestrado/Doutorado)</field>
                         <field name="question_id" ref="ISE15_02_06"/>
                         <field name="sequence" eval="110"/>
                     </record>
 
                     <record model="survey.answer" id="ISE15_02_06_12">
-                        <field name="answer">[ISE15_02_06_12] l) Não se aplica</field>
+                        <field name="answer">[ISE15_02_06_12] l) Não sabe</field>
                         <field name="question_id" ref="ISE15_02_06"/>
                         <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.answer" id="ISE15_02_06_13">
+                        <field name="answer">[ISE15_02_06_13] m) Não quis responder</field>
+                        <field name="question_id" ref="ISE15_02_06"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="survey.answer" id="ISE15_02_06_14">
+                        <field name="answer">[ISE15_02_06_14] n) Não se aplica</field>
+                        <field name="question_id" ref="ISE15_02_06"/>
+                        <field name="sequence" eval="140"/>
                     </record>
 
                 <record model="survey.question" id="ISE15_02_07">
@@ -1230,7 +1242,7 @@
                     </record>
 
                 <record model="survey.question" id="ISE15_05_02">
-                    <field name="question">[ISE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)</field>
+                    <field name="question">[ISE15_05_02] Nos últimos 12 meses, visitou o médico frequentemente (todo mês)? </field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="ISE15_05"/>
                     <field name="sequence" eval="20"/>
@@ -1658,7 +1670,7 @@
                 </record>
 
                     <record model="survey.answer" id="ISE15_08_01_01">
-                        <field name="answer">[ISE15_08_01_01] a) Não</field>
+                        <field name="answer">[ISE15_08_01_01] a) Não (e não é aposentado)</field>
                         <field name="question_id" ref="ISE15_08_01"/>
                         <field name="sequence" eval="10"/>
                     </record>

@@ -148,7 +148,7 @@
             [FSE15_05_05_07] g) Não quis responder
             [FSE15_05_05_08] h) Não se aplica
             Se outros, quais?____________________________________
-        [FSE15_05_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam
+        [FSE15_05_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:
             (multiple_choice_multiple_ans)
             [FSE15_05_06_01] a) Lavar em água corrente
             [FSE15_05_06_02] b) Colocar de molho em água
@@ -247,7 +247,7 @@
             (multiple_choice_only_one_ans)
             [FSE15_07_02_01] a) Não
             [FSE15_07_02_02] b) Sim
-            [FSE15_07_02_03] c) Não sabe
+            [FSE15_07_02_03] c) Não sabe responder
             [FSE15_07_02_04] d) Não quis responder
             [FSE15_07_02_05] e) Não se aplica
         [FSE15_07_03] Alguém na casa já pegou verme? Qual?

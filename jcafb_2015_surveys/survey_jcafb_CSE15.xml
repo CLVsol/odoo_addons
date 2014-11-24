@@ -19,14 +19,14 @@
             </record>
 
                 <record model="survey.question" id="CSE15_01_01">
-                    <field name="question">[CSE15_01_01] Identificação do Paciente</field>
+                    <field name="question">[CSE15_01_01] Identificação da Criança</field>
                     <field name="type">multiple_textboxes_diff_type</field>
                     <field name="page_id" ref="CSE15_01"/>
                     <field name="sequence" eval="10"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e os Códigos.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">2</field>
+                    <field name="req_ans">3</field>
                 </record>
 
                     <record model="survey.answer" id="CSE15_01_01_01">
@@ -89,7 +89,7 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
-                    <field name="comment_label">Nome e, se a resposta for "Outro", especificar</field>
+                    <field name="comment_label">Nome e grau de parentesco e, se a resposta for "Outro", especificar</field>
                 </record>
 
                     <record model="survey.answer" id="CSE15_01_03_01">
@@ -236,7 +236,7 @@
                     </record>
 
                 <record model="survey.question" id="CSE15_02_03">
-                    <field name="question">[CSE15_02_03] Costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?</field>
+                    <field name="question">[CSE15_02_03] A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="CSE15_02"/>
                     <field name="sequence" eval="30"/>
@@ -338,7 +338,7 @@
                     </record>
 
                 <record model="survey.question" id="CSE15_02_05">
-                    <field name="question">[CSE15_02_05] A criança tem algum dos seguintes hábitos</field>
+                    <field name="question">[CSE15_02_05] A criança tem algum dos seguintes hábitos:</field>
                     <field name="type">multiple_choice_multiple_ans</field>
                     <field name="page_id" ref="CSE15_02"/>
                     <field name="sequence" eval="50"/>
@@ -349,19 +349,19 @@
                 </record>
 
                     <record model="survey.answer" id="CSE15_02_05_01">
-                        <field name="answer">[CSE15_02_05_01] a) Lava as mãos antes das refeições</field>
+                        <field name="answer">[CSE15_02_05_01] a) Lavar as mãos antes das refeições</field>
                         <field name="question_id" ref="CSE15_02_05"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.answer" id="CSE15_02_05_02">
-                        <field name="answer">[CSE15_02_05_02] b) Lava as mãos após utilizar o banheiro</field>
+                        <field name="answer">[CSE15_02_05_02] b) Lavar as mãos após utilizar o banheiro</field>
                         <field name="question_id" ref="CSE15_02_05"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.answer" id="CSE15_02_05_03">
-                        <field name="answer">[CSE15_02_05_03] c) Anda calçada</field>
+                        <field name="answer">[CSE15_02_05_03] c) Andar calçada</field>
                         <field name="question_id" ref="CSE15_02_05"/>
                         <field name="sequence" eval="30"/>
                     </record>

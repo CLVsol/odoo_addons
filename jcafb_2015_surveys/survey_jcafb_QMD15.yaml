@@ -16,18 +16,23 @@ QMD15:
             question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
-            req_error_msg: 'Preencher o Nome e o Código.'
+            req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
-            req_ans: 2
+            req_ans: 3
 
             QMD15_01_01_01:
                 model: survey.answer
-                answer: 'Nome'
+                answer: 'Nome do Paciente'
                 type: char
 
             QMD15_01_01_02:
                 model: survey.answer
-                answer: 'Código'
+                answer: 'Código do Paciente'
+                type: char
+
+            QMD15_01_01_03:
+                model: survey.answer
+                answer: 'Código da Família'
                 type: char
 
         QMD15_01_02:
@@ -61,19 +66,19 @@ QMD15:
             is_require_answer: 1
             req_error_msg: 'Informar quem respondeu ao questionário.'
             is_comment_require: True
-            comment_label: 'Nome (Grau de Parentesco)'
+            comment_label: 'Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco '
 
             QMD15_01_03_01:
                 model: survey.answer
-                answer: 'a) Responsável'
+                answer: 'a) Paciente'
 
             QMD15_01_03_02:
                 model: survey.answer
-                answer: 'b) Paciente'
+                answer: 'b) Cuidador'
 
             QMD15_01_03_03:
                 model: survey.answer
-                answer: 'c) Cuidador'
+                answer: 'c) Outra pessoa (especificar)'
 
     QMD15_02:
         model: survey.page
@@ -230,80 +235,6 @@ QMD15:
 
         QMD15_02_05:
             model: survey.question
-            question: 'De que modo o(a) Sr.(a) adquire os medicamentos que utiliza?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-            is_comment_require: True
-            comment_label: 'Se "Outro", especificar'
-
-            QMD15_02_05_01:
-                model: survey.answer
-                answer: 'a) Farmácia'
-
-            QMD15_02_05_02:
-                model: survey.answer
-                answer: 'b) Posto'
-
-            QMD15_02_05_03:
-                model: survey.answer
-                answer: 'c) Outro (especificar)'
-
-            QMD15_02_05_04:
-                model: survey.answer
-                answer: 'd) Não sabe'
-
-            QMD15_02_05_05:
-                model: survey.answer
-                answer: 'e) Não quis responder'
-
-            QMD15_02_05_06:
-                model: survey.answer
-                answer: 'f) Não se aplica'
-
-        QMD15_02_06:
-            model: survey.question
-            question: 'De modo geral, como o(a) Sr.(a) descarta/joga fora os seus medicamentos vencidos ou que já não utiliza mais?(Pode assinalar mais de uma alternativa)'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-            is_comment_require: True
-            comment_label: 'Se "Outro", especificar'
-
-            QMD15_02_06_01:
-                model: survey.answer
-                answer: 'a) Unidade básica de saúde'
-
-            QMD15_02_06_02:
-                model: survey.answer
-                answer: 'b) Lixo comum'
-
-            QMD15_02_06_03:
-                model: survey.answer
-                answer: 'c) Pia/vaso sanitário'
-
-            QMD15_02_06_04:
-                model: survey.answer
-                answer: 'd) Outro (especificar)'
-
-            QMD15_02_06_05:
-                model: survey.answer
-                answer: 'e) Não sabe'
-
-            QMD15_02_06_06:
-                model: survey.answer
-                answer: 'f) Não quis responder'
-
-            QMD15_02_06_07:
-                model: survey.answer
-                answer: 'g) Não se aplica'
-
-        QMD15_02_07:
-            model: survey.question
             question: 'O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -311,13 +242,67 @@ QMD15:
             is_comment_require: True
             comment_label: 'Se sim, especificar'
 
+            QMD15_02_05_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QMD15_02_05_02:
+                model: survey.answer
+                answer: 'b) Sim (especificar)'
+
+            QMD15_02_05_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QMD15_02_05_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QMD15_02_05_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QMD15_02_06:
+            model: survey.question
+            question: 'O idoso possui diagnóstico de hipertensão?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
+            QMD15_02_06_01:
+                model: survey.answer
+                answer: 'a) Não'
+
+            QMD15_02_06_02:
+                model: survey.answer
+                answer: 'b) Sim'
+
+            QMD15_02_06_03:
+                model: survey.answer
+                answer: 'c) Não sabe'
+
+            QMD15_02_06_04:
+                model: survey.answer
+                answer: 'd) Não quis responder'
+
+            QMD15_02_06_05:
+                model: survey.answer
+                answer: 'e) Não se aplica'
+
+        QMD15_02_07:
+            model: survey.question
+            question: 'O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Esta questão precisa ser respondida.'
+
             QMD15_02_07_01:
                 model: survey.answer
                 answer: 'a) Não'
 
             QMD15_02_07_02:
                 model: survey.answer
-                answer: 'b) Sim (especificar)'
+                answer: 'b) Sim'
 
             QMD15_02_07_03:
                 model: survey.answer
@@ -333,10 +318,12 @@ QMD15:
 
         QMD15_02_08:
             model: survey.question
-            question: 'O idoso possui diagnóstico de hipertensão?'
+            question: 'O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
+            required_type: at least
+            req_ans: 1
 
             QMD15_02_08_01:
                 model: survey.answer
@@ -355,153 +342,6 @@ QMD15:
                 answer: 'd) Não quis responder'
 
             QMD15_02_08_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        QMD15_02_09:
-            model: survey.question
-            question: 'O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            QMD15_02_09_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            QMD15_02_09_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            QMD15_02_09_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            QMD15_02_09_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            QMD15_02_09_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        QMD15_02_10:
-            model: survey.question
-            question: 'O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            required_type: at least
-            req_ans: 1
-
-            QMD15_02_10_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            QMD15_02_10_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            QMD15_02_10_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            QMD15_02_10_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            QMD15_02_10_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        QMD15_02_11:
-            model: survey.question
-            question: 'O que utilizam quando alguém tem diarreia?'
-            type: multiple_choice_multiple_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-            is_comment_require: True
-            comment_label: 'Se outros, quais?'
-
-            QMD15_02_11_01:
-                model: survey.answer
-                answer: 'a) Nada. Espera passar'
-
-            QMD15_02_11_02:
-                model: survey.answer
-                answer: 'b) Soro caseiro'
-
-            QMD15_02_11_03:
-                model: survey.answer
-                answer: 'c) Soro pronto'
-
-            QMD15_02_11_04:
-                model: survey.answer
-                answer: 'd) Outros'
-
-            QMD15_02_11_05:
-                model: survey.answer
-                answer: 'e) Não sabe'
-
-            QMD15_02_11_06:
-                model: survey.answer
-                answer: 'f) Não quis responder'
-
-            QMD15_02_11_07:
-                model: survey.answer
-                answer: 'g) Não se aplica'
-
-        QMD15_02_12:
-            model: survey.question
-            question: 'Conhece o soro caseiro?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            QMD15_02_12_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            QMD15_02_12_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            QMD15_02_12_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            QMD15_02_12_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            QMD15_02_12_05:
-                model: survey.answer
-                answer: 'e) Não se aplica'
-
-        QMD15_02_13:
-            model: survey.question
-            question: 'Sabe como preparar?'
-            type: multiple_choice_only_one_ans
-            is_require_answer: 1
-            req_error_msg: 'Esta questão precisa ser respondida.'
-
-            QMD15_02_13_01:
-                model: survey.answer
-                answer: 'a) Não'
-
-            QMD15_02_13_02:
-                model: survey.answer
-                answer: 'b) Sim'
-
-            QMD15_02_13_03:
-                model: survey.answer
-                answer: 'c) Não sabe'
-
-            QMD15_02_13_04:
-                model: survey.answer
-                answer: 'd) Não quis responder'
-
-            QMD15_02_13_05:
                 model: survey.answer
                 answer: 'e) Não se aplica'
 

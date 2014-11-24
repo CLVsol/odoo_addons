@@ -591,7 +591,7 @@ FSE15:
 
         FSE15_05_06:
             model: survey.question
-            question: 'Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam'
+            question: 'Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
@@ -974,7 +974,7 @@ FSE15:
 
             FSE15_07_02_03:
                 model: survey.answer
-                answer: 'c) Não sabe'
+                answer: 'c) Não sabe responder'
 
             FSE15_07_02_04:
                 model: survey.answer

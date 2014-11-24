@@ -1,7 +1,7 @@
 ISE15:
     model: survey
-    title: 'JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)'
-    note: 'JCAFB 2015 - Questionário Socioeconômico Idivudual (Idosos)'
+    title: 'JCAFB 2015 - Questionário Socioeconômico Individual (Idosos)'
+    note: 'JCAFB 2015 - Questionário Socioeconômico Individual (Idosos)'
     responsible_id: base.user_root
     type: survey_type_JCAFB_2015
     color: 5
@@ -18,7 +18,7 @@ ISE15:
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
-            req_ans: 2
+            req_ans: 3
 
             ISE15_01_01_01:
                 model: survey.answer
@@ -329,15 +329,23 @@ ISE15:
 
             ISE15_02_06_10:
                 model: survey.answer
-                answer: 'j) Não sabe'
+                answer: 'j) Especialização'
 
             ISE15_02_06_11:
                 model: survey.answer
-                answer: 'k) Não quis responder'
+                answer: 'k) Pós-graduação (Mestrado/Doutorado)'
 
             ISE15_02_06_12:
                 model: survey.answer
-                answer: 'l) Não se aplica'
+                answer: 'l) Não sabe'
+
+            ISE15_02_06_13:
+                model: survey.answer
+                answer: 'm) Não quis responder'
+
+            ISE15_02_06_14:
+                model: survey.answer
+                answer: 'n) Não se aplica'
 
         ISE15_02_07:
             model: survey.question
@@ -856,7 +864,7 @@ ISE15:
 
         ISE15_05_02:
             model: survey.question
-            question: 'Nos últimos 12 meses, visitou o médico frequentemente? (todo mês)'
+            question: 'Nos últimos 12 meses, visitou o médico frequentemente (todo mês)? '
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
@@ -1156,7 +1164,7 @@ ISE15:
 
             ISE15_08_01_01:
                 model: survey.answer
-                answer: 'a) Não'
+                answer: 'a) Não (e não é aposentado)'
 
             ISE15_08_01_02:
                 model: survey.answer
