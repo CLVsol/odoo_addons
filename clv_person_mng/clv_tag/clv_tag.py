@@ -17,47 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVhealth',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the necessary modules for the CLVhealth solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_person_mng',
-        'clv_family',
-        'clv_community',
-        'clv_patient',
-        #'clv_survey',
-        'clv_medicament',
-        'disable_openerp_online',
-        'mass_editing',
-        ],
-    'data': [
-        'clvhealth_view.xml',
-        'clv_tag_sequence.xml',
-        'clv_annotation_sequence.xml',
-        'clv_annotation_category_sequence.xml',
-        'clv_person_sequence.xml',
-        'clv_person_category_sequence.xml',
-        'clv_family_sequence.xml',
-        'clv_family_category_sequence.xml',
-        'clv_community_sequence.xml',
-        'clv_community_category_sequence.xml',
-        'clv_patient_sequence.xml',
-        'clv_patient_category_sequence.xml',
-        'clv_medicament_sequence.xml',
-        'clv_medicament_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_tag(osv.osv):
+    _inherit = 'clv_tag'
+
+    _columns = {
+        'person_mng_ids': fields.many2many('clv_person_mng', 
+                                           'clv_person_mng_clv_tag_rel', 
+                                           'tag_id', 
+                                           'person_mng_id', 
+                                           'Person Management'),
+        }
+
+class clv_person_mng(osv.osv):
+    _inherit = 'clv_person_mng'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_person_mng_clv_tag_rel', 
+                                    'person_mng_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }
