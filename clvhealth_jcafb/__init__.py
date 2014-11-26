@@ -20,6 +20,7 @@
 import clv_tag
 import clv_annotation
 import clv_person
+import clv_person_mng
 import clv_family
 import clv_community
 import clv_patient
