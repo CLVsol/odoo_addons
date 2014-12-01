@@ -1,0 +1,101 @@
+[QMD15] JCAFB 2015 - Questionário Medicamentos
+    [QMD15_01] Preâmbulo
+        [QMD15_01_01] Identificação do Paciente
+            (multiple_textboxes_diff_type)
+            [QMD15_01_01_01] Nome do Paciente____________________________________
+            [QMD15_01_01_02] Código do Paciente____________________________________
+            [QMD15_01_01_03] Código da Família____________________________________
+        [QMD15_01_02] Aplicação do Questionário
+            (multiple_textboxes_diff_type)
+            [QMD15_01_02_01] Aplicado por____________________________________
+            [QMD15_01_02_02] Código____________________________________
+            [QMD15_01_02_03] Data____________________________________
+        [QMD15_01_03] Entrevistado
+            (multiple_choice_only_one_ans)
+            [QMD15_01_03_01] a) Paciente
+            [QMD15_01_03_02] b) Cuidador
+            [QMD15_01_03_03] c) Outra pessoa (especificar)
+            Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco ____________________________________
+    [QMD15_02] Questionário
+        [QMD15_02_01] Quem administra os medicamentos do(a) Sr.(a)?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_01_01] a) Cuidador não remunerado
+            [QMD15_02_01_02] b) Cuidador remunerado
+            [QMD15_02_01_03] c) Administra sozinho
+            [QMD15_02_01_04] d) Outra pessoa
+            [QMD15_02_01_05] e) Não sabe
+            [QMD15_02_01_06] f) Não quis responder
+            [QMD15_02_01_07] g) Não se aplica
+            Se outra pessoa, especificar____________________________________
+        [QMD15_02_02] Pratica automedicação?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_02_01] a) Não
+            [QMD15_02_02_02] b) Sim
+            [QMD15_02_02_03] c) Não sabe
+            [QMD15_02_02_04] d) Não quis responder
+            [QMD15_02_02_05] e) Não se aplica
+        [QMD15_02_03] O(a) Sr.(a) tomou medicamentos, sem prescrição, nos últimos 15 dias?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_03_01] a) Não
+            [QMD15_02_03_02] b) Sim (especificar)
+            [QMD15_02_03_03] c) Não sabe
+            [QMD15_02_03_04] d) Não quis responder
+            [QMD15_02_03_05] e) Não se aplica
+            Se sim, especificar____________________________________
+        [QMD15_02_04] De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?
+            (multiple_choice_multiple_ans)
+            [QMD15_02_04_01] a) Pelo tamanho
+            [QMD15_02_04_02] b) Pela cor
+            [QMD15_02_04_03] c) Pela forma
+            [QMD15_02_04_04] d) Pelo nome
+            [QMD15_02_04_05] e) Pela embalagem
+            [QMD15_02_04_06] f) Outro (especificar)
+            [QMD15_02_04_07] g) Não identifica
+            [QMD15_02_04_08] h) Não sabe
+            [QMD15_02_04_09] i) Não quis responder
+            [QMD15_02_04_10] j) Não se aplica
+            Se "Outro", especificar____________________________________
+        [QMD15_02_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_05_01] a) Não
+            [QMD15_02_05_02] b) Sim (especificar)
+            [QMD15_02_05_03] c) Não sabe
+            [QMD15_02_05_04] d) Não quis responder
+            [QMD15_02_05_05] e) Não se aplica
+            Se sim, especificar____________________________________
+        [QMD15_02_06] O idoso possui diagnóstico de hipertensão?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_06_01] a) Não
+            [QMD15_02_06_02] b) Sim
+            [QMD15_02_06_03] c) Não sabe
+            [QMD15_02_06_04] d) Não quis responder
+            [QMD15_02_06_05] e) Não se aplica
+        [QMD15_02_07] O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_07_01] a) Não
+            [QMD15_02_07_02] b) Sim
+            [QMD15_02_07_03] c) Não sabe
+            [QMD15_02_07_04] d) Não quis responder
+            [QMD15_02_07_05] e) Não se aplica
+        [QMD15_02_08] O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?
+            (multiple_choice_only_one_ans)
+            [QMD15_02_08_01] a) Não
+            [QMD15_02_08_02] b) Sim
+            [QMD15_02_08_03] c) Não sabe
+            [QMD15_02_08_04] d) Não quis responder
+            [QMD15_02_08_05] e) Não se aplica
+    [QMD15_03] Tabela de Medicamentos
+        [QMD15_03_01] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver.
+            (table)
+            [QMD15_03_01_01] Medicamentos
+            [QMD15_03_01_02] Receita válida
+            [QMD15_03_01_03] Como foi prescrito na receita? (posologia, modo de uso)
+            [QMD15_03_01_04] Onde o Sr.(a) adquire esse medicamento?
+            [QMD15_03_01_05] Para que o Sr.(a) acha tem que tomar/utilizar este medicamento? (perguntar, não apenas ler na receita)
+            [QMD15_03_01_06] Como o Sr.(a) conserva este medicamento?
+            [QMD15_03_01_07] Como o Sr.(a) toma/utiliza este medicamento?* (perguntar, não apenas ler na receita)
+            [QMD15_03_01_08] Quantas vezes o Sr.(a) esqueceu de tomar este medicamento nos últimos 15 dias?
+            [QMD15_03_01_09] Há quanto tempo o Sr.(a) utiliza este medicamento? (pode-se colocar faixas de tempo)
+            [QMD15_03_01_10] O medicamento está dentro do prazo de validade?
+            [QMD15_03_01_11] Adere?
+            [QMD15_03_01_12] Conhecimento sobre indicação?
