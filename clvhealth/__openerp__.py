@@ -36,7 +36,7 @@ This module will install all the necessary modules for the CLVhealth solution.
         'clv_family',
         'clv_community',
         'clv_patient',
-        #'clv_survey',
+        'clv_survey',
         'clv_medicament',
         'disable_openerp_online',
         'mass_editing',

@@ -36,7 +36,7 @@ user name and password for the invitation of the survey.
     'author': 'OpenERP SA',
     'depends': [
     	'mail',
-        'oehealth_patient',
+        'clv_patient',
     	],
     'data': [
         'survey_report.xml',
@@ -54,7 +54,7 @@ user name and password for the invitation of the survey.
         'survey_response_view.xml',
 	    'survey_view2.xml',
 	    'survey_request_view.xml',
-	    'oehealth_patient_view.xml',
+	    'clv_patient_view.xml',
         ],
     'demo': [
         'survey_demo.xml'

@@ -20,13 +20,11 @@
 from osv import osv
 from osv import fields
 
-class oehealth_patient(osv.osv):
-    _inherit = "oehealth.patient"
-    _name = "oehealth.patient"
+class clv_patient(osv.osv):
+    _inherit = "clv_patient"
+    _name = "clv_patient"
     _columns = {
         'survey_ids': fields.one2many('survey.response',
         	                          'patient_id',
         	                          'Surveys'),
     }
-
-oehealth_patient()

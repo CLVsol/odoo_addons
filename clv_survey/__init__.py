@@ -23,4 +23,4 @@ import survey
 import wizard
 import report
 import survey2
-import oehealth_patient
+import clv_patient

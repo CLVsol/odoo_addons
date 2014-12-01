@@ -27,8 +27,8 @@ class survey(osv.osv):
         'is_health_survey' : fields.boolean('Is a Health Survey', help="Check if the survey is a Health Survey"),
         #'response_patient': fields.integer('Maximum Answer per Patient',
         #                                   help="Set to one if  you require only one Answer per patient"),
-        #'patients': fields.many2many('oehealth.patient', 'survey_persons_rel', 'survey_id', 'patient_id', 'Patients'),
-        #'invited_patient_ids': fields.many2many('oehealth.patient', 'survey_invited_patient_rel', 'survey_id', 'patient_id', 'Invited Patient'),
+        #'patients': fields.many2many('clv_patient', 'survey_persons_rel', 'survey_id', 'patient_id', 'Patients'),
+        #'invited_patient_ids': fields.many2many('clv_patient', 'survey_invited_patient_rel', 'survey_id', 'patient_id', 'Invited Patient'),
     }
     _defaults = {
         #'send_response': lambda * a: 1,
@@ -43,7 +43,7 @@ class survey_request(osv.osv):
     _name = "survey.request"
 
     _columns = {
-        'patient_id': fields.many2one("oehealth.patient", "Patient"),
+        'patient_id': fields.many2one("clv_patient", "Patient"),
     }
 
 survey_request()
@@ -52,7 +52,7 @@ class survey_response(osv.osv):
     _inherit = "survey.response"
     _name = "survey.response"
     _columns = {
-        'patient_id' : fields.many2one('oehealth.patient', 'Patient'),
+        'patient_id' : fields.many2one('clv_patient', 'Patient'),
     }
 
     def name_get(self, cr, uid, ids, context=None):
@@ -72,7 +72,7 @@ class survey_history(osv.osv):
     _inherit = "survey.history"
     _name = 'survey.history'
     _columns = {
-        #'patient_id' : fields.many2one('oehealth.patient', 'Patient', readonly=True),
+        #'patient_id' : fields.many2one('clv_patient', 'Patient', readonly=True),
     }
 
 survey_history()
