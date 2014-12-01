@@ -30,7 +30,7 @@ from openerp.report.interface import report_rml
 from openerp.tools import to_xml
 from openerp.tools.translate import _
 
-class survey_browse_response(report_rml):
+class clv_survey_browse_response(report_rml):
     def create(self, cr, uid, ids, datas, context):
         if context is None:
             context = {}
@@ -192,20 +192,20 @@ class survey_browse_response(report_rml):
                   </stylesheet>
                   <images/>
                   <story>"""
-        surv_resp_obj = pooler.get_pool(cr.dbname).get('survey.response')
+        surv_resp_obj = pooler.get_pool(cr.dbname).get('clv_survey.response')
         rml_obj=report_sxw.rml_parse(cr, uid, surv_resp_obj._name,context)
         if datas.has_key('form') and datas['form'].has_key('response_ids'):
             response_id = datas['form']['response_ids']
         elif context.has_key('response_id') and context['response_id']:
             response_id = [int(context['response_id'][0])]
         else:
-            response_id = surv_resp_obj.search(cr, uid, [('survey_id', 'in', ids)])
+            response_id = surv_resp_obj.search(cr, uid, [('clv_survey_id', 'in', ids)])
 
-        surv_resp_line_obj = pooler.get_pool(cr.dbname).get('survey.response.line')
-        surv_obj = pooler.get_pool(cr.dbname).get('survey')
+        surv_resp_line_obj = pooler.get_pool(cr.dbname).get('clv_survey.response.line')
+        surv_obj = pooler.get_pool(cr.dbname).get('clv_survey')
 
         for response in surv_resp_obj.browse(cr, uid, response_id):
-            for survey in surv_obj.browse(cr, uid, [response.survey_id.id]):
+            for clv_survey in surv_obj.browse(cr, uid, [response.clv_survey_id.id]):
                 tbl_width = float(_tbl_widths.replace('cm', ''))
                 colwidth =  "2.5cm,4.8cm," + str(tbl_width - 15.0) +"cm,3.2cm,4.5cm"
                 timezone = pytz.timezone(context.get('tz') or 'UTC')
@@ -234,17 +234,17 @@ class survey_browse_response(report_rml):
                 colwidth +=  "7cm"
                 rml += """<blockTable colWidths='""" + str(colwidth) + """' style="title_tbl">
                             <tr>
-                            <td><para style="title">""" + to_xml(tools.ustr(survey.title)) + """</para><para style="P2"><font></font></para></td>
+                            <td><para style="title">""" + to_xml(tools.ustr(clv_survey.title)) + """</para><para style="P2"><font></font></para></td>
                             <td><para style="descriptive_text_heading">"""+_('Status :- ')+ to_xml(tools.ustr(status)) + """</para><para style="P2"><font></font></para></td>
                             </tr>
                         </blockTable>"""
 
-                if survey.note:
+                if clv_survey.note:
                     rml += """<blockTable colWidths='""" + _tbl_widths + """' style="note_table">
-                            <tr><td><para style="response">""" + to_xml(tools.ustr(survey.note or '')) + """</para><para style="P2"><font></font></para></td></tr>
+                            <tr><td><para style="response">""" + to_xml(tools.ustr(clv_survey.note or '')) + """</para><para style="P2"><font></font></para></td></tr>
                         </blockTable>"""
 
-                for page in survey.page_ids:
+                for page in clv_survey.page_ids:
                     rml += """<blockTable colWidths='""" + str(_tbl_widths) + """' style="page_tbl">
                                   <tr><td><para style="page">"""+_('Page :- ') + to_xml(tools.ustr(page.title or '')) + """</para></td></tr>
                               </blockTable>"""
@@ -268,7 +268,7 @@ class survey_browse_response(report_rml):
 
                         elif que.type in ['table']:
                             if len(answer) and answer[0].state == "done":
-                                col_heading = pooler.get_pool(cr.dbname).get('survey.tbl.column.heading')
+                                col_heading = pooler.get_pool(cr.dbname).get('clv_survey.tbl.column.heading')
                                 cols_widhts = []
                                 tbl_width = float(_tbl_widths.replace('cm', ''))
                                 for i in range(0, len(que.column_heading_ids)):
@@ -540,4 +540,4 @@ class survey_browse_response(report_rml):
         pdf = create_doc(rml, title=self.title)
         return (pdf, report_type)
 
-#survey_browse_response('report.survey.browse.response', 'survey','','')
+clv_survey_browse_response('report.clv_survey.browse.response', 'clv_survey','','')

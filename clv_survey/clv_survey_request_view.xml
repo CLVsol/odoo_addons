@@ -4,10 +4,10 @@
 
         <!-- Survey Request -->
         
-        <record model="ir.ui.view" id="survey_request_form_2">
-            <field name="name">oehealth_survey_request_form</field>
-            <field name="model">survey.request</field>
-            <field name="inherit_id" ref="survey_request_form"/>
+        <record model="ir.ui.view" id="clv_survey_request_form_2">
+            <field name="name">oehealth_clv_survey_request_form</field>
+            <field name="model">clv_survey.request</field>
+            <field name="inherit_id" ref="clv_survey_request_form"/>
             <field name="arch" type="xml">
                 <field name="user_id" position="replace">
                      <field name="patient_id"/>
@@ -16,10 +16,10 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="survey_request_tree_2">
-            <field name="name">oehealth_survey_request_tree</field>
-            <field name="model">survey.request</field>
-            <field name="inherit_id" ref="survey_request_tree"/>
+        <record model="ir.ui.view" id="clv_survey_request_tree_2">
+            <field name="name">oehealth_clv_survey_request_tree</field>
+            <field name="model">clv_survey.request</field>
+            <field name="inherit_id" ref="clv_survey_request_tree"/>
             <field name="arch" type="xml">
                 <field name="user_id" position="replace">
                      <field name="patient_id"/>

@@ -22,10 +22,10 @@
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
-class survey_print_statistics(osv.osv_memory):
-    _name = 'survey.print.statistics'
+class clv_survey_print_statistics(osv.osv_memory):
+    _name = 'clv_survey.print.statistics'
     _columns = {
-        'survey_ids': fields.many2many('survey', string="Survey", required="1"),
+        'clv_survey_ids': fields.many2many('clv_survey', string="Survey", required="1"),
     }
 
     def action_next(self, cr, uid, ids, context=None):
@@ -35,16 +35,16 @@ class survey_print_statistics(osv.osv_memory):
         if context is None:
             context = {}
         datas = {'ids': context.get('active_ids', [])}
-        res = self.read(cr, uid, ids, ['survey_ids'], context=context)
+        res = self.read(cr, uid, ids, ['clv_survey_ids'], context=context)
         res = res and res[0] or {}
         datas['form'] = res
-        datas['model'] = 'survey.print.statistics'
+        datas['model'] = 'clv_survey.print.statistics'
         return {
             'type': 'ir.actions.report.xml',
-            'report_name': 'survey.analysis',
+            'report_name': 'clv_survey.analysis',
             'datas': datas,
         }
 
-survey_print_statistics()
+clv_survey_print_statistics()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

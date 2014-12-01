@@ -1,18 +1,18 @@
 CSE15:
-    model: survey
+    model: clv_survey
     title: 'JCAFB 2015 - Questionário Socioeconômico Individual (Crianças)'
     note: 'JCAFB 2015 - Questionário Socioeconômico Individual (Crianças)'
     responsible_id: base.user_root
-    type: survey_type_JCAFB_2015
+    type: clv_survey_type_JCAFB_2015
     color: 5
 
     CSE15_01:
-        model: survey.page
+        model: clv_survey.page
         title: 'Preâmbulo'
         note: 'Preâmbulo'
 
         CSE15_01_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Identificação da Criança'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
@@ -21,21 +21,21 @@ CSE15:
             req_ans: 3
 
             CSE15_01_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Nome da Criança'
                 type: char
 
             CSE15_01_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código da Criança'
                 type: char
 
             CSE15_01_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código da Família'
 
         CSE15_01_02:
-            model: survey.question
+            model: clv_survey.question
             question: 'Aplicação do Questionário'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
@@ -44,22 +44,22 @@ CSE15:
             req_ans: 3
 
             CSE15_01_02_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Aplicado por'
                 type: char
 
             CSE15_01_02_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código'
                 type: char
 
             CSE15_01_02_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Data'
                 type: date
 
         CSE15_01_03:
-            model: survey.question
+            model: clv_survey.question
             question: 'Entrevistado'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -68,24 +68,24 @@ CSE15:
             comment_label: 'Nome e grau de parentesco e, se a resposta for "Outro", especificar'
 
             CSE15_01_03_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Responsável'
 
             CSE15_01_03_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Cuidador'
 
             CSE15_01_03_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Outro (especificar)'
 
     CSE15_02:
-        model: survey.page
+        model: clv_survey.page
         title: 'Aspectos Sociais/Hábitos'
         note: 'Aspectos Sociais/Hábitos'
 
         CSE15_02_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Onde a criança fica quando não está na escola?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -96,78 +96,78 @@ CSE15:
             comment_label: 'Se outros, onde?'
 
             CSE15_02_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Creche'
 
             CSE15_02_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Projeto social (espaço amigo, etc...)'
 
             CSE15_02_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Casa de familiares'
 
             CSE15_02_01_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Em casa'
 
             CSE15_02_01_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Outros'
 
             CSE15_02_01_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não sabe'
 
             CSE15_02_01_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não quis responder'
 
             CSE15_02_01_08:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'h) Não se aplica'
 
         CSE15_02_02:
-            model: survey.question
+            model: clv_survey.question
             question: 'Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             CSE15_02_02_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) 0 anos'
 
             CSE15_02_02_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) 1 a 3 anos'
 
             CSE15_02_02_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) 4 a 11 anos'
 
             CSE15_02_02_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) 12 a 22 anos'
 
             CSE15_02_02_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) 22 anos ou mais'
 
             CSE15_02_02_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não sabe'
 
             CSE15_02_02_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não quis responder'
 
             CSE15_02_02_08:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'h) Não se aplica'
 
         CSE15_02_03:
-            model: survey.question
+            model: clv_survey.question
             question: 'A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -176,31 +176,31 @@ CSE15:
             comment_label: 'Se outro, como?'
 
             CSE15_02_03_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             CSE15_02_03_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim'
 
             CSE15_02_03_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Às vezes'
 
             CSE15_02_03_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não sabe'
 
             CSE15_02_03_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não quis responder'
 
             CSE15_02_03_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não se aplica'
 
         CSE15_02_04:
-            model: survey.question
+            model: clv_survey.question
             question: 'Onde a criança costuma fazer cocô?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -211,35 +211,35 @@ CSE15:
             comment_label: 'Complementação da resposta:'
 
             CSE15_02_04_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Vaso sanitário'
 
             CSE15_02_04_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Penico (se sim, onde joga o cocô?)'
 
             CSE15_02_04_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Fralda (se sim, onde joga a fralda suja?)'
 
             CSE15_02_04_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Outros (quintal, mato, etc). Onde?(a)'
 
             CSE15_02_04_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não sabe'
 
             CSE15_02_04_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não quis responder'
 
             CSE15_02_04_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não se aplica'
 
         CSE15_02_05:
-            model: survey.question
+            model: clv_survey.question
             question: 'A criança tem algum dos seguintes hábitos:'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -248,112 +248,112 @@ CSE15:
             req_ans: 1
 
             CSE15_02_05_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Lavar as mãos antes das refeições'
 
             CSE15_02_05_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Lavar as mãos após utilizar o banheiro'
 
             CSE15_02_05_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Andar calçada'
 
             CSE15_02_05_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Nenhum'
 
             CSE15_02_05_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não sabe'
 
             CSE15_02_05_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não quis responder'
 
             CSE15_02_05_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não se aplica'
 
     CSE15_03:
-        model: survey.page
+        model: clv_survey.page
         title: 'Alimentação'
         note: 'Alimentação'
 
         CSE15_03_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Como a criança costuma consumir a carne?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             CSE15_03_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não consome carne'
 
             CSE15_03_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Bem passada'
 
             CSE15_03_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Mal passada / Crua'
 
             CSE15_03_01_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não sabe'
 
             CSE15_03_01_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não quis responder'
 
             CSE15_03_01_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não se aplica'
 
     CSE15_04:
-        model: survey.page
+        model: clv_survey.page
         title: 'Medicamentos'
         note: 'Medicamentos'
 
         CSE15_04_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'A criança tem acesso aos medicamentos? '
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             CSE15_04_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Sim, ela sabe onde estão guardados e os alcança quando quiser'
 
             CSE15_04_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Ela sabe onde estão, mas não tem acesso a eles'
 
             CSE15_04_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não, estão escondidos em um local de difícil acesso'
 
             CSE15_04_01_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não sabe'
 
             CSE15_04_01_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não quis responder'
 
             CSE15_04_01_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não se aplica'
 
     CSE15_05:
-        model: survey.page
+        model: clv_survey.page
         title: 'Parasitoses'
         note: 'Parasitoses'
 
         CSE15_05_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'A criança já fez exame de fezes?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -364,35 +364,35 @@ CSE15:
             comment_label: 'Qual verme?'
 
             CSE15_05_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             CSE15_05_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim, resultado negativo para verme'
 
             CSE15_05_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Sim, mas não sabe o resultado'
 
             CSE15_05_01_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Sim, resultado positivo para verme'
 
             CSE15_05_01_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não sabe'
 
             CSE15_05_01_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não quis responder'
 
             CSE15_05_01_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não se aplica'
 
         CSE15_05_02:
-            model: survey.question
+            model: clv_survey.question
             question: 'Como descobriu que estava com a doença?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -401,69 +401,69 @@ CSE15:
             comment_label: 'Se outros, quais?'
 
             CSE15_05_02_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Com resultado de exame de fezes'
 
             CSE15_05_02_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Saiu nas fezes'
 
             CSE15_05_02_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Foi no médico'
 
             CSE15_05_02_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Outros'
 
             CSE15_05_02_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não sabe'
 
             CSE15_05_02_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não quis responder'
 
             CSE15_05_02_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não se aplica'
 
         CSE15_05_03:
-            model: survey.question
+            model: clv_survey.question
             question: 'A criança já tomou vermífugo (lombrigueira)?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             CSE15_05_03_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             CSE15_05_03_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim, há seis meses ou menos e "botou" verme'
 
             CSE15_05_03_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
 
             CSE15_05_03_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Sim, há mais de seis meses, e "botou" verme'
 
             CSE15_05_03_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Sim, há mais de seis meses, mas não "botou" verme'
 
             CSE15_05_03_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não sabe'
 
             CSE15_05_03_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não quis responder'
 
             CSE15_05_03_08:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'h) Não se aplica'
 

@@ -23,10 +23,10 @@
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
-class survey_print(osv.osv_memory):
-    _name = 'survey.print'
+class clv_survey_print(osv.osv_memory):
+    _name = 'clv_survey.print'
     _columns = {
-        'survey_ids': fields.many2many('survey', string="Survey", required="1"),
+        'clv_survey_ids': fields.many2many('clv_survey', string="Survey", required="1"),
         'orientation' : fields.selection([('vertical','Portrait(Vertical)'),\
                             ('horizontal','Landscape(Horizontal)')], 'Orientation'),
         'paper_size' : fields.selection([('letter','Letter (8.5" x 11")'),\
@@ -44,26 +44,26 @@ class survey_print(osv.osv_memory):
 
     def action_next(self, cr, uid, ids, context=None):
         """
-        Print Survey Form(print template of the survey).
+        Print Survey Form(print template of the clv_survey).
 
         @param self: The object pointer
         @param cr: the current row, from the database cursor,
         @param uid: the current user’s ID for security checks,
         @param ids: List of Survey IDs
         @param context: A standard dictionary for contextual values
-        @return : Dictionary value for print survey form.
+        @return : Dictionary value for print clv_survey form.
         """
-        datas = {'ids' : self.read(cr, uid, ids, ['survey_ids'], context=context)[0]['survey_ids']}
-        res = self.read(cr, uid, ids, ['survey_title', 'orientation', 'paper_size',\
+        datas = {'ids' : self.read(cr, uid, ids, ['clv_survey_ids'], context=context)[0]['clv_survey_ids']}
+        res = self.read(cr, uid, ids, ['clv_survey_title', 'orientation', 'paper_size',\
                              'page_number', 'without_pagebreak'], context=context)
         res = res and res[0] or {}
         datas['form'] = res
-        datas['model'] = 'survey.print'
+        datas['model'] = 'clv_survey.print'
         return {
             'type': 'ir.actions.report.xml',
-            'report_name': 'survey.form',
+            'report_name': 'clv_survey.form',
             'datas': datas,
         }
-survey_print()
+clv_survey_print()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

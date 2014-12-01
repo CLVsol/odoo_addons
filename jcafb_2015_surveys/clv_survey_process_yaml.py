@@ -20,7 +20,7 @@
 
 import yaml
 
-def survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, collumn_sequence):
+def clv_survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, collumn_sequence):
 
     _title_ = doc[key1][key2][key3][key4]['title'].encode("utf-8")
     _model_ = doc[key1][key2][key3][key4]['model']
@@ -49,7 +49,7 @@ def survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4
     xml_file.write('                    </record>\n')
     xml_file.write('\n')
 
-def survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, answer_sequence):
+def clv_survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, question_type, question_id, answer_sequence):
 
     _answer_ = doc[key1][key2][key3][key4]['answer'].encode("utf-8")
     _model_ = doc[key1][key2][key3][key4]['model']
@@ -87,7 +87,7 @@ def survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4
     xml_file.write('                    </record>\n')
     xml_file.write('\n')
 
-def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, page_id, question_sequence):
+def clv_survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, page_id, question_sequence):
 
     _question_ = doc[key1][key2][key3]['question'].encode("utf-8")
     _type_ = doc[key1][key2][key3]['type']
@@ -169,12 +169,12 @@ def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, pa
             try:
                 _model_ = doc[key1][key2][key3][key4]['model']
                 print '            ', key4, _model_
-                if _model_ == 'survey.answer':
+                if _model_ == 'clv_survey.answer':
                     answer_sequence += 10
-                    survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
-                if _model_ == 'survey.question.column.heading':
+                    clv_survey_answer(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
+                if _model_ == 'clv_survey.question.column.heading':
                     answer_sequence += 10
-                    survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
+                    clv_survey_colunm(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, key4, _type_, _id_, answer_sequence)
             except Exception, e:
                 pass
 
@@ -186,16 +186,16 @@ def survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, pa
     except Exception, e:
         pass
 
-def survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, survey_id, page_sequence):
+def clv_survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, clv_survey_id, page_sequence):
 
     _title_ = doc[key1][key2]['title'].encode("utf-8")
     _model_ = doc[key1][key2]['model']
     if page_sequence < 100:
-        _id_ = survey_id + '_0' + str(page_sequence / 10)
+        _id_ = clv_survey_id + '_0' + str(page_sequence / 10)
     else:
-        _id_ = survey_id + '_' + str(page_sequence / 10)
+        _id_ = clv_survey_id + '_' + str(page_sequence / 10)
     _note_ = doc[key1][key2]['note'].encode("utf-8")
-    _survey_id_ = key1
+    _clv_survey_id_ = key1
     _sequence_ = str(page_sequence)
 
     yaml_out_file.write('    %s:\n' % (_id_))
@@ -212,7 +212,7 @@ def survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, survey_id, p
     xml_file.write('            <record model="%s" id="%s">\n' % (_model_, _id_))
     xml_file.write('                <field name="title">%s</field>\n' % (_title_))
     xml_file.write('                <field name="note">%s</field>\n' % (_note_))
-    xml_file.write('                <field name="survey_id" ref="%s"/>\n' % (_survey_id_))
+    xml_file.write('                <field name="clv_survey_id" ref="%s"/>\n' % (_clv_survey_id_))
     xml_file.write('                <field name="sequence" eval="%s"/>\n' % (_sequence_))
     xml_file.write('            </record>' + '\n')
     xml_file.write('\n')
@@ -222,13 +222,13 @@ def survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, survey_id, p
         try:
             _model_ = doc[key1][key2][key3]['model']
             print '        ', key3, _model_
-            if _model_ == 'survey.question':
+            if _model_ == 'clv_survey.question':
                 question_sequence += 10
-                survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, _id_, question_sequence)
+                clv_survey_question(doc, yaml_out_file, xml_file, txt_file, key1, key2, key3, _id_, question_sequence)
         except Exception, e:
             pass
 
-def survey(doc, yaml_out_file, xml_file, txt_file, key1):
+def clv_survey(doc, yaml_out_file, xml_file, txt_file, key1):
 
     _title_ = doc[key1]['title'].encode("utf-8")
     _model_ = doc[key1]['model']
@@ -267,13 +267,13 @@ def survey(doc, yaml_out_file, xml_file, txt_file, key1):
         try:
             _model_ = doc[key1][key2]['model']
             print '    ', key2, _model_
-            if _model_ == 'survey.page':
+            if _model_ == 'clv_survey.page':
                 page_sequence += 10
-                survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, key1, page_sequence)
+                clv_survey_page(doc, yaml_out_file, xml_file, txt_file, key1, key2, key1, page_sequence)
         except Exception, e:
             pass
 
-def survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename):
+def clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename):
 
     yaml_file = open(yaml_filename, 'r')
     doc = yaml.load(yaml_file)
@@ -290,8 +290,8 @@ def survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_file
     for key1 in sorted(doc.keys()):
         _model_ = doc[key1]['model']
         print key1, _model_
-        if _model_ == 'survey':
-            survey(doc, yaml_out_file, xml_file, txt_file, key1)
+        if _model_ == 'clv_survey':
+            clv_survey(doc, yaml_out_file, xml_file, txt_file, key1)
 
     xml_file.write('    </data>\n')
     xml_file.write('</openerp>\n')
@@ -309,56 +309,56 @@ if __name__ == '__main__':
     from time import time
     start = time()
 
-    print '--> Executing survey_process_yaml.py ...'
+    print '--> Executing clv_survey_process_yaml.py ...'
 
-    yaml_filename = 'survey_jcafb_QSE15.yaml'
-    yaml_out_filename = 'survey_jcafb_QSE15_out.yaml'
-    xml_filename = 'survey_jcafb_QSE15.xml'
-    txt_filename = 'survey_jcafb_QSE15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_QSE15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_QSE15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_QSE15.xml'
+    txt_filename = 'clv_survey_jcafb_QSE15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_FSE15.yaml'
-    yaml_out_filename = 'survey_jcafb_FSE15_out.yaml'
-    xml_filename = 'survey_jcafb_FSE15.xml'
-    txt_filename = 'survey_jcafb_FSE15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_FSE15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_FSE15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_FSE15.xml'
+    txt_filename = 'clv_survey_jcafb_FSE15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_ISE15.yaml'
-    yaml_out_filename = 'survey_jcafb_ISE15_out.yaml'
-    xml_filename = 'survey_jcafb_ISE15.xml'
-    txt_filename = 'survey_jcafb_ISE15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_ISE15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_ISE15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_ISE15.xml'
+    txt_filename = 'clv_survey_jcafb_ISE15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_CSE15.yaml'
-    yaml_out_filename = 'survey_jcafb_CSE15_out.yaml'
-    xml_filename = 'survey_jcafb_CSE15.xml'
-    txt_filename = 'survey_jcafb_CSE15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_CSE15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_CSE15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_CSE15.xml'
+    txt_filename = 'clv_survey_jcafb_CSE15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QMD15.yaml'
-    yaml_out_filename = 'survey_jcafb_QMD15_out.yaml'
-    xml_filename = 'survey_jcafb_QMD15.xml'
-    txt_filename = 'survey_jcafb_QMD15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_QMD15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_QMD15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_QMD15.xml'
+    txt_filename = 'clv_survey_jcafb_QMD15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QAN15.yaml'
-    yaml_out_filename = 'survey_jcafb_QAN15_out.yaml'
-    xml_filename = 'survey_jcafb_QAN15.xml'
-    txt_filename = 'survey_jcafb_QAN15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_QAN15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_QAN15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_QAN15.xml'
+    txt_filename = 'clv_survey_jcafb_QAN15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    yaml_filename = 'survey_jcafb_QDH15.yaml'
-    yaml_out_filename = 'survey_jcafb_QDH15_out.yaml'
-    xml_filename = 'survey_jcafb_QDH15.xml'
-    txt_filename = 'survey_jcafb_QDH15.txt'
-    print '--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    yaml_filename = 'clv_survey_jcafb_QDH15.yaml'
+    yaml_out_filename = 'clv_survey_jcafb_QDH15_out.yaml'
+    xml_filename = 'clv_survey_jcafb_QDH15.xml'
+    txt_filename = 'clv_survey_jcafb_QDH15.txt'
+    print '--> Executing clv_survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename)
+    clv_survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
 
-    print '--> survey_process_yaml.py'
+    print '--> clv_survey_process_yaml.py'
     print '--> Execution time:', secondsToStr(time() - start)

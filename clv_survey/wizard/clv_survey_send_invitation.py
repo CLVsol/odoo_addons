@@ -31,11 +31,11 @@ from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
 
-class survey_send_invitation(osv.osv_memory):
-    _name = 'survey.send.invitation'
+class clv_survey_send_invitation(osv.osv_memory):
+    _name = 'clv_survey.send.invitation'
     _columns = {
-        'partner_ids': fields.many2many('res.partner','survey_res_partner','partner_id',\
-                                'survey_id', "Answer", required=1),
+        'partner_ids': fields.many2many('res.partner','clv_survey_res_partner','partner_id',\
+                                'clv_survey_id', "Answer", required=1),
         'send_mail': fields.boolean('Send Mail for New User'),
         'send_mail_existing': fields.boolean('Send Reminder for Existing User'),
         'mail_subject': fields.char('Subject', size=256),
@@ -56,11 +56,11 @@ class survey_send_invitation(osv.osv_memory):
     def default_get(self, cr, uid, fields_list, context=None):
         if context is None:
             context = {}
-        data = super(survey_send_invitation, self).default_get(cr, uid, fields_list, context)
-        survey_obj = self.pool.get('survey')
+        data = super(clv_survey_send_invitation, self).default_get(cr, uid, fields_list, context)
+        clv_survey_obj = self.pool.get('clv_survey')
         msg = ""
         name = ""
-        for sur in survey_obj.browse(cr, uid, context.get('active_ids', []), context=context):
+        for sur in clv_survey_obj.browse(cr, uid, context.get('active_ids', []), context=context):
             name += "\n --> " + sur.title + "\n"
             if sur.state != 'open':
                 msg +=  sur.title + "\n"
@@ -68,11 +68,11 @@ class survey_send_invitation(osv.osv_memory):
             data['mail_subject_existing'] = _("Invitation for %s") % (sur.title)
             data['mail_from'] = sur.responsible_id.email
         if msg:
-            raise osv.except_osv(_('Warning!'), _('The following surveys are not in open state: %s') % msg)
+            raise osv.except_osv(_('Warning!'), _('The following clv_surveys are not in open state: %s') % msg)
         data['mail'] = _('''
 Hello %%(name)s, \n\n
-Would you please spent some of your time to fill-in our survey: \n%s\n
-You can access this survey with the following parameters:
+Would you please spent some of your time to fill-in our clv_survey: \n%s\n
+You can access this clv_survey with the following parameters:
  URL: %s
  Your login ID: %%(login)s\n
  Your password: %%(passwd)s\n
@@ -84,7 +84,7 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
         if not report_name or not res_ids:
             return (False, Exception('Report name and Resources ids are required !!!'))
         try:
-            ret_file_name = addons.get_module_resource('survey', 'report') + file_name + '.pdf'
+            ret_file_name = addons.get_module_resource('clv_survey', 'report') + file_name + '.pdf'
             service = netsvc.LocalService(report_name);
             (result, format) = service.create(cr, uid, res_ids, {}, {})
             fp = open(ret_file_name, 'wb+');
@@ -100,19 +100,19 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
         if context is None:
             context = {}
         record = self.read(cr, uid, ids, [],context=context)
-        survey_ids =  context.get('active_ids', [])
+        clv_survey_ids =  context.get('active_ids', [])
         record = record and record[0]
         partner_ids = record['partner_ids']
         user_ref= self.pool.get('res.users')
-        survey_ref= self.pool.get('survey')
+        clv_survey_ref= self.pool.get('clv_survey')
         mail_message = self.pool.get('mail.message')
 
         model_data_obj = self.pool.get('ir.model.data')
-        group_id = model_data_obj._get_id(cr, uid, 'base', 'group_survey_user')
+        group_id = model_data_obj._get_id(cr, uid, 'base', 'group_clv_survey_user')
         group_id = model_data_obj.browse(cr, uid, group_id, context=context).res_id
 
         act_id = self.pool.get('ir.actions.act_window')
-        act_id = act_id.search(cr, uid, [('res_model', '=' , 'survey.name.wiz'), \
+        act_id = act_id.search(cr, uid, [('res_model', '=' , 'clv_survey.name.wiz'), \
                         ('view_type', '=', 'form')])
         out = "login,password\n"
         skipped = 0
@@ -121,13 +121,13 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
         error = ""
         new_user = []
         attachments = {}
-        current_sur = survey_ref.browse(cr, uid, context.get('active_id'), context=context)
+        current_sur = clv_survey_ref.browse(cr, uid, context.get('active_id'), context=context)
         exist_user = current_sur.invited_user_ids
         if exist_user:
             for use in exist_user:
                 new_user.append(use.id)
-        for id in survey_ref.browse(cr, uid, survey_ids):
-            service = netsvc.LocalService('report.survey.form');
+        for id in clv_survey_ref.browse(cr, uid, clv_survey_ids):
+            service = netsvc.LocalService('report.clv_survey.form');
             (result, format) = service.create(cr, uid, [id.id], {}, {})
             
             attachments[id.title +".pdf"] = result
@@ -141,7 +141,7 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
                 if user[0] not in new_user:
                     new_user.append(user[0])
                 user = user_ref.browse(cr, uid, user[0])
-                user_ref.write(cr, uid, user.id, {'survey_id':[[6, 0, survey_ids]]})
+                user_ref.write(cr, uid, user.id, {'clv_survey_id':[[6, 0, clv_survey_ids]]})
                 mail = record['mail']%{'login':partner.email, 'passwd':user.password, \
                                             'name' : partner.name}
                 if record['send_mail_existing']:
@@ -183,7 +183,7 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
                                 'address_id': partner.id,
                                 'groups_id': [[6, 0, [group_id]]],
                                 'action_id': act_id[0],
-                                'survey_id': [[6, 0, survey_ids]]
+                                'clv_survey_id': [[6, 0, clv_survey_ids]]
                                }
                     user = user_ref.create(cr, uid, res_data)
                     if user not in new_user:
@@ -196,7 +196,7 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
 
         new_vals = {}
         new_vals.update({'invited_user_ids':[[6,0,new_user]]})
-        survey_ref.write(cr, uid, context.get('active_id'),new_vals)
+        clv_survey_ref.write(cr, uid, context.get('active_id'),new_vals)
         note= ""
         if created:
             note += 'Created users:\n%s\n\n' % (created)
@@ -210,15 +210,15 @@ Thanks,''') % (name, self.pool.get('ir.config_parameter').get_param(cr, uid, 'we
         return {
             'view_type': 'form',
             "view_mode": 'form',
-            'res_model': 'survey.send.invitation.log',
+            'res_model': 'clv_survey.send.invitation.log',
             'type': 'ir.actions.act_window',
             'target': 'new',
             'context': context
         }
-survey_send_invitation()
+clv_survey_send_invitation()
 
-class survey_send_invitation_log(osv.osv_memory):
-    _name = 'survey.send.invitation.log'
+class clv_survey_send_invitation_log(osv.osv_memory):
+    _name = 'clv_survey.send.invitation.log'
     _columns = {
         'note' : fields.text('Log', readonly=1)
     }
@@ -226,10 +226,10 @@ class survey_send_invitation_log(osv.osv_memory):
     def default_get(self, cr, uid, fields_list, context=None):
         if context is None:
             context = {}
-        data = super(survey_send_invitation_log, self).default_get(cr, uid, fields_list, context)
+        data = super(clv_survey_send_invitation_log, self).default_get(cr, uid, fields_list, context)
         data['note'] = context.get('note', '')
         return data
 
-survey_send_invitation_log()
+clv_survey_send_invitation_log()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

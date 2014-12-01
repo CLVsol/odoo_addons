@@ -19,16 +19,16 @@
 
 from osv import fields, osv
 
-class survey(osv.osv):
-    _inherit = "survey"
-    _name = 'survey'
+class clv_survey(osv.osv):
+    _inherit = "clv_survey"
+    _name = 'clv_survey'
 
     _columns = {
-        'is_health_survey' : fields.boolean('Is a Health Survey', help="Check if the survey is a Health Survey"),
+        'is_health_clv_survey' : fields.boolean('Is a Health Survey', help="Check if the survey is a Health Survey"),
         #'response_patient': fields.integer('Maximum Answer per Patient',
         #                                   help="Set to one if  you require only one Answer per patient"),
-        #'patients': fields.many2many('clv_patient', 'survey_persons_rel', 'survey_id', 'patient_id', 'Patients'),
-        #'invited_patient_ids': fields.many2many('clv_patient', 'survey_invited_patient_rel', 'survey_id', 'patient_id', 'Invited Patient'),
+        #'patients': fields.many2many('clv_patient', 'clv_survey_persons_rel', 'clv_survey_id', 'patient_id', 'Patients'),
+        #'invited_patient_ids': fields.many2many('clv_patient', 'clv_survey_invited_patient_rel', 'clv_survey_id', 'patient_id', 'Invited Patient'),
     }
     _defaults = {
         #'send_response': lambda * a: 1,
@@ -36,21 +36,17 @@ class survey(osv.osv):
         #'response_patient': lambda * a:1,
     }
 
-survey()
-
-class survey_request(osv.osv):
-    _inherit = "survey.request"
-    _name = "survey.request"
+class clv_survey_request(osv.osv):
+    _inherit = "clv_survey.request"
+    _name = "clv_survey.request"
 
     _columns = {
         'patient_id': fields.many2one("clv_patient", "Patient"),
     }
 
-survey_request()
-
-class survey_response(osv.osv):
-    _inherit = "survey.response"
-    _name = "survey.response"
+class clv_survey_response(osv.osv):
+    _inherit = "clv_survey.response"
+    _name = "clv_survey.response"
     _columns = {
         'patient_id' : fields.many2one('clv_patient', 'Patient'),
     }
@@ -66,13 +62,9 @@ class survey_response(osv.osv):
             res.append((record['id'], name))
         return res
 
-survey_response()
-
-class survey_history(osv.osv):
-    _inherit = "survey.history"
-    _name = 'survey.history'
+class clv_survey_history(osv.osv):
+    _inherit = "clv_survey.history"
+    _name = 'clv_survey.history'
     _columns = {
         #'patient_id' : fields.many2one('clv_patient', 'Patient', readonly=True),
     }
-
-survey_history()

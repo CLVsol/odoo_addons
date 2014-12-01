@@ -22,10 +22,10 @@
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 
-class survey_print_answer(osv.osv_memory):
-    _name = 'survey.print.answer'
+class clv_survey_print_answer(osv.osv_memory):
+    _name = 'clv_survey.print.answer'
     _columns = {
-        'response_ids': fields.many2many('survey.response','survey_print_response',\
+        'response_ids': fields.many2many('clv_survey.response','clv_survey_print_response',\
                             'response_id','print_id', "Answer", required="1"),
         'orientation': fields.selection([('vertical','Portrait(Vertical)'),\
                             ('horizontal','Landscape(Horizontal)')], 'Orientation'),
@@ -52,7 +52,7 @@ class survey_print_answer(osv.osv_memory):
         @param uid: the current user’s ID for security checks,
         @param ids: List of print answer IDs
         @param context: A standard dictionary for contextual values
-        @return : Dictionary value for created survey answer report
+        @return : Dictionary value for created clv_survey answer report
         """
         if context is None:
             context = {}
@@ -61,13 +61,13 @@ class survey_print_answer(osv.osv_memory):
                              'page_number', 'without_pagebreak'], context=context)
         res = res and res[0] or {}
         datas['form'] = res
-        datas['model'] = 'survey.print.answer'
+        datas['model'] = 'clv_survey.print.answer'
         return {
             'type': 'ir.actions.report.xml',
-            'report_name': 'survey.browse.response',
+            'report_name': 'clv_survey.browse.response',
             'datas': datas,
         }
 
-survey_print_answer()
+clv_survey_print_answer()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,18 +1,18 @@
 QMD15:
-    model: survey
+    model: clv_survey
     title: 'JCAFB 2015 - Questionário Medicamentos'
     note: 'JCAFB 2015 - Questionário Medicamentos'
     responsible_id: base.user_root
-    type: survey_type_JCAFB_2015
+    type: clv_survey_type_JCAFB_2015
     color: 5
 
     QMD15_01:
-        model: survey.page
+        model: clv_survey.page
         title: 'Preâmbulo'
         note: 'Preâmbulo'
 
         QMD15_01_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Identificação do Paciente'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
@@ -21,22 +21,22 @@ QMD15:
             req_ans: 3
 
             QMD15_01_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Nome do Paciente'
                 type: char
 
             QMD15_01_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código do Paciente'
                 type: char
 
             QMD15_01_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código da Família'
                 type: char
 
         QMD15_01_02:
-            model: survey.question
+            model: clv_survey.question
             question: 'Aplicação do Questionário'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
@@ -45,22 +45,22 @@ QMD15:
             req_ans: 3
 
             QMD15_01_02_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Aplicado por'
                 type: char
 
             QMD15_01_02_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Código'
                 type: char
 
             QMD15_01_02_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'Data'
                 type: date
 
         QMD15_01_03:
-            model: survey.question
+            model: clv_survey.question
             question: 'Entrevistado'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -69,24 +69,24 @@ QMD15:
             comment_label: 'Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco '
 
             QMD15_01_03_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Paciente'
 
             QMD15_01_03_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Cuidador'
 
             QMD15_01_03_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Outra pessoa (especificar)'
 
     QMD15_02:
-        model: survey.page
+        model: clv_survey.page
         title: 'Questionário'
         note: 'Questionário'
 
         QMD15_02_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Quem administra os medicamentos do(a) Sr.(a)?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -97,62 +97,62 @@ QMD15:
             comment_label: 'Se outra pessoa, especificar'
 
             QMD15_02_01_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Cuidador não remunerado'
 
             QMD15_02_01_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Cuidador remunerado'
 
             QMD15_02_01_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Administra sozinho'
 
             QMD15_02_01_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Outra pessoa'
 
             QMD15_02_01_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não sabe'
 
             QMD15_02_01_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Não quis responder'
 
             QMD15_02_01_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não se aplica'
 
         QMD15_02_02:
-            model: survey.question
+            model: clv_survey.question
             question: 'Pratica automedicação?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QMD15_02_02_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_02_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim'
 
             QMD15_02_02_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_02_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_02_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
         QMD15_02_03:
-            model: survey.question
+            model: clv_survey.question
             question: 'O(a) Sr.(a) tomou medicamentos, sem prescrição, nos últimos 15 dias?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -163,27 +163,27 @@ QMD15:
             comment_label: 'Se sim, especificar'
 
             QMD15_02_03_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_03_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim (especificar)'
 
             QMD15_02_03_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_03_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_03_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
         QMD15_02_04:
-            model: survey.question
+            model: clv_survey.question
             question: 'De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?'
             type: multiple_choice_multiple_ans
             is_require_answer: 1
@@ -194,47 +194,47 @@ QMD15:
             comment_label: 'Se "Outro", especificar'
 
             QMD15_02_04_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Pelo tamanho'
 
             QMD15_02_04_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Pela cor'
 
             QMD15_02_04_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Pela forma'
 
             QMD15_02_04_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Pelo nome'
 
             QMD15_02_04_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Pela embalagem'
 
             QMD15_02_04_06:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'f) Outro (especificar)'
 
             QMD15_02_04_07:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'g) Não identifica'
 
             QMD15_02_04_08:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'h) Não sabe'
 
             QMD15_02_04_09:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'i) Não quis responder'
 
             QMD15_02_04_10:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'j) Não se aplica'
 
         QMD15_02_05:
-            model: survey.question
+            model: clv_survey.question
             question: 'O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -243,81 +243,81 @@ QMD15:
             comment_label: 'Se sim, especificar'
 
             QMD15_02_05_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_05_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim (especificar)'
 
             QMD15_02_05_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_05_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_05_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
         QMD15_02_06:
-            model: survey.question
+            model: clv_survey.question
             question: 'O idoso possui diagnóstico de hipertensão?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QMD15_02_06_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_06_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim'
 
             QMD15_02_06_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_06_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_06_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
         QMD15_02_07:
-            model: survey.question
+            model: clv_survey.question
             question: 'O Sr.(a) às vezes esquece de tomar os seus remédios para pressão?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
 
             QMD15_02_07_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_07_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim'
 
             QMD15_02_07_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_07_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_07_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
         QMD15_02_08:
-            model: survey.question
+            model: clv_survey.question
             question: 'O Sr.(a) já parou de tomar seus remédios ou diminuiu a dose sem avisar seu médico porque se sentia pior quando os tomava?'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -326,32 +326,32 @@ QMD15:
             req_ans: 1
 
             QMD15_02_08_01:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'a) Não'
 
             QMD15_02_08_02:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'b) Sim'
 
             QMD15_02_08_03:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'c) Não sabe'
 
             QMD15_02_08_04:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'd) Não quis responder'
 
             QMD15_02_08_05:
-                model: survey.answer
+                model: clv_survey.answer
                 answer: 'e) Não se aplica'
 
     QMD15_03:
-        model: survey.page
+        model: clv_survey.page
         title: 'Tabela de Medicamentos'
         note: 'Tabela de Medicamentos'
 
         QMD15_03_01:
-            model: survey.question
+            model: clv_survey.question
             question: 'Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver.'
             type: table
             is_require_answer: 1
@@ -359,50 +359,50 @@ QMD15:
             no_of_rows: 20
 
             QMD15_03_01_01:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Medicamentos'
 
             QMD15_03_01_02:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Receita válida'
 
             QMD15_03_01_03:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Como foi prescrito na receita? (posologia, modo de uso)'
 
             QMD15_03_01_04:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Onde o Sr.(a) adquire esse medicamento?'
 
             QMD15_03_01_05:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Para que o Sr.(a) acha tem que tomar/utilizar este medicamento? (perguntar, não apenas ler na receita)'
 
             QMD15_03_01_06:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Como o Sr.(a) conserva este medicamento?'
 
             QMD15_03_01_07:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Como o Sr.(a) toma/utiliza este medicamento?* (perguntar, não apenas ler na receita)'
 
             QMD15_03_01_08:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Quantas vezes o Sr.(a) esqueceu de tomar este medicamento nos últimos 15 dias?'
 
             QMD15_03_01_09:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Há quanto tempo o Sr.(a) utiliza este medicamento? (pode-se colocar faixas de tempo)'
 
             QMD15_03_01_10:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'O medicamento está dentro do prazo de validade?'
 
             QMD15_03_01_11:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Adere?'
 
             QMD15_03_01_12:
-                model: survey.question.column.heading
+                model: clv_survey.question.column.heading
                 title: 'Conhecimento sobre indicação?'
 
