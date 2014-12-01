@@ -20,8 +20,8 @@
 #
 ##############################################################################
 
-import survey_analysis_report
-import survey_form
-import survey_browse_response
+import clv_survey_analysis_report
+import clv_survey_form
+import clv_survey_browse_response
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

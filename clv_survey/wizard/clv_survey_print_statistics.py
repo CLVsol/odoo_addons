@@ -19,12 +19,32 @@
 #
 ##############################################################################
 
-import clv_survey_send_invitation
-import clv_survey_print_statistics
-import clv_survey_print_answer
-import clv_survey_browse_answer
-import clv_survey_selection
-import clv_survey_answer
-import clv_survey_print
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
+
+class clv_survey_print_statistics(osv.osv_memory):
+    _name = 'clv_survey.print.statistics'
+    _columns = {
+        'clv_survey_ids': fields.many2many('clv_survey', string="Survey", required="1"),
+    }
+
+    def action_next(self, cr, uid, ids, context=None):
+        """
+        Print Survey Statistics in pdf format.
+        """
+        if context is None:
+            context = {}
+        datas = {'ids': context.get('active_ids', [])}
+        res = self.read(cr, uid, ids, ['clv_survey_ids'], context=context)
+        res = res and res[0] or {}
+        datas['form'] = res
+        datas['model'] = 'clv_survey.print.statistics'
+        return {
+            'type': 'ir.actions.report.xml',
+            'report_name': 'clv_survey.analysis',
+            'datas': datas,
+        }
+
+clv_survey_print_statistics()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

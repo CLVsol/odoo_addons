@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Patient details -->
+        <record model="ir.ui.view" id="view_clv_patient_form">
+            <field name="name">clv_patient.form</field>
+            <field name="model">clv_patient</field>
+            <field name="inherit_id" ref="clv_patient.view_clv_patient_form"/>
+            <field name="arch" type="xml">
+                <page string="Annotations" position="after">
+                    <page string="Surveys">
+                        <field name="survey_ids" colspan="4" nolabel="1" readonly="1">
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+    
+    </data>
+</openerp>
