@@ -17,7 +17,7 @@
 
         <delete model="ir.ui.menu" id="survey.menu_survey_type_form1"></delete>
 
-        <delete model="ir.ui.menu" id="survey.menu_survey_type_form1"></delete>
+        <!--delete model="ir.ui.menu" id="survey.menu_survey_type_form1"></delete-->
 
         <delete model="ir.ui.menu" id="oehealth_survey.menu_survey_responses"></delete>
 
