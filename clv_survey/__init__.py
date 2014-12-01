@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-import survey
+import clv_survey
 import wizard
 import report
-import survey2
+import clv_survey2
 import clv_patient
