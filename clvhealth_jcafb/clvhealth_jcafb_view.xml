@@ -232,6 +232,69 @@
                         sequence="30"
                         action="clv_lab_test.clv_action_form_lab_test_type"/>
  -->        
+        <!-- Surveys -->
+        <menuitem name="Surveys" id="menu_surveys" 
+            groups="clv_base.group_base_user"
+            sequence="14"/>
+            <!-- Surveys/Surveys -->
+            <menuitem name="Surveys" id="menu_surveys_surveys"  
+                parent="menu_surveys"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Surveys/Surveys/Surveys -->
+                <menuitem name="Surveys" id="menu_surveys_surveys_surveys"
+                    parent="menu_surveys_surveys"
+                    groups="clv_base.group_base_user"
+                    sequence="10"
+                    action="clv_survey.action_clv_survey_form1"/>
+                <!-- Surveys/Surveys/Survey Requests -->
+                <menuitem name="Survey Requests" id="menu_surveys_surveys_survey_requests"
+                    parent="menu_surveys_surveys"
+                    groups="clv_base.group_base_user"
+                    sequence="20"
+                    action="clv_survey.action_clv_survey_request_tree"/>
+                <!-- Surveys/Surveys/Survey Pages -->
+                <menuitem name="Survey Pages" id="menu_surveys_surveys_survey_pages"
+                    parent="menu_surveys_surveys"
+                    groups="clv_base.group_base_user"
+                    sequence="30"
+                    action="clv_survey.action_clv_survey_page_form"/>
+                <!-- Surveys/Surveys/Survey Responses -->
+                <menuitem name="Survey Responses" id="menu_surveys_surveys_survey_responses"
+                    parent="menu_surveys_surveys"
+                    groups="clv_base.group_base_user"
+                    sequence="40"
+                    action="clv_survey.action_clv_survey_response_tree"/>
+            <!-- Surveys/Reports -->
+            <menuitem name="Reports" id="menu_surveys_reports"  
+                parent="menu_surveys"
+                groups="clv_base.group_base_user"
+                sequence="20"/>
+                <!-- Surveys/Reports/Print Surveys -->
+                <menuitem name="Print Surveys" id="menu_surveys_reports_print_surveys"
+                    parent="menu_surveys_reports"
+                    groups="clv_base.group_base_user"
+                    sequence="10"
+                    action="clv_survey.action_view_clv_survey_print"/>
+                <!-- Surveys/Reports/Surveys Statistics -->
+                <menuitem name="Surveys Statistics" id="menu_surveys_reports_surveys_statistics"
+                    parent="menu_surveys_reports"
+                    groups="clv_base.group_base_user"
+                    sequence="20"
+                    action="clv_survey.action_view_clv_survey_print_statistics"/>
+                <!-- Surveys/Reports/Surveys Answers -->
+                 <menuitem name="Surveys Answers" id="menu_surveys_reports_surveys_answers"
+                    parent="menu_surveys_reports"
+                    groups="clv_base.group_base_user"
+                    sequence="30"
+                    action="clv_survey.action_view_clv_survey_print_answer"/>
+                <!-- Surveys/Reports/Browse Answers -->
+                 <menuitem name="Browse Answers" id="menu_surveys_reports_browse_answers"
+                    parent="menu_surveys_reports"
+                    groups="clv_base.group_base_user"
+                    sequence="40"
+                    action="clv_survey.action_browse_clv_survey_response"/>
+
         <!-- Pharmacy -->
         <menuitem name="Pharmacy" id="menu_pharmacy" 
             groups="clv_base.group_base_user"
