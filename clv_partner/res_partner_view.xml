@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="base.view_partner_tree" />
             <field name="arch" type="xml">
                 <field name="name" position="after">
-                    <field name="clv_partner_code" />
+                    <field name="code" />
                 </field>
             </field>
         </record>
@@ -20,10 +20,10 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="CLV" groups="clv_base.group_base_manager">
+                    <page string="Base" groups="clv_base.group_base_manager">
                         <group>
-                            <field name="clv_partner_code" placeholder="CLV Partner Code..."/>
-                            <field name="is_clv_partner"/>
+                            <field name="code" placeholder="Partner Code..."/>
+                            <field name="is_base_partner"/>
                         </group>
                     </page>
                 </notebook>
@@ -35,10 +35,13 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="code" groups="clv_base.group_partner_user"/>
+                </field>
                 <filter name="supplier" position="after">
                     <separator/>
                     <filter string="Inactive Partners" name="active" domain="[('active','=',0)]" help="Inactive Partners"/>
-                    <filter string="CLV Partners" name="clv_partner" domain="[('is_clv_partner','=',1)]" help="CLV Partners"/>
+                    <filter string="Base Partners" name="clv_partner" domain="[('is_base_partner','=',1)]" help="Base Partners"/>
                 </filter>
             </field>
         </record>

@@ -18,5 +18,7 @@
 ################################################################################
 
 import res_partner
-#import clv_tag
-#import clv_annotation
+import clv_tag
+import clv_annotation
+import seq
+import history

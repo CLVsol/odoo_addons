@@ -23,8 +23,8 @@ class res_partner(orm.Model):
     _inherit = 'res.partner'
 
     _columns = {
-        'is_clv_partner' : fields.boolean('Is a CLV Partner', help="Check if the partner is a clv partner."),
-        'clv_partner_code': fields.char(size=64, string='CLV Partner Code', required=False),
+        'is_base_partner' : fields.boolean('Is a Base Partner', help="Check if the partner is a base partner."),
+        'code': fields.char(size=64, string='Partner Code', required=False),
     }
 
-    _sql_constraints = [('clv_partner_code_uniq', 'unique(clv_partner_code)', u'Duplicated CLV Partner Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Partner Code!')]

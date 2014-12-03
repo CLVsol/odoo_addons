@@ -20,7 +20,7 @@
                 <!-- Base/Base/Partners -->
                 <menuitem name="Partners" id="menu_base_base__partners"
                     parent="menu_base_base"
-                    groups="clv_base.group_annotation_user"
+                    groups="clv_base.group_partner_user"
                     sequence="20"
                     action="base.action_partner_form" />
             <!-- Base/Configuration -->
