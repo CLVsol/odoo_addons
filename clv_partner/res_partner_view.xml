@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_res_partner_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="code" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Base" groups="clv_base.group_base_manager">
+                        <group>
+                            <field name="code" placeholder="Partner Code..."/>
+                            <field name="is_base_partner"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">res.partner.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="code" groups="clv_base.group_partner_user"/>
+                </field>
+                <filter name="supplier" position="after">
+                    <separator/>
+                    <filter string="Inactive Partners" name="active" domain="[('active','=',0)]" help="Inactive Partners"/>
+                    <filter string="Base Partners" name="clv_partner" domain="[('is_base_partner','=',1)]" help="Base Partners"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
