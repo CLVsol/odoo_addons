@@ -393,9 +393,9 @@
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="50"/>
                     <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Preencher o Valor, a Interpretação do Valor e o Responsável.</field>
+                    <field name="req_error_msg">Preencher o Valor e o Responsável.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">3</field>
+                    <field name="req_ans">2</field>
                 </record>
 
                     <record model="clv_survey.answer" id="QDH15_03_05_01">
@@ -562,7 +562,7 @@
                     <field name="page_id" ref="QDH15_03"/>
                     <field name="sequence" eval="100"/>
                     <field name="is_require_answer">1</field>
-                    <field name="req_error_msg">Preencher o Valor, a Interpretação do Valor e o Responsável.</field>
+                    <field name="req_error_msg">Preencher o Valor e o Responsável.</field>
                     <field name="required_type">exactly</field>
                     <field name="req_ans">2</field>
                 </record>
