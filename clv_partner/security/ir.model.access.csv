@@ -1,4 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
 access_res_partner_partner_user,res.partner,model_res_partner,clv_base.group_partner_user,1,0,0,0
 access_res_partner_partner_manager,res.partner,model_res_partner,clv_base.group_partner_manager,1,1,1,0
 access_res_partner_base_smanager,res.partner,model_res_partner,clv_base.group_base_smanager,1,1,1,1
+
+access_res_partner_history_partner_user,res.partner.history,model_res_partner_history,clv_base.group_partner_user,1,0,0,0
+access_res_partner_history_partner_manager,res.partner.history,model_res_partner_history,clv_base.group_partner_manager,1,1,1,0
+access_res_partner_history_base_smanager,res.partner.history,model_res_partner_history,clv_base.group_base_smanager,1,1,1,1
