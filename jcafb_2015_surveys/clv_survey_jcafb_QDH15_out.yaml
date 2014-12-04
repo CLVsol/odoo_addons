@@ -281,9 +281,9 @@ QDH15:
             question: 'Glicemia (mg/dL)'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
-            req_error_msg: 'Preencher o Valor, a Interpretação do Valor e o Responsável.'
+            req_error_msg: 'Preencher o Valor e o Responsável.'
             required_type: exactly
-            req_ans: 3
+            req_ans: 2
 
             QDH15_03_05_01:
                 model: clv_survey.answer
@@ -404,7 +404,7 @@ QDH15:
             question: 'Colesterol (mg/dL)'
             type: multiple_textboxes_diff_type
             is_require_answer: 1
-            req_error_msg: 'Preencher o Valor, a Interpretação do Valor e o Responsável.'
+            req_error_msg: 'Preencher o Valor e o Responsável.'
             required_type: exactly
             req_ans: 2
 
