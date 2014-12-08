@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="view_clv_person_mng_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="code" position="before">
+                <field name="person_code" position="before">
                     <field name="person_category_ids"/>
                 </field>
             </field>
@@ -36,7 +36,7 @@
             <field name="inherit_id" ref="view_clv_person_mng_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="code" position="after">
+                <field name="person_code" position="after">
                     <field name="person_category_ids"/>
                 </field>
             </field>
