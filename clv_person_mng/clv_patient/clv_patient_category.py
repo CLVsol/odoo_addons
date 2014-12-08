@@ -17,43 +17,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Person Management',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Person Management
-=================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_patient',
-        ],
-    'data': [
-        'security/clv_person_mng_security.xml',
-        'security/ir.model.access.csv',
-        'clv_person_mng_view.xml',
-        'clv_person/clv_person_category_view.xml',
-        'clv_patient/clv_patient_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'wkf/clv_person_mng_workflow.xml',
-        'wkf/clv_person_mng_wkf_view.xml',
-        'history/clv_person_mng_history_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+
+class clv_person_mng(osv.osv):
+    _inherit = 'clv_person_mng'
+
+    _columns = {
+        'patient_category_ids': fields.many2many('clv_patient.category', 
+                                                 'clv_person_mng_patient_category_rel', 
+                                                 'person_mng_id', 
+                                                 'patient_category_id', 
+                                                 'Patient Categories'),
+        }

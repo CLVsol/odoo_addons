@@ -2,38 +2,38 @@
 <openerp>
     <data>
 
-        <record id="view_clv_person_mng_tree_person_category" model="ir.ui.view">
+        <record id="view_clv_person_mng_tree_patient_category" model="ir.ui.view">
             <field name="name">clv_person_mng.tree</field>
             <field name="model">clv_person_mng</field>
             <field name="inherit_id" ref="view_clv_person_mng_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="person_code" position="before">
-                    <field name="person_category_ids"/>
+                    <field name="patient_category_ids"/>
                 </field>
             </field>
         </record>
 
-        <record id="view_clv_person_mng_form_person_category" model="ir.ui.view">
+        <record id="view_clv_person_mng_form_patient_category" model="ir.ui.view">
             <field name="name">clv_person_mng.form</field>
             <field name="model">clv_person_mng</field>
             <field name="inherit_id" ref="view_clv_person_mng_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="person_code" position="before">
-                    <field name="person_category_ids" widget="many2many_tags" placeholder="Person Categories..."/>
+                <field name="patient_code" position="before">
+                    <field name="patient_category_ids" widget="many2many_tags" placeholder="Patient Categories..."/>
                 </field>
             </field>
         </record>
 
-        <record id="view_clv_person_mng_search_person_category" model="ir.ui.view">
+        <record id="view_clv_person_mng_search_patient_category" model="ir.ui.view">
             <field name="name">clv_person_mng.search</field>
             <field name="model">clv_person_mng</field>
             <field name="inherit_id" ref="view_clv_person_mng_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="person_code" position="after">
-                    <field name="person_category_ids"/>
+                    <field name="patient_category_ids"/>
                 </field>
             </field>
         </record>
