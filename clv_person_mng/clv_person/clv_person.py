@@ -25,9 +25,12 @@ class clv_person_mng(osv.osv):
     _inherit = 'clv_person_mng'
 
     _columns = {
+        'associate_person': fields.boolean('Associate Person', 
+                                        help="If checked, it will require to associate to a person."),
         'person_code': fields.char(size=64, string='Person Code', required=False),
         'person_id': fields.many2one('clv_person', 'Person', ondelete='restrict'),
         'address_id': fields.many2one('res.partner', 'Person Address', ondelete='restrict'),
+        'person_uid_inclusion': fields.many2one('res.users', 'Inclusion User', required=False, readonly=False),
         'person_date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'person_phone_2': fields.char('Person Phone', size=32),
         'mobile_phone_2': fields.char('Person Mobile', size=32),
@@ -39,10 +42,12 @@ class clv_person_mng(osv.osv):
                                           ('active','Active'),
                                           ('inactive','Inactive'),
                                           ('suspended','Suspended')
-                                          ], string='Status', readonly=True, required=True, help=""),
+                                          ], string='Status', readonly=False, required=False, help=""),
         }
 
     _defaults = {
+        'associate_person': 0,
+        'person_uid_inclusion': lambda obj,cr,uid,context: uid,
         'person_date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
     

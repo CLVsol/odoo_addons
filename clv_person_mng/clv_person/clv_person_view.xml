@@ -25,6 +25,7 @@
                     <page string="Person">
                         <group>
                             <group>
+                                <field name="associate_person"/>
                                 <field name="person_code" placeholder="Person Code..."/>
                             </group>
                             <group>
@@ -38,6 +39,7 @@
                             </group>
                             <group string="Status">
                                 <field name="person_state"/>
+                                <field name="person_uid_inclusion"/>
                                 <field name="person_date_inclusion"/>
                                 <field name="person_date_activation"/>
                                 <field name="person_date_inactivation"/>

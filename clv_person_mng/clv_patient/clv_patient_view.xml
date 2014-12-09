@@ -24,6 +24,7 @@
                     <page string="Patient">
                         <group>
                             <group>
+                                <field name="associate_patient"/>
                                 <field name="patient_code" placeholder="Patient Code..."/>
                             </group>
                             <group>
@@ -31,6 +32,7 @@
                             </group>
                             <group string="Status">
                                 <field name="patient_state"/>
+                                <field name="patient_uid_inclusion"/>
                                 <field name="patient_date_inclusion"/>
                                 <field name="patient_date_activation"/>
                                 <field name="patient_date_inactivation"/>
