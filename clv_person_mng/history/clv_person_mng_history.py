@@ -19,7 +19,6 @@
 
 from openerp.osv import fields, osv
 from datetime import *
-#import time
 
 class clv_person_mng_history(osv.osv):
     _name = 'clv_person_mng.history'
@@ -31,9 +30,9 @@ class clv_person_mng_history(osv.osv):
         'user_id':fields.many2one ('res.users', 'User', required=True),
         'date': fields.datetime("Date", required=True),
         'state': fields.selection([('new','New'),
-                                   ('active','active'),
-                                   ('inactive','Inactive'),
-                                   ('suspended','Suspended'),
+                                   ('done','Done'),
+                                   ('revised','Revised'),
+                                   ('waiting','Waiting'),
                                    ], string='Status', readonly=True, required=True, help=""),
         'notes': fields.text(string='Notes'),
         }
@@ -51,7 +50,7 @@ class clv_person_mng(osv.osv):
 
     _columns = {
         'history_ids': fields.one2many('clv_person_mng.history', 'person_mng_id', 'person_mng History', readonly=True),
-        'active_history': fields.boolean('active History', 
+        'active_history': fields.boolean('done History', 
                                          help="If unchecked, it will allow you to disable the history without removing it."),
         }
     
@@ -86,28 +85,21 @@ class clv_person_mng(osv.osv):
         return super(clv_person_mng, self).write(cr, uid, ids, vals, context)
 
     def button_new(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'state': 'new'})
+        self.write(cr, uid, ids, {'state': 'new'})
         for person_mng in self.browse(cr, uid, ids):
             self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'new', '')
 
-    def button_activate(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'state': 'active'})
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
         for person_mng in self.browse(cr, uid, ids):
-            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'active', '')
+            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'done', '')
 
-    def button_inactivate(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'state': 'inactive'})
+    def button_revised(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'revised'})
         for person_mng in self.browse(cr, uid, ids):
-            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'inactive', '')
+            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'revised', '')
 
-    def button_suspend(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'state': 'suspended'})
+    def button_waiting(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'waiting'})
         for person_mng in self.browse(cr, uid, ids):
-            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'suspended', '')
+            self.insert_clv_person_mng_history(cr, uid, person_mng.active_history, person_mng.id, 'waiting', '')
