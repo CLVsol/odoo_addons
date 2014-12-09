@@ -39,9 +39,8 @@ class clv_person_mng(osv.osv):
     _columns = {
         'name': fields.char('Name', required=True, size=64),
         'alias': fields.char('Alias', size=64, help='Common name that the Person is referred'),
-        'person_code': fields.char(size=64, string='Person Code', required=False),
-        'person_id': fields.many2one('clv_person', 'Person', ondelete='restrict'),
-        'address_id': fields.many2one('res.partner', 'Person Address', ondelete='restrict'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the person without removing it."),
         'street': fields.char('Street', size=128),
         'number': fields.char('Number', size=10),
         'street2': fields.char('Street2', size=128),
@@ -55,7 +54,6 @@ class clv_person_mng(osv.osv):
         'mobile_phone': fields.char('Person Mobile', size=32),
         'person_email': fields.char('Person Email', size=240),
         'notes':  fields.text(string='Notes'),
-        'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'country_id':  fields.many2one('res.country', 'Nationality'),
         'birthday':  fields.date("Date of Birth"),
         'age': fields.function(_age, type="char", string='Age', store=False),
@@ -73,24 +71,10 @@ class clv_person_mng(osv.osv):
                                      ('widower', 'Widower'), 
                                      ('divorced', 'Divorced'),
                                      ], 'Marital Status'),
-        'patient_code': fields.char(size=64, string='Patient Code', required=False),
-        'patient_id': fields.many2one('clv_person', 'Patient', ondelete='restrict'),
-        'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the person without removing it."),
         }
 
     _defaults = {
-        'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'active': 1,
         }
     
-    _sql_constraints = [('person_code_uniq', 'unique(code)', u'Error! The Person Code must be unique!')]
-
     _order='name'
-
-    def onchange_address_id(self, cr, uid, ids, address, context=None):
-        if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            # return {'value': {'person_phone': address.phone, 'mobile_phone': address.mobile, 'person_email': address.email}}
-            return {'value': {}}
-        return {'value': {}}

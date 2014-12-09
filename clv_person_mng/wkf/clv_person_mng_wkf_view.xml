@@ -5,11 +5,10 @@
         <record id="view_clv_person_mng_tree_wkf" model="ir.ui.view">
             <field name="name">clv_person_mng.tree</field>
             <field name="model">clv_person_mng</field>
-            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_tree"/>
+            <field name="inherit_id" ref="view_clv_person_mng_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="person_code" position="after">
-                    <field name="date"/>
+                <field name="alias" position="after">
                     <field name="state"/>
                 </field>
             </field>
@@ -18,33 +17,27 @@
         <record id="view_clv_person_mng_form_wkf" model="ir.ui.view">
             <field name="name">clv_person_mng.form</field>
             <field name="model">clv_person_mng</field>
-            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_form"/>
+            <field name="inherit_id" ref="view_clv_person_mng_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <sheet string="Person (Management)" position="before">
                     <header>
-                        <button string="Activate" name="button_activate" states="new,inactive,suspended" type="workflow" groups="clv_base.group_person_mng_manager" class="oe_highlight"/>
-                        <button string="Inactivate" name="button_inactivate" states="new,active,suspended" type="workflow" groups="clv_base.group_person_mng_manager"/>
-                        <button string="Suspend" name="button_suspend" states="new,active,inactive" type="workflow" groups="clv_base.group_person_mng_manager"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,active,inactive,suspended"/>
+                        <button string="Done" name="button_done" states="new,revised,waiting" type="workflow" groups="clv_base.group_person_mng_manager" class="oe_highlight"/>
+                        <button string="Revised" name="button_revised" states="new,done,waiting" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <button string="Waiting" name="button_waiting" states="new,done,revised" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,done,revised,waiting"/>
                     </header>
                 </sheet>
-                <field name="date_inclusion" position="before">
-                    <field name="date"/>
-                    <field name="date_activation"/>
-                    <field name="date_inactivation"/>
-                    <field name="date_suspension"/>
-                </field>
             </field>
         </record>
 
         <record id="view_clv_person_mng_search_wkf" model="ir.ui.view">
             <field name="name">clv_person_mng.search</field>
             <field name="model">clv_person_mng</field>
-            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_search"/>
+            <field name="inherit_id" ref="view_clv_person_mng_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="person_code" position="after">
+                <field name="alias" position="after">
                     <field name="state"/>
                 </field>
                 <group string="Group By..." position="inside">
