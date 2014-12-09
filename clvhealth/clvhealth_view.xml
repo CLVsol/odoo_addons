@@ -50,29 +50,23 @@
                 parent="menu_commutity"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Community/Community/Community -->
-                <menuitem name="Community" id="menu_commutity_community_community"
+                <!-- Community/Community/Person -->
+                <menuitem name="Person" id="menu_commutity_community_person"
                     parent="menu_commutity_community"
                     groups="clv_base.group_family_user"
                     sequence="10"/>
-                    <!-- Community/Community/Communities -->
-                    <menuitem name="Communities" id="menu_commutity_community_community_communities"
-                        parent="menu_commutity_community_community"
-                        groups="clv_base.group_community_user"
+                    <!-- Community/Community/Persons -->
+                    <menuitem name="Persons" id="menu_commutity_community_person_persons"
+                        parent="menu_commutity_community_person"
+                        groups="clv_base.group_person_user"
                         sequence="10"
-                        action="clv_community.act_open_clv_community_view"/>
-                    <!-- Community/Community/Community/Families -->
-                    <menuitem name="Families" id="menu_commutity_community_community_families"
-                        parent="menu_commutity_community_community"
-                        groups="clv_base.group_community_user"
+                        action="clv_person.act_open_clv_person_view"/>
+                    <!-- Community/Community/Persons (Management) -->
+                    <menuitem name="Persons (Management)" id="menu_commutity_community_person_persons_mng"
+                        parent="menu_commutity_community_person"
+                        groups="clv_base.group_person_mng_user"
                         sequence="20"
-                        action="clv_community.act_open_clv_community_family_view"/>
-                    <!-- Community/Community/Community/Persons -->
-                    <menuitem name="Persons" id="menu_commutity_community_community_persons"
-                        parent="menu_commutity_community_community"
-                        groups="clv_base.group_community_user"
-                        sequence="30"
-                        action="clv_community.act_open_clv_community_person_view"/>
+                        action="clv_person_mng.act_open_clv_person_mng_view"/>
                 <!-- Community/Community/Family -->
                 <menuitem name="Family" id="menu_commutity_community_family"
                     parent="menu_commutity_community"
@@ -90,33 +84,67 @@
                         groups="clv_base.group_family_user"
                         sequence="20"
                         action="clv_family.act_open_clv_family_person_view"/>
-                <!-- Community/Community/Person -->
-                <menuitem name="Person" id="menu_commutity_community_person"
+                <!-- Community/Community/Community -->
+                <menuitem name="Community" id="menu_commutity_community_community"
                     parent="menu_commutity_community"
                     groups="clv_base.group_family_user"
                     sequence="30"/>
-	                <!-- Community/Community/Persons -->
-	                <menuitem name="Persons" id="menu_commutity_community_person_persons"
-	                    parent="menu_commutity_community_person"
-	                    groups="clv_base.group_person_user"
-	                    sequence="10"
-	                    action="clv_person.act_open_clv_person_view"/>
-	                <!-- Community/Community/Persons (Management) -->
-	                <menuitem name="Persons (Management)" id="menu_commutity_community_person_persons_mng"
-	                    parent="menu_commutity_community_person"
-	                    groups="clv_base.group_person_mng_user"
-	                    sequence="20"
-	                    action="clv_person_mng.act_open_clv_person_mng_view"/>
+                    <!-- Community/Community/Communities -->
+                    <menuitem name="Communities" id="menu_commutity_community_community_communities"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="30"
+                        action="clv_community.act_open_clv_community_view"/>
+                    <!-- Community/Community/Community/Families -->
+                    <menuitem name="Families" id="menu_commutity_community_community_families"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="20"
+                        action="clv_community.act_open_clv_community_family_view"/>
+                    <!-- Community/Community/Community/Persons -->
+                    <menuitem name="Persons" id="menu_commutity_community_community_persons"
+                        parent="menu_commutity_community_community"
+                        groups="clv_base.group_community_user"
+                        sequence="30"
+                        action="clv_community.act_open_clv_community_person_view"/>
             <!-- Community/Configuration -->
             <menuitem name="Configuration" id="menu_commutity_config"  
                 parent="menu_commutity"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
+                <!-- Community/Configuration/Person -->
+                <menuitem name="Person" id="menu_commutity_config_person"
+                    parent="menu_commutity_config"
+                    groups="clv_base.group_family_user"
+                    sequence="10"/>
+                    <!-- Community/Configuration/Person/Categories -->
+                    <menuitem name="Categories" id="menu_commutity_config_person_categories"
+                        parent="menu_commutity_config_person"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_person.act_open_clv_person_category_view"/>
+                <!-- Community/Configuration/Family -->
+                <menuitem name="Family" id="menu_commutity_config_family"
+                    parent="menu_commutity_config"
+                    groups="clv_base.group_family_user"
+                    sequence="20"/>
+                    <!-- Community/Configuration/Family/Categories -->
+                    <menuitem name="Categories" id="menu_commutity_config_family_categories"
+                        parent="menu_commutity_config_family"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_family.act_open_clv_family_category_view"/>
+                    <!-- Community/Configuration/Family/Person Roles -->
+                    <menuitem name="Person Roles" id="menu_commutity_config_family_person_roles"
+                        parent="menu_commutity_config_family"
+                        groups="clv_base.group_base_manager"
+                        sequence="20"
+                        action="clv_family.act_open_clv_family_person_role_view"/>
                 <!-- Community/Configuration/Community -->
                 <menuitem name="Community" id="menu_commutity_config_community"
                     parent="menu_commutity_config"
                     groups="clv_base.group_family_user"
-                    sequence="10"/>
+                    sequence="30"/>
                     <!-- Community/Configuration/Community/Categories -->
                     <menuitem name="Categories" id="menu_commutity_config_community_categories"
                         parent="menu_commutity_config_community"
@@ -135,29 +163,6 @@
                         groups="clv_base.group_base_manager"
                         sequence="30"
                         action="clv_community.act_open_clv_community_person_role_view"/>
-                <!-- Community/Configuration/Family -->
-                <menuitem name="Family" id="menu_commutity_config_family"
-                    parent="menu_commutity_config"
-                    groups="clv_base.group_family_user"
-                    sequence="20"/>
-                    <!-- Community/Configuration/Family/Categories -->
-                    <menuitem name="Categories" id="menu_commutity_config_family_categories"
-                        parent="menu_commutity_config_family"
-                        groups="clv_base.group_base_manager"
-                        sequence="10"
-                        action="clv_family.act_open_clv_family_category_view"/>
-                    <!-- Community/Configuration/Family/Person Roles -->
-                    <menuitem name="Person Roles" id="menu_commutity_config_family_person_roles"
-                        parent="menu_commutity_config_family"
-                        groups="clv_base.group_base_manager"
-                        sequence="20"
-                        action="clv_family.act_open_clv_family_person_role_view"/>
-                <!-- Community/Configuration/Person Categories -->
-                <menuitem name="Person Categories" id="menu_commutity_config_person_categories"
-                    parent="menu_commutity_config"
-                    groups="clv_base.group_base_manager"
-                    sequence="30"
-                    action="clv_person.act_open_clv_person_category_view"/>
 
         <!-- Health -->
         <menuitem name="Health" id="menu_health" 

@@ -17,49 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVhealth',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the necessary modules for the CLVhealth solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_partner',
-        'clv_person',
-        'clv_family',
-        'clv_community',
-        'clv_patient',
-        'clv_person_mng',
-        'clv_survey',
-        'clv_medicament',
-        'disable_openerp_online',
-        'mass_editing',
-        ],
-    'data': [
-        'clvhealth_view.xml',
-        'clv_tag_sequence.xml',
-        'clv_annotation_sequence.xml',
-        'clv_annotation_category_sequence.xml',
-        'clv_partner_sequence.xml',
-        'clv_person_sequence.xml',
-        'clv_person_category_sequence.xml',
-        'clv_family_sequence.xml',
-        'clv_family_category_sequence.xml',
-        'clv_community_sequence.xml',
-        'clv_community_category_sequence.xml',
-        'clv_patient_sequence.xml',
-        'clv_patient_category_sequence.xml',
-        'clv_medicament_sequence.xml',
-        'clv_medicament_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+from datetime import datetime
+
+class clv_person_mng(osv.osv):
+    _inherit = 'clv_person_mng'
+
+    _columns = {
+        'patient_code': fields.char(size=64, string='Patient Code', required=False),
+        'patient_id': fields.many2one('clv_person', 'Patient', ondelete='restrict'),
+        'patient_date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
+        'patient_date_activation': fields.datetime("Activation date", required=False, readonly=False),
+        'patient_date_inactivation': fields.datetime("Inactivation date", required=False, readonly=False),
+        'patient_date_suspension': fields.datetime("Suspension date", required=False, readonly=False),
+        'patient_state': fields.selection([('new','New'),
+                                           ('active','Active'),
+                                           ('inactive','Inactive'),
+                                           ('suspended','Suspended')
+                                           ], string='Status', readonly=True, required=True, help=""),
+        }
+
+    _defaults = {
+        'patient_date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        }
+    
+    _sql_constraints = [('patient_code_uniq', 'unique(patient_code)', u'Error! The Patient Code must be unique!')]

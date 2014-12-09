@@ -10,9 +10,7 @@
                 <tree string="Person (Management)">
                     <field name="name"/>
                     <field name="alias"/>
-                    <field name="code"/>
                     <field name="birthday" />
-                    <field name="notes"/>
                 </tree>
             </field>
         </record>
@@ -39,31 +37,34 @@
                             <h2>
                                 <field name="alias" placeholder="Alias..."/>
                             </h2>
-                            <!--label for="code" class="oe_edit_only"/-->
-                            <label for="code"/>
-                            <h3>
-                                <field name="code" placeholder="PersonCode..."/>
-                            </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Public Information (Person">
+                            <page string="Public Information">
                                 <group>
                                     <group string="Contact Information">
-                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                                        <label for="street" string="Address" />
+                                        <div>
+                                            <field name="street" placeholder="Street..."/>
+                                            <field name="number" placeholder="Number..."/>
+                                            <field name="street2" placeholder="Complement..."/>
+                                            <field name="district" placeholder="District..."/>
+                                            <div class="address_format">
+                                                <field name="city" placeholder="City..." style="width: 40%%" />
+                                                <field name="country_state" placeholder="State..." style="width: 37%%"/>
+                                                <field name="zip" placeholder="ZIP..." style="width: 20%%"/>
+                                            </div>
+                                        </div>
                                         <field name="person_email" widget="email"/>
                                         <field name="person_phone"/>
                                         <field name="mobile_phone"/>
                                     </group>
-                                    <group string="Status">
-                                        <field name="date_inclusion"/>
-                                    </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
-                            <page string="Personal Information (Person)" groups="clv_base.group_base_suser">
+                            <page string="Personal Information" groups="clv_base.group_base_suser">
                                 <group>
                                     <group string="Citizenship &amp; Other Info">
                                         <field name="country_id" options='{"no_open": True}'/>
@@ -85,6 +86,7 @@
                                         <field name="age"/>
                                     </group>
                                 </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
                             <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
@@ -105,8 +107,6 @@
                 <search string="Person (Management)">
                     <field name="name"/>
                     <field name="alias"/>
-                    <field name="code"/>
-                    <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
