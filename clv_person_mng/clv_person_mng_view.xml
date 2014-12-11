@@ -55,6 +55,7 @@
                                                 <field name="city" placeholder="City..." style="width: 40%%" />
                                                 <field name="country_state" placeholder="State..." style="width: 37%%"/>
                                                 <field name="zip" placeholder="ZIP..." style="width: 20%%"/>
+                                                <field name="country" placeholder="Country"/>
                                             </div>
                                         </div>
                                         <field name="person_email" widget="email"/>
@@ -72,9 +73,13 @@
                                         <field name="otherid"/>
                                     </group>
                                     <group string="Family">
+                                        <field name="spouse_name"/>
                                         <field name="spouse_id"/>
+                                        <field name="father_name"/>
                                         <field name="father_id"/>
+                                        <field name="mother_name"/>
                                         <field name="mother_id"/>
+                                        <field name="responsible_name"/>
                                         <field name="responsible_id"/>
                                     </group>
                                     <group string="Status">
