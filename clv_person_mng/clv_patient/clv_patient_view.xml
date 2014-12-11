@@ -23,11 +23,9 @@
                 <page string="Settings" position="before">
                     <page string="Patient">
                         <group>
-                            <group>
+                            <group string="Patient">
                                 <field name="associate_patient"/>
                                 <field name="patient_code" placeholder="Patient Code..."/>
-                            </group>
-                            <group>
                                 <field name="patient_id" placeholder="Patient..."/>
                             </group>
                             <group string="Status">
