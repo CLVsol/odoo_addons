@@ -17,49 +17,29 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVhealth-JCAFB',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the necessary modules for the CLVhealth-JCAFB solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        #'clv_partner',
-        'clv_person',
-        'clv_person_mng',
-        'clv_person_mng_oehealth',
-        'clv_family',
-        'clv_community',
-        'clv_patient',
-        # 'clv_lab_test',
-        'clv_survey',
-        'clv_medicament',
-        ],
-    'data': [
-        'clvhealth_jcafb_view.xml',
-        'clv_tag_sequence.xml',
-        'clv_annotation_sequence.xml',
-        'clv_annotation_category_sequence.xml',
-        #'clv_partner_sequence.xml',
-        'clv_person_sequence.xml',
-        'clv_person_category_sequence.xml',
-        'clv_family_sequence.xml',
-        'clv_family_category_sequence.xml',
-        'clv_community_sequence.xml',
-        'clv_community_category_sequence.xml',
-        'clv_patient_sequence.xml',
-        'clv_patient_category_sequence.xml',
-        'clv_medicament_sequence.xml',
-        'clv_medicament_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+class clv_person_mng(osv.osv):
+    _inherit = 'clv_person_mng'
+
+    _columns = {
+        'associate_oehealth_person': fields.boolean('Associate OeHealth Person', 
+                                                    help="If checked, it will require to associate to a oehealth person."),
+        'oehealth_person_id': fields.many2one('oehealth.person', 'Oehealth Person', ondelete='restrict'),
+
+        'oehealth_spouse_id':  fields.many2one('oehealth.person', 'Spouse', ondelete='restrict'),
+        'oehealth_father_id': fields.many2one('oehealth.person', 'Father', ondelete='restrict'),
+        'oehealth_mother_id': fields.many2one('oehealth.person', 'Mother', ondelete='restrict'),
+        'oehealth_responsible_id': fields.many2one('oehealth.person', 'Responsible', ondelete='restrict'),
+
+        'associate_oehealth_partner': fields.boolean('Associate OeHealth Partner', 
+                                                     help="If checked, it will require to associate to a oehealth partner."),
+        'oehealth_partner_id': fields.many2one('res.partner', 'Oehealth Partner', ondelete='restrict'),
+        }
+
+    _defaults = {
+        'associate_oehealth_person': 0,
+        'associate_oehealth_partner': 0,
+        }
