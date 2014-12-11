@@ -24,11 +24,9 @@
                 <page string="Settings" position="before">
                     <page string="Person">
                         <group>
-                            <group>
+                            <group string="Person">
                                 <field name="associate_person"/>
                                 <field name="person_code" placeholder="Person Code..."/>
-                            </group>
-                            <group>
                                 <field name="person_id" placeholder="Person..."/>
                             </group>
                             <group string="Contact Information">
