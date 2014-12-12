@@ -50,7 +50,7 @@ class clv_person_mng(osv.osv):
 
     _columns = {
         'history_ids': fields.one2many('clv_person_mng.history', 'person_mng_id', 'person_mng History', readonly=True),
-        'active_history': fields.boolean('done History', 
+        'active_history': fields.boolean('Active History', 
                                          help="If unchecked, it will allow you to disable the history without removing it."),
         }
     
