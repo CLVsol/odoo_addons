@@ -98,7 +98,7 @@
             [QAN15_04_01_08] 1-2 dias
             [QAN15_04_01_09] 3-4 dias
             [QAN15_04_01_10] 5 ou mais dias
-            [QAN15_04_01_11] Não respondeu
+            [QAN15_04_01_11] Não quis responder
             [QAN15_04_01_12] Não sabe
             [QAN15_04_01_13] Não se aplica
         [QAN15_04_02] Alimentos que a criança consome (Alimentos que interferem na absorção de Ferro)
@@ -113,6 +113,6 @@
             [QAN15_04_02_08] 1-2 dias
             [QAN15_04_02_09] 3-4 dias
             [QAN15_04_02_10] 5 ou mais dias
-            [QAN15_04_02_11] Não respondeu
+            [QAN15_04_02_11] Não quis responder
             [QAN15_04_02_12] Não sabe
             [QAN15_04_02_13] Não se aplica

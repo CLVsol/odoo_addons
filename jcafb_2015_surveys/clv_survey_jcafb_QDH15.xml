@@ -26,7 +26,7 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e os Códigos.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">3</field>
+                    <field name="req_ans">4</field>
                 </record>
 
                     <record model="clv_survey.answer" id="QDH15_01_01_01">
@@ -44,9 +44,16 @@
                     </record>
 
                     <record model="clv_survey.answer" id="QDH15_01_01_03">
-                        <field name="answer">[QDH15_01_01_03] Código da Família (se pertencer ao Projeto):</field>
+                        <field name="answer">[QDH15_01_01_03] Nome da Família (se pertencer ao Projeto):</field>
                         <field name="question_id" ref="QDH15_01_01"/>
                         <field name="sequence" eval="30"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_01_01_04">
+                        <field name="answer">[QDH15_01_01_04] Código da Família (se pertencer ao Projeto):</field>
+                        <field name="question_id" ref="QDH15_01_01"/>
+                        <field name="sequence" eval="40"/>
                         <field name="type">char</field>
                     </record>
 
@@ -2273,6 +2280,159 @@
                         <field name="answer">[QDH15_08_06_06] f) Não se aplica</field>
                         <field name="question_id" ref="QDH15_08_06"/>
                         <field name="sequence" eval="60"/>
+                    </record>
+
+            <record model="clv_survey.page" id="QDH15_09">
+                <field name="title">[QDH15_09] Hábitos Alimentares 2</field>
+                <field name="note">[QDH15_09] Hábitos Alimentares 2</field>
+                <field name="clv_survey_id" ref="QDH15"/>
+                <field name="sequence" eval="90"/>
+            </record>
+
+                <record model="clv_survey.question" id="QDH15_09_01">
+                    <field name="question">[QDH15_09_01] Consome qual dos itens abaixo e com que frequência na semana?</field>
+                    <field name="type">matrix_of_choices_only_one_ans</field>
+                    <field name="page_id" ref="QDH15_09"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Preencher os alimentos que o paciente consome.</field>
+                </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_01">
+                        <field name="answer">[QDH15_09_01_01] Frutas ou suco natural</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_02">
+                        <field name="answer">[QDH15_09_01_02] Salada crua</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_03">
+                        <field name="answer">[QDH15_09_01_03] Verduras e legumes cozidos</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_04">
+                        <field name="answer">[QDH15_09_01_04] Arroz, pão, massas, farinha</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_05">
+                        <field name="answer">[QDH15_09_01_05] Alimentos integrais (pão, macarrão ou arroz)</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_06">
+                        <field name="answer">[QDH15_09_01_06] Feijão</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_07">
+                        <field name="answer">[QDH15_09_01_07] Carne Vermelha</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_08">
+                        <field name="answer">[QDH15_09_01_08] Miúdos</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_09">
+                        <field name="answer">[QDH15_09_01_09] Embutidos</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_10">
+                        <field name="answer">[QDH15_09_01_10] Frango</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_11">
+                        <field name="answer">[QDH15_09_01_11] Peixe</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_12">
+                        <field name="answer">[QDH15_09_01_12] Leite integral, queijo amarelo</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_13">
+                        <field name="answer">[QDH15_09_01_13] Leite semi ou desnatado, queijo branco</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_14">
+                        <field name="answer">[QDH15_09_01_14] Bolacha recheada, salgadinho, miojo</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_15">
+                        <field name="answer">[QDH15_09_01_15] Margarina, manteiga, maionese</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_16">
+                        <field name="answer">[QDH15_09_01_16] Refrigerante, suco de saquinho</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="160"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QDH15_09_01_17">
+                        <field name="answer">[QDH15_09_01_17] Doces</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                        <field name="sequence" eval="170"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_18">
+                        <field name="title">[QDH15_09_01_18] 0 dias ou raramente</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_19">
+                        <field name="title">[QDH15_09_01_19] 1-2 dias</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_20">
+                        <field name="title">[QDH15_09_01_20] 3-4 dias</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_21">
+                        <field name="title">[QDH15_09_01_21] 5 ou mais dias</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_22">
+                        <field name="title">[QDH15_09_01_22] Não quis responder</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_23">
+                        <field name="title">[QDH15_09_01_23] Não sabe</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
+                    </record>
+
+                    <record model="clv_survey.question.column.heading" id="QDH15_09_01_24">
+                        <field name="title">[QDH15_09_01_24] Não se aplica</field>
+                        <field name="question_id" ref="QDH15_09_01"/>
                     </record>
 
     </data>

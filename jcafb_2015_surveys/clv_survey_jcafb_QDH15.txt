@@ -4,7 +4,8 @@
             (multiple_textboxes_diff_type)
             [QDH15_01_01_01] Nome do Paciente:____________________________________
             [QDH15_01_01_02] Código do Paciente:____________________________________
-            [QDH15_01_01_03] Código da Família (se pertencer ao Projeto):____________________________________
+            [QDH15_01_01_03] Nome da Família (se pertencer ao Projeto):____________________________________
+            [QDH15_01_01_04] Código da Família (se pertencer ao Projeto):____________________________________
         [QDH15_01_02] Aplicação do Questionário
             (multiple_textboxes_diff_type)
             [QDH15_01_02_01] Aplicado por____________________________________
@@ -403,3 +404,30 @@
             [QDH15_08_06_04] d) Não sabe
             [QDH15_08_06_05] e) Não quis responder
             [QDH15_08_06_06] f) Não se aplica
+    [QDH15_09] Hábitos Alimentares 2
+        [QDH15_09_01] Consome qual dos itens abaixo e com que frequência na semana?
+            (matrix_of_choices_only_one_ans)
+            [QDH15_09_01_01] Frutas ou suco natural
+            [QDH15_09_01_02] Salada crua
+            [QDH15_09_01_03] Verduras e legumes cozidos
+            [QDH15_09_01_04] Arroz, pão, massas, farinha
+            [QDH15_09_01_05] Alimentos integrais (pão, macarrão ou arroz)
+            [QDH15_09_01_06] Feijão
+            [QDH15_09_01_07] Carne Vermelha
+            [QDH15_09_01_08] Miúdos
+            [QDH15_09_01_09] Embutidos
+            [QDH15_09_01_10] Frango
+            [QDH15_09_01_11] Peixe
+            [QDH15_09_01_12] Leite integral, queijo amarelo
+            [QDH15_09_01_13] Leite semi ou desnatado, queijo branco
+            [QDH15_09_01_14] Bolacha recheada, salgadinho, miojo
+            [QDH15_09_01_15] Margarina, manteiga, maionese
+            [QDH15_09_01_16] Refrigerante, suco de saquinho
+            [QDH15_09_01_17] Doces
+            [QDH15_09_01_18] 0 dias ou raramente
+            [QDH15_09_01_19] 1-2 dias
+            [QDH15_09_01_20] 3-4 dias
+            [QDH15_09_01_21] 5 ou mais dias
+            [QDH15_09_01_22] Não quis responder
+            [QDH15_09_01_23] Não sabe
+            [QDH15_09_01_24] Não se aplica

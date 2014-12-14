@@ -18,7 +18,7 @@ QMD15:
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
-            req_ans: 3
+            req_ans: 4
 
             QMD15_01_01_01:
                 model: clv_survey.answer
@@ -31,6 +31,11 @@ QMD15:
                 type: char
 
             QMD15_01_01_03:
+                model: clv_survey.answer
+                answer: 'Nome da Família'
+                type: char
+
+            QMD15_01_01_04:
                 model: clv_survey.answer
                 answer: 'Código da Família'
                 type: char

@@ -26,7 +26,7 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Preencher o Nome e os Códigos.</field>
                     <field name="required_type">exactly</field>
-                    <field name="req_ans">3</field>
+                    <field name="req_ans">4</field>
                 </record>
 
                     <record model="clv_survey.answer" id="QMD15_01_01_01">
@@ -44,9 +44,16 @@
                     </record>
 
                     <record model="clv_survey.answer" id="QMD15_01_01_03">
-                        <field name="answer">[QMD15_01_01_03] Código da Família</field>
+                        <field name="answer">[QMD15_01_01_03] Nome da Família</field>
                         <field name="question_id" ref="QMD15_01_01"/>
                         <field name="sequence" eval="30"/>
+                        <field name="type">char</field>
+                    </record>
+
+                    <record model="clv_survey.answer" id="QMD15_01_01_04">
+                        <field name="answer">[QMD15_01_01_04] Código da Família</field>
+                        <field name="question_id" ref="QMD15_01_01"/>
+                        <field name="sequence" eval="40"/>
                         <field name="type">char</field>
                     </record>
 

@@ -56,6 +56,75 @@ FSE15:
 
         FSE15_01_03:
             model: clv_survey.question
+            question: 'Entrevistador'
+            type: multiple_choice_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Informar quem fez a entrevista.'
+            is_comment_require: True
+            comment_label: 'Se "Outro", especificar.'
+
+            FSE15_01_03_01:
+                model: clv_survey.answer
+                answer: 'a) Isabela Lucca e Karyna Roque'
+
+            FSE15_01_03_02:
+                model: clv_survey.answer
+                answer: 'b) Gabriel Nakata e Isabelle Moscardini'
+
+            FSE15_01_03_03:
+                model: clv_survey.answer
+                answer: 'c) Ana Mendes, Paula Benitez e Lucas Fonseca'
+
+            FSE15_01_03_04:
+                model: clv_survey.answer
+                answer: 'd) Stéphanie Guassi, Beatriz Lucio e Jesus Daniel'
+
+            FSE15_01_03_05:
+                model: clv_survey.answer
+                answer: 'e) Rafaela Fioroto e Camila Krokon'
+
+            FSE15_01_03_06:
+                model: clv_survey.answer
+                answer: 'f) Victor Hugo, Ana Almeida, Marianna Olival'
+
+            FSE15_01_03_07:
+                model: clv_survey.answer
+                answer: 'g) Gabriel Roth, Livia Freitas e Paloma Nascimento'
+
+            FSE15_01_03_08:
+                model: clv_survey.answer
+                answer: 'h) Jonas Nieves e Beatriz Boiani'
+
+            FSE15_01_03_09:
+                model: clv_survey.answer
+                answer: 'i) Aline Monteiro, Juliana Cintra e Alexandre Ravazi'
+
+            FSE15_01_03_10:
+                model: clv_survey.answer
+                answer: 'j) Eduardo Carbone, Marina Mancini e Yumi Takagi'
+
+            FSE15_01_03_11:
+                model: clv_survey.answer
+                answer: 'k) Thaiani Vianna, Guilherme Bellini, Carla Yamamoto'
+
+            FSE15_01_03_12:
+                model: clv_survey.answer
+                answer: 'l) Caio Hofmann, Victoria Brigato e Bruna Nakamura'
+
+            FSE15_01_03_13:
+                model: clv_survey.answer
+                answer: 'm) André Barrichelo, Beatriz Lemos e Juliana Oliveira'
+
+            FSE15_01_03_14:
+                model: clv_survey.answer
+                answer: 'n) Renato Pavone, Carol Alves e Jessica Nacazume'
+
+            FSE15_01_03_15:
+                model: clv_survey.answer
+                answer: 'o) Outro'
+
+        FSE15_01_04:
+            model: clv_survey.question
             question: 'Entrevistado'
             type: multiple_choice_only_one_ans
             is_require_answer: 1
@@ -63,19 +132,19 @@ FSE15:
             is_comment_require: True
             comment_label: 'Nome e grau de parentesco e, se a resposta for "Outro", especificar:'
 
-            FSE15_01_03_01:
+            FSE15_01_04_01:
                 model: clv_survey.answer
                 answer: 'a) Responsável pela(s) Criança(s) da casa'
 
-            FSE15_01_03_02:
+            FSE15_01_04_02:
                 model: clv_survey.answer
                 answer: 'b) Paciente Idoso'
 
-            FSE15_01_03_03:
+            FSE15_01_04_03:
                 model: clv_survey.answer
                 answer: 'c) Cuidador (da(s) Criança(s) ou do(s) Idoso(s) da casa'
 
-            FSE15_01_03_04:
+            FSE15_01_04_04:
                 model: clv_survey.answer
                 answer: 'd) Outro (especificar)'
 
