@@ -18,7 +18,7 @@ QDH15:
             is_require_answer: 1
             req_error_msg: 'Preencher o Nome e os Códigos.'
             required_type: exactly
-            req_ans: 3
+            req_ans: 4
 
             QDH15_01_01_01:
                 model: clv_survey.answer
@@ -31,6 +31,11 @@ QDH15:
                 type: char
 
             QDH15_01_01_03:
+                model: clv_survey.answer
+                answer: 'Nome da Família (se pertencer ao Projeto):'
+                type: char
+
+            QDH15_01_01_04:
                 model: clv_survey.answer
                 answer: 'Código da Família (se pertencer ao Projeto):'
                 type: char
@@ -1595,4 +1600,112 @@ QDH15:
             QDH15_08_06_06:
                 model: clv_survey.answer
                 answer: 'f) Não se aplica'
+
+    QDH15_09:
+        model: clv_survey.page
+        title: 'Hábitos Alimentares 2'
+        note: 'Hábitos Alimentares 2'
+
+        QDH15_09_01:
+            model: clv_survey.question
+            question: 'Consome qual dos itens abaixo e com que frequência na semana?'
+            type: matrix_of_choices_only_one_ans
+            is_require_answer: 1
+            req_error_msg: 'Preencher os alimentos que o paciente consome.'
+
+            QDH15_09_01_01:
+                model: clv_survey.answer
+                answer: 'Frutas ou suco natural'
+
+            QDH15_09_01_02:
+                model: clv_survey.answer
+                answer: 'Salada crua'
+
+            QDH15_09_01_03:
+                model: clv_survey.answer
+                answer: 'Verduras e legumes cozidos'
+
+            QDH15_09_01_04:
+                model: clv_survey.answer
+                answer: 'Arroz, pão, massas, farinha'
+
+            QDH15_09_01_05:
+                model: clv_survey.answer
+                answer: 'Alimentos integrais (pão, macarrão ou arroz)'
+
+            QDH15_09_01_06:
+                model: clv_survey.answer
+                answer: 'Feijão'
+
+            QDH15_09_01_07:
+                model: clv_survey.answer
+                answer: 'Carne Vermelha'
+
+            QDH15_09_01_08:
+                model: clv_survey.answer
+                answer: 'Miúdos'
+
+            QDH15_09_01_09:
+                model: clv_survey.answer
+                answer: 'Embutidos'
+
+            QDH15_09_01_10:
+                model: clv_survey.answer
+                answer: 'Frango'
+
+            QDH15_09_01_11:
+                model: clv_survey.answer
+                answer: 'Peixe'
+
+            QDH15_09_01_12:
+                model: clv_survey.answer
+                answer: 'Leite integral, queijo amarelo'
+
+            QDH15_09_01_13:
+                model: clv_survey.answer
+                answer: 'Leite semi ou desnatado, queijo branco'
+
+            QDH15_09_01_14:
+                model: clv_survey.answer
+                answer: 'Bolacha recheada, salgadinho, miojo'
+
+            QDH15_09_01_15:
+                model: clv_survey.answer
+                answer: 'Margarina, manteiga, maionese'
+
+            QDH15_09_01_16:
+                model: clv_survey.answer
+                answer: 'Refrigerante, suco de saquinho'
+
+            QDH15_09_01_17:
+                model: clv_survey.answer
+                answer: 'Doces'
+
+            QDH15_09_01_18:
+                model: clv_survey.question.column.heading
+                title: '0 dias ou raramente'
+
+            QDH15_09_01_19:
+                model: clv_survey.question.column.heading
+                title: '1-2 dias'
+
+            QDH15_09_01_20:
+                model: clv_survey.question.column.heading
+                title: '3-4 dias'
+
+            QDH15_09_01_21:
+                model: clv_survey.question.column.heading
+                title: '5 ou mais dias'
+
+            QDH15_09_01_22:
+                model: clv_survey.question.column.heading
+                title: 'Não quis responder'
+
+            QDH15_09_01_23:
+                model: clv_survey.question.column.heading
+                title: 'Não sabe'
+
+            QDH15_09_01_24:
+                model: clv_survey.question.column.heading
+                title: 'Não se aplica'
 

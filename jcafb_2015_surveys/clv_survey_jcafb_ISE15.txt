@@ -4,17 +4,36 @@
             (multiple_textboxes_diff_type)
             [ISE15_01_01_01] Nome do Paciente____________________________________
             [ISE15_01_01_02] Código do Paciente____________________________________
-            [ISE15_01_01_03] Código da Família____________________________________
+            [ISE15_01_01_03] Nome da Família____________________________________
+            [ISE15_01_01_04] Código da Família____________________________________
         [ISE15_01_02] Aplicação do Questionário
             (multiple_textboxes_diff_type)
             [ISE15_01_02_01] Aplicado por____________________________________
             [ISE15_01_02_02] Código____________________________________
             [ISE15_01_02_03] Data____________________________________
-        [ISE15_01_03] Entrevistado
+        [ISE15_01_03] Entrevistador
             (multiple_choice_only_one_ans)
-            [ISE15_01_03_01] a Paciente
-            [ISE15_01_03_02] b) Cuidador
-            [ISE15_01_03_03] c) Outro
+            [ISE15_01_03_01] a) Isabela Lucca e Karyna Roque
+            [ISE15_01_03_02] b) Gabriel Nakata e Isabelle Moscardini
+            [ISE15_01_03_03] c) Ana Mendes, Paula Benitez e Lucas Fonseca
+            [ISE15_01_03_04] d) Stéphanie Guassi, Beatriz Lucio e Jesus Daniel
+            [ISE15_01_03_05] e) Rafaela Fioroto e Camila Krokon
+            [ISE15_01_03_06] f) Victor Hugo, Ana Almeida, Marianna Olival
+            [ISE15_01_03_07] g) Gabriel Roth, Livia Freitas e Paloma Nascimento
+            [ISE15_01_03_08] h) Jonas Nieves e Beatriz Boiani
+            [ISE15_01_03_09] i) Aline Monteiro, Juliana Cintra e Alexandre Ravazi
+            [ISE15_01_03_10] j) Eduardo Carbone, Marina Mancini e Yumi Takagi
+            [ISE15_01_03_11] k) Thaiani Vianna, Guilherme Bellini, Carla Yamamoto
+            [ISE15_01_03_12] l) Caio Hofmann, Victoria Brigato e Bruna Nakamura
+            [ISE15_01_03_13] m) André Barrichelo, Beatriz Lemos e Juliana Oliveira
+            [ISE15_01_03_14] n) Renato Pavone, Carol Alves e Jessica Nacazume
+            [ISE15_01_03_15] o) Outro
+            Se "Outro", especificar.____________________________________
+        [ISE15_01_04] Entrevistado
+            (multiple_choice_only_one_ans)
+            [ISE15_01_04_01] a Paciente
+            [ISE15_01_04_02] b) Cuidador
+            [ISE15_01_04_03] c) Outro
             Nome e, se a resposta for "Outro", especificar____________________________________
     [ISE15_02] Aspectos Sociais
         [ISE15_02_01] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?

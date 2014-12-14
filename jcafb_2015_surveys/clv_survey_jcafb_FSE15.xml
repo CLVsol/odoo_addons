@@ -76,37 +76,138 @@
                     </record>
 
                 <record model="clv_survey.question" id="FSE15_01_03">
-                    <field name="question">[FSE15_01_03] Entrevistado</field>
+                    <field name="question">[FSE15_01_03] Entrevistador</field>
                     <field name="type">multiple_choice_only_one_ans</field>
                     <field name="page_id" ref="FSE15_01"/>
                     <field name="sequence" eval="30"/>
+                    <field name="is_require_answer">1</field>
+                    <field name="req_error_msg">Informar quem fez a entrevista.</field>
+                    <field name="is_comment_require">True</field>
+                    <field name="comment_label">Se "Outro", especificar.</field>
+                </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_01">
+                        <field name="answer">[FSE15_01_03_01] a) Isabela Lucca e Karyna Roque</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_02">
+                        <field name="answer">[FSE15_01_03_02] b) Gabriel Nakata e Isabelle Moscardini</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_03">
+                        <field name="answer">[FSE15_01_03_03] c) Ana Mendes, Paula Benitez e Lucas Fonseca</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_04">
+                        <field name="answer">[FSE15_01_03_04] d) Stéphanie Guassi, Beatriz Lucio e Jesus Daniel</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_05">
+                        <field name="answer">[FSE15_01_03_05] e) Rafaela Fioroto e Camila Krokon</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_06">
+                        <field name="answer">[FSE15_01_03_06] f) Victor Hugo, Ana Almeida, Marianna Olival</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_07">
+                        <field name="answer">[FSE15_01_03_07] g) Gabriel Roth, Livia Freitas e Paloma Nascimento</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_08">
+                        <field name="answer">[FSE15_01_03_08] h) Jonas Nieves e Beatriz Boiani</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_09">
+                        <field name="answer">[FSE15_01_03_09] i) Aline Monteiro, Juliana Cintra e Alexandre Ravazi</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_10">
+                        <field name="answer">[FSE15_01_03_10] j) Eduardo Carbone, Marina Mancini e Yumi Takagi</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_11">
+                        <field name="answer">[FSE15_01_03_11] k) Thaiani Vianna, Guilherme Bellini, Carla Yamamoto</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_12">
+                        <field name="answer">[FSE15_01_03_12] l) Caio Hofmann, Victoria Brigato e Bruna Nakamura</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_13">
+                        <field name="answer">[FSE15_01_03_13] m) André Barrichelo, Beatriz Lemos e Juliana Oliveira</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_14">
+                        <field name="answer">[FSE15_01_03_14] n) Renato Pavone, Carol Alves e Jessica Nacazume</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="clv_survey.answer" id="FSE15_01_03_15">
+                        <field name="answer">[FSE15_01_03_15] o) Outro</field>
+                        <field name="question_id" ref="FSE15_01_03"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                <record model="clv_survey.question" id="FSE15_01_04">
+                    <field name="question">[FSE15_01_04] Entrevistado</field>
+                    <field name="type">multiple_choice_only_one_ans</field>
+                    <field name="page_id" ref="FSE15_01"/>
+                    <field name="sequence" eval="40"/>
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="is_comment_require">True</field>
                     <field name="comment_label">Nome e grau de parentesco e, se a resposta for "Outro", especificar:</field>
                 </record>
 
-                    <record model="clv_survey.answer" id="FSE15_01_03_01">
-                        <field name="answer">[FSE15_01_03_01] a) Responsável pela(s) Criança(s) da casa</field>
-                        <field name="question_id" ref="FSE15_01_03"/>
+                    <record model="clv_survey.answer" id="FSE15_01_04_01">
+                        <field name="answer">[FSE15_01_04_01] a) Responsável pela(s) Criança(s) da casa</field>
+                        <field name="question_id" ref="FSE15_01_04"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="clv_survey.answer" id="FSE15_01_03_02">
-                        <field name="answer">[FSE15_01_03_02] b) Paciente Idoso</field>
-                        <field name="question_id" ref="FSE15_01_03"/>
+                    <record model="clv_survey.answer" id="FSE15_01_04_02">
+                        <field name="answer">[FSE15_01_04_02] b) Paciente Idoso</field>
+                        <field name="question_id" ref="FSE15_01_04"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="clv_survey.answer" id="FSE15_01_03_03">
-                        <field name="answer">[FSE15_01_03_03] c) Cuidador (da(s) Criança(s) ou do(s) Idoso(s) da casa</field>
-                        <field name="question_id" ref="FSE15_01_03"/>
+                    <record model="clv_survey.answer" id="FSE15_01_04_03">
+                        <field name="answer">[FSE15_01_04_03] c) Cuidador (da(s) Criança(s) ou do(s) Idoso(s) da casa</field>
+                        <field name="question_id" ref="FSE15_01_04"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
-                    <record model="clv_survey.answer" id="FSE15_01_03_04">
-                        <field name="answer">[FSE15_01_03_04] d) Outro (especificar)</field>
-                        <field name="question_id" ref="FSE15_01_03"/>
+                    <record model="clv_survey.answer" id="FSE15_01_04_04">
+                        <field name="answer">[FSE15_01_04_04] d) Outro (especificar)</field>
+                        <field name="question_id" ref="FSE15_01_04"/>
                         <field name="sequence" eval="40"/>
                     </record>
 

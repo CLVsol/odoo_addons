@@ -578,7 +578,7 @@
                     </record>
 
                     <record model="clv_survey.question.column.heading" id="QAN15_04_01_11">
-                        <field name="title">[QAN15_04_01_11] Não respondeu</field>
+                        <field name="title">[QAN15_04_01_11] Não quis responder</field>
                         <field name="question_id" ref="QAN15_04_01"/>
                     </record>
 
@@ -658,7 +658,7 @@
                     </record>
 
                     <record model="clv_survey.question.column.heading" id="QAN15_04_02_11">
-                        <field name="title">[QAN15_04_02_11] Não respondeu</field>
+                        <field name="title">[QAN15_04_02_11] Não quis responder</field>
                         <field name="question_id" ref="QAN15_04_02"/>
                     </record>
 

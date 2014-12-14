@@ -4,7 +4,8 @@
             (multiple_textboxes_diff_type)
             [QMD15_01_01_01] Nome do Paciente____________________________________
             [QMD15_01_01_02] Código do Paciente____________________________________
-            [QMD15_01_01_03] Código da Família____________________________________
+            [QMD15_01_01_03] Nome da Família____________________________________
+            [QMD15_01_01_04] Código da Família____________________________________
         [QMD15_01_02] Aplicação do Questionário
             (multiple_textboxes_diff_type)
             [QMD15_01_02_01] Aplicado por____________________________________

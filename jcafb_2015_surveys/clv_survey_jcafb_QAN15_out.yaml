@@ -416,7 +416,7 @@ QAN15:
 
             QAN15_04_01_11:
                 model: clv_survey.question.column.heading
-                title: 'Não respondeu'
+                title: 'Não quis responder'
 
             QAN15_04_01_12:
                 model: clv_survey.question.column.heading
@@ -475,7 +475,7 @@ QAN15:
 
             QAN15_04_02_11:
                 model: clv_survey.question.column.heading
-                title: 'Não respondeu'
+                title: 'Não quis responder'
 
             QAN15_04_02_12:
                 model: clv_survey.question.column.heading
