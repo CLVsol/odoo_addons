@@ -350,7 +350,6 @@
                     <field name="is_require_answer">1</field>
                     <field name="req_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="is_comment_require">True</field>
-                    <field name="comment_label">Se outro, como?</field>
                 </record>
 
                     <record model="clv_survey.answer" id="CSE15_02_03_01">
