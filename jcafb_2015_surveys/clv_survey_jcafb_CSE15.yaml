@@ -246,7 +246,6 @@ CSE15:
             is_require_answer: 1
             req_error_msg: 'Esta questão precisa ser respondida.'
             is_comment_require: True
-            comment_label: 'Se outro, como?'
 
             CSE15_02_03_01:
                 model: clv_survey.answer

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_mng_tree_family" model="ir.ui.view">
+            <field name="name">clv_person_mng.tree</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="family_code"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_clv_person_mng_form_family" model="ir.ui.view">
+            <field name="name">clv_person_mng.form</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Family">
+                        <group>
+                            <group string="Family Public Information">
+                                <field name="family_name" placeholder="Family Name..."/>
+                                <field name="family_alias" placeholder="Alias..."/>
+                                <field name="family_address_id" placeholder="Family Address..."/>
+                                <field name="family_phone" placeholder="Family Phone..."/>
+                                <field name="family_mobile_phone" placeholder="Family Mobile Phone..."/>
+                                <field name="family_email" placeholder="Family e-mail..."/>
+                            </group>
+                            <group string="Family">
+                                <field name="associate_family"/>
+                                <field name="family_code" placeholder="Family Code..."/>
+                                <field name="family_id" placeholder="Family..."/>
+                            </group>
+                            <group string="Status">
+                                <field name="family_state"/>
+                                <field name="family_uid_inclusion"/>
+                                <field name="family_date_inclusion"/>
+                                <field name="family_date_activation"/>
+                                <field name="family_date_inactivation"/>
+                                <field name="family_date_suspension"/>
+                            </group>
+                        </group>
+                        <field name="family_notes" placeholder="Family Other Information ..." colspan="4"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+        <record id="view_clv_person_mng_search_family" model="ir.ui.view">
+            <field name="name">clv_person_mng.search</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="alias" position="after">
+                    <field name="family_code"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

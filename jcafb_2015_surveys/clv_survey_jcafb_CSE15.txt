@@ -65,7 +65,6 @@
             [CSE15_02_03_04] d) Não sabe
             [CSE15_02_03_05] e) Não quis responder
             [CSE15_02_03_06] f) Não se aplica
-            Se outro, como?____________________________________
         [CSE15_02_04] Onde a criança costuma fazer cocô?
             (multiple_choice_multiple_ans)
             [CSE15_02_04_01] a) Vaso sanitário

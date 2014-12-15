@@ -1274,7 +1274,7 @@
                 </record>
 
                     <record model="clv_survey.answer" id="FSE15_06_06_01">
-                        <field name="answer">[FSE15_06_06_01] a) Nada. Espera passar</field>
+                        <field name="answer">[FSE15_06_06_01] a) Nada. Esperam passar</field>
                         <field name="question_id" ref="FSE15_06_06"/>
                         <field name="sequence" eval="10"/>
                     </record>

@@ -894,7 +894,7 @@ FSE15:
 
             FSE15_06_06_01:
                 model: clv_survey.answer
-                answer: 'a) Nada. Espera passar'
+                answer: 'a) Nada. Esperam passar'
 
             FSE15_06_06_02:
                 model: clv_survey.answer
