@@ -35,6 +35,8 @@
                                 <field name="associate_family"/>
                                 <field name="family_code" placeholder="Family Code..."/>
                                 <field name="family_id" placeholder="Family..."/>
+                                <field name="family_person_role" placeholder="Family Person Role..."/>
+                                <field name="family_person_id" placeholder="Family Person..."/>
                             </group>
                             <group string="Status">
                                 <field name="family_state"/>
@@ -60,6 +62,18 @@
                 <field name="alias" position="after">
                     <field name="family_code"/>
                 </field>
+            </field>
+        </record>
+        
+        <record id="view_clv_person_mng_search_wkf_family" model="ir.ui.view">
+            <field name="name">clv_person_mng.search</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_search_wkf"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <filter string="Status" position="after">
+                    <filter string="Family Name" domain="[]" context="{'group_by':'family_name'}"/>
+                </filter>
             </field>
         </record>
         

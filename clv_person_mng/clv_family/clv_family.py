@@ -24,7 +24,7 @@ class clv_person_mng(osv.osv):
     _inherit = 'clv_person_mng'
 
     _columns = {
-        'family_name': fields.char('Name', required=True, size=64),
+        'family_name': fields.char('Name', required=False, size=64),
         'family_alias': fields.char('Alias', size=64, help='Common name that the Family is referred'),
         'family_code': fields.char(size=64, string='Family Code', required=False),
         'family_address_id': fields.many2one('res.partner', 'Family Address', ondelete='restrict'),
@@ -46,6 +46,9 @@ class clv_person_mng(osv.osv):
                                           ('inactive','Inactive'),
                                           ('suspended','Suspended')
                                           ], string='Status', readonly=False, required=False, help=""),
+
+        'family_person_role': fields.many2one('clv_family.person_role', 'Family Person Role', required=False),
+        'family_person_id': fields.many2one('clv_family.person','Family Person'),
         } 
 
     _defaults = {
