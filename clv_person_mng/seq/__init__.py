@@ -17,12 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_person_mng
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_person
-import clv_patient
-import clv_family
-import seq
+import clv_person_mng_seq

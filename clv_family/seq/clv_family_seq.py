@@ -53,8 +53,8 @@ class clv_family(osv.osv):
     _inherit = 'clv_family'
 
     _columns = {
-        'code': fields.char('Reference', size=64, select=1, required=False, readonly=False, default='/',
-                            help='Use "/" to get an automatic new Reference.'),
+        'code': fields.char('Family Code', size=64, select=1, required=False, readonly=False, default='/',
+                            help='Use "/" to get an automatic new Family Code.'),
         }
     
     _defaults = {

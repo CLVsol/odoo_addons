@@ -49,35 +49,28 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_person(osv.osv):
-    _inherit = 'clv_person'
+class clv_person_mng(osv.osv):
+    _inherit = 'clv_person_mng'
 
     _columns = {
-        'code': fields.char('Person Code', size=64, select=1, required=False, readonly=False, default='/',
-                            help='Use "/" to get an automatic new Person Code.'),
+        'person_code': fields.char('Person Code', size=64, select=1, required=False, readonly=False, default='/',
+                                   help='Use "/" to get an automatic new Person Code.'),
+        'family_code': fields.char('Family Code', size=64, select=1, required=False, readonly=False, default='/',
+                                   help='Use "/" to get an automatic new Family Code.'),
+        'patient_code': fields.char('Patient Code', size=64, select=1, required=False, readonly=False, default='/',
+                                   help='Use "/" to get an automatic new Patient Code.'),
         }
     
-    _defaults = {
-        'code': '/',
-        }
-    
-    def create(self, cr, uid, vals, context=None):
-        if context is None:
-            context = {}
-        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_person.code')
-            vals['code'] = format_code(code_seq)
-        return super(clv_person, self).create(cr, uid, vals, context)
-
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if ('code' in vals and vals['code'] == '/'):
+        if ('person_code' in vals and vals['person_code'] == '/'):
             code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_person.code')
-            vals['code'] = format_code(code_seq)
-        return super(clv_person, self).write(cr, uid, ids, vals, context)
-
-    def copy(self, cr, uid, id, default={}, context=None):
-        default = dict(default or {})
-        default.update({'code': '/',})
-        return super(clv_person, self).copy(cr, uid, id, default, context)
+            vals['person_code'] = format_code(code_seq)
+        if ('family_code' in vals and vals['family_code'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_family.code')
+            vals['family_code'] = format_code(code_seq)
+        if ('patient_code' in vals and vals['patient_code'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_patient.code')
+            vals['patient_code'] = format_code(code_seq)
+        return super(clv_person_mng, self).write(cr, uid, ids, vals, context)

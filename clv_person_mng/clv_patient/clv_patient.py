@@ -27,7 +27,7 @@ class clv_person_mng(osv.osv):
         'associate_patient': fields.boolean('Associate Patient', 
                                          help="If checked, it will require to associate to a patient."),
         'patient_code': fields.char(size=64, string='Patient Code', required=False),
-        'patient_id': fields.many2one('clv_person', 'Patient', ondelete='restrict'),
+        'patient_id': fields.many2one('clv_patient', 'Patient', ondelete='restrict'),
         'patient_uid_inclusion': fields.many2one('res.users', 'Inclusion User', required=False, readonly=False),
         'patient_date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'patient_date_activation': fields.datetime("Activation date", required=False, readonly=False),
