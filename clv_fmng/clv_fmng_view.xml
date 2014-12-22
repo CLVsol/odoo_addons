@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Base -->
+        <menuitem name="Base" id="menu_base" 
+            groups="clv_base.group_base_user"
+            sequence="11"/>
+            <!-- Base/Base -->
+            <menuitem name="Base" id="menu_base_base"  
+                parent="menu_base"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Base/Base/Annotations -->
+                <menuitem name="Annotations" id="menu_base_base_annotations"
+                    parent="menu_base_base"
+                    groups="clv_base.group_annotation_user"
+                    sequence="10"
+                    action="clv_annotation.act_open_clv_annotation_view"/>
+            <!-- Base/Configuration -->
+            <menuitem name="Configuration" id="menu_base_config"  
+                parent="menu_base"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- Base/Configuration/Tags -->
+                <menuitem name="Tags" id="menu_base_config_clv_tags"
+                    parent="menu_base_config"
+                    groups="clv_base.group_tag_user"
+                    sequence="10"
+                    action="clv_tag.act_open_clv_tag_view"/>
+                <!-- Base/Configuration/Annotation Categories -->
+                <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
+                    parent="menu_base_config"
+                    groups="clv_base.group_annotation_user"
+                    sequence="20"
+                    action="clv_annotation.act_open_clv_annotation_category_view"/>
+
+        <!-- File Management -->
+        <menuitem name="File Management" id="menu_fmng" 
+            groups="clv_base.group_base_user"
+            sequence="12"/>
+            <!-- File Management/File Management -->
+            <menuitem name="File Management" id="menu_fmng_fmng"  
+                parent="menu_fmng"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- File Management/File Management/Files -->
+                <menuitem name="Files" id="menu_fmng_fmng_files"
+                    parent="menu_fmng_fmng"
+                    groups="clv_base.group_file_user"
+                    sequence="10"
+                    action="clv_file.act_open_clv_file_view"/>
+            <!-- File Management/Configuration -->
+            <menuitem name="Configuration" id="menu_fmng_config"  
+                parent="menu_fmng"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- File Management/Configuration/File Categories -->
+                <menuitem name="File Categories" id="menu_fmng_config_file_categories"
+                    parent="menu_fmng_config"
+                    groups="clv_base.group_file_user"
+                    sequence="10"
+                    action="clv_file.act_open_clv_file_category_view"/>
+
+    </data>
+</openerp>
