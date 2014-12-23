@@ -75,11 +75,14 @@ class clv_annotation(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for annotation in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_annotation_history(cr, uid, True, annotation.id, annotation.state, notes)
-                else:
-                    self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, annotation.state, notes)
+            try:
+                for annotation in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_annotation_history(cr, uid, True, annotation.id, annotation.state, notes)
+                    else:
+                        self.insert_clv_annotation_history(cr, uid, annotation.active_history, annotation.id, annotation.state, notes)
+            except:
+                pass
         return super(clv_annotation, self).write(cr, uid, ids, vals, context)
 
     def button_draft(self, cr, uid, ids):

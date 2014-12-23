@@ -81,9 +81,12 @@ class res_partner(osv.osv):
             context = {}
         if (not 'history_ids' in vals):
             notes = vals.keys()
-            for partner in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_res_partner_history(cr, uid, True, partner.id, notes)
-                else:
-                    self.insert_res_partner_history(cr, uid, partner.active_history, partner.id, notes)
+            try:
+                for partner in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_res_partner_history(cr, uid, True, partner.id, notes)
+                    else:
+                        self.insert_res_partner_history(cr, uid, partner.active_history, partner.id, notes)
+            except:
+                pass
         return super(res_partner, self).write(cr, uid, ids, vals, context)

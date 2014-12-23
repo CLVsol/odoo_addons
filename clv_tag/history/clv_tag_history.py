@@ -75,11 +75,14 @@ class clv_tag(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for tag in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_tag_history(cr, uid, True, tag.id, tag.state, notes)
-                else:
-                    self.insert_clv_tag_history(cr, uid, tag.active_history, tag.id, tag.state, notes)
+            try:
+                for tag in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_tag_history(cr, uid, True, tag.id, tag.state, notes)
+                    else:
+                        self.insert_clv_tag_history(cr, uid, tag.active_history, tag.id, tag.state, notes)
+            except:
+                pass
         return super(clv_tag, self).write(cr, uid, ids, vals, context)
 
     def button_draft(self, cr, uid, ids):
