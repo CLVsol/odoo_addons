@@ -78,11 +78,14 @@ class clv_patient(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for patient in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_patient_history(cr, uid, True, patient.id, patient.state, notes)
-                else:
-                    self.insert_clv_patient_history(cr, uid, patient.active_history, patient.id, patient.state, notes)
+            try:
+                for patient in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_patient_history(cr, uid, True, patient.id, patient.state, notes)
+                    else:
+                        self.insert_clv_patient_history(cr, uid, patient.active_history, patient.id, patient.state, notes)
+            except:
+                pass
         return super(clv_patient, self).write(cr, uid, ids, vals, context)
 
     def button_new(self, cr, uid, ids):

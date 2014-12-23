@@ -78,11 +78,14 @@ class clv_person(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for person in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_person_history(cr, uid, True, person.id, person.state, notes)
-                else:
-                    self.insert_clv_person_history(cr, uid, person.active_history, person.id, person.state, notes)
+            try:
+                for person in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_person_history(cr, uid, True, person.id, person.state, notes)
+                    else:
+                        self.insert_clv_person_history(cr, uid, person.active_history, person.id, person.state, notes)
+            except:
+                pass
         return super(clv_person, self).write(cr, uid, ids, vals, context)
 
     def button_new(self, cr, uid, ids):

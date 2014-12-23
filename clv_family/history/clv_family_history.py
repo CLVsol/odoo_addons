@@ -78,11 +78,14 @@ class clv_family(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for family in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_family_history(cr, uid, True, family.id, family.state, notes)
-                else:
-                    self.insert_clv_family_history(cr, uid, family.active_history, family.id, family.state, notes)
+            try:
+                for family in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_family_history(cr, uid, True, family.id, family.state, notes)
+                    else:
+                        self.insert_clv_family_history(cr, uid, family.active_history, family.id, family.state, notes)
+            except:
+                pass
         return super(clv_family, self).write(cr, uid, ids, vals, context)
 
     def button_new(self, cr, uid, ids):
