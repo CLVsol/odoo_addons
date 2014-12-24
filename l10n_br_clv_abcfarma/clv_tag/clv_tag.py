@@ -17,41 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'ABCFARMA',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-ABCFARMA
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_medicament',
-        ],
-    'data': [
-        'security/ir.model.access.csv',
-        'clv_abcfarma_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'wkf/clv_abcfarma_workflow.xml',
-        'wkf/clv_abcfarma_wkf_view.xml',
-        'history/clv_abcfarma_history_view.xml',
-        'clv_medicament/clv_medicament_view.xml',
-        # 'clv_medicament_mng/clv_medicament_mng_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+
+class clv_tag(osv.osv):
+    _inherit = 'clv_tag'
+
+    _columns = {
+        'medicament_ids': fields.many2many('clv_abcfarma', 
+                                           'clv_abcfarma_clv_tag_rel', 
+                                           'tag_id', 
+                                           'medicament_id', 
+                                           'ABCFarma Medicaments'),
+        }
+
+class clv_abcfarma(osv.osv):
+    _inherit = 'clv_abcfarma'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_abcfarma_clv_tag_rel', 
+                                    'medicament_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }

@@ -17,13 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import orm, fields
-
-class oehealth_medicament(orm.Model):
-    _inherit = 'oehealth.medicament'
-
-    _columns = {
-        'abcfarma_id': fields.many2one('oehealth.abcfarma', string='ABCFARMA Medicament'),
-    }
-    
-oehealth_medicament()
+import clv_annotation

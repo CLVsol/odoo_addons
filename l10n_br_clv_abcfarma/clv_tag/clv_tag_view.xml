@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_abcfarma_tree_tag" model="ir.ui.view">
+            <field name="name">clv_abcfarma.tree</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="from" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_form_tag" model="ir.ui.view">
+            <field name="name">clv_abcfarma.form</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_center" position="inside">
+                    <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
+                    <h2>
+                        <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
+                    </h2>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_search_tag" model="ir.ui.view">
+            <field name="name">clv_abcfarma.search</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="from" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_tag_form" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Tag for" position="inside">
+                    <group string="ABCFarma Medicaments">
+                        <field name="medicament_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

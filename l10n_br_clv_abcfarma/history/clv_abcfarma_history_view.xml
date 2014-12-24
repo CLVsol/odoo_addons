@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_abcfarma_form_history" model="ir.ui.view">
+            <field name="name">clv_abcfarma.form</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="History" groups="clv_base.group_base_suser" attrs="{'invisible': ['|', ('active_history', '=', False)]}">
+                        <field name="history_ids" colspan="4" nolabel="1">
+                            <tree string="ABCFarma History">
+                                <!--field name="abcfarma_id"/-->
+                                <field name="user_id"/>
+                                <field name="date"/>
+                                <field name="state"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+                <field name="active" position="after">
+                    <field name="active_history"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_history_form" model="ir.ui.view">
+            <field name="name">clv_abcfarma.history.form</field>
+            <field name="model">clv_abcfarma.history</field>
+            <field name="arch" type="xml">
+                <form string="ABCFarma History" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="abcfarma_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="abcfarma_id" placeholder="Person..." readonly="True"/>
+                            </h2>
+                            <label for="user_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="user_id" default_focus="1" placeholder="User..." readonly="True"/>
+                            </h1>
+                            <label for="date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="date" placeholder="Date..." readonly="True"/>
+                            </h3>
+                            <label for="state" class="oe_edit_only"/>
+                            <h3>
+                                <field name="state" placeholder="Status..." readonly="True"/>
+                            </h3>
+                            <label for="notes" class="oe_edit_only"/>
+                            <field name="notes" placeholder="Notes..."/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_abcfarma_history_tree" model="ir.ui.view">
+            <field name="name">clv_abcfarma.history.tree</field>
+            <field name="model">clv_abcfarma.history</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Person(Management) History">
+                        <field name="abcfarma_id"/>
+                        <field name="user_id"/>
+                        <field name="date"/>
+                        <field name="state"/>
+                        <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

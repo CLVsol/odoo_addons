@@ -71,31 +71,14 @@ class oehealth_abcfarma(osv.Model):
 		'excluded': fields.boolean('Excluded'),
 		'product_name': fields.char(size=256, string='Product Name'),
 
-        # 'tag_ids': fields.many2many('clv_tag', 
-        #                             'oehealth_abcfarma_tag_rel', 
-        #                             'abcfarma_id', 
-        #                             'tag_id', 
-        #                             'Tags'),
-        # 'status': fields.selection([('U', 'Undefined'),
-        #                             ('A', 'Activated'),
-        #                             ('I', 'Inactivated'),
-        #                             ('S', 'Suspended'),
-        #                             ], string='ABCFARMA Status',
-        #                                select=True, sort=False, required=False, translate=True),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the medicament without removing it."),
     }
 
     _order='med_abc'
 
     _sql_constraints = [('med_abc_uniq', 'unique(med_abc)', u'Duplicated ABCFARMA Code!')]
 
-    # _defaults = {
-    #     'status': 'U',
-    # }
-
-    '''def name_get(self, cr, uid, ids, context=None):
-	    if not ids:
-	        return []
-	    res = []
-	    for r in self.read(cr, uid, ids, ['id', 'med_abc', 'med_des', 'med_princi', 'med_apr', 'lab_nom'], context):
-	    	res.append((r['id'], r['med_abc'] + ' (' + r['med_des'] + ' (' + r['med_princi'] + ') ' + r['med_apr'] + ' - ' + r['lab_nom'] + ')'))
-	    return res'''
+    _defaults = {
+        'active': 1,
+    }

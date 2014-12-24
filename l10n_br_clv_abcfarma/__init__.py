@@ -18,5 +18,9 @@
 ################################################################################
 
 import clv_abcfarma
-# import clv_medicament
+import clv_tag
+import clv_annotation
+import wkf
+import history
+import clv_medicament
 # import clv_medicament_mng
