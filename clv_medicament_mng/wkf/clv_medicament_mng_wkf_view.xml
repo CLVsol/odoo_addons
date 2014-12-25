@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_mng_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.tree</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_mng_form_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.form</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Medicament (Management)" position="before">
+                    <header>
+                        <button string="Done" name="button_done" states="new,revised,waiting" type="workflow" groups="clv_base.group_medicament_mng_manager" class="oe_highlight"/>
+                        <button string="Revised" name="button_revised" states="new,done,waiting" type="workflow" groups="clv_base.group_medicament_mng_manager"/>
+                        <button string="Waiting" name="button_waiting" states="new,done,revised" type="workflow" groups="clv_base.group_medicament_mng_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,done,revised,waiting"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_mng_search_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.search</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
