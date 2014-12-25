@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="workflow_clv_abcfarma" model="workflow">
+            <field name="name">clv_abcfarma.wkf</field>
+            <field name="osv">clv_abcfarma</field>
+            <field name="on_create" eval='True' />
+        </record>
+
+         <record id="act_new" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_abcfarma" />
+            <field name="flow_start" eval='True' />
+            <field name="name">new</field>
+            <field name="kind">function</field>
+            <field name="action">button_new()</field>
+        </record>
+
+        <record id="act_done" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_abcfarma" />
+            <field name="name">done</field>
+            <field name="kind">function</field>
+            <field name="action">button_done()</field>
+        </record>
+
+        <record id="act_revised" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_abcfarma" />
+            <field name="name">revised</field>
+            <field name="kind">function</field>
+            <field name="action">button_revised()</field>
+        </record>
+
+        <record id="act_waiting" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_abcfarma" />
+            <field name="name">waiting</field>
+            <field name="kind">function</field>
+            <field name="action">button_waiting()</field>
+        </record>
+
+        <record id="t1" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_done" />
+            <field name="signal">button_done</field>
+        </record>
+
+        <record id="t2" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_revised" />
+            <field name="signal">button_revised</field>
+        </record>
+
+        <record id="t3" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_waiting" />
+            <field name="signal">button_waiting</field>
+        </record>
+
+        <record id="t4" model="workflow.transition">
+            <field name="act_from" ref="act_done" />
+            <field name="act_to" ref="act_revised" />
+            <field name="signal">button_revised</field>
+        </record>
+
+        <record id="t5" model="workflow.transition">
+            <field name="act_from" ref="act_done" />
+            <field name="act_to" ref="act_waiting" />
+            <field name="signal">button_waiting</field>
+        </record>
+
+        <record id="t6" model="workflow.transition">
+            <field name="act_from" ref="act_revised" />
+            <field name="act_to" ref="act_done" />
+            <field name="signal">button_done</field>
+        </record>
+
+        <record id="t7" model="workflow.transition">
+            <field name="act_from" ref="act_revised" />
+            <field name="act_to" ref="act_waiting" />
+            <field name="signal">button_waiting</field>
+        </record>
+
+        <record id="t8" model="workflow.transition">
+            <field name="act_from" ref="act_waiting" />
+            <field name="act_to" ref="act_done" />
+            <field name="signal">button_done</field>
+        </record>
+
+        <record id="t9" model="workflow.transition">
+            <field name="act_from" ref="act_waiting" />
+            <field name="act_to" ref="act_revised" />
+            <field name="signal">button_revised</field>
+        </record>
+
+    </data>
+</openerp>

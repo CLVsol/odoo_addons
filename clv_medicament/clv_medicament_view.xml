@@ -34,7 +34,7 @@
                     <sheet string="Medicament">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
-                            <!--label for="name" class="oe_edit_only"/-->
+                            <!--label for="product_id" class="oe_edit_only"/-->
                             <label for="product_id"/>
                             <h1>
                                 <field name="product_id" default_focus="1" placeholder="Product Name..."/>
