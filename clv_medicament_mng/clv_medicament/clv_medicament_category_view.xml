@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_mng_tree_medicament_category" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.tree</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_tree_medicament"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="medicament_code" position="before">
+                    <field name="medicament_category_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_mng_form_medicament_category" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.form</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_form_medicament"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="medicament_code" position="before">
+                    <field name="medicament_category_ids" widget="many2many_tags" placeholder="Person Categories..."/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_mng_search_medicament_category" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.search</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_search_medicament"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="medicament_code" position="after">
+                    <field name="medicament_category_ids"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
