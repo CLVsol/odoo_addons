@@ -164,20 +164,5 @@
             <field name="view_id" ref="view_clv_abcfarma_tree" />
         </record>
         
-        <menuitem name="ABCFarma" id="menu_abcfarma" 
-            groups="clv_base.group_base_user"
-            sequence="1"/>
-
-            <menuitem name="ABCFarma" id="menu_abcfarma_abcfarma"  
-                parent="menu_abcfarma"
-                groups="clv_base.group_base_user"
-                sequence="10"/>
-
-                <menuitem name="ABCFarma" id="menu_abcfarma_abcfarma_abcfarma"
-                    parent="menu_abcfarma_abcfarma"
-                    groups="clv_base.group_base_user"
-                    sequence="10"
-                    action="act_open_clv_abcfarma_view" />
-
     </data>
 </openerp>
