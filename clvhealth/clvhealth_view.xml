@@ -323,9 +323,15 @@
                 <!-- Pharmacy/Medicament/Medicaments -->
                 <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
                     parent="menu_pharmacy_medicament"
-                    groups="clv_base.group_patient_user"
+                    groups="clv_base.group_medicament_user"
                     sequence="10"
                     action="clv_medicament.act_open_clv_medicament_view"/>
+                <!-- Pharmacy/Medicament/Medicaments (Management) -->
+                <menuitem name="Medicaments (Management)" id="menu_pharmacy_medicament_medicaments_mng"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_mng_user"
+                    sequence="20"
+                    action="clv_medicament_mng.act_open_clv_medicament_mng_view"/>
             <!-- Pharmacy/Configuration -->
             <menuitem name="Configuration" id="menu_pharmacy_config"  
                 parent="menu_pharmacy"
