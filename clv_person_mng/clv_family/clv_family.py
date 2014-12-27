@@ -24,14 +24,14 @@ class clv_person_mng(osv.osv):
     _inherit = 'clv_person_mng'
 
     _columns = {
-        'family_name': fields.char('Name', required=False, size=64),
-        'family_alias': fields.char('Alias', size=64, help='Common name that the Family is referred'),
+        'family_name': fields.char('Family Name', required=False, size=64),
+        'family_alias': fields.char('Family Alias', size=64, help='Common name that the Family is referred'),
         'family_code': fields.char(size=64, string='Family Code', required=False),
         'family_address_id': fields.many2one('res.partner', 'Family Address', ondelete='restrict'),
         'family_phone': fields.char('Family Phone', size=32),
         'family_mobile_phone': fields.char('Family Mobile', size=32),
         'family_email': fields.char('Family Email', size=240),
-        'family_notes':  fields.text(string='Notes'),
+        'family_notes':  fields.text(string='Family Notes'),
 
         'associate_family': fields.boolean('Associate Family', 
                                            help="If checked, it will require to associate to a family."),
