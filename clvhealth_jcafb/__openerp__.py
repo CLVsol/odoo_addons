@@ -41,6 +41,8 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         # 'clv_lab_test',
         'clv_survey',
         'clv_medicament',
+        'clv_medicament_mng',
+        'l10n_br_clv_abcfarma',
         ],
     'data': [
         'clvhealth_jcafb_view.xml',

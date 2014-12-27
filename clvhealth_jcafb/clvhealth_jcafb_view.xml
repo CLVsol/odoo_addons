@@ -326,6 +326,23 @@
                     groups="clv_base.group_patient_user"
                     sequence="10"
                     action="clv_medicament.act_open_clv_medicament_view"/>
+                <!-- Pharmacy/Medicament/Medicaments (Management) -->
+                <menuitem name="Medicaments (Management)" id="menu_pharmacy_medicament_medicaments_mng"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_mng_user"
+                    sequence="20"
+                    action="clv_medicament_mng.act_open_clv_medicament_mng_view"/>
+            <!-- Pharmacy/ABCFarma -->
+            <menuitem name="ABCFarma" id="menu_pharmacy_abcfarma"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_user"
+                sequence="30"/>
+                <!-- Pharmacy/ABCFarma/Medicaments -->
+                <menuitem name="Medicaments" id="menu_pharmacy_abcfarma_medicaments"
+                    parent="menu_pharmacy_abcfarma"
+                    groups="clv_base.group_base_user"
+                    sequence="10"
+                    action="l10n_br_clv_abcfarma.act_open_clv_abcfarma_view" />
             <!-- Pharmacy/Configuration -->
             <menuitem name="Configuration" id="menu_pharmacy_config"  
                 parent="menu_pharmacy"
