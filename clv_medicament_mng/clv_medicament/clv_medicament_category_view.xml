@@ -21,7 +21,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="medicament_code" position="before">
-                    <field name="medicament_category_ids" widget="many2many_tags" placeholder="Person Categories..."/>
+                    <field name="medicament_category_ids" widget="many2many_tags" placeholder="Medicament Categories..."/>
                 </field>
             </field>
         </record>

@@ -34,6 +34,7 @@ ABCFARMA
         'clv_tag',
         'clv_annotation',
         'clv_medicament',
+        'clv_medicament_mng',
         ],
     'data': [
         'security/ir.model.access.csv',
@@ -44,7 +45,7 @@ ABCFARMA
         'wkf/clv_abcfarma_wkf_view.xml',
         'history/clv_abcfarma_history_view.xml',
         'clv_medicament/clv_medicament_view.xml',
-        # 'clv_medicament_mng/clv_medicament_mng_view.xml',
+        'clv_medicament_mng/clv_medicament_mng_view.xml',
         ],
     'demo': [],
     'test': [],

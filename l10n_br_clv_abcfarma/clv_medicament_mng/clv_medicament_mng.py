@@ -19,11 +19,10 @@
 
 from openerp.osv import orm, fields
 
-class oehealth_medicament_mng(orm.Model):
-    _inherit = 'oehealth.medicament_mng'
+class clv_medicament_mng(orm.Model):
+    _inherit = 'clv_medicament_mng'
 
     _columns = {
-        'abcfarma_id': fields.many2one('oehealth.abcfarma', string='ABCFARMA Medicament'),
+		'med_abc': fields.char(size=9, string='ABCFarma Code'),
+        'abcfarma_id': fields.many2one('clv_abcfarma', string='ABCFarma Medicament'),
     }
-    
-oehealth_medicament_mng()

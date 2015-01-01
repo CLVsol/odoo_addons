@@ -10,7 +10,8 @@
                 <tree string="Medicament (Management)">
                     <field name="product_name"/>
                     <field name="name"/>
-                    <field name="code" />
+                    <field name="active_component_name"/>
+                    <!--field name="code" /-->
                 </tree>
             </field>
         </record>
@@ -31,16 +32,20 @@
                             </h1>
                             <label for="name"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Name..."/>
+                                <field name="name" placeholder="Name..."/>
                             </h1>
+                            <label for="presentation"/>
+                            <h2>
+                                <field name="presentation" placeholder="Presentation..."/>
+                            </h2>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
                         <div class="oe_title">
                             <!--label for="code" class="oe_edit_only"/-->
-                            <label for="code"/>
+                            <!--label for="code"/>
                             <h2>
                                 <field name="code" placeholder="Medicament Code..."/>
-                            </h2>
+                            </h2-->
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
@@ -52,15 +57,15 @@
                                         <field name="product_presentation" placeholder="Product/Presentation..."/>
                                         <field name="active_component_name" placeholder="Active Component..."/>
                                         <field name="concentration" placeholder="Concentration..."/>
-                                        <field name="presentation" placeholder="Presentation..."/>
                                         <field name="pres_quantity" placeholder="Presentation Quantity..."/>
                                         <field name="pres_form" placeholder="Presentation Form..."/>
                                         <field name="therap_class" placeholder="Therapeutic Class..."/>
                                         <field name="manufacturer_name" placeholder="Medicament Manufacturer..."/>
-                                        <field name="medicament" placeholder="Medicament..."/>
+                                        <!--field name="medicament" placeholder="Medicament..."/-->
                                         <!--field name="therapeutic_class" placeholder="Therapeutic Class..."/-->
                                         <!--field name="manufacturer" placeholder="Medicament Manufacturer..."/-->
                                         <field name="composition" placeholder="Components..."/>
+                                        <field name="ean13" placeholder="EAN13 Barcode..."/>
                                         <field name="date_inclusion" placeholder="Inclusion Date..."/>
                                     </group>
                                 </group>
@@ -85,9 +90,10 @@
                 <search string="Medicament (Management)">
                     <field name="product_name"/>
                     <field name="name"/>
+                    <field name="active_component_name"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                        <filter string="Active Component Name" domain="[]" context="{'group_by': 'active_component_name'}"/>
                     </group>
                 </search>
             </field>
