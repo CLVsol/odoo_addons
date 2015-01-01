@@ -2,14 +2,15 @@
 <openerp>
     <data>
 
-        <record id="view_oehealth_medicament_mng_form" model="ir.ui.view">
-            <field name="name">oehealth.medicament_mng.form</field>
-            <field name="model">oehealth.medicament_mng</field>
-            <field name="inherit_id" ref="oehealth_medicament_mng.view_oehealth_medicament_mng_form"/>
+        <record id="view_clv_medicament_mng_form" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.form</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="clv_medicament_mng.view_clv_medicament_mng_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <field name="medicament" position="after">
-                    <field name="abcfarma_id"/>
+                <field name="ean13" position="after">
+                    <field name="med_abc" placeholder="ABCFarma Code..."/>
+                    <field name="abcfarma_id" placeholder="ABCFarma Medicament..."/>
                 </field>
             </field>
         </record>
