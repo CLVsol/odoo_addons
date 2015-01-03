@@ -93,7 +93,7 @@
                     <menuitem name="Communities" id="menu_commutity_community_community_communities"
                         parent="menu_commutity_community_community"
                         groups="clv_base.group_community_user"
-                        sequence="30"
+                        sequence="10"
                         action="clv_community.act_open_clv_community_view"/>
                     <!-- Community/Community/Community/Families -->
                     <menuitem name="Families" id="menu_commutity_community_community_families"
