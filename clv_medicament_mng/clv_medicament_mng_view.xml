@@ -10,7 +10,11 @@
                 <tree string="Medicament (Management)">
                     <field name="product_name"/>
                     <field name="name"/>
+                    <field name="presentation"/>
                     <field name="active_component_name"/>
+                    <field name="concentration"/>
+                    <field name="pres_form"/>
+                    <field name="pres_quantity"/>
                     <!--field name="code" /-->
                 </tree>
             </field>
@@ -94,6 +98,8 @@
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Active Component Name" domain="[]" context="{'group_by': 'active_component_name'}"/>
+                        <filter string="Concentration" domain="[]" context="{'group_by': 'concentration'}"/>
+                        <filter string="Presentaion Form" domain="[]" context="{'group_by': 'pres_form'}"/>
                     </group>
                 </search>
             </field>
