@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="view_clv_medicament_mng_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="name" position="after">
+                <field name="pres_quantity" position="after">
                     <field name="state"/>
                 </field>
             </field>

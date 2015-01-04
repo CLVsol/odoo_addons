@@ -8,11 +8,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament (Management)">
-                    <field name="product_name"/>
-                    <field name="name"/>
-                    <field name="presentation"/>
+                    <!--field name="product_name"/-->
                     <field name="active_component_name"/>
                     <field name="concentration"/>
+                    <field name="name"/>
+                    <field name="presentation"/>
                     <field name="pres_form"/>
                     <field name="pres_quantity"/>
                     <!--field name="code" /-->
@@ -94,6 +94,7 @@
                 <search string="Medicament (Management)">
                     <field name="product_name"/>
                     <field name="name"/>
+                    <field name="presentation"/>
                     <field name="active_component_name"/>
                     <separator/>
                     <group expand="0" string="Group By...">
