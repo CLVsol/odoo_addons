@@ -24,3 +24,4 @@ import wizard
 import report
 import clv_survey2
 import clv_patient
+import clv_family
