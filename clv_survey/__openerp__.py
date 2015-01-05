@@ -37,6 +37,7 @@ user name and password for the invitation of the survey.
     'depends': [
     	'mail',
         'clv_patient',
+        'clv_family',
     	],
     'data': [
         'clv_survey_report.xml',
@@ -54,7 +55,8 @@ user name and password for the invitation of the survey.
         'clv_survey_response_view.xml',
 	    'clv_survey_view2.xml',
 	    'clv_survey_request_view.xml',
-	    'clv_patient_view.xml',
+        'clv_patient_view.xml',
+        'clv_family_view.xml',
         ],
     'demo': [
         'clv_survey_demo.xml'
