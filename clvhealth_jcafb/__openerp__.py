@@ -31,6 +31,7 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_document',
         #'clv_partner',
         'clv_person',
         'clv_person_mng',
