@@ -92,7 +92,7 @@
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Public Information">
+                            <page string="Medicament Information">
                                 <group>
 <!--                                     <group string="Contact Information">
                                         <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
