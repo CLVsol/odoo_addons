@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_group_member_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.group.member.tree</field>
+            <field name="model">clv_medicament.group.member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament Group Member">
+                    <field name="group_id" />
+                    <field name="medicament_id" />
+                    <field name="level" />
+                    <field name="order" />
+                    <field name="notes" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_group_member_form" model="ir.ui.view">
+            <field name="name">clv_medicament.group.member.form</field>
+            <field name="model">clv_medicament.group.member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Medicament Group Members" version="7.0">
+                    <sheet string="Medicament Group Member">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="group_id" class="oe_edit_only"/-->
+                            <label for="group_id"/>
+                            <h2>
+                                <field name="group_id" placeholder="Group Name..."/>
+                            </h2>
+                            <!--label for="medicament_id" class="oe_edit_only"/-->
+                            <label for="medicament_id"/>
+                            <h2>
+                                <field name="medicament_id" placeholder="Medicament Name..."/>
+                            </h2>
+                            <!--label for="level" class="oe_edit_only"/-->
+                            <label for="level"/>
+                            <h3>
+                                <field name="level" placeholder="Level..."/>
+                            </h3>
+                            <label for="order"/>
+                            <h3>
+                                <field name="order" placeholder="Order..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="Public Information">
+                                <group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <!--page string="Members">
+                                <field name="member_ids" colspan="4" nolabel="1" />
+                            </page-->
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_group_member_search" model="ir.ui.view">
+            <field name="name">clv_medicament.group.member.search</field>
+            <field name="model">clv_medicament.group.member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Medicament Group Member">
+                    <field name="group_id" />
+                    <field name="medicament_id" />
+                    <field name="level" />
+                    <field name="order" />
+                    <field name="notes" />
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Medicament Group Member" domain="[]" context="{'group_by': 'group_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_group_member_view">
+            <field name="name">Medicament Group Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_medicament.group.member</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_medicament_group_member_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new Medicament Group Member.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_group_member_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_group_member_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_medicament_group_member_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_group_member_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_group_member_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_medicament_group_member_tree"/>
+        </record>
+        
+    </data>
+</openerp>
