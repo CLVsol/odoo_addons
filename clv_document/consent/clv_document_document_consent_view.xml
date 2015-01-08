@@ -28,15 +28,15 @@
                             <field name="document_consent_id"/>
                             <field name="answer" default_focus="1"/>
                         </group>
-                        <!--label for="notes" class="oe_edit_only"/-->
-                        <!--field name="notes" placeholder="Notes..."/-->
-                        <!--notebook>
+                        <label for="notes" class="oe_edit_only"/>
+                        <field name="notes" placeholder="Notes..."/>
+                        <notebook>
                             <page string="Settings" groups="clv_base.group_base_manager">
                                 <group>
                                     <field name="active"/>
                                 </group>
                             </page>
-                        </notebook-->
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -103,19 +103,19 @@
             </field>
         </record>
 
-        <!--record id="view_clv_document_consent_form_document_document_consent" model="ir.ui.view">
-            <field name="name">clv_document_consent.form</field>
-            <field name="model">clv_document_consent</field>
-            <field name="inherit_id" ref="clv_document_consent.view_clv_document_consent_form"/>
+        <record id="view_clv_document_consent_form_document_document_consent" model="ir.ui.view">
+            <field name="name">clv_document.consent.form</field>
+            <field name="model">clv_document.consent</field>
+            <field name="inherit_id" ref="view_clv_document_consent_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
-                    <page string="Document Roles">
+                    <page string="Documents">
                         <field name="document_ids" colspan="4" nolabel="1"/>
                     </page>
                 </page>
             </field>
-        </record-->
+        </record>
 
     </data>
 </openerp>
