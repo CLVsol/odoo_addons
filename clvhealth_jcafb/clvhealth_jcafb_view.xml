@@ -17,12 +17,17 @@
                     groups="clv_base.group_annotation_user"
                     sequence="10"
                     action="clv_annotation.act_open_clv_annotation_view"/>
-                <!-- Base/Base/Documents -->
-                <menuitem name="Documents" id="menu_base_base_documents"
+                <!-- Base/Base/Document -->
+                <menuitem name="Document" id="menu_base_base_document"
                     parent="menu_base_base"
                     groups="clv_base.group_document_user"
-                    sequence="20"
-                    action="clv_document.act_open_clv_document_view"/>
+                    sequence="20"/>
+                    <!-- Base/Base/Documents -->
+                    <menuitem name="Documents" id="menu_base_base_document_documents"
+                        parent="menu_base_base_document"
+                        groups="clv_base.group_document_user"
+                        sequence="20"
+                        action="clv_document.act_open_clv_document_view"/>
                 <!-- Base/Base/Partners -->
 <!--                 <menuitem name="Partners" id="menu_base_base__partners"
                     parent="menu_base_base"
@@ -46,12 +51,22 @@
                     groups="clv_base.group_annotation_user"
                     sequence="20"
                     action="clv_annotation.act_open_clv_annotation_category_view"/>
-                <!-- Base/Configuration/Document Categories -->
-                <menuitem name="Document Categories" id="menu_base_config_document_categories" 
+                <!-- Base/Configuration/Document -->
+                <menuitem name="Document" id="menu_base_config_document"
                     parent="menu_base_config"
                     groups="clv_base.group_document_user"
-                    sequence="30"
-                    action="clv_document.act_open_clv_document_category_view"/>
+                    sequence="30"/>
+                    <!-- Base/Configuration/Document/Categories -->
+                    <menuitem name="Categories" id="menu_base_config_document_categories" 
+                        parent="menu_base_config_document"
+                        groups="clv_base.group_document_user"
+                        sequence="10"
+                        action="clv_document.act_open_clv_document_category_view"/>
+                    <menuitem name="Consents" id="menu_base_config_document_consents" 
+                        parent="menu_base_config_document"
+                        groups="clv_base.group_document_user"
+                        sequence="20"
+                        action="clv_document.act_open_clv_document_consent_view"/>
 
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
