@@ -17,45 +17,30 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Document',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Document
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        ],
-    'data': [
-        'security/clv_document_security.xml',
-        'security/ir.model.access.csv',
-        'clv_document_view.xml',
-        'category/clv_document_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'wkf/clv_document_workflow.xml',
-        'wkf/clv_document_wkf_view.xml',
-        'history/clv_document_history_view.xml',
-        'consent/clv_document_consent_view.xml',
-        'consent/clv_document_document_consent_view.xml',
-        'consent/clv_document_consent_answer_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+from datetime import datetime
+
+class clv_medicament_group_member(osv.Model):
+    _name = 'clv_medicament.group.member'
+
+    _columns = {
+        'group_id': fields.many2one('clv_medicament.group', string='Medicament Group',
+                                    help='Medicament Group', required=True),
+        'medicament_id': fields.many2one('clv_medicament', string='Medicament',
+                                         help='Medicament Name', required=True),
+        'notes':  fields.text(string='Notes'),
+        'level': fields.integer(string='Level'),
+        'order': fields.integer(string='Order'),
+        'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
+        'active': fields.boolean('Active', 
+                                 help="The active field allows you to hide the group member without removing it."),
+    }
+    
+    _order='level'
+    
+    _defaults = {
+        'level': 9,
+        'order': 90,
+        'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': True,
+        }

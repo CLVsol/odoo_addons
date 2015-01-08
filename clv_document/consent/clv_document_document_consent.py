@@ -17,45 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Document',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Document
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        ],
-    'data': [
-        'security/clv_document_security.xml',
-        'security/ir.model.access.csv',
-        'clv_document_view.xml',
-        'category/clv_document_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'wkf/clv_document_workflow.xml',
-        'wkf/clv_document_wkf_view.xml',
-        'history/clv_document_history_view.xml',
-        'consent/clv_document_consent_view.xml',
-        'consent/clv_document_document_consent_view.xml',
-        'consent/clv_document_consent_answer_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+
+class clv_document_document_consent(osv.osv):
+    _name = 'clv_document.document_consent'
+
+    _columns = {
+        'document_id': fields.many2one('clv_document', string='Document',
+                                        help='Document', required=False),
+        'document_consent_id': fields.many2one('clv_document.consent', string='Document Consent'),
+        'answer': fields.many2one('clv_document.consent_answer', 'Answer', required=False),
+        # 'notes': fields.text(string='Notes'),
+        # 'active': fields.boolean('Active', 
+        #                          help="If unchecked, it will allow you to hide the document_consent without removing it."),
+        }
+
+    _defaults = {
+        # 'active': 1,
+        }
+    
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
+
+    _columns = {
+        'document_consent_ids': fields.one2many('clv_document.document_consent',
+                                                'document_id',
+                                                'Document Consents'),
+    }
+
+class clv_document_consent(osv.osv):
+    _inherit = 'clv_document.consent'
+
+    _columns = {
+        'document_ids': fields.one2many('clv_document.document_consent',
+                                        'document_consent_id',
+                                        'Documents'),
+        }
+
