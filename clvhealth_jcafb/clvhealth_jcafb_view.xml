@@ -346,30 +346,48 @@
             <menuitem name="Medicament" id="menu_pharmacy_medicament"  
                 parent="menu_pharmacy"
                 groups="clv_base.group_base_user"
-                sequence="20"/>
+                sequence="10"/>
                 <!-- Pharmacy/Medicament/Medicaments -->
                 <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
                     parent="menu_pharmacy_medicament"
-                    groups="clv_base.group_patient_user"
+                    groups="clv_base.group_medicament_user"
                     sequence="10"
                     action="clv_medicament.act_open_clv_medicament_view"/>
+                <!-- Pharmacy/Medicament/Catalogs -->
+                <menuitem name="Catalogs" id="menu_pharmacy_medicament_catalogs"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_catalog_user"
+                    sequence="20"
+                    action="clv_medicament_catalog.act_open_clv_medicament_catalog_view"/>
+                <!-- Pharmacy/Medicament/Group -->
+                <menuitem name="Group" id="menu_pharmacy_medicament_group"  
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_group_user"
+                    sequence="30"/>
+                    <!-- Pharmacy/Medicament/Group/Groups -->
+                    <menuitem name="Groups" id="menu_pharmacy_medicament_group_groups"
+                        parent="menu_pharmacy_medicament_group"
+                        groups="clv_base.group_medicament_group_user"
+                        sequence="10"
+                        action="clv_medicament_group.act_open_clv_medicament_group_view"/>
+                    <!-- Pharmacy/Medicament/Group/Members -->
+                    <menuitem name="Members" id="menu_pharmacy_medicament_group_members"
+                        parent="menu_pharmacy_medicament_group"
+                        groups="clv_base.group_medicament_group_user"
+                        sequence="20"
+                        action="clv_medicament_group_member.act_open_clv_medicament_group_member_view"/>
+                <!-- Pharmacy/Medicament/ABCFarma -->
+                <menuitem name="ABCFarma" id="menu_pharmacy_medicament_abcfarma"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_user"
+                    sequence="40"
+                    action="l10n_br_clv_abcfarma.act_open_clv_abcfarma_view" />
                 <!-- Pharmacy/Medicament/Medicaments (Management) -->
                 <menuitem name="Medicaments (Management)" id="menu_pharmacy_medicament_medicaments_mng"
                     parent="menu_pharmacy_medicament"
                     groups="clv_base.group_medicament_mng_user"
-                    sequence="20"
+                    sequence="90"
                     action="clv_medicament_mng.act_open_clv_medicament_mng_view"/>
-            <!-- Pharmacy/ABCFarma -->
-            <menuitem name="ABCFarma" id="menu_pharmacy_abcfarma"  
-                parent="menu_pharmacy"
-                groups="clv_base.group_base_user"
-                sequence="30"/>
-                <!-- Pharmacy/ABCFarma/Medicaments -->
-                <menuitem name="Medicaments" id="menu_pharmacy_abcfarma_medicaments"
-                    parent="menu_pharmacy_abcfarma"
-                    groups="clv_base.group_base_user"
-                    sequence="10"
-                    action="l10n_br_clv_abcfarma.act_open_clv_abcfarma_view" />
             <!-- Pharmacy/Configuration -->
             <menuitem name="Configuration" id="menu_pharmacy_config"  
                 parent="menu_pharmacy"
