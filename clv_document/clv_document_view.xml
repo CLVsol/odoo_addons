@@ -48,10 +48,13 @@
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Public Information">
+                            <page string="Document Information">
                                 <group>
-                                    <group string="Status">
+                                    <group string="Consents">
+                                    </group>
+                                    <group string="Signatures">
                                         <field name="date"/>
+                                        <field name="responsible"/>
                                     </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>

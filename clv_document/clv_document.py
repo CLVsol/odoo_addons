@@ -19,26 +19,27 @@
 
 from openerp.osv import fields, osv
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 class clv_document(osv.osv):
     _name = 'clv_document'
 
     _columns = {
         'name': fields.char('Name', required=True, size=64),
-        'alias': fields.char('Alias', size=64, help='Common name that the Person is referred'),
-        'code': fields.char(size=64, string='Person Code', required=False),
-        'notes':  fields.text(string='Notes'),
-        'date': fields.datetime("Date", required=True, readonly=True),
+        'alias': fields.char('Alias', size=64, help='Common name that the Document is referred'),
+        'code': fields.char(size=64, string='Document Code', required=False),
+        'notes': fields.text(string='Notes'),
+        'date': fields.datetime("Date", required=True, readonly=False),
         'active': fields.boolean('Active', 
                                  help="If unchecked, it will allow you to hide the document without removing it."),
+        'responsible': fields.many2one('res.users', 'Responsible', required=True, readonly=False),
         }
 
     _defaults = {
         'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'active': 1,
+        'responsible': lambda obj,cr,uid,context: uid,
         }
     
-    _sql_constraints = [('document_code_uniq', 'unique(code)', u'Error! The Person Code must be unique!')]
+    _sql_constraints = [('document_code_uniq', 'unique(code)', u'Error! The Document Code must be unique!')]
 
     _order='name'
