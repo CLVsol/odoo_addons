@@ -27,13 +27,13 @@ class clv_document_document_consent(osv.osv):
                                         help='Document', required=False),
         'document_consent_id': fields.many2one('clv_document.consent', string='Document Consent'),
         'answer': fields.many2one('clv_document.consent_answer', 'Answer', required=False),
-        # 'notes': fields.text(string='Notes'),
-        # 'active': fields.boolean('Active', 
-        #                          help="If unchecked, it will allow you to hide the document_consent without removing it."),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document_consent without removing it."),
         }
 
     _defaults = {
-        # 'active': 1,
+        'active': 1,
         }
     
 class clv_document(osv.osv):
