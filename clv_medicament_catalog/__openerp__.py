@@ -18,15 +18,15 @@
 ################################################################################
 
 {
-    'name': 'Document',
+    'name': 'Medicament Catalog',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Document
-========
+Medicament Catalog
+==================
     ''',
     'images': [],
     'depends': [
@@ -35,20 +35,17 @@ Document
         'clv_annotation',
         ],
     'data': [
-        'security/clv_document_security.xml',
-        'security/ir.model.access.csv',
-        'clv_document_view.xml',
-        'category/clv_document_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'wkf/clv_document_workflow.xml',
-        'wkf/clv_document_wkf_view.xml',
-        'history/clv_document_history_view.xml',
-        'consent/clv_document_consent_view.xml',
-        'consent/clv_document_document_consent_view.xml',
-        'consent/clv_document_consent_answer_view.xml',
+        'security/clv_medicament_catalog_security.xml',
+        # 'security/ir.model.access.csv',
+        'clv_medicament_catalog_view.xml',
+        # 'category/clv_medicament_catalog_category_view.xml',
+        # 'clv_tag/clv_tag_view.xml',
+        # 'clv_annotation/clv_annotation_view.xml',
+        # 'seq/clv_medicament_catalog_sequence.xml',
+        # 'seq/clv_medicament_catalog_category_sequence.xml',
+        # 'wkf/clv_medicament_catalog_workflow.xml',
+        # 'wkf/clv_medicament_catalog_wkf_view.xml',
+        # 'history/clv_medicament_catalog_history_view.xml',
         ],
     'demo': [],
     'test': [],

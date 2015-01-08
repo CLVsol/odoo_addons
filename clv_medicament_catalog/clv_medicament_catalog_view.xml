@@ -2,12 +2,12 @@
 <openerp>
     <data>
 
-        <record id="view_clv_document_tree" model="ir.ui.view">
-            <field name="name">clv_document.tree</field>
-            <field name="model">clv_document</field>
+        <record id="view_clv_medicament_catalog_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.catalog.tree</field>
+            <field name="model">clv_medicament.catalog</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Document">
+                <tree string="Medicament Catalog">
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
@@ -16,13 +16,13 @@
             </field>
         </record>
         
-        <record id="view_clv_document_form" model="ir.ui.view">
-            <field name="name">clv_document.form</field>
-            <field name="model">clv_document</field>
+        <record id="view_clv_medicament_catalog_form" model="ir.ui.view">
+            <field name="name">clv_medicament.catalog.form</field>
+            <field name="model">clv_medicament.catalog</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Documents" version="7.0">
-                    <sheet string="Document">
+                <form string="Medicament Catalogs" version="7.0">
+                    <sheet string="Medicament Catalog">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
                             <!--label for="name" class="oe_edit_only"/-->
@@ -41,20 +41,17 @@
                             <!--label for="code" class="oe_edit_only"/-->
                             <label for="code"/>
                             <h3>
-                                <field name="code" placeholder="Document Code..."/>
+                                <field name="code" placeholder="Medicament Catalog Code..."/>
                             </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Document Information">
+                            <page string="Catalog Information">
                                 <group>
-                                    <group string="Consents">
-                                    </group>
-                                    <group string="Signatures">
-                                        <field name="date"/>
-                                        <field name="responsible"/>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
                                     </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
@@ -70,52 +67,52 @@
             </field>
         </record>
         
-        <record id="view_clv_document_search" model="ir.ui.view">
-            <field name="name">clv_document.search</field>
-            <field name="model">clv_document</field>
+        <record id="view_clv_medicament_catalog_search" model="ir.ui.view">
+            <field name="name">clv_medicament.catalog.search</field>
+            <field name="model">clv_medicament.catalog</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Document">
+                <search string="Medicament Catalog">
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Date" domain="[]" context="{'group_by':'date'}"/>
+                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
                     </group>
                 </search>
             </field>
         </record>
         
-        <record model="ir.actions.act_window" id="act_open_clv_document_view">
-            <field name="name">Documents</field>
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_catalog_view">
+            <field name="name">Medicament Catalogs</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_document</field>
+            <field name="res_model">clv_medicament.catalog</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_document_search"/>
+            <field name="search_view_id" ref="view_clv_medicament_catalog_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new document.
+                Click to add a new Medicament Catalog.
               </p>
             </field>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_document_view_form">
-            <field name="act_window_id" ref="act_open_clv_document_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_catalog_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_catalog_view"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_document_form"/>
+            <field name="view_id" ref="view_clv_medicament_catalog_form"/>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_document_view_tree">
-            <field name="act_window_id" ref="act_open_clv_document_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_catalog_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_catalog_view"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_document_tree"/>
+            <field name="view_id" ref="view_clv_medicament_catalog_tree"/>
         </record>
         
     </data>

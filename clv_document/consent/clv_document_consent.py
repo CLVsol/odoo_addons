@@ -17,45 +17,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Document',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Document
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        ],
-    'data': [
-        'security/clv_document_security.xml',
-        'security/ir.model.access.csv',
-        'clv_document_view.xml',
-        'category/clv_document_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'wkf/clv_document_workflow.xml',
-        'wkf/clv_document_wkf_view.xml',
-        'history/clv_document_history_view.xml',
-        'consent/clv_document_consent_view.xml',
-        'consent/clv_document_document_consent_view.xml',
-        'consent/clv_document_consent_answer_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+
+class clv_document(osv.osv):
+    _name = 'clv_document.consent'
+
+    _columns = {
+        'name': fields.char('Name', required=True, size=64),
+        'alias': fields.char('Alias', size=64, help='Common name that the Document Consent is referred'),
+        'code': fields.char(size=64, string='Document Consent Code', required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes':  fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+    _sql_constraints = [('document_consent_code_uniq', 'unique(code)', u'Error! The Document Consent Code must be unique!')]
+
+    _order='name'

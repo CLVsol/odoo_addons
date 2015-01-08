@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="clv_base.group_medicament_group_user" model="res.groups">
+            <field name="name">Medicament Group User</field>
+        </record>
+        
+        <record id="clv_base.group_medicament_group_manager" model="res.groups">
+            <field name="name">Medicament Group Manager</field>
+            <field name="implied_ids" eval="[(4, ref('clv_base.group_medicament_group_user'))]"/>
+        </record>
+        
+    </data>
+</openerp>
