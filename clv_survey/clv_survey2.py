@@ -42,6 +42,7 @@ class clv_survey_request(osv.osv):
 
     _columns = {
         'patient_id': fields.many2one("clv_patient", "Patient"),
+        'family_id': fields.many2one("clv_family", "Family"),
     }
 
 class clv_survey_response(osv.osv):
@@ -49,16 +50,20 @@ class clv_survey_response(osv.osv):
     _name = "clv_survey.response"
     _columns = {
         'patient_id' : fields.many2one('clv_patient', 'Patient'),
+        'family_id': fields.many2one("clv_family", "Family"),
     }
 
     def name_get(self, cr, uid, ids, context=None):
         if not len(ids):
             return []
-        reads = self.read(cr, uid, ids, ['user_id','date_create','patient_id'], context=context)
+        # reads = self.read(cr, uid, ids, ['user_id','date_create','patient_id'], context=context)
+        reads = self.read(cr, uid, ids, ['user_id','date_create','family_id','patient_id'], context=context)
         res = []
         for record in reads:
             #name = (record['user_id'] and record['user_id'][1] or '' )+ ' (' + record['date_create'].split('.')[0] + ')'
-            name = (record['patient_id'] and record['patient_id'][1] or '' ) + ' - ' + (record['user_id'] and record['user_id'][1] or '' ) + ' (' + record['date_create'].split('.')[0] + ')'
+            # name = (record['patient_id'] and record['patient_id'][1] or '' ) + ' - ' + (record['user_id'] and record['user_id'][1] or '' ) + ' (' + record['date_create'].split('.')[0] + ')'
+            # name = (record['family_id'] and record['family_id'][1] or '' ) + ' - ' + (record['user_id'] and record['user_id'][1] or '' ) + ' (' + record['date_create'].split('.')[0] + ')'
+            name = (record['family_id'] and record['family_id'][1] or '' ) + ' - ' + (record['patient_id'] and record['patient_id'][1] or '' ) + ' - ' + (record['user_id'] and record['user_id'][1] or '' ) + ' (' + record['date_create'].split('.')[0] + ')'
             res.append((record['id'], name))
         return res
 

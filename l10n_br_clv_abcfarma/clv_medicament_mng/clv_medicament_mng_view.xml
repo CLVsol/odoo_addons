@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_mng_form" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.form</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="clv_medicament_mng.view_clv_medicament_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="ean13" position="after">
+                    <field name="med_abc" placeholder="ABCFarma Code..."/>
+                    <field name="abcfarma_id" placeholder="ABCFarma Medicament..."/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

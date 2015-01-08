@@ -10,6 +10,7 @@
             <field name="inherit_id" ref="clv_survey_response_form"/>
             <field name="arch" type="xml">
                 <field name="user_id" position="replace">
+                     <field name="family_id"/>
                      <field name="patient_id"/>
                      <field name="user_id"/>
                 </field>
@@ -25,6 +26,7 @@
             <field name="inherit_id" ref="clv_survey_response_tree"/>
             <field name="arch" type="xml">
                 <field name="user_id" position="replace">
+                     <field name="family_id"/>
                      <field name="patient_id"/>
                      <field name="user_id"/>
                 </field>

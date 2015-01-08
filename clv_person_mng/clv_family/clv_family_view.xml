@@ -9,6 +9,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="name" position="after">
+                    <field name="family_name"/>
                     <field name="family_code"/>
                 </field>
             </field>
@@ -60,6 +61,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="alias" position="after">
+                    <field name="family_name"/>
                     <field name="family_code"/>
                 </field>
             </field>

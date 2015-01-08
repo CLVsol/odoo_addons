@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_abcfarma_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_abcfarma.tree</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="from" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_form_wkf" model="ir.ui.view">
+            <field name="name">clv_abcfarma.form</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="ABCFARMA Medicament" position="before">
+                    <header>
+                        <button string="Done" name="button_done" states="new,revised,waiting" type="workflow" groups="clv_base.group_medicament_manager" class="oe_highlight"/>
+                        <button string="Revised" name="button_revised" states="new,done,waiting" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Waiting" name="button_waiting" states="new,done,revised" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,done,revised,waiting"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_search_wkf" model="ir.ui.view">
+            <field name="name">clv_abcfarma.search</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="from" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

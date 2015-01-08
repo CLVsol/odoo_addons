@@ -78,11 +78,14 @@ class clv_community(osv.osv):
             context = {}
         if (not 'state' in vals) and (not 'date' in vals) and (not 'history_ids' in vals):
             notes = vals.keys()
-            for community in self.browse(cr, uid, ids):
-                if 'active_history' in vals:
-                    self.insert_clv_community_history(cr, uid, True, community.id, community.state, notes)
-                else:
-                    self.insert_clv_community_history(cr, uid, community.active_history, community.id, community.state, notes)
+            try:
+                for community in self.browse(cr, uid, ids):
+                    if 'active_history' in vals:
+                        self.insert_clv_community_history(cr, uid, True, community.id, community.state, notes)
+                    else:
+                        self.insert_clv_community_history(cr, uid, community.active_history, community.id, community.state, notes)
+            except:
+                pass
         return super(clv_community, self).write(cr, uid, ids, vals, context)
 
     def button_new(self, cr, uid, ids):

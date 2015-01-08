@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_abcfarma_form_annotation" model="ir.ui.view">
+            <field name="name">clv_abcfarma.form</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Annotations" groups="clv_base.group_annotation_user">
+                        <group>
+                            <field name="annotation_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_annotation_form" model="ir.ui.view">
+            <field name="name">clv_annotation.form</field>
+            <field name="model">clv_annotation</field>
+            <field name="inherit_id" ref="clv_annotation.view_clv_annotation_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Annotation for" position="inside">
+                    <group string="ABCFarma Medicaments" groups="clv_base.group_medicament_user">
+                        <field name="medicament_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

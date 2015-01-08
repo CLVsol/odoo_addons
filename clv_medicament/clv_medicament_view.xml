@@ -34,7 +34,7 @@
                     <sheet string="Medicament">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
-                            <!--label for="name" class="oe_edit_only"/-->
+                            <!--label for="product_id" class="oe_edit_only"/-->
                             <label for="product_id"/>
                             <h1>
                                 <field name="product_id" default_focus="1" placeholder="Product Name..."/>
@@ -92,7 +92,7 @@
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
-                            <page string="Public Information">
+                            <page string="Medicament Information">
                                 <group>
 <!--                                     <group string="Contact Information">
                                         <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
