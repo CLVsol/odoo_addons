@@ -23,5 +23,5 @@ class clv_medicament(orm.Model):
     _inherit = 'clv_medicament'
 
     _columns = {
-        'abcfarma_id': fields.many2one('clv_abcfarma', string='ABCFARMA Medicament'),
+        'abcfarma_id': fields.many2one('clv_abcfarma', string='ABCFarma'),
     }
