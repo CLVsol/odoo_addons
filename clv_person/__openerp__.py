@@ -33,6 +33,7 @@ Person
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_document',
         ],
     'data': [
         'security/clv_person_security.xml',
@@ -46,6 +47,7 @@ Person
         'wkf/clv_person_workflow.xml',
         'wkf/clv_person_wkf_view.xml',
         'history/clv_person_history_view.xml',
+        'clv_document/clv_document_view.xml'
         ],
     'demo': [],
     'test': [],

@@ -33,6 +33,7 @@ Patient
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_document',
         'clv_person',
         ],
     'data': [
@@ -48,6 +49,7 @@ Patient
         'wkf/clv_patient_workflow.xml',
         'wkf/clv_patient_wkf_view.xml',
         'history/clv_patient_history_view.xml',
+        'clv_document/clv_document_view.xml'
         ],
     'demo': [],
     'test': [],
