@@ -18,28 +18,19 @@
 ################################################################################
 
 from openerp.osv import fields, osv
-from datetime import datetime
 
-class clv_document(osv.osv):
-    _name = 'clv_document'
+class clv_person(osv.osv):
+    _inherit = 'clv_person'
 
     _columns = {
-        'name': fields.char('Name', required=True, size=64),
-        'alias': fields.char('Alias', size=64, help='Common name that the Document is referred'),
-        'code': fields.char(size=64, string='Document Code', required=False),
-        'notes': fields.text(string='Notes'),
-        'date': fields.datetime("Date", required=False, readonly=False),
-        'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the document without removing it."),
-        'responsible': fields.many2one('res.users', 'Responsible', required=False, readonly=False),
+        'document_ids': fields.one2many('clv_document',
+                                        'person_id',
+                                        'Documents'),
         }
 
-    _defaults = {
-        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'active': 1,
-        # 'responsible': lambda obj,cr,uid,context: uid,
-        }
-    
-    _sql_constraints = [('document_code_uniq', 'unique(code)', u'Error! The Document Code must be unique!')]
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
 
-    _order='name'
+    _columns = {
+        'person_id': fields.many2one('clv_person', string='Person', required=False),
+    }
