@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_person_form_document" model="ir.ui.view">
+            <field name="name">clv_person.form</field>
+            <field name="model">clv_person</field>
+            <field name="inherit_id" ref="clv_person.view_clv_person_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Documents" groups="clv_base.group_document_user">
+                        <group>
+                            <field name="document_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_document_form_person" model="ir.ui.view">
+            <field name="name">clv_document.form</field>
+            <field name="model">clv_document</field>
+            <field name="inherit_id" ref="clv_document.view_clv_document_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="date" position="before">
+                    <field name="person_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
