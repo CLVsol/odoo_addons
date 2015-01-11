@@ -34,6 +34,7 @@ Community
         'clv_tag',
         'clv_annotation',
         'clv_person',
+        'clv_patient',
         'clv_family',
         ],
     'data': [
@@ -50,6 +51,7 @@ Community
         'history/clv_community_history_view.xml',
         'clv_person/clv_community_person_view.xml',
         'clv_person/clv_community_person_role_view.xml',
+        'clv_patient/clv_community_person_view.xml',
         'clv_family/clv_community_family_view.xml',
         'clv_family/clv_community_family_role_view.xml',
         ],
