@@ -12,16 +12,11 @@
                     <!--field name="medicament_name"/-->
                     <field name="code"/>
                     <field name="notes"/>
-
-<!--                     <field name="presentation"/>
+                    <field name="presentation"/>
                     <field name="therapeutic_class"/>
                     <field name="manufacturer"/>
                     <field name="ean13"/>
-                    <field name="state"/>
-                    <field name="medicament_category"/>
-                    <field name="medicament_tag_ids"/>
-                    <field name="medicament_status"/>
- -->                </tree>
+                </tree>
             </field>
         </record>
         
@@ -78,29 +73,23 @@
                                 <field name="presentation" placeholder="Presentation..."/>
                             </h3>
                             <!--label for="therapeutic_class" class="oe_edit_only"/-->
-<!--                             <label for="therapeutic_class"/>
+                            <label for="therapeutic_class"/>
                             <h3>
                                 <field name="therapeutic_class" placeholder="Therapeutic Class..."/>
                             </h3>
- -->                            <!--label for="manufacturer" class="oe_edit_only"/-->
-<!--                             <label for="manufacturer"/>
+                            <!--label for="manufacturer" class="oe_edit_only"/-->
+                            <label for="manufacturer"/>
                             <h3>
                                 <field name="manufacturer" placeholder="Manufacturer..."/>
                             </h3>
- -->                        </div>
+                        </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
                             <page string="Medicament Information">
                                 <group>
-<!--                                     <group string="Contact Information">
-                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
-                                        <field name="medicament_email" widget="email"/>
-                                        <field name="medicament_phone"/>
-                                        <field name="mobile_phone"/>
-                                    </group>
- -->                                    <group string="Status">
+                                    <group string="Status">
                                         <field name="date_inclusion"/>
                                     </group>
                                 </group>
@@ -127,22 +116,17 @@
                     <field name="name"/>
                     <field name="medicament_name"/>
                     <field name="code"/>
+                    <field name="active_component"/>
                     <field name="notes"/>
-
-<!--                     <field name="therapeutic_class"/>
                     <field name="manufacturer"/>
+                    <field name="therapeutic_class"/>
                     <field name="ean13"/>
-                    <field name="medicament_category"/>
-                    <field name="medicament_tag_ids"/>
- -->                    <separator/>
+                    <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
-
-<!--                         <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
-                        <filter string="Medicament Category" domain="[]" context="{'group_by':'medicament_category'}"/>
+                        <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
                         <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}"/>
                         <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}"/>
- -->                    </group>
+                    </group>
                 </search>
             </field>
         </record>

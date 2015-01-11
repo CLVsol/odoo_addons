@@ -20,10 +20,8 @@
 from osv import osv
 from osv import fields
 
-
 class clv_medicament_therapeutic_class(osv.osv):
     _name = 'clv_medicament.therapeutic_class'
-    _description = 'Medicament Therapeutic Class'
 
     _columns = {
         'name': fields.char(size=256, string='Therapeutic Class', required=True),
@@ -35,5 +33,3 @@ class clv_medicament_therapeutic_class(osv.osv):
         ('name_uniq', 'UNIQUE(name)', 'Therapeutic Class must be unique!'),
         ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]
-
-clv_medicament_therapeutic_class()

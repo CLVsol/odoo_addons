@@ -8,7 +8,6 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Medicament Templates">
-                    <!--field name="transcription_id" /-->
                     <field name="name" />
                     <field name="medicament" />
                     <field name="form" />
@@ -18,14 +17,9 @@
                     <field name="quantity" />
                     <field name="frequency" />
                     <field name="frequency_unit" />
-                    <!--field name="frequency_prn" /-->
                     <field name="duration" />
                     <field name="duration_period" />
                     <field name="admin_times" />
-                    <!--field name="indication" /-->
-                    <!--field name="common_dosage" /-->
-                    <!--field name="start_treatment" /-->
-                    <!--field name="end_treatment" /-->
                 </tree>
             </field>
         </record>
@@ -38,7 +32,6 @@
                 <form string="Medicament Template" version="7.0">
                     <sheet string="Medicament Template">
                         <group>
-                            <!--field name="transcription_id" /-->
                             <field name="name" />
                             <field name="medicament" default_focus="1"/>
                             <field name="form" />
@@ -48,24 +41,9 @@
                             <field name="quantity" />
                             <field name="frequency" />
                             <field name="frequency_unit" />
-                            <!--field name="frequency_prn" /-->
                             <field name="duration" />
                             <field name="duration_period" />
                             <field name="admin_times" />
-                            <!--field name="indication" /-->
-                            <!--field name="common_dosage" /-->
-                            <!--field name="start_treatment" /-->
-                            <!--field name="end_treatment" /-->
-                        </group>
-                        <group string="Information" groups="clv_base.group_clv_rmanager">
-                            <group string="Creation" >
-                                <field name="create_uid" string="User" />
-                                <field name="create_date" string="Date" />
-                            </group>
-                            <group string="Last Update" >
-                                <field name="write_uid" string="User" />
-                                <field name="write_date" string="Date"/>
-                            </group>
                         </group>
                     </sheet>
                 </form>
@@ -114,11 +92,5 @@
             <field name="view_id" ref="view_clv_medicament_template_tree" />
         </record>
         
-        <menuitem name="Medicament Templates" id="menu_health_medication_medicament_medicament_templates"  
-            parent="clv_base.menu_health_medication_medicament"
-            groups="clv_base.group_clv_medicament_user"
-            sequence="30" 
-            action="act_open_clv_medicament_template_view" />
-
     </data>
 </openerp>
