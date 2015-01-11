@@ -389,6 +389,12 @@
                         groups="clv_base.group_medicament_group_user"
                         sequence="20"
                         action="clv_medicament_group_member.act_open_clv_medicament_group_member_view"/>
+                <!-- Pharmacy/Medicament/Templates -->
+                <menuitem name="Templates" id="menu_pharmacy_medicament_templates"
+                    parent="menu_pharmacy_medicament"
+                    groups="clv_base.group_medicament_user"
+                    sequence="40"
+                    action="clv_medicament.act_open_clv_medicament_template_view"/>
                 <!-- Pharmacy/Medicament/ABCFarma -->
                 <menuitem name="ABCFarma" id="menu_pharmacy_medicament_abcfarma"
                     parent="menu_pharmacy_medicament"
@@ -423,6 +429,30 @@
                         groups="clv_base.group_base_manager"
                         sequence="20"
                         action="clv_medicament.act_open_clv_medicament_active_component_view"/>
+                    <!-- Pharmacy/Configuration/Medicament/Therapeutic Classes -->
+                    <menuitem name="Therapeutic Classes" id="menu_pharmacy_config_medicament_therapeutic_classes"
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="30"
+                        action="clv_medicament.act_open_clv_medicament_therapeutic_class_view" />
+                    <!-- Pharmacy/Configuration/Medicament/Manufacturers -->
+                    <menuitem name="Manufacturers" id="menu_pharmacy_config_medicament_manufacturers"
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="40"
+                        action="clv_medicament.act_open_clv_medicament_manufacturer_view" />
+                    <!-- Pharmacy/Configuration/Medicament/Form -->
+                    <menuitem name="Form" id="menu_pharmacy_config_medicament_forms"  
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="50" 
+                        action="clv_medicament.act_open_clv_medicament_form_view" />
+                    <!-- Pharmacy/Configuration/Medicament/Route -->
+                    <menuitem name="Route" id="menu_pharmacy_config_medicament_routes"  
+                        parent="menu_pharmacy_config_medicament"
+                        groups="clv_base.group_base_manager"
+                        sequence="60" 
+                        action="clv_medicament.act_open_clv_medicament_route_view" />
 
     </data>
 </openerp>
