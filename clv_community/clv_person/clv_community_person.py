@@ -52,5 +52,8 @@ class clv_person(osv.osv):
         'community_ids': fields.one2many('clv_community.person',
                                          'person_id',
                                          'Families'),
+        'community_ids2': fields.one2many('clv_community.person',
+                                          'person_id',
+                                          'Families'),
         }
 
