@@ -17,20 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from osv import osv
-from osv import fields
-
-
-class clv_drug_route(osv.Model):
-    _name = 'clv_drug.route'
-
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Unit', required=True,
-                            translate=True),
-    }
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
-    
-clv_drug_route()
+import clv_medicament_manufacturer

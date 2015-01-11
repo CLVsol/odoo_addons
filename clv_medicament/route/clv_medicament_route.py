@@ -17,17 +17,18 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import product_product
-import clv_medicament
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import active_component
-import manufacturer
-import therapeutic_class
-import form
-import route
-import template
+from osv import osv
+from osv import fields
+
+
+class clv_medicament_route(osv.Model):
+    _name = 'clv_medicament.route'
+
+    _columns = {
+        'code': fields.char(size=256, string='Code'),
+        'name': fields.char(size=256, string='Unit', required=True,
+                            translate=True),
+    }
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]

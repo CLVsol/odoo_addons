@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record id="view_clv_drug_form_tree" model="ir.ui.view">
-            <field name="name">clv_drug.form.tree</field>
-            <field name="model">clv_drug.form</field>
+        <record id="view_clv_medicament_form_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.form.tree</field>
+            <field name="model">clv_medicament.form</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Drug Form">
@@ -13,9 +13,9 @@
             </field>
         </record>
         
-        <record id="view_clv_drug_form_form" model="ir.ui.view">
-            <field name="name">clv_drug.form.form</field>
-            <field name="model">clv_drug.form</field>
+        <record id="view_clv_medicament_form_form" model="ir.ui.view">
+            <field name="name">clv_medicament.form.form</field>
+            <field name="model">clv_medicament.form</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="Drug Form" version="7.0">
@@ -29,9 +29,9 @@
             </field>
         </record>
         
-        <record id="view_clv_drug_form_search" model="ir.ui.view">
-            <field name="name">clv_drug.form.search</field>
-            <field name="model">clv_drug.form</field>
+        <record id="view_clv_medicament_form_search" model="ir.ui.view">
+            <field name="name">clv_medicament.form.search</field>
+            <field name="model">clv_medicament.form</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="OeHealth Drug Form">
@@ -46,36 +46,30 @@
             </field>
         </record>
         
-        <record model="ir.actions.act_window" id="act_open_clv_drug_form_view">
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_form_view">
             <field name="name">Drug Form</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_drug.form</field>
+            <field name="res_model">clv_medicament.form</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_drug_form_search" />
+            <field name="search_view_id" ref="view_clv_medicament_form_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_drug_form_view_form">
-            <field name="act_window_id" ref="act_open_clv_drug_form_view" />
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_form_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_form_view" />
             <field name="sequence" eval="20" />
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_drug_form_form" />
+            <field name="view_id" ref="view_clv_medicament_form_form" />
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_drug_form_view_tree">
-            <field name="act_window_id" ref="act_open_clv_drug_form_view" />
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_form_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_form_view" />
             <field name="sequence" eval="10" />
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_drug_form_tree" />
+            <field name="view_id" ref="view_clv_medicament_form_tree" />
         </record>
-        
-        <menuitem name="Drug Form" id="menu_health_medication_medication_drug_form"  
-            parent="clv_base.menu_health_medication_medication"
-            groups="clv_base.group_clv_medicament_user"
-            sequence="40" 
-            action="act_open_clv_drug_form_view" />
 
     </data>
 </openerp>
