@@ -20,17 +20,16 @@
 from osv import osv
 from osv import fields
 
-
-class clv_drug_form(osv.Model):
-    _name = 'clv_drug.form'
+class clv_medicament_manufacturer(osv.osv):
+    _name = 'clv_medicament.manufacturer'
 
     _columns = {
+        'name': fields.char(size=256, string='Manufacturer', required=True),
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Form', required=True,
-                            translate=True),
+        'info': fields.text(string='Info'),
+        'active': fields.boolean('Active', help="The active field allows you to hide the manufacturer without removing it."),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]
-
-clv_drug_form()
