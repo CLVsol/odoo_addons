@@ -23,6 +23,34 @@ from datetime import datetime
 class clv_family(osv.osv):
     _name = 'clv_family'
 
+    def name_get(self, cr, uid, ids, context={}):
+        if not len(ids):
+            return []
+        reads = self.read(cr, uid, ids, ['name_code'], context=context)
+        res = []
+        for record in reads:
+            name = record['name_code']
+            res.append((record['id'], name))
+        return res
+    
+    def name_code_get(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        reads = self.read(cr, uid, ids, ['name', 'code'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['code']:
+                name = name + ' [' + record['code'] + ']'
+            res.append((record['id'], name))
+        return res
+
+    def _name_code_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_code_get(cr, uid, ids, context=context)
+        return dict(res)
+
     _columns = {
         'name': fields.char('Name', required=True, size=64),
         'alias': fields.char('Alias', size=64, help='Common name that the Family is referred'),
@@ -35,6 +63,7 @@ class clv_family(osv.osv):
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'active': fields.boolean('Active', 
                                  help="If unchecked, it will allow you to hide the family without removing it."),
+        'name_code': fields.function(_name_code_get_fnc, type="char", string='Name (Code)'),
         }
 
     _defaults = {

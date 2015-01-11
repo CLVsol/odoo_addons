@@ -10,9 +10,20 @@
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
                     <page string="Family Roles">
-                        <field name="family_ids" colspan="4" nolabel="1"/>
+                        <field name="family_ids" colspan="4" nolabel="1" readonly="True"/>
                     </page>
                 </page>
+                <group string="Information " position="after">
+                    <!--field name="family_ids" colspan="4" nolabel="1" readonly="True"/-->
+                    <field name="family_ids2" colspan="4" nolabel="1" readonly="True">
+                        <tree>
+                            <field name="family_id" readonly="True"/>
+                            <!--field name="person_id"/-->
+                            <field name="role" readonly="True"/>
+                            <!--field name="notes"/-->
+                        </tree>
+                    </field>
+                </group>
             </field>
         </record>
 

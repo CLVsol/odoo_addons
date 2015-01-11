@@ -87,6 +87,22 @@
                                     <field name="active"/>
                                 </group>
                             </page>
+                            <page string="Summary">
+                                <!--group-->
+                                    <group string="Information ">
+                                        <field name="address_id" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}' readonly='True'/>
+                                        <!--field name="person_email" widget="email" readonly='True'/-->
+                                        <field name="person_phone" readonly='True'/>
+                                        <field name="mobile_phone" readonly='True'/>
+                                        <!--field name="code" readonly='True'/-->
+                                        <field name="gender" readonly="True"/>
+                                        <field name="marital" readonly="True"/>
+                                        <field name="birthday" readonly="True"/>
+                                        <field name="age" readonly="True"/>
+                                    </group>
+                                <!--/group-->
+                                <field name="notes" placeholder="Other Information ..." colspan="4" readonly='True'/>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
