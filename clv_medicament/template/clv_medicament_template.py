@@ -65,6 +65,8 @@ class clv_medicament_template(osv.Model):
         'admin_times': fields.char(size=256, string='Administration hours', 
                                    help='Suggested administration hours. For example, at 08:00, 13:00'\
                                         ' and 18:00 can be encoded like 08 13 18'),
+        'active': fields.boolean('Active', 
+                                 help="The active field allows you to hide the medicament template without removing it."),
         }
 
     _order='name'
@@ -72,6 +74,6 @@ class clv_medicament_template(osv.Model):
     _sql_constraints = [('medicamente_template_name_uniq', 'unique(name)', u'Duplicated Medicamente Template Name!')]
 
     _defaults = {
-        'name': '/',
+        'active': 1,
     }
     

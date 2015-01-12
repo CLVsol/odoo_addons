@@ -45,6 +45,13 @@
                             <field name="duration_period" />
                             <field name="admin_times" />
                         </group>
+                        <notebook>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
