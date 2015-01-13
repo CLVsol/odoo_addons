@@ -46,6 +46,7 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         'clv_medicament_group',
         'clv_medicament_group_member',
         'clv_medicament_mng',
+        'clv_medicament_dispensation',
         'l10n_br_clv_abcfarma',
         ],
     'data': [

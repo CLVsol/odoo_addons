@@ -407,6 +407,17 @@
                     groups="clv_base.group_medicament_mng_user"
                     sequence="90"
                     action="clv_medicament_mng.act_open_clv_medicament_mng_view"/>
+            <!-- Pharmacy/Dispensation -->
+            <menuitem name="Dispensation" id="menu_pharmacy_dispensation"  
+                parent="clvhealth_jcafb.menu_pharmacy"
+                groups="clv_base.group_base_user"
+                sequence="20"/>
+                <!-- Pharmacy/Dispensation/Dispensations -->
+                <menuitem name="Dispensations" id="menu_pharmacy_dispensation_dispensations"
+                    parent="menu_pharmacy_dispensation"
+                    groups="clv_base.group_medicament_dispensation_user"
+                    sequence="10"
+                    action="clv_medicament_dispensation.act_open_clv_medicament_dispensation_view"/>
             <!-- Pharmacy/Configuration -->
             <menuitem name="Configuration" id="menu_pharmacy_config"  
                 parent="menu_pharmacy"
@@ -416,7 +427,7 @@
                 <menuitem name="Medicament" id="menu_pharmacy_config_medicament"  
                     parent="menu_pharmacy_config"
                     groups="clv_base.group_base_user"
-                    sequence="20"/>
+                    sequence="10"/>
                     <!-- Pharmacy/Configuration/Medicament/Categories -->
                     <menuitem name="Categories" id="menu_pharmacy_config_medicament_categories"
                         parent="menu_pharmacy_config_medicament"
@@ -453,6 +464,17 @@
                         groups="clv_base.group_base_manager"
                         sequence="60" 
                         action="clv_medicament.act_open_clv_medicament_route_view" />
+                <!-- Pharmacy/Configuration/Dispensation -->
+                <menuitem name="Dispensation" id="menu_pharmacy_config_dispensation"  
+                    parent="clvhealth_jcafb.menu_pharmacy_config"
+                    groups="clv_base.group_base_user"
+                    sequence="20"/>
+                    <!-- Pharmacy/Configuration/Dispensation/Categories -->
+                    <menuitem name="Categories" id="menu_pharmacy_config_dispensation_categories"
+                        parent="menu_pharmacy_config_dispensation"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_medicament_dispensation.act_open_clv_medicament_dispensation_category_view"/>
 
     </data>
 </openerp>
