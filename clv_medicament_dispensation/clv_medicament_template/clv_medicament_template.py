@@ -24,7 +24,7 @@ class clv_medicament_template(osv.osv):
 
     _columns = {
         'dispensation_id': fields.many2one('clv_medicament.dispensation',
-                                            string='Dispensation ID', ),
+                                            string='Dispensation', ),
         }
 
 class clv_medicament_dispensation(osv.osv):
