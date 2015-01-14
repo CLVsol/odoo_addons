@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_template_form_jcafb" model="ir.ui.view">
+            <field name="name">clv_medicament.template.form</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="JCAFB" groups="clv_base.group_medicament_user">
+                        <group>
+                            <field name="question_01"/>
+                            <field name="question_02"/>
+                            <field name="question_03"/>
+                            <field name="question_04"/>
+                            <field name="question_05"/>
+                            <field name="question_06"/>
+                            <field name="question_07"/>
+                            <field name="question_08"/>
+                            <field name="question_09"/>
+                            <field name="question_10"/>
+                            <field name="question_11"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
