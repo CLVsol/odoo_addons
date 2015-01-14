@@ -7,7 +7,7 @@
             <field name="model">clv_medicament.dispensation</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Person">
+                <tree string="Medicament Dispensation">
                     <field name="name"/>
                     <field name="dispensation_date"/>
                     <field name="notes"/>
@@ -20,14 +20,14 @@
             <field name="model">clv_medicament.dispensation</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Persons" version="7.0">
-                    <sheet string="Person">
+                <form string="Medicament Dispensations" version="7.0">
+                    <sheet string="Medicament Dispensation">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
                             <!--label for="name" class="oe_edit_only"/-->
                             <label for="name"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Name..."/>
+                                <field name="name" default_focus="1" placeholder="Dispensation Code..."/>
                             </h1>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
@@ -61,7 +61,7 @@
             <field name="model">clv_medicament.dispensation</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Person">
+                <search string="Medicament Dispensation">
                     <field name="name"/>
                     <field name="notes"/>
                     <separator/>
@@ -73,7 +73,7 @@
         </record>
         
         <record model="ir.actions.act_window" id="act_open_clv_medicament_dispensation_view">
-            <field name="name">Persons</field>
+            <field name="name">Medicament Dispensations</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">clv_medicament.dispensation</field>
             <field name="view_type">form</field>

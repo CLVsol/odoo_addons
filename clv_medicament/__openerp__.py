@@ -54,7 +54,7 @@ Medicament
         'form/clv_medicament_form_view.xml',
         'route/clv_medicament_route_view.xml',
         'template/clv_medicament_template_view.xml',
-        # 'template/clv_medicament_template_sequence.xml',
+        'seq/clv_medicament_template_sequence.xml',
         ],
     'demo': [],
     'test': [],
