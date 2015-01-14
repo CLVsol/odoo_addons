@@ -17,25 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
-from datetime import datetime
-
-class clv_medicament_dispensation(osv.Model):
-    _name='clv_medicament.dispensation'
-
-    _columns={
-        'name': fields.char(size=256, string='Dispensation Code', required=False,
-                            help='Type in the Code of this dispensation'),
-        'dispensation_date': fields.date(string='Dispensation Date', required=False),
-        'notes': fields.text(string='Dispensation Notes'),
-        'active': fields.boolean('Active', help="The active field allows you to hide the dispensation without removing it."),
-        }
-    
-    _sql_constraints = [
-                        ('uniq_name', 'unique(name)', "The Dispensation Code must be unique!"),
-                        ]
-
-    _defaults={
-        'dispensation_date': lambda *a: datetime.now().strftime('%Y-%m-%d'),
-        'active': 1,
-        }
+import clv_medicament_dispensation_seq
+# import clv_medicament_dispensation_category_seq
