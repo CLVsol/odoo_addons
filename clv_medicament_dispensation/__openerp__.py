@@ -18,34 +18,36 @@
 ################################################################################
 
 {
-    'name': 'Medicament Catalog',
+    'name': 'Medicament Dispensation',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Medicament Catalog
-==================
+Medicament Dispensation
+=======================
     ''',
     'images': [],
     'depends': [
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_medicament',
         ],
     'data': [
-        'security/clv_medicament_catalog_security.xml',
+        'security/clv_medicament_dispensation_security.xml',
         'security/ir.model.access.csv',
-        'clv_medicament_catalog_view.xml',
-        # 'category/clv_medicament_catalog_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_medicament_catalog_sequence.xml',
-        # 'seq/clv_medicament_catalog_category_sequence.xml',
-        # 'wkf/clv_medicament_catalog_workflow.xml',
-        # 'wkf/clv_medicament_catalog_wkf_view.xml',
-        # 'history/clv_medicament_catalog_history_view.xml',
+        'clv_medicament_dispensation_view.xml',
+        'clv_medicament_template/clv_medicament_template_view.xml',
+        'category/clv_medicament_dispensation_category_view.xml',
+        'clv_tag/clv_tag_view.xml',
+        'clv_annotation/clv_annotation_view.xml',
+        'seq/clv_medicament_dispensation_sequence.xml',
+        # 'seq/clv_medicament_dispensation_category_sequence.xml',
+        # 'wkf/clv_medicament_dispensation_workflow.xml',
+        # 'wkf/clv_medicament_dispensation_wkf_view.xml',
+        # 'history/clv_medicament_dispensation_history_view.xml',
         ],
     'demo': [],
     'test': [],

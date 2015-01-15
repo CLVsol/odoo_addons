@@ -17,42 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Medicament Catalog',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Medicament Catalog
-==================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        ],
-    'data': [
-        'security/clv_medicament_catalog_security.xml',
-        'security/ir.model.access.csv',
-        'clv_medicament_catalog_view.xml',
-        # 'category/clv_medicament_catalog_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_medicament_catalog_sequence.xml',
-        # 'seq/clv_medicament_catalog_category_sequence.xml',
-        # 'wkf/clv_medicament_catalog_workflow.xml',
-        # 'wkf/clv_medicament_catalog_wkf_view.xml',
-        # 'history/clv_medicament_catalog_history_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_medicament_dispensation_seq
+# import clv_medicament_dispensation_category_seq

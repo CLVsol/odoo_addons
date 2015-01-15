@@ -17,42 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Medicament Catalog',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Medicament Catalog
-==================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        ],
-    'data': [
-        'security/clv_medicament_catalog_security.xml',
-        'security/ir.model.access.csv',
-        'clv_medicament_catalog_view.xml',
-        # 'category/clv_medicament_catalog_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_medicament_catalog_sequence.xml',
-        # 'seq/clv_medicament_catalog_category_sequence.xml',
-        # 'wkf/clv_medicament_catalog_workflow.xml',
-        # 'wkf/clv_medicament_catalog_wkf_view.xml',
-        # 'history/clv_medicament_catalog_history_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+
+class clv_medicament_dispensation(osv.osv):
+    _inherit = 'clv_medicament.dispensation'
+
+    _columns = {
+        'annotation_ids': fields.many2many('clv_annotation', 
+                                           'clv_medicament_dispensation_annotation_rel', 
+                                           'medicament_dispensation_id', 
+                                           'annotation_id', 
+                                           'Annotations')
+        }
+
+class clv_annotation(osv.osv):
+    _inherit = 'clv_annotation'
+
+    _columns = {
+        'medicament_dispensation_ids': fields.many2many('clv_medicament.dispensation', 
+                                                        'clv_medicament_dispensation_annotation_rel', 
+                                                        'annotation_id', 
+                                                        'medicament_dispensation_id', 
+                                                        'Medicament Dispensations')
+        }

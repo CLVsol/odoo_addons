@@ -1,4 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_clv_abcfarma_medicament_user,clv.abcfarma,model_clv_abcfarma,clv_base.group_medicament_user,1,0,0,0
-access_clv_abcfarma_medicament_manager,clv.abcfarma,model_clv_abcfarma,clv_base.group_medicament_manager,1,1,1,0
-access_clv_abcfarma_base_smanager,clv.abcfarma,model_clv_abcfarma,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_abcfarma_medicament_user,clv_abcfarma,model_clv_abcfarma,clv_base.group_medicament_user,1,0,0,0
+access_clv_abcfarma_medicament_manager,clv_abcfarma,model_clv_abcfarma,clv_base.group_medicament_manager,1,1,1,0
+access_clv_abcfarma_base_smanager,clv_abcfarma,model_clv_abcfarma,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_abcfarma_history_medicament_user,clv_abcfarma.history,model_clv_abcfarma_history,clv_base.group_medicament_user,1,0,0,0
+access_clv_abcfarma_history_medicament_manager,clv_abcfarma.history,model_clv_abcfarma_history,clv_base.group_medicament_manager,1,1,1,0
+access_clv_abcfarma_history_base_smanager,clv_abcfarma.history,model_clv_abcfarma_history,clv_base.group_base_smanager,1,1,1,1

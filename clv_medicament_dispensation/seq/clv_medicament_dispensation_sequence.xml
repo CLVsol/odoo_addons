@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_medicament_dispensation.seq_type_clv_medicament_dispensation" model="ir.sequence.type">
+            <field name="name">Medicament Dispensation Sequence</field>
+            <field name="code">clv_medicament_dispensation.code</field>
+        </record>
+        
+        <record id="clv_medicament_dispensation.seq_clv_medicament_dispensation" model="ir.sequence">
+            <field name="name">Medicament Dispensation Sequence</field>
+            <field name="code">clv_medicament_dispensation.code</field>
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="9"/>
+            <field name="prefix">02</field>
+        </record>
+
+    </data>
+</openerp>

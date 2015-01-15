@@ -38,7 +38,7 @@ Medicament Group
         ],
     'data': [
         'security/clv_medicament_group_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_medicament_group_view.xml',
         'clv_medicament_catalog_view.xml',
         # 'category/clv_medicament_group_category_view.xml',
