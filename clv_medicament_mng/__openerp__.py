@@ -37,7 +37,7 @@ Medicament Management
         ],
     'data': [
         'security/clv_medicament_mng_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_medicament_mng_view.xml',
         'clv_tag/clv_tag_view.xml',
         'clv_annotation/clv_annotation_view.xml',
