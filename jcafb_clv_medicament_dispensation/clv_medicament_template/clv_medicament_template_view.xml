@@ -2,26 +2,133 @@
 <openerp>
     <data>
         
+        <record id="view_clv_medicament_template_tree_jcafb" model="ir.ui.view">
+            <field name="name">clv_medicament.template.tree</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="form" position="replace">
+                    <field name="form" invisible="1"/>
+                </field>
+                <field name="route" position="replace">
+                    <field name="route" invisible="1"/>
+                </field>
+                <field name="dose" position="replace">
+                    <field name="dose" invisible="1"/>
+                </field>
+                <field name="dose_unit" position="replace">
+                    <field name="dose_unit" invisible="1"/>
+                </field>
+                <field name="quantity" position="replace">
+                    <field name="quantity" invisible="1"/>
+                </field>
+                <field name="frequency" position="replace">
+                    <field name="frequency" invisible="1"/>
+                </field>
+                <field name="frequency_unit" position="replace">
+                    <field name="frequency_unit" invisible="1"/>
+                </field>
+                <field name="duration" position="replace">
+                    <field name="duration" invisible="1"/>
+                </field>
+                <field name="duration_period" position="replace">
+                    <field name="duration_period" invisible="1"/>
+                </field>
+                <field name="admin_times" position="replace">
+                    <field name="admin_times" invisible="1"/>
+                    <field name="question_06_11"/>
+                    <field name="question_07_02"/>
+                    <field name="question_09"/>
+                </field>
+            </field>
+        </record>
+
         <record id="view_clv_medicament_template_form_jcafb" model="ir.ui.view">
             <field name="name">clv_medicament.template.form</field>
             <field name="model">clv_medicament.template</field>
             <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
+                <field name="form" position="replace">
+                    <field name="form" invisible="1"/>
+                </field>
+                <field name="route" position="replace">
+                    <field name="route" invisible="1"/>
+                </field>
+                <field name="dose" position="replace">
+                    <field name="dose" invisible="1"/>
+                </field>
+                <field name="dose_unit" position="replace">
+                    <field name="dose_unit" invisible="1"/>
+                </field>
+                <field name="quantity" position="replace">
+                    <field name="quantity" invisible="1"/>
+                </field>
+                <field name="frequency" position="replace">
+                    <field name="frequency" invisible="1"/>
+                </field>
+                <field name="frequency_unit" position="replace">
+                    <field name="frequency_unit" invisible="1"/>
+                </field>
+                <field name="duration" position="replace">
+                    <field name="duration" invisible="1"/>
+                </field>
+                <field name="duration_period" position="replace">
+                    <field name="duration_period" invisible="1"/>
+                </field>
+                <field name="admin_times" position="replace">
+                    <field name="admin_times" invisible="1"/>
+                </field>
                 <page string="Settings" position="before">
                     <page string="JCAFB" groups="clv_base.group_medicament_user">
-                        <group>
+                        <group string='Validade da Receita'>
                             <field name="question_01"/>
-                            <field name="question_02"/>
+                        </group>
+                        <group string='Como foi prescrito na receita?'>
+                            <field name="question_02_01"/>
+                            <field name="question_02_02"/>
+                            <field name="question_02_03"/>
+                            <field name="question_02_04"/>
+                            <field name="question_02_05"/>
+                            <field name="question_02_06"/>
+                            <field name="question_02_07"/>
+                            <field name="question_02_08"/>
+                            <field name="question_02_09"/>
+                        </group>
+                        <group string='Local de Aquisição'>
                             <field name="question_03"/>
-                            <field name="question_04"/>
-                            <field name="question_05"/>
-                            <field name="question_06"/>
-                            <field name="question_07"/>
+                        </group>
+                        <group string='Motivo de Uso segundo o Paciente'>
+                            <field name="question_04_01"/>
+                            <field name="question_04_02"/>
+                        </group>
+                        <group string='Conservação do Medicamento'>
+                            <field name="question_05_01"/>
+                            <field name="question_05_02"/>
+                        </group>
+                        <group string='Como o paciente utiliza o Medicamento'>
+                            <field name="question_06_01"/>
+                            <field name="question_06_02"/>
+                            <field name="question_06_03"/>
+                            <field name="question_06_04"/>
+                            <field name="question_06_05"/>
+                            <field name="question_06_06"/>
+                            <field name="question_06_07"/>
+                            <field name="question_06_08"/>
+                            <field name="question_06_09"/>
+                            <field name="question_06_10"/>
+                            <field name="question_06_11"/>
+                        </group>
+                        <group string='Adesão'>
+                            <field name="question_07_01"/>
+                            <field name="question_07_02"/>
+                        </group>
+                        <group string='Validade do Medicamento'>
                             <field name="question_08"/>
+                        </group>
+                        <group string='Conhecimento sobre indicação'>
                             <field name="question_09"/>
-                            <field name="question_10"/>
-                            <field name="question_11"/>
                         </group>
                     </page>
                 </page>
