@@ -399,7 +399,7 @@
                 <menuitem name="ABCFarma" id="menu_pharmacy_medicament_abcfarma"
                     parent="menu_pharmacy_medicament"
                     groups="clv_base.group_medicament_user"
-                    sequence="40"
+                    sequence="50"
                     action="l10n_br_clv_abcfarma.act_open_clv_abcfarma_view" />
                 <!-- Pharmacy/Medicament/Medicaments (Management) -->
                 <menuitem name="Medicaments (Management)" id="menu_pharmacy_medicament_medicaments_mng"
