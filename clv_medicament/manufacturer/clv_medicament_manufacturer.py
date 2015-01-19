@@ -33,3 +33,8 @@ class clv_medicament_manufacturer(osv.osv):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
         ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]
+
+    _defaults = {
+        'active': 1,
+        }
+    
