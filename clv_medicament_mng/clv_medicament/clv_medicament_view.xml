@@ -28,6 +28,8 @@
                                 <field name="associate_medicament"/>
                                 <field name="medicament_code" placeholder="Medicament Code..."/>
                                 <field name="medicament_id" placeholder="Medicament..."/>
+                                <field name="manufacturer_id" placeholder="Manufacturer..."/>
+                                <field name="active_component" placeholder="Active Component..."/>
                             </group>
                             <group string="Status">
                                 <field name="medicament_state"/>
