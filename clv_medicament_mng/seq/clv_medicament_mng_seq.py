@@ -53,8 +53,8 @@ class clv_medicament_mng(osv.osv):
     _inherit = 'clv_medicament_mng'
 
     _columns = {
-        'medicament_code': fields.char('Person Code', size=64, select=1, required=False, readonly=False, default='/',
-                                   help='Use "/" to get an automatic new Person Code.'),
+        'medicament_code': fields.char('Medicament Code', size=64, select=1, required=False, readonly=False, default='/',
+                                       help='Use "/" to get an automatic new Medicament Code.'),
         }
     
     def write(self, cr, uid, ids, vals, context=None):
