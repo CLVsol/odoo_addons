@@ -28,6 +28,8 @@ class clv_medicament_manufacturer(osv.osv):
         'code': fields.char(size=256, string='Code'),
         'info': fields.text(string='Info'),
         'active': fields.boolean('Active', help="The active field allows you to hide the manufacturer without removing it."),
+        'medicament_ids': fields.one2many('clv_medicament', 'manufacturer', 'Medicaments'),
+
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
