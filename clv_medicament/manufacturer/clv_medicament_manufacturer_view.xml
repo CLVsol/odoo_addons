@@ -44,7 +44,12 @@
                                 </div>
                                 <field name="info" colspan="4" nolabel="1"/>
                             </page>
-                            <page string="Settings" groups="clv_base.group_clv_manager">
+                            <page string="Medicaments">
+                                <group>
+                                    <field name="medicament_ids" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
                                     <field name="active"/>
                                 </group>
