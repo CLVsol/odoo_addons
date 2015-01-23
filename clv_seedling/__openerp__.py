@@ -37,7 +37,7 @@ Seedling
         ],
     'data': [
         'security/clv_seedling_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_seedling_view.xml',
         'category/clv_seedling_category_view.xml',
         'clv_tag/clv_tag_view.xml',
