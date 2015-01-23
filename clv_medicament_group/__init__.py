@@ -22,3 +22,4 @@ import clv_medicament_catalog
 # import clv_annotation
 # import clv_medicament_group_category
 # import clv_tag
+import seq

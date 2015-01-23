@@ -24,6 +24,6 @@ class clv_medicament_group(orm.Model):
 
     _columns = {
         'medicament_group_member_ids': fields.one2many('clv_medicament.group.member',
-                                                       'medicament_id',
+                                                       'group_id',
                                                        'Medicament Group Members'),
     }

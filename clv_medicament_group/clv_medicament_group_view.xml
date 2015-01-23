@@ -55,6 +55,11 @@
                         <notebook>
                             <page string="Group Information">
                                 <group>
+                                    <group string="Medicament">
+                                        <field name="medicament_name"/>
+                                        <field name="concentration"/>
+                                        <field name="active_component"/>
+                                    </group>
                                     <group string="Status">
                                         <field name="date_inclusion"/>
                                     </group>

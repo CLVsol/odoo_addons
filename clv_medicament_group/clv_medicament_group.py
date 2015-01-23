@@ -32,6 +32,11 @@ class clv_medicament_group(osv.osv):
         'catalog_id': fields.many2one('clv_medicament.catalog', 'Catalog'),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the group without removing it."),
+        'medicament_name': fields.char(size=256, string='Medicament Name'),
+        'concentration': fields.char(size=256, string='Concentration'),
+        'active_component': fields.many2one('clv_medicament.active_component', 
+                                            string='Active Component', 
+                                            help='Medicament Active Component'),
         }
 
     _defaults = {
