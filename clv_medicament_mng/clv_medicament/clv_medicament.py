@@ -39,6 +39,11 @@ class clv_medicament_mng(osv.osv):
                                               ('inactive','Inactive'),
                                               ('suspended','Suspended')
                                               ], string='Status', readonly=False, required=False, help=""),
+        'manufacturer_id': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
+                                           help='Medicament Manufacturer'),
+        'active_component': fields.many2one('clv_medicament.active_component', 
+                                            string='Active Component', 
+                                            help='Medicament Active Component'),
         }
 
     _defaults = {
