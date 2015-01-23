@@ -36,6 +36,7 @@ Frame
         ],
     'data': [
         'security/clv_frame_security.xml',
+        'security/ir.model.access.csv',
         'clv_frame_view.xml',
         'category/clv_frame_category_view.xml',
         'clv_tag/clv_tag_view.xml',

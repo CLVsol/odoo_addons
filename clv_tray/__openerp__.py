@@ -36,6 +36,7 @@ Tray
         ],
     'data': [
         'security/clv_tray_security.xml',
+        'security/ir.model.access.csv',
         'clv_tray_view.xml',
         'category/clv_tray_category_view.xml',
         'clv_tag/clv_tag_view.xml',
