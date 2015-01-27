@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-26 18:28+0000\n"
-"PO-Revision-Date: 2014-07-26 18:28+0000\n"
+"POT-Creation-Date: 2015-01-26 14:19+0000\n"
+"PO-Revision-Date: 2015-01-26 14:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,61 +44,75 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: field:clv_annotation,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_annotation
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_wkf
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search
 #: field:clv_annotation.history,annotation_id:0
 msgid "Annotation"
 msgstr "Anotação"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_tree
 #: model:ir.actions.act_window,name:clv_annotation.act_open_clv_annotation_category_view
 msgid "Annotation Categories"
 msgstr "Categorias de Anotações"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_search
 msgid "Annotation Category"
 msgstr "Categoria de Anotação"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 msgid "Annotation Category..."
 msgstr "Categoria de Anotação..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
+msgid "Annotation Code..."
+msgstr "Código da Anotação..."
+
+#. module: clv_annotation
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_history
 #: field:clv_annotation,history_ids:0
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_tree
 msgid "Annotation History"
 msgstr "Histórico da Anotação"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
 msgid "Annotation for"
 msgstr "Anotação para"
 
 #. module: clv_annotation
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
 msgid "Annotation..."
 msgstr "Anotação..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-#: view:clv_annotation.category:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_tree
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 #: field:clv_annotation.category,annotation_ids:0
-#: view:clv_tag:0
+#: view:clv_tag:clv_annotation.view_clv_tag_form
 #: field:clv_tag,annotation_ids:0
 #: model:ir.actions.act_window,name:clv_annotation.act_open_clv_annotation_view
 msgid "Annotations"
 msgstr "Anotações"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
 msgid "Annotations..."
 msgstr "Anotações..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search
 #: field:clv_annotation,author:0
 msgid "Author"
 msgstr "Autor"
@@ -114,9 +128,14 @@ msgid "Categories"
 msgstr "Categorias"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_category
 msgid "Categories..."
 msgstr "Categorias..."
+
+#. module: clv_annotation
+#: field:clv_annotation.category,name:0
+msgid "Category"
+msgstr "Categoria"
 
 #. module: clv_annotation
 #: field:clv_annotation.category,code:0
@@ -124,18 +143,12 @@ msgid "Category Code"
 msgstr "Código da Categoria"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 msgid "Category Code..."
 msgstr "Código da Categoria..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-#: field:clv_annotation,child_ids:0
-msgid "Child Annotations"
-msgstr "Anotações Subordinadas"
-
-#. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 #: field:clv_annotation.category,child_ids:0
 msgid "Child Categories"
 msgstr "Categorias Subordinadas"
@@ -155,13 +168,15 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search_wkf
+#: field:clv_annotation,date:0
 #: field:clv_annotation.history,date:0
 msgid "Date"
 msgstr "Data"
 
 #. module: clv_annotation
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
 msgid "Date..."
 msgstr "Data..."
 
@@ -171,14 +186,32 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 msgid "Description..."
 msgstr "Descrição..."
 
 #. module: clv_annotation
-#: constraint:clv_annotation:0
-msgid "Error! You can not create recursive annotations."
-msgstr "Erro! Não é permitido criar anotações recursivas."
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_wkf
+#: selection:clv_annotation,state:0
+#: selection:clv_annotation.history,state:0
+msgid "Done"
+msgstr "Concluída"
+
+#. module: clv_annotation
+#: selection:clv_annotation,state:0
+#: selection:clv_annotation.history,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_annotation
+#: sql_constraint:clv_annotation.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_annotation
+#: sql_constraint:clv_annotation:0
+msgid "Error! The annotation code must be unique!"
+msgstr "Error! The annotation code must be unique!"
 
 #. module: clv_annotation
 #: constraint:clv_annotation.category:0
@@ -186,23 +219,13 @@ msgid "Error! You can not create recursive categories."
 msgstr "Erro! Não é permitido criar categorias recursivas."
 
 #. module: clv_annotation
-#: field:clv_annotation.category,complete_name:0
-msgid "Full Category"
-msgstr "Categoria Completa"
-
-#. module: clv_annotation
-#: field:clv_annotation,complete_name:0
-msgid "Full Subject"
-msgstr "Assunto Completo"
-
-#. module: clv_annotation
-#: view:clv_annotation:0
-#: view:clv_annotation.category:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_search
 msgid "Group By..."
 msgstr "Agrupar Por..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_history
 msgid "History"
 msgstr "Histórico"
 
@@ -214,14 +237,9 @@ msgid "ID"
 msgstr "ID"
 
 #. module: clv_annotation
-#: help:clv_annotation.category,refresh_complete_name:0
-msgid "If checked, it will allow you to to refresh the stored category full name."
-msgstr "Se marcado, será possível renovar o nome completo da categoria armazenado."
-
-#. module: clv_annotation
-#: help:clv_annotation,refresh_complete_name:0
-msgid "If checked, it will allow you to to refresh the stored full annotation name."
-msgstr "Se marcado, será possível renovar o assunto completo da anotação armazenado.."
+#: help:clv_annotation,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possivel desabilitar o histórico sem removê-lo."
 
 #. module: clv_annotation
 #: help:clv_annotation,active:0
@@ -234,14 +252,19 @@ msgid "If unchecked, it will allow you to hide the category without removing it.
 msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search
 msgid "Inactive Annotations"
 msgstr "Anotações Inativas"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_search
 msgid "Inactive Categories"
 msgstr "Categorias Inativas"
+
+#. module: clv_annotation
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
+msgid "Information"
+msgstr "Informações"
 
 #. module: clv_annotation
 #: field:clv_annotation,write_uid:0
@@ -258,21 +281,9 @@ msgid "Last Updated on"
 msgstr "Última Atualização em"
 
 #. module: clv_annotation
-#: field:clv_annotation,parent_left:0
 #: field:clv_annotation.category,parent_left:0
 msgid "Left parent"
 msgstr "Superior a esquerda"
-
-#. module: clv_annotation
-#: field:clv_annotation.category,name:0
-msgid "Category"
-msgstr "Categoria"
-
-#. module: clv_annotation
-#: selection:clv_annotation,state:0
-#: selection:clv_annotation.history,state:0
-msgid "Draft"
-msgstr "Rascunho"
 
 #. module: clv_annotation
 #: field:clv_annotation.category,notes:0
@@ -281,94 +292,59 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
 msgid "Notes..."
 msgstr "Notas..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-#: selection:clv_annotation,state:0
-#: selection:clv_annotation.history,state:0
-msgid "Done"
-msgstr "Concluída"
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-#: field:clv_annotation,parent_id:0
-msgid "Parent Annotation"
-msgstr "Anotação Superior"
-
-#. module: clv_annotation
-#: view:clv_annotation:0
-msgid "Parent Annotation..."
-msgstr "Anotação Superior..."
-
-#. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_search
 #: field:clv_annotation.category,parent_id:0
 msgid "Parent Category"
 msgstr "Categoria Superior"
 
 #. module: clv_annotation
-#: view:clv_annotation.category:0
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 msgid "Parent Category..."
 msgstr "Categoria Superior..."
 
 #. module: clv_annotation
 #: field:clv_annotation,code:0
-#: field:clv_annotation,ref:0
-msgid "Annotation Code"
-msgstr "Código da Anotação"
+msgid "Reference"
+msgstr "Referência"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-msgid "Annotation Code..."
-msgstr "Código da Anotação..."
-
-#. module: clv_annotation
-#: field:clv_annotation,refresh_complete_name:0
-msgid "Refresh Full Subject"
-msgstr "Renovar o Assunto Completo"
-
-#. module: clv_annotation
-#: field:clv_annotation.category,refresh_complete_name:0
-msgid "Refresh Full Category"
-msgstr "Renovar o Nome Completo"
-
-#. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_wkf
 #: selection:clv_annotation,state:0
 #: selection:clv_annotation.history,state:0
 msgid "Revised"
 msgstr "Revisada"
 
 #. module: clv_annotation
-#: field:clv_annotation,parent_right:0
 #: field:clv_annotation.category,parent_right:0
 msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
-#: view:clv_annotation.category:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_history
+#: view:clv_annotation.category:clv_annotation.view_clv_annotation_category_form
 msgid "Settings"
 msgstr "Configurações"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_search_wkf
 msgid "Stage"
 msgstr "Estágio"
 
 #. module: clv_annotation
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
 msgid "Stage..."
 msgstr "Estágio..."
-
-#. module: clv_annotation
-#: field:clv_annotation,date:0
-msgid "Date"
-msgstr "Data"
 
 #. module: clv_annotation
 #: field:clv_annotation,state:0
@@ -382,12 +358,12 @@ msgid "Subject"
 msgstr "Assunto"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form
 msgid "Subject..."
 msgstr "Assunto..."
 
 #. module: clv_annotation
-#: view:clv_tag:0
+#: view:clv_tag:clv_annotation.view_clv_tag_form
 msgid "Tag for"
 msgstr "Etiqueta para"
 
@@ -397,24 +373,19 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_clv_tag
 msgid "Tags..."
 msgstr "Etiquetas..."
 
 #. module: clv_annotation
-#: sql_constraint:clv_annotation.category:0
-msgid "Error! The Category Code must be unique!"
-msgstr "Erro! O Código da Categoria deve ser único!"
+#: help:clv_annotation.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" to get an automatic new Category Code."
 
 #. module: clv_annotation
-#: sql_constraint:clv_annotation:0
-msgid "Error! The annotation reference must be unique!"
-msgstr "Erro! A Referência de anotações deve ser única!"
-
-#. module: clv_annotation
-#: help:clv_annotation,ref:0
+#: help:clv_annotation,code:0
 msgid "Use \"/\" to get an automatic new Reference."
-msgstr "Use \"/\" para obter automaticamente uma nova Referência."
+msgstr "Use \"/\" to get an automatic new Reference."
 
 #. module: clv_annotation
 #: field:clv_annotation.history,user_id:0
@@ -422,34 +393,34 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: clv_annotation
-#: view:clv_annotation.history:0
+#: view:clv_annotation.history:clv_annotation.view_clv_annotation_history_form
 msgid "User..."
 msgstr "Usuário..."
 
 #. module: clv_annotation
-#: view:clv_annotation:0
+#: view:clv_annotation:clv_annotation.view_clv_annotation_form_wkf
 #: selection:clv_annotation,state:0
 #: selection:clv_annotation.history,state:0
 msgid "Waiting"
 msgstr "Aguardando"
 
-#. module: clv_annotation
-#: model:ir.model,name:clv_annotation.model_clv_annotation
-msgid "clv_annotation"
-msgstr "clv_annotation"
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_annotation_manager
+msgid "Annotation Manager"
+msgstr "Gerente de Anotação"
 
-#. module: clv_annotation
-#: model:ir.model,name:clv_annotation.model_clv_annotation_category
-msgid "clv_annotation.category"
-msgstr "clv_annotation.category"
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_annotation_user
+msgid "Annotation User"
+msgstr "Usuário de Anotação"
 
-#. module: clv_annotation
-#: model:ir.model,name:clv_annotation.model_clv_annotation_history
-msgid "clv_annotation.history"
-msgstr "clv_annotation.history"
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_place_manager
+msgid "Place Manager"
+msgstr "Gerente de Local"
 
-#. module: clv_annotation
-#: model:ir.model,name:clv_annotation.model_clv_tag
-msgid "clv_tag"
-msgstr "clv_tag"
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_place_user
+msgid "Place User"
+msgstr "Usuário de Local"
 

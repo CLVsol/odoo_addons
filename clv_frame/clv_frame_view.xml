@@ -72,7 +72,7 @@
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
-                            <page string="Children">
+                            <page string="Child Frames">
                                 <group>
                                     <field name="child_ids" colspan="4" nolabel="1"/>
                                 </group>

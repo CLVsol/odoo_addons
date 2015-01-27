@@ -47,7 +47,7 @@ class clv_frame(models.Model):
     _parent_order = 'name'
     _order = 'parent_left'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Frame Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Frame Code must be unique!')]
 
     _constraints = [
         (osv.osv._check_recursion, 'Error! You can not create recursive frames.', ['parent_id'])

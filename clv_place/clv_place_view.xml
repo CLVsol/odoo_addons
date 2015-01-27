@@ -35,7 +35,7 @@
                             <!--label for="name" class="oe_edit_only"/-->
                             <label for="name"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Local..."/>
+                                <field name="name" default_focus="1" placeholder="Place..."/>
                             </h1>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->

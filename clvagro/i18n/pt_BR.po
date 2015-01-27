@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 15:52+0000\n"
-"PO-Revision-Date: 2014-09-03 15:52+0000\n"
+"POT-Creation-Date: 2015-01-26 15:54+0000\n"
+"PO-Revision-Date: 2015-01-26 15:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,10 +38,36 @@ msgid "Base"
 msgstr "Básico"
 
 #. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_batch
+#: model:ir.ui.menu,name:clvagro.menu_agro_config_batch
+msgid "Batch"
+msgstr "Lote"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_batch_batches
+msgid "Batches"
+msgstr "Lotes"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_config_batch_categories
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clvagro
 #: model:ir.ui.menu,name:clvagro.menu_agro_config
 #: model:ir.ui.menu,name:clvagro.menu_base_config
 msgid "Configuration"
 msgstr "Configuração"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_config_frame_categories
+msgid "Frame Categories"
+msgstr "Categorias de Estruturas"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_frames
+msgid "Frames"
+msgstr "Estruturas"
 
 #. module: clvagro
 #: model:ir.ui.menu,name:clvagro.menu_agro_config_place_categories
@@ -49,11 +75,37 @@ msgid "Place Categories"
 msgstr "Categorias de Locais"
 
 #. module: clvagro
-#: model:ir.ui.menu,name:clvagro.menu_agro_agro_placews
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_places
 msgid "Places"
 msgstr "Locais"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_config_seedling_categories
+msgid "Seedling Categories"
+msgstr "Categorias de Mudas"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_seedlings
+msgid "Seedlings"
+msgstr "Mudas"
 
 #. module: clvagro
 #: model:ir.ui.menu,name:clvagro.menu_base_config_clv_tags
 msgid "Tags"
 msgstr "Etiquetas"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_tray
+msgid "Tray"
+msgstr "Bandeja"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_config_tray_categories
+msgid "Tray Categories"
+msgstr "Categorias de Bandejas"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_tray_trays
+msgid "Trays"
+msgstr "Bandejas"
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_frame_tree_clv_place" model="ir.ui.view">
+            <field name="name">clv_frame.tree</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="view_clv_frame_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="place_id" invisible="0"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_form_clv_place" model="ir.ui.view">
+            <field name="name">clv_frame.form</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="view_clv_frame_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="place_id" class="oe_edit_only" attrs="{'invisible': ['|', ('is_movable', '=', True), ('parent_id', '!=', False)]}"/>
+                    <h3>
+                        <field name="place_id" placeholder="Place..." attrs="{'invisible': ['|', ('is_movable', '=', True), ('parent_id', '!=', False)]}"/>
+                    </h3>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_search_clv_place" model="ir.ui.view">
+            <field name="name">clv_frame.search</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="view_clv_frame_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="place_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_place_form_clv_frame_01" model="ir.ui.view">
+            <field name="name">clv_place.form</field>
+            <field name="model">clv_place</field>
+            <field name="inherit_id" ref="clv_place.view_clv_place_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Frames">
+                        <group>
+                            <field name="frame_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
