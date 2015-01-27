@@ -1,0 +1,600 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_frame
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-27 12:33+0000\n"
+"PO-Revision-Date: 2015-01-27 12:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_frame
+#: model:ir.actions.act_window,help:clv_frame.act_open_clv_frame_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new frame category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de estrutura.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_frame
+#: model:ir.actions.act_window,help:clv_frame.act_open_clv_frame_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new frame.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova estrutura.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_wkf
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_frame
+#: field:clv_frame,date_activation:0
+msgid "Activation date"
+msgstr "Data da Ativação"
+
+#. module: clv_frame
+#: field:clv_frame,active:0
+#: selection:clv_frame,state:0
+#: field:clv_frame.category,active:0
+#: selection:clv_frame.history,state:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_frame
+#: field:clv_frame,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Address Information"
+msgstr "Endereço"
+
+#. module: clv_frame
+#: field:clv_frame,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_frame
+#: view:clv_annotation:clv_frame.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_annotation
+#: field:clv_frame,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_frame
+#: field:clv_frame,category_id:0
+#: field:clv_frame.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_frame
+#: field:clv_frame.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_category
+msgid "Category..."
+msgstr "Categoria..."
+
+#. module: clv_frame
+#: help:clv_frame,is_movable:0
+msgid "Check if the frame is movable, otherwise it is immovable"
+msgstr "Marcar se a estrutura for móvel, se não ela é fixa"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+#: field:clv_frame.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: field:clv_frame,child_ids:0
+msgid "Child Frames"
+msgstr "Estruturas Subordinadas"
+
+#. module: clv_frame
+#: field:clv_frame,level:0
+msgid "Code Level"
+msgstr "Nível do Código"
+
+#. module: clv_frame
+#: help:clv_frame,alias:0
+msgid "Common name that the frame is referred"
+msgstr "Nome comum com que a estrutura é conhecida"
+
+#. module: clv_frame
+#: field:clv_frame,create_uid:0
+#: field:clv_frame.category,create_uid:0
+#: field:clv_frame.history,create_uid:0
+#: field:clv_frame.place_history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_frame
+#: field:clv_frame,create_date:0
+#: field:clv_frame.category,create_date:0
+#: field:clv_frame.history,create_date:0
+#: field:clv_frame.place_history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_frame
+#: field:clv_frame,description:0
+#: field:clv_frame.category,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_frame
+#: sql_constraint:clv_frame.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_frame
+#: sql_constraint:clv_frame:0
+msgid "Error! The Frame Code must be unique!"
+msgstr "Erro! O Código da Estrutura deve ser único!"
+
+#. module: clv_frame
+#: constraint:clv_frame.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_frame
+#: constraint:clv_frame:0
+msgid "Error! You can not create recursive frames."
+msgstr "Erro! Não é possível criar estruturas recursivas."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame:clv_frame.view_clv_frame_form_wkf
+#: view:clv_frame:clv_frame.view_clv_frame_search
+#: field:clv_frame,name:0
+#: field:clv_frame.history,frame_id:0
+#: field:clv_place,frame_ids:0
+msgid "Frame"
+msgstr "Estrutura"
+
+#. module: clv_frame
+#: field:clv_frame,address_id:0
+msgid "Frame Address"
+msgstr "Endereço da Estrtutura"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_tree
+#: model:ir.actions.act_window,name:clv_frame.act_open_clv_frame_category_view
+msgid "Frame Categories"
+msgstr "Categorias de Estruturas"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_search_category
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_search
+msgid "Frame Category"
+msgstr "Categoria de Estrutura"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Frame Category..."
+msgstr "Categoria de Estrutura..."
+
+#. module: clv_frame
+#: field:clv_frame,code:0
+msgid "Frame Code"
+msgstr "Código da Estrutura"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Frame Code..."
+msgstr "Código da Estrutura..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_history
+#: field:clv_frame,history_ids:0
+#: view:clv_frame.history:clv_frame.view_clv_frame_history_form
+#: view:clv_frame.history:clv_frame.view_clv_frame_history_tree
+msgid "Frame History"
+msgstr "Histórico da Estrutura"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Frame Name..."
+msgstr "Nome da Estrutura..."
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Frame..."
+msgstr "Frame..."
+
+#. module: clv_frame
+#: view:clv_annotation:clv_frame.view_clv_annotation_form
+#: field:clv_annotation,frame_ids:0
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame:clv_frame.view_clv_frame_tree
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+#: field:clv_frame.category,frame_ids:0
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_01
+#: view:clv_tag:clv_frame.view_clv_tag_form
+#: field:clv_tag,frame_ids:0
+#: model:ir.actions.act_window,name:clv_frame.act_open_clv_frame_view
+msgid "Frames"
+msgstr "Estruturas"
+
+#. module: clv_frame
+#: field:clv_frame.place_history,frame_id:0
+msgid "Frame"
+msgstr "Estrutura"
+
+#. module: clv_frame
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
+#: field:clv_place,frame_place_history_ids:0
+msgid "Frame Place History"
+msgstr "Histórico de Locais de Estrutura"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_search
+#: view:clv_frame:clv_frame.view_clv_frame_search_category
+#: view:clv_frame:clv_frame.view_clv_frame_search_wkf
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_search
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_frame
+#: field:clv_frame,id:0
+#: field:clv_frame.category,id:0
+#: field:clv_frame.history,id:0
+#: field:clv_frame.place_history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_frame
+#: help:clv_frame,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desmarcar o histórico sem removê-lo."
+
+#. module: clv_frame
+#: help:clv_frame.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_frame
+#: help:clv_frame,active:0
+msgid "If unchecked, it will allow you to hide the frame without removing it."
+msgstr "Se desmarcado, será possível esconder a estrutura sem removê-la."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_wkf
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_frame
+#: field:clv_frame,date_inactivation:0
+msgid "Inactivation date"
+msgstr "Data da Inativação"
+
+#. module: clv_frame
+#: selection:clv_frame,state:0
+#: selection:clv_frame.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_search
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_frame
+#: field:clv_frame,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_frame
+#: field:clv_frame.place_history,incoming_date:0
+msgid "Incoming Date"
+msgstr "Data de Entrada"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Incoming Date..."
+msgstr "Data de Entrada..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_frame
+#: field:clv_frame,is_movable:0
+msgid "Is Movable"
+msgstr "É Móvel"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Is Movable?"
+msgstr "É Móvel?"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L0"
+msgstr "N0"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L1"
+msgstr "N1"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L2"
+msgstr "N2"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L3"
+msgstr "N3"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L4"
+msgstr "N4"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L5"
+msgstr "N5"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L6"
+msgstr "N6"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L7"
+msgstr "N7"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L8"
+msgstr "N8"
+
+#. module: clv_frame
+#: selection:clv_frame,level:0
+msgid "L9"
+msgstr "N9"
+
+#. module: clv_frame
+#: field:clv_frame,write_uid:0
+#: field:clv_frame.category,write_uid:0
+#: field:clv_frame.history,write_uid:0
+#: field:clv_frame.place_history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_frame
+#: field:clv_frame,write_date:0
+#: field:clv_frame.category,write_date:0
+#: field:clv_frame.history,write_date:0
+#: field:clv_frame.place_history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_frame
+#: field:clv_frame,parent_left:0
+#: field:clv_frame.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a esquerda"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place
+msgid "Palce..."
+msgstr "Local..."
+
+#. module: clv_frame
+#: selection:clv_frame,state:0
+#: selection:clv_frame.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_frame
+#: field:clv_frame,notes:0
+#: field:clv_frame.category,notes:0
+#: field:clv_frame.history,notes:0
+#: field:clv_frame.place_history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_frame
+#: field:clv_frame.place_history,outgoing_date:0
+msgid "Outgoing Date"
+msgstr "Data de Saída"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Outgoing Date..."
+msgstr "Data de Saída..."
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_search
+#: field:clv_frame.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_frame
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_search
+#: field:clv_frame,parent_id:0
+msgid "Parent Frame"
+msgstr "Estrutura Superior"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+msgid "Parent Frame..."
+msgstr "Estrutura Superior..."
+
+#. module: clv_frame
+#: field:clv_frame,place_id:0
+#: field:clv_frame.place_history,place_id:0
+msgid "Place"
+msgstr "Local"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place_history
+#: field:clv_frame,place_history_ids:0
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_tree
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
+msgid "Place History"
+msgstr "Histórico de Locais"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Place..."
+msgstr "Local..."
+
+#. module: clv_frame
+#: field:clv_frame,parent_right:0
+#: field:clv_frame.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame:clv_frame.view_clv_frame_form_annotation
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place_history
+#: view:clv_frame:clv_frame.view_clv_frame_form_history
+#: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_01
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form
+#: view:clv_frame:clv_frame.view_clv_frame_form_seq
+#: view:clv_frame:clv_frame.view_clv_frame_search_wkf
+#: field:clv_frame,state:0
+#: field:clv_frame.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_frame
+#: field:clv_frame,date:0
+msgid "Status change date"
+msgstr "Data da mudança de Status"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_wkf
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_frame
+#: selection:clv_frame,state:0
+#: selection:clv_frame.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_frame
+#: field:clv_frame,date_suspension:0
+msgid "Suspension date"
+msgstr "Data da Suspensão"
+
+#. module: clv_frame
+#: view:clv_tag:clv_frame.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_frame
+#: field:clv_frame,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_frame
+#: help:clv_frame.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_frame
+#: help:clv_frame,code:0
+msgid "Use \"/\" to get an automatic new Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Estrutura."
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_f#. module: clv_base
+#: model:res.groups,name:clv_base.group_frame_manager
+msgid "Frame Manager"
+msgstr "Gerente de Estrutura"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_frame_manager
+msgid "Frame Manager"
+msgstr "Gerente de Estrutura"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_frame_user
+msgid "Frame User"
+msgstr "Usuário de Estrutura"
+

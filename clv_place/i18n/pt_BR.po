@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-07 14:29+0000\n"
-"PO-Revision-Date: 2014-08-07 14:29+0000\n"
+"POT-Creation-Date: 2015-01-26 16:18+0000\n"
+"PO-Revision-Date: 2015-01-26 16:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 "            "
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_wkf
 msgid "Activate"
 msgstr "Ativar"
 
@@ -56,7 +56,12 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: clv_place
-#: view:clv_place:0
+#: field:clv_place,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_place
+#: view:clv_place:clv_place.view_clv_place_form
 msgid "Address Information"
 msgstr "Endereço"
 
@@ -66,12 +71,17 @@ msgid "Alias"
 msgstr "Apelido"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
 msgid "Alias..."
 msgstr "Apelido..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_annotation:clv_place.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_place
+#: view:clv_place:clv_place.view_clv_place_form_annotation
 #: field:clv_place,annotation_ids:0
 msgid "Annotations"
 msgstr "Anotações"
@@ -88,23 +98,23 @@ msgid "Category Code"
 msgstr "Código da Categoria"
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Category Code..."
 msgstr "Código da Categoria..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_category
 msgid "Category..."
 msgstr "Categoria..."
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 #: field:clv_place.category,child_ids:0
 msgid "Child Categories"
 msgstr "Categorias Subordinadas"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
 #: field:clv_place,child_ids:0
 msgid "Child Places"
 msgstr "Locais Subordinados"
@@ -139,7 +149,7 @@ msgid "Date"
 msgstr "Data"
 
 #. module: clv_place
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
 msgid "Date..."
 msgstr "Data..."
 
@@ -150,8 +160,8 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Description..."
 msgstr "Descrição..."
 
@@ -159,6 +169,11 @@ msgstr "Descrição..."
 #: sql_constraint:clv_place.category:0
 msgid "Error! The Category Code must be unique!"
 msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_place
+#: sql_constraint:clv_place:0
+msgid "Error! The Place Code must be unique!"
+msgstr "Erro! O Código do Local deve ser único!"
 
 #. module: clv_place
 #: constraint:clv_place.category:0
@@ -171,23 +186,15 @@ msgid "Error! You can not create recursive places."
 msgstr "Erro! Não é possível criar locais recursivos."
 
 #. module: clv_place
-#: field:clv_place.category,complete_name:0
-msgid "Full Category"
-msgstr "Categoria Completa"
-
-#. module: clv_place
-#: field:clv_place,complete_name:0
-msgid "Full Place"
-msgstr "Local Completo"
-
-#. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_search
+#: view:clv_place:clv_place.view_clv_place_search_category
+#: view:clv_place:clv_place.view_clv_place_search_wkf
+#: view:clv_place.category:clv_place.view_clv_place_category_search
 msgid "Group By..."
 msgstr "Agrupar Por..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_history
 msgid "History"
 msgstr "Histórico"
 
@@ -199,14 +206,9 @@ msgid "ID"
 msgstr "ID"
 
 #. module: clv_place
-#: help:clv_place.category,refresh_complete_name:0
-msgid "If checked, it will allow you to to refresh the stored category full name."
-msgstr "Se marcado, será possível renovar o nome completo da categoria armazenado.."
-
-#. module: clv_place
-#: help:clv_place,refresh_complete_name:0
-msgid "If checked, it will allow you to to refresh the stored full place name."
-msgstr "Se marcado, será possível renovar o nome completo do local armazenado.."
+#: help:clv_place,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desmarcar o histórico sem removê-lo."
 
 #. module: clv_place
 #: help:clv_place.category,active:0
@@ -219,7 +221,7 @@ msgid "If unchecked, it will allow you to hide the place without removing it."
 msgstr "Se desmarcado, será possível esconder o local sem removê-lo."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_wkf
 msgid "Inactivate"
 msgstr "Inativar"
 
@@ -235,12 +237,12 @@ msgid "Inactive"
 msgstr "Inativo"
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_search
 msgid "Inactive Categories"
 msgstr "Categorias Inativas"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_search
 msgid "Inactive Places"
 msgstr "Locais Inativos"
 
@@ -250,60 +252,60 @@ msgid "Inclusion Date"
 msgstr "Data da Inclusão"
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Information"
 msgstr "Informações"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L0"
-msgstr "L0"
+msgstr "N0"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L1"
-msgstr "L1"
+msgstr "N1"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L2"
-msgstr "L2"
+msgstr "N2"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L3"
-msgstr "L3"
+msgstr "N3"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L4"
-msgstr "L4"
+msgstr "N4"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L5"
-msgstr "L5"
+msgstr "N5"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L6"
-msgstr "L6"
+msgstr "N6"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L7"
-msgstr "L7"
+msgstr "N7"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L8"
-msgstr "L8"
+msgstr "N8"
 
 #. module: clv_place
 #: selection:clv_place,level:0
 msgid "L9"
-msgstr "L9"
+msgstr "N9"
 
 #. module: clv_place
 #: field:clv_place,write_uid:0
@@ -326,8 +328,8 @@ msgid "Left parent"
 msgstr "Superior a esquerda"
 
 #. module: clv_place
-#: view:clv_place:0
-msgid "Local..."
+#: view:clv_place:clv_place.view_clv_place_form
+msgid "Place..."
 msgstr "Local..."
 
 #. module: clv_place
@@ -344,41 +346,42 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: clv_place
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
 msgid "Notes..."
 msgstr "Notas..."
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Other Information ..."
 msgstr "Outras Informações ..."
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_search
 #: field:clv_place.category,parent_id:0
 msgid "Parent Category"
 msgstr "Categoria Superior"
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Parent Category..."
 msgstr "Categoria Superior..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_search
 #: field:clv_place,parent_id:0
 msgid "Parent Place"
 msgstr "Local Superior"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
 msgid "Parent Place..."
 msgstr "Local Superior..."
 
 #. module: clv_place
-#: field:clv_annotation,place_id:0
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place:clv_place.view_clv_place_form_wkf
+#: view:clv_place:clv_place.view_clv_place_search
 #: field:clv_place,name:0
 #: field:clv_place.history,place_id:0
 msgid "Place"
@@ -390,19 +393,20 @@ msgid "Place Address"
 msgstr "Endereço do Local"
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_form
+#: view:clv_place.category:clv_place.view_clv_place_category_tree
 #: model:ir.actions.act_window,name:clv_place.act_open_clv_place_category_view
 msgid "Place Categories"
 msgstr "Categorias de Locais"
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_search_category
+#: view:clv_place.category:clv_place.view_clv_place_category_search
 msgid "Place Category"
 msgstr "Categoria de Local"
 
 #. module: clv_place
-#: view:clv_place.category:0
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Place Category..."
 msgstr "Categoria de Local..."
 
@@ -412,41 +416,35 @@ msgid "Place Code"
 msgstr "Código do Local"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
 msgid "Place Code..."
 msgstr "Código do Local..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_history
 #: field:clv_place,history_ids:0
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
+#: view:clv_place.history:clv_place.view_clv_place_history_tree
 msgid "Place History"
 msgstr "Histórico do Local"
 
 #. module: clv_place
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
 msgid "Place..."
 msgstr "Local..."
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_annotation:clv_place.view_clv_annotation_form
+#: field:clv_annotation,place_ids:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place:clv_place.view_clv_place_tree
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 #: field:clv_place.category,place_ids:0
-#: view:clv_tag:0
+#: view:clv_tag:clv_place.view_clv_tag_form
 #: field:clv_tag,place_ids:0
 #: model:ir.actions.act_window,name:clv_place.act_open_clv_place_view
 msgid "Places"
 msgstr "Locais"
-
-#. module: clv_place
-#: field:clv_place.category,refresh_complete_name:0
-msgid "Refresh Full Category"
-msgstr "Renovar a Categoria Completa"
-
-#. module: clv_place
-#: field:clv_place,refresh_complete_name:0
-msgid "Refresh Full Place"
-msgstr "Renovar o Local Completo"
 
 #. module: clv_place
 #: field:clv_place,parent_right:0
@@ -455,18 +453,22 @@ msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_place
-#: view:clv_place:0
-#: view:clv_place.category:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place:clv_place.view_clv_place_form_annotation
+#: view:clv_place:clv_place.view_clv_place_form_history
+#: view:clv_place.category:clv_place.view_clv_place_category_form
 msgid "Settings"
 msgstr "Configurações"
 
 #. module: clv_place
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
 msgid "Stage..."
-msgstr "Stage..."
+msgstr "Estágio..."
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form
+#: view:clv_place:clv_place.view_clv_place_form_seq
+#: view:clv_place:clv_place.view_clv_place_search_wkf
 #: field:clv_place,state:0
 #: field:clv_place.history,state:0
 msgid "Status"
@@ -478,7 +480,7 @@ msgid "Status change date"
 msgstr "Data da mudança de Status"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_wkf
 msgid "Suspend"
 msgstr "Suspender"
 
@@ -494,7 +496,7 @@ msgid "Suspension date"
 msgstr "Data da Suspensão"
 
 #. module: clv_place
-#: view:clv_tag:0
+#: view:clv_tag:clv_place.view_clv_tag_form
 msgid "Tag for"
 msgstr "Etiqueta para"
 
@@ -504,14 +506,9 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: clv_place
-#: view:clv_place:0
+#: view:clv_place:clv_place.view_clv_place_form_tag
 msgid "Tags..."
 msgstr "Etiquetas..."
-
-#. module: clv_place
-#: sql_constraint:clv_place:0
-msgid "Error! The Place Code must be unique!"
-msgstr "Erro! O Código do Local deve ser único!"
 
 #. module: clv_place
 #: help:clv_place.category,code:0
@@ -529,32 +526,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: clv_place
-#: view:clv_place.history:0
+#: view:clv_place.history:clv_place.view_clv_place_history_form
 msgid "User..."
 msgstr "Usuário..."
-
-#. module: clv_place
-#: model:ir.model,name:clv_place.model_clv_annotation
-msgid "clv_annotation"
-msgstr "clv_annotation"
-
-#. module: clv_place
-#: model:ir.model,name:clv_place.model_clv_place
-msgid "clv_place"
-msgstr "clv_place"
-
-#. module: clv_place
-#: model:ir.model,name:clv_place.model_clv_place_category
-msgid "clv_place.category"
-msgstr "clv_place.category"
-
-#. module: clv_place
-#: model:ir.model,name:clv_place.model_clv_place_history
-msgid "clv_place.history"
-msgstr "clv_place.history"
-
-#. module: clv_place
-#: model:ir.model,name:clv_place.model_clv_tag
-msgid "clv_tag"
-msgstr "clv_tag"
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_frame_form_clv_place_history" model="ir.ui.view">
+            <field name="name">clv_frame.form</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="clv_frame.view_clv_frame_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Place History" attrs="{'invisible': ['|', ('is_movable', '=', False), ('parent_id', '!=', False)]}">
+                        <field name="place_history_ids" colspan="4" nolabel="1">
+                            <tree string="Place History">
+                                <!--field name="frame_id"/-->
+                                <field name="place_id"/>
+                                <!--field name="user_id"/-->
+                                <field name="incoming_date"/>
+                                <field name="outgoing_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_place_form_clv_frame_02" model="ir.ui.view">
+            <field name="name">clv_place.form</field>
+            <field name="model">clv_place</field>
+            <field name="inherit_id" ref="clv_place.view_clv_place_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Frame Place History">
+                        <field name="frame_place_history_ids" colspan="4" nolabel="1">
+                            <tree string="Place History">
+                                <field name="frame_id"/>
+                                <!--field name="place_id"/-->
+                                <!--field name="user_id"/-->
+                                <field name="incoming_date"/>
+                                <field name="outgoing_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_place_history_form" model="ir.ui.view">
+            <field name="name">clv_frame.place_history.form</field>
+            <field name="model">clv_frame.place_history</field>
+            <field name="arch" type="xml">
+                <form string="Place History" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="frame_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="frame_id" placeholder="Frame..."/>
+                            </h2>
+                            <label for="place_id" class="oe_edit_only"/>
+                            <h3>
+                                <field name="place_id" placeholder="Place..." readonly="False" default_focus="1"/>
+                            </h3>
+                            <!--label for="user_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="user_id" placeholder="User..."/>
+                            </h1-->
+                            <label for="incoming_date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="incoming_date" placeholder="Incoming Date..."/>
+                            </h3>
+                            <label for="outgoing_date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="outgoing_date" placeholder="Outgoing Date..."/>
+                            </h3>
+                            <label for="notes" class="oe_edit_only"/>
+                            <field name="notes" placeholder="Notes..."/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_frame_place_history_tree" model="ir.ui.view">
+            <field name="name">clv_frame.place_history.tree</field>
+            <field name="model">clv_frame.place_history</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Place History">
+                    <field name="frame_id"/>
+                    <field name="place_id"/>
+                    <field name="incoming_date"/>
+                    <field name="outgoing_date"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
