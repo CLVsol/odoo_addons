@@ -17,46 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Frame',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Frame
-=====
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        ],
-    'data': [
-        'security/clv_frame_security.xml',
-        'security/ir.model.access.csv',
-        'clv_frame_view.xml',
-        'category/clv_frame_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_frame_seq_view.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'wkf/clv_frame_workflow.xml',
-        'wkf/clv_frame_wkf_view.xml',
-        'history/clv_frame_history_view.xml',
-        'clv_place/clv_place_view.xml',
-        'clv_place/clv_frame_place_history_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+
+class clv_frame(models.Model):
+    _inherit = 'clv_frame'
+
+    place_id = fields.Many2one('clv_place', 'Place')
+
+class clv_place(models.Model):
+    _inherit = 'clv_place'
+
+    frame_ids = fields.One2many('clv_frame',
+                                'place_id',
+                                'Frame')

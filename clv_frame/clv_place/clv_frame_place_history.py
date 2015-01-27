@@ -17,46 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Frame',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Frame
-=====
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        ],
-    'data': [
-        'security/clv_frame_security.xml',
-        'security/ir.model.access.csv',
-        'clv_frame_view.xml',
-        'category/clv_frame_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_frame_seq_view.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'wkf/clv_frame_workflow.xml',
-        'wkf/clv_frame_wkf_view.xml',
-        'history/clv_frame_history_view.xml',
-        'clv_place/clv_place_view.xml',
-        'clv_place/clv_frame_place_history_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+from openerp.osv import osv
+from datetime import *
+
+class clv_frame_place_history(osv.Model):
+    _name = 'clv_frame.place_history'
+
+    frame_id = fields.Many2one('clv_frame', 'Frame', required=False)
+    place_id = fields.Many2one('clv_place', 'Place', required=False)
+    incoming_date = fields.Datetime('Incoming Date', required=False,
+                                    default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    outgoing_date = fields.Datetime('Outgoing Date', required=False)
+    notes = fields.Text(string='Notes')
+    
+    _order = "incoming_date desc"
+
+class clv_frame(osv.Model):
+    _inherit = 'clv_frame'
+
+    place_history_ids = fields.One2many('clv_frame.place_history', 'frame_id', 'Place History')
+
+class clv_place(osv.Model):
+    _inherit = 'clv_place'
+
+    frame_place_history_ids = fields.One2many('clv_frame.place_history', 'place_id', 'Frame Place History')

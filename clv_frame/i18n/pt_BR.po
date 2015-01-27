@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-26 16:34+0000\n"
-"PO-Revision-Date: 2015-01-26 16:34+0000\n"
+"POT-Creation-Date: 2015-01-27 12:33+0000\n"
+"PO-Revision-Date: 2015-01-27 12:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -119,12 +119,8 @@ msgid "Child Categories"
 msgstr "Categorias Subordinadas"
 
 #. module: clv_frame
-#: field:clv_frame,child_ids:0
-msgid "Child Frames"
-msgstr "Estruturas Subordinadas"
-
-#. module: clv_frame
 #: view:clv_frame:clv_frame.view_clv_frame_form
+#: field:clv_frame,child_ids:0
 msgid "Child Frames"
 msgstr "Estruturas Subordinadas"
 
@@ -142,6 +138,7 @@ msgstr "Nome comum com que a estrutura é conhecida"
 #: field:clv_frame,create_uid:0
 #: field:clv_frame.category,create_uid:0
 #: field:clv_frame.history,create_uid:0
+#: field:clv_frame.place_history,create_uid:0
 msgid "Created by"
 msgstr "Criado por"
 
@@ -149,13 +146,9 @@ msgstr "Criado por"
 #: field:clv_frame,create_date:0
 #: field:clv_frame.category,create_date:0
 #: field:clv_frame.history,create_date:0
+#: field:clv_frame.place_history,create_date:0
 msgid "Created on"
 msgstr "Criado em"
-
-#. module: clv_frame
-#: field:clv_frame.history,date:0
-msgid "Date"
-msgstr "Data"
 
 #. module: clv_frame
 #: field:clv_frame,description:0
@@ -170,14 +163,14 @@ msgid "Description..."
 msgstr "Descrição..."
 
 #. module: clv_frame
-#: sql_constraint:clv_frame:0
-msgid "Error! The Frame Code must be unique!"
-msgstr "Erro! O Código da Estrutura deve ser único!"
-
-#. module: clv_frame
 #: sql_constraint:clv_frame.category:0
 msgid "Error! The Category Code must be unique!"
 msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_frame
+#: sql_constraint:clv_frame:0
+msgid "Error! The Frame Code must be unique!"
+msgstr "Erro! O Código da Estrutura deve ser único!"
 
 #. module: clv_frame
 #: constraint:clv_frame.category:0
@@ -195,6 +188,7 @@ msgstr "Erro! Não é possível criar estruturas recursivas."
 #: view:clv_frame:clv_frame.view_clv_frame_search
 #: field:clv_frame,name:0
 #: field:clv_frame.history,frame_id:0
+#: field:clv_place,frame_ids:0
 msgid "Frame"
 msgstr "Estrutura"
 
@@ -245,17 +239,34 @@ msgid "Frame Name..."
 msgstr "Nome da Estrutura..."
 
 #. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Frame..."
+msgstr "Frame..."
+
+#. module: clv_frame
 #: view:clv_annotation:clv_frame.view_clv_annotation_form
 #: field:clv_annotation,frame_ids:0
 #: view:clv_frame:clv_frame.view_clv_frame_form
 #: view:clv_frame:clv_frame.view_clv_frame_tree
 #: view:clv_frame.category:clv_frame.view_clv_frame_category_form
 #: field:clv_frame.category,frame_ids:0
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_01
 #: view:clv_tag:clv_frame.view_clv_tag_form
 #: field:clv_tag,frame_ids:0
 #: model:ir.actions.act_window,name:clv_frame.act_open_clv_frame_view
 msgid "Frames"
 msgstr "Estruturas"
+
+#. module: clv_frame
+#: field:clv_frame.place_history,frame_id:0
+msgid "Frame"
+msgstr "Estrutura"
+
+#. module: clv_frame
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
+#: field:clv_place,frame_place_history_ids:0
+msgid "Frame Place History"
+msgstr "Histórico de Locais de Estrutura"
 
 #. module: clv_frame
 #: view:clv_frame:clv_frame.view_clv_frame_search
@@ -274,6 +285,7 @@ msgstr "Histórico"
 #: field:clv_frame,id:0
 #: field:clv_frame.category,id:0
 #: field:clv_frame.history,id:0
+#: field:clv_frame.place_history,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -317,6 +329,16 @@ msgstr "Categorias Inativas"
 #: field:clv_frame,date_inclusion:0
 msgid "Inclusion Date"
 msgstr "Data da Inclusão"
+
+#. module: clv_frame
+#: field:clv_frame.place_history,incoming_date:0
+msgid "Incoming Date"
+msgstr "Data de Entrada"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Incoming Date..."
+msgstr "Data de Entrada..."
 
 #. module: clv_frame
 #: view:clv_frame:clv_frame.view_clv_frame_form
@@ -388,6 +410,7 @@ msgstr "N9"
 #: field:clv_frame,write_uid:0
 #: field:clv_frame.category,write_uid:0
 #: field:clv_frame.history,write_uid:0
+#: field:clv_frame.place_history,write_uid:0
 msgid "Last Updated by"
 msgstr "Última Atualização por"
 
@@ -395,6 +418,7 @@ msgstr "Última Atualização por"
 #: field:clv_frame,write_date:0
 #: field:clv_frame.category,write_date:0
 #: field:clv_frame.history,write_date:0
+#: field:clv_frame.place_history,write_date:0
 msgid "Last Updated on"
 msgstr "Última Atualização em"
 
@@ -403,6 +427,11 @@ msgstr "Última Atualização em"
 #: field:clv_frame.category,parent_left:0
 msgid "Left parent"
 msgstr "Superior a esquerda"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place
+msgid "Palce..."
+msgstr "Local..."
 
 #. module: clv_frame
 #: selection:clv_frame,state:0
@@ -414,8 +443,14 @@ msgstr "Novo"
 #: field:clv_frame,notes:0
 #: field:clv_frame.category,notes:0
 #: field:clv_frame.history,notes:0
+#: field:clv_frame.place_history,notes:0
 msgid "Notes"
 msgstr "Notas"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Notes..."
+msgstr "Notas..."
 
 #. module: clv_frame
 #: view:clv_frame:clv_frame.view_clv_frame_form
@@ -424,10 +459,20 @@ msgid "Other Information ..."
 msgstr "Outras Informações ..."
 
 #. module: clv_frame
+#: field:clv_frame.place_history,outgoing_date:0
+msgid "Outgoing Date"
+msgstr "Data de Saída"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Outgoing Date..."
+msgstr "Data de Saída..."
+
+#. module: clv_frame
 #: view:clv_frame.category:clv_frame.view_clv_frame_category_search
 #: field:clv_frame.category,parent_id:0
 msgid "Parent Category"
-msgstr "Parent Category"
+msgstr "Categoria Superior"
 
 #. module: clv_frame
 #: view:clv_frame.category:clv_frame.view_clv_frame_category_form
@@ -446,6 +491,26 @@ msgid "Parent Frame..."
 msgstr "Estrutura Superior..."
 
 #. module: clv_frame
+#: field:clv_frame,place_id:0
+#: field:clv_frame.place_history,place_id:0
+msgid "Place"
+msgstr "Local"
+
+#. module: clv_frame
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place_history
+#: field:clv_frame,place_history_ids:0
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_tree
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
+msgid "Place History"
+msgstr "Histórico de Locais"
+
+#. module: clv_frame
+#: view:clv_frame.place_history:clv_frame.view_clv_frame_place_history_form
+msgid "Place..."
+msgstr "Local..."
+
+#. module: clv_frame
 #: field:clv_frame,parent_right:0
 #: field:clv_frame.category,parent_right:0
 msgid "Right parent"
@@ -454,8 +519,11 @@ msgstr "Superior a direita"
 #. module: clv_frame
 #: view:clv_frame:clv_frame.view_clv_frame_form
 #: view:clv_frame:clv_frame.view_clv_frame_form_annotation
+#: view:clv_frame:clv_frame.view_clv_frame_form_clv_place_history
 #: view:clv_frame:clv_frame.view_clv_frame_form_history
 #: view:clv_frame.category:clv_frame.view_clv_frame_category_form
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_01
+#: view:clv_place:clv_frame.view_clv_place_form_clv_frame_02
 msgid "Settings"
 msgstr "Configurações"
 
@@ -515,9 +583,10 @@ msgid "Use \"/\" to get an automatic new Code."
 msgstr "Use \"/\" para obter automaticamente um novo Código de Estrutura."
 
 #. module: clv_frame
-#: field:clv_frame.history,user_id:0
-msgid "User"
-msgstr "Usuário"
+#: view:clv_frame.place_history:clv_frame.view_clv_f#. module: clv_base
+#: model:res.groups,name:clv_base.group_frame_manager
+msgid "Frame Manager"
+msgstr "Gerente de Estrutura"
 
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_frame_manager
