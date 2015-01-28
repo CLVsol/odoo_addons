@@ -24,7 +24,7 @@ import time
 class clv_tray_history(models.Model):
     _name = 'clv_tray.history'
 
-    tray_id = fields.Many2one('clv_tray', 'Frame', required=True)
+    tray_id = fields.Many2one('clv_tray', 'Tray', required=True)
     user_id = fields.Many2one ('res.users', 'User', required=True)
     date = fields.Datetime("Date", required=True)
     state = fields.Selection([('new','New'),
@@ -44,7 +44,7 @@ class clv_tray_history(models.Model):
 class clv_tray(models.Model):
     _inherit = 'clv_tray'
 
-    history_ids = fields.One2many('clv_tray.history', 'tray_id', 'Frame History', readonly=True)
+    history_ids = fields.One2many('clv_tray.history', 'tray_id', 'Tray History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
                                     default=False)

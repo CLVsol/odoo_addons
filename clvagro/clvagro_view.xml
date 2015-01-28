@@ -78,12 +78,12 @@
                         sequence="10" 
                         action="clv_tray.act_open_clv_tray_view"/>
                     <!-- Agro/Agro/Tray/Placements -->
-<!--                     <menuitem name="Placements" id="menu_agro_agro_tray_placements"  
+                    <menuitem name="Placements" id="menu_agro_agro_tray_placements"  
                         parent="menu_agro_agro_tray"
                         groups="clv_base.group_tray_user"
                         sequence="20" 
                         action="clv_tray.act_open_clv_tray_placement_view"/>
- -->                 <!-- Agro/Agro/Batch -->
+                 <!-- Agro/Agro/Batch -->
                 <menuitem name="Batch" id="menu_agro_agro_batch" 
                     parent="menu_agro_agro"
                     groups="clv_base.group_batch_user"

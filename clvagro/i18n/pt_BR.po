@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-27 17:30+0000\n"
-"PO-Revision-Date: 2015-01-27 17:30+0000\n"
+"POT-Creation-Date: 2015-01-28 16:13+0000\n"
+"PO-Revision-Date: 2015-01-28 16:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Categorias"
 #: model:ir.ui.menu,name:clvagro.menu_agro_agro_config
 #: model:ir.ui.menu,name:clvagro.menu_base_base_config
 msgid "Configuration"
-msgstr "Configurações"
+msgstr "Configuração"
 
 #. module: clvagro
 #: model:ir.ui.menu,name:clvagro.menu_agro_agro_config_frame
@@ -79,6 +79,11 @@ msgstr "Estruturas"
 #: model:ir.ui.menu,name:clvagro.menu_agro_agro_place
 msgid "Place"
 msgstr "Local"
+
+#. module: clvagro
+#: model:ir.ui.menu,name:clvagro.menu_agro_agro_tray_placements
+msgid "Placements"
+msgstr "Localizações"
 
 #. module: clvagro
 #: model:ir.ui.menu,name:clvagro.menu_agro_agro_place_places

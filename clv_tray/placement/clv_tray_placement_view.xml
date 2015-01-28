@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_tray_placement_tree" model="ir.ui.view">
+            <field name="name">clv_tray.placement.tree</field>
+            <field name="model">clv_tray.placement</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tray Placements">
+                    <field name="tray_id"/>
+                    <field name="place_id"/>
+                    <field name="frame_id"/>
+                    <field name="name"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_tray_placement_form" model="ir.ui.view">
+            <field name="name">clv_tray.placement.form</field>
+            <field name="model">clv_tray.placement</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Tray Placements" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="tray_id"/>
+                            <field name="place_id"/>
+                            <field name="frame_id"/>
+                            <field name="name" default_focus="1"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
+                        </group>
+                        <label for="notes" class="oe_edit_only"/>
+                        <field name="notes" placeholder="Notes..."/>
+                        <notebook>
+                            <page string="Settings" clv_trays="base.clv_tray_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_tray_placement_search" model="ir.ui.view">
+            <field name="name">clv_tray.placement.search</field>
+            <field name="model">clv_tray.placement</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Tray Placements">
+                    <field name="name"/>
+                    <field name="tray_id"/>
+                    <field name="place_id"/>
+                    <field name="frame_id"/>
+                    <newline/>
+                    <group expand="0" string="Broup By...">
+                        <filter string="Tray" domain="[]" context="{'group_tray_by':'tray_id'}"/>
+                        <filter string="Location" domain="[]" context="{'group_tray_by':'place_id'}"/>
+                        <filter string="Framework" domain="[]" context="{'group_tray_by':'frame_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_clv_tray_placement_view">
+            <field name="name">Tray Placements</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_tray.placement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_tray_placement_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new tray placement.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tray_placement_view_form">
+            <field name="act_window_id" ref="act_open_clv_tray_placement_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_tray_placement_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tray_placement_view_tree">
+            <field name="act_window_id" ref="act_open_clv_tray_placement_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_tray_placement_tree"/>
+        </record>
+        
+        <record id="view_clv_tray_form_placement" model="ir.ui.view">
+            <field name="name">clv_tray.form</field>
+            <field name="model">clv_tray</field>
+            <field name="inherit_id" ref="view_clv_tray_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Placements">
+                        <field name="placement_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
