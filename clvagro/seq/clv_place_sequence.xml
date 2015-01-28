@@ -2,11 +2,11 @@
 <openerp>
     <data noupdate="1">
 
-        <record id="clv_place.seq_clv_place_category" model="ir.sequence">
+        <record id="clv_place.seq_clv_place" model="ir.sequence">
             <!--field name="padding" eval="9"/-->
             <!--field name="prefix">00000</field-->
-            <field name="padding" eval="7"/>
-            <field name="prefix">0509</field>
+            <field name="padding" eval="8"/>
+            <field name="prefix">110</field>
         </record>
 
     </data>

@@ -17,31 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from openerp.osv import osv
-from datetime import *
-
-class clv_tray(models.Model):
-    _name = "clv_tray"
-
-    name = fields.Char('Tray', required=True, size=64, translate=False)
-    alias = fields.Char('Alias', size=64, help='Common name that the tray is referred')
-    code = fields.Char(size=64, string='Tray Code', required=False)
-    description = fields.Char(string='Description', size=256)
-    address_id = fields.Many2one('res.partner', 'Tray Address')
-    notes = fields.Text(string='Notes')
-    date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
-                                     default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    active = fields.Boolean('Active', 
-                            help="If unchecked, it will allow you to hide the tray without removing it.",
-                            default=1)
-    _order = 'name'
-
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Tray Code must be unique!')]
-
-    def onchange_address_id(self, cr, uid, ids, address, context=None):
-        if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'comm_phone': address.phone, 'mobile_phone': address.mobile}}
-        return {'value': {}}
-
+import clv_tag
+import clv_annotation
+# import clv_person
+# import clv_patient

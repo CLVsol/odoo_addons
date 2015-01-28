@@ -46,6 +46,7 @@ Tray
         'wkf/clv_tray_workflow.xml',
         'wkf/clv_tray_wkf_view.xml',
         'history/clv_tray_history_view.xml',
+        'placement/clv_tray_placement_view.xml',
         ],
     'demo': [],
     'test': [],
