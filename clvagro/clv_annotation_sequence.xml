@@ -6,7 +6,14 @@
             <!--field name="padding" eval="9"/-->
             <!--field name="prefix">00000</field-->
             <field name="padding" eval="9"/>
-            <field name="prefix">01</field>
+            <field name="prefix">02</field>
+        </record>
+
+        <record id="clv_annotation.seq_clv_annotation_category" model="ir.sequence">
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="8"/>
+            <field name="prefix">029</field>
         </record>
 
     </data>
