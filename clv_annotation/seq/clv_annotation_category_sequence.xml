@@ -10,10 +10,8 @@
         <record id="clv_annotation.seq_clv_annotation_category" model="ir.sequence">
             <field name="name">Annotation Category Sequence</field>
             <field name="code">clv_annotation.category.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
-            <field name="padding" eval="8"/>
-            <field name="prefix">059</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
         </record>
 
     </data>

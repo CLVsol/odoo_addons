@@ -11,29 +11,29 @@
                 parent="menu_base"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
+                <!-- Base/Base/Tags -->
+                <menuitem name="Tags" id="menu_base_base_tags"
+                    parent="menu_base_base"
+                    groups="clv_base.group_tag_user"
+                    sequence="10"
+                    action="clv_tag.act_open_clv_tag_view"/>
                 <!-- Base/Base/Annotations -->
                 <menuitem name="Annotations" id="menu_base_base_annotations"
                     parent="menu_base_base"
                     groups="clv_base.group_annotation_user"
-                    sequence="10"
-                    action="clv_annotation.act_open_clv_annotation_view"/>
-            <!-- Base/Configuration -->
-            <menuitem name="Configuration" id="menu_base_config"  
-                parent="menu_base"
-                groups="clv_base.group_base_manager"
-                sequence="90"/>
-                <!-- Base/Configuration/Tags -->
-                <menuitem name="Tags" id="menu_base_config_clv_tags"
-                    parent="menu_base_config"
-                    groups="clv_base.group_tag_user"
-                    sequence="10"
-                    action="clv_tag.act_open_clv_tag_view"/>
-                <!-- Base/Configuration/Annotation Categories -->
-                <menuitem name="Annotation Categories" id="menu_base_config_annotation_categories" 
-                    parent="menu_base_config"
-                    groups="clv_base.group_annotation_user"
                     sequence="20"
-                    action="clv_annotation.act_open_clv_annotation_category_view"/>
+                    action="clv_annotation.act_open_clv_annotation_view"/>
+                <!-- Base/Base/Configuration -->
+                <menuitem name="Configuration" id="menu_base_base_config"  
+                    parent="menu_base_base"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+                    <!-- Base/Base/Configuration/Annotation Categories -->
+                    <menuitem name="Annotation Categories" id="menu_base_base_config_annotation_categories" 
+                        parent="menu_base_base_config"
+                        groups="clv_base.group_annotation_user"
+                        sequence="10"
+                        action="clv_annotation.act_open_clv_annotation_category_view"/>
 
         <!-- Agro -->
         <menuitem name="Agro" id="menu_agro" 
@@ -44,18 +44,28 @@
                 parent="menu_agro"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Agro/Agro/Places -->
-                <menuitem name="Places" id="menu_agro_agro_places"
+                <!-- Agro/Agro/Place -->
+                <menuitem name="Place" id="menu_agro_agro_place" 
                     parent="menu_agro_agro"
                     groups="clv_base.group_place_user"
-                    sequence="10"
-                    action="clv_place.act_open_clv_place_view"/>
-                <!-- Agro/Agro/Frames -->
-                <menuitem name="Frames" id="menu_agro_agro_frames"
+                    sequence="10"/>
+                    <!-- Agro/Agro/Place/Places -->
+                    <menuitem name="Places" id="menu_agro_agro_place_places"
+                        parent="menu_agro_agro_place"
+                        groups="clv_base.group_place_user"
+                        sequence="10"
+                        action="clv_place.act_open_clv_place_view"/>
+                <!-- Agro/Agro/Frame -->
+                <menuitem name="Frame" id="menu_agro_agro_frame" 
                     parent="menu_agro_agro"
                     groups="clv_base.group_frame_user"
-                    sequence="20"
-                    action="clv_frame.act_open_clv_frame_view"/>
+                    sequence="20"/>
+                    <!-- Agro/Agro/Frame/Frames -->
+                    <menuitem name="Frames" id="menu_agro_agro_frame_frames"
+                        parent="menu_agro_agro_frame"
+                        groups="clv_base.group_frame_user"
+                        sequence="10"
+                        action="clv_frame.act_open_clv_frame_view"/>
                 <!-- Agro/Agro/Tray -->
                 <menuitem name="Tray" id="menu_agro_agro_tray" 
                     parent="menu_agro_agro"
@@ -68,12 +78,12 @@
                         sequence="10" 
                         action="clv_tray.act_open_clv_tray_view"/>
                     <!-- Agro/Agro/Tray/Placements -->
-<!--                     <menuitem name="Placements" id="menu_agro_agro_tray_placements"  
+                    <menuitem name="Placements" id="menu_agro_agro_tray_placements"  
                         parent="menu_agro_agro_tray"
                         groups="clv_base.group_tray_user"
                         sequence="20" 
                         action="clv_tray.act_open_clv_tray_placement_view"/>
- -->                 <!-- Agro/Agro/Batch -->
+                 <!-- Agro/Agro/Batch -->
                 <menuitem name="Batch" id="menu_agro_agro_batch" 
                     parent="menu_agro_agro"
                     groups="clv_base.group_batch_user"
@@ -108,64 +118,89 @@
                         groups="clv_base.group_batch_user"
                         sequence="50" 
                         action="clv_batch.act_open_clv_batch_pointing_view"/>
- -->                <!-- Agro/Agro/Seedlings -->
-                <menuitem name="Seedlings" id="menu_agro_agro_seedlings" 
+ -->                 <!-- Agro/Agro/Seedling -->
+                <menuitem name="Seedling" id="menu_agro_agro_seedling" 
                     parent="menu_agro_agro"
                     groups="clv_base.group_seedling_user"
-                    sequence="50" 
-                    action="clv_seedling.act_open_clv_seedling_view"/>
-            <!-- Agro/Configuration -->
-            <menuitem name="Configuration" id="menu_agro_config"  
-                parent="menu_agro"
-                groups="clv_base.group_base_manager"
-                sequence="90"/>
-                <!-- Agro/Configuration/Place Categories -->
-                <menuitem name="Place Categories" id="menu_agro_config_place_categories"
-                    parent="menu_agro_config"
-                    groups="clv_base.group_place_user"
-                    sequence="10"
-                    action="clv_place.act_open_clv_place_category_view"/>
-                <!-- Agro/Configuration/Frame Categories -->
-                <menuitem name="Frame Categories" id="menu_agro_config_frame_categories"
-                    parent="menu_agro_config"
-                    groups="clv_base.group_frame_user"
-                    sequence="20"
-                    action="clv_frame.act_open_clv_frame_category_view"/>
-                <!-- Agro/Configuration/Tray Categories -->
-                <menuitem name="Tray Categories" id="menu_agro_config_tray_categories"
-                    parent="menu_agro_config"
-                    groups="clv_base.group_tray_user"
-                    sequence="30"
-                    action="clv_tray.act_open_clv_tray_category_view"/>
-                <!-- Agro/Configuration/Batch -->
-                <menuitem name="Batch" id="menu_agro_config_batch" 
-                    parent="menu_agro_config"
-                    groups="clv_base.group_batch_user"
-                    sequence="40"/>
-                    <!-- Agro/Configuration/Batch/Categories -->
-                    <menuitem name="Categories" id="menu_agro_config_batch_categories"
-                        parent="menu_agro_config_batch"
+                    sequence="50"/>
+                    <!-- Agro/Agro/Seedling/Seedlings -->
+                    <menuitem name="Seedlings" id="menu_agro_agro_seedling_seedlings" 
+                        parent="menu_agro_agro_seedling"
+                        groups="clv_base.group_seedling_user"
+                        sequence="10" 
+                        action="clv_seedling.act_open_clv_seedling_view"/>
+                <!-- Agro/Agro/Configuration -->
+                <menuitem name="Configuration" id="menu_agro_agro_config"  
+                    parent="menu_agro_agro"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+                    <!-- Agro/Agro/Configuration/Place -->
+                    <menuitem name="Place" id="menu_agro_agro_config_place" 
+                        parent="menu_agro_agro_config"
+                        groups="clv_base.group_place_user"
+                        sequence="10"/>
+                        <!-- Agro/Agro/Configuration/Place/Categories -->
+                        <menuitem name="Categories" id="menu_agro_agro_config_place_categories"
+                            parent="menu_agro_agro_config_place"
+                            groups="clv_base.group_place_user"
+                            sequence="10"
+                            action="clv_place.act_open_clv_place_category_view"/>
+                    <!-- Agro/Agro/Configuration/Frame -->
+                    <menuitem name="Frame" id="menu_agro_agro_config_frame" 
+                        parent="menu_agro_agro_config"
+                        groups="clv_base.group_frame_user"
+                        sequence="20"/>
+                        <!-- Agro/Agro/Configuration/Frame/Categories -->
+                        <menuitem name="Categories" id="menu_agro_agro_config_frame_categories"
+                            parent="menu_agro_agro_config_frame"
+                            groups="clv_base.group_frame_user"
+                            sequence="10"
+                            action="clv_frame.act_open_clv_frame_category_view"/>
+                    <!-- Agro/Agro/Configuration/Tray -->
+                    <menuitem name="Tray" id="menu_agro_agro_config_tray" 
+                        parent="menu_agro_agro_config"
+                        groups="clv_base.group_tray_user"
+                        sequence="30"/>
+                        <!-- Agro/Agro/Configuration/Tray/Categories -->
+                        <menuitem name="Categories" id="menu_agro_agro_config_tray_categories"
+                            parent="menu_agro_agro_config_tray"
+                            groups="clv_base.group_tray_user"
+                            sequence="10"
+                            action="clv_tray.act_open_clv_tray_category_view"/>
+                    <!-- Agro/Agro/Configuration/Batch -->
+                    <menuitem name="Batch" id="menu_agro_agro_config_batch" 
+                        parent="menu_agro_agro_config"
                         groups="clv_base.group_batch_user"
-                        sequence="10"
-                        action="clv_batch.act_open_clv_batch_category_view"/>
-                    <!-- Agro/Configuration/Batch/Pointings P0 -->
-<!--                     <menuitem name="Pointings P0" id="menu_agro_config_batch_pointings_p0"
-                        parent="menu_agro_config_batch"
-                        groups="clv_base.group_batch_user"
-                        sequence="20"
-                        action="clv_batch.act_open_clv_batch_pointing_p0_view"/>
- -->                    <!-- Agro/Configuration/Batch/Pointings P1 -->
-<!--                     <menuitem name="Pointings P1" id="menu_agro_config_batch_pointings_p1"
-                        parent="menu_agro_config_batch"
-                        groups="clv_base.group_batch_user"
-                        sequence="30"
-                        action="clv_batch.act_open_clv_batch_pointing_p1_view"/>
- -->                <!-- Agro/Configuration/Seedling Categories -->
-                <menuitem name="Seedling Categories" id="menu_agro_config_seedling_categories"
-                    parent="menu_agro_config"
-                    groups="clv_base.group_seedling_user"
-                    sequence="50"
-                    action="clv_seedling.act_open_clv_seedling_category_view"/>
+                        sequence="40"/>
+                        <!-- Agro/Agro/Configuration/Batch/Categories -->
+                        <menuitem name="Categories" id="menu_agro_agro_config_batch_categories"
+                            parent="menu_agro_agro_config_batch"
+                            groups="clv_base.group_batch_user"
+                            sequence="10"
+                            action="clv_batch.act_open_clv_batch_category_view"/>
+                        <!-- Agro/Agro/Configuration/Batch/Pointings P0 -->
+    <!--                     <menuitem name="Pointings P0" id="menu_agro_agro_config_batch_pointings_p0"
+                            parent="menu_agro_agro_config_batch"
+                            groups="clv_base.group_batch_user"
+                            sequence="20"
+                            action="clv_batch.act_open_clv_batch_pointing_p0_view"/>
+     -->                    <!-- Agro/Agro/Configuration/Batch/Pointings P1 -->
+    <!--                     <menuitem name="Pointings P1" id="menu_agro_agro_config_batch_pointings_p1"
+                            parent="menu_agro_agro_config_batch"
+                            groups="clv_base.group_batch_user"
+                            sequence="30"
+                            action="clv_batch.act_open_clv_batch_pointing_p1_view"/>
+     -->                <!-- Agro/Agro/Configuration/Seedling -->
+                    <menuitem name="Seedling" id="menu_agro_agro_config_seedling" 
+                        parent="menu_agro_agro_config"
+                        groups="clv_base.group_seedling_user"
+                        sequence="50"/>
+                    <!-- Agro/Agro/Configuration/Seedling Categories -->
+                        <menuitem name="Categories" id="menu_agro_agro_config_seedling_categories"
+                            parent="menu_agro_agro_config_seedling"
+                            groups="clv_base.group_seedling_user"
+                            sequence="10"
+                            action="clv_seedling.act_open_clv_seedling_category_view"/>
 
     </data>
 </openerp>
