@@ -11,3 +11,7 @@ access_clv_tray_category_base_smanager,clv_tray.category,model_clv_tray_category
 access_clv_tray_history_tray_user,clv_tray.history,model_clv_tray_history,clv_base.group_tray_user,1,0,0,0
 access_clv_tray_history_tray_manager,clv_tray.history,model_clv_tray_history,clv_base.group_tray_manager,1,1,1,0
 access_clv_tray_history_base_smanager,clv_tray.history,model_clv_tray_history,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_tray_placement_tray_user,clv_tray.placement,model_clv_tray_placement,clv_base.group_tray_user,1,0,0,0
+access_clv_tray_placement_tray_manager,clv_tray.placement,model_clv_tray_placement,clv_base.group_tray_manager,1,1,1,0
+access_clv_tray_placement_base_smanager,clv_tray.placement,model_clv_tray_placement,clv_base.group_base_smanager,1,1,1,1
