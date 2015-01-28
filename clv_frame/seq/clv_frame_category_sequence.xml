@@ -10,10 +10,8 @@
         <record id="clv_frame.seq_clv_frame_category" model="ir.sequence">
             <field name="name">Frame Category Sequence</field>
             <field name="code">clv_frame.category.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
-            <field name="padding" eval="7"/>
-            <field name="prefix">0609</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
         </record>
 
     </data>
