@@ -24,5 +24,5 @@ import clv_annotation
 import seq
 import wkf
 import history
-# import placement
+import placement
 # import pointing

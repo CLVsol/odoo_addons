@@ -17,45 +17,35 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVagro - the CLVsol agro solution',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-the CLVsol agro solution
-------------------------
-This module will install all the necessary modules to implement the CLVsol agro solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        'clv_seedling',
-        ],
-    'data': [
-        'clvagro_view.xml',
-        'seq/clv_tag_sequence.xml',
-        'seq/clv_annotation_sequence.xml',
-        'seq/clv_annotation_category_sequence.xml',
-        'seq/clv_place_sequence.xml',
-        'seq/clv_place_category_sequence.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'seq/clv_tray_sequence.xml',
-        'seq/clv_tray_category_sequence.xml',
-        'seq/clv_batch_sequence.xml',
-        'seq/clv_batch_category_sequence.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_batch_placement_place(osv.Model):
+    _name = 'clv_batch.placement.place'
+
+    _columns = {
+        'name': fields.many2one('clv_place', 'Place', required=True),
+        'batch_placement_id': fields.many2one('clv_batch.placement', string='Batch Placement', help='Batch Placement'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the placement place without removing it."),
+    }
+
+    _defaults = {
+        'active': 1,
+    }
+
+class clv_batch_placement(osv.osv):
+    _inherit = 'clv_batch.placement'
+
+    _columns = {
+        'place_ids': fields.one2many('clv_batch.placement.place',
+                                     'batch_placement_id',
+                                     'Places'),
+    }
+
+class clv_place(osv.Model):
+    _inherit = 'clv_place'
+
+    _columns = {
+        'batch_placement_place_ids': fields.one2many('clv_batch.placement.place', 'name', 'Batch Placements'),
+    }
+

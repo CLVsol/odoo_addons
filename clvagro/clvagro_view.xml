@@ -95,24 +95,30 @@
                         sequence="10"
                         action="clv_batch.act_open_clv_batch_view"/>
                     <!-- Agro/Agro/Batch/Placements -->
-<!--                     <menuitem name="Placements" id="menu_agro_agro_batch_placements"  
+                    <menuitem name="Placements" id="menu_agro_agro_batch_placements"  
                         parent="menu_agro_agro_batch"
                         groups="clv_base.group_batch_user"
                         sequence="20" 
                         action="clv_batch.act_open_clv_batch_placement_view"/>
- -->                    <!-- Agro/Agro/Batch/Placement Places -->
-<!--                     <menuitem name="Placement Places" id="menu_agro_agro_batch_placement_placews"  
+                    <!-- Agro/Agro/Batch/Placement Places -->
+                    <menuitem name="Placement Places" id="menu_agro_agro_batch_placement_placews"  
                         parent="menu_agro_agro_batch"
                         groups="clv_base.group_batch_user"
                         sequence="30" 
                         action="clv_batch.act_open_clv_batch_placement_place_view"/>
- -->                    <!-- Agro/Agro/Batch/Placement Frameworks -->
-<!--                     <menuitem name="Placement Frameworks" id="menu_agro_agro_batch_placement_frameworks"  
+                    <!-- Agro/Agro/Batch/Placement Frames -->
+                    <menuitem name="Placement Frames" id="menu_agro_agro_batch_placement_frames"  
                         parent="menu_agro_agro_batch"
                         groups="clv_base.group_batch_user"
                         sequence="40" 
-                        action="clv_batch.act_open_clv_batch_placement_framework_view"/>
- -->                    <!-- Agro/Agro/Batch/Pointings -->
+                        action="clv_batch.act_open_clv_batch_placement_frame_view"/>
+                    <!-- Agro/Agro/Batch/Placement Trays -->
+                    <menuitem name="Placement Trays" id="menu_agro_agro_batch_placement_trays"  
+                        parent="menu_agro_agro_batch"
+                        groups="clv_base.group_batch_user"
+                        sequence="50" 
+                        action="clv_batch.act_open_clv_batch_placement_tray_view"/>
+                    <!-- Agro/Agro/Batch/Pointings -->
 <!--                      <menuitem name="Pointings" id="menu_agro_agro_batch_pointings"  
                         parent="menu_agro_agro_batch"
                         groups="clv_base.group_batch_user"

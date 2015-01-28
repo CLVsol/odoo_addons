@@ -21,5 +21,7 @@ import clv_seedling
 import category
 import clv_tag
 import clv_annotation
-# import seq
-# import batch_history
+import seq
+import wkf
+import history
+import batch_history
