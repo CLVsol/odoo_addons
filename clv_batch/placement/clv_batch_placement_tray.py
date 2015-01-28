@@ -17,12 +17,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import placement
-# import pointing
+from openerp.osv import fields, osv
+
+class clv_batch_placement_tray(osv.Model):
+    _name = 'clv_batch.placement.tray'
+
+    _columns = {
+        'name': fields.many2one('clv_tray', 'Tray', required=True),
+        'batch_placement_id': fields.many2one('clv_batch.placement', string='Batch Placement', help='Batch Placement'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the placement tray without removing it."),
+    }
+
+    _defaults = {
+        'active': 1,
+    }
+
+class clv_batch_placement(osv.osv):
+    _inherit = 'clv_batch.placement'
+
+    _columns = {
+        'tray_ids': fields.one2many('clv_batch.placement.tray',
+                                     'batch_placement_id',
+                                     'Trays'),
+    }
+
+class oebase_clv_tray(osv.Model):
+    _inherit = 'clv_tray'
+
+    _columns = {
+        'clv_batch_placement_tray_ids': fields.one2many('clv_batch.placement.tray', 'name', 'Batch Placements'),
+    }
