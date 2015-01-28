@@ -17,12 +17,37 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import placement
-# import pointing
+from openerp.osv import fields, osv
+from datetime import *
+
+class clv_batch_placement(osv.Model):
+    _name = 'clv_batch.placement'
+
+    _columns = {
+        'name': fields.char('Placement', required=True, size=64, translate=False),
+        'batch_id': fields.many2one('clv_batch', string='Batch', help='Batch'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the placement without removing it."),
+    }
+
+    _order = "sign_in_date desc"
+
+    _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': 1,
+    }
+
+clv_batch_placement()
+
+class clv_batch(osv.osv):
+    _inherit = 'clv_batch'
+
+    _columns = {
+        'placement_ids': fields.one2many('clv_batch.placement',
+                                         'batch_id',
+                                         'Placements'),
+    }
+
+clv_batch()
