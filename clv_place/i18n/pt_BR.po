@@ -530,3 +530,13 @@ msgstr "Usuário"
 msgid "User..."
 msgstr "Usuário..."
 
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_place_manager
+msgid "Place Manager"
+msgstr "Gerente de Local"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_place_user
+msgid "Place User"
+msgstr "Usuário de Local"
+
