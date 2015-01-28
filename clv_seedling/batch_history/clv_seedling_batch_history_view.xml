@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_seedling_form_clv_batch_history" model="ir.ui.view">
+            <field name="name">clv_seedling.form</field>
+            <field name="model">clv_seedling</field>
+            <field name="inherit_id" ref="clv_seedling.view_clv_seedling_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Batch History">
+                        <field name="batch_history_ids" colspan="4" nolabel="1">
+                            <tree string="Batch History">
+                                <!--field name="seedling_id"/-->
+                                <field name="batch_id"/>
+                                <!--field name="user_id"/-->
+                                <field name="incoming_date"/>
+                                <field name="outgoing_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_batch_form_clv_seedling_02" model="ir.ui.view">
+            <field name="name">clv_batch.form</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Seedling Batch History">
+                        <field name="seedling_batch_history_ids" colspan="4" nolabel="1">
+                            <tree string="Batch History">
+                                <field name="seedling_id"/>
+                                <!--field name="batch_id"/-->
+                                <!--field name="user_id"/-->
+                                <field name="incoming_date"/>
+                                <field name="outgoing_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_seedling_batch_history_form" model="ir.ui.view">
+            <field name="name">clv_seedling.batch_history.form</field>
+            <field name="model">clv_seedling.batch_history</field>
+            <field name="arch" type="xml">
+                <form string="Batch History" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="seedling_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="seedling_id" batchholder="Seedling..."/>
+                            </h2>
+                            <label for="batch_id" class="oe_edit_only"/>
+                            <h3>
+                                <field name="batch_id" batchholder="Batch..." readonly="False" default_focus="1"/>
+                            </h3>
+                            <!--label for="user_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="user_id" batchholder="User..."/>
+                            </h1-->
+                            <label for="incoming_date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="incoming_date" batchholder="Incoming Date..."/>
+                            </h3>
+                            <label for="outgoing_date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="outgoing_date" batchholder="Outgoing Date..."/>
+                            </h3>
+                            <label for="notes" class="oe_edit_only"/>
+                            <field name="notes" batchholder="Notes..."/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_seedling_batch_history_tree" model="ir.ui.view">
+            <field name="name">clv_seedling.batch_history.tree</field>
+            <field name="model">clv_seedling.batch_history</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Batch History">
+                    <field name="seedling_id"/>
+                    <field name="batch_id"/>
+                    <field name="incoming_date"/>
+                    <field name="outgoing_date"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

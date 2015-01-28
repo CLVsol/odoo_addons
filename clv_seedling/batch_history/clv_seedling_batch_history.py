@@ -17,45 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVagro - the CLVsol agro solution',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-the CLVsol agro solution
-------------------------
-This module will install all the necessary modules to implement the CLVsol agro solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        'clv_seedling',
-        ],
-    'data': [
-        'clvagro_view.xml',
-        'seq/clv_tag_sequence.xml',
-        'seq/clv_annotation_sequence.xml',
-        'seq/clv_annotation_category_sequence.xml',
-        'seq/clv_place_sequence.xml',
-        'seq/clv_place_category_sequence.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'seq/clv_tray_sequence.xml',
-        'seq/clv_tray_category_sequence.xml',
-        'seq/clv_batch_sequence.xml',
-        'seq/clv_batch_category_sequence.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp import models, fields, api
+from openerp.osv import osv
+from datetime import *
+
+class clv_seedling_batch_history(osv.Model):
+    _name = 'clv_seedling.batch_history'
+
+    seedling_id = fields.Many2one('clv_seedling', 'Seedling', required=False)
+    batch_id = fields.Many2one('clv_batch', 'Batch', required=False)
+    incoming_date = fields.Datetime('Incoming Date', required=False,
+                                    default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    outgoing_date = fields.Datetime('Outgoing Date', required=False)
+    notes = fields.Text(string='Notes')
+    
+    _order = "incoming_date desc"
+
+class clv_seedling(osv.Model):
+    _inherit = 'clv_seedling'
+
+    batch_history_ids = fields.One2many('clv_seedling.batch_history', 'seedling_id', 'Batch History')
+
+class clv_batch(osv.Model):
+    _inherit = 'clv_batch'
+
+    seedling_batch_history_ids = fields.One2many('clv_seedling.batch_history', 'batch_id', 'Seedling Batch History')

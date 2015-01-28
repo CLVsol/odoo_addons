@@ -21,56 +21,25 @@ from openerp import models, fields, api
 from datetime import *
 import time
 
-class clv_batch_history(models.Model):
-    _name = 'clv_batch.history'
+class clv_seedling(models.Model):
+    _inherit = 'clv_seedling'
 
-    batch_id = fields.Many2one('clv_batch', 'Batch', required=True)
-    user_id = fields.Many2one ('res.users', 'User', required=True)
-    date = fields.Datetime("Date", required=True)
+    date = fields.Datetime("Status change date", required=True, readonly=True,
+                           default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    date_activation = fields.Datetime("Activation date", required=False, readonly=False)
+    date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
+    date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
     state = fields.Selection([('new','New'),
                               ('active','Active'),
                               ('inactive','Inactive'),
                               ('suspended','Suspended')
                               ], string='Status', default='new', readonly=True, required=True, help="")
-    notes = fields.Text(string='Notes')
-    
-    _order = "date desc"
 
-    _defaults = {
-        'user_id': lambda obj,cr,uid,context: uid, 
-        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        }
-
-class clv_batch(models.Model):
-    _inherit = 'clv_batch'
-
-    history_ids = fields.One2many('clv_batch.history', 'batch_id', 'Batch History', readonly=True)
-    active_history = fields.Boolean('Active History', 
-                                    help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
-
-    @api.one
-    def insert_clv_batch_history(self, batch_id, state, notes):
-        if self.active_history:
-            values = { 
-                'batch_id': batch_id,
-                'state': state,
-                'notes': notes,
-            }
-            self.pool.get('clv_batch.history').create(self._cr, self._uid, values)
-
-    @api.multi
-    def write(self, values):
-        if (not 'state' in values) and (not 'date' in values):
-            notes = values.keys()
-            self.insert_clv_batch_history(self.id, self.state, notes)
-        return super(clv_batch, self).write(values)
-
+   
     @api.one
     def button_new(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'new'
-        self.insert_clv_batch_history(self.id, 'new', '')
 
     @api.one
     def button_activate(self):
@@ -79,7 +48,6 @@ class clv_batch(models.Model):
             self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             time.sleep(1.0)
         self.state = 'active'
-        self.insert_clv_batch_history(self.id, 'active', '')
 
     @api.one
     def button_inactivate(self):
@@ -88,7 +56,6 @@ class clv_batch(models.Model):
             self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             time.sleep(1.0)
         self.state = 'inactive'
-        self.insert_clv_batch_history(self.id, 'inactive', '')
 
     @api.one
     def button_suspend(self):
@@ -97,4 +64,3 @@ class clv_batch(models.Model):
             self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             time.sleep(1.0)
         self.state = 'suspended'
-        self.insert_clv_batch_history(self.id, 'suspended', '')
