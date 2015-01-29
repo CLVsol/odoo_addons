@@ -40,6 +40,17 @@
                         groups="clv_base.group_document_user"
                         sequence="20"
                         action="clv_document.act_open_clv_document_document_consent_view"/>
+                <!-- Base/Base/Pointing -->
+                <menuitem name="Pointing" id="menu_base_base_pointing"
+                    parent="menu_base_base"
+                    groups="clv_base.group_pointing_user"
+                    sequence="40"/>
+                    <!-- Base/Base/Pointings -->
+                    <menuitem name="Pointings" id="menu_base_base_pointing_pointings"
+                        parent="menu_base_base_pointing"
+                        groups="clv_base.group_pointing_user"
+                        sequence="10"
+                        action="clv_pointing.act_open_clv_pointing_view"/>
                 <!-- Base/Base/Configuration -->
                 <menuitem name="Configuration" id="menu_base_base_config"  
                     parent="menu_base_base"
@@ -74,6 +85,17 @@
                             groups="clv_base.group_document_user"
                             sequence="30"
                             action="clv_document.act_open_clv_document_consent_answer_view"/>
+                    <!-- Base/Base/Configuration/Pointing -->
+                    <menuitem name="Pointing" id="menu_base_base_config_pointing"
+                        parent="menu_base_base_config"
+                        groups="clv_base.group_pointing_user"
+                        sequence="30"/>
+                        <!-- Base/Base/Configuration/Pointing/Categories -->
+                        <menuitem name="Categories" id="menu_base_base_config_pointing_categories" 
+                            parent="menu_base_base_config_pointing"
+                            groups="clv_base.group_pointing_user"
+                            sequence="10"
+                            action="clv_pointing.act_open_clv_pointing_category_view"/>
 
         <!-- Agro -->
         <menuitem name="Agro" id="menu_agro" 
