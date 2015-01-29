@@ -53,7 +53,7 @@ class clv_document(osv.osv):
         }
     
     _defaults = {
-        'active_history': True
+        'active_history': False
         }
 
     def insert_clv_document_history(self, cr, uid, active_history, document_id, state, notes, context=None):

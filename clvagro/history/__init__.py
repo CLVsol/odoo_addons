@@ -19,6 +19,7 @@
 
 import clv_tag
 import clv_annotation
+import clv_document
 import clv_place
 import clv_frame
 import clv_tray

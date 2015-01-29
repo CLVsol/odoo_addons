@@ -10,10 +10,8 @@
         <record id="clv_document.seq_clv_document" model="ir.sequence">
             <field name="name">Document Sequence</field>
             <field name="code">clv_document.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
             <field name="padding" eval="9"/>
-            <field name="prefix">02</field>
+            <field name="prefix">00000</field>
         </record>
 
     </data>
