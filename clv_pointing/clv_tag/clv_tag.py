@@ -17,12 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+from openerp.osv import fields, osv
+
+class clv_tag(osv.osv):
+    _inherit = 'clv_tag'
+
+    _columns = {
+        'pointing_ids': fields.many2many('clv_pointing', 
+                                         'clv_pointing_clv_tag_rel', 
+                                         'tag_id', 
+                                         'pointing_id', 
+                                         'Pointings'),
+        }
+
+class clv_pointing(osv.osv):
+    _inherit = 'clv_pointing'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_pointing_clv_tag_rel', 
+                                    'pointing_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }

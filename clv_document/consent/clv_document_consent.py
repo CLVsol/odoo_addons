@@ -17,12 +17,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+from openerp.osv import fields, osv
+
+class clv_document(osv.osv):
+    _name = 'clv_document.consent'
+
+    _columns = {
+        'name': fields.char('Name', required=True, size=64),
+        'alias': fields.char('Alias', size=64, help='Common name that the Document Consent is referred'),
+        'code': fields.char(size=64, string='Document Consent Code', required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes':  fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+    _sql_constraints = [('document_consent_code_uniq', 'unique(code)', u'Error! The Document Consent Code must be unique!')]
+
+    _order='name'

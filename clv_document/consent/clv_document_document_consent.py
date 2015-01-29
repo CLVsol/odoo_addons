@@ -17,12 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+from openerp.osv import fields, osv
+
+class clv_document_document_consent(osv.osv):
+    _name = 'clv_document.document_consent'
+
+    _columns = {
+        'document_id': fields.many2one('clv_document', string='Document',
+                                        help='Document', required=False),
+        'document_consent_id': fields.many2one('clv_document.consent', string='Document Consent'),
+        'answer': fields.many2one('clv_document.consent_answer', 'Answer', required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document_consent without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
+
+    _columns = {
+        'document_consent_ids': fields.one2many('clv_document.document_consent',
+                                                'document_id',
+                                                'Document Consents'),
+    }
+
+class clv_document_consent(osv.osv):
+    _inherit = 'clv_document.consent'
+
+    _columns = {
+        'document_ids': fields.one2many('clv_document.document_consent',
+                                        'document_consent_id',
+                                        'Documents'),
+        }
+

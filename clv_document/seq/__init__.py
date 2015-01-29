@@ -17,12 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+import clv_document_seq
+import clv_document_category_seq

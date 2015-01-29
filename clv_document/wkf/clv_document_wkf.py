@@ -17,12 +17,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+from openerp.osv import fields, osv
+from datetime import *
+
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
+
+    _columns = {
+        'state': fields.selection([('draft','Draft'),
+                                   ('revised','Revised'),
+                                   ('waiting','Waiting'),
+                                   ('done','Done')
+                                   ], string='Status', readonly=True, required=True, help="")
+        }
+    
+    _defaults = {
+        'state': 'draft',
+        }
+
+    def button_draft(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'draft'})
+
+    def button_revised(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'revised'})
+
+    def button_waiting(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'waiting'})
+
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})

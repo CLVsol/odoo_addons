@@ -17,12 +17,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import clv_annotation
-import clv_document
-import clv_pointing
-import clv_place
-import clv_frame
-import clv_tray
-import clv_batch
-import clv_seedling
+from openerp.osv import fields, osv
+
+class clv_document_consent_answer(osv.osv):
+    _name = 'clv_document.consent_answer'
+
+    _columns = {
+        'name': fields.char(size=256, 
+                            string='Document Consent Answer', required=True, 
+                            help='Consent Answer in an Document'),
+        'description': fields.text(string='Description'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the answer without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }

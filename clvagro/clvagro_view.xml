@@ -23,6 +23,34 @@
                     groups="clv_base.group_annotation_user"
                     sequence="20"
                     action="clv_annotation.act_open_clv_annotation_view"/>
+                <!-- Base/Base/Document -->
+                <menuitem name="Document" id="menu_base_base_document"
+                    parent="menu_base_base"
+                    groups="clv_base.group_document_user"
+                    sequence="30"/>
+                    <!-- Base/Base/Documents -->
+                    <menuitem name="Documents" id="menu_base_base_document_documents"
+                        parent="menu_base_base_document"
+                        groups="clv_base.group_document_user"
+                        sequence="10"
+                        action="clv_document.act_open_clv_document_view"/>
+                    <!-- Base/Base/Documents/Consents -->
+                    <menuitem name="Consents" id="menu_base_base_document_consents"
+                        parent="menu_base_base_document"
+                        groups="clv_base.group_document_user"
+                        sequence="20"
+                        action="clv_document.act_open_clv_document_document_consent_view"/>
+                <!-- Base/Base/Pointing -->
+                <menuitem name="Pointing" id="menu_base_base_pointing"
+                    parent="menu_base_base"
+                    groups="clv_base.group_pointing_user"
+                    sequence="40"/>
+                    <!-- Base/Base/Pointings -->
+                    <menuitem name="Pointings" id="menu_base_base_pointing_pointings"
+                        parent="menu_base_base_pointing"
+                        groups="clv_base.group_pointing_user"
+                        sequence="10"
+                        action="clv_pointing.act_open_clv_pointing_view"/>
                 <!-- Base/Base/Configuration -->
                 <menuitem name="Configuration" id="menu_base_base_config"  
                     parent="menu_base_base"
@@ -34,6 +62,40 @@
                         groups="clv_base.group_annotation_user"
                         sequence="10"
                         action="clv_annotation.act_open_clv_annotation_category_view"/>
+                    <!-- Base/Base/Configuration/Document -->
+                    <menuitem name="Document" id="menu_base_base_config_document"
+                        parent="menu_base_base_config"
+                        groups="clv_base.group_document_user"
+                        sequence="20"/>
+                        <!-- Base/Base/Configuration/Document/Categories -->
+                        <menuitem name="Categories" id="menu_base_base_config_document_categories" 
+                            parent="menu_base_base_config_document"
+                            groups="clv_base.group_document_user"
+                            sequence="10"
+                            action="clv_document.act_open_clv_document_category_view"/>
+                        <!-- Base/Base/Configuration/Document/Consents -->
+                        <menuitem name="Consents" id="menu_base_base_config_document_consents" 
+                            parent="menu_base_base_config_document"
+                            groups="clv_base.group_document_user"
+                            sequence="20"
+                            action="clv_document.act_open_clv_document_consent_view"/>
+                        <!-- Base/Base/Configuration/Document/Consent Answers -->
+                        <menuitem name="Consent Answers" id="menu_base_base_config_document_document_consent_answers"
+                            parent="menu_base_base_config_document"
+                            groups="clv_base.group_document_user"
+                            sequence="30"
+                            action="clv_document.act_open_clv_document_consent_answer_view"/>
+                    <!-- Base/Base/Configuration/Pointing -->
+                    <menuitem name="Pointing" id="menu_base_base_config_pointing"
+                        parent="menu_base_base_config"
+                        groups="clv_base.group_pointing_user"
+                        sequence="30"/>
+                        <!-- Base/Base/Configuration/Pointing/Categories -->
+                        <menuitem name="Categories" id="menu_base_base_config_pointing_categories" 
+                            parent="menu_base_base_config_pointing"
+                            groups="clv_base.group_pointing_user"
+                            sequence="10"
+                            action="clv_pointing.act_open_clv_pointing_category_view"/>
 
         <!-- Agro -->
         <menuitem name="Agro" id="menu_agro" 
