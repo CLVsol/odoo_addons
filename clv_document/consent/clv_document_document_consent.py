@@ -17,48 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVagro - the CLVsol agro solution',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-the CLVsol agro solution
-------------------------
-This module will install all the necessary modules to implement the CLVsol agro solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_document',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        'clv_seedling',
-        ],
-    'data': [
-        'clvagro_view.xml',
-        'seq/clv_tag_sequence.xml',
-        'seq/clv_annotation_sequence.xml',
-        'seq/clv_annotation_category_sequence.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'seq/clv_place_sequence.xml',
-        'seq/clv_place_category_sequence.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'seq/clv_tray_sequence.xml',
-        'seq/clv_tray_category_sequence.xml',
-        'seq/clv_batch_sequence.xml',
-        'seq/clv_batch_category_sequence.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_document_document_consent(osv.osv):
+    _name = 'clv_document.document_consent'
+
+    _columns = {
+        'document_id': fields.many2one('clv_document', string='Document',
+                                        help='Document', required=False),
+        'document_consent_id': fields.many2one('clv_document.consent', string='Document Consent'),
+        'answer': fields.many2one('clv_document.consent_answer', 'Answer', required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document_consent without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
+
+    _columns = {
+        'document_consent_ids': fields.one2many('clv_document.document_consent',
+                                                'document_id',
+                                                'Document Consents'),
+    }
+
+class clv_document_consent(osv.osv):
+    _inherit = 'clv_document.consent'
+
+    _columns = {
+        'document_ids': fields.one2many('clv_document.document_consent',
+                                        'document_consent_id',
+                                        'Documents'),
+        }
+

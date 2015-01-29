@@ -17,48 +17,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'CLVagro - the CLVsol agro solution',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-the CLVsol agro solution
-------------------------
-This module will install all the necessary modules to implement the CLVsol agro solution.
-    ''',
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_document',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        'clv_seedling',
-        ],
-    'data': [
-        'clvagro_view.xml',
-        'seq/clv_tag_sequence.xml',
-        'seq/clv_annotation_sequence.xml',
-        'seq/clv_annotation_category_sequence.xml',
-        'seq/clv_document_sequence.xml',
-        'seq/clv_document_category_sequence.xml',
-        'seq/clv_place_sequence.xml',
-        'seq/clv_place_category_sequence.xml',
-        'seq/clv_frame_sequence.xml',
-        'seq/clv_frame_category_sequence.xml',
-        'seq/clv_tray_sequence.xml',
-        'seq/clv_tray_category_sequence.xml',
-        'seq/clv_batch_sequence.xml',
-        'seq/clv_batch_category_sequence.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+from openerp.osv import fields, osv
+
+class clv_document_consent_answer(osv.osv):
+    _name = 'clv_document.consent_answer'
+
+    _columns = {
+        'name': fields.char(size=256, 
+                            string='Document Consent Answer', required=True, 
+                            help='Consent Answer in an Document'),
+        'description': fields.text(string='Description'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the answer without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }

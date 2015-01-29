@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_document_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_document.tree</field>
+            <field name="model">clv_document</field>
+            <field name="inherit_id" ref="clv_document.view_clv_document_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_document_form_wkf" model="ir.ui.view">
+            <field name="name">clv_document.form</field>
+            <field name="model">clv_document</field>
+            <field name="inherit_id" ref="clv_document.view_clv_document_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <sheet string="Document" position="before">
+                    <header>
+                        <button string="Revised" name="button_revised" states="draft,waiting,done" type="workflow" groups="clv_base.group_document_manager"/>
+                        <button string="Waiting" name="button_waiting" states="draft,revised" type="workflow" groups="clv_base.group_document_manager"/>
+                        <button string="Done" name="button_done" states="draft,revised,waiting" type="workflow" groups="clv_base.group_document_manager" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_document_search_wkf" model="ir.ui.view">
+            <field name="name">clv_document.search</field>
+            <field name="model">clv_document</field>
+            <field name="inherit_id" ref="clv_document.view_clv_document_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+                <filter string="Date" position="before">
+                    <filter string="Stage" domain="[]" context="{'group_by':'state'}" />
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
