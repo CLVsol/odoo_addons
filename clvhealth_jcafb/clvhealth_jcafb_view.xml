@@ -81,13 +81,18 @@
                 parent="menu_health"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Health/Health/Patients -->
-<!--                 <menuitem name="Patients" id="menu_health_health_persons"
+                <!-- Health/Health/Patient -->
+                <menuitem name="Patients" id="menu_health_health_patient"
                     parent="menu_health_health"
                     groups="clv_base.group_patient_user"
-                    sequence="10"
-                    action="clv_patient.act_open_clv_patient_view"/>
- -->                <!-- Health/Health/Lab Tests -->
+                    sequence="10"/>
+                    <!-- Health/Health/Patient/Patients -->
+                    <menuitem name="Patients" id="menu_health_health_patient_patients"
+                        parent="menu_health_health_patient"
+                        groups="clv_base.group_patient_user"
+                        sequence="10"
+                        action="clv_patient.act_open_clv_patient_view"/>
+                <!-- Health/Health/Lab Tests -->
 <!--                 <menuitem name="Lab Tests" id="menu_health_health_lab_tests"
                     parent="menu_health_health"
                     groups="clv_base.group_lab_test_user"
@@ -116,18 +121,23 @@
                     groups="clv_base.group_lab_test_user"
                     sequence="50"
                     action="clv_lab_test.clv_action_today_draft_lab_test_request"/>
- -->            <!-- Health/Configuration -->
-            <menuitem name="Configuration" id="menu_health_config"  
-                parent="menu_health"
+ -->            <!-- Health/Health/Configuration -->
+            <menuitem name="Configuration" id="menu_health_health_config"  
+                parent="menu_health_health"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
-                <!-- Health/Configuration/Patient Categories -->
-<!--                 <menuitem name="Patient Categories" id="menu_health_config_patient_categories"
-                    parent="menu_health_config"
+                <!-- Health/Health/Configuration/Patient -->
+                <menuitem name="Patient" id="menu_health_health_config_patient"
+                    parent="menu_health_health_config"
                     groups="clv_base.group_base_manager"
-                    sequence="30"
-                    action="clv_patient.act_open_clv_patient_category_view"/>
- -->                <!-- Health/Configuration/Lab Test-->
+                    sequence="10"/>
+                    <!-- Health/Health/Configuration/Patient/Categories -->
+                    <menuitem name="Categories" id="menu_health_health_config_patient_categories"
+                        parent="menu_health_health_config_patient"
+                        groups="clv_base.group_base_manager"
+                        sequence="10"
+                        action="clv_patient.act_open_clv_patient_category_view"/>
+                <!-- Health/Configuration/Lab Test-->
 <!--                 <menuitem name="Lab Test" id="menu_health_config_lab_test"
                     parent="menu_health_config"
                     groups="clv_base.group_base_manager"

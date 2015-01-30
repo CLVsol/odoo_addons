@@ -10,10 +10,8 @@
         <record id="clv_patient.seq_clv_patient" model="ir.sequence">
             <field name="name">Patient Sequence</field>
             <field name="code">clv_patient.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
             <field name="padding" eval="9"/>
-            <field name="prefix">03</field>
+            <field name="prefix">00000</field>
         </record>
 
     </data>
