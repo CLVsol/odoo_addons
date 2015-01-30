@@ -10,10 +10,8 @@
         <record id="clv_person.seq_clv_person_category" model="ir.sequence">
             <field name="name">Person Category Sequence</field>
             <field name="code">clv_person.category.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
-            <field name="padding" eval="8"/>
-            <field name="prefix">029</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
         </record>
 
     </data>
