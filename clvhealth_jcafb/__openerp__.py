@@ -34,7 +34,7 @@ This module will install all the necessary modules for the CLVhealth-JCAFB solut
         'clv_document',
         'clv_person',
         'clv_patient',
-        # 'clv_lab_test',
+        'clv_lab_test',
         # 'clv_survey',
         ],
     'data': [

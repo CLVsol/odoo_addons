@@ -53,6 +53,7 @@ Lab Test
         # 'clv_lab_test_workflow.xml',
         'clv_lab_test_unit_view.xml',
         'clv_lab_test_type_view.xml',
+        'clv_lab_test_criterion_view.xml',
         'clv_lab_test_request_view.xml',
         # 'clv_patient_view.xml',
         'wizard/create_lab_test.xml',
