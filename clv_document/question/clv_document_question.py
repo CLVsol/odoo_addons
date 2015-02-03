@@ -19,38 +19,23 @@
 
 from openerp.osv import fields, osv
 
-class clv_document_document_consent(osv.osv):
-    _name = 'clv_document.document_consent'
+class clv_document(osv.osv):
+    _name = 'clv_document.question'
 
     _columns = {
-        'document_id': fields.many2one('clv_document', string='Document',
-                                        help='Document', required=False),
-        'document_consent_id': fields.many2one('clv_document.consent', string='Document Consent'),
-        'answer': fields.many2one('clv_document.consent_answer', 'Answer', required=False),
-        'notes': fields.text(string='Notes'),
+        'name': fields.char('Name', required=True, size=64),
+        'alias': fields.char('Alias', size=64, help='Common name that the Document Question is referred'),
+        'code': fields.char(size=64, string='Document Question Code', required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes':  fields.text(string='Notes'),
         'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the document_consent without removing it."),
+                                 help="If unchecked, it will allow you to hide the document without removing it."),
         }
 
     _defaults = {
         'active': 1,
         }
     
-class clv_document(osv.osv):
-    _inherit = 'clv_document'
+    _sql_constraints = [('document_question_code_uniq', 'unique(code)', u'Error! The Document Question Code must be unique!')]
 
-    _columns = {
-        'document_consent_ids': fields.one2many('clv_document.document_consent',
-                                                'document_id',
-                                                'Document Consents'),
-    }
-
-class clv_document_consent(osv.osv):
-    _inherit = 'clv_document.consent'
-
-    _columns = {
-        'document_ids': fields.one2many('clv_document.document_consent',
-                                        'document_consent_id',
-                                        'Documents'),
-        }
-
+    _order='name'

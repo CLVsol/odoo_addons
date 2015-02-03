@@ -19,13 +19,13 @@
 
 from openerp.osv import fields, osv
 
-class clv_document_consent_answer(osv.osv):
-    _name = 'clv_document.consent_answer'
+class clv_document_question_answer(osv.osv):
+    _name = 'clv_document.question_answer'
 
     _columns = {
         'name': fields.char(size=256, 
-                            string='Document Consent Answer', required=True, 
-                            help='Consent Answer in an Document'),
+                            string='Document Question Answer', required=True, 
+                            help='Question Answer in an Document'),
         'description': fields.text(string='Description'),
         'notes': fields.text(string='Notes'),
         'active': fields.boolean('Active', 

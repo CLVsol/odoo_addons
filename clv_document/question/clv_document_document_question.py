@@ -19,23 +19,38 @@
 
 from openerp.osv import fields, osv
 
-class clv_document(osv.osv):
-    _name = 'clv_document.consent'
+class clv_document_document_question(osv.osv):
+    _name = 'clv_document.document_question'
 
     _columns = {
-        'name': fields.char('Name', required=True, size=64),
-        'alias': fields.char('Alias', size=64, help='Common name that the Document Consent is referred'),
-        'code': fields.char(size=64, string='Document Consent Code', required=False),
-        'description': fields.char(string='Description', size=256),
-        'notes':  fields.text(string='Notes'),
+        'document_id': fields.many2one('clv_document', string='Document',
+                                        help='Document', required=False),
+        'document_question_id': fields.many2one('clv_document.question', string='Document Question'),
+        'answer': fields.many2one('clv_document.question_answer', 'Answer', required=False),
+        'notes': fields.text(string='Notes'),
         'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the document without removing it."),
+                                 help="If unchecked, it will allow you to hide the document_question without removing it."),
         }
 
     _defaults = {
         'active': 1,
         }
     
-    _sql_constraints = [('document_consent_code_uniq', 'unique(code)', u'Error! The Document Consent Code must be unique!')]
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
 
-    _order='name'
+    _columns = {
+        'document_question_ids': fields.one2many('clv_document.document_question',
+                                                 'document_id',
+                                                 'Document Questions'),
+    }
+
+class clv_document_question(osv.osv):
+    _inherit = 'clv_document.question'
+
+    _columns = {
+        'document_ids': fields.one2many('clv_document.document_question',
+                                        'document_question_id',
+                                        'Documents'),
+        }
+
