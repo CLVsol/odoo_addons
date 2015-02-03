@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
+        
         <record id="view_lab_make_test" model="ir.ui.view">
             <field name="name">Create Lab Test</field>
             <field name="model">clv_lab_test.create</field>

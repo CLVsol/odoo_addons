@@ -6,11 +6,14 @@
             <field name="name">Lab Test Type</field>
             <field name="model">clv_lab_test.type</field>
             <field name="arch" type="xml">
-                <form string="Lab Test Type">
+                <!--form string="Lab Test Type"-->
+                <form string="Lab Test Types" version="7.0">
                     <notebook>
                         <page string="Main Info">
-                            <field name="name" required="1"></field>
-                            <field name="code"></field>
+                            <group>
+                                <field name="name" required="1"></field>
+                                <field name="code"></field>
+                            </group>
                             <field name="criteria" colspan="4" nolabel="1">
                                 <tree string="Test Cases">
                                     <field name="sequence"/>
@@ -28,7 +31,9 @@
                                     <field name="outcome_ids" widget="many2many_tags"/>
                                 </form>
                             </field>
-                            <field name="product_id"/>
+                            <group>
+                                <field name="product_id"/>
+                            </group>
                         </page>
                         <page string="Extra Info">
                             <field name="info"></field>
