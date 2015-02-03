@@ -6,13 +6,15 @@
             <field name="name">Lab Test Requests</field>
             <field name="model">clv_lab_test.patient</field>
             <field name="arch" type="xml">
-                <form string="Lab Test Requests">
-                    <field name="name" required="1"/>
-                    <field name="date"/>
-                    <field name="patient_id" required="1"/>
-                    <!--field name="professional_id"/-->
-                    <field name="state"/>
-                    <field name="lab_test_id"></field>
+                <form string="Lab Test Requests" version="7.0">
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="date"/>
+                        <field name="patient_id" required="1"/>
+                        <!--field name="professional_id"/-->
+                        <field name="state"/>
+                        <field name="lab_test_id"></field>
+                    </group>
                 </form>
             </field>
         </record>
