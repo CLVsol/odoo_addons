@@ -2,16 +2,16 @@
 <openerp>
     <data>
 
-        <record id="view_clv_document_consent_answer_form" model="ir.ui.view">
-            <field name="name">clv_document.consent_answer.form</field>
-            <field name="model">clv_document.consent_answer</field>
+        <record id="view_clv_document_question_answer_form" model="ir.ui.view">
+            <field name="name">clv_document.question_answer.form</field>
+            <field name="model">clv_document.question_answer</field>
             <field name="arch" type="xml">
-                <form string="Document Consent Answers" version="7.0">
+                <form string="Document Question Answers" version="7.0">
                     <sheet>
                          <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Consent Answer..." />
+                                <field name="name" default_focus="1" placeholder="Question Answer..." />
                             </h1>
                             <label for="description" class="oe_edit_only"/>
                             <h3>
@@ -32,61 +32,61 @@
             </field>
         </record>
         
-        <record id="view_clv_document_consent_answer_tree" model="ir.ui.view">
-            <field name="name">clv_document.consent_answer.tree</field>
-            <field name="model">clv_document.consent_answer</field>
+        <record id="view_clv_document_question_answer_tree" model="ir.ui.view">
+            <field name="name">clv_document.question_answer.tree</field>
+            <field name="model">clv_document.question_answer</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Document Consent Answers">
+                <tree string="Document Question Answers">
                     <field name="name" />
                     <field name="description" />
                 </tree>
             </field>
         </record>
         
-        <record id="view_clv_document_consent_answer_search" model="ir.ui.view">
-            <field name="name">clv_document.consent_answer.search</field>
-            <field name="model">clv_document.consent_answer</field>
+        <record id="view_clv_document_question_answer_search" model="ir.ui.view">
+            <field name="name">clv_document.question_answer.search</field>
+            <field name="model">clv_document.question_answer</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Document Consent Answer">
+                <search string="Document Question Answer">
                     <field name="name" />
                     <field name="description" />
                     <separator/>
-                    <filter string="Inactive Consent Answers" name="active" domain="[('active','=',0)]" help="Inactive Consent Answers"/>
+                    <filter string="Inactive Question Answers" name="active" domain="[('active','=',0)]" help="Inactive Question Answers"/>
                 </search>
             </field>
         </record>
         
-        <record model="ir.actions.act_window" id="act_open_clv_document_consent_answer_view">
-            <field name="name">Document Consent Answers</field>
+        <record model="ir.actions.act_window" id="act_open_clv_document_question_answer_view">
+            <field name="name">Document Question Answers</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_document.consent_answer</field>
+            <field name="res_model">clv_document.question_answer</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_document_consent_answer_search" />
+            <field name="search_view_id" ref="view_clv_document_question_answer_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="context">{}</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new document consent_answer.
+                Click to add a new document question_answer.
               </p>
             </field>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_document_consent_answer_view_form">
-            <field name="act_window_id" ref="act_open_clv_document_consent_answer_view" />
+        <record model="ir.actions.act_window.view" id="act_open_clv_document_question_answer_view_form">
+            <field name="act_window_id" ref="act_open_clv_document_question_answer_view" />
             <field name="sequence" eval="20" />
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_document_consent_answer_form" />
+            <field name="view_id" ref="view_clv_document_question_answer_form" />
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_document_consent_answer_view_tree">
-            <field name="act_window_id" ref="act_open_clv_document_consent_answer_view" />
+        <record model="ir.actions.act_window.view" id="act_open_clv_document_question_answer_view_tree">
+            <field name="act_window_id" ref="act_open_clv_document_question_answer_view" />
             <field name="sequence" eval="10" />
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_document_consent_answer_tree" />
+            <field name="view_id" ref="view_clv_document_question_answer_tree" />
         </record>
         
     </data>

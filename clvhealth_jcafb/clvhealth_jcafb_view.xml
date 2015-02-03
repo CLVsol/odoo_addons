@@ -34,12 +34,12 @@
                         groups="clv_base.group_document_user"
                         sequence="10"
                         action="clv_document.act_open_clv_document_view"/>
-                    <!-- Base/Base/Documents/Consents -->
-                    <menuitem name="Consents" id="menu_base_base_document_consents"
+                    <!-- Base/Base/Documents/Question -->
+                    <menuitem name="Question" id="menu_base_base_document_questions"
                         parent="menu_base_base_document"
                         groups="clv_base.group_document_user"
                         sequence="20"
-                        action="clv_document.act_open_clv_document_document_consent_view"/>
+                        action="clv_document.act_open_clv_document_document_question_view"/>
                 <!-- Base/Base/Configuration -->
                 <menuitem name="Configuration" id="menu_base_base_config"  
                     parent="menu_base_base"
@@ -62,18 +62,18 @@
                             groups="clv_base.group_document_user"
                             sequence="10"
                             action="clv_document.act_open_clv_document_category_view"/>
-                        <!-- Base/Base/Configuration/Document/Consents -->
-                        <menuitem name="Consents" id="menu_base_base_config_document_consents" 
+                        <!-- Base/Base/Configuration/Document/Question -->
+                        <menuitem name="Question" id="menu_base_base_config_document_questions" 
                             parent="menu_base_base_config_document"
                             groups="clv_base.group_document_user"
                             sequence="20"
-                            action="clv_document.act_open_clv_document_consent_view"/>
-                        <!-- Base/Base/Configuration/Document/Consent Answers -->
-                        <menuitem name="Consent Answers" id="menu_base_base_config_document_document_consent_answers"
+                            action="clv_document.act_open_clv_document_question_view"/>
+                        <!-- Base/Base/Configuration/Document/Question Answers -->
+                        <menuitem name="Question Answers" id="menu_base_base_config_document_document_question_answers"
                             parent="menu_base_base_config_document"
                             groups="clv_base.group_document_user"
                             sequence="30"
-                            action="clv_document.act_open_clv_document_consent_answer_view"/>
+                            action="clv_document.act_open_clv_document_question_answer_view"/>
 
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 

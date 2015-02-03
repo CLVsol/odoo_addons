@@ -17,6 +17,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_document_consent
-import clv_document_document_consent
-import clv_document_consent_answer
+import clv_document_question
+import clv_document_document_question
+import clv_document_question_answer

@@ -50,7 +50,7 @@
                         <notebook>
                             <page string="Document Information">
                                 <group>
-                                    <group string="Consents">
+                                    <group string="Questions">
                                     </group>
                                     <group string="Signatures">
                                         <field name="date"/>
