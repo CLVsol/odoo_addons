@@ -35,9 +35,9 @@ class clv_batch(models.Model):
     child_ids = fields.One2many('clv_batch', 'parent_id', 'Child Batchs')
     item_birthday = fields.Date("Date of Birth")
     item_age = fields.Char(string='Item Age', size=32, compute='_item_age', store=False)
-    is_movable = fields.Boolean('Is Movable', 
-                                help="Check if the batch is movable, otherwise it is immovable",
-                                default=False)
+    # is_movable = fields.Boolean('Is Movable', 
+    #                             help="Check if the batch is movable, otherwise it is immovable",
+    #                             default=False)
     batch_start = fields.Date("Batch Start",
                               default=lambda *a: datetime.now().strftime('%Y-%m-%d'))
     batch_age = fields.Char(string='Batch Age', size=32, compute='_batch_age', store=False)

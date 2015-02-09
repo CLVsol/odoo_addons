@@ -8,12 +8,13 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Batches">
-                    <field name="parent_id" invisible="1"/>
-                    <field name="complete_name" />
+                    <field name="name" />
+                    <field name="parent_id"/>
+                    <field name="complete_name" invisible="1"/>
                     <field name="alias" />
                     <field name="code" />
                     <field name="description" />
-                    <field name="is_movable"/>
+                    <!--field name="is_movable"/-->
                     <field name="size" />
                     <field name="batch_start" />
                     <field name="item_birthday" />
@@ -37,9 +38,12 @@
                                 <field name="parent_id" placeholder="Parent Batch..."/>
                             </h2>
                             <!--div class="oe_edit_only"-->
-                            <div>
+                            <!--div>
                                 <label for="name"/> (
                                 <field name="is_movable" class="oe_inline"/> <label for="is_movable" string="Is Movable?"/>)
+                            </div-->
+                            <div>
+                                <label for="name"/>
                             </div>
                             <h1>
                                 <field name="name" default_focus="1" placeholder="Batch Name..."/>
