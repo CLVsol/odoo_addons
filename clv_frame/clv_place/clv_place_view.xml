@@ -38,6 +38,9 @@
                 <field name="code" position="after">
                     <field name="place_id" />
                 </field>
+                <filter string="Parent Frame" position="after">
+                    <filter string="Place" context="{'group_by': 'place_id'}"/>
+                </filter>
             </field>
         </record>
 
