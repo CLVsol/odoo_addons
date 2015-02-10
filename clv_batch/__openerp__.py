@@ -52,6 +52,7 @@ Batch
         'placement/clv_batch_placement_place_view.xml',
         'placement/clv_batch_placement_frame_view.xml',
         'placement/clv_batch_placement_tray_view.xml',
+        'placement/clv_batch_place_view.xml',
         # 'pointing/clv_batch_pointing_view.xml',
         # 'pointing/clv_batch_pointing_p0_view.xml',
         # 'pointing/clv_batch_pointing_p1_view.xml',
