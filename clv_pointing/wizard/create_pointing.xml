@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_lab_make_pointing" model="ir.ui.view">
+            <field name="name">Create Pointing</field>
+            <field name="model">clv_pointing.create</field>
+            <!--field name="type">form</field-->
+            <field name="arch" type="xml">
+                <form string="Create Pointings">
+                    <separator colspan="4" string="Do you want to generate the pointing(s) ?" />
+                    <newline/>
+                    <separator string="Create Pointings" colspan="6"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="create_pointing" string="Create Pointing" type="object" icon="gtk-ok"/>
+               </form>
+            </field>
+        </record>
+
+       <act_window name="Create Pointing"
+            res_model="clv_pointing.create"
+            src_model="clv_pointing.batch"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_create_pointing"/>
+
+    </data>
+</openerp>

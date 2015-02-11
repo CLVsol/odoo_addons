@@ -11,6 +11,9 @@
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
+                    <field name="pointing_type"></field>
+                    <field name="batch"></field>
+                    <field name="date_execution"></field>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -43,11 +46,49 @@
                             <h3>
                                 <field name="code" placeholder="Pointing Code..."/>
                             </h3>
+                            <div class="oe_edit_only">
+                                <label for="pointing_type"/>
+                            </div>
+                            <h2>
+                                <field name="pointing_type" placeholder="Pointing Type..." />
+                            </h2>
+                            <div class="oe_edit_only">
+                                <label for="date_execution"/>
+                            </div>
+                            <h3>
+                                <field name="date_execution" placeholder="Date..."/>
+                            </h3>
+                            <div class="oe_edit_only">
+                                <label for="batch"/>
+                            </div>
+                            <h2>
+                                <field name="batch" placeholder="Batch..."/>
+                            </h2>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
+                            <page string="Main Info">
+                                <field name="date_requested"></field>
+                                <field name="criteria" colspan="4" nolabel="1">
+                                    <tree editable="top" string="Test Cases">
+                                        <field name="sequence"/>
+                                        <field name="name"/>
+                                        <field name="result"/>
+                                        <!--field name="normal_range"/-->
+                                        <field name="unit"/>
+                                        <!--field name="outcome_ids"/-->
+                                        <!--field name="valid_values"/-->
+                                    </tree>
+                                    <form string="Pointing Cases">
+                                        <field name="name"/>
+                                        <field name="result"/>
+                                        <field name="unit"/>
+                                        <!--field name="normal_range"/-->
+                                    </form>
+                                </field>
+                            </page>
                             <page string="Pointing Information">
                                 <group>
                                     <group string="Pointing Data">

@@ -17,10 +17,40 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+from openerp.osv import fields, osv
+
+class clv_document_document_question(osv.osv):
+    _name = 'clv_document.document_question'
+
+    _columns = {
+        'document_id': fields.many2one('clv_document', string='Document',
+                                        help='Document', required=False),
+        'document_question_id': fields.many2one('clv_document.question', string='Document Question'),
+        'answer': fields.many2one('clv_document.question_answer', 'Answer', required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document_question without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+class clv_document(osv.osv):
+    _inherit = 'clv_document'
+
+    _columns = {
+        'document_question_ids': fields.one2many('clv_document.document_question',
+                                                 'document_id',
+                                                 'Document Questions'),
+    }
+
+class clv_document_question(osv.osv):
+    _inherit = 'clv_document.question'
+
+    _columns = {
+        'document_ids': fields.one2many('clv_document.document_question',
+                                        'document_question_id',
+                                        'Documents'),
+        }
+

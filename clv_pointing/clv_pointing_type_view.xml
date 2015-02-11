@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="clv_pointing_type_view">
+            <field name="name">Pointing Type</field>
+            <field name="model">clv_pointing.type</field>
+            <field name="arch" type="xml">
+                <!--form string="Pointing Type"-->
+                <form string="Pointing Types" version="7.0">
+                    <notebook>
+                        <page string="Main Info">
+                            <group>
+                                <field name="name" required="1"></field>
+                                <field name="code"></field>
+                            </group>
+                            <field name="criteria" colspan="4" nolabel="1">
+<!--                                 <tree string="Test Cases">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="unit"/>
+ -->                                    <!--field name="normal_range"/-->
+                                    <!--field name="outcome_ids" widget="many2many_tags"/-->
+<!--                                 </tree>
+                                <form string="Test Cases">
+                                    <field name="name"/>
+                                    <field name="unit"/>
+                                    <field name="sequence"/>
+                                    <newline/>
+ -->                                    <!--field name="normal_range"/-->
+                                    <!--field name="outcome_ids" widget="many2many_tags"/-->
+                                <!-- </form> -->
+                            </field>
+                        </page>
+                        <page string="Description">
+                            <field name="description"></field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="clv_pointing_type_tree">
+            <field name="name">Pointing Types list</field>
+            <field name="model">clv_pointing.type</field>
+            <field name="arch" type="xml">
+                <tree string='Pointing Type'>
+                    <field name="name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_pointing_type_view">
+            <field name="name">Pointing Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_pointing.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="clv_pointing_type_tree"/>
+        </record>
+        
+        <record id="view_clv_pointing_type_search" model="ir.ui.view">
+            <field name="name">clv_pointing.type.select</field>
+            <field name="model">clv_pointing.type</field>
+            <field name="arch" type="xml">
+                <search string="Search Pointing Types">
+                    <separator orientation="vertical"/>
+                    <field name="name" select="1"/>
+                    <field name="code" select="1"/>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

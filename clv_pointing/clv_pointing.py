@@ -24,7 +24,8 @@ class clv_pointing(osv.osv):
     _name = 'clv_pointing'
 
     _columns = {
-        'name': fields.char('Name', required=True, size=64),
+        # 'name': fields.char('Name', required=True, size=64),
+        'name': fields.char('Name', required=False, size=128),
         'alias': fields.char('Alias', size=64, help='Common name that the Pointing is referred'),
         'code': fields.char(size=64, string='Pointing Code', required=False),
         'notes': fields.text(string='Notes'),
@@ -32,6 +33,16 @@ class clv_pointing(osv.osv):
         'active': fields.boolean('Active', 
                                  help="If unchecked, it will allow you to hide the pointing without removing it."),
         'responsible': fields.many2one('res.users', 'Responsible', required=False, readonly=False),
+
+        # name = fields.Char ('ID', size=128, help="Pointing result ID")
+        'pointing_type': fields.many2one ('clv_pointing.type', 'Pointing type', help="Pointing type"),
+        'batch': fields.many2one('clv_batch', 'Batch', help="Batch"),
+        # results = fields.Text ('Results')
+        # diagnosis = fields.Text ('Diagnosis')
+        'criteria': fields.one2many('clv_pointing.criterion','pointing_id','Pointing Cases'),
+        'date_requested': fields.datetime ('Date requested',
+                                          default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S')),
+        'date_execution': fields.datetime ('Date of the Execution'),      
         }
 
     _defaults = {

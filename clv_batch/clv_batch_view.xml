@@ -8,12 +8,14 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Batches">
-                    <field name="parent_id" invisible="1"/>
-                    <field name="complete_name" />
+                    <field name="name" />
+                    <!--field name="parent_id"/-->
+                    <field name="origin_batch_ids"/>
+                    <!--field name="complete_name" invisible="1"/-->
                     <field name="alias" />
                     <field name="code" />
                     <field name="description" />
-                    <field name="is_movable"/>
+                    <!--field name="is_movable"/-->
                     <field name="size" />
                     <field name="batch_start" />
                     <field name="item_birthday" />
@@ -32,14 +34,17 @@
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
                             <!--label for="parent_id" class="oe_edit_only"/-->
-                            <label for="parent_id"/>
+                            <!--label for="parent_id"/>
                             <h2>
                                 <field name="parent_id" placeholder="Parent Batch..."/>
-                            </h2>
+                            </h2-->
                             <!--div class="oe_edit_only"-->
-                            <div>
+                            <!--div>
                                 <label for="name"/> (
                                 <field name="is_movable" class="oe_inline"/> <label for="is_movable" string="Is Movable?"/>)
+                            </div-->
+                            <div>
+                                <label for="name"/>
                             </div>
                             <h1>
                                 <field name="name" default_focus="1" placeholder="Batch Name..."/>
@@ -94,11 +99,11 @@
                                     <field name="derived_batch_ids" colspan="4" nolabel="1" />
                                 </group>
                             </page>
-                            <page string="Child Batches">
+                            <!--page string="Child Batches">
                                 <group>
                                     <field name="child_ids" colspan="4" nolabel="1" />
                                 </group>
-                            </page>
+                            </page-->
                             <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
                                     <field name="active"/>
@@ -116,15 +121,16 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Batch">
-                    <field name="parent_id" />
+                    <!--field name="parent_id" /-->
                     <field name="name" />
+                    <field name="origin_batch_ids"/>
                     <field name="code" />
                     <field name="alias" />
                     <field name="batch_start" />
                     <field name="item_birthday" />
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Parent Batch" context="{'group_by': 'parent_id'}"/>
+                        <!--filter string="Parent Batch" context="{'group_by': 'parent_id'}"/-->
                         <filter string="Batch Satart" context="{'group_by': 'batch_start'}"/>
                         <filter string="Birthday" context="{'group_by': 'item_birthday'}"/>
                     </group>

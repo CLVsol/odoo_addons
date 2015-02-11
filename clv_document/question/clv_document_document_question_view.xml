@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_document_document_question_tree" model="ir.ui.view">
+            <field name="name">clv_document.document_question.tree</field>
+            <field name="model">clv_document.document_question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Document Questions">
+                    <field name="document_id"/>
+                    <field name="document_question_id"/>
+                    <field name="answer"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_document_document_question_form" model="ir.ui.view">
+            <field name="name">clv_document.document_question.form</field>
+            <field name="model">clv_document.document_question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Document Questions" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="document_id"/>
+                            <field name="document_question_id"/>
+                            <field name="answer" default_focus="1"/>
+                        </group>
+                        <label for="notes" class="oe_edit_only"/>
+                        <field name="notes" placeholder="Notes..."/>
+                        <notebook>
+                            <page string="Settings" groups="clv_base.group_base_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_document_document_question_search" model="ir.ui.view">
+            <field name="name">clv_document.document_question.search</field>
+            <field name="model">clv_document.document_question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Document Questions">
+                    <field name="document_id"/>
+                    <field name="document_question_id"/>
+                    <field name="answer"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Document" domain="[]" context="{'group_by':'document_id'}"/>
+                        <filter string="Document Consent" domain="[]" context="{'group_by':'document_question_id'}"/>
+                        <filter string="Consent Answer" domain="[]" context="{'group_by':'answer'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_clv_document_document_question_view">
+            <field name="name">Document Questions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_document.document_question</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_document_document_question_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new document question.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_document_document_question_view_form">
+            <field name="act_window_id" ref="act_open_clv_document_document_question_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_document_document_question_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_document_document_question_view_tree">
+            <field name="act_window_id" ref="act_open_clv_document_document_question_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_document_document_question_tree"/>
+        </record>
+        
+        <record id="view_clv_document_form_document_question" model="ir.ui.view">
+            <field name="name">clv_document.form</field>
+            <field name="model">clv_document</field>
+            <field name="inherit_id" ref="view_clv_document_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <group string="Questions" position="inside">
+                    <field name="document_question_ids" colspan="4" nolabel="1">
+                        <tree>
+                            <!--field name="document_id"/-->
+                            <field name="document_question_id"/>
+                            <field name="answer"/>
+                            <field name="notes"/>
+                        </tree>
+                    </field>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_document_question_form_document_document_question" model="ir.ui.view">
+            <field name="name">clv_document.question.form</field>
+            <field name="model">clv_document.question</field>
+            <field name="inherit_id" ref="view_clv_document_question_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Documents">
+                        <field name="document_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

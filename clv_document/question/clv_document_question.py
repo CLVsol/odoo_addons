@@ -17,10 +17,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+from openerp.osv import fields, osv
+
+class clv_document(osv.osv):
+    _name = 'clv_document.question'
+
+    _columns = {
+        'name': fields.char('Name', required=True, size=64),
+        'alias': fields.char('Alias', size=64, help='Common name that the Document Question is referred'),
+        'code': fields.char(size=64, string='Document Question Code', required=False),
+        'description': fields.char(string='Description', size=256),
+        'notes':  fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the document without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }
+    
+    _sql_constraints = [('document_question_code_uniq', 'unique(code)', u'Error! The Document Question Code must be unique!')]
+
+    _order='name'

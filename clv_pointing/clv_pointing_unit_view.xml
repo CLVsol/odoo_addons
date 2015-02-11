@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="view_clv_pointing_unit_form">
+            <field name="name">clv_pointing.unit.form</field>
+            <field name="model">clv_pointing.unit</field>
+            <field name="arch" type="xml">
+                <form string="Pointing Units" version="7.0">
+                    <sheet string="Pointing Unit">
+                        <div class="oe_title">
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h2>
+                                <field name="name" placeholder="Pointing Unit..."/>
+                            </h2>
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h2>
+                                <field name="code" placeholder="Pointing Unit Code..."/>
+                            </h2>
+                        </div>
+                        <notebook>
+                            <page string="Information">
+                                <field name="description" placeholder="Description..." colspan="4"/>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="view_clv_pointing_unit_tree">
+            <field name="name">clv_pointing.unit.tree</field>
+            <field name="model">clv_pointing.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Pointing Unit">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_pointing_unit_search" model="ir.ui.view">
+            <field name="name">clv_pointing.unit.search</field>
+            <field name="model">clv_pointing.unit</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Pointing Unit">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <separator/>
+                    <filter string="Inactive Units" name="active" domain="[('active','=',0)]" help="Inactive Units"/>
+                    <group expand="0" string="Group By...">
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_pointing_unit_view">
+            <field name="name">Pointing Units</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_pointing.unit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_pointing_unit_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new pointing unit.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

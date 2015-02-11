@@ -17,10 +17,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+import clv_document_question
+import clv_document_document_question
+import clv_document_question_answer

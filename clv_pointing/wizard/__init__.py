@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
 #                                                                              #
-# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
+# Copyright (C) 2012  Carlos Eduardo Vercelino - CLVsol.net                    #
 #                                                                              #
 # This program is free software: you can redistribute it and/or modify         #
 # it under the terms of the GNU Affero General Public License as published by  #
@@ -17,10 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+import wizard_create_pointing

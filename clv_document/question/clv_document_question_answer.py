@@ -17,10 +17,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+from openerp.osv import fields, osv
+
+class clv_document_question_answer(osv.osv):
+    _name = 'clv_document.question_answer'
+
+    _columns = {
+        'name': fields.char(size=256, 
+                            string='Document Question Answer', required=True, 
+                            help='Question Answer in an Document'),
+        'description': fields.text(string='Description'),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the answer without removing it."),
+        }
+
+    _defaults = {
+        'active': 1,
+        }

@@ -24,4 +24,9 @@ import clv_annotation
 import seq
 import wkf
 import history
-# import consent
+import clv_pointing_unit
+import clv_pointing_criterion
+import clv_pointing_type
+import clv_pointing_batch
+import clv_batch
+import wizard
