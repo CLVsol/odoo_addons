@@ -17,10 +17,42 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_batch_placement
-import clv_batch_placement_place
-import clv_batch_placement_frame
-import clv_batch_placement_tray
-import clv_batch_place
-import clv_batch_frame
-import clv_batch_tray
+from openerp.osv import fields, osv
+from datetime import *
+
+class clv_batch_frame(osv.Model):
+    _name = 'clv_batch.frame'
+
+    _columns = {
+        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
+        'batch_id': fields.many2one('clv_batch', string='Batch', help='Batch'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the frame without removing it."),
+    }
+
+    _order = "sign_in_date desc"
+
+    _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': 1,
+    }
+
+class clv_batch(osv.osv):
+    _inherit = 'clv_batch'
+
+    _columns = {
+        'frame_ids': fields.one2many('clv_batch.frame',
+                                     'batch_id',
+                                     'Frames'),
+    }
+
+class clv_frame(osv.osv):
+    _inherit = 'clv_frame'
+
+    _columns = {
+        'batch_ids': fields.one2many('clv_batch.frame',
+                                     'frame_id',
+                                     'Batches'),
+    }
