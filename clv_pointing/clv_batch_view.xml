@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="view_clv_batch_form">
+            <field name="name">clv_batch.form</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_form"/>
+            <field name="arch" type="xml">
+                <page string="Annotations" position="after">
+                    <page string="Pointings">
+                        <field name="pointing_ids" colspan="4" nolabel="1">
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

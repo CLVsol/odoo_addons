@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
 #                                                                              #
-# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
+# Copyright (C) 2012  Carlos Eduardo Vercelino - CLVsol.net                    #
 #                                                                              #
 # This program is free software: you can redistribute it and/or modify         #
 # it under the terms of the GNU Affero General Public License as published by  #
@@ -17,16 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_pointing
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import clv_pointing_unit
-import clv_pointing_criterion
-import clv_pointing_type
-import clv_pointing_batch
-import clv_batch
-import wizard
+import wizard_create_pointing
