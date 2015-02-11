@@ -24,4 +24,5 @@ class clv_batch(osv.osv):
 
     _columns = {
         'pointing_ids': fields.one2many('clv_pointing','batch','Pointings'),
+        'pointing_request_ids': fields.one2many('clv_pointing.batch','batch_id','Pointing Requests'),
         }
