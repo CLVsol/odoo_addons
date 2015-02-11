@@ -8,9 +8,11 @@
             <field name="arch" type="xml">
                 <form string="Pointing Requests" version="7.0">
                     <group>
-                        <field name="name" required="1"/>
+                        <!-- <field name="name" required="1"/> -->
+                        <field name="name"/>
                         <field name="date"/>
-                        <field name="batch_id" required="1"/>
+                        <!-- <field name="batch_id" required="1"/> -->
+                        <field name="batch_id"/>
                         <!--field name="professional_id"/-->
                         <field name="state"/>
                         <field name="pointing_id"></field>
