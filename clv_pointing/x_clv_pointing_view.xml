@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="clv_pointing_view">
+            <field name="name">Pointing</field>
+            <field name="model">clv_pointing</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory Test" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="ID..."/>
+                            </h1>
+                            <div class="oe_edit_only">
+                                <label for="pointing_type"/>
+                            </div>
+                            <h2>
+                                <field name="pointing_type" placeholder="Pointing Type..." />
+                            </h2>
+                            <div class="oe_edit_only">
+                                <label for="date_execution"/>
+                            </div>
+                            <h3>
+                                <field name="date_execution" placeholder="Date..."/>
+                            </h3>
+                            <div class="oe_edit_only">
+                                <label for="batch"/>
+                            </div>
+                            <h2>
+                                <field name="batch" placeholder="Patient..."/>
+                            </h2>
+                        </div>
+	                    <notebook>
+	                        <page string="Main Info">
+	                            <field name="date_requested"></field>
+	                            <field name="criteria" colspan="4" nolabel="1">
+	                                <tree editable="top" string="Test Cases">
+	                                    <field name="sequence"/>
+	                                    <field name="name"/>
+	                                    <field name="result"/>
+	                                    <!--field name="normal_range"/-->
+                                        <field name="unit"/>
+                                        <!--field name="outcome_ids"/-->
+                                        <!--field name="valid_values"/-->
+	                                </tree>
+	                                <form string="Pointing Cases">
+	                                    <field name="name"/>
+	                                    <field name="result"/>
+	                                    <field name="unit"/>
+	                                    <!--field name="normal_range"/-->
+	                                </form>
+	                            </field>
+	                        </page>
+	                        <!--page string="Extra Info">
+	                            <field name="results"></field>
+	                            <newline/>
+	                            <field name="diagnosis"></field>
+	                        </page-->
+	                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="clv_pointing_tree">
+            <field name="name">Pointing type</field>
+            <field name="model">clv_pointing</field>
+            <field name="arch" type="xml">
+                <tree string='Lab test type'>
+                    <field name="name"></field>
+                    <field name="pointing_type"></field>
+                    <field name="batch"></field>
+                    <field name="date_execution"></field>
+                </tree>
+            </field>
+        </record>
+         
+        <record model="ir.actions.act_window" id="clv_action_tree_pointing">
+            <field name="name">Pointing Results</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_pointing</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="clv_pointing_tree"/>
+        </record>
+        
+    </data>
+</openerp>
