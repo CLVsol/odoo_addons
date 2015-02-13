@@ -50,6 +50,7 @@ Frame
         'history/clv_frame_history_view.xml',
         'clv_place/clv_place_view.xml',
         'clv_place/clv_frame_place_history_view.xml',
+        'clv_place/clv_frame_place_view.xml',
         ],
     'demo': [],
     'test': [],

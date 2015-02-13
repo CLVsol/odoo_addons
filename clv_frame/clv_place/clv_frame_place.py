@@ -20,16 +20,16 @@
 from openerp.osv import fields, osv
 from datetime import *
 
-class clv_batch_place(osv.Model):
-    _name = 'clv_batch.place'
+class clv_frame_place(osv.Model):
+    _name = 'clv_frame.place'
 
     _columns = {
         'place_id': fields.many2one('clv_place', 'Place', required=False),
-        'batch_id': fields.many2one('clv_batch', string='Batch', help='Batch'),
+        'frame_id': fields.many2one('clv_frame', string='Frame', help='Frame'),
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the batch place without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the frame place without removing it."),
     }
 
     _order = "sign_in_date desc"
@@ -39,12 +39,12 @@ class clv_batch_place(osv.Model):
         'active': 1,
     }
 
-class clv_batch(osv.osv):
-    _inherit = 'clv_batch'
+class clv_frame(osv.osv):
+    _inherit = 'clv_frame'
 
     _columns = {
-        'place_ids': fields.one2many('clv_batch.place',
-                                     'batch_id',
+        'place_ids': fields.one2many('clv_frame.place',
+                                     'frame_id',
                                      'Places'),
     }
 
@@ -52,7 +52,7 @@ class clv_place(osv.osv):
     _inherit = 'clv_place'
 
     _columns = {
-        'batch_ids': fields.one2many('clv_batch.place',
+        'frame_ids': fields.one2many('clv_frame.place',
                                      'place_id',
-                                     'Batches'),
+                                     'Frames'),
     }
