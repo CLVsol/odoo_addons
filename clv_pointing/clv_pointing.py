@@ -36,7 +36,7 @@ class clv_pointing(osv.osv):
 
         # name = fields.Char ('ID', size=128, help="Pointing result ID")
         'pointing_type': fields.many2one ('clv_pointing.type', 'Pointing type', help="Pointing type"),
-        'batch': fields.many2one('clv_batch', 'Batch', help="Batch"),
+        # 'batch': fields.many2one('clv_batch', 'Batch', help="Batch"),
         # results = fields.Text ('Results')
         # diagnosis = fields.Text ('Diagnosis')
         'criteria': fields.one2many('clv_pointing.criterion','pointing_id','Pointing Cases'),

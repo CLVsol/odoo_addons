@@ -20,8 +20,8 @@
 from openerp import models, fields, api
 from datetime import datetime
 
-class clv_pointing_batch(models.Model):
-    _name = 'clv_pointing.batch'
+class clv_pointing_request(models.Model):
+    _name = 'clv_pointing.request'
     
     name = fields.Many2one('clv_pointing.type','Pointing Type')
     date = fields.Datetime('Date',
@@ -30,8 +30,8 @@ class clv_pointing_batch(models.Model):
                               ('executed','Executed'),
                               ('cancel','Cancel')
                               ], 'State',readonly=True)
-    batch_id = fields.Many2one('clv_batch','Batch')
-    pointing_id = fields.Many2one('clv_pointing','Batch Pointing')
+    # request_id = fields.Many2one('clv_request','Batch')
+    pointing_id = fields.Many2one('clv_pointing','Pointing')
     
     _defaults={
         'state' : lambda *a: 'draft',
