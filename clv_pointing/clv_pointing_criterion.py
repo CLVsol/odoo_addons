@@ -32,7 +32,7 @@ class clv_pointing_criterion(models.Model):
     #                                'Outcomes')
     # valid_values = fields.Text('Valid Values')
     unit = fields.Many2one('clv_pointing.unit', 'Units')
-    pointing_type_id = fields.Many2one('clv_pointing.type','Pointing type')
+    pointing_type_id = fields.Many2one('clv_pointing.type','Pointing Type')
     pointing_id = fields.Many2one('clv_pointing','Pointing Cases')
     sequence = fields.Integer('Sequence',
                               default=lambda *a : 10)       

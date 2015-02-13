@@ -27,12 +27,12 @@
                             <h3>
                                 <field name="date_execution" placeholder="Date..."/>
                             </h3>
-                            <div class="oe_edit_only">
+                            <!--div class="oe_edit_only">
                                 <label for="batch"/>
                             </div>
                             <h2>
                                 <field name="batch" placeholder="Patient..."/>
-                            </h2>
+                            </h2-->
                         </div>
 	                    <notebook>
 	                        <page string="Main Info">
@@ -73,7 +73,7 @@
                 <tree string='Lab test type'>
                     <field name="name"></field>
                     <field name="pointing_type"></field>
-                    <field name="batch"></field>
+                    <!--field name="batch"></field-->
                     <field name="date_execution"></field>
                 </tree>
             </field>
