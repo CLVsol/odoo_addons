@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_tray_frame_tree" model="ir.ui.view">
+            <field name="name">clv_tray.frame.tree</field>
+            <field name="model">clv_tray.frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tray Frames">
+                    <field name="tray_id"/>
+                    <field name="frame_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_tray_frame_form" model="ir.ui.view">
+            <field name="name">clv_tray.frame.form</field>
+            <field name="model">clv_tray.frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Tray Frames" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="tray_id"/>
+                            <field name="frame_id" default_focus="1"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
+                        </group>
+                        <label for="notes" class="oe_edit_only"/>
+                        <field name="notes" frameholder="Notes..."/>
+                        <notebook>
+                            <page string="Settings" clv_trays="clvbase.clv_tray_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_tray_frame_search" model="ir.ui.view">
+            <field name="name">clv_tray.frame.search</field>
+            <field name="model">clv_tray.frame</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Tray Frames">
+                    <field name="tray_id"/>
+                    <field name="frame_id"/>
+                    <newline/>
+                    <group expand="0" string="Tray By...">
+                        <filter string="Tray" domain="[]" context="{'group_by':'tray_id'}"/>
+                        <filter string="Place" domain="[]" context="{'group_by':'frame_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_clv_tray_frame_view">
+            <field name="name">Tray Frames</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_tray.frame</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_tray_frame_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new tray frame.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tray_frame_view_form">
+            <field name="act_window_id" ref="act_open_clv_tray_frame_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_tray_frame_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_tray_frame_view_tree">
+            <field name="act_window_id" ref="act_open_clv_tray_frame_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_tray_frame_tree"/>
+        </record>
+        
+        <record id="view_clv_tray_form_frame" model="ir.ui.view">
+            <field name="name">clv_tray.form</field>
+            <field name="model">clv_tray</field>
+            <field name="inherit_id" ref="view_clv_tray_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Frames">
+                        <field name="frame_ids" colspan="4" nolabel="1">
+                            <tree string="Frames">
+                                <!--field name="tray_id"/-->
+                                <field name="frame_id"/>
+                                <field name="sign_in_date"/>
+                                <field name="sign_out_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_frame_form" model="ir.ui.view">
+            <field name="name">clv_frame.form</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="clv_frame.view_clv_frame_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Trays">
+                        <field name="tray_ids" colspan="4" nolabel="1">
+                            <tree string="Trays">
+                                <field name="tray_id"/>
+                                <!--field name="frame_id"/-->
+                                <field name="sign_in_date"/>
+                                <field name="sign_out_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
