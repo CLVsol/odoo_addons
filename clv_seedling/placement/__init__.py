@@ -17,49 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Pointing',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Pointing
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        # 'clv_batch',
-        ],
-    'data': [
-        'security/clv_pointing_security.xml',
-        'security/ir.model.access.csv',
-        'clv_pointing_view.xml',
-        'category/clv_pointing_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_pointing_sequence.xml',
-        'seq/clv_pointing_category_sequence.xml',
-        'wkf/clv_pointing_workflow.xml',
-        'wkf/clv_pointing_wkf_view.xml',
-        'history/clv_pointing_history_view.xml',
-        'clv_pointing_unit_view.xml',
-        'clv_pointing_criterion_view.xml',
-        'clv_pointing_type_view.xml',
-        'clv_pointing_request_view.xml',
-        # 'clv_batch_view.xml',
-        'wizard/create_pointing.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_seedling_place
+import clv_seedling_frame
+import clv_seedling_tray
+import clv_seedling_batch

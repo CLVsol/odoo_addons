@@ -37,10 +37,11 @@ class create_test_report(osv.osv_memory):
         test_cases = []
         test_obj = test_request_obj.browse(cr, uid, context.get('active_id'), context=context)
         if test_obj.state == 'executed':
-            raise  osv.except_osv(_('UserError'),_('Pointing Report already created.'))
+            # raise  osv.except_osv(_('UserError'),_('Pointing Report already created.'))
+            raise  osv.except_osv(_('UserError'),_('Pointing already created.'))
         # test_report_data['name'] = test_obj.name.id
         test_report_data['name'] = test_obj.name.name + ' [' + str(test_obj.id) + ']'
-        test_report_data['batch'] = test_obj.batch_id.id
+        # test_report_data['batch'] = test_obj.batch_id.id
         # test_report_data['requestor'] = test_obj.doctor_id.id
         test_report_data['date_requested'] = test_obj.date
         test_report_data['pointing_type'] = test_obj.name.id
@@ -56,7 +57,8 @@ class create_test_report(osv.osv_memory):
         test_request_obj.write(cr, uid, context.get('active_id'), {'state':'executed'})
         return {
                 'domain': "[('id','=', "+str(lab_id)+")]",
-                'name': 'Pointing Report',
+                # 'name': 'Pointing Report',
+                'name': 'Pointing',
                 'view_type': 'form',
                 'view_mode': 'tree,form',
                 'res_model': 'clv_pointing',

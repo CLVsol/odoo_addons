@@ -17,49 +17,42 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Pointing',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Pointing
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        # 'clv_batch',
-        ],
-    'data': [
-        'security/clv_pointing_security.xml',
-        'security/ir.model.access.csv',
-        'clv_pointing_view.xml',
-        'category/clv_pointing_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_pointing_sequence.xml',
-        'seq/clv_pointing_category_sequence.xml',
-        'wkf/clv_pointing_workflow.xml',
-        'wkf/clv_pointing_wkf_view.xml',
-        'history/clv_pointing_history_view.xml',
-        'clv_pointing_unit_view.xml',
-        'clv_pointing_criterion_view.xml',
-        'clv_pointing_type_view.xml',
-        'clv_pointing_request_view.xml',
-        # 'clv_batch_view.xml',
-        'wizard/create_pointing.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+from datetime import *
+
+class clv_seedling_place(osv.Model):
+    _name = 'clv_seedling.place'
+
+    _columns = {
+        'place_id': fields.many2one('clv_place', 'Place', required=False),
+        'seedling_id': fields.many2one('clv_seedling', string='Seedling', help='Seedling'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the seedling place without removing it."),
+    }
+
+    _order = "sign_in_date desc"
+
+    _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': 1,
+    }
+
+class clv_seedling(osv.osv):
+    _inherit = 'clv_seedling'
+
+    _columns = {
+        'place_ids': fields.one2many('clv_seedling.place',
+                                     'seedling_id',
+                                     'Places'),
+    }
+
+class clv_place(osv.osv):
+    _inherit = 'clv_place'
+
+    _columns = {
+        'seedling_ids': fields.one2many('clv_seedling.place',
+                                        'place_id',
+                                        'Seedlings'),
+    }

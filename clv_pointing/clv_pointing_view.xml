@@ -12,7 +12,7 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="pointing_type"></field>
-                    <field name="batch"></field>
+                    <!--field name="batch"></field-->
                     <field name="date_execution"></field>
                     <field name="notes"/>
                 </tree>
@@ -58,12 +58,12 @@
                             <h3>
                                 <field name="date_execution" placeholder="Date..."/>
                             </h3>
-                            <div class="oe_edit_only">
+                            <!--div class="oe_edit_only">
                                 <label for="batch"/>
                             </div>
                             <h2>
                                 <field name="batch" placeholder="Batch..."/>
-                            </h2>
+                            </h2-->
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->

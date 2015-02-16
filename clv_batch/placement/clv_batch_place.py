@@ -29,7 +29,7 @@ class clv_batch_place(osv.Model):
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the place without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the batch place without removing it."),
     }
 
     _order = "sign_in_date desc"

@@ -10,6 +10,8 @@
                     <notebook>
                         <page string="Main Info">
                             <group>
+                                <field name="pointing_type_id"/>
+                                <field name="pointing_id"/>
                                 <field name="name"/>
                                 <field name="result"/>
                                 <field name="unit"/>
@@ -30,6 +32,7 @@
             <field name="arch" type="xml">
                 <tree string='Pointing Criteria'>
                     <field name="pointing_type_id"/>
+                    <field name="pointing_id"/>
                     <field name="sequence"/>
                     <field name="name"/>
                     <field name="result"/>
@@ -59,6 +62,7 @@
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Pointing Type" domain="[]" context="{'group_by': 'pointing_type_id'}"/>
+                        <filter string="Pointing Cases" domain="[]" context="{'group_by': 'pointing_id'}"/>
                     </group>
                 </search>
             </field>

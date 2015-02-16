@@ -4,15 +4,15 @@
         
         <record model="ir.ui.view" id="clv_pointing_request_form">
             <field name="name">Pointing Requests</field>
-            <field name="model">clv_pointing.batch</field>
+            <field name="model">clv_pointing.request</field>
             <field name="arch" type="xml">
                 <form string="Pointing Requests" version="7.0">
                     <group>
                         <!-- <field name="name" required="1"/> -->
                         <field name="name"/>
                         <field name="date"/>
-                        <!-- <field name="batch_id" required="1"/> -->
-                        <field name="batch_id"/>
+                        <!-- <field name="request_id" required="1"/> -->
+                        <!--field name="request_id"/-->
                         <!--field name="professional_id"/-->
                         <field name="state"/>
                         <field name="pointing_id"></field>
@@ -23,12 +23,12 @@
     
         <record model="ir.ui.view" id="clv_pointing_request_tree">
             <field name="name">Pointing Requests</field>
-            <field name="model">clv_pointing.batch</field>
+            <field name="model">clv_pointing.request</field>
             <field name="arch" type="xml">
-                <tree string="Test Requests">
+                <tree string="Pointing Requests">
                     <field name="name"/>
                     <field name="date"/>
-                    <field name="batch_id"/>
+                    <!--field name="request_id"/-->
                     <!--field name="professional_id"/-->
                     <field name="state" readonly="1"/>
                     <field name="pointing_id"></field>
@@ -39,7 +39,7 @@
         <record model="ir.actions.act_window" id="clv_action_pointing_request">
             <field name="name">Pointing Requests</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_pointing.batch</field>
+            <field name="res_model">clv_pointing.request</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -47,7 +47,7 @@
         <record model="ir.actions.act_window" id="clv_action_draft_pointing_request">
             <field name="name">Draft Pointing Requests</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_pointing.batch</field>
+            <field name="res_model">clv_pointing.request</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('state','=','draft')]</field>
@@ -56,21 +56,21 @@
         <record model="ir.actions.act_window" id="clv_action_today_draft_pointing_request">
             <field name="name">Today's Draft Pointing Requests</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_pointing.batch</field>
+            <field name="res_model">clv_pointing.request</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('state','=','draft'),('date','&gt;=',time.strftime('%Y-%m-%d 00:00:01')),('date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]</field>
         </record>
     
         <record id="view_clv_pointing_filter" model="ir.ui.view">
-            <field name="name">Pointings Requests</field>
-            <field name="model">clv_pointing.batch</field>
+            <field name="name">Pointing Requests</field>
+            <field name="model">clv_pointing.request</field>
             <field name="arch" type="xml">
                 <search string="Search Pointings Requests">
                     <separator orientation="vertical"/>
                         <field name="name" select="1"/>
                         <field name="date" select="1"/>
-                        <field name="batch_id" select="1"/>
+                        <!--field name="batch_id" select="1"/-->
                         <!--field name="professional_id" select="1"/-->
                         <field name="state" select="1"/>
                     <newline/>
