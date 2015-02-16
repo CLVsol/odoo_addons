@@ -35,6 +35,7 @@ Batch
         'clv_annotation',
         'clv_place',
         'clv_frame',
+        'clv_tray',
         ],
     'data': [
         'security/clv_batch_security.xml',
