@@ -31,10 +31,10 @@ class clv_frame(models.Model):
     parent_id = fields.Many2one('clv_frame', 'Parent Frame', select=True, ondelete='restrict')
     complete_name = fields.Char(string='Full Frame', compute='_name_get_fnc', store=False, readonly=True)
     child_ids = fields.One2many('clv_frame', 'parent_id', 'Child Frames')
-    is_movable = fields.Boolean('Is Movable', 
-                                help="Check if the frame is movable, otherwise it is immovable",
-                                default=False)
-    address_id = fields.Many2one('res.partner', 'Frame Address')
+    # is_movable = fields.Boolean('Is Movable', 
+    #                             help="Check if the frame is movable, otherwise it is immovable",
+    #                             default=False)
+    # address_id = fields.Many2one('res.partner', 'Frame Address')
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -96,9 +96,9 @@ class clv_frame(models.Model):
         else:
             self.complete_name = self.name
 
-    def onchange_address_id(self, cr, uid, ids, address, context=None):
-        if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'comm_phone': address.phone, 'mobile_phone': address.mobile}}
-        return {'value': {}}
+    # def onchange_address_id(self, cr, uid, ids, address, context=None):
+    #     if address:
+    #         address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+    #         return {'value': {'comm_phone': address.phone, 'mobile_phone': address.mobile}}
+    #     return {'value': {}}
 

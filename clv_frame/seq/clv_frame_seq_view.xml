@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="clv_frame.view_clv_frame_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <group string="Address Information" position="before">
+                <group string="Status" position="before">
                     <field name="level"/>
                 </group>
             </field>

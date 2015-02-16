@@ -13,7 +13,7 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="description"/>
-                    <field name="is_movable"/>
+                    <!--field name="is_movable"/-->
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -34,9 +34,12 @@
                                 <field name="parent_id" placeholder="Parent Frame..."/>
                             </h2>
                             <!--div class="oe_edit_only"-->
-                            <div>
+                            <!--div>
                                 <label for="name"/> (
                                 <field name="is_movable" class="oe_inline"/> <label for="is_movable" string="Is Movable?"/>)
+                            </div-->
+                            <div>
+                                <label for="name"/>
                             </div>
                             <h1>
                                 <field name="name" default_focus="1" placeholder="Frame Name..."/>
@@ -63,9 +66,9 @@
                         <notebook>
                             <page string="Information">
                                 <group>
-                                    <group string="Address Information">
+                                    <!--group string="Address Information">
                                         <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
-                                    </group>
+                                    </group-->
                                     <group string="Status">
                                         <field name="date_inclusion"/>
                                     </group>
