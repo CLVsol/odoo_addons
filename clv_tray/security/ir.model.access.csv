@@ -12,6 +12,10 @@ access_clv_tray_history_tray_user,clv_tray.history,model_clv_tray_history,clv_ba
 access_clv_tray_history_tray_manager,clv_tray.history,model_clv_tray_history,clv_base.group_tray_manager,1,1,1,0
 access_clv_tray_history_base_smanager,clv_tray.history,model_clv_tray_history,clv_base.group_base_smanager,1,1,1,1
 
-access_clv_tray_placement_tray_user,clv_tray.placement,model_clv_tray_placement,clv_base.group_tray_user,1,0,0,0
-access_clv_tray_placement_tray_manager,clv_tray.placement,model_clv_tray_placement,clv_base.group_tray_manager,1,1,1,0
-access_clv_tray_placement_base_smanager,clv_tray.placement,model_clv_tray_placement,clv_base.group_base_smanager,1,1,1,1
+access_clv_tray_place_tray_user,clv_tray.place,model_clv_tray_place,clv_base.group_tray_user,1,0,0,0
+access_clv_tray_place_tray_manager,clv_tray.place,model_clv_tray_place,clv_base.group_tray_manager,1,1,1,0
+access_clv_tray_place_base_smanager,clv_tray.place,model_clv_tray_place,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_tray_frame_tray_user,clv_tray.frame,model_clv_tray_frame,clv_base.group_tray_user,1,0,0,0
+access_clv_tray_frame_tray_manager,clv_tray.frame,model_clv_tray_frame,clv_base.group_tray_manager,1,1,1,0
+access_clv_tray_frame_base_smanager,clv_tray.frame,model_clv_tray_frame,clv_base.group_base_smanager,1,1,1,1
