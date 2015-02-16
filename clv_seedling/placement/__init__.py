@@ -17,51 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Seedling',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Seedling
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        ],
-    'data': [
-        'security/clv_seedling_security.xml',
-        'security/ir.model.access.csv',
-        'clv_seedling_view.xml',
-        'category/clv_seedling_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        'wkf/clv_seedling_workflow.xml',
-        'wkf/clv_seedling_wkf_view.xml',
-        'history/clv_seedling_history_view.xml',
-        # 'batch_history/clv_seedling_batch_history_view.xml',
-        'placement/clv_seedling_place_view.xml',
-        'placement/clv_seedling_frame_view.xml',
-        'placement/clv_seedling_tray_view.xml',
-        'placement/clv_seedling_batch_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_seedling_place
+import clv_seedling_frame
+import clv_seedling_tray
+import clv_seedling_batch

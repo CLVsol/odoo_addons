@@ -17,51 +17,42 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Seedling',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Seedling
-========
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_place',
-        'clv_frame',
-        'clv_tray',
-        'clv_batch',
-        ],
-    'data': [
-        'security/clv_seedling_security.xml',
-        'security/ir.model.access.csv',
-        'clv_seedling_view.xml',
-        'category/clv_seedling_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_seedling_sequence.xml',
-        'seq/clv_seedling_category_sequence.xml',
-        'wkf/clv_seedling_workflow.xml',
-        'wkf/clv_seedling_wkf_view.xml',
-        'history/clv_seedling_history_view.xml',
-        # 'batch_history/clv_seedling_batch_history_view.xml',
-        'placement/clv_seedling_place_view.xml',
-        'placement/clv_seedling_frame_view.xml',
-        'placement/clv_seedling_tray_view.xml',
-        'placement/clv_seedling_batch_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+from datetime import *
+
+class clv_seedling_frame(osv.Model):
+    _name = 'clv_seedling.frame'
+
+    _columns = {
+        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
+        'seedling_id': fields.many2one('clv_seedling', string='Seedling', help='Seedling'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the frame without removing it."),
+    }
+
+    _order = "sign_in_date desc"
+
+    _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': 1,
+    }
+
+class clv_seedling(osv.osv):
+    _inherit = 'clv_seedling'
+
+    _columns = {
+        'frame_ids': fields.one2many('clv_seedling.frame',
+                                     'seedling_id',
+                                     'Frames'),
+    }
+
+class clv_frame(osv.osv):
+    _inherit = 'clv_frame'
+
+    _columns = {
+        'seedling_ids': fields.one2many('clv_seedling.frame',
+                                        'frame_id',
+                                        'Seedlings'),
+    }
