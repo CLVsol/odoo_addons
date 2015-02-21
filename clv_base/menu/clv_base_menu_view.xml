@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <!-- Base -->
+        <menuitem name="Base" id="menu_base" 
+            groups="clv_base.group_base_user"
+            sequence="11"/>
+            <!-- Base/Base -->
+            <menuitem name="Base" id="menu_base_base"  
+                parent="menu_base"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Base/Base/Configuration -->
+                <menuitem name="Configuration" id="menu_base_base_config"  
+                    parent="menu_base_base"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+
+        <!-- Agro -->
+        <menuitem name="Agro" id="menu_agro" 
+            groups="clv_base.group_base_user"
+            sequence="12"/>
+            <!-- Agro/Agro -->
+            <menuitem name="Agro" id="menu_agro_agro"  
+                parent="menu_agro"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Agro/Agro/Configuration -->
+                <menuitem name="Configuration" id="menu_agro_agro_config"  
+                    parent="menu_agro_agro"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+
+        <!-- Community -->
+        <menuitem name="Community" id="menu_commutity" 
+            groups="clv_base.group_base_user"
+            sequence="13"/>
+            <!-- Community/Community -->
+            <menuitem name="Community" id="menu_commutity_community"  
+                parent="menu_commutity"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Community/Community/Configuration -->
+                <menuitem name="Configuration" id="menu_commutity_community_config"  
+                    parent="menu_commutity_community"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+                    <!-- Community/Community/Configuration/Person -->
+
+        <!-- Health -->
+        <menuitem name="Health" id="menu_health" 
+            groups="clv_base.group_base_user"
+            sequence="14"/>
+            <!-- Health/Health -->
+            <menuitem name="Health" id="menu_health_health"  
+                parent="menu_health"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Health/Health/Configuration -->
+                <menuitem name="Configuration" id="menu_health_health_config"  
+                    parent="menu_health_health"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+        
+        <!-- Insurance -->
+        <menuitem name="Insurance" id="menu_insurance" 
+            groups="clv_base.group_base_user"
+            sequence="15"/>
+            <!-- Insurance/Insurance -->
+            <menuitem name="Insurance" id="menu_insurance_insurance"  
+                parent="menu_insurance"
+                groups="clv_base.group_base_user"
+                sequence="10" />
+                <!-- Insurance/Insurance/Configuration -->
+                <menuitem name="Configuration" id="menu_insurance_insurance_config"  
+                    parent="menu_insurance_insurance"
+                    groups="clv_base.group_base_manager"
+                    sequence="90" />
+
+        <!-- Pharmacy -->
+        <menuitem name="Pharmacy" id="menu_pharmacy" 
+            groups="clv_base.group_base_user"
+            sequence="16"/>
+            <!-- Pharmacy/Pharmacy -->
+            <menuitem name="Pharmacy" id="menu_pharmacy_pharmacy"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_user"
+                sequence="10" />
+                <!-- Pharmacy/Pharmacy/Configuration -->
+                <menuitem name="Configuration" id="menu_pharmacy_pharmacy_config"  
+                    parent="menu_pharmacy_pharmacy"
+                    groups="clv_base.group_base_manager"
+                    sequence="90" />
+
+    </data>
+</openerp>

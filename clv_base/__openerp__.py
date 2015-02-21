@@ -25,12 +25,13 @@
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Base Module needed for all Solutions.
--------------------------------------
+Base Module needed for all CLVsol Solutions.
+--------------------------------------------
     ''',
     'depends': [],
     'data': [
         'security/clv_base_security.xml',
+        'menu/clv_base_menu_view.xml',
         ],
     'test': [],
     'installable': True,
