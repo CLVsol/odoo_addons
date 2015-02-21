@@ -46,6 +46,7 @@ Insured
         'wkf/clv_insured_workflow.xml',
         'wkf/clv_insured_wkf_view.xml',
         'history/clv_insured_history_view.xml',
+        'menu/clv_insured_menu_view.xml',
         ],
     'demo': [],
     'test': [],

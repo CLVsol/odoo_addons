@@ -44,6 +44,7 @@ Insurance Client
         'wkf/clv_insurance_client_workflow.xml',
         'wkf/clv_insurance_client_wkf_view.xml',
         'history/clv_insurance_client_history_view.xml',
+        'menu/clv_insurance_client_menu_view.xml'
         ],
     'demo': [],
     'test': [],
