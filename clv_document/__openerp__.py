@@ -49,6 +49,7 @@ Document
         'question/clv_document_question_view.xml',
         'question/clv_document_document_question_view.xml',
         'question/clv_document_question_answer_view.xml',
+        'menu/clv_document_menu_view.xml',
         ],
     'demo': [],
     'test': [],
