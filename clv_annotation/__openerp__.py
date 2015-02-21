@@ -25,8 +25,9 @@
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Annotation
-==========
+CLVsol Annotation Module
+------------------------
+Annotation Module used by all CLVsol Solutions.
     ''',
     'depends': [
         'clv_base',
@@ -43,6 +44,7 @@ Annotation
         'wkf/clv_annotation_workflow.xml',
         'wkf/clv_annotation_wkf_view.xml',
         'history/clv_annotation_history_view.xml',
+        'menu/clv_annotation_menu_view.xml',
         ],
     'init_xml': [],
     'test': [],

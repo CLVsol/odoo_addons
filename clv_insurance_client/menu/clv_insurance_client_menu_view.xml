@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insurance -->
+        <!--menuitem name="Insurance" id="menu_insurance" 
+            groups="clv_base.group_base_user"
+            sequence="15"/-->
+            <!-- Insurance/Insurance -->
+            <!--menuitem name="Insurance" id="menu_insurance_insurance"  
+                parent="menu_insurance"
+                groups="clv_base.group_base_user"
+                sequence="10"/-->
+                <menuitem name="Insurance Clients" id="menu_insurance_insurance_insurance_clients"
+                    parent="clv_base.menu_insurance_insurance"
+                    groups="clv_base.group_insurance_client_user"
+                    sequence="20"
+                    action="clv_insurance_client.act_open_clv_insurance_client_view"/>
+                <!-- Insurance/Insurance/Configuration -->
+                <!--menuitem name="Configuration" id="menu_insurance_insurance_config"  
+                    parent="menu_insurance_insurance"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/-->
+                    <menuitem name="Insurance Client Categories" id="menu_insurance_insurance_config_insurance_client_categories" 
+                        parent="clv_base.menu_insurance_insurance_config"
+                        groups="clv_base.group_insurance_client_user"
+                        sequence="20"
+                        action="clv_insurance_client.act_open_clv_insurance_client_category_view"/>
+
+    </data>
+</openerp>
