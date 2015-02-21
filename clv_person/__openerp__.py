@@ -46,6 +46,7 @@ Person
         'wkf/clv_person_workflow.xml',
         'wkf/clv_person_wkf_view.xml',
         'history/clv_person_history_view.xml',
+        'menu/clv_person_menu_view.xml',
         ],
     'demo': [],
     'test': [],
