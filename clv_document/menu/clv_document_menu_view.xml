@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <!-- Base -->
+        <!--menuitem name="Base" id="menu_base" 
+            groups="clv_base.group_base_user"
+            sequence="11"/-->
+            <!-- Base/Base -->
+            <!--menuitem name="Base" id="menu_base_base"  
+                parent="menu_base"
+                groups="clv_base.group_base_user"
+                sequence="10"/-->
+                <!-- Base/Base/Documents -->
+                <menuitem name="Documents" id="menu_base_base_documents"
+                    parent="clv_base.menu_base_base"
+                    groups="clv_base.group_document_user"
+                    sequence="30"
+                    action="clv_document.act_open_clv_document_view"/>
+                <!-- Base/Base/Configuration -->
+                <!--menuitem name="Configuration" id="menu_base_base_config"  
+                    parent="menu_base_base"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/-->
+                    <!-- Base/Base/Configuration/Document Categories -->
+                    <menuitem name="Document Categories" id="menu_base_base_config_document_categories" 
+                        parent="clv_base.menu_base_base_config"
+                        groups="clv_base.group_document_user"
+                        sequence="20"
+                        action="clv_document.act_open_clv_document_category_view"/>
+
+    </data>
+</openerp>
