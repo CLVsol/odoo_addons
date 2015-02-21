@@ -40,6 +40,7 @@ Tag Module used by all CLVsol Solutions.
         'wkf/clv_tag_workflow.xml',
         'wkf/clv_tag_wkf_view.xml',
         'history/clv_tag_history_view.xml',
+        'menu/clv_tag_menu_view.xml',
         ],
     'init_xml': [],
     'test': [],
