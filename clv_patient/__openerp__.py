@@ -48,6 +48,7 @@ Patient
         'wkf/clv_patient_workflow.xml',
         'wkf/clv_patient_wkf_view.xml',
         'history/clv_patient_history_view.xml',
+        'menu/clv_patient_menu_view.xml',
         ],
     'demo': [],
     'test': [],

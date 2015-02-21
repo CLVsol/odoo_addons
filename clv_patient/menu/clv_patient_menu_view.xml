@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Health -->
+        <!--menuitem name="Health" id="menu_health" 
+            groups="clv_base.group_base_user"
+            sequence="14"/-->
+            <!-- Health/Health -->
+            <!--menuitem name="Health" id="menu_health_health"  
+                parent="menu_health"
+                groups="clv_base.group_base_user"
+                sequence="10"/-->
+                <menuitem name="Patients" id="menu_health_health_patients"
+                    parent="clv_base.menu_health_health"
+                    groups="clv_base.group_patient_user"
+                    sequence="10"
+                    action="clv_patient.act_open_clv_patient_view"/>
+                <!-- Health/Health/Configuration -->
+                <!--menuitem name="Configuration" id="menu_health_health_config"  
+                    parent="menu_health_health"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/-->
+                    <menuitem name="Patient Categories" id="menu_health_health_config_patient_categories" 
+                        parent="clv_base.menu_health_health_config"
+                        groups="clv_base.group_patient_user"
+                        sequence="10"
+                        action="clv_patient.act_open_clv_patient_category_view"/>
+        
+    </data>
+</openerp>
