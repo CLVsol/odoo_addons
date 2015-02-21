@@ -44,6 +44,7 @@ Insurance
         'wkf/clv_insurance_workflow.xml',
         'wkf/clv_insurance_wkf_view.xml',
         'history/clv_insurance_history_view.xml',
+        'menu/clv_insurance_menu_view.xml',
         ],
     'demo': [],
     'test': [],
