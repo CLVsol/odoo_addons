@@ -23,7 +23,7 @@ from datetime import *
 class clv_insurance_client_history(models.Model):
     _name = 'clv_insurance_client.history'
 
-    insurance_client_id = fields.Many2one('clv_insurance_client', 'Tray', required=True)
+    insurance_client_id = fields.Many2one('clv_insurance_client', 'Insurance Client', required=True)
     user_id = fields.Many2one ('res.users', 'User', required=True)
     date = fields.Datetime("Date", required=True)
     state = fields.Selection([('new','New'),
@@ -43,16 +43,20 @@ class clv_insurance_client_history(models.Model):
 class clv_insurance_client(models.Model):
     _inherit = 'clv_insurance_client'
 
-    history_ids = fields.One2many('clv_insurance_client.history', 'insurance_client_id', 'Tray History', readonly=True)
+    history_ids = fields.One2many('clv_insurance_client.history', 'insurance_client_id', 'Insurance Client History', readonly=True)
+    active_history = fields.Boolean('Active History', 
+                                    help="If unchecked, it will allow you to disable the history without removing it.",
+                                    default=True)
 
     @api.one
     def insert_clv_insurance_client_history(self, insurance_client_id, state, notes):
-        values = { 
-            'insurance_client_id':  insurance_client_id,
-            'state': state,
-            'notes': notes,
-        }
-        self.pool.get('clv_insurance_client.history').create(self._cr, self._uid, values)
+        if self.active_history:
+            values = { 
+                'insurance_client_id':  insurance_client_id,
+                'state': state,
+                'notes': notes,
+            }
+            self.pool.get('clv_insurance_client.history').create(self._cr, self._uid, values)
 
     @api.multi
     def write(self, values):
