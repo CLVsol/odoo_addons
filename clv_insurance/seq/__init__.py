@@ -17,24 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from datetime import *
-
-class clv_insurance(models.Model):
-    _name = 'clv_insurance'
-
-    name = fields.Char('Insurance', required=True, size=64, translate=False)
-    alias = fields.Char('Alias', size=64, help='Common name that the Insurance is referred')
-    code = fields.Char(size=64, string='Insurance Code', required=False)
-    notes = fields.Text(string='Notes')
-    date_inclusion = fields.Date('Inclusion Date')
-    active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance without removing it.")
-
-    _order='name'
-
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Insurance Code!')]
-
-    _defaults = {
-        'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'active': 1,
-        }
+import clv_insurance_seq
+import clv_insurance_category_seq

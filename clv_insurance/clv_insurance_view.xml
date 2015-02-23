@@ -10,7 +10,7 @@
                 <tree string="Insurance">
                     <field name="name"/>
                     <field name="alias" />
-                    <field name="insurance_code" />
+                    <field name="code" />
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -36,9 +36,9 @@
                             <h2>
                                 <field name="alias" placeholder="Alias..."/>
                             </h2>
-                            <label for="insurance_code" class="oe_edit_only"/>
+                            <label for="code" class="oe_edit_only"/>
                             <h2>
-                                <field name="insurance_code" placeholder="Insurance Code..."/>
+                                <field name="code" placeholder="Insurance Code..."/>
                             </h2>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -72,7 +72,7 @@
                 <search string="Insurance">
                     <field name="name" />
                     <field name="alias" />
-                    <field name="insurance_code" />
+                    <field name="code" />
                     <field name="notes" />
                     <newline />
                     <group expand="0" string="Group By...">
