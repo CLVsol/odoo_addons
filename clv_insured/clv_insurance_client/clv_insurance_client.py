@@ -17,48 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insured',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Insured
-=======
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_insurance',
-        'clv_insurance_client',
-        ],
-    'data': [
-        'security/clv_insured_security.xml',
-        'security/ir.model.access.csv',
-        'clv_insured_view.xml',
-        'category/clv_insured_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_insured_sequence.xml',
-        'seq/clv_insured_category_sequence.xml',
-        'wkf/clv_insured_workflow.xml',
-        'wkf/clv_insured_wkf_view.xml',
-        'history/clv_insured_history_view.xml',
-        'menu/clv_insured_menu_view.xml',
-        'clv_insurance/clv_insurance_view.xml',
-        'clv_insurance_client/clv_insurance_client_view.xml',
-        'role/clv_insured_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+
+class clv_insured(models.Model):
+    _inherit = 'clv_insured'
+
+    insurance_client_id = fields.Many2one('clv_insurance_client', 'Insurance Client')
+
+class clv_insurance_client(models.Model):
+    _inherit = 'clv_insurance_client'
+
+    insured_ids = fields.One2many('clv_insured',
+                                  'insurance_client_id',
+                                  'Insureds')

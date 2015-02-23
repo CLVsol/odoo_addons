@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_insured_tree_clv_insurance" model="ir.ui.view">
+            <field name="name">clv_insured.tree</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="view_clv_insured_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="insurance_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_form_clv_insurance" model="ir.ui.view">
+            <field name="name">clv_insured.form</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="view_clv_insured_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="insurance_id"/>
+                    <h3>
+                        <field name="insurance_id" placeholder="Insurance..."/>
+                    </h3>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_search_clv_insurance" model="ir.ui.view">
+            <field name="name">clv_insured.search</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="view_clv_insured_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="insurance_id" />
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Insurance" domain="[]" context="{'group_by': 'insurance_id'}"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_insurance_form_clv_insured_01" model="ir.ui.view">
+            <field name="name">clv_insurance.form</field>
+            <field name="model">clv_insurance</field>
+            <field name="inherit_id" ref="clv_insurance.view_clv_insurance_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Insureds">
+                        <group>
+                            <field name="insured_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
