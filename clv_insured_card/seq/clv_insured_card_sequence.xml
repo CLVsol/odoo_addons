@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_insured_card.seq_type_clv_insured_card" model="ir.sequence.type">
+            <field name="name">Insured Card Sequence</field>
+            <field name="code">clv_insured_card.code</field>
+        </record>
+        
+        <record id="clv_insured_card.seq_clv_insured_card" model="ir.sequence">
+            <field name="name">Insured Card Sequence</field>
+            <field name="code">clv_insured_card.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>
