@@ -44,7 +44,7 @@ class clv_insured(models.Model):
     history_ids = fields.One2many('clv_insured.history', 'insured_id', 'Insured History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_insured_history(self, insured_id, state, notes):
