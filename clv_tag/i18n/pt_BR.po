@@ -281,3 +281,9 @@ msgstr "Gerente de Etiqueta"
 #: model:res.groups,name:clv_base.group_tag_user
 msgid "Tag User"
 msgstr "Usuário de Etiqueta"
+
+#. module: clv_tag
+#: model:ir.ui.menu,name:clv_tag.menu_base_base_tags
+msgid "Tags"
+msgstr "Etiquetas"
+
