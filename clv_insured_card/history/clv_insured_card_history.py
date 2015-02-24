@@ -44,7 +44,7 @@ class clv_insured_card(models.Model):
     history_ids = fields.One2many('clv_insured_card.history', 'insured_card_id', 'Insured Card History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_insured_card_history(self, insured_card_id, state, notes):
