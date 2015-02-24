@@ -19,13 +19,16 @@
 
 from openerp import models, fields, api
 from datetime import *
+import time
 
 class clv_insurance_history(models.Model):
     _name = 'clv_insurance.history'
 
-    insurance_id = fields.Many2one('clv_insurance', 'Tray', required=True)
-    user_id = fields.Many2one ('res.users', 'User', required=True)
-    date = fields.Datetime("Date", required=True)
+    insurance_id = fields.Many2one('clv_insurance', 'Insurance', required=True)
+    user_id = fields.Many2one ('res.users', 'User', required=True,
+                               default=lambda self: self._uid)
+    date = fields.Datetime("Date", required=True,
+                           default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     state = fields.Selection([('new','New'),
                               ('active','Active'),
                               ('inactive','Inactive'),
@@ -35,30 +38,27 @@ class clv_insurance_history(models.Model):
     
     _order = "date desc"
 
-    _defaults = {
-        'user_id': lambda obj,cr,uid,context: uid, 
-        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        }
-
 class clv_insurance(models.Model):
     _inherit = 'clv_insurance'
 
-    history_ids = fields.One2many('clv_insurance.history', 'insurance_id', 'Tray History', readonly=True)
+    history_ids = fields.One2many('clv_insurance.history', 'insurance_id', 'Insurance History', readonly=True)
+    active_history = fields.Boolean('Active History', 
+                                    help="If unchecked, it will allow you to disable the history without removing it.",
+                                    default=True)
 
     @api.one
     def insert_clv_insurance_history(self, insurance_id, state, notes):
-        values = { 
-            'insurance_id':  insurance_id,
-            'state': state,
-            'notes': notes,
-        }
-        self.pool.get('clv_insurance.history').create(self._cr, self._uid, values)
+        if self.active_history:
+            values = { 
+                'insurance_id':  insurance_id,
+                'state': state,
+                'notes': notes,
+            }
+            self.pool.get('clv_insurance.history').create(self._cr, self._uid, values)
 
     @api.multi
     def write(self, values):
         if (not 'state' in values) and (not 'date' in values):
-            #date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            #values['date'] = date
             notes = values.keys()
             self.insert_clv_insurance_history(self.id, self.state, notes)
         return super(clv_insurance, self).write(values)
@@ -72,17 +72,26 @@ class clv_insurance(models.Model):
     @api.one
     def button_activate(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        if not self.date_activation:
+            self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            time.sleep(1.0)
         self.state = 'active'
         self.insert_clv_insurance_history(self.id, 'active', '')
 
     @api.one
     def button_inactivate(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        if not self.date_inactivation:
+            self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            time.sleep(1.0)
         self.state = 'inactive'
         self.insert_clv_insurance_history(self.id, 'inactive', '')
 
     @api.one
     def button_suspend(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        if not self.date_suspension:
+            self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            time.sleep(1.0)
         self.state = 'suspended'
         self.insert_clv_insurance_history(self.id, 'suspended', '')

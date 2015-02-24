@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_insured_card_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_insured_card.tree</field>
+            <field name="model">clv_insured_card</field>
+            <field name="inherit_id" ref="clv_insured_card.view_clv_insured_card_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="date"/>
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_card_form_wkf" model="ir.ui.view">
+            <field name="name">clv_insured_card.form</field>
+            <field name="model">clv_insured_card</field>
+            <field name="inherit_id" ref="clv_insured_card.view_clv_insured_card_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Insured Card" position="before">
+                    <header>
+                        <button string="Activate" name="button_activate" states="new,inactive,suspended" type="workflow" groups="clv_base.group_insured_card_manager" class="oe_highlight"/>
+                        <button string="Inactivate" name="button_inactivate" states="new,active,suspended" type="workflow" groups="clv_base.group_insured_card_manager"/>
+                        <button string="Suspend" name="button_suspend" states="new,active,inactive" type="workflow" groups="clv_base.group_insured_card_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,active,inactive,suspended"/>
+                    </header>
+                </sheet>
+                <field name="date_inclusion" position="before">
+                    <field name="date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_card_search_wkf" model="ir.ui.view">
+            <field name="name">clv_insured_card.search</field>
+            <field name="model">clv_insured_card</field>
+            <field name="inherit_id" ref="clv_insured_card.view_clv_insured_card_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state"/>
+                    <field name="date_activation"/>
+                    <field name="date_inactivation"/>
+                    <field name="date_suspension"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -21,5 +21,6 @@ import clv_insurance
 import category
 import clv_annotation
 import clv_tag
+import seq
 import wkf
 import history

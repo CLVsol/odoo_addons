@@ -1,0 +1,474 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_insured_card
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-24 16:54+0000\n"
+"PO-Revision-Date: 2015-02-24 16:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_insured_card
+#: model:ir.actions.act_window,help:clv_insured_card.act_open_clv_insured_card_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insured card category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de cartão de beneficiário.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insured_card
+#: model:ir.actions.act_window,help:clv_insured_card.act_open_clv_insured_card_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insured card.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo cartão de beneficiário.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,date_activation:0
+msgid "Activation date"
+msgstr "Data da Ativação"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,active:0
+#: selection:clv_insured_card,state:0
+#: field:clv_insured_card.category,active:0
+#: selection:clv_insured_card.history,state:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_insured_card
+#: view:clv_annotation:clv_insured_card.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_annotation
+#: field:clv_insured_card,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_insured_card
+#: model:ir.ui.menu,name:clv_insured_card.menu_insurance_config_config_insured_card_categories
+msgid "Card Categories"
+msgstr "Categorias de Cartões"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_category
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+#: field:clv_insured_card.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,create_uid:0
+#: field:clv_insured_card.category,create_uid:0
+#: field:clv_insured_card.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,create_date:0
+#: field:clv_insured_card.category,create_date:0
+#: field:clv_insured_card.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_insured_card
+#: sql_constraint:clv_insured_card.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_insured_card
+#: sql_constraint:clv_insured_card:0
+msgid "Error! The Insured Card Code must be unique!"
+msgstr "Erro! O Código do Cartão do Beneficiário deve ser único!"
+
+#. module: clv_insured_card
+#: constraint:clv_insured_card.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search_insured
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search_wkf
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,id:0
+#: field:clv_insured_card.category,id:0
+#: field:clv_insured_card.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_insured_card
+#: help:clv_insured_card,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desabilitar o histórico sem removê-lo."
+
+#. module: clv_insured_card
+#: help:clv_insured_card.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_insured_card
+#: help:clv_insured_card,active:0
+msgid "If unchecked, it will allow you to hide the insured card without removing it."
+msgstr "Se desmarcado, será possível esconder o cartão do beneficiário sem removê-lo."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,date_inactivation:0
+msgid "Inactivation date"
+msgstr "Data da Inativação"
+
+#. module: clv_insured_card
+#: selection:clv_insured_card,state:0
+#: selection:clv_insured_card.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_insured_card
+#: view:clv_tag:clv_insured_card.view_clv_tag_form
+msgid "Insured Cards"
+msgstr "Cartões"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search_insured
+#: field:clv_insured_card,insured_id:0
+msgid "Insured"
+msgstr "Beneficiário"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_tree
+#: field:clv_insured_card.history,insured_card_id:0
+msgid "Insured Card"
+msgstr "Cartão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_tree
+#: model:ir.actions.act_window,name:clv_insured_card.act_open_clv_insured_card_category_view
+msgid "Insured Card Categories"
+msgstr "Categorias de Cartões"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
+msgid "Insured Card Category"
+msgstr "Categoria do Cartão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Insured Card Category..."
+msgstr "Categoria do Cartão..."
+
+#. module: clv_insured_card
+#: field:clv_insured_card,code:0
+msgid "Insured Card Code"
+msgstr "Código do Cartão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+msgid "Insured Card Code..."
+msgstr "Código do Cartão..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_history
+#: field:clv_insured_card,history_ids:0
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_tree
+msgid "Insured Card History"
+msgstr "Histórico do Cartão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+msgid "Insured Card..."
+msgstr "Cartão..."
+
+#. module: clv_insured_card
+#: view:clv_annotation:clv_insured_card.view_clv_annotation_form
+#: field:clv_annotation,insured_card_ids:0
+#: view:clv_insured:clv_insured_card.view_clv_insured_form_insured_card
+#: field:clv_insured,insured_card_ids:0
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+#: field:clv_tag,insured_card_ids:0
+#: model:ir.actions.act_window,name:clv_insured_card.act_open_clv_insured_card_view
+#: model:ir.ui.menu,name:clv_insured_card.menu_insurance_insured_cards
+msgid "Insured Cards"
+msgstr "Cartões"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_insured
+msgid "Insured..."
+msgstr "Beneficiário..."
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,insured_card_ids:0
+msgid "Insureds"
+msgstr "Beneficiários"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,write_uid:0
+#: field:clv_insured_card.category,write_uid:0
+#: field:clv_insured_card.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,write_date:0
+#: field:clv_insured_card.category,write_date:0
+#: field:clv_insured_card.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a Esquerda"
+
+#. module: clv_insured_card
+#: help:clv_insured_card,name:0
+msgid "Name printed on the card."
+msgstr "Nome impresso no cartão."
+
+#. module: clv_insured_card
+#: selection:clv_insured_card,state:0
+#: selection:clv_insured_card.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,notes:0
+#: field:clv_insured_card.category,notes:0
+#: field:clv_insured_card.history,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
+#: field:clv_insured_card.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_insured_card
+#: field:clv_insured_card,name:0
+msgid "Printed Name"
+msgstr "Nome Impresso"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+msgid "Printed Name..."
+msgstr "Nome Impresso..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+msgid "Public Information"
+msgstr "Informações Públicas"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_insured_card
+#: view:clv_insured:clv_insured_card.view_clv_insured_form_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_annotation
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_history
+#: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_search_wkf
+#: field:clv_insured_card,state:0
+#: field:clv_insured_card.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_insured_card
+#: selection:clv_insured_card,state:0
+#: selection:clv_insured_card.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,date_suspension:0
+msgid "Suspension date"
+msgstr "Data da Suspensão"
+
+#. module: clv_insured_card
+#: view:clv_tag:clv_insured_card.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_insured_card
+#: help:clv_insured_card.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_insured_card
+#: help:clv_insured_card,code:0
+msgid "Use \"/\" to get an automatic new Insured Card Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Cartão de Beneficiário."
+
+#. module: clv_insured_card
+#: field:clv_insured_card.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insured_card_manager
+msgid "Insured Card Manager"
+msgstr "Gerente de Cartão"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insured_card_user
+msgid "Insured Card User"
+msgstr "Usuário de Cartão"
+

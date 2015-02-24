@@ -25,14 +25,14 @@ class clv_insurance(models.Model):
 
     name = fields.Char('Insurance', required=True, size=64, translate=False)
     alias = fields.Char('Alias', size=64, help='Common name that the Insurance is referred')
-    insurance_code = fields.Char(size=64, string='Insurance Code', required=False)
+    code = fields.Char(size=64, string='Insurance Code', required=False)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Date('Inclusion Date')
     active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance without removing it.")
 
     _order='name'
 
-    _sql_constraints = [('insurance_code_uniq', 'unique(insurance_code)', u'Duplicated Insurance Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Insurance Code must be unique!')]
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

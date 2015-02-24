@@ -23,7 +23,7 @@ from datetime import *
 class clv_insurance_client(models.Model):
     _inherit = 'clv_insurance_client'
 
-    date = fields.Datetime("State change date", required=True, readonly=True)
+    date = fields.Datetime("Status change date", required=True, readonly=True)
     state = fields.Selection([('new','New'),
                               ('active','Active'),
                               ('inactive','Inactive'),

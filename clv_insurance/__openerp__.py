@@ -41,6 +41,8 @@ Insurance
         'category/clv_insurance_category_view.xml',
         'clv_annotation/clv_annotation_view.xml',
         'clv_tag/clv_tag_view.xml',
+        'seq/clv_insurance_sequence.xml',
+        'seq/clv_insurance_category_sequence.xml',
         'wkf/clv_insurance_workflow.xml',
         'wkf/clv_insurance_wkf_view.xml',
         'history/clv_insurance_history_view.xml',

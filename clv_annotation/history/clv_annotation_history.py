@@ -46,7 +46,7 @@ class clv_annotation(models.Model):
     history_ids = fields.One2many('clv_annotation.history', 'annotation_id', 'Annotation History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_annotation_history(self, annotation_id, state, notes):

@@ -33,6 +33,8 @@ Insured
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_insurance',
+        'clv_insurance_client',
         ],
     'data': [
         'security/clv_insured_security.xml',
@@ -47,6 +49,9 @@ Insured
         'wkf/clv_insured_wkf_view.xml',
         'history/clv_insured_history_view.xml',
         'menu/clv_insured_menu_view.xml',
+        'clv_insurance/clv_insurance_view.xml',
+        'clv_insurance_client/clv_insurance_client_view.xml',
+        'role/clv_insured_view.xml',
         ],
     'demo': [],
     'test': [],

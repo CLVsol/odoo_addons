@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="clv_insurance_client.view_clv_insurance_client_tree"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="after">
+                <field name="code" position="after">
                     <field name="date"/>
                     <field name="state"/>
                 </field>
@@ -42,11 +42,11 @@
             <field name="inherit_id" ref="clv_insurance_client.view_clv_insurance_client_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="after">
+                <field name="code" position="after">
                     <field name="state"/>
                 </field>
                 <group string="Group By..." position="inside">
-                    <filter string="Stage" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
                 </group>
             </field>
         </record>

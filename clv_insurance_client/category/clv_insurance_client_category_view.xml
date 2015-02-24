@@ -3,7 +3,7 @@
     <data>
 
         <record id="view_clv_insurance_client_category_form" model="ir.ui.view">
-            <field name="name">clv_insurance_client.category.form</field>
+            <field name="name">Insurance Client Category</field>
             <field name="model">clv_insurance_client.category</field>
             <field name="arch" type="xml">
                 <form string="Insurance Client Categories" version="7.0">
@@ -11,23 +11,33 @@
                         <div class="oe_title">
                             <label for="parent_id" class="oe_edit_only"/>
                             <h2>
-                                <field name="parent_id" placeholder="Parent Category..." />
+                                <field name="parent_id" placeholder="Parent Category..."/>
                             </h2>
                             <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name" default_focus="1" placeholder="Insurance Client Category..." />
+                                <field name="name" default_focus="1" placeholder="Insurance Client Category..."/>
                             </h1>
+                            <label for="code" class="oe_edit_only"/>
+                            <h2>
+                                <field name="code" placeholder="Category Code..."/>
+                            </h2>
                             <label for="description" class="oe_edit_only"/>
                             <h3>
-                                <field name="description" placeholder="Description..." />
+                                <field name="description" placeholder="Description..."/>
                             </h3>
-                            <label for="notes" class="oe_edit_only"/>
-                            <field name="notes" placeholder="Notes..."/>
                         </div>
                         <notebook>
-                            <page string="Insurance Client Clients">
+                            <page string="Information">
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Child Categories">
                                 <group>
-                                    <field name="insurance_client_ids" colspan="4" nolabel="1" />
+                                    <field name="child_ids" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Insurance Clients">
+                                <group>
+                                    <field name="insurance_client_ids" colspan="4" nolabel="1"/>
                                 </group>
                             </page>
                             <page string="Settings" groups="clv_base.group_base_rmanager">
@@ -44,11 +54,13 @@
         <record id="view_clv_insurance_client_category_tree" model="ir.ui.view">
             <field name="name">clv_insurance_client.category.tree</field>
             <field name="model">clv_insurance_client.category</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Insurance Client Categories">
-                    <field name="complete_name" />
-                    <field name="description" />
+                    <field name="complete_name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
                 </tree>
             </field>
         </record>
@@ -56,13 +68,19 @@
         <record id="view_clv_insurance_client_category_search" model="ir.ui.view">
             <field name="name">clv_insurance_client.category.search</field>
             <field name="model">clv_insurance_client.category</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Insurance Client Category">
-                    <field name="name" />
-                    <field name="complete_name" />
-                    <field name="description" />
-                    <newline />
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <filter string="Inactive Categories" name="active" domain="[('active','=',0)]" help="Inactive Categories"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Parent Category" domain="[]" context="{'group_by':'parent_id'}"/>
+                    </group>
                 </search>
             </field>
         </record>
@@ -73,39 +91,39 @@
             <field name="res_model">clv_insurance_client.category</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_insurance_client_category_search" />
+            <field name="search_view_id" ref="view_clv_insurance_client_category_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
-            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new insurance_client category.
+                Click to add a new insurance client category.
               </p>
             </field>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_insurance_client_category_view_form">
-            <field name="act_window_id" ref="act_open_clv_insurance_client_category_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_insurance_client_category_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_insurance_client_category_form" />
+            <field name="view_id" ref="view_clv_insurance_client_category_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_insurance_client_category_view_tree">
-            <field name="act_window_id" ref="act_open_clv_insurance_client_category_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_insurance_client_category_view"/>
+            <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_insurance_client_category_tree" />
+            <field name="view_id" ref="view_clv_insurance_client_category_tree"/>
         </record>
         
         <record id="view_clv_insurance_client_tree_category" model="ir.ui.view">
             <field name="name">clv_insurance_client.tree</field>
             <field name="model">clv_insurance_client</field>
             <field name="inherit_id" ref="view_clv_insurance_client_tree"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="before">
-                    <field name="category_id"/>
+                <field name="code" position="before">
+                    <field name="category_ids"/>
                 </field>
             </field>
         </record>
@@ -114,13 +132,12 @@
             <field name="name">clv_insurance_client.form</field>
             <field name="model">clv_insurance_client</field>
             <field name="inherit_id" ref="view_clv_insurance_client_form"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <label for="name" position="before">
-                    <label for="category_id" class="oe_edit_only"/>
+                    <label for="category_ids" class="oe_edit_only"/>
                     <h2>
-                         <!--field name="category_ids" widget="many2many_tags" placeholder="Categories..."/-->
-                         <field name="category_id" placeholder="Category..."/>
+                        <field name="category_ids" widget="many2many_tags" placeholder="Categories..."/>
                     </h2>
                 </label>
             </field>
@@ -130,14 +147,11 @@
             <field name="name">clv_insurance_client.search</field>
             <field name="model">clv_insurance_client</field>
             <field name="inherit_id" ref="view_clv_insurance_client_search"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="after">
-                    <field name="category_id"/>
+                <field name="code" position="after">
+                    <field name="category_ids"/>
                 </field>
-                <group string="Group By..." position="inside">
-                    <filter string="Insurance Client Category" context="{'group_by': 'category_id'}"/>
-                </group>
             </field>
         </record>
 
