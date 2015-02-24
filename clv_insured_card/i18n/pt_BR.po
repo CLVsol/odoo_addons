@@ -357,7 +357,7 @@ msgstr "Outras Informações ..."
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
 #: field:clv_insured_card.category,parent_id:0
 msgid "Parent Category"
-msgstr "Parent Category"
+msgstr "Categoria Superior"
 
 #. module: clv_insured_card
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
@@ -367,7 +367,7 @@ msgstr "Categoria Superior..."
 #. module: clv_insured_card
 #: field:clv_insured_card,name:0
 msgid "Printed Name"
-msgstr "Printed Name"
+msgstr "Nome Impresso"
 
 #. module: clv_insured_card
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form

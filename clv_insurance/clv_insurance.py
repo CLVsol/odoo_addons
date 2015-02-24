@@ -32,7 +32,7 @@ class clv_insurance(models.Model):
 
     _order='name'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Insurance Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Insurance Code must be unique!')]
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
