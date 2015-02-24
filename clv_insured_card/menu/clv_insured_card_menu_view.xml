@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insurance/Insured/Cards -->
+        <menuitem name="Insured Cards" id="menu_insurance_insured_cards"
+            parent="clv_base.menu_insurance_insured"
+            groups="clv_base.group_insured_card_user"
+            sequence="20"
+            action="clv_insured_card.act_open_clv_insured_card_view"/>
+
+        <!-- Insurance/Configuration/Configuration/Insured/Card Categories -->
+        <menuitem name="Card Categories" id="menu_insurance_config_config_insured_card_categories" 
+            parent="clv_base.menu_insurance_config_config_insured"
+            groups="clv_base.group_insured_card_user"
+            sequence="20"
+            action="clv_insured_card.act_open_clv_insured_card_category_view"/>
+
+    </data>
+</openerp>

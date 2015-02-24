@@ -25,18 +25,18 @@ class clv_insurance_client(models.Model):
 
     name = fields.Char('Insurance Client', required=True, size=64, translate=False)
     alias = fields.Char('Alias', size=64, help='Common name that the Insurance Client is referred')
-    insurance_client_code = fields.Char(size=64, string='Insurance Client Code', required=False)
+    code = fields.Char(size=64, string='Insurance Client Code', required=False)
     address_id = fields.Many2one('res.partner', 'Client Address', ondelete='restrict')
     client_phone = fields.Char('Client Phone', size=32)
     mobile_phone = fields.Char('Client Mobile', size=32)
     client_email = fields.Char('Client Email', size=240)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Date('Inclusion Date')
-    active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance_client without removing it.")
+    active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance client without removing it.")
 
     _order='name'
 
-    _sql_constraints = [('insurance_client_code_uniq', 'unique(insurance_client_code)', u'Duplicated Insurance Client Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Insurance Client Code must be unique!')]
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

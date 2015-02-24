@@ -1,0 +1,466 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_insurance_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-24 18:33+0000\n"
+"PO-Revision-Date: 2015-02-24 18:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_insurance_client
+#: model:ir.actions.act_window,help:clv_insurance client.act_open_clv_insurance_client_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insurance_client category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de cliente de plano.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insurance_client
+#: model:ir.actions.act_window,help:clv_insurance_client.act_open_clv_insurance_client_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insurance_client.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo cliente de plano.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_wkf
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,active:0
+#: selection:clv_insurance_client,state:0
+#: field:clv_insurance_client.category,active:0
+#: selection:clv_insurance_client.history,state:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_insurance_client
+#: view:clv_annotation:clv_insurance_client.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_annotation
+#: field:clv_insurance_client,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_category
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+#: field:clv_insurance_client.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinada"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,address_id:0
+msgid "Client Address"
+msgstr "Endereço"
+
+#. module: clv_insurance_client
+#: model:ir.ui.menu,name:clv_insurance_client.menu_insurance_config_config_insurance_client_categories
+msgid "Client Categories"
+msgstr "Categorias de Clientes"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,client_email:0
+msgid "Client Email"
+msgstr "Email"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,mobile_phone:0
+msgid "Client Mobile"
+msgstr "Celular"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,client_phone:0
+msgid "Client Phone"
+msgstr "Telefone"
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client,alias:0
+msgid "Common name that the Insurance Client is referred"
+msgstr "Nome comum com que o Cliente é conhecido"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,create_uid:0
+#: field:clv_insurance_client.category,create_uid:0
+#: field:clv_insurance_client.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,create_date:0
+#: field:clv_insurance_client.category,create_date:0
+#: field:clv_insurance_client.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.category,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_insurance_client
+#: sql_constraint:clv_insurance_client:0
+msgid "Error! The Insured Code must be unique!"
+msgstr "Erro! O Código do Cliente deve ser único!"
+
+#. module: clv_insurance_client
+#: sql_constraint:clv_insurance_client.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_insurance_client
+#: constraint:clv_insurance_client.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_search
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_search_wkf
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_search
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,id:0
+#: field:clv_insurance_client.category,id:0
+#: field:clv_insurance_client.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desabilitar o histórico sem removê-lo."
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client,active:0
+msgid "If unchecked, it will allow you to hide the insurance client without removing it."
+msgstr "Se desmarcado, será possível esconder o beneficiário sem removê-lo."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_wkf
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_insurance_client
+#: selection:clv_insurance_client,state:0
+#: selection:clv_insurance_client.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_search
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_wkf
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_search
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_tree
+#: field:clv_insurance_client,name:0
+#: field:clv_insurance_client.history,insurance_client_id:0
+msgid "Insurance Client"
+msgstr "Cliente"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_tree
+#: model:ir.actions.act_window,name:clv_insurance_client.act_open_clv_insurance_client_category_view
+msgid "Insurance Client Categories"
+msgstr "Categorias de Clientesx"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_search
+msgid "Insurance Client Category"
+msgstr "Categoria de Cliente"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Insurance Client Category..."
+msgstr "Categoria de Cliente..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,code:0
+msgid "Insurance Client Code"
+msgstr "Código do Cliente"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_history
+#: field:clv_insurance_client,history_ids:0
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_tree
+msgid "Insurance Client History"
+msgstr "Histórico do Cliente"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+msgid "Insurance Client..."
+msgstr "Cliente..."
+
+#. module: clv_insurance_client
+#: view:clv_annotation:clv_insurance_client.view_clv_annotation_form
+#: field:clv_annotation,insurance_client_ids:0
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+#: field:clv_insurance_client.category,insurance_client_ids:0
+#: view:clv_tag:clv_insurance_client.view_clv_tag_form
+#: field:clv_tag,insurance_client_ids:0
+#: model:ir.actions.act_window,name:clv_insurance_client.act_open_clv_insurance_client_view
+#: model:ir.ui.menu,name:clv_insurance_client.menu_insurance_insurance_clients
+msgid "Insurance Clients"
+msgstr "Clientes"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+msgid "Insurance Code..."
+msgstr "Código do Plano..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,write_uid:0
+#: field:clv_insurance_client.category,write_uid:0
+#: field:clv_insurance_client.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,write_date:0
+#: field:clv_insurance_client.category,write_date:0
+#: field:clv_insurance_client.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a Esquerda"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_insurance_client
+#: selection:clv_insurance_client,state:0
+#: selection:clv_insurance_client.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,notes:0
+#: field:clv_insurance_client.category,notes:0
+#: field:clv_insurance_client.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_search
+#: field:clv_insurance_client.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_annotation
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_history
+#: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_form
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_search_wkf
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,state:0
+#: field:clv_insurance_client.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_wkf
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_insurance_client
+#: selection:clv_insurance_client,state:0
+#: selection:clv_insurance_client.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_insurance_client
+#: view:clv_tag:clv_insurance_client.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_insurance_client
+#: help:clv_insurance_client,code:0
+msgid "Use \"/\" to get an automatic new Insurance Client Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Cliente."
+
+#. module: clv_insurance_client
+#: field:clv_insurance_client.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_insurance_client
+#: view:clv_insurance_client.history:clv_insurance_client.view_clv_insurance_client_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insurance_client_manager
+msgid "Insurance Client Manager"
+msgstr "Gerente de Cliente de Plano"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insurance_client_user
+msgid "Insurance Client User"
+msgstr "Usuário de Cliente de Plano"
+

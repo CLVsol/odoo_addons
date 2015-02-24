@@ -424,3 +424,13 @@ msgstr "Gerente de Local"
 msgid "Place User"
 msgstr "Usuário de Local"
 
+#. module: clv_annotation
+#: model:ir.ui.menu,name:clv_annotation.menu_base_base_annotations
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_annotation
+#: model:ir.ui.menu,name:clv_annotation.menu_base_config_config_annotation_categories
+msgid "Annotation Categories"
+msgstr "Categorias de Anotações"
+

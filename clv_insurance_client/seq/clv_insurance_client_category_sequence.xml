@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_insurance_client.seq_type_clv_insurance_client_category" model="ir.sequence.type">
+            <field name="name">Insurance Client Category Sequence</field>
+            <field name="code">clv_insurance_client.categ.code</field>
+        </record>
+        
+        <record id="clv_insurance_client.seq_clv_insurance_client_category" model="ir.sequence">
+            <field name="name">Insurance Client Category Sequence</field>
+            <field name="code">clv_insurance_client.categ.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>

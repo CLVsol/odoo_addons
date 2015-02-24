@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-26 14:30+0000\n"
-"PO-Revision-Date: 2015-01-26 14:30+0000\n"
+"POT-Creation-Date: 2015-02-24 14:58+0000\n"
+"PO-Revision-Date: 2015-02-24 14:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_base
+#: model:ir.ui.menu,name:clv_base.menu_base_base
+msgid "Base"
+msgstr "Básico"
 
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_base_manager
@@ -39,3 +45,25 @@ msgstr "Super Usuário Básico"
 #: model:res.groups,name:clv_base.group_base_user
 msgid "Base User"
 msgstr "Usuário Básico"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_base_config
+#: model:ir.ui.menu,name:clv_base.menu_base_config_config
+#: model:ir.ui.menu,name:clv_base.menu_insurance_config
+#: model:ir.ui.menu,name:clv_base.menu_insurance_config_config
+msgid "Configuration"
+msgstr "Configurações"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_insurance
+#: model:ir.ui.menu,name:clv_base.menu_insurance_config_config_insurance
+#: model:ir.ui.menu,name:clv_base.menu_insurance_insurance
+msgid "Insurance"
+msgstr "Planos"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_insurance_config_config_insured
+#: model:ir.ui.menu,name:clv_base.menu_insurance_insured
+msgid "Insured"
+msgstr "Beneficiários"
+

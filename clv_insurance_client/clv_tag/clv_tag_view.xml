@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="view_clv_insurance_client_tree"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="before">
+                <field name="code" position="before">
                     <field name="tag_ids" groups="clv_base.group_tag_user"/>
                 </field>
             </field>
@@ -35,7 +35,7 @@
             <field name="inherit_id" ref="view_clv_insurance_client_search"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <field name="insurance_client_code" position="after">
+                <field name="code" position="after">
                     <field name="tag_ids" groups="clv_base.group_tag_user"/>
                 </field>
             </field>
