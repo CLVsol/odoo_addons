@@ -42,7 +42,7 @@ class clv_tag(models.Model):
     history_ids = fields.One2many('clv_tag.history', 'tag_id', 'Tag History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_tag_history(self, tag_id, state, notes):
