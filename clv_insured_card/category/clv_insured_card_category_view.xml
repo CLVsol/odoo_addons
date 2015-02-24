@@ -97,7 +97,7 @@
             <field name="view_id" eval="False"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new insured_card category.
+                Click to add a new insured card category.
               </p>
             </field>
         </record>

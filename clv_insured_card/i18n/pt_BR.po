@@ -18,7 +18,7 @@ msgstr ""
 #. module: clv_insured_card
 #: model:ir.actions.act_window,help:clv_insured_card.act_open_clv_insured_card_category_view
 msgid "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a new insured_card category.\n"
+"                Click to add a new insured card category.\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
@@ -29,7 +29,7 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 #. module: clv_insured_card
 #: model:ir.actions.act_window,help:clv_insured_card.act_open_clv_insured_card_view
 msgid "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a new insured_card.\n"
+"                Click to add a new insured card.\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"

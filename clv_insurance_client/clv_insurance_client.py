@@ -32,11 +32,11 @@ class clv_insurance_client(models.Model):
     client_email = fields.Char('Client Email', size=240)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Date('Inclusion Date')
-    active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance_client without removing it.")
+    active = fields.Boolean('Active', help="If unchecked, it will allow you to hide the insurance client without removing it.")
 
     _order='name'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Duplicated Insurance Client Code!')]
+    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Insurance Client Code must be unique!')]
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
