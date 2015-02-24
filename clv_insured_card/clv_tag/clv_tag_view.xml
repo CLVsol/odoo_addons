@@ -48,7 +48,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <page string="Tag for" position="inside">
-                    <group string="Insuded Cards">
+                    <group string="Insured Cards">
                         <field name="insured_card_ids" colspan="4" nolabel="1"/>
                     </group>
                 </page>
