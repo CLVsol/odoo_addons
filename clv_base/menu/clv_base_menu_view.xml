@@ -11,9 +11,14 @@
                 parent="menu_base"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Base/Base/Configuration -->
-                <menuitem name="Configuration" id="menu_base_base_config"  
-                    parent="menu_base_base"
+            <!-- Base/Configuration -->
+            <menuitem name="Configuration" id="menu_base_config"  
+                parent="menu_base"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- Base/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_base_config_config"  
+                    parent="menu_base_config"
                     groups="clv_base.group_base_manager"
                     sequence="90"/>
 
@@ -67,16 +72,36 @@
         <menuitem name="Insurance" id="menu_insurance" 
             groups="clv_base.group_base_user"
             sequence="15"/>
+            <!-- Insurance/Insured -->
+            <menuitem name="Insured" id="menu_insurance_insured"  
+                parent="menu_insurance"
+                groups="clv_base.group_base_user"
+                sequence="10" />
             <!-- Insurance/Insurance -->
             <menuitem name="Insurance" id="menu_insurance_insurance"  
                 parent="menu_insurance"
                 groups="clv_base.group_base_user"
-                sequence="10" />
-                <!-- Insurance/Insurance/Configuration -->
-                <menuitem name="Configuration" id="menu_insurance_insurance_config"  
-                    parent="menu_insurance_insurance"
+                sequence="20" />
+            <!-- Insurance/Configuration -->
+            <menuitem name="Configuration" id="menu_insurance_config"  
+                parent="menu_insurance"
+                groups="clv_base.group_base_manager"
+                sequence="90" />
+                <!-- Insurance/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_insurance_config_config"  
+                    parent="menu_insurance_config"
                     groups="clv_base.group_base_manager"
-                    sequence="90" />
+                    sequence="10" />
+                    <!-- Insurance/Configuration/Configuration/Insured -->
+                    <menuitem name="Insured" id="menu_insurance_config_config_insured"  
+                        parent="menu_insurance_config_config"
+                        groups="clv_base.group_base_manager"
+                        sequence="10" />
+                    <!-- Insurance/Configuration/Configuration/Insurance -->
+                    <menuitem name="Insurance" id="menu_insurance_config_config_insurance"  
+                        parent="menu_insurance_config_config"
+                        groups="clv_base.group_base_manager"
+                        sequence="20" />
 
         <!-- Pharmacy -->
         <menuitem name="Pharmacy" id="menu_pharmacy" 
