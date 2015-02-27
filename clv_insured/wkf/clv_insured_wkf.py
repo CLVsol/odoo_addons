@@ -42,7 +42,7 @@ class clv_insured(models.Model):
 
     @api.one
     def button_activate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         # if not self.date_activation:
         #     self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         #     time.sleep(1.0)
@@ -50,7 +50,7 @@ class clv_insured(models.Model):
 
     @api.one
     def button_suspend(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         # if not self.date_suspension:
         #     self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         #     time.sleep(1.0)
@@ -58,7 +58,7 @@ class clv_insured(models.Model):
 
     @api.one
     def button_cancel(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         # if not self.date_inactivation:
         #     self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         #     time.sleep(1.0)
