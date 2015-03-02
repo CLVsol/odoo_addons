@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insurance/Insured/Insureds (Management) -->
+        <menuitem name="Insureds (Management)" id="menu_insurance_insured_insureds_mng"
+            parent="clv_base.menu_insurance_insured"
+            groups="clv_base.group_insured_user"
+            sequence="80"
+            action="clv_insured_mng.act_open_clv_insured_mng_view"/>
+
+    </data>
+</openerp>
