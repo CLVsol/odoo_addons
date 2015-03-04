@@ -18,43 +18,36 @@
 ################################################################################
 
 {
-    'name': 'Insurance Client',
+    'name': 'Address',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Insurance Client
-================
+Address
+=======
     ''',
-    'images': [],
     'depends': [
         'clv_base',
         'clv_tag',
         'clv_annotation',
-        'clv_address',
         ],
     'data': [
-        'security/clv_insurance_client_security.xml',
+        'security/clv_address_security.xml',
         'security/ir.model.access.csv',
-        'clv_insurance_client_view.xml',
-        'category/clv_insurance_client_category_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
+        'clv_address_view.xml',
+        'category/clv_address_category_view.xml',
         'clv_tag/clv_tag_view.xml',
-        'seq/clv_insurance_client_sequence.xml',
-        'seq/clv_insurance_client_category_sequence.xml',
-        'wkf/clv_insurance_client_workflow.xml',
-        'wkf/clv_insurance_client_wkf_view.xml',
-        'history/clv_insurance_client_history_view.xml',
-        'menu/clv_insurance_client_menu_view.xml'
+        'clv_annotation/clv_annotation_view.xml',
+        'seq/clv_address_sequence.xml',
+        'seq/clv_address_category_sequence.xml',
+        'wkf/clv_address_workflow.xml',
+        'wkf/clv_address_wkf_view.xml',
+        'history/clv_address_history_view.xml',
+        'menu/clv_address_menu_view.xml',
         ],
-    'demo': [],
     'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
     'installable': True,
     'active': False,
-    'css': [],
 }

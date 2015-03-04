@@ -17,44 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insurance Client',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Insurance Client
-================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_address',
-        ],
-    'data': [
-        'security/clv_insurance_client_security.xml',
-        'security/ir.model.access.csv',
-        'clv_insurance_client_view.xml',
-        'category/clv_insurance_client_category_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'seq/clv_insurance_client_sequence.xml',
-        'seq/clv_insurance_client_category_sequence.xml',
-        'wkf/clv_insurance_client_workflow.xml',
-        'wkf/clv_insurance_client_wkf_view.xml',
-        'history/clv_insurance_client_history_view.xml',
-        'menu/clv_insurance_client_menu_view.xml'
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields
+
+class clv_address(models.Model):
+    _inherit = 'clv_address'
+
+    annotation_ids = fields.Many2many('clv_annotation', 
+                                      'clv_address_annotation_rel', 
+                                      'address_id', 
+                                      'annotation_id', 
+                                      'Annotations')
+
+class clv_annotation(models.Model):
+    _inherit = 'clv_annotation'
+
+    address_ids = fields.Many2many('clv_address', 
+                                   'clv_address_annotation_rel', 
+                                   'annotation_id', 
+                                   'address_id', 
+                                   'Addresses')
