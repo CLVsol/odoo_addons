@@ -26,7 +26,8 @@ class clv_insurance_client(models.Model):
     name = fields.Char('Insurance Client', required=True, size=64, translate=False)
     alias = fields.Char('Alias', size=64, help='Common name that the Insurance Client is referred')
     code = fields.Char(size=64, string='Insurance Client Code', required=False)
-    address_id = fields.Many2one('res.partner', 'Client Address', ondelete='restrict')
+    # address_id = fields.Many2one('res.partner', 'Client Address', ondelete='restrict')
+    address_id = fields.Many2one('clv_address', 'Client Address', ondelete='restrict')
     client_phone = fields.Char('Client Phone', size=32)
     mobile_phone = fields.Char('Client Mobile', size=32)
     client_email = fields.Char('Client Email', size=240)
@@ -45,6 +46,7 @@ class clv_insurance_client(models.Model):
 
     def onchange_address_id(self, cr, uid, ids, address, context=None):
         if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+            # address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+            address = self.pool.get('clv_address').browse(cr, uid, address, context=context)
             return {'value': {'client_phone': address.phone, 'mobile_phone': address.mobile, 'client_email': address.email}}
         return {'value': {}}

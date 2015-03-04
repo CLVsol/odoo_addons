@@ -33,6 +33,7 @@ Insurance Client
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_address',
         ],
     'data': [
         'security/clv_insurance_client_security.xml',
