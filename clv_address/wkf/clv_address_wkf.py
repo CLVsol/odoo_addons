@@ -17,10 +17,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_address
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
+from openerp import models, fields, api
+from datetime import *
+
+class clv_address(models.Model):
+    _inherit = 'clv_address'
+
+    state = fields.Selection([('draft','Draft'),
+                              ('revised','Revised'),
+                              ('waiting','Waiting'),
+                              ('done','Done')
+                              ], string='Status', default='draft', readonly=True, required=True, help="")
+
+    @api.one
+    def button_draft(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'draft'
+
+    @api.one
+    def button_revised(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'revised'
+
+    @api.one
+    def button_waiting(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'waiting'
+
+    @api.one
+    def button_done(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'done'

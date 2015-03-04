@@ -17,10 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_address
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
+from openerp import models, fields
+
+class clv_address(models.Model):
+    _inherit = 'clv_address'
+
+    annotation_ids = fields.Many2many('clv_annotation', 
+                                      'clv_address_annotation_rel', 
+                                      'address_id', 
+                                      'annotation_id', 
+                                      'Annotations')
+
+class clv_annotation(models.Model):
+    _inherit = 'clv_annotation'
+
+    address_ids = fields.Many2many('clv_address', 
+                                   'clv_address_annotation_rel', 
+                                   'annotation_id', 
+                                   'address_id', 
+                                   'Addresses')

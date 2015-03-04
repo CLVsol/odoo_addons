@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_address.seq_type_clv_address" model="ir.sequence.type">
+            <field name="name">Address Sequence</field>
+            <field name="code">clv_address.code</field>
+        </record>
+        
+        <record id="clv_address.seq_clv_address" model="ir.sequence">
+            <field name="name">Address Sequence</field>
+            <field name="code">clv_address.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>
