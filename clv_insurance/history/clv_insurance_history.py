@@ -31,8 +31,8 @@ class clv_insurance_history(models.Model):
                            default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     state = fields.Selection([('new','New'),
                               ('active','Active'),
-                              ('inactive','Inactive'),
-                              ('suspended','Suspended')
+                              ('suspended','Suspended'),
+                              ('canceled','Canceled'),
                               ], string='Status', default='new', readonly=True, required=True, help="")
     notes = fields.Text(string='Notes')
     
@@ -58,40 +58,31 @@ class clv_insurance(models.Model):
 
     @api.multi
     def write(self, values):
-        if (not 'state' in values) and (not 'date' in values):
+        if (not 'state' in values) and (not 'state_date' in values):
             notes = values.keys()
             self.insert_clv_insurance_history(self.id, self.state, notes)
         return super(clv_insurance, self).write(values)
 
     @api.one
     def button_new(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'new'
         self.insert_clv_insurance_history(self.id, 'new', '')
 
     @api.one
     def button_activate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_activation:
-            self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'active'
         self.insert_clv_insurance_history(self.id, 'active', '')
 
     @api.one
     def button_inactivate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_inactivation:
-            self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
-        self.state = 'inactive'
-        self.insert_clv_insurance_history(self.id, 'inactive', '')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'
+        self.insert_clv_insurance_history(self.id, 'canceled', '')
 
     @api.one
     def button_suspend(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_suspension:
-            self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'suspended'
         self.insert_clv_insurance_history(self.id, 'suspended', '')

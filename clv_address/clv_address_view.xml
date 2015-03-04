@@ -94,7 +94,7 @@
             <field name="name">clv_address.search</field>
             <field name="model">clv_address</field>
             <field name="arch" type="xml">
-                <search string="Search Partner">
+                <search string="Search Address">
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>

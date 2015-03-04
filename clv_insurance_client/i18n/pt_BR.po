@@ -227,18 +227,18 @@ msgstr "Se desmarcado, será possível esconder o beneficiário sem removê-lo."
 
 #. module: clv_insurance_client
 #: view:clv_insurance_client:clv_insurance_client.view_clv_insurance_client_form_wkf
-msgid "Inactivate"
-msgstr "Inativar"
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. module: clv_insurance_client
 #: selection:clv_insurance_client,state:0
 #: selection:clv_insurance_client.history,state:0
-msgid "Inactive"
-msgstr "Inativo"
+msgid "Canceled"
+msgstr "Cancelado"
 
 #. module: clv_insurance_client
 #: view:clv_insurance_client.category:clv_insurance_client.view_clv_insurance_client_category_search
-msgid "Inactive Categories"
+msgid "Canceled Categories"
 msgstr "Categorias Inativas"
 
 #. module: clv_insurance_client
