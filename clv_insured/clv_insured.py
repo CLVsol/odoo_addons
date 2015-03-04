@@ -27,8 +27,10 @@ class clv_insured(models.Model):
     name = fields.Char('Name', required=True, size=64)
     alias = fields.Char('Alias', size=64, help='Common name that the Insured is referred')
     code = fields.Char(size=64, string='Insured Code')
-    address_id = fields.Many2one('res.partner', 'Working Address', ondelete='restrict')
-    address_home_id = fields.Many2one('res.partner', 'Home Address', ondelete='restrict')
+    # address_id = fields.Many2one('res.partner', 'Working Address', ondelete='restrict')
+    address_id = fields.Many2one('clv_address', 'Working Address', ondelete='restrict')
+    # address_home_id = fields.Many2one('res.partner', 'Home Address', ondelete='restrict')
+    address_home_id = fields.Many2one('clv_address', 'Home Address', ondelete='restrict')
     work_phone = fields.Char('Work Phone', size=32)
     mobile_phone = fields.Char('Work Mobile', size=32)
     work_email = fields.Char('Work Email', size=240)
@@ -74,6 +76,7 @@ class clv_insured(models.Model):
 
     def onchange_address_id(self, cr, uid, ids, address, context=None):
         if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'insured_phone': address.phone, 'mobile_phone': address.mobile, 'insured_email': address.email}}
+            # address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+            address = self.pool.get('clv_address').browse(cr, uid, address, context=context)
+            return {'value': {'work_phone': address.phone, 'mobile_phone': address.mobile, 'work_email': address.email}}
         return {'value': {}}
