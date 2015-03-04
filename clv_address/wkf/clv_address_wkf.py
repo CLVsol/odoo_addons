@@ -17,44 +17,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insurance Client',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Insurance Client
-================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_address',
-        ],
-    'data': [
-        'security/clv_insurance_client_security.xml',
-        'security/ir.model.access.csv',
-        'clv_insurance_client_view.xml',
-        'category/clv_insurance_client_category_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'seq/clv_insurance_client_sequence.xml',
-        'seq/clv_insurance_client_category_sequence.xml',
-        'wkf/clv_insurance_client_workflow.xml',
-        'wkf/clv_insurance_client_wkf_view.xml',
-        'history/clv_insurance_client_history_view.xml',
-        'menu/clv_insurance_client_menu_view.xml'
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+from datetime import *
+
+class clv_address(models.Model):
+    _inherit = 'clv_address'
+
+    state = fields.Selection([('draft','Draft'),
+                              ('revised','Revised'),
+                              ('waiting','Waiting'),
+                              ('done','Done')
+                              ], string='Status', default='draft', readonly=True, required=True, help="")
+
+    @api.one
+    def button_draft(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'draft'
+
+    @api.one
+    def button_revised(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'revised'
+
+    @api.one
+    def button_waiting(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'waiting'
+
+    @api.one
+    def button_done(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'done'

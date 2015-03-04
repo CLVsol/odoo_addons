@@ -33,6 +33,7 @@ Insured
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_address',
         'clv_insurance',
         'clv_insurance_client',
         ],
