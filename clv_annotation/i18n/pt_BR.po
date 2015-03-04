@@ -380,12 +380,12 @@ msgstr "Etiquetas..."
 #. module: clv_annotation
 #: help:clv_annotation.category,code:0
 msgid "Use \"/\" to get an automatic new Category Code."
-msgstr "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
 
 #. module: clv_annotation
 #: help:clv_annotation,code:0
 msgid "Use \"/\" to get an automatic new Reference."
-msgstr "Use \"/\" to get an automatic new Reference."
+msgstr "Use \"/\" para obter automaticamente uma nova Referência."
 
 #. module: clv_annotation
 #: field:clv_annotation.history,user_id:0
@@ -413,16 +413,6 @@ msgstr "Gerente de Anotação"
 #: model:res.groups,name:clv_base.group_annotation_user
 msgid "Annotation User"
 msgstr "Usuário de Anotação"
-
-#. module: clv_base
-#: model:res.groups,name:clv_base.group_place_manager
-msgid "Place Manager"
-msgstr "Gerente de Local"
-
-#. module: clv_base
-#: model:res.groups,name:clv_base.group_place_user
-msgid "Place User"
-msgstr "Usuário de Local"
 
 #. module: clv_annotation
 #: model:ir.ui.menu,name:clv_annotation.menu_base_base_annotations

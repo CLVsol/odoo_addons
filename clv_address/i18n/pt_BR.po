@@ -1,0 +1,504 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-04 17:01+0000\n"
+"PO-Revision-Date: 2015-03-04 17:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_address
+#: model:ir.actions.act_window,help:clv_address.act_open_clv_address_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new address category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de endereço.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_address
+#: model:ir.actions.act_window,help:clv_address.act_open_clv_address_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new address.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo endereço.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_address
+#: field:clv_address,active:0
+#: field:clv_address.category,active:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_address
+#: field:clv_address,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_form_wkf
+#: field:clv_address.history,address_id:0
+msgid "Address"
+msgstr "Endereço"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+#: view:clv_address.category:clv_address.view_clv_address_category_tree
+#: model:ir.actions.act_window,name:clv_address.act_open_clv_address_category_view
+#: model:ir.ui.menu,name:clv_address.menu_base_config_config_address_categories
+msgid "Address Categories"
+msgstr "Categorias de Endereços"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_search
+msgid "Address Category"
+msgstr "Categoria de Endereço"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Address Category..."
+msgstr "Categoria de Endereço..."
+
+#. module: clv_address
+#: field:clv_address,code:0
+msgid "Address Code"
+msgstr "Código da Anotação"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+msgid "Address Code..."
+msgstr "Código da Anotação..."
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_history
+#: field:clv_address,history_ids:0
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+#: view:clv_address.history:clv_address.view_clv_address_history_tree
+msgid "Address History"
+msgstr "Histórico do Endereço"
+
+#. module: clv_address
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+msgid "Address..."
+msgstr "Endereço..."
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+#: view:clv_annotation:clv_address.view_clv_annotation_form
+#: field:clv_annotation,address_ids:0
+#: view:clv_tag:clv_address.view_clv_tag_form
+#: field:clv_tag,address_ids:0
+#: model:ir.actions.act_window,name:clv_address.act_open_clv_address_view
+#: model:ir.ui.menu,name:clv_address.menu_base_base_addresses
+msgid "Addresses"
+msgstr "Endereços"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_tree
+msgid "Adresses"
+msgstr "Endereços"
+
+#. module: clv_address
+#: field:clv_address,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_address
+#: view:clv_annotation:clv_address.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_annotation
+#: field:clv_address,annotation_ids:0
+#: field:clv_address.category,address_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_address
+#: field:clv_address,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_category
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_address
+#: field:clv_address.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_address
+#: field:clv_address.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+#: field:clv_address.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_address
+#: code:addons/clv_address/clv_address.py:58
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_search
+#: field:clv_address,city:0
+#, python-format
+msgid "City"
+msgstr "Cidade"
+
+#. module: clv_address
+#: help:clv_address,alias:0
+msgid "Common name that the Address is referred"
+msgstr "Nome comum com que o Endereço é conhecido"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_search
+#: field:clv_address,country_id:0
+msgid "Country"
+msgstr "Pais"
+
+#. module: clv_address
+#: field:clv_address,create_uid:0
+#: field:clv_address.category,create_uid:0
+#: field:clv_address.history,create_uid:0
+msgid "Created by"
+msgstr "Criado em"
+
+#. module: clv_address
+#: field:clv_address,create_date:0
+#: field:clv_address.category,create_date:0
+#: field:clv_address.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_address
+#: field:clv_address.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_address
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_address
+#: field:clv_address.category,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_wkf
+#: selection:clv_address,state:0
+#: selection:clv_address.history,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: clv_address
+#: selection:clv_address,state:0
+#: selection:clv_address.history,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_address
+#: field:clv_address,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: clv_address
+#: sql_constraint:clv_address.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_address
+#: constraint:clv_address.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é permitido criar categorias recursivas."
+
+#. module: clv_address
+#: field:clv_address,fax:0
+msgid "Fax"
+msgstr "Fax"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_search
+#: view:clv_address.category:clv_address.view_clv_address_category_search
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_address
+#: field:clv_address,id:0
+#: field:clv_address.category,id:0
+#: field:clv_address.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_address
+#: help:clv_address,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possivel desabilitar o histórico sem removê-lo."
+
+#. module: clv_address
+#: help:clv_address,active:0
+msgid "If unchecked, it will allow you to hide the address without removing it."
+msgstr "Se desmarcado, será possível esconder o endereço sem removê-lo."
+
+#. module: clv_address
+#: help:clv_address.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_search
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_address
+#: field:clv_address,write_uid:0
+#: field:clv_address.category,write_uid:0
+#: field:clv_address.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_address
+#: field:clv_address,write_date:0
+#: field:clv_address.category,write_date:0
+#: field:clv_address.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_address
+#: field:clv_address.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a esquerda"
+
+#. module: clv_address
+#: field:clv_address,mobile:0
+msgid "Mobile"
+msgstr "Celular"
+
+#. module: clv_address
+#: field:clv_address,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_address
+#: field:clv_address,notes:0
+#: field:clv_address.category,notes:0
+#: field:clv_address.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_address
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+msgid "Notes..."
+msgstr "Notes..."
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_search
+#: field:clv_address.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_address
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_address
+#: field:clv_address,phone:0
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_wkf
+#: selection:clv_address,state:0
+#: selection:clv_address.history,state:0
+msgid "Revised"
+msgstr "Revisado"
+
+#. module: clv_address
+#: field:clv_address.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_search
+msgid "Search Address"
+msgstr "Pesquisar Endereço"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_form_annotation
+#: view:clv_address:clv_address.view_clv_address_form_history
+#: view:clv_address.category:clv_address.view_clv_address_category_form
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_search_wkf
+msgid "Stage"
+msgstr "Estágio"
+
+#. module: clv_address
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+msgid "Stage..."
+msgstr "Estágio..."
+
+#. module: clv_address
+#: code:addons/clv_address/clv_address.py:58
+#: view:clv_address:clv_address.view_clv_address_form
+#: view:clv_address:clv_address.view_clv_address_search
+#: field:clv_address,state_id:0
+#, python-format
+msgid "State"
+msgstr "Estado"
+
+#. module: clv_address
+#: field:clv_address,state:0
+#: field:clv_address.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_search
+#: view:clv_address:clv_address.view_clv_address_search_wkf
+#: field:clv_address,street:0
+msgid "Street"
+msgstr "Logradouro"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+msgid "Street..."
+msgstr "Logradouro..."
+
+#. module: clv_address
+#: field:clv_address,street2:0
+msgid "Street2"
+msgstr "Complemento"
+
+#. module: clv_address
+#: view:clv_tag:clv_address.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_address
+#: field:clv_address,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_address
+#: help:clv_address,code:0
+msgid "Use \"/\" to get an automatic new Address Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Endereço."
+
+#. module: clv_address
+#: help:clv_address.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_address
+#: field:clv_address.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_address
+#: view:clv_address.history:clv_address.view_clv_address_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form_wkf
+#: selection:clv_address,state:0
+#: selection:clv_address.history,state:0
+msgid "Waiting"
+msgstr "Aguardando"
+
+#. module: clv_address
+#: code:addons/clv_address/clv_address.py:58
+#: view:clv_address:clv_address.view_clv_address_form
+#, python-format
+msgid "ZIP"
+msgstr "CEP"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_search
+#: field:clv_address,zip:0
+msgid "Zip"
+msgstr "CEP"
+
+#. module: clv_address
+#: view:clv_address:clv_address.view_clv_address_form
+msgid "e.g. +32.81.81.37.00"
+msgstr "por ex. (19) 4445-8889"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_address_manager
+msgid "Address Manager"
+msgstr "Gerente de Endereço"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_address_user
+msgid "Address User"
+msgstr "Usuário de Endereço"

@@ -23,33 +23,33 @@ from datetime import *
 class clv_insurance_client(models.Model):
     _inherit = 'clv_insurance_client'
 
-    date = fields.Datetime("Status change date", required=True, readonly=True)
+    state_date = fields.Datetime("Status change date", required=True, readonly=True)
     state = fields.Selection([('new','New'),
                               ('active','Active'),
-                              ('inactive','Inactive'),
-                              ('suspended','Suspended')
+                              ('suspended','Suspended'),
+                              ('canceled','Canceled'),
                               ], string='Status', default='new', readonly=True, required=True, help="")
 
     _defaults = {
-        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'state_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
     
     @api.one
     def button_new(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'new'
 
     @api.one
     def button_activate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'active'
 
     @api.one
-    def button_inactivate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'inactive'
+    def button_suspend(self):
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'suspended'
 
     @api.one
-    def button_suspend(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'suspended'
+    def button_cancel(self):
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'
