@@ -70,7 +70,6 @@ ADDRESS_FIELDS = ('street', 'street2', 'zip', 'city', 'state_id', 'country_id')
 
 
 class clv_address(osv.Model, format_address):
-    _description = 'Partner'
     _name = "clv_address"
 
     def _address_display(self, cr, uid, ids, name, args, context=None):
