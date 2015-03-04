@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_clv_address_address_user,clv_address,model_clv_address,clv_base.group_address_user,1,0,0,0
+access_clv_address_address_manager,clv_address,model_clv_address,clv_base.group_address_manager,1,1,1,0
+access_clv_address_base_smanager,clv_address,model_clv_address,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_address_category_address_user,clv_address.category,model_clv_address_category,clv_base.group_address_user,1,0,0,0
+access_clv_address_category_address_manager,clv_address.category,model_clv_address_category,clv_base.group_address_manager,1,1,1,0
+access_clv_address_category_base_smanager,clv_address.category,model_clv_address_category,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_address_history_address_user,clv_address.history,model_clv_address_history,clv_base.group_address_user,1,0,0,0
+access_clv_address_history_address_manager,clv_address.history,model_clv_address_history,clv_base.group_address_manager,1,1,1,0
+access_clv_address_history_base_smanager,clv_address.history,model_clv_address_history,clv_base.group_base_smanager,1,1,1,1

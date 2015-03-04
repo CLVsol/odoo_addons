@@ -43,11 +43,6 @@ msgid "Activate"
 msgstr "Ativar"
 
 #. module: clv_insured
-#: field:clv_insured,date_activation:0
-msgid "Activation date"
-msgstr "Data da Ativação"
-
-#. module: clv_insured
 #: field:clv_insured,active:0
 #: selection:clv_insured,state:0
 #: field:clv_insured.category,active:0
@@ -263,19 +258,14 @@ msgstr "Se desmarcado, será possível esconder o beneficiário sem removê-lo."
 
 #. module: clv_insured
 #: view:clv_insured:clv_insured.view_clv_insured_form_wkf
-msgid "Inactivate"
-msgstr "Inativar"
-
-#. module: clv_insured
-#: field:clv_insured,date_inactivation:0
-msgid "Inactivation date"
-msgstr "Data da Inativação"
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. module: clv_insured
 #: selection:clv_insured,state:0
 #: selection:clv_insured.history,state:0
-msgid "Inactive"
-msgstr "Inativo"
+msgid "Canceled"
+msgstr "Cancelado"
 
 #. module: clv_insured
 #: view:clv_insured.category:clv_insured.view_clv_insured_category_search
@@ -533,11 +523,6 @@ msgstr "Suspender"
 #: selection:clv_insured.history,state:0
 msgid "Suspended"
 msgstr "Suspenso"
-
-#. module: clv_insured
-#: field:clv_insured,date_suspension:0
-msgid "Suspension date"
-msgstr "Data da Suspensão"
 
 #. module: clv_insured
 #: view:clv_tag:clv_insured.view_clv_tag_form

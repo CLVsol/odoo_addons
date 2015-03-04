@@ -43,11 +43,6 @@ msgid "Activate"
 msgstr "Ativar"
 
 #. module: clv_insured_card
-#: field:clv_insured_card,date_activation:0
-msgid "Activation date"
-msgstr "Data da Ativação"
-
-#. module: clv_insured_card
 #: field:clv_insured_card,active:0
 #: selection:clv_insured_card,state:0
 #: field:clv_insured_card.category,active:0
@@ -193,19 +188,14 @@ msgstr "Se desmarcado, será possível esconder o cartão do beneficiário sem r
 
 #. module: clv_insured_card
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
-msgid "Inactivate"
-msgstr "Inativar"
-
-#. module: clv_insured_card
-#: field:clv_insured_card,date_inactivation:0
-msgid "Inactivation date"
-msgstr "Data da Inativação"
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. module: clv_insured_card
 #: selection:clv_insured_card,state:0
 #: selection:clv_insured_card.history,state:0
-msgid "Inactive"
-msgstr "Inativo"
+msgid "Canceled"
+msgstr "Cancelado"
 
 #. module: clv_insured_card
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_search
@@ -421,11 +411,6 @@ msgstr "Suspender"
 #: selection:clv_insured_card.history,state:0
 msgid "Suspended"
 msgstr "Suspenso"
-
-#. module: clv_insured_card
-#: field:clv_insured_card,date_suspension:0
-msgid "Suspension date"
-msgstr "Data da Suspensão"
 
 #. module: clv_insured_card
 #: view:clv_tag:clv_insured_card.view_clv_tag_form
