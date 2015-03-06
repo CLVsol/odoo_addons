@@ -18,14 +18,15 @@
 ################################################################################
 
 from openerp import models, fields, api
-from datetime import *
-import time
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 class clv_insured(models.Model):
     _inherit = 'clv_insured'
 
     state_date = fields.Datetime("Status change date", required=True, readonly=True,
                                  default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    state_age = fields.Char('Status Age', size=32, compute='_state_age', store=False)
     # date_activation = fields.Datetime("Activation date", required=False, readonly=False)
     # date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
     # date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
@@ -34,6 +35,17 @@ class clv_insured(models.Model):
                               ('suspended','Suspended'),
                               ('canceled','Canceled')
                               ], string='Status', default='new', readonly=True, required=True, help="")
+
+    @api.one
+    @api.depends('state_date')
+    def _state_age(self):
+        now = datetime.now()
+        if self.state_date:
+            dob = datetime.strptime(self.state_date,'%Y-%m-%d %H:%M:%S')
+            delta=relativedelta (now, dob)
+            self.state_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
+        else:
+            self.state_age = "No Status change date!"
 
     @api.one
     def button_new(self):

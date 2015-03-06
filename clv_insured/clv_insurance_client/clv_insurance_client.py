@@ -23,6 +23,7 @@ class clv_insured(models.Model):
     _inherit = 'clv_insured'
 
     insurance_client_id = fields.Many2one('clv_insurance_client', 'Insurance Client')
+    reg_number = fields.Char('Reg. Number', size=32)
 
 class clv_insurance_client(models.Model):
     _inherit = 'clv_insurance_client'
