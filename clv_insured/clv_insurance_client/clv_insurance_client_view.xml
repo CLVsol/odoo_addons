@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="insurance_client_id" />
+                    <field name="reg_number" />
                 </field>
             </field>
         </record>
@@ -24,6 +25,10 @@
                     <label for="insurance_client_id"/>
                     <h3>
                         <field name="insurance_client_id" placeholder="Insurance Client..."/>
+                    </h3>
+                    <label for="reg_number"/>
+                    <h3>
+                        <field name="reg_number" placeholder="Reg. Number..."/>
                     </h3>
                 </div>
             </field>

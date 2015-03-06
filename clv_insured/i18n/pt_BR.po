@@ -292,12 +292,12 @@ msgstr "Plano"
 #: view:clv_insured:clv_insured.view_clv_insured_search_clv_insurance_client
 #: field:clv_insured,insurance_client_id:0
 msgid "Insurance Client"
-msgstr "Cliente de Plano"
+msgstr "Cliente"
 
 #. module: clv_insured
 #: view:clv_insured:clv_insured.view_clv_insured_form_clv_insurance_client
 msgid "Insurance Client..."
-msgstr "Cliente de Plano..."
+msgstr "Cliente..."
 
 #. module: clv_insured
 #: view:clv_insured:clv_insured.view_clv_insured_form_clv_insurance
@@ -504,7 +504,7 @@ msgid "Status"
 msgstr "Status"
 
 #. module: clv_insured
-#: field:clv_insured,date:0
+#: field:clv_insured,state_date:0
 msgid "Status change date"
 msgstr "Data da mudança do Status"
 
@@ -583,6 +583,26 @@ msgstr "Telefone Comercial"
 #: field:clv_insured,address_id:0
 msgid "Working Address"
 msgstr "Endereço Comercial"
+
+#. module: clv_insured
+#: field:clv_insured,reg_number:0
+msgid "Reg. Number"
+msgstr "Número de Registro"
+
+#. module: clv_insured
+#: view:clv_insured:clv_insured.view_clv_insured_form_clv_insurance_client
+msgid "Reg. Number..."
+msgstr "Número de Registro..."
+
+#. module: clv_insured
+#: field:clv_insured,age:0
+msgid "Age"
+msgstr "Idade"
+
+#. module: clv_insured
+#: field:clv_insured,state_age:0
+msgid "Status Age"
+msgstr "Idade do Status"
 
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_insured_manager
