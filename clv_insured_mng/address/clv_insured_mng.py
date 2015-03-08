@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
 #                                                                              #
+# Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).                        #
 # Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
 #                                                                              #
 # This program is free software: you can redistribute it and/or modify         #
@@ -17,47 +18,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insured Management',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Insured Management
-==================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_address',
-        'clv_insured',
-        ],
-    'data': [
-        'security/clv_insured_mng_security.xml',
-        'security/ir.model.access.csv',
-        'clv_insured_mng_view.xml',
-        'category/clv_insured_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_insured_mng_sequence.xml',
-        # 'wkf/clv_insured_mng_workflow.xml',
-        # 'wkf/clv_insured_mng_wkf_view.xml',
-        'menu/clv_insured_mng_menu_view.xml',
-        # 'clv_insurance/clv_insurance_view.xml',
-        # 'clv_insurance_client/clv_insurance_client_view.xml',
-        # 'role/clv_insured_mng_view.xml',
-        'address/clv_insured_mng_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import tools, api
+from openerp.osv import osv, fields
+
+class clv_insured_mng(osv.Model):
+    _inherit = 'clv_insured_mng'
+
+    _columns = {
+        'addr_name': fields.char('Name', required=False, select=True),
+        'addr_alias': fields.char('Alias', size=64, help='Common name that the Address is referred'),
+        'addr_code': fields.char(size=64, string='Address Code'),
+        'addr_notes': fields.text('Notes'),
+        'addr_street': fields.char('Street'),
+        'addr_street2': fields.char('Street2'),
+        'addr_zip': fields.char('Zip', size=24, change_default=True),
+        'addr_city': fields.char('City'),
+        'addr_state_id': fields.many2one("res.country.state", 'State', ondelete='restrict'),
+        'addr_country_id': fields.many2one('res.country', 'Country', ondelete='restrict'),
+        'addr_email': fields.char('Email'),
+        'addr_phone': fields.char('Phone'),
+        'addr_fax': fields.char('Fax'),
+        'addr_mobile': fields.char('Mobile'),
+        }
+
+    @api.multi
+    def onchange_addr_state(self, addr_state_id):
+        if addr_state_id:
+            state = self.env['res.country.state'].browse(addr_state_id)
+            return {'value': {'addr_country_id': state.country_id.id}}
+        return {}
