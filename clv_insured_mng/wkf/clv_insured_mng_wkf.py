@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
 #                                                                              #
-# Copyright (C) 2015-Today  Carlos Eduardo Vercelino - CLVsol                  #
+# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
 #                                                                              #
 # This program is free software: you can redistribute it and/or modify         #
 # it under the terms of the GNU Affero General Public License as published by  #
@@ -17,14 +17,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_mng
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import clv_insurance
-import clv_insurance_client
-import role
-import address
+from openerp import models, fields, api
+from datetime import *
+
+class clv_insured_mng(models.Model):
+    _inherit = 'clv_insured_mng'
+
+    state = fields.Selection([('draft','Draft'),
+                              ('revised','Revised'),
+                              ('waiting','Waiting'),
+                              ('done','Done')
+                              ], string='Status', default='draft', readonly=True, required=True, help="")
+
+    @api.one
+    def button_draft(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'draft'
+
+    @api.one
+    def button_revised(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'revised'
+
+    @api.one
+    def button_waiting(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'waiting'
+
+    @api.one
+    def button_done(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'done'

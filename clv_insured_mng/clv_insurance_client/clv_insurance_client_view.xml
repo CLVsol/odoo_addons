@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_insured_mng_tree_clv_insurance_client" model="ir.ui.view">
+            <field name="name">clv_insured_mng.tree</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="insurance_client_id" />
+                    <field name="reg_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_mng_form_clv_insurance_client" model="ir.ui.view">
+            <field name="name">clv_insured_mng.form</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="insurance_client_id"/>
+                    <h3>
+                        <field name="insurance_client_id" placeholder="Insurance Client..."/>
+                    </h3>
+                    <label for="reg_number"/>
+                    <h3>
+                        <field name="reg_number" placeholder="Reg. Number..."/>
+                    </h3>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_mng_search_clv_insurance_client" model="ir.ui.view">
+            <field name="name">clv_insured_mng.search</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="insurance_client_id" />
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Insurance Client" domain="[]" context="{'group_by': 'insurance_client_id'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
