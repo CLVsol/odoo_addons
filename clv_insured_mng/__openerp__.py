@@ -35,6 +35,7 @@ Insured Management
         'clv_annotation',
         'clv_address',
         'clv_insured',
+        'clv_insured_card',
         ],
     'data': [
         'security/clv_insured_mng_security.xml',
@@ -51,6 +52,7 @@ Insured Management
         'clv_insurance_client/clv_insurance_client_view.xml',
         'role/clv_insured_view.xml',
         'address/clv_insured_mng_view.xml',
+        'clv_insured_card/clv_insured_mng_view.xml',
         ],
     'demo': [],
     'test': [],

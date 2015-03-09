@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_insured_mng_form_crd" model="ir.ui.view">
+            <field name="name">clv_insured_mng.form</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Insured Card">
+                        <group>
+                            <field name="insured_card_id" placeholder="Insured Card..."/>
+                            <field name="crd_name" placeholder="Printed Name..."/>
+                            <field name="crd_code" placeholder="Insured Card Code..."/>
+                        </group>
+                        <field name="crd_notes" placeholder="Notes..." colspan="4"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

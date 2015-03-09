@@ -550,6 +550,52 @@ msgstr "CEP"
 msgid "e.g. +32.81.81.37.00"
 msgstr "por ex. (19) 4445-8889"
 
+#. module: clv_insured_mng
+#: field:clv_insured_mng,insured_id:0
+msgid "Insured"
+msgstr "Beneficiário"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+#: field:clv_insured_mng,insured_card_id:0
+msgid "Insured Card"
+msgstr "Cartão do Beneficiário"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,crd_code:0
+msgid "Insured Card Code"
+msgstr "Código do Cartão"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Insured Card Code..."
+msgstr "Código do Cartão..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Insured Card..."
+msgstr "Cartão do Beneficiário..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Insured..."
+msgstr "Beneficiário..."
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,crd_name:0
+msgid "Name printed on the card."
+msgstr "Nome impresso no cartão."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,crd_name:0
+msgid "Printed Name"
+msgstr "Nome Impresso"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Printed Name..."
+msgstr "Nome Impresso..."
+
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_insured_mng_manager
 msgid "Insured Management Manager"
