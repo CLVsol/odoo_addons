@@ -604,6 +604,11 @@ msgstr "Idade"
 msgid "Status Age"
 msgstr "Idade do Status"
 
+#. module: clv_insured
+#: field:clv_insured,display_name:0
+msgid "Name"
+msgstr "Nome"
+
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_insured_manager
 msgid "Insured Manager"
