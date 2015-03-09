@@ -43,6 +43,10 @@
                             <h3>
                                 <field name="code" placeholder="Insured Code..."/>
                             </h3>
+                            <label for="insured_id"/>
+                            <h3>
+                                <field name="insured_id" placeholder="Insured..."/>
+                            </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->

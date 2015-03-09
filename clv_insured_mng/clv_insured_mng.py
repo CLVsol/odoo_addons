@@ -24,6 +24,7 @@ from dateutil.relativedelta import relativedelta
 class clv_insured_mng(models.Model):
     _name = 'clv_insured_mng'
 
+    insured_id = fields.Many2one('clv_insured', 'Insured', ondelete='restrict')
     name = fields.Char('Name', required=True, size=64)
     alias = fields.Char('Alias', size=64, help='Common name that the Insured is referred')
     code = fields.Char(size=64, string='Insured Code')
