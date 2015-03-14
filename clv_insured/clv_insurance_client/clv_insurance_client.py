@@ -31,7 +31,8 @@ class clv_insured(models.Model):
         result = []
         for insured in self:
             if insured.insurance_client_id:
-                result.append((insured.id, '%s, %s' % (insured.insurance_client_id.name, insured.name)))
+                pass
+                # result.append((insured.id, '%s, %s' % (insured.insurance_client_id.name, insured.name)))
             else:
                 result.append((insured.id, '%s' % (insured.name)))
         return result
