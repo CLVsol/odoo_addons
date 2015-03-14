@@ -22,7 +22,4 @@ from openerp import models, fields, api
 class clv_insured_mng(models.Model):
     _inherit = 'clv_insured_mng'
 
-    holder_id = fields.Many2one('clv_insured_mng', 'Holder')
-    dependent_ids = fields.One2many('clv_insured_mng',
-                                    'holder_id',
-                                    'Dependents')
+    holder_id = fields.Many2one('clv_insured', 'Holder')

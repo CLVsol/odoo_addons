@@ -8,8 +8,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Insured (Management)">
-                    <field name="display_name"/>
-                    <field name="name" invisible="1"/>
+                    <!--field name="display_name"/-->
+                    <field name="name"/>
                     <field name="alias" invisible="1"/>
                     <field name="code"/>
                     <field name="notes" colspan="4"/>

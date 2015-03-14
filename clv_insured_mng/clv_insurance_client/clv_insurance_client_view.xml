@@ -42,6 +42,7 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="insurance_client_id" />
+                    <field name="reg_number" />
                 </field>
                 <group string="Group By..." position="inside">
                     <filter string="Insurance Client" domain="[]" context="{'group_by': 'insurance_client_id'}"/>
