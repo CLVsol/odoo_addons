@@ -5,12 +5,13 @@
         <record id="view_clv_insured_tree" model="ir.ui.view">
             <field name="name">clv_insured.tree</field>
             <field name="model">clv_insured</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Insured">
+                    <!--field name="display_name"/-->
                     <field name="name"/>
-                    <field name="alias" />
-                    <field name="code" />
+                    <field name="alias" invisible="1"/>
+                    <field name="code"/>
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -19,7 +20,7 @@
         <record id="view_clv_insured_form" model="ir.ui.view">
             <field name="name">clv_insured.form</field>
             <field name="model">clv_insured</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Insureds" version="7.0">
                     <sheet string="Insured">
@@ -58,7 +59,7 @@
                                     </group>
                                     <group string="Status">
                                         <!--field name="state" readonly="1"/-->
-                                        <field name="date_inclusion" />
+                                        <field name="date_inclusion"/>
                                     </group>
                                 </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
@@ -67,7 +68,7 @@
                                 <group>
                                     <group string="Citizenship &amp; Other Info">
                                         <field name="country_id" options='{"no_open": True}'/>
-                                        <field name="identification_id" />
+                                        <field name="identification_id"/>
                                         <field name="otherid"/>
                                     </group>
                                     <group string="Contact Information">
@@ -99,14 +100,14 @@
         <record id="view_clv_insured_search" model="ir.ui.view">
             <field name="name">clv_insured.search</field>
             <field name="model">clv_insured</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Insured">
-                    <field name="name" />
-                    <field name="alias" />
-                    <field name="code" />
-                    <field name="notes" />
-                    <newline />
+                    <field name="name"/>
+                    <field name="alias"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+                    <newline/>
                     <group expand="0" string="Group By...">
                     </group>
                 </search>
@@ -119,7 +120,7 @@
             <field name="res_model">clv_insured</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_insured_search" />
+            <field name="search_view_id" ref="view_clv_insured_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="help" type="html">
@@ -130,17 +131,17 @@
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_insured_view_form">
-            <field name="act_window_id" ref="act_open_clv_insured_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_insured_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_insured_form" />
+            <field name="view_id" ref="view_clv_insured_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_insured_view_tree">
-            <field name="act_window_id" ref="act_open_clv_insured_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_insured_view"/>
+            <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_insured_tree" />
+            <field name="view_id" ref="view_clv_insured_tree"/>
         </record>
         
     </data>

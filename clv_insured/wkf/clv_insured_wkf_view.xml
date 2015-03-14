@@ -31,6 +31,7 @@
                 </sheet>
                 <field name="date_inclusion" position="before">
                     <field name="state_date"/>
+                    <field name="state_age"/>
                 </field>
             </field>
         </record>

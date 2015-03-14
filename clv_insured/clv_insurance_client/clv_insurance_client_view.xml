@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="insurance_client_id" />
+                    <field name="reg_number" />
                 </field>
             </field>
         </record>
@@ -25,6 +26,10 @@
                     <h3>
                         <field name="insurance_client_id" placeholder="Insurance Client..."/>
                     </h3>
+                    <label for="reg_number"/>
+                    <h3>
+                        <field name="reg_number" placeholder="Reg. Number..."/>
+                    </h3>
                 </div>
             </field>
         </record>
@@ -37,6 +42,7 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="insurance_client_id" />
+                    <field name="reg_number" />
                 </field>
                 <group string="Group By..." position="inside">
                     <filter string="Insurance Client" domain="[]" context="{'group_by': 'insurance_client_id'}"/>

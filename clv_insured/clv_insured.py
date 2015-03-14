@@ -25,6 +25,7 @@ class clv_insured(models.Model):
     _name = 'clv_insured'
 
     name = fields.Char('Name', required=True, size=64)
+    display_name = fields.Char('Name', compute='_compute_display_name',)
     alias = fields.Char('Alias', size=64, help='Common name that the Insured is referred')
     code = fields.Char(size=64, string='Insured Code')
     # address_id = fields.Many2one('res.partner', 'Working Address', ondelete='restrict')
