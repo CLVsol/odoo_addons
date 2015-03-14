@@ -149,12 +149,6 @@ msgid "Date..."
 msgstr "Data..."
 
 #. module: clv_insured_mng
-#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_role
-#: field:clv_insured_mng,dependent_ids:0
-msgid "Dependents"
-msgstr "Dependentes"
-
-#. module: clv_insured_mng
 #: selection:clv_insured_mng,marital:0
 msgid "Divorced"
 msgstr "Divorciado"
@@ -212,7 +206,6 @@ msgid "History"
 msgstr "Histórico"
 
 #. module: clv_insured_mng
-#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_role
 #: field:clv_insured_mng,holder_id:0
 msgid "Holder"
 msgstr "Titular"
