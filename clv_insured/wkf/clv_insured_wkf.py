@@ -31,6 +31,7 @@ class clv_insured(models.Model):
     # date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
     # date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
     state = fields.Selection([('new','New'),
+                              ('processing','Processing'),
                               ('active','Active'),
                               ('suspended','Suspended'),
                               ('canceled','Canceled')
@@ -51,6 +52,11 @@ class clv_insured(models.Model):
     def button_new(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'new'
+
+    @api.one
+    def button_process(self):
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'processing'
 
     @api.one
     def button_activate(self):

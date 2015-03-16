@@ -609,6 +609,16 @@ msgstr "Idade do Status"
 msgid "Name"
 msgstr "Nome"
 
+#. module: clv_insured
+#: view:clv_insured.history:clv_insured.view_clv_insured_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_insured
+#: view:clv_insured:clv_insured.view_clv_insured_form_wkf
+msgid "Process"
+msgstr "Processar"
+
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_insured_manager
 msgid "Insured Manager"

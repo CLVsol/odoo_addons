@@ -16,6 +16,13 @@
             <field name="action">button_new()</field>
         </record>
 
+        <record id="act_process" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured" />
+            <field name="name">processing</field>
+            <field name="kind">function</field>
+            <field name="action">button_process()</field>
+        </record>
+
         <record id="act_activate" model="workflow.activity">
             <field name="wkf_id" ref="workflow_clv_insured" />
             <field name="name">active</field>
@@ -35,24 +42,24 @@
             <field name="name">suspend</field>
             <field name="kind">function</field>
             <field name="action">button_suspend()</field>
-        </record>                                
+        </record>
 
         <record id="t1" model="workflow.transition">
             <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_process" />
+            <field name="signal">button_process</field>
+        </record>
+
+        <record id="t2" model="workflow.transition">
+            <field name="act_from" ref="act_process" />
             <field name="act_to" ref="act_activate" />
             <field name="signal">button_activate</field>
         </record>
 
-        <record id="t2" model="workflow.transition">
-            <field name="act_from" ref="act_new" />
+        <record id="t3" model="workflow.transition">
+            <field name="act_from" ref="act_process" />
             <field name="act_to" ref="act_cancel" />
             <field name="signal">button_cancel</field>
-        </record>
-
-        <record id="t3" model="workflow.transition">
-            <field name="act_from" ref="act_new" />
-            <field name="act_to" ref="act_suspend" />
-            <field name="signal">button_suspend</field>
         </record>
 
         <record id="t4" model="workflow.transition">
