@@ -50,7 +50,7 @@
             </field>
         </record>
 
-        <record id="view_clv_insurance_client_form_clv_insured_01" model="ir.ui.view">
+        <record id="view_clv_insurance_client_form_insured" model="ir.ui.view">
             <field name="name">clv_insurance_client.form</field>
             <field name="model">clv_insurance_client</field>
             <field name="inherit_id" ref="clv_insurance_client.view_clv_insurance_client_form"/>

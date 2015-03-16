@@ -361,9 +361,9 @@ msgstr "Beneficiário..."
 #. module: clv_insured
 #: view:clv_annotation:clv_insured.view_clv_annotation_form
 #: field:clv_annotation,insured_ids:0
-#: view:clv_insurance:clv_insured.view_clv_insurance_form_clv_insured_01
+#: view:clv_insurance:clv_insured.view_clv_insurance_form_insured
 #: field:clv_insurance,insured_ids:0
-#: view:clv_insurance_client:clv_insured.view_clv_insurance_client_form_clv_insured_01
+#: view:clv_insurance_client:clv_insured.view_clv_insurance_client_form_insured
 #: field:clv_insurance_client,insured_ids:0
 #: view:clv_insured:clv_insured.view_clv_insured_form
 #: view:clv_insured.category:clv_insured.view_clv_insured_category_form
@@ -480,8 +480,8 @@ msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_insured
-#: view:clv_insurance:clv_insured.view_clv_insurance_form_clv_insured_01
-#: view:clv_insurance_client:clv_insured.view_clv_insurance_client_form_clv_insured_01
+#: view:clv_insurance:clv_insured.view_clv_insurance_form_insured
+#: view:clv_insurance_client:clv_insured.view_clv_insurance_client_form_insured
 #: view:clv_insured:clv_insured.view_clv_insured_form
 #: view:clv_insured:clv_insured.view_clv_insured_form_annotation
 #: view:clv_insured:clv_insured.view_clv_insured_form_history
