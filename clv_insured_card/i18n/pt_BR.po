@@ -447,6 +447,17 @@ msgstr "Usuário"
 msgid "User..."
 msgstr "Usuário..."
 
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_wkf
+msgid "Process"
+msgstr "Processar"
+
+#. module: clv_insured_card
+#: selection:clv_insured_card,state:0
+#: selection:clv_insured_card.history,state:0
+msgid "Processing"
+msgstr "Processando"
+
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_insured_card_manager
 msgid "Insured Card Manager"
