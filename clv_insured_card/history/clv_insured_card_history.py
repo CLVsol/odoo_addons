@@ -30,6 +30,7 @@ class clv_insured_card_history(models.Model):
     date = fields.Datetime("Date", required=True,
                            default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     state = fields.Selection([('new','New'),
+                              ('processing','Processing'),
                               ('active','Active'),
                               ('suspended','Suspended'),
                               ('canceled','Canceled')
@@ -68,6 +69,12 @@ class clv_insured_card(models.Model):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'new'
         self.insert_clv_insured_card_history(self.id, 'new', '')
+
+    @api.one
+    def button_process(self):
+        self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'processing'
+        self.insert_clv_insured_card_history(self.id, 'processing', '')
 
     @api.one
     def button_activate(self):

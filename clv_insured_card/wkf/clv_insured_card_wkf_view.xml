@@ -23,10 +23,11 @@
             <field name="arch" type="xml">
                 <sheet string="Insured Card" position="before">
                     <header>
-                        <button string="Activate" name="button_activate" states="new,canceled,suspended" type="workflow" groups="clv_base.group_insured_card_manager" class="oe_highlight"/>
-                        <button string="Suspend" name="button_suspend" states="new,active,canceled" type="workflow" groups="clv_base.group_insured_card_manager"/>
-                        <button string="Cancel" name="button_cancel" states="new,active,suspended" type="workflow" groups="clv_base.group_insured_card_manager"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,active,canceled,suspended"/>
+                        <button string="Process" name="button_process" states="new" type="workflow" groups="clv_base.group_insured_card_manager" class="oe_highlight"/>
+                        <button string="Activate" name="button_activate" states="processing,canceled,suspended" type="workflow" groups="clv_base.group_insured_card_manager" class="oe_highlight"/>
+                        <button string="Suspend" name="button_suspend" states="active,canceled" type="workflow" groups="clv_base.group_insured_card_manager"/>
+                        <button string="Cancel" name="button_cancel" states="processing,active,suspended" type="workflow" groups="clv_base.group_insured_card_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,processing,active,canceled,suspended"/>
                     </header>
                 </sheet>
                 <field name="date_inclusion" position="before">
