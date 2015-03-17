@@ -25,17 +25,17 @@ class clv_insured(models.Model):
     insurance_client_id = fields.Many2one('clv_insurance_client', 'Insurance Client')
     reg_number = fields.Char('Reg. Number', size=32)
 
-    @api.multi
-    @api.depends('name', 'insurance_client_id')
-    def name_get(self):
-        result = []
-        for insured in self:
-            if insured.insurance_client_id:
-                pass
-                # result.append((insured.id, '%s, %s' % (insured.insurance_client_id.name, insured.name)))
-            else:
-                result.append((insured.id, '%s' % (insured.name)))
-        return result
+    # @api.multi
+    # @api.depends('name', 'insurance_client_id')
+    # def name_get(self):
+    #     result = []
+    #     for insured in self:
+    #         if insured.insurance_client_id:
+    #             pass
+    #             # result.append((insured.id, '%s, %s' % (insured.insurance_client_id.name, insured.name)))
+    #         else:
+    #             result.append((insured.id, '%s' % (insured.name)))
+    #     return result
 
 class clv_insurance_client(models.Model):
     _inherit = 'clv_insurance_client'
