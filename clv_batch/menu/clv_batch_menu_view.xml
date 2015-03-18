@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Agro/Agro/Place/Places/Batches -->
+        <menuitem name="Batches" id="menu_agro_agro_place_places_batches"  
+            parent="clv_place.menu_agro_agro_place_places"
+            groups="clv_base.group_place_user"
+            sequence="40" 
+            action="clv_batch.act_open_clv_batch_place_view"/>
+
+        <!-- Agro/Agro/Frame/Frames/Batches -->
+        <menuitem name="Batches" id="menu_agro_agro_frame_frames_batches"  
+            parent="clv_frame.menu_agro_agro_frame_frames"
+            groups="clv_base.group_frame_user"
+            sequence="40" 
+            action="clv_batch.act_open_clv_batch_frame_view"/>
+
+        <!-- Agro/Agro/Tray/Trays/Batches -->
+        <menuitem name="Batches" id="menu_agro_agro_tray_trays_batches"  
+            parent="clv_tray.menu_agro_agro_tray_trays"
+            groups="clv_base.group_tray_user"
+            sequence="40" 
+            action="clv_batch.act_open_clv_batch_tray_view"/>
+
+        <!-- Agro/Agro/Batch -->
+        <menuitem name="Batch" id="menu_agro_agro_batch" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_batch_user"
+            sequence="40"/>
+            <!-- Agro/Agro/Batch/Batches -->
+            <menuitem name="Batches" id="menu_agro_agro_batch_batches"
+                parent="menu_agro_agro_batch"
+                groups="clv_base.group_batch_user"
+                sequence="10"
+                action="clv_batch.act_open_clv_batch_view"/>
+                <!-- Agro/Agro/Batch/Batches/Places -->
+                <menuitem name="Places" id="menu_agro_agro_batch_batches_places"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="10" 
+                    action="clv_batch.act_open_clv_batch_place_view"/>
+                <!-- Agro/Agro/Batch/Batches/Frames -->
+                <menuitem name="Frames" id="menu_agro_agro_batch_batches_frames"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="20" 
+                    action="clv_batch.act_open_clv_batch_frame_view"/>
+                <!-- Agro/Agro/Batch/Batches/Trays -->
+                <menuitem name="Trays" id="menu_agro_agro_batch_batches_trays"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="30" 
+                    action="clv_batch.act_open_clv_batch_tray_view"/>
+
+        <!-- Agro/Agro/Configuration/Batch -->
+        <menuitem name="Batch" id="menu_agro_agro_config_batch" 
+            parent="clv_base.menu_agro_agro_config"
+            groups="clv_base.group_batch_user"
+            sequence="40"/>
+            <!-- Agro/Agro/Configuration/Batch/Categories -->
+            <menuitem name="Categories" id="menu_agro_agro_config_batch_categories"
+                parent="menu_agro_agro_config_batch"
+                groups="clv_base.group_batch_user"
+                sequence="10"
+                action="clv_batch.act_open_clv_batch_category_view"/>
+
+    </data>
+</openerp>

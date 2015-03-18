@@ -76,12 +76,12 @@ msgstr "Categoria de Endereço..."
 #. module: clv_address
 #: field:clv_address,code:0
 msgid "Address Code"
-msgstr "Código da Anotação"
+msgstr "Código do Endereço"
 
 #. module: clv_address
 #: view:clv_address:clv_address.view_clv_address_form
 msgid "Address Code..."
-msgstr "Código da Anotação..."
+msgstr "Código do Endereço..."
 
 #. module: clv_address
 #: view:clv_address:clv_address.view_clv_address_form_history
