@@ -61,6 +61,7 @@ Batch
         # 'pointing/clv_batch_pointing_p1_view.xml',
         # 'seq/clv_batch_pointing_p0_sequence.xml',
         # 'seq/clv_batch_pointing_p1_sequence.xml',
+        'menu/clv_batch_menu_view.xml',
         ],
     'demo': [],
     'test': [],
