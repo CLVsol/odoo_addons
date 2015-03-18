@@ -53,6 +53,7 @@ Pointing
         'clv_pointing_request_view.xml',
         # 'clv_batch_view.xml',
         'wizard/create_pointing.xml',
+        'menu/clv_pointing_menu_view.xml',
         ],
     'demo': [],
     'test': [],

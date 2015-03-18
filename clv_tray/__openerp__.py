@@ -51,6 +51,7 @@ Tray
         # 'placement/clv_tray_placement_view.xml',
         'placement/clv_tray_place_view.xml',
         'placement/clv_tray_frame_view.xml',
+        'menu/clv_tray_menu_view.xml',
         ],
     'demo': [],
     'test': [],

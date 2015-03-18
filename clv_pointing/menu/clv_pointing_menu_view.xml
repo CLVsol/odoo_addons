@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Base/Base/Pointing -->
+        <menuitem name="Pointing" id="menu_base_base_pointing"
+            parent="clv_base.menu_base_base"
+            groups="clv_base.group_pointing_user"
+            sequence="60"/>
+            <!-- Base/Base/Pointing/Pointings -->
+            <menuitem name="Pointings" id="menu_base_base_pointing_pointings"
+                parent="menu_base_base_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="10"
+                action="clv_pointing.act_open_clv_pointing_view"/>
+            <!-- Base/Base/Pointing/Requests -->
+            <menuitem name="Requests" id="menu_base_base_pointing_requests"
+                parent="menu_base_base_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="30"
+                action="clv_pointing.clv_action_pointing_request"/>
+                <!-- Base/Base/Pointing/Requests/Draft -->
+                <menuitem name="Drafts" id="menu_base_base_pointing_requests_drafts"
+                    parent="menu_base_base_pointing_requests"
+                    groups="clv_base.group_pointing_user"
+                    sequence="40"
+                    action="clv_pointing.clv_action_draft_pointing_request"/>
+                <!-- Base/Base/Pointing/Requests/Today's Draft -->
+                <menuitem name="Today's Drafts" id="menu_base_base_pointing_requests_todays_draft"
+                    parent="menu_base_base_pointing_requests"
+                    groups="clv_base.group_pointing_user"
+                    sequence="50"
+                    action="clv_pointing.clv_action_today_draft_pointing_request"/>
+
+        <!-- Base/Base/Configuration/Pointing -->
+        <menuitem name="Pointing" id="menu_base_base_config_pointing"
+            parent="clv_base.menu_base_config_config"
+            groups="clv_base.group_pointing_user"
+            sequence="60"/>
+            <!-- Base/Base/Configuration/Pointing/Categories -->
+            <menuitem name="Categories" id="menu_base_base_config_pointing_categories" 
+                parent="menu_base_base_config_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="10"
+                action="clv_pointing.act_open_clv_pointing_category_view"/>
+            <!-- Base/Base/Configuration/Pointing/Units -->
+            <menuitem name="Units" id="menu_base_base_config_pointing_units" 
+                parent="menu_base_base_config_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="20"
+                action="clv_pointing.act_open_clv_pointing_unit_view"/>
+            <!-- Base/Base/Configuration/Pointing/Criteria -->
+            <menuitem name="Criteria" id="menu_base_base_config_pointing_criteria" 
+                parent="menu_base_base_config_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="30"
+                action="clv_pointing.act_open_clv_pointing_criterion_view"/>
+            <!-- Base/Base/Configuration/Pointing/Types -->
+            <menuitem name="Types" id="menu_base_base_config_pointing_types" 
+                parent="menu_base_base_config_pointing"
+                groups="clv_base.group_pointing_user"
+                sequence="40"
+                action="clv_pointing.act_open_clv_pointing_type_view"/>
+
+    </data>
+</openerp>

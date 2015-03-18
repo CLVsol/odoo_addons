@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Agro/Agro/Place/Places/Trays -->
+        <menuitem name="Trays" id="menu_agro_agro_place_places_trays"  
+            parent="clv_place.menu_agro_agro_place_places"
+            groups="clv_base.group_place_user"
+            sequence="30" 
+            action="clv_tray.act_open_clv_tray_place_view"/>
+
+        <!-- Agro/Agro/Frame/Frames/Trays -->
+        <menuitem name="Trays" id="menu_agro_agro_frame_frames_trays"  
+            parent="clv_frame.menu_agro_agro_frame_frames"
+            groups="clv_base.group_frame_user"
+            sequence="30" 
+            action="clv_tray.act_open_clv_tray_frame_view"/>
+
+        <!-- Agro/Agro/Tray -->
+        <menuitem name="Tray" id="menu_agro_agro_tray" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_tray_user"
+            sequence="30"/>
+            <!-- Agro/Agro/Tray/Trays -->
+            <menuitem name="Trays" id="menu_agro_agro_tray_trays" 
+                parent="menu_agro_agro_tray"
+                groups="clv_base.group_tray_user"
+                sequence="10" 
+                action="clv_tray.act_open_clv_tray_view"/>
+                <!-- Agro/Agro/Tray/Trays/Places -->
+                <menuitem name="Places" id="menu_agro_agro_tray_trays_places"  
+                    parent="menu_agro_agro_tray_trays"
+                    groups="clv_base.group_tray_user"
+                    sequence="20" 
+                    action="clv_tray.act_open_clv_tray_place_view"/>
+                <!-- Agro/Agro/Tray/Trays/Frames -->
+                <menuitem name="Frames" id="menu_agro_agro_tray_trays_frames"  
+                    parent="menu_agro_agro_tray_trays"
+                    groups="clv_base.group_tray_user"
+                    sequence="30" 
+                    action="clv_tray.act_open_clv_tray_frame_view"/>
+
+        <!-- Agro/Agro/Configuration/Tray -->
+        <menuitem name="Tray" id="menu_agro_agro_config_tray" 
+            parent="clv_base.menu_agro_agro_config"
+            groups="clv_base.group_tray_user"
+            sequence="30"/>
+            <!-- Agro/Agro/Configuration/Tray/Categories -->
+            <menuitem name="Categories" id="menu_agro_agro_config_tray_categories"
+                parent="menu_agro_agro_config_tray"
+                groups="clv_base.group_tray_user"
+                sequence="10"
+                action="clv_tray.act_open_clv_tray_category_view"/>
+
+    </data>
+</openerp>

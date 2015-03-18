@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Agro/Agro/Place -->
+        <menuitem name="Place" id="menu_agro_agro_place" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_place_user"
+            sequence="10"/>
+            <!-- Agro/Agro/Place/Places -->
+            <menuitem name="Places" id="menu_agro_agro_place_places"
+                parent="menu_agro_agro_place"
+                groups="clv_base.group_place_user"
+                sequence="10"
+                action="clv_place.act_open_clv_place_view"/>
+
+        <!-- Agro/Agro/Configuration/Place -->
+        <menuitem name="Place" id="menu_agro_agro_config_place" 
+            parent="clv_base.menu_agro_agro_config"
+            groups="clv_base.group_place_user"
+            sequence="10"/>
+            <!-- Agro/Agro/Configuration/Place/Categories -->
+            <menuitem name="Categories" id="menu_agro_agro_config_place_categories"
+                parent="menu_agro_agro_config_place"
+                groups="clv_base.group_place_user"
+                sequence="10"
+                action="clv_place.act_open_clv_place_category_view"/>
+
+    </data>
+</openerp>
