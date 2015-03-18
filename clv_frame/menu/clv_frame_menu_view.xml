@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Agro/Agro/Place/Places/Frames -->
+        <menuitem name="Frames" id="menu_agro_agro_place_places_frames"  
+            parent="clv_place.menu_agro_agro_place_places"
+            groups="clv_base.group_place_user"
+            sequence="20" 
+            action="clv_frame.act_open_clv_frame_place_view"/>
+
+        <!-- Agro/Agro/Frame -->
+        <menuitem name="Frame" id="menu_agro_agro_frame" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_frame_user"
+            sequence="20"/>
+            <!-- Agro/Agro/Frame/Frames -->
+            <menuitem name="Frames" id="menu_agro_agro_frame_frames"
+                parent="menu_agro_agro_frame"
+                groups="clv_base.group_frame_user"
+                sequence="10"
+                action="clv_frame.act_open_clv_frame_view"/>
+                <!-- Agro/Agro/Frame/Frames/Places -->
+                <menuitem name="Places" id="menu_agro_agro_frame_frames_places"  
+                    parent="menu_agro_agro_frame_frames"
+                    groups="clv_base.group_frame_user"
+                    sequence="20" 
+                    action="clv_frame.act_open_clv_frame_place_view"/>
+
+        <!-- Agro/Agro/Configuration/Frame -->
+        <menuitem name="Frame" id="menu_agro_agro_config_frame" 
+            parent="clv_base.menu_agro_agro_config"
+            groups="clv_base.group_frame_user"
+            sequence="20"/>
+            <!-- Agro/Agro/Configuration/Frame/Categories -->
+            <menuitem name="Categories" id="menu_agro_agro_config_frame_categories"
+                parent="menu_agro_agro_config_frame"
+                groups="clv_base.group_frame_user"
+                sequence="10"
+                action="clv_frame.act_open_clv_frame_category_view"/>
+
+
+    </data>
+</openerp>

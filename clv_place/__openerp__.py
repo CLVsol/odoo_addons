@@ -46,6 +46,7 @@ Place
         'wkf/clv_place_workflow.xml',
         'wkf/clv_place_wkf_view.xml',
         'history/clv_place_history_view.xml',
+        'menu/clv_place_menu_view.xml',
         ],
     'test': [],
     'installable': True,

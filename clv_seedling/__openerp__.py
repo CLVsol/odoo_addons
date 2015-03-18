@@ -55,6 +55,7 @@ Seedling
         'placement/clv_seedling_frame_view.xml',
         'placement/clv_seedling_tray_view.xml',
         'placement/clv_seedling_batch_view.xml',
+        'menu/clv_seedling_menu_view.xml',
         ],
     'demo': [],
     'test': [],
