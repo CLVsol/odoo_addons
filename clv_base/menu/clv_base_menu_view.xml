@@ -22,25 +22,50 @@
                     groups="clv_base.group_base_manager"
                     sequence="90"/>
 
+        <!-- Set -->
+        <menuitem name="Set" id="menu_set" 
+            groups="clv_base.group_base_user"
+            sequence="12"/>
+            <!-- Set/Set -->
+            <menuitem name="Set" id="menu_set_set"  
+                parent="menu_set"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+            <!-- Set/Configuration -->
+            <menuitem name="Configuration" id="menu_set_config"  
+                parent="menu_set"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- Set/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_set_config_config"  
+                    parent="menu_set_config"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+
         <!-- Agro -->
         <menuitem name="Agro" id="menu_agro" 
             groups="clv_base.group_base_user"
-            sequence="12"/>
+            sequence="13"/>
             <!-- Agro/Agro -->
             <menuitem name="Agro" id="menu_agro_agro"  
                 parent="menu_agro"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-                <!-- Agro/Agro/Configuration -->
-                <menuitem name="Configuration" id="menu_agro_agro_config"  
-                    parent="menu_agro_agro"
+            <!-- Agro/Configuration -->
+            <menuitem name="Configuration" id="menu_agro_config"  
+                parent="menu_agro"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- Agro/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_agro_config_config"  
+                    parent="menu_agro_config"
                     groups="clv_base.group_base_manager"
                     sequence="90"/>
 
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
             groups="clv_base.group_base_user"
-            sequence="13"/>
+            sequence="14"/>
             <!-- Community/Community -->
             <menuitem name="Community" id="menu_commutity_community"  
                 parent="menu_commutity"
@@ -56,7 +81,7 @@
         <!-- Health -->
         <menuitem name="Health" id="menu_health" 
             groups="clv_base.group_base_user"
-            sequence="14"/>
+            sequence="15"/>
             <!-- Health/Health -->
             <menuitem name="Health" id="menu_health_health"  
                 parent="menu_health"
@@ -71,7 +96,7 @@
         <!-- Insurance -->
         <menuitem name="Insurance" id="menu_insurance" 
             groups="clv_base.group_base_user"
-            sequence="15"/>
+            sequence="16"/>
             <!-- Insurance/Insured -->
             <menuitem name="Insured" id="menu_insurance_insured"  
                 parent="menu_insurance"
@@ -106,7 +131,7 @@
         <!-- Pharmacy -->
         <menuitem name="Pharmacy" id="menu_pharmacy" 
             groups="clv_base.group_base_user"
-            sequence="16"/>
+            sequence="17"/>
             <!-- Pharmacy/Pharmacy -->
             <menuitem name="Pharmacy" id="menu_pharmacy_pharmacy"  
                 parent="menu_pharmacy"

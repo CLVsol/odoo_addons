@@ -29,19 +29,19 @@ class clv_batch(models.Model):
     alias = fields.Char('Alias', size=64, help='Common name that the batch is referred')
     code = fields.Char(size=64, string='Batch Code', required=False)
     description = fields.Char(string='Description', size=256)
-    size = fields.Integer(string='Size')
+    # size = fields.Integer(string='Size')
     # parent_id = fields.Many2one('clv_batch', 'Parent Batch', select=True, ondelete='restrict')
     # complete_name = fields.Char(string='Full Batch', compute='_name_get_fnc', store=False, readonly=True)
     # child_ids = fields.One2many('clv_batch', 'parent_id', 'Child Batchs')
-    item_birthday = fields.Date("Date of Birth")
-    item_age = fields.Char(string='Item Age', size=32, compute='_item_age', store=False)
+    # item_birthday = fields.Date("Date of Birth")
+    # item_age = fields.Char(string='Item Age', size=32, compute='_item_age', store=False)
     # is_movable = fields.Boolean('Is Movable', 
     #                             help="Check if the batch is movable, otherwise it is immovable",
     #                             default=False)
-    batch_start = fields.Date("Batch Start",
-                              default=lambda *a: datetime.now().strftime('%Y-%m-%d'))
-    batch_age = fields.Char(string='Batch Age', size=32, compute='_batch_age', store=False)
-    batch_end = fields.Date("Batch End")
+    # batch_start = fields.Date("Batch Start",
+    #                           default=lambda *a: datetime.now().strftime('%Y-%m-%d'))
+    # batch_age = fields.Char(string='Batch Age', size=32, compute='_batch_age', store=False)
+    # batch_end = fields.Date("Batch End")
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -117,24 +117,24 @@ class clv_batch(models.Model):
     #     else:
     #         self.complete_name = self.name
 
-    @api.one
-    @api.depends('item_birthday')
-    def _item_age(self):
-        now = datetime.now()
-        if self.item_birthday:
-            dob = datetime.strptime(self.item_birthday,'%Y-%m-%d')
-            delta=relativedelta (now, dob)
-            self.item_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
-        else:
-            self.item_age = "No Item Date of Birth!"
+    # @api.one
+    # @api.depends('item_birthday')
+    # def _item_age(self):
+    #     now = datetime.now()
+    #     if self.item_birthday:
+    #         dob = datetime.strptime(self.item_birthday,'%Y-%m-%d')
+    #         delta=relativedelta (now, dob)
+    #         self.item_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
+    #     else:
+    #         self.item_age = "No Item Date of Birth!"
 
-    @api.one
-    @api.depends('batch_start')
-    def _batch_age(self):
-        now = datetime.now()
-        if self.batch_start:
-            dob = datetime.strptime(self.batch_start,'%Y-%m-%d')
-            delta=relativedelta (now, dob)
-            self.batch_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
-        else:
-            self.batch_age = "No Item Date of Birth!"
+    # @api.one
+    # @api.depends('batch_start')
+    # def _batch_age(self):
+    #     now = datetime.now()
+    #     if self.batch_start:
+    #         dob = datetime.strptime(self.batch_start,'%Y-%m-%d')
+    #         delta=relativedelta (now, dob)
+    #         self.batch_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
+    #     else:
+    #         self.batch_age = "No Item Date of Birth!"
