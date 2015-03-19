@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Agro/Agro/Batch -->
+        <!--menuitem name="Batch" id="menu_agro_agro_batch" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_batch_user"
+            sequence="40"/-->
+            <!-- Agro/Agro/Batch/Batches -->
+            <menuitem name="Batches" id="menu_agro_agro_batch_batches"
+                parent="clv_base.menu_agro_agro"
+                groups="clv_base.group_batch_user"
+                sequence="40"
+                action="clv_batch.act_open_clv_batch_view"/>
+                <!-- Agro/Agro/Batch/Batches/Places -->
+                <menuitem name="Places" id="menu_agro_agro_batch_batches_places"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="10" 
+                    action="clv_batch.act_open_clv_batch_place_view"/>
+                <!-- Agro/Agro/Batch/Batches/Frames -->
+                <menuitem name="Frames" id="menu_agro_agro_batch_batches_frames"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="20" 
+                    action="clv_batch.act_open_clv_batch_frame_view"/>
+                <!-- Agro/Agro/Batch/Batches/Trays -->
+                <menuitem name="Trays" id="menu_agro_agro_batch_batches_trays"  
+                    parent="menu_agro_agro_batch_batches"
+                    groups="clv_base.group_batch_user"
+                    sequence="30" 
+                    action="clv_batch.act_open_clv_batch_tray_view"/>
+
+        <!-- Agro/Configuration/Configuration/Batch -->
+        <!--menuitem name="Batch" id="menu_agro_config_config_batch" 
+            parent="clv_base.menu_agro_config_config"
+            groups="clv_base.group_batch_user"
+            sequence="40"/-->
+            <!-- Agro/Configuration/Configuration/Batch/Categories -->
+            <menuitem name="Batch Categories" id="menu_agro_config_config_batch_categories"
+                parent="clv_base.menu_agro_config_config"
+                groups="clv_base.group_batch_user"
+                sequence="40"
+                action="clv_batch.act_open_clv_batch_category_view"/>
+
+    </data>
+</openerp>
