@@ -10,10 +10,8 @@
         <record id="clv_place.seq_clv_place_category" model="ir.sequence">
             <field name="name">Place Category Sequence</field>
             <field name="code">clv_place.category.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
-            <field name="padding" eval="7"/>
-            <field name="prefix">0509</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
         </record>
 
     </data>

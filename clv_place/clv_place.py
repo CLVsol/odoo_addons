@@ -31,7 +31,8 @@ class clv_place(models.Model):
     parent_id = fields.Many2one('clv_place', 'Parent Place', select=True, ondelete='restrict')
     complete_name = fields.Char(string='Full Place', compute='_name_get_fnc', store=False, readonly=True)
     child_ids = fields.One2many('clv_place', 'parent_id', 'Child Places')
-    address_id = fields.Many2one('res.partner', 'Place Address')
+    # address_id = fields.Many2one('res.partner', 'Place Address')
+    address_id = fields.Many2one('clv_address', 'Place Address')
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))

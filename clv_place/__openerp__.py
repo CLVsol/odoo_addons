@@ -32,6 +32,7 @@ Place
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_address',
         ],
     'data': [
         'security/clv_place_security.xml',
