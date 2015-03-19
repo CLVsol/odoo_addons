@@ -75,26 +75,26 @@ class clv_seedling(models.Model):
     @api.one
     def button_activate(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_activation:
-            self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
+        # if not self.date_activation:
+        #     self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        #     time.sleep(1.0)
         self.state = 'active'
         self.insert_clv_seedling_history(self.id, 'active', '')
 
     @api.one
     def button_inactivate(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_inactivation:
-            self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
+        # if not self.date_inactivation:
+        #     self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        #     time.sleep(1.0)
         self.state = 'inactive'
         self.insert_clv_seedling_history(self.id, 'inactive', '')
 
     @api.one
     def button_suspend(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if not self.date_suspension:
-            self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            time.sleep(1.0)
+        # if not self.date_suspension:
+        #     self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        #     time.sleep(1.0)
         self.state = 'suspended'
         self.insert_clv_seedling_history(self.id, 'suspended', '')

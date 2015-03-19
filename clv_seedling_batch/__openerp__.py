@@ -18,38 +18,30 @@
 ################################################################################
 
 {
-    'name': 'Place',
+    'name': 'Seedlilng Batch',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Place
-=====
+Seedlilng Batch
+===============
     ''',
+    'images': [],
     'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_address',
+        'clv_batch',
         ],
     'data': [
-        'security/clv_place_security.xml',
-        'security/ir.model.access.csv',
-        'clv_place_view.xml',
-        'category/clv_place_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_place_seq_view.xml',
-        'seq/clv_place_sequence.xml',
-        'seq/clv_place_category_sequence.xml',
-        'wkf/clv_place_workflow.xml',
-        'wkf/clv_place_wkf_view.xml',
-        'history/clv_place_history_view.xml',
-        'menu/clv_place_menu_view.xml',
+        'clv_batch_view.xml',
+        'menu/clv_batch_menu_view.xml',
         ],
+    'demo': [],
     'test': [],
+    'init_xml': [],
+    'test': [],
+    'update_xml': [],
     'installable': True,
     'active': False,
+    'css': [],
 }
