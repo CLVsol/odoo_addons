@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_batch_tree_seedling" model="ir.ui.view">
+            <field name="name">clv_batch.tree</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="description" position="after">
+                    <field name="size"/>
+                    <field name="batch_start"/>
+                    <field name="item_birthday"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_batch_form_seedling" model="ir.ui.view">
+            <field name="name">clv_batch.form</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <group string="Status" position="before">
+                    <group string="Batch duration">
+                        <field name="batch_start"/>
+                        <field name="batch_age"/>
+                        <field name="batch_end"/>
+                    </group>
+                    <group string="Itens age">
+                        <field name="item_birthday"/>
+                        <field name="item_age"/>
+                    </group>
+                    <group string="Batch Size">
+                        <field name="size"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_batch_search_seedling" model="ir.ui.view">
+            <field name="name">clv_batch.search</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="alias" position="after">
+                    <field name="batch_start"/>
+                    <field name="item_birthday"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Batch Satart" context="{'group_by': 'batch_start'}"/>
+                    <filter string="Birthday" context="{'group_by': 'item_birthday'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
