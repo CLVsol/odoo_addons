@@ -17,16 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-
-class clv_frame(models.Model):
-    _inherit = 'clv_frame'
-
-    place_id = fields.Many2one('clv_place', 'Place')
-
-class clv_place(models.Model):
-    _inherit = 'clv_place'
-
-    frame_ids = fields.One2many('clv_frame',
-                                'place_id',
-                                'Frame')
+import clv_batch_place
