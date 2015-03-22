@@ -18,33 +18,44 @@
 ################################################################################
 
 from openerp.osv import fields, osv
+from datetime import *
 
-class clv_batch_placement_tray(osv.Model):
-    _name = 'clv_batch.placement.tray'
+class clv_insured_card_batch(osv.Model):
+    _name = 'clv_insured_card.batch'
 
     _columns = {
-        'name': fields.many2one('clv_tray', 'Tray', required=True),
-        'batch_placement_id': fields.many2one('clv_batch.placement', string='Batch Placement', help='Batch Placement'),
+        'seq': fields.integer('Sequence', required=False),
+        'batch_id': fields.many2one('clv_batch', 'Batch', required=False),
+        'insured_card_id': fields.many2one('clv_insured_card', string='Insured Card', help='Insured Card'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the placement tray without removing it."),
+        'active': fields.boolean('Active', 
+                                 help="If unchecked, it will allow you to hide the insured card batch without removing it."),
     }
 
+    # _order = "sign_in_date desc"
+    _order = "seq"
+
     _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'active': 1,
     }
 
-class clv_batch_placement(osv.osv):
-    _inherit = 'clv_batch.placement'
+class clv_insured_card(osv.osv):
+    _inherit = 'clv_insured_card'
 
     _columns = {
-        'tray_ids': fields.one2many('clv_batch.placement.tray',
-                                     'batch_placement_id',
-                                     'Trays'),
+        'batch_ids': fields.one2many('clv_insured_card.batch',
+                                     'insured_card_id',
+                                     'Batches'),
     }
 
-class oebase_clv_tray(osv.Model):
-    _inherit = 'clv_tray'
+class clv_batch(osv.osv):
+    _inherit = 'clv_batch'
 
     _columns = {
-        'clv_batch_placement_tray_ids': fields.one2many('clv_batch.placement.tray', 'name', 'Batch Placements'),
+        'insured_card_ids': fields.one2many('clv_insured_card.batch',
+                                            'batch_id',
+                                            'Insured Cards'),
     }
