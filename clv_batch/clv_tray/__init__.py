@@ -17,6 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-# import clv_tray_placement
-import clv_tray_place
-import clv_tray_frame
+import clv_batch_tray

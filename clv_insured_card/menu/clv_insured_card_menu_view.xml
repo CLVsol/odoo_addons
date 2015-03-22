@@ -2,12 +2,25 @@
 <openerp>
     <data>
 
+        <!-- Set/Set/Batch/Batches/Insured Cards -->
+        <menuitem name="Insured Cards" id="menu_set_set_batch_batches_insured_cards"  
+            parent="clv_batch.menu_set_set_batch_batches"
+            groups="clv_base.group_batch_user"
+            sequence="50" 
+            action="clv_insured_card.act_open_clv_insured_card_batch_view"/>
+
         <!-- Insurance/Insured/Cards -->
         <menuitem name="Insured Cards" id="menu_insurance_insured_cards"
             parent="clv_base.menu_insurance_insured"
             groups="clv_base.group_insured_card_user"
             sequence="20"
             action="clv_insured_card.act_open_clv_insured_card_view"/>
+                <!-- Insurance/Insured/Cards/Batches -->
+                <menuitem name="Batches" id="menu_insurance_insured_cards_batches"  
+                    parent="menu_insurance_insured_cards"
+                    groups="clv_base.group_batch_user"
+                    sequence="10" 
+                    action="clv_insured_card.act_open_clv_insured_card_batch_view"/>
 
         <!-- Insurance/Configuration/Configuration/Insured/Card Categories -->
         <menuitem name="Card Categories" id="menu_insurance_config_config_insured_card_categories" 

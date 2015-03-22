@@ -53,7 +53,7 @@
                     <field name="tray_id"/>
                     <field name="place_id"/>
                     <newline/>
-                    <group expand="0" string="Tray By...">
+                    <group expand="0" string="Group By...">
                         <filter string="Tray" domain="[]" context="{'group_by':'tray_id'}"/>
                         <filter string="Place" domain="[]" context="{'group_by':'place_id'}"/>
                     </group>

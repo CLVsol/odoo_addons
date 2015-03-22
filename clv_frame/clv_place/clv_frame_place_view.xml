@@ -53,7 +53,7 @@
                     <field name="frame_id"/>
                     <field name="place_id"/>
                     <newline/>
-                    <group expand="0" string="Frame By...">
+                    <group expand="0" string="Group By...">
                         <filter string="Frame" domain="[]" context="{'group_by':'frame_id'}"/>
                         <filter string="Place" domain="[]" context="{'group_by':'place_id'}"/>
                     </group>

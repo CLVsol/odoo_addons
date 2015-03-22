@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_insured_card_batch_tree" model="ir.ui.view">
+            <field name="name">clv_insured_card.batch.tree</field>
+            <field name="model">clv_insured_card.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Insured Card Batches">
+                    <field name="seq"/>
+                    <field name="batch_id"/>
+                    <field name="insured_card_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_insured_card_batch_form" model="ir.ui.view">
+            <field name="name">clv_insured_card.batch.form</field>
+            <field name="model">clv_insured_card.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Insured Card Batches" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="seq"/>
+                            <field name="batch_id" default_focus="1"/>
+                            <field name="insured_card_id"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
+                        </group>
+                        <label for="notes" class="oe_edit_only"/>
+                        <field name="notes" batchholder="Notes..."/>
+                        <notebook>
+                            <page string="Settings" clv_insured_cards="clvbase.clv_insured_card_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_insured_card_batch_search" model="ir.ui.view">
+            <field name="name">clv_insured_card.batch.search</field>
+            <field name="model">clv_insured_card.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Insured Card Batches">
+                    <field name="insured_card_id"/>
+                    <field name="batch_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Batch" domain="[]" context="{'group_by':'batch_id'}"/>
+                        <filter string="Insured Card" domain="[]" context="{'group_by':'insured_card_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_clv_insured_card_batch_view">
+            <field name="name">Insured Card Batches</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_insured_card.batch</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_insured_card_batch_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new insured card batch.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_insured_card_batch_view_form">
+            <field name="act_window_id" ref="act_open_clv_insured_card_batch_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_insured_card_batch_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_insured_card_batch_view_tree">
+            <field name="act_window_id" ref="act_open_clv_insured_card_batch_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_insured_card_batch_tree"/>
+        </record>
+        
+        <record id="view_clv_insured_card_form_batch" model="ir.ui.view">
+            <field name="name">clv_insured_card.form</field>
+            <field name="model">clv_insured_card</field>
+            <field name="inherit_id" ref="view_clv_insured_card_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Batches">
+                        <field name="batch_ids" colspan="4" nolabel="1">
+                            <tree string="Batches">
+                                <!--field name="seq"/-->
+                                <!--field name="insured_card_id"/-->
+                                <field name="batch_id"/>
+                                <field name="sign_in_date"/>
+                                <field name="sign_out_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_batch_form" model="ir.ui.view">
+            <field name="name">clv_batch.form</field>
+            <field name="model">clv_batch</field>
+            <field name="inherit_id" ref="clv_batch.view_clv_batch_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Insured Cards">
+                        <field name="insured_card_ids" colspan="4" nolabel="1">
+                            <tree string="Insured Cards">
+                                <field name="seq"/>
+                                <!--field name="batch_id"/-->
+                                <field name="insured_card_id"/>
+                                <field name="sign_in_date"/>
+                                <field name="sign_out_date"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

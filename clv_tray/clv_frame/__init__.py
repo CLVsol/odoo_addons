@@ -17,28 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from openerp.osv import osv
-from datetime import *
-
-class clv_frame_place_history(osv.Model):
-    _name = 'clv_frame.place_history'
-
-    frame_id = fields.Many2one('clv_frame', 'Frame', required=False)
-    place_id = fields.Many2one('clv_place', 'Place', required=False)
-    incoming_date = fields.Datetime('Incoming Date', required=False,
-                                    default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    outgoing_date = fields.Datetime('Outgoing Date', required=False)
-    notes = fields.Text(string='Notes')
-    
-    _order = "incoming_date desc"
-
-class clv_frame(osv.Model):
-    _inherit = 'clv_frame'
-
-    place_history_ids = fields.One2many('clv_frame.place_history', 'frame_id', 'Place History')
-
-class clv_place(osv.Model):
-    _inherit = 'clv_place'
-
-    frame_place_history_ids = fields.One2many('clv_frame.place_history', 'place_id', 'Frame Place History')
+import clv_tray_frame
