@@ -24,43 +24,40 @@ import time
 class clv_batch(models.Model):
     _inherit = 'clv_batch'
 
+    STATE_SELECTION = [
+        ('draft','Draft'),
+        ('active','Active'),
+        ('suspended','Suspended'),
+        ('inactive','Inactive'),
+        ('canceled','Canceled'),
+        ]
+    
     date = fields.Datetime("Status change date", required=True, readonly=True,
                            default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    # date_activation = fields.Datetime("Activation date", required=False, readonly=False)
-    # date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
-    # date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
-    state = fields.Selection([('new','New'),
-                              ('active','Active'),
-                              ('inactive','Inactive'),
-                              ('suspended','Suspended')
-                              ], string='Status', default='new', readonly=True, required=True, help="")
+    state = fields.Selection(STATE_SELECTION, string='Status', default='draft', readonly=True, required=True, help="")
 
    
     @api.one
-    def button_new(self):
+    def button_draft(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'new'
+        self.state = 'draft'
 
     @api.one
     def button_activate(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_activation:
-        #     self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
         self.state = 'active'
-
-    @api.one
-    def button_inactivate(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_inactivation:
-        #     self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
-        self.state = 'inactive'
 
     @api.one
     def button_suspend(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_suspension:
-        #     self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
         self.state = 'suspended'
+
+    @api.one
+    def button_inactivate(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'inactive'
+
+    @api.one
+    def button_cancel(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'
