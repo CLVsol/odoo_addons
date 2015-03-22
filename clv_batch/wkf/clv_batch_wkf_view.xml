@@ -22,18 +22,16 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <sheet string="Batch" position="before">
-                    <header>
-                        <button string="Activate" name="button_activate" states="new,inactive,suspended" type="workflow" groups="clv_base.group_batch_manager" class="oe_highlight"/>
-                        <button string="Inactivate" name="button_inactivate" states="new,active,suspended" type="workflow" groups="clv_base.group_batch_manager"/>
-                        <button string="Suspend" name="button_suspend" states="new,active,inactive" type="workflow" groups="clv_base.group_batch_manager"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,active,inactive,suspended"/>
+                    <header name="Batch">
+                        <button string="Cancel" name="button_cancel" states="draft" type="workflow" groups="clv_base.group_batch_manager"/>
+                        <button string="Activate" name="button_activate" states="draft,inactive,suspended" type="workflow" groups="clv_base.group_batch_manager" class="oe_highlight"/>
+                        <button string="Inactivate" name="button_inactivate" states="draft,active,suspended" type="workflow" groups="clv_base.group_batch_manager"/>
+                        <button string="Suspend" name="button_suspend" states="draft,active,inactive" type="workflow" groups="clv_base.group_batch_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,suspended,inactive, canceled"/>
                     </header>
                 </sheet>
                 <field name="date_inclusion" position="before">
                     <field name="date"/>
-                    <!--field name="date_activation"/-->
-                    <!--field name="date_inactivation"/-->
-                    <!--field name="date_suspension"/-->
                 </field>
             </field>
         </record>
