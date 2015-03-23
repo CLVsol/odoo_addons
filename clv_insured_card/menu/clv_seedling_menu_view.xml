@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Set/Set/Place/Places/Seedlings -->
+        <menuitem name="Seedlings" id="menu_set_set_place_places_seedlings"  
+            parent="clv_place.menu_set_set_place_places"
+            groups="clv_base.group_place_user"
+            sequence="50" 
+            action="clv_seedling.act_open_clv_seedling_place_view"/>
+
+        <!-- Set/Set/Frame/Frames/Seedlings -->
+        <menuitem name="Seedlings" id="menu_set_set_frame_frames_seedling"  
+            parent="clv_frame.menu_set_set_frame_frames"
+            groups="clv_base.group_frame_user"
+            sequence="50" 
+            action="clv_seedling.act_open_clv_seedling_frame_view"/>
+
+        <!-- Set/Set/Tray/Trays/Seedlings -->
+        <menuitem name="Seedlings" id="menu_set_set_tray_trays_seedlings"  
+            parent="clv_tray.menu_set_set_tray_trays"
+            groups="clv_base.group_tray_user"
+            sequence="50" 
+            action="clv_seedling.act_open_clv_seedling_tray_view"/>
+
+        <!-- Set/Set/Batch/Batches/Seedlings -->
+        <menuitem name="Seedlings" id="menu_set_set_batch_batches_seedlings"  
+            parent="clv_batch.menu_set_set_batch_batches"
+            groups="clv_base.group_batch_user"
+            sequence="40" 
+            action="clv_seedling.act_open_clv_seedling_batch_view"/>
+
+        <!-- Agro/Agro/Batch/Batches/Seedlings -->
+        <menuitem name="Seedlings" id="menu_agro_agro_batch_batches_seedlings"  
+            parent="clv_seedling_batch.menu_agro_agro_batch_batches"
+            groups="clv_base.group_batch_user"
+            sequence="40" 
+            action="clv_seedling.act_open_clv_seedling_batch_view"/>
+
+        <!-- Agro/Agro/Seedling -->
+        <!--menuitem name="Seedling" id="menu_agro_agro_seedling" 
+            parent="clv_base.menu_agro_agro"
+            groups="clv_base.group_seedling_user"
+            sequence="50"/-->
+            <!-- Agro/Agro/Seedling/Seedlings -->
+            <menuitem name="Seedlings" id="menu_agro_agro_seedling_seedlings" 
+                parent="clv_base.menu_agro_agro"
+                groups="clv_base.group_seedling_user"
+                sequence="50" 
+                action="clv_seedling.act_open_clv_seedling_view"/>
+                <!-- Agro/Agro/Seedling/Seedlings/Places -->
+                <menuitem name="Places" id="menu_agro_agro_seedling_seedlings_places"  
+                    parent="menu_agro_agro_seedling_seedlings"
+                    groups="clv_base.group_batch_user"
+                    sequence="10" 
+                    action="clv_seedling.act_open_clv_seedling_place_view"/>
+                <!-- Agro/Agro/Seedling/Seedlings/Frames -->
+                <menuitem name="Frames" id="menu_agro_agro_seedling_seedlings_frames"  
+                    parent="menu_agro_agro_seedling_seedlings"
+                    groups="clv_base.group_batch_user"
+                    sequence="20" 
+                    action="clv_seedling.act_open_clv_seedling_frame_view"/>
+                <!-- Agro/Agro/Seedling/Seedlings/Trays -->
+                <menuitem name="Trays" id="menu_agro_agro_seedling_seedlings_trays"  
+                    parent="menu_agro_agro_seedling_seedlings"
+                    groups="clv_base.group_batch_user"
+                    sequence="30" 
+                    action="clv_seedling.act_open_clv_seedling_tray_view"/>
+                <!-- Agro/Agro/Seedling/Seedlings/Batches -->
+                <menuitem name="Batches" id="menu_agro_agro_seedling_seedlings_batches"  
+                    parent="menu_agro_agro_seedling_seedlings"
+                    groups="clv_base.group_batch_user"
+                    sequence="40" 
+                    action="clv_seedling.act_open_clv_seedling_batch_view"/>
+
+        <!-- Agro/Configuration/Configuration/Seedling -->
+        <!--menuitem name="Seedling" id="menu_agro_config_config_seedling" 
+            parent="clv_base.menu_agro_config_config"
+            groups="clv_base.group_seedling_user"
+            sequence="50"/-->
+            <!-- Agro/Configuration/Configuration/Seedling Categories -->
+            <menuitem name="Seedling Categories" id="menu_agro_config_config_seedling_categories"
+                parent="clv_base.menu_agro_config_config"
+                groups="clv_base.group_seedling_user"
+                sequence="50"
+                action="clv_seedling.act_open_clv_seedling_category_view"/>
+
+    </data>
+</openerp>

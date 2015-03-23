@@ -17,37 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
-from datetime import *
-
-class clv_tray_placement(osv.Model):
-    _name = 'clv_tray.placement'
-
-    _columns = {
-        'name': fields.char('Placement', required=True, size=64, translate=False),
-        'tray_id': fields.many2one('clv_tray', string='Tray', help='Tray'),
-        'place_id': fields.many2one('clv_place', 'Place', required=False),
-        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
-        'sign_in_date': fields.datetime("Sign in date", required=False),
-        'sign_out_date': fields.datetime("Sign out date", required=False),
-        'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the placement without removing it."),
-    }
-
-    _order = "sign_in_date desc"
-
-    _defaults = {
-        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'active': 1,
-    }
-
-clv_tray_placement()
-
-class clv_tray(osv.osv):
-    _inherit = 'clv_tray'
-
-    _columns = {
-        'placement_ids': fields.one2many('clv_tray.placement',
-                                         'tray_id',
-                                         'Placements'),
-    }
+import clv_batch_frame
