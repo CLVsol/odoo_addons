@@ -13,6 +13,7 @@
                     <field name="alias" invisible="1"/>
                     <field name="code"/>
                     <field name="notes" colspan="4"/>
+                    <field name="batch_name"/>
                 </tree>
             </field>
         </record>
@@ -47,6 +48,10 @@
                             <label for="insured_id"/>
                             <h3>
                                 <field name="insured_id" placeholder="Insured..."/>
+                            </h3>
+                            <label for="batch_name"/>
+                            <h3>
+                                <field name="batch_name" placeholder="Batch Name..."/>
                             </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -111,8 +116,10 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="notes"/>
+                    <field name="batch_name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
+                        <filter string="Batch Name" domain="[]" context="{'group_by': 'batch_name'}"/>
                     </group>
                 </search>
             </field>
