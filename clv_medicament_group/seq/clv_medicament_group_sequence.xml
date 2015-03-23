@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_medicament_group.seq_type_clv_medicament_group_group" model="ir.sequence.type">
+            <field name="name">Medicament Group Sequence</field>
+            <field name="code">clv_medicament_group.code</field>
+        </record>
+        
+        <record id="clv_medicament_group.seq_clv_medicament_group_group" model="ir.sequence">
+            <field name="name">Medicament Group Sequence</field>
+            <field name="code">clv_medicament_group.code</field>
+            <!--field name="padding" eval="9"/-->
+            <!--field name="prefix">00000</field-->
+            <field name="padding" eval="9"/>
+            <field name="prefix">57</field>
+        </record>
+
+    </data>
+</openerp>
