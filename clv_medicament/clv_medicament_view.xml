@@ -116,14 +116,14 @@
                     <field name="name"/>
                     <field name="medicament_name"/>
                     <field name="code"/>
-                    <field name="active_component"/>
+                    <!--field name="active_component"/-->
                     <field name="notes"/>
                     <field name="manufacturer"/>
                     <field name="therapeutic_class"/>
                     <field name="ean13"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
+                        <!--filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/-->
                         <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}"/>
                         <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}"/>
                     </group>
