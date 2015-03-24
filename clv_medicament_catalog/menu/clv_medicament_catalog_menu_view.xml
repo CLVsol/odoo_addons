@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Catalogs -->
+        <menuitem name="Catalogs" id="menu_pharmacy_medicament_catalogs"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_catalog_user"
+            sequence="20"
+            action="clv_medicament_catalog.act_open_clv_medicament_catalog_view"/>
+
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
+        <!--menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
+            parent="clv_base.menu_pharmacy_config_config_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="10"
+            action="clv_medicament.act_open_clv_medicament_category_view"/-->
+
+    </data>
+</openerp>
