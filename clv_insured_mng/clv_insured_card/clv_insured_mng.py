@@ -24,6 +24,6 @@ class clv_insured_mng(models.Model):
     _inherit = 'clv_insured_mng'
 
     insured_card_id = fields.Many2one('clv_insured_card', 'Insured Card', ondelete='restrict')
-    crd_name = fields.Char('Printed Name', required=False, size=35, help='Name printed on the card.')
+    crd_name = fields.Char('Printed Name', required=False, size=64, help='Name printed on the card.')
     crd_code = fields.Char(size=64, string='Insured Card Code')
     crd_notes = fields.Text(string='Notes')
