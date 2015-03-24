@@ -46,6 +46,7 @@ Medicament Management
         'history/clv_medicament_mng_history_view.xml',
         'clv_medicament/clv_medicament_view.xml',
         'clv_medicament/clv_medicament_category_view.xml',
+        'menu/clv_medicament_mng_menu_view.xml',
         ],
     'demo': [],
     'test': [],
