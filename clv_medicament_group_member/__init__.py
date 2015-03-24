@@ -18,8 +18,8 @@
 ################################################################################
 
 import clv_medicament_group_member
-import clv_medicament
-import clv_medicament_group
+# import clv_medicament
+# import clv_medicament_group
 # import clv_annotation
 # import clv_medicament_group_member_category
 # import clv_tag
