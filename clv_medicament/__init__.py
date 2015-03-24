@@ -22,12 +22,12 @@ import clv_medicament
 import category
 import clv_tag
 import clv_annotation
-import seq
-import wkf
-import history
 import active_component
 import manufacturer
 import therapeutic_class
 import form
 import route
 import template
+import seq
+import wkf
+import history

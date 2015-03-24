@@ -18,7 +18,6 @@
 ################################################################################
 
 from openerp.osv import fields, osv
-import clv_medicament
 
 def format_code(code_seq):
     code = map(int, str(code_seq))
