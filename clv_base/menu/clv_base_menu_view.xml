@@ -132,16 +132,26 @@
         <menuitem name="Pharmacy" id="menu_pharmacy" 
             groups="clv_base.group_base_user"
             sequence="17"/>
-            <!-- Pharmacy/Pharmacy -->
-            <menuitem name="Pharmacy" id="menu_pharmacy_pharmacy"  
+            <!-- Pharmacy/Medicament -->
+            <menuitem name="Medicament" id="menu_pharmacy_medicament"  
                 parent="menu_pharmacy"
                 groups="clv_base.group_base_user"
                 sequence="10" />
-                <!-- Pharmacy/Pharmacy/Configuration -->
-                <menuitem name="Configuration" id="menu_pharmacy_pharmacy_config"  
-                    parent="menu_pharmacy_pharmacy"
+            <!-- Pharmacy/Configuration -->
+            <menuitem name="Configuration" id="menu_pharmacy_config"  
+                parent="menu_pharmacy"
+                groups="clv_base.group_base_manager"
+                sequence="90"/>
+                <!-- Pharmacy/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_pharmacy_config_config"  
+                    parent="menu_pharmacy_config"
                     groups="clv_base.group_base_manager"
-                    sequence="90" />
+                    sequence="90"/>
+                    <!-- Pharmacy/Configuration/Configuration/Medicament -->
+                    <menuitem name="Medicament" id="menu_pharmacy_config_config_medicament"  
+                        parent="menu_pharmacy_config_config"
+                        groups="clv_base.group_base_user"
+                        sequence="10"/>
 
     </data>
 </openerp>
