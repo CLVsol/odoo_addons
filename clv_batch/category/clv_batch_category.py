@@ -104,3 +104,4 @@ class clv_batch(models.Model):
     _inherit = 'clv_batch'
 
     category_id = fields.Many2one('clv_batch.category', 'Category')
+    name_category = fields.Char(string='Category Name', related='category_id.name')

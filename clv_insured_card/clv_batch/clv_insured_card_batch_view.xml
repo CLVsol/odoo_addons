@@ -10,6 +10,7 @@
                 <tree string="Insured Card Batches">
                     <field name="seq"/>
                     <field name="batch_id"/>
+                    <field name="batch_category"/>
                     <field name="insured_card_id"/>
                     <field name="sign_in_date"/>
                     <field name="sign_out_date"/>
@@ -28,6 +29,7 @@
                         <group>
                             <field name="seq"/>
                             <field name="batch_id" default_focus="1"/>
+                            <field name="batch_category"/>
                             <field name="insured_card_id"/>
                             <field name="sign_in_date"/>
                             <field name="sign_out_date"/>
@@ -54,9 +56,11 @@
                 <search string="Insured Card Batches">
                     <field name="insured_card_id"/>
                     <field name="batch_id"/>
+                    <field name="batch_category"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Batch" domain="[]" context="{'group_by':'batch_id'}"/>
+                        <filter string="Batch Category" domain="[]" context="{'group_by':'batch_category'}"/>
                         <filter string="Insured Card" domain="[]" context="{'group_by':'insured_card_id'}"/>
                     </group>
                 </search>
