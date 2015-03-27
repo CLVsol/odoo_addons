@@ -26,6 +26,8 @@ class clv_insured_card_batch(osv.Model):
     _columns = {
         'seq': fields.integer('Sequence', required=False),
         'batch_id': fields.many2one('clv_batch', 'Batch', required=False),
+        'batch_category': fields.related('batch_id', 'name_category', type='char', string='Batch Category', 
+                                         readonly=True, store=True),
         'insured_card_id': fields.many2one('clv_insured_card', string='Insured Card', help='Insured Card'),
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
