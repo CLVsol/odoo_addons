@@ -36,3 +36,11 @@ class clv_insured_card(models.Model):
     _order='name'
 
     _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Insured Card Code must be unique!')]
+
+    @api.multi
+    @api.depends('name', 'code')
+    def name_get(self):
+        result = []
+        for insured_card in self:
+            result.append((insured_card.id, '%s [%s]' % (insured_card.name, insured_card.code)))
+        return result
