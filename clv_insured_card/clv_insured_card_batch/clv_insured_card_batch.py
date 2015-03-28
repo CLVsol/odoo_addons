@@ -48,16 +48,16 @@ class clv_insured_card(osv.osv):
     _inherit = 'clv_insured_card'
 
     _columns = {
-        'batch_ids': fields.one2many('clv_insured_card.batch',
-                                     'insured_card_id',
-                                     'Batches'),
+        'insured_card_batch_ids': fields.one2many('clv_insured_card.batch',
+                                                  'insured_card_id',
+                                                  'Insured Card Batches'),
     }
 
 class clv_batch(osv.osv):
     _inherit = 'clv_batch'
 
     _columns = {
-        'insured_card_ids': fields.one2many('clv_insured_card.batch',
-                                            'batch_id',
-                                            'Insured Cards'),
+        'insured_card_batch_ids': fields.one2many('clv_insured_card.batch',
+                                                  'batch_id',
+                                                  'Insured Card Batches'),
     }
