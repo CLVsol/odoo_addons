@@ -10,7 +10,7 @@
             action="clv_insurance.act_open_clv_insurance_view"/>
 
         <!-- Insurance/Configuration/Configuration/Insurance/Categories -->
-        <menuitem name="Categories" id="menu_insurance_config_config_insurance_categories" 
+        <menuitem name="Insurance Categories" id="menu_insurance_config_config_insurance_insurance_categories" 
             parent="clv_base.menu_insurance_config_config_insurance"
             groups="clv_base.group_insurance_user"
             sequence="10"

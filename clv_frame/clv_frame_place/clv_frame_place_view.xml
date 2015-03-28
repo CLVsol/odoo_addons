@@ -2,13 +2,13 @@
 <openerp>
     <data>
 
-        <record id="view_clv_batch_place_tree" model="ir.ui.view">
-            <field name="name">clv_batch.place.tree</field>
-            <field name="model">clv_batch.place</field>
+        <record id="view_clv_frame_place_tree" model="ir.ui.view">
+            <field name="name">clv_frame.place.tree</field>
+            <field name="model">clv_frame.place</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Batch Places">
-                    <field name="batch_id"/>
+                <tree string="Frame Places">
+                    <field name="frame_id"/>
                     <field name="place_id"/>
                     <field name="sign_in_date"/>
                     <field name="sign_out_date"/>
@@ -17,15 +17,15 @@
             </field>
         </record>
         
-        <record id="view_clv_batch_place_form" model="ir.ui.view">
-            <field name="name">clv_batch.place.form</field>
-            <field name="model">clv_batch.place</field>
+        <record id="view_clv_frame_place_form" model="ir.ui.view">
+            <field name="name">clv_frame.place.form</field>
+            <field name="model">clv_frame.place</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Batch Places" version="7.0">
+                <form string="Frame Places" version="7.0">
                     <sheet>
                         <group>
-                            <field name="batch_id"/>
+                            <field name="frame_id"/>
                             <field name="place_id" default_focus="1"/>
                             <field name="sign_in_date"/>
                             <field name="sign_out_date"/>
@@ -33,7 +33,7 @@
                         <label for="notes" class="oe_edit_only"/>
                         <field name="notes" placeholder="Notes..."/>
                         <notebook>
-                            <page string="Settings" clv_batchs="clvbase.clv_batch_manager">
+                            <page string="Settings" clv_frames="clvbase.clv_frame_manager">
                                 <group>
                                     <field name="active"/>
                                 </group>
@@ -44,65 +44,65 @@
             </field>
         </record>
         
-        <record id="view_clv_batch_place_search" model="ir.ui.view">
-            <field name="name">clv_batch.place.search</field>
-            <field name="model">clv_batch.place</field>
+        <record id="view_clv_frame_place_search" model="ir.ui.view">
+            <field name="name">clv_frame.place.search</field>
+            <field name="model">clv_frame.place</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Batch Places">
-                    <field name="batch_id"/>
+                <search string="Frame Places">
+                    <field name="frame_id"/>
                     <field name="place_id"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Batch" domain="[]" context="{'group_by':'batch_id'}"/>
+                        <filter string="Frame" domain="[]" context="{'group_by':'frame_id'}"/>
                         <filter string="Place" domain="[]" context="{'group_by':'place_id'}"/>
                     </group>
                 </search>
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_clv_batch_place_view">
-            <field name="name">Batch Places</field>
+        <record model="ir.actions.act_window" id="act_open_clv_frame_place_view">
+            <field name="name">Frame Places</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_batch.place</field>
+            <field name="res_model">clv_frame.place</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_batch_place_search"/>
+            <field name="search_view_id" ref="view_clv_frame_place_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="context">{}</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new batch place.
+                Click to add a new frame place.
               </p>
             </field>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_batch_place_view_form">
-            <field name="act_window_id" ref="act_open_clv_batch_place_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_frame_place_view_form">
+            <field name="act_window_id" ref="act_open_clv_frame_place_view"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_batch_place_form"/>
+            <field name="view_id" ref="view_clv_frame_place_form"/>
         </record>
         
-        <record model="ir.actions.act_window.view" id="act_open_clv_batch_place_view_tree">
-            <field name="act_window_id" ref="act_open_clv_batch_place_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_clv_frame_place_view_tree">
+            <field name="act_window_id" ref="act_open_clv_frame_place_view"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_batch_place_tree"/>
+            <field name="view_id" ref="view_clv_frame_place_tree"/>
         </record>
         
-        <record id="view_clv_batch_form_place" model="ir.ui.view">
-            <field name="name">clv_batch.form</field>
-            <field name="model">clv_batch</field>
-            <field name="inherit_id" ref="view_clv_batch_form"/>
+        <record id="view_clv_frame_form_place" model="ir.ui.view">
+            <field name="name">clv_frame.form</field>
+            <field name="model">clv_frame</field>
+            <field name="inherit_id" ref="view_clv_frame_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
                     <page string="Places">
-                        <field name="place_ids" colspan="4" nolabel="1">
-                            <tree string="Places">
-                                <!--field name="batch_id"/-->
+                        <field name="frame_place_ids" colspan="4" nolabel="1">
+                            <tree string="Frame Places">
+                                <!--field name="frame_id"/-->
                                 <field name="place_id"/>
                                 <field name="sign_in_date"/>
                                 <field name="sign_out_date"/>
@@ -121,10 +121,10 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
-                    <page string="Batches">
-                        <field name="batch_ids" colspan="4" nolabel="1">
-                            <tree string="Batchs">
-                                <field name="batch_id"/>
+                    <page string="Frames">
+                        <field name="frame_place_ids" colspan="4" nolabel="1">
+                            <tree string="Frame Places">
+                                <field name="frame_id"/>
                                 <!--field name="place_id"/-->
                                 <field name="sign_in_date"/>
                                 <field name="sign_out_date"/>

@@ -393,13 +393,13 @@ msgstr "Configurações"
 
 #. module: clv_address
 #: view:clv_address:clv_address.view_clv_address_search_wkf
-msgid "Stage"
-msgstr "Estágio"
+msgid "Status"
+msgstr "Status"
 
 #. module: clv_address
 #: view:clv_address.history:clv_address.view_clv_address_history_form
-msgid "Stage..."
-msgstr "Estágio..."
+msgid "Status..."
+msgstr "Status..."
 
 #. module: clv_address
 #: code:addons/clv_address/clv_address.py:58

@@ -71,7 +71,7 @@ class clv_batch(models.Model):
     #     ]
 
     _sql_constraints = [
-    	('uniq_code', 'unique(code)', "The Batch Code must be unique!"),
+    	('uniq_code', 'unique(code)', "Error! The Batch Code must be unique!"),
         ]
 
     # @api.multi

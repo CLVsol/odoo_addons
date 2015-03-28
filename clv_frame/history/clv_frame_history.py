@@ -47,7 +47,7 @@ class clv_frame(models.Model):
     history_ids = fields.One2many('clv_frame.history', 'frame_id', 'Frame History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_frame_history(self, frame_id, state, notes):
