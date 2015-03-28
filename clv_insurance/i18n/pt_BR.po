@@ -78,9 +78,9 @@ msgstr "Anotações"
 
 #. module: clv_insurance
 #: field:clv_insurance,category_ids:0
-#: model:ir.ui.menu,name:clv_insurance.menu_insurance_config_config_insurance_categories
-msgid "Categories"
-msgstr "Categorias"
+#: model:ir.ui.menu,name:clv_insurance.menu_insurance_config_config_insurance_insurance_categories
+msgid "Insurance Categories"
+msgstr "Categorias de Planos"
 
 #. module: clv_insurance
 #: view:clv_insurance:clv_insurance.view_clv_insurance_form_category

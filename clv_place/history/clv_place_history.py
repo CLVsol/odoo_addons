@@ -47,7 +47,7 @@ class clv_place(models.Model):
     history_ids = fields.One2many('clv_place.history', 'place_id', 'Place History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_place_history(self, place_id, state, notes):

@@ -48,7 +48,7 @@ Frame
         'wkf/clv_frame_workflow.xml',
         'wkf/clv_frame_wkf_view.xml',
         'history/clv_frame_history_view.xml',
-        'clv_place/clv_frame_place_view.xml',
+        'clv_frame_place/clv_frame_place_view.xml',
         'menu/clv_frame_menu_view.xml',
         ],
     'demo': [],

@@ -2,39 +2,39 @@
 <openerp>
     <data>
 
-        <!-- Set/Set/Place/Places/Frames -->
-        <menuitem name="Frames" id="menu_set_set_place_places_frames"  
-            parent="clv_place.menu_set_set_place_places"
+        <!-- Grouipings/Grouipings/Place/Places/Frames -->
+        <menuitem name="Frames" id="menu_groupings_groupings_place_places_frames"  
+            parent="clv_place.menu_groupings_groupings_place_places"
             groups="clv_base.group_place_user"
             sequence="20" 
             action="clv_frame.act_open_clv_frame_place_view"/>
 
-        <!-- Set/Set/Frame -->
-        <!--menuitem name="Frame" id="menu_set_set_frame" 
-            parent="clv_base.menu_set_set"
+        <!-- Grouipings/Grouipings/Frame -->
+        <!--menuitem name="Frame" id="menu_groupings_groupings_frame" 
+            parent="clv_base.menu_groupings_groupings"
             groups="clv_base.group_frame_user"
             sequence="20"/-->
-            <!-- Set/Set/Frame/Frames -->
-            <menuitem name="Frames" id="menu_set_set_frame_frames"
-                parent="clv_base.menu_set_set"
+            <!-- Grouipings/Grouipings/Frame/Frames -->
+            <menuitem name="Frames" id="menu_groupings_groupings_frame_frames"
+                parent="clv_base.menu_groupings_groupings"
                 groups="clv_base.group_frame_user"
                 sequence="20"
                 action="clv_frame.act_open_clv_frame_view"/>
-                <!-- Set/Set/Frame/Frames/Places -->
-                <menuitem name="Places" id="menu_set_set_frame_frames_places"  
-                    parent="menu_set_set_frame_frames"
+                <!-- Grouipings/Grouipings/Frame/Frames/Places -->
+                <menuitem name="Places" id="menu_groupings_groupings_frame_frames_places"  
+                    parent="menu_groupings_groupings_frame_frames"
                     groups="clv_base.group_frame_user"
                     sequence="20" 
                     action="clv_frame.act_open_clv_frame_place_view"/>
 
-        <!-- Set/Configuration/Configuration/Frame -->
-        <!--menuitem name="Frame" id="menu_set_config_config_frame" 
-            parent="clv_base.menu_set_config_config"
+        <!-- Grouipings/Configuration/Configuration/Frame -->
+        <!--menuitem name="Frame" id="menu_groupings_config_config_frame" 
+            parent="clv_base.menu_groupings_config_config"
             groups="clv_base.group_frame_user"
             sequence="20"/-->
-            <!-- Set/Configuration/Configuration/Frame/Categories -->
-            <menuitem name="Frame Categories" id="menu_set_config_config_frame_categories"
-                parent="clv_base.menu_set_config_config"
+            <!-- Grouipings/Configuration/Configuration/Frame/Categories -->
+            <menuitem name="Frame Categories" id="menu_groupings_config_config_frame_categories"
+                parent="clv_base.menu_groupings_config_config"
                 groups="clv_base.group_frame_user"
                 sequence="20"
                 action="clv_frame.act_open_clv_frame_category_view"/>

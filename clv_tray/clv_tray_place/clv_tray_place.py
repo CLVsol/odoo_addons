@@ -20,16 +20,16 @@
 from openerp.osv import fields, osv
 from datetime import *
 
-class clv_tray_frame(osv.Model):
-    _name = 'clv_tray.frame'
+class clv_tray_place(osv.Model):
+    _name = 'clv_tray.place'
 
     _columns = {
-        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
+        'place_id': fields.many2one('clv_place', 'Place', required=False),
         'tray_id': fields.many2one('clv_tray', string='Tray', help='Tray'),
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the tray frame without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the tray place without removing it."),
     }
 
     _order = "sign_in_date desc"
@@ -43,16 +43,16 @@ class clv_tray(osv.osv):
     _inherit = 'clv_tray'
 
     _columns = {
-        'frame_ids': fields.one2many('clv_tray.frame',
-                                     'tray_id',
-                                     'Frames'),
+        'tray_place_ids': fields.one2many('clv_tray.place',
+                                          'tray_id',
+                                          'Tray Places'),
     }
 
-class clv_frame(osv.osv):
-    _inherit = 'clv_frame'
+class clv_place(osv.osv):
+    _inherit = 'clv_place'
 
     _columns = {
-        'tray_ids': fields.one2many('clv_tray.frame',
-                                     'frame_id',
-                                     'Trays'),
+        'tray_place_ids': fields.one2many('clv_tray.place',
+                                          'place_id',
+                                          'Tray Places'),
     }

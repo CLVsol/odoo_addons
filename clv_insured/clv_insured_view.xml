@@ -12,6 +12,8 @@
                     <field name="name"/>
                     <field name="alias" invisible="1"/>
                     <field name="code"/>
+                    <field name="birthday"/>
+                    <field name="age"/>
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>

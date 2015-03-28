@@ -7,11 +7,11 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-26 16:18+0000\n"
-"PO-Revision-Date: 2015-01-26 16:18+0000\n"
+"PO-Revision-Date: 2015-03-27 15:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; chargroupings=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
@@ -462,8 +462,8 @@ msgstr "Configurações"
 
 #. module: clv_place
 #: view:clv_place.history:clv_place.view_clv_place_history_form
-msgid "Stage..."
-msgstr "Estágio..."
+msgid "Status..."
+msgstr "Status..."
 
 #. module: clv_place
 #: view:clv_place:clv_place.view_clv_place_form
@@ -539,4 +539,14 @@ msgstr "Gerente de Local"
 #: model:res.groups,name:clv_base.group_place_user
 msgid "Place User"
 msgstr "Usuário de Local"
+
+#. module: clv_place
+#: model:ir.ui.menu,name:clv_place.menu_groupings_config_config_place_categories
+msgid "Place Categories"
+msgstr "Categorias de Locais"
+
+#. module: clv_place
+#: model:ir.ui.menu,name:clv_place.menu_groupings_groupings_place_places
+msgid "Places"
+msgstr "Locais"
 

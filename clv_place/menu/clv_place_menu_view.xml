@@ -2,26 +2,26 @@
 <openerp>
     <data>
 
-        <!-- Set/Set/Place -->
-        <!--menuitem name="Place" id="menu_set_set_place" 
-            parent="clv_base.menu_set_set"
+        <!-- Groupings/Groupings/Place -->
+        <!--menuitem name="Place" id="menu_groupings_groupings_place" 
+            parent="clv_base.menu_groupings_groupings"
             groups="clv_base.group_place_user"
             sequence="10"/-->
-            <!-- Set/Set/Place/Places -->
-            <menuitem name="Places" id="menu_set_set_place_places"
-                parent="clv_base.menu_set_set"
+            <!-- Groupings/Groupings/Place/Places -->
+            <menuitem name="Places" id="menu_groupings_groupings_place_places"
+                parent="clv_base.menu_groupings_groupings"
                 groups="clv_base.group_place_user"
                 sequence="10"
                 action="clv_place.act_open_clv_place_view"/>
 
-        <!-- Set/Configuration/Configuration/Place -->
-        <!--menuitem name="Place" id="menu_set_config_config_place" 
-            parent="clv_base.menu_set_config_config"
+        <!-- Groupings/Configuration/Configuration/Place -->
+        <!--menuitem name="Place" id="menu_groupings_config_config_place" 
+            parent="clv_base.menu_groupings_config_config"
             groups="clv_base.group_place_user"
             sequence="10"/-->
-            <!-- Set/Configuration/Configuration/Place/Categories -->
-            <menuitem name="Place Categories" id="menu_set_config_config_place_categories"
-                parent="clv_base.menu_set_config_config"
+            <!-- Groupings/Configuration/Configuration/Place/Categories -->
+            <menuitem name="Place Categories" id="menu_groupings_config_config_place_categories"
+                parent="clv_base.menu_groupings_config_config"
                 groups="clv_base.group_place_user"
                 sequence="10"
                 action="clv_place.act_open_clv_place_category_view"/>

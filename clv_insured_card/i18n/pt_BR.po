@@ -45,6 +45,7 @@ msgstr "Ativar"
 #. module: clv_insured_card
 #: field:clv_insured_card,active:0
 #: selection:clv_insured_card,state:0
+#: field:clv_insured_card.batch,active:0
 #: field:clv_insured_card.category,active:0
 #: selection:clv_insured_card.history,state:0
 msgid "Active"
@@ -129,7 +130,7 @@ msgstr "Data..."
 #. module: clv_insured_card
 #: field:clv_insured_card.category,description:0
 msgid "Description"
-msgstr "Description"
+msgstr "Descrição"
 
 #. module: clv_insured_card
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
@@ -275,12 +276,15 @@ msgstr "Cartão..."
 #. module: clv_insured_card
 #: view:clv_annotation:clv_insured_card.view_clv_annotation_form
 #: field:clv_annotation,insured_card_ids:0
+#: view:clv_batch:clv_insured_card.view_clv_batch_form
 #: view:clv_insured:clv_insured_card.view_clv_insured_form_insured_card
 #: field:clv_insured,insured_card_ids:0
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
+#: view:clv_tag:clv_insured_card.view_clv_tag_form
 #: field:clv_tag,insured_card_ids:0
 #: model:ir.actions.act_window,name:clv_insured_card.act_open_clv_insured_card_view
+#: model:ir.ui.menu,name:clv_insured_card.menu_groupings_groupings_batch_batches_insured_cards
 #: model:ir.ui.menu,name:clv_insured_card.menu_insurance_insured_cards
 msgid "Insured Cards"
 msgstr "Cartões"
@@ -327,10 +331,11 @@ msgstr "Novo"
 
 #. module: clv_insured_card
 #: field:clv_insured_card,notes:0
+#: field:clv_insured_card.batch,notes:0
 #: field:clv_insured_card.category,notes:0
 #: field:clv_insured_card.history,notes:0
 msgid "Notes"
-msgstr "Notes"
+msgstr "Notas"
 
 #. module: clv_insured_card
 #: view:clv_insured_card.history:clv_insured_card.view_clv_insured_card_history_form
@@ -375,10 +380,13 @@ msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_insured_card
+#: view:clv_batch:clv_insured_card.view_clv_batch_form
 #: view:clv_insured:clv_insured_card.view_clv_insured_form_insured_card
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_annotation
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_batch
 #: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_history
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_form
 #: view:clv_insured_card.category:clv_insured_card.view_clv_insured_card_category_form
 msgid "Settings"
 msgstr "Configurações"
@@ -390,6 +398,11 @@ msgstr "Configurações"
 #: field:clv_insured_card.history,state:0
 msgid "Status"
 msgstr "Status"
+
+#. module: clv_insured_card
+#: field:clv_insured_card,state_date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
 
 #. module: clv_insured_card
 #: field:clv_insured_card,date:0
@@ -467,4 +480,47 @@ msgstr "Gerente de Cartão"
 #: model:res.groups,name:clv_base.group_insured_card_user
 msgid "Insured Card User"
 msgstr "Usuário de Cartão"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_search
+#: field:clv_insured_card.batch,batch_id:0
+msgid "Batch"
+msgstr "Lote"
+
+#. module: clv_insured_card
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_search
+#: field:clv_insured_card.batch,batch_category:0
+msgid "Batch Category"
+msgstr "Categoria do Lote"
+
+#. module: clv_insured_card
+#: field:clv_batch,insured_card_batch_ids:0
+#: field:clv_insured_card,insured_card_batch_ids:0
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_form
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_search
+#: view:clv_insured_card.batch:clv_insured_card.view_clv_insured_card_batch_tree
+#: model:ir.actions.act_window,name:clv_insured_card.act_open_clv_insured_card_batch_view
+msgid "Insured Card Batches"
+msgstr "Inclusão de Cartões em Lotes"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.batch,seq:0
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.batch,sign_in_date:0
+msgid "Sign in date"
+msgstr "Data de entrada"
+
+#. module: clv_insured_card
+#: field:clv_insured_card.batch,sign_out_date:0
+msgid "Sign out date"
+msgstr "Data de saida"
+
+#. module: clv_insured_card
+#: view:clv_insured_card:clv_insured_card.view_clv_insured_card_form_batch
+#: model:ir.ui.menu,name:clv_insured_card.menu_insurance_insured_cards_batches
+msgid "Batches"
+msgstr "Lotes"
 

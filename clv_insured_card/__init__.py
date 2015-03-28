@@ -25,4 +25,4 @@ import seq
 import wkf
 import history
 import clv_insured
-import clv_batch
+import clv_insured_card_batch

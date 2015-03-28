@@ -314,8 +314,8 @@ msgstr "Categoria Superior..."
 
 #. module: clv_annotation
 #: field:clv_annotation,code:0
-msgid "Reference"
-msgstr "Referência"
+msgid "Code"
+msgstr "Código"
 
 #. module: clv_annotation
 #: view:clv_annotation:clv_annotation.view_clv_annotation_form_wkf
