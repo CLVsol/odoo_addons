@@ -52,8 +52,8 @@ def format_code(code_seq):
 class clv_annotation(models.Model):
     _inherit = 'clv_annotation'
 
-    code = fields.Char('Reference', size=64, select=1, required=False, readonly=False, default='/',
-                       help='Use "/" to get an automatic new Reference.')
+    code = fields.Char('Code', size=64, select=1, required=False, readonly=False, default='/',
+                       help='Use "/" to get an automatic new Code.')
     
     @api.model
     def create(self, vals):

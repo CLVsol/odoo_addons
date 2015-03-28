@@ -24,6 +24,6 @@ import clv_annotation
 import seq
 import wkf
 import history
-import clv_place
-import clv_frame
-import clv_tray
+import clv_batch_place
+import clv_batch_frame
+import clv_batch_tray

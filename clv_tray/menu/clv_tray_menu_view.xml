@@ -2,52 +2,52 @@
 <openerp>
     <data>
 
-        <!-- Set/Set/Place/Places/Trays -->
-        <menuitem name="Trays" id="menu_set_set_place_places_trays"  
-            parent="clv_place.menu_set_set_place_places"
+        <!-- Groupings/Groupings/Place/Places/Trays -->
+        <menuitem name="Trays" id="menu_groupings_groupings_place_places_trays"  
+            parent="clv_place.menu_groupings_groupings_place_places"
             groups="clv_base.group_place_user"
             sequence="30" 
             action="clv_tray.act_open_clv_tray_place_view"/>
 
-        <!-- Set/Set/Frame/Frames/Trays -->
-        <menuitem name="Trays" id="menu_set_set_frame_frames_trays"  
-            parent="clv_frame.menu_set_set_frame_frames"
+        <!-- Groupings/Groupings/Frame/Frames/Trays -->
+        <menuitem name="Trays" id="menu_groupings_groupings_frame_frames_trays"  
+            parent="clv_frame.menu_groupings_groupings_frame_frames"
             groups="clv_base.group_frame_user"
             sequence="30" 
             action="clv_tray.act_open_clv_tray_frame_view"/>
 
-        <!-- Set/Set/Tray -->
-        <!--menuitem name="Tray" id="menu_set_set_tray" 
-            parent="clv_base.menu_set_set"
+        <!-- Groupings/Groupings/Tray -->
+        <!--menuitem name="Tray" id="menu_groupings_groupings_tray" 
+            parent="clv_base.menu_groupings_groupings"
             groups="clv_base.group_tray_user"
             sequence="30"/-->
-            <!-- Set/Set/Tray/Trays -->
-            <menuitem name="Trays" id="menu_set_set_tray_trays" 
-                parent="clv_base.menu_set_set"
+            <!-- Groupings/Groupings/Tray/Trays -->
+            <menuitem name="Trays" id="menu_groupings_groupings_tray_trays" 
+                parent="clv_base.menu_groupings_groupings"
                 groups="clv_base.group_tray_user"
                 sequence="30" 
                 action="clv_tray.act_open_clv_tray_view"/>
-                <!-- Set/Set/Tray/Trays/Places -->
-                <menuitem name="Places" id="menu_set_set_tray_trays_places"  
-                    parent="menu_set_set_tray_trays"
+                <!-- Groupings/Groupings/Tray/Trays/Places -->
+                <menuitem name="Places" id="menu_groupings_groupings_tray_trays_places"  
+                    parent="menu_groupings_groupings_tray_trays"
                     groups="clv_base.group_tray_user"
                     sequence="20" 
                     action="clv_tray.act_open_clv_tray_place_view"/>
-                <!-- Set/Set/Tray/Trays/Frames -->
-                <menuitem name="Frames" id="menu_set_set_tray_trays_frames"  
-                    parent="menu_set_set_tray_trays"
+                <!-- Groupings/Groupings/Tray/Trays/Frames -->
+                <menuitem name="Frames" id="menu_groupings_groupings_tray_trays_frames"  
+                    parent="menu_groupings_groupings_tray_trays"
                     groups="clv_base.group_tray_user"
                     sequence="30" 
                     action="clv_tray.act_open_clv_tray_frame_view"/>
 
-        <!-- Set/Configuration/Configuration/Tray -->
-        <!--menuitem name="Tray" id="menu_set_config_config_tray" 
-            parent="clv_base.menu_set_config_config"
+        <!-- Groupings/Configuration/Configuration/Tray -->
+        <!--menuitem name="Tray" id="menu_groupings_config_config_tray" 
+            parent="clv_base.menu_groupings_config_config"
             groups="clv_base.group_tray_user"
             sequence="30"/-->
-            <!-- Set/Configuration/Configuration/Tray/Categories -->
-            <menuitem name="Tray Categories" id="menu_set_config_config_tray_categories"
-                parent="clv_base.menu_set_config_config"
+            <!-- Groupings/Configuration/Configuration/Tray/Categories -->
+            <menuitem name="Tray Categories" id="menu_groupings_config_config_tray_categories"
+                parent="clv_base.menu_groupings_config_config"
                 groups="clv_base.group_tray_user"
                 sequence="30"
                 action="clv_tray.act_open_clv_tray_category_view"/>

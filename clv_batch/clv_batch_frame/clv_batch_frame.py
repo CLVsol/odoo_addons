@@ -20,44 +20,39 @@
 from openerp.osv import fields, osv
 from datetime import *
 
-class clv_insured_card_batch(osv.Model):
-    _name = 'clv_insured_card.batch'
+class clv_batch_frame(osv.Model):
+    _name = 'clv_batch.frame'
 
     _columns = {
-        'seq': fields.integer('Sequence', required=False),
-        'batch_id': fields.many2one('clv_batch', 'Batch', required=False),
-        'batch_category': fields.related('batch_id', 'name_category', type='char', string='Batch Category', 
-                                         readonly=True, store=True),
-        'insured_card_id': fields.many2one('clv_insured_card', string='Insured Card', help='Insured Card'),
+        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
+        'batch_id': fields.many2one('clv_batch', string='Batch', help='Batch'),
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the insured card batch without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the batch frame without removing it."),
     }
 
-    # _order = "sign_in_date desc"
-    _order = "seq"
+    _order = "sign_in_date desc"
 
     _defaults = {
         'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'active': 1,
     }
 
-class clv_insured_card(osv.osv):
-    _inherit = 'clv_insured_card'
-
-    _columns = {
-        'batch_ids': fields.one2many('clv_insured_card.batch',
-                                     'insured_card_id',
-                                     'Batches'),
-    }
-
 class clv_batch(osv.osv):
     _inherit = 'clv_batch'
 
     _columns = {
-        'insured_card_ids': fields.one2many('clv_insured_card.batch',
-                                            'batch_id',
-                                            'Insured Cards'),
+        'batch_frame_ids': fields.one2many('clv_batch.frame',
+                                           'batch_id',
+                                           'Batch Frames'),
+    }
+
+class clv_frame(osv.osv):
+    _inherit = 'clv_frame'
+
+    _columns = {
+        'batch_frame_ids': fields.one2many('clv_batch.frame',
+                                           'frame_id',
+                                           'Batch Frames'),
     }

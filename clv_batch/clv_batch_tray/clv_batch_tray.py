@@ -29,7 +29,7 @@ class clv_batch_tray(osv.Model):
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the tray without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the batch tray without removing it."),
     }
 
     _order = "sign_in_date desc"
@@ -43,16 +43,16 @@ class clv_batch(osv.osv):
     _inherit = 'clv_batch'
 
     _columns = {
-        'tray_ids': fields.one2many('clv_batch.tray',
-                                    'batch_id',
-                                    'Trays'),
+        'batch_tray_ids': fields.one2many('clv_batch.tray',
+                                          'batch_id',
+                                          'Batch Trays'),
     }
 
 class clv_tray(osv.osv):
     _inherit = 'clv_tray'
 
     _columns = {
-        'batch_ids': fields.one2many('clv_batch.tray',
-                                     'tray_id',
-                                     'Batches'),
+        'batch_tray_ids': fields.one2many('clv_batch.tray',
+                                          'tray_id',
+                                          'Batch Trays'),
     }

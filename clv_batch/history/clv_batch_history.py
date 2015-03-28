@@ -51,7 +51,7 @@ class clv_batch(models.Model):
     history_ids = fields.One2many('clv_batch.history', 'batch_id', 'Batch History', readonly=True)
     active_history = fields.Boolean('Active History', 
                                     help="If unchecked, it will allow you to disable the history without removing it.",
-                                    default=False)
+                                    default=True)
 
     @api.one
     def insert_clv_batch_history(self, batch_id, state, notes):

@@ -62,8 +62,9 @@ msgstr "Data da Ativação"
 #: field:clv_tray,active:0
 #: selection:clv_tray,state:0
 #: field:clv_tray.category,active:0
+#: field:clv_tray.frame,active:0
 #: selection:clv_tray.history,state:0
-#: field:clv_tray.placement,active:0
+#: field:clv_tray.place,active:0
 msgid "Active"
 msgstr "Ativo"
 
@@ -208,7 +209,7 @@ msgstr "ID"
 #. module: clv_tray
 #: help:clv_tray,active_history:0
 msgid "If unchecked, it will allow you to disable the history without removing it."
-msgstr "Se desmarcado, será possível desmarcar o histórico sem removê-lo."
+msgstr "Se desmarcado, será possível desabilitar o histórico sem removê-lo."
 
 #. module: clv_tray
 #: help:clv_tray.category,active:0
@@ -216,14 +217,19 @@ msgid "If unchecked, it will allow you to hide the category without removing it.
 msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
 
 #. module: clv_tray
-#: help:clv_tray.placement,active:0
-msgid "If unchecked, it will allow you to hide the placement without removing it."
-msgstr "If unchecked, it will allow you to hide the placement without removing it."
-
-#. module: clv_tray
 #: help:clv_tray,active:0
 msgid "If unchecked, it will allow you to hide the tray without removing it."
 msgstr "Se desmarcado, será possível esconder a bandeja sem removê-la."
+
+#. module: clv_tray
+#: help:clv_tray.frame,active:0
+msgid "If unchecked, it will allow you to hide the tray frame without removing it."
+msgstr "Se desmarcado, será possível esconder o posicionamento da bandeja sem removê-lo."
+
+#. module: clv_tray
+#: help:clv_tray.place,active:0
+msgid "If unchecked, it will allow you to hide the tray place without removing it."
+msgstr "Se desmarcado, será possível esconder o posicionamento da bandeja sem removê-lo."
 
 #. module: clv_tray
 #: view:clv_tray:clv_tray.view_clv_tray_form_wkf
@@ -293,13 +299,19 @@ msgstr "Novo"
 #. module: clv_tray
 #: field:clv_tray,notes:0
 #: field:clv_tray.category,notes:0
+#: field:clv_tray.frame,notes:0
 #: field:clv_tray.history,notes:0
-#: field:clv_tray.placement,notes:0
+#: field:clv_tray.place,notes:0
 msgid "Notes"
 msgstr "Notas"
 
 #. module: clv_tray
 #: view:clv_tray.placement:clv_tray.view_clv_tray_placement_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_tray
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_form
 msgid "Notes..."
 msgstr "Notas..."
 
@@ -337,24 +349,28 @@ msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_tray
+#: view:clv_frame:clv_tray.view_clv_frame_form
+#: view:clv_place:clv_tray.view_clv_place_form
 #: view:clv_tray:clv_tray.view_clv_tray_form
 #: view:clv_tray:clv_tray.view_clv_tray_form_annotation
+#: view:clv_tray:clv_tray.view_clv_tray_form_frame
 #: view:clv_tray:clv_tray.view_clv_tray_form_history
-#: view:clv_tray:clv_tray.view_clv_tray_form_placement
+#: view:clv_tray:clv_tray.view_clv_tray_form_place
 #: view:clv_tray.category:clv_tray.view_clv_tray_category_form
-#: view:clv_tray.placement:clv_tray.view_clv_tray_placement_form
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_form
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_form
 msgid "Settings"
 msgstr "Configurações"
 
 #. module: clv_tray
 #: field:clv_tray.placement,sign_in_date:0
 msgid "Sign in date"
-msgstr "Data de Entrada"
+msgstr "Data de entrada"
 
 #. module: clv_tray
 #: field:clv_tray.placement,sign_out_date:0
 msgid "Sign out date"
-msgstr "Data de Saída"
+msgstr "Data de saida"
 
 #. module: clv_tray
 #: view:clv_tray:clv_tray.view_clv_tray_form
@@ -405,10 +421,13 @@ msgstr "Etiquetas..."
 #: view:clv_tray:clv_tray.view_clv_tray_form_wkf
 #: view:clv_tray:clv_tray.view_clv_tray_search
 #: field:clv_tray,name:0
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_search
+#: field:clv_tray.frame,tray_id:0
+#: help:clv_tray.frame,tray_id:0
 #: field:clv_tray.history,tray_id:0
-#: view:clv_tray.placement:clv_tray.view_clv_tray_placement_search
-#: field:clv_tray.placement,tray_id:0
-#: help:clv_tray.placement,tray_id:0
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_search
+#: field:clv_tray.place,tray_id:0
+#: help:clv_tray.place,tray_id:0
 msgid "Tray"
 msgstr "Bandeja"
 
@@ -508,4 +527,76 @@ msgstr "Gerente de Bandeja"
 #: model:res.groups,name:clv_base.group_tray_user
 msgid "Tray User"
 msgstr "Usuário de Bandeja"
+
+#. module: clv_tray
+#: view:clv_tray:clv_tray.view_clv_tray_form_frame
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_groupings_tray_trays_frames
+msgid "Frames"
+msgstr "Estruturas"
+
+#. module: clv_tray
+#: view:clv_tray:clv_tray.view_clv_tray_form_place
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_groupings_tray_trays_places
+msgid "Places"
+msgstr "Locais"
+
+#. module: clv_tray
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_config_config_tray_categories
+msgid "Tray Categories"
+msgstr "Categorias de Bandejas"
+
+#. module: clv_tray
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_groupings_frame_frames_trays
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_groupings_place_places_trays
+#: model:ir.ui.menu,name:clv_tray.menu_groupings_groupings_tray_trays
+msgid "Trays"
+msgstr "Bandejas"
+
+#. module: clv_tray
+#: field:clv_tray.frame,frame_id:0
+msgid "Frame"
+msgstr "Estrutura"
+
+#. module: clv_tray
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_search
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_search
+#: field:clv_tray.place,place_id:0
+msgid "Place"
+msgstr "Local"
+
+#. module: clv_tray
+#: field:clv_tray.frame,sign_in_date:0
+#: field:clv_tray.place,sign_in_date:0
+msgid "Sign in date"
+msgstr "Data de entrada"
+
+#. module: clv_tray
+#: field:clv_tray.frame,sign_out_date:0
+#: field:clv_tray.place,sign_out_date:0
+msgid "Sign out date"
+msgstr "Data de saida"
+
+#. module: clv_tray
+#: field:clv_tray,tray_frame_ids:0
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_form
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_search
+#: view:clv_tray.frame:clv_tray.view_clv_tray_frame_tree
+#: model:ir.actions.act_window,name:clv_tray.act_open_clv_tray_frame_view
+msgid "Tray Frames"
+msgstr "Posicionamento de Bandejas"
+
+#. module: clv_tray
+#: field:clv_frame,tray_frame_ids:0
+msgid "Tray Frames"
+msgstr "Posicionamento de Bandejas"
+
+#. module: clv_tray
+#: field:clv_place,tray_place_ids:0
+#: field:clv_tray,tray_place_ids:0
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_form
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_search
+#: view:clv_tray.place:clv_tray.view_clv_tray_place_tree
+#: model:ir.actions.act_window,name:clv_tray.act_open_clv_tray_place_view
+msgid "Tray Places"
+msgstr "Posicionamento de Bandejas"
 

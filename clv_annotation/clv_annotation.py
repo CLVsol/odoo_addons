@@ -25,7 +25,7 @@ class clv_annotation(models.Model):
     _name = 'clv_annotation'
 
     name = fields.Char('Subject', size=64, select=1, required=True)
-    code = fields.Char ('Annotation Code',size=128, required=False)
+    code = fields.Char ('Code',size=128, required=False)
     author = fields.Many2one('res.users', 'Author', required=True, readonly=True,
                              default=lambda self: self._uid)
     date = fields.Datetime("Date", required=True, readonly=True,

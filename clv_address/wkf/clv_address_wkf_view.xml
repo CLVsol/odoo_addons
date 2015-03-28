@@ -41,7 +41,7 @@
                     <field name="state" />
                 </field>
                 <filter string="Street" position="before">
-                    <filter string="Stage" domain="[]" context="{'group_by':'state'}" />
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}" />
                 </filter>
             </field>
         </record>
