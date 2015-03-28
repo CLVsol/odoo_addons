@@ -72,7 +72,7 @@ msgstr "Anotação para"
 #: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_annotation
 #: field:clv_insured_mng,annotation_ids:0
 msgid "Annotations"
-msgstr "Annotations"
+msgstr "Anotações"
 
 #. module: clv_insured_mng
 #: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
@@ -599,4 +599,20 @@ msgstr "Gerente de Beneficiário (Gerenciamento)"
 #: model:res.groups,name:clv_base.group_insured_mng_user
 msgid "Insured Management User"
 msgstr "Usuário de Beneficiário (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search
+#: field:clv_insured_mng,batch_name:0
+msgid "Batch Name"
+msgstr "Nome do Lote"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Batch Name..."
+msgstr "Nome do Lote..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,age:0
+msgid "Age"
+msgstr "Idade"
 
