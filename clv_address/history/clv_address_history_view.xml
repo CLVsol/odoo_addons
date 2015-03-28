@@ -48,7 +48,7 @@
                             </h3>
                             <label for="state" class="oe_edit_only"/>
                             <h3>
-                                <field name="state" placeholder="Stage..." readonly="True"/>
+                                <field name="state" placeholder="Status..." readonly="True"/>
                             </h3>
                             <label for="notes" class="oe_edit_only"/>
                             <field name="notes" placeholder="Notes..."/>
