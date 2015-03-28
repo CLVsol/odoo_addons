@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-24 14:58+0000\n"
-"PO-Revision-Date: 2015-02-24 14:58+0000\n"
+"POT-Creation-Date: 2015-03-27 13:53+0000\n"
+"PO-Revision-Date: 2015-03-27 13:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; chargroupings=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_agro
+#: model:ir.ui.menu,name:clv_base.menu_agro_agro
+msgid "Agro"
+msgstr "Agro"
 
 #. module: clv_base
 #: model:ir.ui.menu,name:clv_base.menu_base
@@ -47,12 +53,32 @@ msgid "Base User"
 msgstr "Usuário Básico"
 
 #. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_commutity
+#: model:ir.ui.menu,name:clv_base.menu_commutity_community
+msgid "Community"
+msgstr "Comunidade"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_agro_config
+#: model:ir.ui.menu,name:clv_base.menu_agro_config_config
 #: model:ir.ui.menu,name:clv_base.menu_base_config
 #: model:ir.ui.menu,name:clv_base.menu_base_config_config
+#: model:ir.ui.menu,name:clv_base.menu_commutity_community_config
+#: model:ir.ui.menu,name:clv_base.menu_health_health_config
 #: model:ir.ui.menu,name:clv_base.menu_insurance_config
 #: model:ir.ui.menu,name:clv_base.menu_insurance_config_config
+#: model:ir.ui.menu,name:clv_base.menu_pharmacy_config
+#: model:ir.ui.menu,name:clv_base.menu_pharmacy_config_config
+#: model:ir.ui.menu,name:clv_base.menu_groupings_config
+#: model:ir.ui.menu,name:clv_base.menu_groupings_config_config
 msgid "Configuration"
 msgstr "Configurações"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_health
+#: model:ir.ui.menu,name:clv_base.menu_health_health
+msgid "Health"
+msgstr "Saúde"
 
 #. module: clv_base
 #: model:ir.ui.menu,name:clv_base.menu_insurance
@@ -66,4 +92,21 @@ msgstr "Planos"
 #: model:ir.ui.menu,name:clv_base.menu_insurance_insured
 msgid "Insured"
 msgstr "Beneficiários"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_pharmacy_config_config_medicament
+#: model:ir.ui.menu,name:clv_base.menu_pharmacy_medicament
+msgid "Medicament"
+msgstr "Medicamento"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_pharmacy
+msgid "Pharmacy"
+msgstr "Farmácia"
+
+#. module: clv_base
+#: model:ir.ui.menu,name:clv_base.menu_groupings
+#: model:ir.ui.menu,name:clv_base.menu_groupings_groupings
+msgid "Groupings"
+msgstr "Agrupamentos"
 

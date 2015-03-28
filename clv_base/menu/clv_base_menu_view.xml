@@ -22,23 +22,23 @@
                     groups="clv_base.group_base_manager"
                     sequence="90"/>
 
-        <!-- Set -->
-        <menuitem name="Set" id="menu_set" 
+        <!-- Groupings -->
+        <menuitem name="Groupings" id="menu_groupings" 
             groups="clv_base.group_base_user"
             sequence="12"/>
-            <!-- Set/Set -->
-            <menuitem name="Set" id="menu_set_set"  
-                parent="menu_set"
+            <!-- Groupings/Groupings -->
+            <menuitem name="Groupings" id="menu_groupings_groupings"  
+                parent="menu_groupings"
                 groups="clv_base.group_base_user"
                 sequence="10"/>
-            <!-- Set/Configuration -->
-            <menuitem name="Configuration" id="menu_set_config"  
-                parent="menu_set"
+            <!-- Groupings/Configuration -->
+            <menuitem name="Configuration" id="menu_groupings_config"  
+                parent="menu_groupings"
                 groups="clv_base.group_base_manager"
                 sequence="90"/>
-                <!-- Set/Configuration/Configuration -->
-                <menuitem name="Configuration" id="menu_set_config_config"  
-                    parent="menu_set_config"
+                <!-- Groupings/Configuration/Configuration -->
+                <menuitem name="Configuration" id="menu_groupings_config_config"  
+                    parent="menu_groupings_config"
                     groups="clv_base.group_base_manager"
                     sequence="90"/>
 
