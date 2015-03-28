@@ -43,16 +43,16 @@ class clv_batch(osv.osv):
     _inherit = 'clv_batch'
 
     _columns = {
-        'place_ids': fields.one2many('clv_batch.place',
-                                     'batch_id',
-                                     'Places'),
+        'batch_place_ids': fields.one2many('clv_batch.place',
+                                           'batch_id',
+                                           'Batch Places'),
     }
 
 class clv_place(osv.osv):
     _inherit = 'clv_place'
 
     _columns = {
-        'batch_ids': fields.one2many('clv_batch.place',
-                                     'place_id',
-                                     'Batches'),
+        'batch_place_ids': fields.one2many('clv_batch.place',
+                                           'place_id',
+                                           'Batch Places'),
     }

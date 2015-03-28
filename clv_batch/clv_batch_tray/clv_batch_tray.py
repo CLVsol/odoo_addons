@@ -20,16 +20,16 @@
 from openerp.osv import fields, osv
 from datetime import *
 
-class clv_batch_frame(osv.Model):
-    _name = 'clv_batch.frame'
+class clv_batch_tray(osv.Model):
+    _name = 'clv_batch.tray'
 
     _columns = {
-        'frame_id': fields.many2one('clv_frame', 'Frame', required=False),
+        'tray_id': fields.many2one('clv_tray', 'Tray', required=False),
         'batch_id': fields.many2one('clv_batch', string='Batch', help='Batch'),
         'sign_in_date': fields.datetime("Sign in date", required=False),
         'sign_out_date': fields.datetime("Sign out date", required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the frame without removing it."),
+        'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the batch tray without removing it."),
     }
 
     _order = "sign_in_date desc"
@@ -43,16 +43,16 @@ class clv_batch(osv.osv):
     _inherit = 'clv_batch'
 
     _columns = {
-        'frame_ids': fields.one2many('clv_batch.frame',
-                                     'batch_id',
-                                     'Frames'),
+        'batch_tray_ids': fields.one2many('clv_batch.tray',
+                                          'batch_id',
+                                          'Batch Trays'),
     }
 
-class clv_frame(osv.osv):
-    _inherit = 'clv_frame'
+class clv_tray(osv.osv):
+    _inherit = 'clv_tray'
 
     _columns = {
-        'batch_ids': fields.one2many('clv_batch.frame',
-                                     'frame_id',
-                                     'Batches'),
+        'batch_tray_ids': fields.one2many('clv_batch.tray',
+                                          'tray_id',
+                                          'Batch Trays'),
     }

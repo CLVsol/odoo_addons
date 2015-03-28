@@ -2,65 +2,65 @@
 <openerp>
     <data>
 
-        <!-- Set/Set/Place/Places/Batches -->
-        <menuitem name="Batches" id="menu_set_set_place_places_batches"  
-            parent="clv_place.menu_set_set_place_places"
+        <!-- Groupings/Groupings/Place/Places/Batches -->
+        <menuitem name="Batches" id="menu_groupings_groupings_place_places_batches"  
+            parent="clv_place.menu_groupings_groupings_place_places"
             groups="clv_base.group_place_user"
             sequence="40" 
             action="clv_batch.act_open_clv_batch_place_view"/>
 
-        <!-- Set/Set/Frame/Frames/Batches -->
-        <menuitem name="Batches" id="menu_set_set_frame_frames_batches"  
-            parent="clv_frame.menu_set_set_frame_frames"
+        <!-- Groupings/Groupings/Frame/Frames/Batches -->
+        <menuitem name="Batches" id="menu_groupings_groupings_frame_frames_batches"  
+            parent="clv_frame.menu_groupings_groupings_frame_frames"
             groups="clv_base.group_frame_user"
             sequence="40" 
             action="clv_batch.act_open_clv_batch_frame_view"/>
 
-        <!-- Set/Set/Tray/Trays/Batches -->
-        <menuitem name="Batches" id="menu_set_set_tray_trays_batches"  
-            parent="clv_tray.menu_set_set_tray_trays"
+        <!-- Groupings/Groupings/Tray/Trays/Batches -->
+        <menuitem name="Batches" id="menu_groupings_groupings_tray_trays_batches"  
+            parent="clv_tray.menu_groupings_groupings_tray_trays"
             groups="clv_base.group_tray_user"
             sequence="40" 
             action="clv_batch.act_open_clv_batch_tray_view"/>
 
-        <!-- Set/Set/Batch -->
-        <!--menuitem name="Batch" id="menu_set_set_batch" 
-            parent="clv_base.menu_set_set"
+        <!-- Groupings/Groupings/Batch -->
+        <!--menuitem name="Batch" id="menu_groupings_groupings_batch" 
+            parent="clv_base.menu_groupings_groupings"
             groups="clv_base.group_batch_user"
             sequence="40"/-->
-            <!-- Set/Set/Batch/Batches -->
-            <menuitem name="Batches" id="menu_set_set_batch_batches"
-                parent="clv_base.menu_set_set"
+            <!-- Groupings/Groupings/Batch/Batches -->
+            <menuitem name="Batches" id="menu_groupings_groupings_batch_batches"
+                parent="clv_base.menu_groupings_groupings"
                 groups="clv_base.group_batch_user"
                 sequence="40"
                 action="clv_batch.act_open_clv_batch_view"/>
-                <!-- Set/Set/Batch/Batches/Places -->
-                <menuitem name="Places" id="menu_set_set_batch_batches_places"  
-                    parent="menu_set_set_batch_batches"
+                <!-- Groupings/Groupings/Batch/Batches/Places -->
+                <menuitem name="Places" id="menu_groupings_groupings_batch_batches_places"  
+                    parent="menu_groupings_groupings_batch_batches"
                     groups="clv_base.group_batch_user"
                     sequence="10" 
                     action="clv_batch.act_open_clv_batch_place_view"/>
-                <!-- Set/Set/Batch/Batches/Frames -->
-                <menuitem name="Frames" id="menu_set_set_batch_batches_frames"  
-                    parent="menu_set_set_batch_batches"
+                <!-- Groupings/Groupings/Batch/Batches/Frames -->
+                <menuitem name="Frames" id="menu_groupings_groupings_batch_batches_frames"  
+                    parent="menu_groupings_groupings_batch_batches"
                     groups="clv_base.group_batch_user"
                     sequence="20" 
                     action="clv_batch.act_open_clv_batch_frame_view"/>
-                <!-- Set/Set/Batch/Batches/Trays -->
-                <menuitem name="Trays" id="menu_set_set_batch_batches_trays"  
-                    parent="menu_set_set_batch_batches"
+                <!-- Groupings/Groupings/Batch/Batches/Trays -->
+                <menuitem name="Trays" id="menu_groupings_groupings_batch_batches_trays"  
+                    parent="menu_groupings_groupings_batch_batches"
                     groups="clv_base.group_batch_user"
                     sequence="30" 
                     action="clv_batch.act_open_clv_batch_tray_view"/>
 
-        <!-- Set/Configuration/Configuration/Batch -->
-        <!--menuitem name="Batch" id="menu_set_config_config_batch" 
-            parent="clv_base.menu_set_config_config"
+        <!-- Groupings/Configuration/Configuration/Batch -->
+        <!--menuitem name="Batch" id="menu_groupings_config_config_batch" 
+            parent="clv_base.menu_groupings_config_config"
             groups="clv_base.group_batch_user"
             sequence="40"/-->
-            <!-- Set/Configuration/Configuration/Batch/Categories -->
-            <menuitem name="Batch Categories" id="menu_set_config_config_batch_categories"
-                parent="clv_base.menu_set_config_config"
+            <!-- Groupings/Configuration/Configuration/Batch/Categories -->
+            <menuitem name="Batch Categories" id="menu_groupings_config_config_batch_categories"
+                parent="clv_base.menu_groupings_config_config"
                 groups="clv_base.group_batch_user"
                 sequence="40"
                 action="clv_batch.act_open_clv_batch_category_view"/>
