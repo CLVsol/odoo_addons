@@ -23,6 +23,13 @@
             <field name="action">button_done()</field>
         </record>
 
+        <record id="act_canceled" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_medicament_mng" />
+            <field name="name">canceled</field>
+            <field name="kind">function</field>
+            <field name="action">button_cancel()</field>
+        </record>
+
         <record id="act_revised" model="workflow.activity">
             <field name="wkf_id" ref="workflow_clv_medicament_mng" />
             <field name="name">revised</field>
@@ -89,6 +96,30 @@
             <field name="act_from" ref="act_waiting" />
             <field name="act_to" ref="act_revised" />
             <field name="signal">button_revised</field>
+        </record>
+
+        <record id="t10" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_canceled" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+        <record id="t11" model="workflow.transition">
+            <field name="act_from" ref="act_revised" />
+            <field name="act_to" ref="act_canceled" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+        <record id="t12" model="workflow.transition">
+            <field name="act_from" ref="act_waiting" />
+            <field name="act_to" ref="act_canceled" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+        <record id="t13" model="workflow.transition">
+            <field name="act_from" ref="act_done" />
+            <field name="act_to" ref="act_canceled" />
+            <field name="signal">button_cancel</field>
         </record>
 
     </data>

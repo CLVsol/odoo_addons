@@ -24,9 +24,10 @@ class clv_medicament_mng(osv.osv):
 
     _columns = {
         'state': fields.selection([('new','New'),
-                                   ('done','Done'),
                                    ('revised','Revised'),
-                                   ('waiting','Waiting')
+                                   ('waiting','Waiting'),
+                                   ('done','Done'),
+                                   ('canceled','Canceled'),
                                    ], string='Status', readonly=True, required=True, help=""),
         }
     
@@ -37,11 +38,15 @@ class clv_medicament_mng(osv.osv):
     def button_new(self, cr, uid, ids):
         self.write(cr, uid, ids, {'state': 'new'})
 
-    def button_done(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'state': 'done'})
-
     def button_revised(self, cr, uid, ids):
         self.write(cr, uid, ids, {'state': 'revised'})
 
     def button_waiting(self, cr, uid, ids):
         self.write(cr, uid, ids, {'state': 'waiting'})
+
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
+
+    def button_cancel(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'canceled'})
+
