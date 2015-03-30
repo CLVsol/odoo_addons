@@ -26,7 +26,8 @@ class clv_insured_mng(models.Model):
     state = fields.Selection([('draft','Draft'),
                               ('revised','Revised'),
                               ('waiting','Waiting'),
-                              ('done','Done')
+                              ('done','Done'),
+                              ('canceled','Canceled')
                               ], string='Status', default='draft', readonly=True, required=True, help="")
 
     @api.one
@@ -48,3 +49,8 @@ class clv_insured_mng(models.Model):
     def button_done(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'done'
+
+    @api.one
+    def button_cancel(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'
