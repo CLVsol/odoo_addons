@@ -22,10 +22,12 @@
             <field name="arch" type="xml">
                 <sheet string="Insured (Management)" position="before">
                     <header>
-                        <button string="Revised" name="button_revised" states="draft,waiting,done" type="workflow" groups="clv_base.group_insured_mng_manager"/>
-                        <button string="Waiting" name="button_waiting" states="draft,revised" type="workflow" groups="clv_base.group_insured_mng_manager"/>
-                        <button string="Done" name="button_done" states="draft,revised,waiting" type="workflow" groups="clv_base.group_insured_mng_manager" class="oe_highlight"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done"/>
+                        <button string="Revised" name="button_revised" states="draft,waiting" type="workflow" groups="clv_base.group_insured_mng_manager"/>
+                        <button string="Waiting" name="button_waiting" states="revised" type="workflow" groups="clv_base.group_insured_mng_manager"/>
+                        <!--button string="Done" name="button_done" states="revised,waiting" type="workflow" groups="clv_base.group_insured_mng_manager" class="oe_highlight"/-->
+                        <button string="Done" name="button_done" states="revised,waiting" type="workflow" groups="clv_base.group_insured_mng_manager"/>
+                        <button string="Cancel" name="button_cancel" states="draft,revised,waiting" type="workflow" groups="clv_base.group_insured_mng_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done,canceled"/>
                     </header>
                 </sheet>
             </field>

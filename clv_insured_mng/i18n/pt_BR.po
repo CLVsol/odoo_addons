@@ -616,3 +616,14 @@ msgstr "Nome do Lote..."
 msgid "Age"
 msgstr "Idade"
 
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+

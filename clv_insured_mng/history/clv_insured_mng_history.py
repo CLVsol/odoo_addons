@@ -29,7 +29,8 @@ class clv_insured_mng_history(models.Model):
     state = fields.Selection([('draft','Draft'),
                               ('revised','Revised'),
                               ('waiting','Waiting'),
-                              ('done','Done')
+                              ('done','Done'),
+                              ('canceled','Canceled')
                               ], string='Status', default='draft', readonly=True, required=True, help="")
     notes = fields.Text(string='Notes')
     
@@ -88,3 +89,9 @@ class clv_insured_mng(models.Model):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'done'
         self.insert_clv_insured_mng_history(self.id, 'done', '')
+
+    @api.one
+    def button_cancel(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'
+        self.insert_clv_insured_mng_history(self.id, 'canceled', '')

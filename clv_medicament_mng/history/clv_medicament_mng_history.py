@@ -30,9 +30,10 @@ class clv_medicament_mng_history(osv.osv):
         'user_id':fields.many2one ('res.users', 'User', required=True),
         'date': fields.datetime("Date", required=True),
         'state': fields.selection([('new','New'),
-                                   ('done','Done'),
                                    ('revised','Revised'),
                                    ('waiting','Waiting'),
+                                   ('done','Done'),
+                                   ('canceled','Canceled'),
                                    ], string='Status', readonly=True, required=True, help=""),
         'notes': fields.text(string='Notes'),
         }
@@ -92,11 +93,6 @@ class clv_medicament_mng(osv.osv):
         for medicament_mng in self.browse(cr, uid, ids):
             self.insert_clv_medicament_mng_history(cr, uid, medicament_mng.active_history, medicament_mng.id, 'new', '')
 
-    def button_done(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'state': 'done'})
-        for medicament_mng in self.browse(cr, uid, ids):
-            self.insert_clv_medicament_mng_history(cr, uid, medicament_mng.active_history, medicament_mng.id, 'done', '')
-
     def button_revised(self, cr, uid, ids):
         self.write(cr, uid, ids, {'state': 'revised'})
         for medicament_mng in self.browse(cr, uid, ids):
@@ -106,3 +102,13 @@ class clv_medicament_mng(osv.osv):
         self.write(cr, uid, ids, {'state': 'waiting'})
         for medicament_mng in self.browse(cr, uid, ids):
             self.insert_clv_medicament_mng_history(cr, uid, medicament_mng.active_history, medicament_mng.id, 'waiting', '')
+
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
+        for medicament_mng in self.browse(cr, uid, ids):
+            self.insert_clv_medicament_mng_history(cr, uid, medicament_mng.active_history, medicament_mng.id, 'done', '')
+
+    def button_cancel(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'canceled'})
+        for medicament_mng in self.browse(cr, uid, ids):
+            self.insert_clv_medicament_mng_history(cr, uid, medicament_mng.active_history, medicament_mng.id, 'canceled', '')
