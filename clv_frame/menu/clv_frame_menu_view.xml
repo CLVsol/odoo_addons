@@ -2,37 +2,37 @@
 <openerp>
     <data>
 
-        <!-- Grouipings/Grouipings/Place/Places/Frames -->
+        <!-- Groupings/Groupings/Place/Places/Frames -->
         <menuitem name="Frames" id="menu_groupings_groupings_place_places_frames"  
             parent="clv_place.menu_groupings_groupings_place_places"
             groups="clv_base.group_place_user"
             sequence="20" 
             action="clv_frame.act_open_clv_frame_place_view"/>
 
-        <!-- Grouipings/Grouipings/Frame -->
+        <!-- Groupings/Groupings/Frame -->
         <!--menuitem name="Frame" id="menu_groupings_groupings_frame" 
             parent="clv_base.menu_groupings_groupings"
             groups="clv_base.group_frame_user"
             sequence="20"/-->
-            <!-- Grouipings/Grouipings/Frame/Frames -->
+            <!-- Groupings/Groupings/Frame/Frames -->
             <menuitem name="Frames" id="menu_groupings_groupings_frame_frames"
                 parent="clv_base.menu_groupings_groupings"
                 groups="clv_base.group_frame_user"
                 sequence="20"
                 action="clv_frame.act_open_clv_frame_view"/>
-                <!-- Grouipings/Grouipings/Frame/Frames/Places -->
+                <!-- Groupings/Groupings/Frame/Frames/Places -->
                 <menuitem name="Places" id="menu_groupings_groupings_frame_frames_places"  
                     parent="menu_groupings_groupings_frame_frames"
                     groups="clv_base.group_frame_user"
                     sequence="20" 
                     action="clv_frame.act_open_clv_frame_place_view"/>
 
-        <!-- Grouipings/Configuration/Configuration/Frame -->
+        <!-- Groupings/Configuration/Configuration/Frame -->
         <!--menuitem name="Frame" id="menu_groupings_config_config_frame" 
             parent="clv_base.menu_groupings_config_config"
             groups="clv_base.group_frame_user"
             sequence="20"/-->
-            <!-- Grouipings/Configuration/Configuration/Frame/Categories -->
+            <!-- Groupings/Configuration/Configuration/Frame/Categories -->
             <menuitem name="Frame Categories" id="menu_groupings_config_config_frame_categories"
                 parent="clv_base.menu_groupings_config_config"
                 groups="clv_base.group_frame_user"
