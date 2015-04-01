@@ -2,30 +2,30 @@
 <openerp>
     <data>
 
-        <!-- Set/Set/Place/Places/Seedlings -->
-        <menuitem name="Seedlings" id="menu_set_set_place_places_seedlings"  
-            parent="clv_place.menu_set_set_place_places"
+        <!-- Groupings/Groupings/Place/Places/Seedlings -->
+        <menuitem name="Seedlings" id="menu_groupings_groupings_place_places_seedlings"  
+            parent="clv_place.menu_groupings_groupings_place_places"
             groups="clv_base.group_place_user"
             sequence="50" 
             action="clv_seedling.act_open_clv_seedling_place_view"/>
 
-        <!-- Set/Set/Frame/Frames/Seedlings -->
-        <menuitem name="Seedlings" id="menu_set_set_frame_frames_seedling"  
-            parent="clv_frame.menu_set_set_frame_frames"
+        <!-- Groupings/Groupings/Frame/Frames/Seedlings -->
+        <menuitem name="Seedlings" id="menu_groupings_groupings_frame_frames_seedling"  
+            parent="clv_frame.menu_groupings_groupings_frame_frames"
             groups="clv_base.group_frame_user"
             sequence="50" 
             action="clv_seedling.act_open_clv_seedling_frame_view"/>
 
-        <!-- Set/Set/Tray/Trays/Seedlings -->
-        <menuitem name="Seedlings" id="menu_set_set_tray_trays_seedlings"  
-            parent="clv_tray.menu_set_set_tray_trays"
+        <!-- Groupings/Groupings/Tray/Trays/Seedlings -->
+        <menuitem name="Seedlings" id="menu_groupings_groupings_tray_trays_seedlings"  
+            parent="clv_tray.menu_groupings_groupings_tray_trays"
             groups="clv_base.group_tray_user"
             sequence="50" 
             action="clv_seedling.act_open_clv_seedling_tray_view"/>
 
-        <!-- Set/Set/Batch/Batches/Seedlings -->
-        <menuitem name="Seedlings" id="menu_set_set_batch_batches_seedlings"  
-            parent="clv_batch.menu_set_set_batch_batches"
+        <!-- Groupings/Groupings/Batch/Batches/Seedlings -->
+        <menuitem name="Seedlings" id="menu_groupings_groupings_batch_batches_seedlings"  
+            parent="clv_batch.menu_groupings_groupings_batch_batches"
             groups="clv_base.group_batch_user"
             sequence="40" 
             action="clv_seedling.act_open_clv_seedling_batch_view"/>
