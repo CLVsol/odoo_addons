@@ -10,10 +10,8 @@
         <record id="clv_medicament.seq_clv_medicament_category" model="ir.sequence">
             <field name="name">Medicament Category Sequence</field>
             <field name="code">clv_medicament.category.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
-            <field name="padding" eval="8"/>
-            <field name="prefix">089</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
         </record>
 
     </data>

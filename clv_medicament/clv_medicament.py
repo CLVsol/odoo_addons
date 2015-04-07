@@ -20,18 +20,55 @@
 from openerp.osv import fields, osv
 from datetime import datetime
 
+def ean_checksum(eancode):
+    """returns the checksum of an ean string of length 13, returns -1 if the string has the wrong length"""
+    if len(eancode) != 13:
+        return -1
+    oddsum=0
+    evensum=0
+    total=0
+    eanvalue=eancode
+    reversevalue = eanvalue[::-1]
+    finalean=reversevalue[1:]
+
+    for i in range(len(finalean)):
+        if i % 2 == 0:
+            oddsum += int(finalean[i])
+        else:
+            evensum += int(finalean[i])
+    total=(oddsum * 3) + evensum
+
+    check = int(10 - math.ceil(total % 10.0)) %10
+    return check
+
+def check_ean(eancode):
+    """returns True if eancode is a valid ean13 string, or null"""
+    if not eancode:
+        return True
+    if len(eancode) != 13:
+        return False
+    try:
+        int(eancode)
+    except:
+        return False
+    return ean_checksum(eancode) == int(eancode[-1])
+
 class clv_medicament(osv.osv):
     _name = 'clv_medicament'
-    _inherits={
-        'product.product': 'product_id',
-        }
+    # _inherits={
+    #     'product.product': 'product_id',
+    #     }
 
     _columns = {
-        'product_id': fields.many2one('product.product', 'Product', required=True,
-                                      ondelete='cascade', help='Product-related data of the medicament'),
-        #we need a related field in order to be able to sort the medicament by name
-        'name_product': fields.related('product_id', 'name', type='char', string='Related Product', 
-                                       readonly=True, store=True),
+        # 'name' : fields.char('Name', select=True, required=True, translate=True),
+        'name' : fields.char('Name', select=True, required=True),
+        'ean13': fields.char('EAN13 Barcode', size=13, 
+                             help="International Article Number used for product identification."),
+        # 'product_id': fields.many2one('product.product', 'Product', required=True,
+        #                               ondelete='cascade', help='Product-related data of the medicament'),
+        # #we need a related field in order to be able to sort the medicament by name
+        # 'name_product': fields.related('product_id', 'name', type='char', string='Related Product', 
+        #                                readonly=True, store=True),
         'code': fields.char(size=64, string='Medicament Code', required=False),
         'medicament_name': fields.char(size=256, string='Name'),
         'concentration': fields.char(size=256, string='Concentration'),
@@ -86,10 +123,6 @@ class clv_medicament(osv.osv):
         # 'pregnancy': fields.text(string='Pregnancy and Lactancy', 
         #                          help='Warnings for Pregnant Women'),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
-        # 'date_medicament_inclusion' : fields.date('Medicament Inclusion Date'),
-        # 'date_medicament_activation' : fields.date('Medicament Activation Date'),
-        # 'date_medicament_inactivation' : fields.date('Medicament Inactivation Date'),
-        # 'date_medicament_suspension' : fields.date('Medicament Suspension Date'),
         # 'medicament_rgss': fields.selection([('U', 'Undefined'),
         #                                      ('R', 'Reference'),
         #                                      ('G', 'Generic'),
@@ -100,9 +133,12 @@ class clv_medicament(osv.osv):
                                              help='Medicament Therapeutic Class'),
         'manufacturer': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
                                         help='Medicament Manufacturer'),
+        'active': fields.boolean('Active', 
+                                 help="The active field allows you to hide the medicament without removing it."),
         }
 
-    _order='name_product'
+    # _order='name_product'
+    _order='name'
 
     _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!')]
 
@@ -111,4 +147,12 @@ class clv_medicament(osv.osv):
         'is_medicament': True,
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
+
+    def _check_ean_key(self, cr, uid, ids, context=None):
+        for product in self.read(cr, uid, ids, ['ean13'], context=context):
+            if not check_ean(product['ean13']):
+                return False
+        return True
+
+    _constraints = [(_check_ean_key, 'You provided an invalid "EAN13 Barcode" reference. You may use the "Internal Reference" field instead.', ['ean13'])]
     
