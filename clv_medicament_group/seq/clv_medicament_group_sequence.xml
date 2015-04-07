@@ -10,10 +10,8 @@
         <record id="clv_medicament_group.seq_clv_medicament_group_group" model="ir.sequence">
             <field name="name">Medicament Group Sequence</field>
             <field name="code">clv_medicament_group.code</field>
-            <!--field name="padding" eval="9"/-->
-            <!--field name="prefix">00000</field-->
             <field name="padding" eval="9"/>
-            <field name="prefix">57</field>
+            <field name="prefix">00000</field>
         </record>
 
     </data>

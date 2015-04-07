@@ -25,9 +25,9 @@ class clv_medicament(osv.osv):
 
     _columns = {
         'date': fields.datetime("Status change date", required=True, readonly=True),
-        'date_activation': fields.datetime("Activation date", required=False, readonly=False),
-        'date_inactivation': fields.datetime("Inactivation date", required=False, readonly=False),
-        'date_suspension': fields.datetime("Suspension date", required=False, readonly=False),
+        # 'date_activation': fields.datetime("Activation date", required=False, readonly=False),
+        # 'date_inactivation': fields.datetime("Inactivation date", required=False, readonly=False),
+        # 'date_suspension': fields.datetime("Suspension date", required=False, readonly=False),
         'state': fields.selection([('new','New'),
                                    ('active','Active'),
                                    ('inactive','Inactive'),
@@ -46,15 +46,15 @@ class clv_medicament(osv.osv):
 
     def button_activate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'active'})
 
     def button_inactivate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'inactive'})
 
     def button_suspend(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'suspended'})
