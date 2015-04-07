@@ -96,21 +96,21 @@ class clv_medicament(osv.osv):
 
     def button_activate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_activation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'active'})
         for medicament in self.browse(cr, uid, ids):
             self.insert_clv_medicament_history(cr, uid, medicament.active_history, medicament.id, 'active', '')
 
     def button_inactivate(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_inactivation':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'inactive'})
         for medicament in self.browse(cr, uid, ids):
             self.insert_clv_medicament_history(cr, uid, medicament.active_history, medicament.id, 'inactive', '')
 
     def button_suspend(self, cr, uid, ids):
         self.write(cr, uid, ids, {'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 
-                                  'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  # 'date_suspension':  datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                   'state': 'suspended'})
         for medicament in self.browse(cr, uid, ids):
             self.insert_clv_medicament_history(cr, uid, medicament.active_history, medicament.id, 'suspended', '')

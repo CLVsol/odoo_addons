@@ -15,7 +15,7 @@
                             </h1>
                             <label for="code" class="oe_edit_only"/>
                             <h2>
-                                <field name="code" placeholder="Category Code..."/>
+                                <field name="code" placeholder="Active Component Code..."/>
                             </h2>
                         </div>
                         <notebook>

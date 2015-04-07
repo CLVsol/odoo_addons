@@ -20,7 +20,8 @@
             <field name="inherit_id" ref="view_clv_medicament_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <label for="product_id" position="before">
+                <!--label for="product_id" position="before"-->
+                <label for="name" position="before">
                     <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
                     <h2>
                         <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
