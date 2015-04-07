@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import product_product
+# import product_product
 import clv_medicament
 import category
 import clv_tag
