@@ -28,7 +28,7 @@ class clv_medicament_mng(osv.osv):
         'product_name': fields.char('Product Name', size=128, required=False, select=True),
         # 'medicament_name': fields.char(size=256, string='Name'),
         'name': fields.char('Name', size=256, required=False, select=True),
-        #'code': fields.char(size=64, string='Medicament Code', required=False),
+        # 'code': fields.char(size=64, string='Medicament Code', required=False),
         'product_presentation': fields.char('Product/Presentation', size=128, required=False, select=True),
         'active_component_name': fields.char('Active Component', size=128, required=False, select=True),
         'concentration': fields.char(size=256, string='Concentration'),
@@ -54,7 +54,7 @@ class clv_medicament_mng(osv.osv):
 
     _order='product_name'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!')]
+    # _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!')]
 
     _defaults = {
         'active': 1,

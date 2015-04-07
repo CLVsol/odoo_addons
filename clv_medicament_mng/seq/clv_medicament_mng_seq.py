@@ -53,7 +53,9 @@ class clv_medicament_mng(osv.osv):
     _inherit = 'clv_medicament_mng'
 
     _columns = {
-        'medicament_code': fields.char('Medicament Code', size=64, select=1, required=False, readonly=False, default='/',
+        # 'medicament_code': fields.char('Medicament Code', size=64, select=1, required=False, readonly=False, default='/',
+        #                                help='Use "/" to get an automatic new Medicament Code.'),
+        'medicament_code': fields.char('Medicament Code', size=64, select=1, required=False, readonly=False,
                                        help='Use "/" to get an automatic new Medicament Code.'),
         }
     
