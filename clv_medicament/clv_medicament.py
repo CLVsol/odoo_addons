@@ -19,9 +19,10 @@
 
 from openerp.osv import fields, osv
 from datetime import datetime
+import math
 
 def ean_checksum(eancode):
-    """returns the checksum of an ean string of length 13, returns -1 if the string has the wrong length"""
+    '''returns the checksum of an ean string of length 13, returns -1 if the string has the wrong length'''
     if len(eancode) != 13:
         return -1
     oddsum=0
@@ -42,7 +43,7 @@ def ean_checksum(eancode):
     return check
 
 def check_ean(eancode):
-    """returns True if eancode is a valid ean13 string, or null"""
+    '''returns True if eancode is a valid ean13 string, or null'''
     if not eancode:
         return True
     if len(eancode) != 13:
@@ -76,65 +77,12 @@ class clv_medicament(osv.osv):
         'pres_quantity': fields.integer(string='Presentation Quantity'),
         'pres_form': fields.char(size=256, string='Presentation Form'),
         'composition': fields.text(string='Composition', help='Components'),
-        # 'indications': fields.text(string='Indication', help='Indications'),
-        # 'therapeutic_action': fields.char(size=256,
-        #                                   string='Therapeutic effect', 
-        #                                   help='Therapeutic action'),
-        # 'pregnancy_category': fields.selection([('A', 'A'),
-        #                                         ('B', 'B'),
-        #                                         ('C', 'C'),
-        #                                         ('D', 'D'),
-        #                                         ('X', 'X'),
-        #                                         ('N', 'N'),
-        #                                         ], string='Pregnancy Category', 
-        #                                        help='** FDA Pregancy Categories ***\n'\
-        #                                             'CATEGORY A :Adequate and well-controlled human studies have failed'\
-        #                                             ' to demonstrate a risk to the fetus in the first trimester of'\
-        #                                             ' pregnancy (and there is no evidence of risk in later'\
-        #                                             ' trimesters).\n\n'\
-        #                                             'CATEGORY B : Animal reproduction studies have failed todemonstrate a'\
-        #                                             ' risk to the fetus and there are no adequate and well-controlled'\
-        #                                             ' studies in pregnant women OR Animal studies have shown an adverse'\
-        #                                             ' effect, but adequate and well-controlled studies in pregnant women'\
-        #                                             ' have failed to demonstrate a risk to the fetus in any'\
-        #                                             ' trimester.\n\n'
-        #                                             'CATEGORY C : Animal reproduction studies have shown an adverse'\
-        #                                             ' effect on the fetus and there are no adequate and well-controlled'\
-        #                                             ' studies in humans, but potential benefits may warrant use of the'\
-        #                                             ' drug in pregnant women despite potential risks. \n\n '\
-        #                                             'CATEGORY D : There is positive evidence of human fetal  risk based'\
-        #                                             ' on adverse reaction data from investigational or marketing'\
-        #                                             ' experience or studies in humans, but potential benefits may warrant'\
-        #                                             ' use of the drug in pregnant women despite potential risks.\n\n'\
-        #                                             'CATEGORY X : Studies in animals or humans have demonstrated fetal'\
-        #                                             ' abnormalities and/or there is positive evidence of human fetal risk'\
-        #                                             ' based on adverse reaction data from investigational or marketing'\
-        #                                             ' experience, and the risks involved in use of the drug in pregnant'\
-        #                                             ' women clearly outweigh potential benefits.\n\n'\
-        #                                             'CATEGORY N : Not yet classified'),
-        # 'overdosage': fields.text(string='Overdosage', help='Overdosage'),
-        # 'pregnancy_warning': fields.boolean(string='Pregnancy Warning', 
-        #                                     help='The drug represents risk to pregnancy or lactancy'),
         'notes': fields.text(string='Notes'),
-        # 'storage': fields.text(string='Storage Conditions'),
-        # 'adverse_reaction': fields.text(string='Adverse Reactions'),
-        # 'dosage': fields.text(string='Dosage Instructions', 
-        #                       help='Dosage / Indications'),
-        # 'pregnancy': fields.text(string='Pregnancy and Lactancy', 
-        #                          help='Warnings for Pregnant Women'),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
-        # 'medicament_rgss': fields.selection([('U', 'Undefined'),
-        #                                      ('R', 'Reference'),
-        #                                      ('G', 'Generic'),
-        #                                      ('S', 'Similar'),
-        #                                      ], string='Medicament Status',
-        #                                           select=True, sort=False, required=False, translate=True),
-        'therapeutic_class': fields.many2one('clv_medicament.therapeutic_class', string='Therapeutic Class', 
-                                             help='Medicament Therapeutic Class'),
-        'manufacturer': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
-                                        help='Medicament Manufacturer'),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the medicament without removing it."),
+        'is_product': fields.boolean('Is a Product', 
+                                     help="Check if the medicament is a product."),
         }
 
     # _order='name_product'
@@ -144,13 +92,14 @@ class clv_medicament(osv.osv):
 
     _defaults = {
         'active': 1,
-        'is_medicament': True,
+        # 'is_medicament': True,
+        'is_product': False,
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
 
     def _check_ean_key(self, cr, uid, ids, context=None):
-        for product in self.read(cr, uid, ids, ['ean13'], context=context):
-            if not check_ean(product['ean13']):
+        for medicament in self.read(cr, uid, ids, ['ean13'], context=context):
+            if not check_ean(medicament['ean13']):
                 return False
         return True
 

@@ -17,17 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
-
-class clv_medicament_route(osv.Model):
-    _name = 'clv_medicament.route'
-
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Unit', required=True,
-                            translate=True),
-    }
-    _sql_constraints = [
-        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
+import clv_medicament_group

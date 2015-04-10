@@ -21,10 +21,10 @@ from openerp.osv import fields, osv
 from datetime import datetime
 
 class clv_medicament_group_member(osv.Model):
-    _name = 'clv_medicament.group.member'
+    _name = 'clv_medicament_group_member'
 
     _columns = {
-        'group_id': fields.many2one('clv_medicament.group', string='Medicament Group',
+        'group_id': fields.many2one('clv_medicament_group', string='Medicament Group',
                                     help='Medicament Group', required=True),
         'medicament_id': fields.many2one('clv_medicament', string='Medicament',
                                          help='Medicament Name', required=True),

@@ -28,5 +28,6 @@ class clv_medicament_form(osv.Model):
                             translate=True),
     }
     _sql_constraints = [
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]

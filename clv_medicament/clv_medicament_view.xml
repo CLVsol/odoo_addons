@@ -9,12 +9,13 @@
             <field name="arch" type="xml">
                 <tree string="Medicament">
                     <field name="name"/>
-                    <!--field name="medicament_name"/-->
-                    <field name="code"/>
-                    <field name="notes"/>
                     <field name="presentation"/>
-                    <field name="therapeutic_class"/>
-                    <field name="manufacturer"/>
+                    <!--field name="medicament_name"/-->
+                    <field name="concentration"/>
+                    <field name="pres_form"/>
+                    <field name="code"/>
+                    <field name="is_product"/>
+                    <field name="notes"/>
                     <field name="ean13"/>
                 </tree>
             </field>
@@ -52,6 +53,11 @@
                             <h3>
                                 <field name="code" placeholder="Medicament Code..."/>
                             </h3>
+                            <!--label for="is_product" class="oe_edit_only"/-->
+                            <label for="is_product"/>
+                            <h3>
+                                <field name="is_product"/>
+                            </h3>
                             <!--label for="ean13" class="oe_edit_only"/-->
                             <label for="ean13"/>
                             <h3>
@@ -76,16 +82,6 @@
                             <label for="presentation"/>
                             <h3>
                                 <field name="presentation" placeholder="Presentation..."/>
-                            </h3>
-                            <!--label for="therapeutic_class" class="oe_edit_only"/-->
-                            <label for="therapeutic_class"/>
-                            <h3>
-                                <field name="therapeutic_class" placeholder="Therapeutic Class..."/>
-                            </h3>
-                            <!--label for="manufacturer" class="oe_edit_only"/-->
-                            <label for="manufacturer"/>
-                            <h3>
-                                <field name="manufacturer" placeholder="Manufacturer..."/>
                             </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -121,16 +117,14 @@
                     <field name="name"/>
                     <field name="medicament_name"/>
                     <field name="code"/>
-                    <!--field name="active_component"/-->
+                    <field name="concentration"/>
                     <field name="notes"/>
-                    <field name="manufacturer"/>
-                    <field name="therapeutic_class"/>
                     <field name="ean13"/>
                     <separator/>
+                    <filter string="Not a Product" name="type_company" domain="[('is_product','=',0)]"/>
+                    <filter string="Product" name="type_company" domain="[('is_product','=',1)]"/>
+                    <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/-->
-                        <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}"/>
-                        <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}"/>
                     </group>
                 </search>
             </field>

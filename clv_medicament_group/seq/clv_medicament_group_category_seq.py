@@ -49,12 +49,12 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_medicament_group(osv.osv):
-    _inherit = 'clv_medicament_group'
+class clv_medicament_group_category(osv.osv):
+    _inherit = 'clv_medicament_group.category'
 
     _columns = {
-        'code': fields.char('Medicament Group Code', size=64, select=1, required=False, readonly=False, default='/',
-                            help='Use "/" to get an automatic new Medicament Group Code.'),
+        'code': fields.char('Category Code', size=64, select=1, required=False, readonly=False, default='/',
+                            help='Use "/" to get an automatic new Category Code.'),
         }
     
     _defaults = {
@@ -65,19 +65,19 @@ class clv_medicament_group(osv.osv):
         if context is None:
             context = {}
         if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament_group.code')
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament_group.categ.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_medicament_group, self).create(cr, uid, vals, context)
+        return super(clv_medicament_group_category, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
         if ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament_group.code')
+            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_medicament_group.categ.code')
             vals['code'] = format_code(code_seq)
-        return super(clv_medicament_group, self).write(cr, uid, ids, vals, context)
+        return super(clv_medicament_group_category, self).write(cr, uid, ids, vals, context)
 
     def copy(self, cr, uid, id, default={}, context=None):
         default = dict(default or {})
         default.update({'code': '/',})
-        return super(clv_medicament_group, self).copy(cr, uid, id, default, context)
+        return super(clv_medicament_group_category, self).copy(cr, uid, id, default, context)

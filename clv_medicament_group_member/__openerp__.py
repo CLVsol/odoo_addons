@@ -37,10 +37,10 @@ Medicament Group Member
         'clv_medicament_group',
         ],
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_medicament_group_member_view.xml',
-        # 'clv_medicament_view.xml',
-        # 'clv_medicament_group_view.xml',
+        'clv_medicament/clv_medicament_view.xml',
+        'clv_medicament_group/clv_medicament_group_view.xml',
         # 'category/clv_medicament_group_member_category_view.xml',
         # 'clv_tag/clv_tag_view.xml',
         # 'clv_annotation/clv_annotation_view.xml',

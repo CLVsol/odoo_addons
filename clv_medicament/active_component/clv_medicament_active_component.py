@@ -76,7 +76,9 @@ class clv_medicament(osv.osv):
         'active_component': fields.many2one('clv_medicament.active_component', 
                                             string='Active Component', 
                                             help='Medicament Active Component'),
-        'name_active_component': fields.function(_name_active_component_get_fnc, type="char", string='Name (Active Component)'),
-        'active_component_name': fields.related('active_component', 'name', type='char', string='Related Active Component', 
+        'name_active_component': fields.function(_name_active_component_get_fnc, type="char", 
+                                                 string='Name (Active Component)'),
+        'active_component_name': fields.related('active_component', 'name', type='char', 
+                                                string='Related Active Component', 
                                                 readonly=True, store=True),
         }

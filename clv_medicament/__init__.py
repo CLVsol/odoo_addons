@@ -27,6 +27,7 @@ import manufacturer
 import therapeutic_class
 import form
 import route
+import uom
 import template
 import seq
 import wkf

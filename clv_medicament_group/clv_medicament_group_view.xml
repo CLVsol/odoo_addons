@@ -3,14 +3,17 @@
     <data>
 
         <record id="view_clv_medicament_group_tree" model="ir.ui.view">
-            <field name="name">clv_medicament.group.tree</field>
-            <field name="model">clv_medicament.group</field>
+            <field name="name">clv_medicament_group.tree</field>
+            <field name="model">clv_medicament_group</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament Group">
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
+                    <field name="active_component"/>
+                    <field name="concentration"/>
+                    <field name="pres_form"/>
                     <field name="catalog_id"/>
                     <field name="notes"/>
                 </tree>
@@ -18,8 +21,8 @@
         </record>
         
         <record id="view_clv_medicament_group_form" model="ir.ui.view">
-            <field name="name">clv_medicament.group.form</field>
-            <field name="model">clv_medicament.group</field>
+            <field name="name">clv_medicament_group.form</field>
+            <field name="model">clv_medicament_group</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Medicament Groups" version="7.0">
@@ -57,8 +60,9 @@
                                 <group>
                                     <group string="Medicament">
                                         <field name="medicament_name"/>
-                                        <field name="concentration"/>
                                         <field name="active_component"/>
+                                        <field name="concentration"/>
+                                        <field name="pres_form"/>
                                     </group>
                                     <group string="Status">
                                         <field name="date_inclusion"/>
@@ -78,8 +82,8 @@
         </record>
         
         <record id="view_clv_medicament_group_search" model="ir.ui.view">
-            <field name="name">clv_medicament.group.search</field>
-            <field name="model">clv_medicament.group</field>
+            <field name="name">clv_medicament_group.search</field>
+            <field name="model">clv_medicament_group</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament Group">
@@ -87,9 +91,13 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="catalog_id"/>
+                    <field name="active_component"/>
+                    <field name="concentration"/>
+                    <field name="pres_form"/>
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
+                        <filter string="Active Component" domain="[]" context="{'group_by': 'active_component'}"/>
                         <filter string="Catalogue" domain="[]" context="{'group_by': 'catalog_id'}"/>
                     </group>
                 </search>
@@ -99,7 +107,7 @@
         <record model="ir.actions.act_window" id="act_open_clv_medicament_group_view">
             <field name="name">Medicament Groups</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_medicament.group</field>
+            <field name="res_model">clv_medicament_group</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_clv_medicament_group_search"/>
