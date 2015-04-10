@@ -99,5 +99,48 @@
             <field name="view_id" ref="view_clv_medicament_manufacturer_tree" />
         </record>
         
+        <record id="view_clv_medicament_tree_manufacturer" model="ir.ui.view">
+            <field name="name">clv_medicament.tree</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="manufacturer"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_form_manufacturer" model="ir.ui.view">
+            <field name="name">clv_medicament.form</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="concentration" position="before">
+                    <!--label for="manufacturer" class="oe_edit_only"/-->
+                    <label for="manufacturer"/>
+                    <h2>
+                        <field name="manufacturer" placeholder="Medicament Manufacturer..."/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_search_manufacturer" model="ir.ui.view">
+            <field name="name">clv_medicament.search</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="manufacturer"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer'}"/>
+                </group>
+            </field>
+        </record>
+
     </data>
 </openerp>

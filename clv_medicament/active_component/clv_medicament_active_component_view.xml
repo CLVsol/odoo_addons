@@ -63,7 +63,6 @@
                     <separator/>
                     <filter string="Inactive Active Components" name="active" domain="[('active','=',0)]" help="Inactive Active Components"/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Parent Category" domain="[]" context="{'group_by':'parent_id'}"/-->
                     </group>
                 </search>
             </field>
@@ -137,6 +136,9 @@
                 <field name="code" position="after">
                     <field name="active_component"/>
                 </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
+                </group>
             </field>
         </record>
 

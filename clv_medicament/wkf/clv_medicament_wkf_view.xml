@@ -23,10 +23,12 @@
             <field name="arch" type="xml">
                 <sheet string="Medicament" position="before">
                     <header>
-                        <button string="Activate" name="button_activate" states="new,inactive,suspended" type="workflow" groups="clv_base.group_medicament_manager" class="oe_highlight"/>
-                        <button string="Inactivate" name="button_inactivate" states="new,active,suspended" type="workflow" groups="clv_base.group_medicament_manager"/>
-                        <button string="Suspend" name="button_suspend" states="new,active,inactive" type="workflow" groups="clv_base.group_medicament_manager"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,active,inactive,suspended"/>
+                        <button string="Revised" name="button_revised" states="new,waiting" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Wating" name="button_waiting" states="revised" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Activate" name="button_activate" states="waiting,inactive,suspended" type="workflow" groups="clv_base.group_medicament_manager" class="oe_highlight"/>
+                        <button string="Suspend" name="button_suspend" states="active,inactive" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Inactivate" name="button_inactivate" states="active,suspended" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,revised,waiting,active,inactive,suspended"/>
                     </header>
                 </sheet>
                 <field name="date_inclusion" position="before">

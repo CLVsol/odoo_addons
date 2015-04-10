@@ -44,7 +44,12 @@
                                 </div>
                                 <field name="info" colspan="4" nolabel="1"/>
                             </page>
-                            <page string="Settings" groups="clv_base.group_clv_manager">
+                            <page string="Medicaments">
+                                <group>
+                                    <field name="medicament_ids" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
                                     <field name="active"/>
                                 </group>
@@ -94,5 +99,48 @@
             <field name="view_id" ref="view_clv_medicament_therapeutic_class_tree" />
         </record>
         
+        <record id="view_clv_medicament_tree_therapeutic_class" model="ir.ui.view">
+            <field name="name">clv_medicament.tree</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="therapeutic_class"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_form_therapeutic_class" model="ir.ui.view">
+            <field name="name">clv_medicament.form</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="concentration" position="before">
+                    <!--label for="therapeutic_class" class="oe_edit_only"/-->
+                    <label for="therapeutic_class"/>
+                    <h2>
+                        <field name="therapeutic_class" placeholder="Medicament Manufacturer..."/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_search_therapeutic_class" model="ir.ui.view">
+            <field name="name">clv_medicament.search</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="view_clv_medicament_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="therapeutic_class"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Therapeutic Class" domain="[]" context="{'group_by':'therapeutic_class'}"/>
+                </group>
+            </field>
+        </record>
+
     </data>
 </openerp>

@@ -21,7 +21,7 @@ from openerp.osv import fields, osv
 from datetime import datetime
 
 class clv_medicament_catalog(osv.osv):
-    _name = 'clv_medicament.catalog'
+    _name = 'clv_medicament_catalog'
     
     _columns = {
         'name': fields.char('Medicament Catalog Name', required=True, size=64, translate=True),

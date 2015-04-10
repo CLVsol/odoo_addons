@@ -18,3 +18,4 @@
 ################################################################################
 
 import clv_medicament_group_seq
+import clv_medicament_group_category_seq

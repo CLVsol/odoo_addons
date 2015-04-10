@@ -33,7 +33,7 @@ class clv_medicament_template(osv.Model):
                                  help='Medicament administration route code.'),
         'dose': fields.float(string='Dose', 
                              help='Amount of medicament (eg, 250 mg) per dose'),
-        'dose_unit': fields.many2one('product.uom', string='dose unit', 
+        'dose_unit': fields.many2one('clv_medicament.uom', string='dose unit', 
                                      help='Unit of measure for the medicament to be taken'),
         'quantity': fields.integer(string='Medicament Quantity',
                                    help='Quantity of units (eg, 2 capsules) of the medicament'),

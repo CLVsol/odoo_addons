@@ -38,4 +38,12 @@ class clv_medicament_manufacturer(osv.osv):
     _defaults = {
         'active': 1,
         }
+
+class clv_medicament(osv.osv):
+    _inherit = 'clv_medicament'
+
+    _columns = {
+        'manufacturer': fields.many2one('clv_medicament.manufacturer', string='Manufacturer', 
+                                        help='Medicament Manufacturer'),
+        }
     
