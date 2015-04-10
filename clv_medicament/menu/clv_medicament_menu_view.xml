@@ -40,17 +40,23 @@
             sequence="40"
             action="clv_medicament.act_open_clv_medicament_manufacturer_view" />
         <!-- Pharmacy/Configuration/Configuration/Medicament/Form -->
-        <menuitem name="Form" id="menu_pharmacy_config_config_medicament_forms"  
+        <menuitem name="Form" id="menu_pharmacy_config_config_medicament_form"  
             parent="clv_base.menu_pharmacy_config_config_medicament"
             groups="clv_base.group_base_manager"
             sequence="50" 
             action="clv_medicament.act_open_clv_medicament_form_view" />
         <!-- Pharmacy/Configuration/Configuration/Medicament/Route -->
-        <menuitem name="Route" id="menu_pharmacy_config_config_medicament_routes"  
+        <menuitem name="Route" id="menu_pharmacy_config_config_medicament_route"  
             parent="clv_base.menu_pharmacy_config_config_medicament"
             groups="clv_base.group_base_manager"
             sequence="60" 
             action="clv_medicament.act_open_clv_medicament_route_view" />
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Uom -->
+        <menuitem name="Uom" id="menu_pharmacy_config_config_medicament_uom"  
+            parent="clv_base.menu_pharmacy_config_config_medicament"
+            groups="clv_base.group_base_manager"
+            sequence="70" 
+            action="clv_medicament.act_open_clv_medicament_form_view" />
 
     </data>
 </openerp>

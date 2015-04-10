@@ -53,6 +53,7 @@ Medicament
         'therapeutic_class/clv_medicament_therapeutic_class_view.xml',
         'form/clv_medicament_form_view.xml',
         'route/clv_medicament_route_view.xml',
+        'uom/clv_medicament_uom_view.xml',
         'template/clv_medicament_template_view.xml',
         'seq/clv_medicament_template_sequence.xml',
         'menu/clv_medicament_menu_view.xml',

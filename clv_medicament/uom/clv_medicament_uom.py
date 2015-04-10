@@ -19,12 +19,12 @@
 
 from openerp.osv import fields, osv
 
-class clv_medicament_route(osv.Model):
-    _name = 'clv_medicament.route'
+class clv_medicament_uom(osv.Model):
+    _name = 'clv_medicament.uom'
 
     _columns = {
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Unit', required=True,
+        'name': fields.char(size=256, string='Uom', required=True,
                             translate=True),
     }
     _sql_constraints = [
