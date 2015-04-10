@@ -21,7 +21,7 @@ from openerp.osv import fields, osv
 from datetime import datetime
 
 class clv_medicament_group(osv.osv):
-    _name = 'clv_medicament.group'
+    _name = 'clv_medicament_group'
 
     _columns = {
         'name' : fields.char('Name', size=64, select=1, required=True, help='Medicament Group Name'),
@@ -29,14 +29,15 @@ class clv_medicament_group(osv.osv):
         'code': fields.char(size=64, string='Medicament Group Code', required=False),
         'notes':  fields.text(string='Notes'),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
-        'catalog_id': fields.many2one('clv_medicament.catalog', 'Catalog'),
+        'catalog_id': fields.many2one('clv_medicament_catalog', 'Catalog'),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the group without removing it."),
         'medicament_name': fields.char(size=256, string='Medicament Name'),
-        'concentration': fields.char(size=256, string='Concentration'),
         'active_component': fields.many2one('clv_medicament.active_component', 
                                             string='Active Component', 
                                             help='Medicament Active Component'),
+        'concentration': fields.char(size=256, string='Concentration'),
+        'pres_form': fields.char(size=256, string='Presentation Form'),
         }
 
     _defaults = {

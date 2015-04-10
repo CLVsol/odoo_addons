@@ -14,12 +14,12 @@
                 sequence="10"
                 action="clv_medicament_group.act_open_clv_medicament_group_view"/>
 
-        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
-        <!--menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Group Categories -->
+        <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_group_categories" 
             parent="clv_base.menu_pharmacy_config_config_medicament"
-            groups="clv_base.group_medicament_user"
-            sequence="10"
-            action="clv_medicament.act_open_clv_medicament_category_view"/-->
+            groups="clv_base.group_medicament_group_user"
+            sequence="70"
+            action="clv_medicament_group.act_open_clv_medicament_group_category_view"/>
 
     </data>
 </openerp>

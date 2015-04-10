@@ -19,7 +19,7 @@
 
 import clv_medicament_group
 import clv_medicament_catalog
-# import clv_medicament_group_category
+import category
 # import clv_tag
 # import clv_annotation
-# import seq
+import seq

@@ -2,12 +2,12 @@
 <openerp>
     <data noupdate="1">
 
-        <record id="clv_medicament_group.seq_type_clv_medicament_group_group" model="ir.sequence.type">
+        <record id="clv_medicament_group.seq_type_clv_medicament_group" model="ir.sequence.type">
             <field name="name">Medicament Group Sequence</field>
             <field name="code">clv_medicament_group.code</field>
         </record>
         
-        <record id="clv_medicament_group.seq_clv_medicament_group_group" model="ir.sequence">
+        <record id="clv_medicament_group.seq_clv_medicament_group" model="ir.sequence">
             <field name="name">Medicament Group Sequence</field>
             <field name="code">clv_medicament_group.code</field>
             <field name="padding" eval="9"/>
