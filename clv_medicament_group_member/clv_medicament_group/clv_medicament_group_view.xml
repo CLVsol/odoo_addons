@@ -3,8 +3,8 @@
     <data>
         
         <record id="view_clv_medicament_group_form" model="ir.ui.view">
-            <field name="name">clv_medicament.group.form</field>
-            <field name="model">clv_medicament.group</field>
+            <field name="name">clv_medicament_group.form</field>
+            <field name="model">clv_medicament_group</field>
             <field name="inherit_id" ref="clv_medicament_group.view_clv_medicament_group_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">

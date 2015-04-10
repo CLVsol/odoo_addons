@@ -3,8 +3,8 @@
     <data>
 
         <record id="view_clv_medicament_group_member_tree" model="ir.ui.view">
-            <field name="name">clv_medicament.group.member.tree</field>
-            <field name="model">clv_medicament.group.member</field>
+            <field name="name">clv_medicament_group_member.tree</field>
+            <field name="model">clv_medicament_group_member</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament Group Member">
@@ -18,8 +18,8 @@
         </record>
         
         <record id="view_clv_medicament_group_member_form" model="ir.ui.view">
-            <field name="name">clv_medicament.group.member.form</field>
-            <field name="model">clv_medicament.group.member</field>
+            <field name="name">clv_medicament_group_member.form</field>
+            <field name="model">clv_medicament_group_member</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Medicament Group Members" version="7.0">
@@ -76,8 +76,8 @@
         </record>
         
         <record id="view_clv_medicament_group_member_search" model="ir.ui.view">
-            <field name="name">clv_medicament.group.member.search</field>
-            <field name="model">clv_medicament.group.member</field>
+            <field name="name">clv_medicament_group_member.search</field>
+            <field name="model">clv_medicament_group_member</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament Group Member">
@@ -88,7 +88,8 @@
                     <field name="notes" />
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Medicament Group Member" domain="[]" context="{'group_by': 'group_id'}"/>
+                        <filter string="Medicament Group" domain="[]" context="{'group_by': 'group_id'}"/>
+                        <filter string="Level" domain="[]" context="{'group_by': 'level'}"/>
                     </group>
                 </search>
             </field>
@@ -97,7 +98,7 @@
         <record model="ir.actions.act_window" id="act_open_clv_medicament_group_member_view">
             <field name="name">Medicament Group Members</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">clv_medicament.group.member</field>
+            <field name="res_model">clv_medicament_group_member</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_clv_medicament_group_member_search"/>

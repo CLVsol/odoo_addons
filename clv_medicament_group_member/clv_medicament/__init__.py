@@ -17,46 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Medicament Group Member',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Medicament Group Member
-=======================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_medicament',
-        'clv_medicament_group',
-        ],
-    'data': [
-        'security/ir.model.access.csv',
-        'clv_medicament_group_member_view.xml',
-        'clv_medicament/clv_medicament_view.xml',
-        'clv_medicament_group/clv_medicament_group_view.xml',
-        # 'category/clv_medicament_group_member_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_medicament_group_member_sequence.xml',
-        # 'seq/clv_medicament_group_member_category_sequence.xml',
-        # 'wkf/clv_medicament_group_member_workflow.xml',
-        # 'wkf/clv_medicament_group_member_wkf_view.xml',
-        # 'history/clv_medicament_group_member_history_view.xml',
-        'menu/clv_medicament_group_member_menu_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_medicament
