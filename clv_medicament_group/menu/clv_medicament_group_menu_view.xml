@@ -2,18 +2,19 @@
 <openerp>
     <data>
 
-        <!-- Pharmacy/Medicament/Group -->
-        <menuitem name="Group" id="menu_pharmacy_medicament_group"  
+        <!-- Pharmacy/Medicament/Groups -->
+        <menuitem name="Groups" id="menu_pharmacy_medicament_groups"  
             parent="clv_base.menu_pharmacy_medicament"
             groups="clv_base.group_medicament_group_user"
-            sequence="30"/>
+            sequence="30"
+            action="clv_medicament_group.act_open_clv_medicament_group_view"/>
             <!-- Pharmacy/Medicament/Group/Groups -->
-            <menuitem name="Groups" id="menu_pharmacy_medicament_group_groups"
+<!--             <menuitem name="Groups" id="menu_pharmacy_medicament_group_groups"
                 parent="menu_pharmacy_medicament_group"
                 groups="clv_base.group_medicament_group_user"
                 sequence="10"
                 action="clv_medicament_group.act_open_clv_medicament_group_view"/>
-
+ -->
         <!-- Pharmacy/Configuration/Configuration/Medicament/Group Categories -->
         <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_group_categories" 
             parent="clv_base.menu_pharmacy_config_config_medicament"

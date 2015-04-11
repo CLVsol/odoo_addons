@@ -88,7 +88,7 @@
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Catalog By...">
-                        <filter string="Medicament Catalog" domain="[]" context="{'group_by': 'catalog_id'}"/>
+                        <filter string="Catalog" domain="[]" context="{'group_by': 'catalog_id'}"/>
                         <filter string="Level" domain="[]" context="{'group_by': 'level'}"/>
                     </group>
                 </search>

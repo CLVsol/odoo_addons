@@ -117,13 +117,9 @@
             <field name="inherit_id" ref="view_clv_medicament_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <label for="concentration" position="before">
-                    <!--label for="active_component" class="oe_edit_only"/-->
-                    <label for="active_component"/>
-                    <h2>
-                        <field name="active_component" placeholder="Active Component..."/>
-                    </h2>
-                </label>
+                <field name="concentration" position="before">
+                    <field name="active_component" placeholder="Active Component..."/>
+                </field>
             </field>
         </record>
 

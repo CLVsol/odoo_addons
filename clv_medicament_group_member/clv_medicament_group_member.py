@@ -34,9 +34,13 @@ class clv_medicament_group_member(osv.Model):
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the group member without removing it."),
+        'group_name': fields.related('group_id', 'name', type='char', string='Group Name', 
+                                       readonly=True, store=True),
+        'catalog_name': fields.related('group_id', 'catalog_name', type='char', string='Catalog Name', 
+                                       readonly=True, store=True),
     }
     
-    _order='level'
+    _order='catalog_name, group_name, level, order'
     
     _defaults = {
         'level': 9,
