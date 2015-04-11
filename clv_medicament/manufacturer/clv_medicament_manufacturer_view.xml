@@ -117,13 +117,9 @@
             <field name="inherit_id" ref="view_clv_medicament_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <label for="concentration" position="before">
-                    <!--label for="manufacturer" class="oe_edit_only"/-->
-                    <label for="manufacturer"/>
-                    <h2>
-                        <field name="manufacturer" placeholder="Medicament Manufacturer..."/>
-                    </h2>
-                </label>
+                <group name="Y" position="inside">
+                    <field name="manufacturer" placeholder="Medicament Manufacturer..."/>
+                </group>
             </field>
         </record>
 

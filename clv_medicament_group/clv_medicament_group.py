@@ -38,7 +38,11 @@ class clv_medicament_group(osv.osv):
                                             help='Medicament Active Component'),
         'concentration': fields.char(size=256, string='Concentration'),
         'pres_form': fields.char(size=256, string='Presentation Form'),
+        'catalog_name': fields.related('catalog_id', 'name', type='char', string='Catalog Name', 
+                                       readonly=True, store=True),
         }
+
+    _order='catalog_name, name'
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
