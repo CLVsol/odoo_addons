@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Catalog/Members -->
+        <menuitem name="Members" id="menu_pharmacy_medicament_catalog_members"
+            parent="clv_medicament_catalog.menu_pharmacy_medicament_catalogs"
+            groups="clv_base.group_medicament_catalog_user"
+            sequence="20"
+            action="clv_medicament_catalog_member.act_open_clv_medicament_catalog_member_view"/>
+
+    </data>
+</openerp>
