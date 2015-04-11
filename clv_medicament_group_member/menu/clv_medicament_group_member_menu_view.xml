@@ -2,9 +2,9 @@
 <openerp>
     <data>
 
-        <!-- Pharmacy/Medicament/Group/Members -->
-        <menuitem name="Members" id="menu_pharmacy_medicament_group_members"
-            parent="clv_medicament_group.menu_pharmacy_medicament_group"
+        <!-- Pharmacy/Medicament/Groups/Members -->
+        <menuitem name="Members" id="menu_pharmacy_medicament_groups_members"
+            parent="clv_medicament_group.menu_pharmacy_medicament_groups"
             groups="clv_base.group_medicament_group_user"
             sequence="20"
             action="clv_medicament_group_member.act_open_clv_medicament_group_member_view"/>
