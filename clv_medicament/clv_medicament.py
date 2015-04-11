@@ -71,7 +71,7 @@ class clv_medicament(osv.osv):
         # 'name_product': fields.related('product_id', 'name', type='char', string='Related Product', 
         #                                readonly=True, store=True),
         'code': fields.char(size=64, string='Medicament Code', required=False),
-        'medicament_name': fields.char(size=256, string='Name'),
+        'medicament_name': fields.char(size=256, string='Medicament Name'),
         'concentration': fields.char(size=256, string='Concentration'),
         'presentation': fields.char(size=256, string='Presentation'),
         'pres_quantity': fields.integer(string='Presentation Quantity'),
