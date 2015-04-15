@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Prescriptions -->
+        <menuitem name="Prescriptions" id="menu_pharmacy_medicament_prescriptions"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="05"
+            action="clv_medicament_prescription.act_open_clv_medicament_prescription_view"/>
+        <!-- Pharmacy/Medicament/Templates -->
+<!--         <menuitem name="Templates" id="menu_pharmacy_medicament_templates"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="40"
+            action="clv_medicament.act_open_clv_medicament_template_view"/>
+ -->
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
+        <menuitem name="Prescription Categories" id="menu_pharmacy_config_config_medicament_prescription_categories" 
+            parent="clv_base.menu_pharmacy_config_config_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="90"
+            action="clv_medicament_prescription.act_open_clv_medicament_prescription_category_view"/>
+
+    </data>
+</openerp>

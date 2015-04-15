@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_medicament_prescription.seq_type_clv_medicament_prescription_category" model="ir.sequence.type">
+            <field name="name">Medicament Prescription Category Sequence</field>
+            <field name="code">clv_medicament_presc.categ.code</field>
+        </record>
+        
+        <record id="clv_medicament_prescription.seq_clv_medicament_prescription_category" model="ir.sequence">
+            <field name="name">Medicament Prescription Category Sequence</field>
+            <field name="code">clv_medicament_presc.categ.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>

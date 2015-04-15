@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_template_tree_prescription" model="ir.ui.view">
+            <field name="name">clv_medicament.template.tree</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="prescription_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_template_form_prescription" model="ir.ui.view">
+            <field name="name">clv_medicament.template.form</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="prescription_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_template_search_prescription" model="ir.ui.view">
+            <field name="name">clv_medicament.template.search</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medicament Template" position="inside">
+                    <field name="prescription_id" />
+                </search>
+                <group string="Group By..." position="inside">
+                    <filter string="Prescription ID" domain="[]" context="{'group_by':'prescription_id'}" />
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_prescription_form_template" model="ir.ui.view">
+            <field name="name">clv_medicament_prescription.form</field>
+            <field name="model">clv_medicament_prescription</field>
+            <field name="inherit_id" ref="clv_medicament_prescription.view_clv_medicament_prescription_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Medicaments">
+                        <field name="prescription_lines" colspan="4"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
