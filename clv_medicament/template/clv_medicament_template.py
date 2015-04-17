@@ -27,6 +27,8 @@ class clv_medicament_template(osv.Model):
                             help='Medicament Template Code'),
         'medicament': fields.many2one('clv_medicament', string='Medicament', required=True, 
                                       help='Prescribed Medicament'),
+        'medicament_code': fields.related('medicament', 'code', type='char', string='Medicament Code', 
+                                          readonly=True, store=False),
         'form': fields.many2one('clv_medicament.form', string='Form', 
                                 help='Medicament form, such as tablet or gel'),
         'route': fields.many2one('clv_medicament.route', string='Administration Route', 
