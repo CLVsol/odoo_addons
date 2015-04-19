@@ -23,11 +23,11 @@ class clv_medicament_uom(osv.Model):
     _name = 'clv_medicament.uom'
 
     _columns = {
-        'code': fields.char(size=256, string='Code'),
         'name': fields.char(size=256, string='Uom', required=True,
                             translate=True),
+        'code': fields.char(size=256, string='Code'),
     }
     _sql_constraints = [
-        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]

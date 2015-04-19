@@ -7,8 +7,8 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Drug Form">
-                    <field name="code" />
                     <field name="name" />
+                    <field name="code" />
                 </tree>
             </field>
         </record>
@@ -21,8 +21,8 @@
                 <form string="Drug Form" version="7.0">
                     <sheet>
                         <group>
-                            <field name="code" />
                             <field name="name" />
+                            <field name="code" />
                         </group>
                     </sheet>
                 </form>
@@ -39,8 +39,8 @@
                     <field name="name" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
                         <filter string="Form" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
                     </group>
                 </search>
             </field>

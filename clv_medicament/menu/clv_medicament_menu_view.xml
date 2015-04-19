@@ -56,7 +56,7 @@
             parent="clv_base.menu_pharmacy_config_config_medicament"
             groups="clv_base.group_base_manager"
             sequence="70" 
-            action="clv_medicament.act_open_clv_medicament_form_view" />
+            action="clv_medicament.act_open_clv_medicament_uom_view" />
 
     </data>
 </openerp>

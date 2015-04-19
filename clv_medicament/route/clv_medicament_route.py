@@ -23,11 +23,11 @@ class clv_medicament_route(osv.Model):
     _name = 'clv_medicament.route'
 
     _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Unit', required=True,
+        'name': fields.char(size=256, string='Rote', required=True,
                             translate=True),
+        'code': fields.char(size=256, string='Code'),
     }
     _sql_constraints = [
-        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]

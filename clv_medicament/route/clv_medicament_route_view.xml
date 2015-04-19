@@ -8,8 +8,8 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Drug Route">
-                    <field name="code" />
                     <field name="name" />
+                    <field name="code" />
                 </tree>
             </field>
         </record>
@@ -22,8 +22,8 @@
                 <form string="Drug Route" version="7.0">
                     <sheet>
                         <group>
-                            <field name="code" />
                             <field name="name" />
+                            <field name="code" />
                         </group>
                     </sheet>
                 </form>
@@ -40,8 +40,8 @@
                     <field name="name" />
                     <newline />
                     <group expand="0" string="Group By...">
+                        <filter string="Rote" domain="[]" context="{'group_by':'name'}" />
                         <filter string="Code" domain="[]" context="{'group_by':'code'}" />
-                        <filter string="Unit" domain="[]" context="{'group_by':'name'}" />
                     </group>
                 </search>
             </field>
