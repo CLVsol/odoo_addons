@@ -2,14 +2,53 @@
 <openerp>
     <data>
 
+        <record id="view_clv_medicament_manufacturer_str_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.str.tree</field>
+            <field name="model">clv_medicament.manufacturer.str</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament Manufacturer String">
+                    <field name="name"/>
+                    <field name="manufacturer_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_manufacturer_str_search" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.str.search</field>
+            <field name="model">clv_medicament.manufacturer.str</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Medicament Manufacturer String">
+                    <field name="name"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Medicament Manufacturer" domain="[]" context="{'group_by':'manufacturer_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_manufacturer_str_view">
+            <field name="name">Medicament Manufacturer Strings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_medicament.manufacturer.str</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_medicament_manufacturer_str_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
         <record id="view_clv_medicament_manufacturer_tree" model="ir.ui.view">
             <field name="name">clv_medicament.manufacturer.tree</field>
             <field name="model">clv_medicament.manufacturer</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament Manufacturer">
-                    <field name="name" />
-                    <field name="code" />
+                    <field name="name"/>
+                    <field name="strings"/>
+                    <field name="code"/>
                     <field name="info" colspan="4"/>
                 </tree>
             </field>
@@ -18,27 +57,25 @@
         <record id="view_clv_medicament_manufacturer_form" model="ir.ui.view">
             <field name="name">clv_medicament.manufacturer.form</field>
             <field name="model">clv_medicament.manufacturer</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Medicament Manufacturers" version="7.0">
                     <sheet>
                         <div class="oe_title">
-                            <div class="oe_edit_only">
-                                <label for="name"/>
-                            </div>
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
                             <h1>
                                 <field name="name" default_focus="1" placeholder="Name..."/>
                             </h1>
-                            <div class="oe_edit_only">
-                                <label for="code"/>
-                            </div>
+                            <label for="code"/>
                             <h2>
-                                <field name="code" default_focus="1" placeholder="Code..."/>
+                                <field name="code" placeholder="Code..."/>
                             </h2>
                         </div>
+                        <field name="str_ids" colspan="4" nolabel="1"/>
                         <notebook>
                             <page string="Information">
-                                <group string="Information" />
+                                <group string="Information"/>
                                 <div class="oe_edit_only">
                                     <label for="info"/>
                                 </div>
@@ -63,13 +100,13 @@
         <record id="view_clv_medicament_manufacturer_search" model="ir.ui.view">
             <field name="name">clv_medicament.manufacturer.search</field>
             <field name="model">clv_medicament.manufacturer</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament Manufacturer">
-                    <field name="name" />
-                    <field name="code" />
-                    <field name="info" />
-                    <newline />
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="info"/>
+                    <newline/>
                 </search>
             </field>
         </record>
@@ -80,23 +117,23 @@
             <field name="res_model">clv_medicament.manufacturer</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_clv_medicament_manufacturer_search" />
+            <field name="search_view_id" ref="view_clv_medicament_manufacturer_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_medicament_manufacturer_view_form">
-            <field name="act_window_id" ref="act_open_clv_medicament_manufacturer_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_medicament_manufacturer_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_medicament_manufacturer_form" />
+            <field name="view_id" ref="view_clv_medicament_manufacturer_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_medicament_manufacturer_view_tree">
-            <field name="act_window_id" ref="act_open_clv_medicament_manufacturer_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_medicament_manufacturer_view"/>
+            <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_medicament_manufacturer_tree" />
+            <field name="view_id" ref="view_clv_medicament_manufacturer_tree"/>
         </record>
         
         <record id="view_clv_medicament_tree_manufacturer" model="ir.ui.view">

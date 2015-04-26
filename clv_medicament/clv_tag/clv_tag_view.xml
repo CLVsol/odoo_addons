@@ -42,6 +42,84 @@
             </field>
         </record>
 
+        <record id="view_clv_medicament_manufacturer_tree_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.tree</field>
+            <field name="model">clv_medicament.manufacturer</field>
+            <field name="inherit_id" ref="view_clv_medicament_manufacturer_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_manufacturer_form_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.form</field>
+            <field name="model">clv_medicament.manufacturer</field>
+            <field name="inherit_id" ref="view_clv_medicament_manufacturer_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="name" position="before">
+                    <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
+                    <h2>
+                        <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_manufacturer_search_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.search</field>
+            <field name="model">clv_medicament.manufacturer</field>
+            <field name="inherit_id" ref="view_clv_medicament_manufacturer_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_active_component_tree_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.tree</field>
+            <field name="model">clv_medicament.active_component</field>
+            <field name="inherit_id" ref="view_clv_medicament_active_component_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_active_component_form_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.form</field>
+            <field name="model">clv_medicament.active_component</field>
+            <field name="inherit_id" ref="view_clv_medicament_active_component_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="name" position="before">
+                    <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
+                    <h2>
+                        <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_active_component_search_tag" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.search</field>
+            <field name="model">clv_medicament.active_component</field>
+            <field name="inherit_id" ref="view_clv_medicament_active_component_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
         <record id="view_clv_tag_form" model="ir.ui.view">
             <field name="name">clv_tag.form</field>
             <field name="model">clv_tag</field>
@@ -51,6 +129,12 @@
                 <page string="Tag for" position="inside">
                     <group string="Medicaments">
                         <field name="medicament_ids" colspan="4" nolabel="1"/>
+                    </group>
+                    <group string="Medicament Manufacturers">
+                        <field name="medicament_manufacturer_ids" colspan="4" nolabel="1"/>
+                    </group>
+                    <group string="Medicament Active Components">
+                        <field name="medicament_active_component_ids" colspan="4" nolabel="1"/>
                     </group>
                 </page>
             </field>

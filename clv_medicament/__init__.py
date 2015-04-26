@@ -20,10 +20,10 @@
 # import product_product
 import clv_medicament
 import category
+import manufacturer
+import active_component
 import clv_tag
 import clv_annotation
-import active_component
-import manufacturer
 import therapeutic_class
 import form
 import route

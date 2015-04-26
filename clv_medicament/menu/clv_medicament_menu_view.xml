@@ -39,6 +39,12 @@
             groups="clv_base.group_base_manager"
             sequence="40"
             action="clv_medicament.act_open_clv_medicament_manufacturer_view" />
+            <!-- Pharmacy/Configuration/Configuration/Medicament/Manufacturers/Strings -->
+            <menuitem name="Strings" id="menu_pharmacy_config_config_medicament_manufacturers_strings"
+                parent="menu_pharmacy_config_config_medicament_manufacturers"
+                groups="clv_base.group_base_manager"
+                sequence="10"
+                action="clv_medicament.act_open_clv_medicament_manufacturer_str_view" />
         <!-- Pharmacy/Configuration/Configuration/Medicament/Form -->
         <menuitem name="Form" id="menu_pharmacy_config_config_medicament_form"  
             parent="clv_base.menu_pharmacy_config_config_medicament"
