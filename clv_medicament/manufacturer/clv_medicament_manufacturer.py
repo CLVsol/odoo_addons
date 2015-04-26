@@ -19,8 +19,35 @@
 
 from openerp.osv import fields, osv
 
+class clv_medicament_manufacturer_str(osv.osv):
+    _name = 'clv_medicament.manufacturer.str'
+
+    _columns = {
+        'name': fields.char(size=256, string='Manufacturer String', required=True),
+        'manufacturer_id': fields.many2one('clv_medicament.manufacturer', string='Associated Manufacturer', 
+                                           help='Associated Medicament Manufacturer'),
+    }
+    
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
+
+    _order='name'
+
 class clv_medicament_manufacturer(osv.osv):
     _name = 'clv_medicament.manufacturer'
+
+    def get_strings(self, cr, uid, ids, fields, arg, context):
+        res={}
+        for record in self.browse(cr, uid, ids, context=None):
+            strings = ''
+            for str_id in record.str_ids:
+                if strings == '':
+                    strings = str_id.name
+                else:
+                    strings = strings + '\n' + str_id.name
+            res[record.id] = strings
+        return res
 
     _columns = {
         'name': fields.char(size=256, string='Manufacturer', required=True),
@@ -28,12 +55,16 @@ class clv_medicament_manufacturer(osv.osv):
         'info': fields.text(string='Info'),
         'active': fields.boolean('Active', help="The active field allows you to hide the manufacturer without removing it."),
         'medicament_ids': fields.one2many('clv_medicament', 'manufacturer', 'Medicaments'),
-
+        'str_ids': fields.one2many('clv_medicament.manufacturer.str', 'manufacturer_id', 'Strings'),
+        'strings' : fields.function(get_strings, method=True, string="Strings", type='char', store=False)
     }
+
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
         ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
     ]
+
+    _order='name'
 
     _defaults = {
         'active': 1,

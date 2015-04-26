@@ -28,6 +28,16 @@ class clv_tag(osv.osv):
                                            'tag_id', 
                                            'medicament_id', 
                                            'Medicaments'),
+        'medicament_manufacturer_ids': fields.many2many('clv_medicament.manufacturer', 
+                                                        'clv_medicament_manufacturer_clv_tag_rel', 
+                                                        'tag_id', 
+                                                        'medicament_manufacturer_id', 
+                                                        'Medicament Manufacturers'),
+        'medicament_active_component_ids': fields.many2many('clv_medicament.active_component', 
+                                                            'clv_medicament_active_component_clv_tag_rel', 
+                                                            'tag_id', 
+                                                            'medicament_active_component_id', 
+                                                            'Medicament Active Components'),
         }
 
 class clv_medicament(osv.osv):
@@ -37,6 +47,28 @@ class clv_medicament(osv.osv):
         'tag_ids': fields.many2many('clv_tag', 
                                     'clv_medicament_clv_tag_rel', 
                                     'medicament_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }
+
+class clv_medicament_manufacturer(osv.osv):
+    _inherit = 'clv_medicament.manufacturer'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_medicament_manufacturer_clv_tag_rel', 
+                                    'medicament_manufacturer_id', 
+                                    'tag_id', 
+                                    'Tags'),
+        }
+
+class clv_medicament_active_component(osv.osv):
+    _inherit = 'clv_medicament.active_component'
+
+    _columns = {
+        'tag_ids': fields.many2many('clv_tag', 
+                                    'clv_medicament_active_component_clv_tag_rel', 
+                                    'medicament_active_component_id', 
                                     'tag_id', 
                                     'Tags'),
         }

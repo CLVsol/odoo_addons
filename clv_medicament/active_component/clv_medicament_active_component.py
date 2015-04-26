@@ -37,6 +37,8 @@ class clv_medicament_active_component(osv.osv):
         ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
         ]   
 
+    _order='name'
+
     _defaults = {
         'active': 1,
         }
