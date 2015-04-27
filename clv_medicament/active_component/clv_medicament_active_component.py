@@ -20,8 +20,35 @@
 from openerp.osv import fields, osv
 
 
+class clv_medicament_active_component_str(osv.osv):
+    _name = 'clv_medicament.active_component.str'
+
+    _columns = {
+        'name': fields.char(size=256, string='Active Component String', required=True),
+        'active_component_id': fields.many2one('clv_medicament.active_component', string='Associated Active Component', 
+                                           help='Associated Medicament Active Component'),
+    }
+    
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
+
+    _order='name'
+
 class clv_medicament_active_component(osv.osv):
     _name = 'clv_medicament.active_component'
+
+    def get_strings(self, cr, uid, ids, fields, arg, context):
+        res={}
+        for record in self.browse(cr, uid, ids, context=None):
+            strings = ''
+            for str_id in record.str_ids:
+                if strings == '':
+                    strings = str_id.name
+                else:
+                    strings = strings + '\n' + str_id.name
+            res[record.id] = strings
+        return res
 
     _columns = {
         'name': fields.char(size=256, string='Active Component', required=True),
@@ -30,8 +57,10 @@ class clv_medicament_active_component(osv.osv):
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the therapeutic class without removing it."),
         'medicament_ids': fields.one2many('clv_medicament', 'active_component', 'Medicaments'),
-
+        'str_ids': fields.one2many('clv_medicament.active_component.str', 'active_component_id', 'Strings'),
+        'strings' : fields.function(get_strings, method=True, string="Strings", type='char', store=False)
         }
+
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Active Component must be unique!'),
         ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
