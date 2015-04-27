@@ -2,6 +2,44 @@
 <openerp>
     <data>
 
+        <record id="view_clv_medicament_active_component_str_tree" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.str.tree</field>
+            <field name="model">clv_medicament.active_component.str</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament Active Component String">
+                    <field name="name"/>
+                    <field name="active_component_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_active_component_str_search" model="ir.ui.view">
+            <field name="name">clv_medicament.active_component.str.search</field>
+            <field name="model">clv_medicament.active_component.str</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Medicament Active Component String">
+                    <field name="name"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Medicament Active Component" domain="[]" context="{'group_by':'active_component_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_active_component_str_view">
+            <field name="name">Medicament Active Component Strings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_medicament.active_component.str</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_medicament_active_component_str_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
         <record id="view_clv_medicament_active_component_form" model="ir.ui.view">
             <field name="name">Active Component</field>
             <field name="model">clv_medicament.active_component</field>
@@ -19,6 +57,7 @@
                                 <field name="code" placeholder="Active Component Code..."/>
                             </h2>
                         </div>
+                        <field name="str_ids" colspan="4" nolabel="1"/>
                         <notebook>
                             <page string="Information">
                                 <field name="info" placeholder="Other Information ..." colspan="4"/>
@@ -46,6 +85,7 @@
             <field name="arch" type="xml">
                 <tree string="Active Components">
                     <field name="name"/>
+                    <field name="strings"/>
                     <field name="code"/>
                     <field name="info"/>
                 </tree>
