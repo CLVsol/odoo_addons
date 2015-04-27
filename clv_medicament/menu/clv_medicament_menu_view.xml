@@ -27,6 +27,12 @@
             groups="clv_base.group_base_manager"
             sequence="20"
             action="clv_medicament.act_open_clv_medicament_active_component_view"/>
+            <!-- Pharmacy/Configuration/Configuration/Medicament/Active Components/Strings -->
+            <menuitem name="Strings" id="menu_pharmacy_config_config_medicament_active_components_strings"
+                parent="menu_pharmacy_config_config_medicament_active_components"
+                groups="clv_base.group_base_manager"
+                sequence="10"
+                action="clv_medicament.act_open_clv_medicament_active_component_str_view"/>
         <!-- Pharmacy/Configuration/Configuration/Medicament/Therapeutic Classes -->
         <menuitem name="Therapeutic Classes" id="menu_pharmacy_config_config_medicament_therapeutic_classes"
             parent="clv_base.menu_pharmacy_config_config_medicament"
