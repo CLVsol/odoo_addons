@@ -26,7 +26,8 @@ class clv_medicament_active_component_str(osv.osv):
     _columns = {
         'name': fields.char(size=256, string='Active Component String', required=True),
         'active_component_id': fields.many2one('clv_medicament.active_component', string='Associated Active Component', 
-                                           help='Associated Medicament Active Component'),
+                                               help='Associated Medicament Active Component'),
+        'verify': fields.boolean('Verify'),
     }
     
     _sql_constraints = [
@@ -50,6 +51,18 @@ class clv_medicament_active_component(osv.osv):
             res[record.id] = strings
         return res
 
+    def name_get(self, cr, uid, ids, context={}):
+        if not len(ids):
+            return []
+        reads = self.read(cr, uid, ids, ['name', 'code'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['code']:
+                name = name + ' {' + record['code'] + '}'
+            res.append((record['id'], name))
+        return res
+    
     _columns = {
         'name': fields.char(size=256, string='Active Component', required=True),
         'code': fields.char(size=256, string='Code'),
@@ -78,10 +91,12 @@ class clv_medicament(osv.osv):
     def name_get(self, cr, uid, ids, context={}):
         if not len(ids):
             return []
-        reads = self.read(cr, uid, ids, ['name_active_component'], context=context)
+        reads = self.read(cr, uid, ids, ['name', 'code'], context=context)
         res = []
         for record in reads:
-            name = record['name_active_component']
+            name = record['name']
+            if record['code']:
+                name = name + ' {' + record['code'] + '}'
             res.append((record['id'], name))
         return res
     

@@ -23,6 +23,18 @@ from datetime import datetime
 class clv_medicament_group(osv.osv):
     _name = 'clv_medicament_group'
 
+    def name_get(self, cr, uid, ids, context={}):
+        if not len(ids):
+            return []
+        reads = self.read(cr, uid, ids, ['name', 'catalog_name'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['catalog_name']:
+                name = record['catalog_name'] + ', ' + name
+            res.append((record['id'], name))
+        return res
+    
     _columns = {
         'name' : fields.char('Name', size=64, select=1, required=True, help='Medicament Group Name'),
         'alias' : fields.char('Alias', size=64, help='Common name that the Medicament Group is referred'),

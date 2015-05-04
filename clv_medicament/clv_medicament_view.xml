@@ -63,6 +63,7 @@
                                 <field name="concentration" placeholder="Concentration..."/>
                                 <field name="pres_form" placeholder="Presentation Form..."/>
                                 <field name="pres_quantity" placeholder="Presentation Quantity..."/>
+                                <field name="pres_quantity_unit" placeholder="Presentation Quantity..."/>
                             </group>
                             <group name="Y">
                             </group>
@@ -107,6 +108,7 @@
                     <separator/>
                     <filter string="Not a Product" name="not_product" domain="[('is_product','=',0)]"/>
                     <filter string="Product" name="product" domain="[('is_product','=',1)]"/>
+                    <filter string="Missing Medicament Code" name="product" domain="[('code','=',False)]"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                     </group>
