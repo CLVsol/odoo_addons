@@ -10,6 +10,7 @@
                 <tree string="Medicament Active Component String">
                     <field name="name"/>
                     <field name="active_component_id"/>
+                    <field name="verify"/>
                 </tree>
             </field>
         </record>
@@ -85,8 +86,8 @@
             <field name="arch" type="xml">
                 <tree string="Active Components">
                     <field name="name"/>
-                    <field name="strings"/>
                     <field name="code"/>
+                    <field name="strings"/>
                     <field name="info"/>
                 </tree>
             </field>

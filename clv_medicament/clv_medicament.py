@@ -62,7 +62,7 @@ class clv_medicament(osv.osv):
 
     _columns = {
         # 'name' : fields.char('Name', select=True, required=True, translate=True),
-        'name' : fields.char('Name', select=True, required=True),
+        'name' : fields.char('Product Name', select=True, required=True),
         'ean13': fields.char('EAN13 Barcode', size=13, 
                              help="International Article Number used for product identification."),
         # 'product_id': fields.many2one('product.product', 'Product', required=True,
@@ -77,6 +77,8 @@ class clv_medicament(osv.osv):
         'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form', 
                                      help='Medicament form, such as tablet or gel'),
         'pres_quantity': fields.integer(string='Presentation Quantity'),
+        'pres_quantity_unit': fields.many2one('clv_medicament.uom', string='Quantity Unit', 
+                                              help='Unit of measure for the medicament to be taken'),
         'composition': fields.text(string='Composition', help='Components'),
         'notes': fields.text(string='Notes'),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
@@ -89,7 +91,10 @@ class clv_medicament(osv.osv):
     # _order='name_product'
     _order='name'
 
-    _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!')]
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', u'Error! The Name must be unique!'),
+        ('code_uniq', 'unique(code)', u'Error! The Medicament Code must be unique!'),
+        ]
 
     _defaults = {
         'active': 1,
