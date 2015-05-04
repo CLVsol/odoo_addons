@@ -15,6 +15,7 @@
                     <field name="presentation"/>
                     <field name="pres_form"/>
                     <field name="pres_quantity"/>
+                    <field name="pres_quantity_unit"/>
                     <!--field name="code" /-->
                 </tree>
             </field>
@@ -61,8 +62,9 @@
                                         <field name="product_presentation" placeholder="Product/Presentation..."/>
                                         <field name="active_component_name" placeholder="Active Component..."/>
                                         <field name="concentration" placeholder="Concentration..."/>
-                                        <field name="pres_quantity" placeholder="Presentation Quantity..."/>
                                         <field name="pres_form" placeholder="Presentation Form..."/>
+                                        <field name="pres_quantity" placeholder="Presentation Quantity..."/>
+                                        <field name="pres_quantity_unit" placeholder="Quantity Unit..."/>
                                         <field name="therap_class" placeholder="Therapeutic Class..."/>
                                         <field name="manufacturer_name" placeholder="Medicament Manufacturer..."/>
                                         <!--field name="medicament" placeholder="Medicament..."/-->

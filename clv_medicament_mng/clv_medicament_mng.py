@@ -36,6 +36,8 @@ class clv_medicament_mng(osv.osv):
         'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form', 
                                      help='Medicament form, such as tablet or gel'),
         'pres_quantity': fields.integer(string='Presentation Quantity'),
+        'pres_quantity_unit': fields.many2one('clv_medicament.uom', string='Quantity Unit', 
+                                              help='Unit of measure for the medicament to be taken'),
         'therap_class': fields.char(size=256, string='Therapeutic Class'),
         'manufacturer_name': fields.char('Medicament Manufacturer', size=128, required=False, select=True),
         # 'medicament': fields.many2one('clv_medicament', string='Medicament'),
