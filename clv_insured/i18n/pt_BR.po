@@ -615,6 +615,12 @@ msgid "User..."
 msgstr "Usuário..."
 
 #. module: clv_insured
+#: selection:clv_insured,state:0
+#: selection:clv_insured.history,state:0
+msgid "Processing"
+msgstr "Processando"
+
+#. module: clv_insured
 #: view:clv_insured:clv_insured.view_clv_insured_form_wkf
 msgid "Process"
 msgstr "Processar"
