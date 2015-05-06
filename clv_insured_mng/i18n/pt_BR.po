@@ -310,9 +310,13 @@ msgstr "Beneficiários"
 #: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
 #: view:clv_tag:clv_insured_mng.view_clv_tag_form
 #: model:ir.actions.act_window,name:clv_insured_mng.act_open_clv_insured_mng_view
-#: model:ir.ui.menu,name:clv_insured_mng.menu_insurance_insured_insureds_mng
 msgid "Insureds (Management)"
 msgstr "Beneficiários (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: model:ir.ui.menu,name:clv_insured_mng.menu_insurance_insured_insureds_mng
+msgid "Management"
+msgstr "Gerenciamento"
 
 #. module: clv_insured_mng
 #: field:clv_insured_mng,write_uid:0
@@ -437,12 +441,12 @@ msgstr "Solteiro"
 #. module: clv_insured_mng
 #: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_wkf
 msgid "Stage"
-msgstr "Estágio"
+msgstr "Status"
 
 #. module: clv_insured_mng
 #: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
 msgid "Stage..."
-msgstr "Estágio..."
+msgstr "Status..."
 
 #. module: clv_insured_mng
 #: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
