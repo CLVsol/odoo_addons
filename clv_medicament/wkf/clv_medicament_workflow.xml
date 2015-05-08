@@ -39,7 +39,7 @@
 
         <record id="act_suspended" model="workflow.activity">
             <field name="wkf_id" ref="workflow_clv_medicament" />
-            <field name="name">suspend</field>
+            <field name="name">suspended</field>
             <field name="kind">function</field>
             <field name="action">button_suspend()</field>
         </record>
