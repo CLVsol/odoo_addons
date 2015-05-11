@@ -20,4 +20,5 @@
 import clv_medicament_seq
 import clv_medicament_category_seq
 import clv_medicament_template_seq
+import clv_medicament_manufacturer_seq
 import clv_medicament_active_component_seq
