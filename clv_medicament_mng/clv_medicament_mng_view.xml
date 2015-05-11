@@ -99,6 +99,11 @@
                     <field name="presentation"/>
                     <field name="active_component_name"/>
                     <separator/>
+                    <filter string="Missing Active Component" name="missing_active_component" domain="[('active_component','=',False)]"/>
+                    <filter string="Defined Active Component" name="missing_active_component" domain="[('active_component','!=',False)]"/>
+                    <filter string="Missing Concentration" name="missing_active_component" domain="[('concentration','=',False)]"/>
+                    <filter string="Missing Presentastion Form" name="missing_active_component" domain="[('pres_form','=',False)]"/>
+                    <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Active Component Name" domain="[]" context="{'group_by': 'active_component_name'}"/>
                         <filter string="Concentration" domain="[]" context="{'group_by': 'concentration'}"/>
