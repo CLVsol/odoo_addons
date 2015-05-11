@@ -35,9 +35,6 @@
                                 <field name="medicament_state"/>
                                 <field name="medicament_uid_inclusion"/>
                                 <field name="medicament_date_inclusion"/>
-                                <field name="medicament_date_activation"/>
-                                <field name="medicament_date_inactivation"/>
-                                <field name="medicament_date_suspension"/>
                             </group>
                         </group>
                     </page>
