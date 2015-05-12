@@ -50,8 +50,23 @@
             <field name="arch" type="xml">
                 <field name="name" position="after">
                     <field name="medicament_code"/>
+                    <field name="active_component"/>
+                    <field name="manufacturer_id"/>
                     <field name="notes"/>
                 </field>
+                <filter string="Missing Concentration" position="before">
+                    <filter string="Missing Active Component" name="missing_active_component" domain="[('active_component','=',False)]"/>
+                    <filter string="Defined Active Component" name="missing_active_component" domain="[('active_component','!=',False)]"/>
+                </filter>
+                <filter string="Missing Concentration" position="after">
+                    <filter string="Missing Manufacturer" name="missing_manufacturer" domain="[('manufacturer_id','=',False)]"/>
+                </filter>
+                <filter string="Concentration" position="before">
+                    <filter string="Active Component Name" domain="[]" context="{'group_by': 'active_component_name'}"/>
+                </filter>
+                <filter string="Concentration" position="after">
+                    <filter string="Manufacturer" domain="[]" context="{'group_by': 'manufacturer_id'}"/>
+                </filter>
             </field>
         </record>
         
