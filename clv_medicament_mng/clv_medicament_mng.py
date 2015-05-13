@@ -51,6 +51,8 @@ class clv_medicament_mng(osv.osv):
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'active': fields.boolean('Active', 
                                  help="If unchecked, it will allow you to hide the medicament without removing it."),
+        'is_fraction': fields.boolean('Is a Fraction', 
+                                      help="Check if the medicament is a fraction of a product."),
         }
 
     _order='product_name'
@@ -60,5 +62,6 @@ class clv_medicament_mng(osv.osv):
     _defaults = {
         'active': 1,
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'is_fraction': False,
         }
     

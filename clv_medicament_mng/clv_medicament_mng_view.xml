@@ -16,6 +16,7 @@
                     <field name="pres_form"/>
                     <field name="pres_quantity"/>
                     <field name="pres_quantity_unit"/>
+                    <field name="is_fraction"/>
                     <!--field name="code" /-->
                 </tree>
             </field>
@@ -58,7 +59,8 @@
                         <notebook>
                             <page string="Information">
                                 <group>
-                                    <group string="Contact Information">
+                                    <group>
+                                        <field name="is_fraction"/>
                                         <field name="product_presentation" placeholder="Product/Presentation..."/>
                                         <field name="active_component_name" placeholder="Active Component..."/>
                                         <field name="concentration" placeholder="Concentration..."/>
@@ -101,6 +103,8 @@
                     <field name="concentration"/>
                     <field name="pres_form"/>
                     <separator/>
+                    <filter string="Not a Fraction" name="not_fraction" domain="[('is_fraction','=',0)]"/>
+                    <filter string="Fraction" name="fraction" domain="[('is_fraction','=',1)]"/>
                     <filter string="Missing Concentration" name="missing_active_component" domain="[('concentration','=',False)]"/>
                     <filter string="Missing Presentastion Form" name="missing_active_component" domain="[('pres_form','=',False)]"/>
                     <separator/>
