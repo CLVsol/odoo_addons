@@ -86,6 +86,8 @@ class clv_medicament(osv.osv):
                                  help="The active field allows you to hide the medicament without removing it."),
         'is_product': fields.boolean('Is a Product', 
                                      help="Check if the medicament is a product."),
+        'is_fraction': fields.boolean('Is a Fraction', 
+                                      help="Check if the medicament is a fraction of a product."),
         }
 
     # _order='name_product'
@@ -100,6 +102,7 @@ class clv_medicament(osv.osv):
         'active': 1,
         # 'is_medicament': True,
         'is_product': False,
+        'is_fraction': False,
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
 
