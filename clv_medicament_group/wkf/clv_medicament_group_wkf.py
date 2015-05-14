@@ -17,46 +17,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Medicament Group',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Medicament Group
-================
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_medicament',
-        'clv_medicament_catalog',
-        ],
-    'data': [
-        'security/clv_medicament_group_security.xml',
-        'security/ir.model.access.csv',
-        'clv_medicament_group_view.xml',
-        'clv_medicament_catalog_view.xml',
-        'category/clv_medicament_group_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_medicament_group_sequence.xml',
-        'seq/clv_medicament_group_category_sequence.xml',
-        'wkf/clv_medicament_group_workflow.xml',
-        'wkf/clv_medicament_group_wkf_view.xml',
-        'history/clv_medicament_group_history_view.xml',
-        'menu/clv_medicament_group_menu_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+from datetime import *
+
+class clv_medicament_group(models.Model):
+    _inherit = 'clv_medicament_group'
+
+    state = fields.Selection([('draft','Draft'),
+                              ('revised','Revised'),
+                              ('waiting','Waiting'),
+                              ('done','Done')
+                              ], string='Status', default='draft', readonly=True, required=True, help="")
+
+    @api.one
+    def button_draft(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'draft'
+
+    @api.one
+    def button_revised(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'revised'
+
+    @api.one
+    def button_waiting(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'waiting'
+
+    @api.one
+    def button_done(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'done'
