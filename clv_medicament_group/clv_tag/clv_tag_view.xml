@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_group_tree_tag" model="ir.ui.view">
+            <field name="name">clv_medicament_group.tree</field>
+            <field name="model">clv_medicament_group</field>
+            <field name="inherit_id" ref="view_clv_medicament_group_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_group_form_tag" model="ir.ui.view">
+            <field name="name">clv_medicament_group.form</field>
+            <field name="model">clv_medicament_group</field>
+            <field name="inherit_id" ref="view_clv_medicament_group_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <!--label for="parent_id" position="before"-->
+                <label for="name" position="before">
+                    <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
+                    <h2>
+                        <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_group_search_tag" model="ir.ui.view">
+            <field name="name">clv_medicament_group.search</field>
+            <field name="model">clv_medicament_group</field>
+            <field name="inherit_id" ref="view_clv_medicament_group_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_tag_form" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Tag for" position="inside">
+                    <group string="Medicament Groups">
+                        <field name="medicament_group_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

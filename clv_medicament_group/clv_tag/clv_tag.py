@@ -17,10 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_medicament_catalog
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
+from openerp import models, fields
+
+class clv_medicament_group(models.Model):
+    _inherit = 'clv_medicament_group'
+
+    tag_ids = fields.Many2many('clv_tag', 
+                               'clv_medicament_group_tag_rel', 
+                               'medicament_group_id', 
+                               'tag_id', 
+                               'Tags')
+
+class clv_tag(models.Model):
+    _inherit = 'clv_tag'
+
+    medicament_group_ids = fields.Many2many('clv_medicament_group', 
+                                            'clv_medicament_group_tag_rel', 
+                                            'tag_id', 
+                                            'medicament_group_id', 
+                                            'Medicament Groups')
