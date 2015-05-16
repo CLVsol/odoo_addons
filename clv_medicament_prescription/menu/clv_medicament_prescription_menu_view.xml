@@ -15,12 +15,17 @@
             sequence="40"
             action="clv_medicament.act_open_clv_medicament_template_view"/>
  -->
-        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
-        <menuitem name="Prescription Categories" id="menu_pharmacy_config_config_medicament_prescription_categories" 
-            parent="clv_base.menu_pharmacy_config_config_medicament"
-            groups="clv_base.group_medicament_user"
-            sequence="90"
-            action="clv_medicament_prescription.act_open_clv_medicament_prescription_category_view"/>
+        <!-- Pharmacy/Configuration/Configuration/Prescription-->
+        <menuitem name="Prescription" id="menu_pharmacy_config_config_medicament_prescription"  
+            parent="clv_base.menu_pharmacy_config_config"
+            groups="clv_base.group_base_user"
+            sequence="40"/>
+            <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
+            <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_prescription_categories" 
+                parent="menu_pharmacy_config_config_medicament_prescription"
+                groups="clv_base.group_medicament_user"
+                sequence="10"
+                action="clv_medicament_prescription.act_open_clv_medicament_prescription_category_view"/>
 
     </data>
 </openerp>

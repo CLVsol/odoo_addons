@@ -44,8 +44,6 @@ class clv_medicament_prescription(osv.Model):
         'notes': fields.text(string='Prescription Notes'),
         'active': fields.boolean('Active', help="The active field allows you to hide the prescription without removing it."),
         'transcription_date': fields.date(string='Transcription Date', required=False),
-        'prescriber_id': fields.many2one('clv_professional', string='Prescriber', required=False),
-        'insured_card_id': fields.many2one('clv_insured_card', string='Insured Card', required=False),
         'transcriber' : fields.many2one ('res.users', 'Transcriber'),
         }
     

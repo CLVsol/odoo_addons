@@ -12,8 +12,6 @@
                     <field name="prescription_date"/>
                     <field name="age"/>
                     <field name="transcription_date"/>
-                    <field name="prescriber_id"/>
-                    <field name="insured_card_id"/>
                     <field name="transcriber"/>
                     <field name="notes"/>
                 </tree>
@@ -52,16 +50,6 @@
                             <h3>
                                 <field name="transcription_date" placeholder="Trasncription Date..."/>
                             </h3>
-                            <!--label for="prescriber_id" class="oe_edit_only"/-->
-                            <label for="prescriber_id"/>
-                            <h3>
-                                <field name="prescriber_id" placeholder="Prescriber..."/>
-                            </h3>
-                            <!--label for="insured_card_id" class="oe_edit_only"/-->
-                            <label for="insured_card_id"/>
-                            <h3>
-                                <field name="insured_card_id" placeholder="Insured Card..."/>
-                            </h3>
                             <!--label for="transcriber" class="oe_edit_only"/-->
                             <label for="transcriber"/>
                             <h3>
@@ -96,8 +84,6 @@
                     <field name="prescription_date"/>
                     <field name="age"/>
                     <field name="transcription_date"/>
-                    <field name="prescriber_id"/>
-                    <field name="insured_card_id"/>
                     <field name="transcriber"/>
                     <field name="notes"/>
                     <separator/>
@@ -105,8 +91,6 @@
                         <filter string="Prescription Date" domain="[]" context="{'group_by': 'prescription_date'}"/>
                         <filter string="Age" domain="[]" context="{'group_by': 'age'}"/>
                         <filter string="Transcription Date" domain="[]" context="{'group_by': 'transcription_date'}"/>
-                        <filter string="Prescriber" domain="[]" context="{'group_by': 'prescriber_id'}"/>
-                        <filter string="Insured Card" domain="[]" context="{'group_by': 'insured_card_id'}"/>
                         <filter string="Transcriber" domain="[]" context="{'group_by': 'transcriber'}"/>
                     </group>
                 </search>
