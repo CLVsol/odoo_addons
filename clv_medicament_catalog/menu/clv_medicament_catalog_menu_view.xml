@@ -9,12 +9,12 @@
             sequence="20"
             action="clv_medicament_catalog.act_open_clv_medicament_catalog_view"/>
 
-        <!-- Pharmacy/Configuration/Configuration/Medicament Catalog-->
-        <menuitem name="Medicament Catalog" id="menu_pharmacy_config_config_medicament_catalog"  
+        <!-- Pharmacy/Configuration/Configuration/Catalog-->
+        <menuitem name="Catalog" id="menu_pharmacy_config_config_medicament_catalog"  
             parent="clv_base.menu_pharmacy_config_config"
             groups="clv_base.group_base_user"
             sequence="20"/>
-            <!-- Pharmacy/Configuration/Configuration/Medicament/Catalog Categories -->
+            <!-- Pharmacy/Configuration/Configuration/Catalog/Categories -->
             <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_catalog_categories" 
                 parent="menu_pharmacy_config_config_medicament_catalog"
                 groups="clv_base.group_medicament_catalog_user"
