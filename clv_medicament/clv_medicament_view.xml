@@ -13,6 +13,7 @@
                     <!--field name="medicament_name"/-->
                     <field name="concentration"/>
                     <field name="pres_form"/>
+                    <field name="pres_form_2"/>
                     <field name="code"/>
                     <field name="is_product"/>
                     <field name="is_fraction"/>
@@ -63,6 +64,7 @@
                             <group name="X">
                                 <field name="concentration" placeholder="Concentration..."/>
                                 <field name="pres_form" placeholder="Presentation Form..."/>
+                                <field name="pres_form_2" placeholder="Presentation Form 2..."/>
                                 <field name="pres_quantity" placeholder="Presentation Quantity..."/>
                                 <field name="pres_quantity_unit" placeholder="Presentation Quantity..."/>
                             </group>
