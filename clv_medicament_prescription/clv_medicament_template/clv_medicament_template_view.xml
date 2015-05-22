@@ -47,7 +47,7 @@
             <field name="inherit_id" ref="clv_medicament_prescription.view_clv_medicament_prescription_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <page string="Settings" position="before">
+                <page string="Prescription Information" position="before">
                     <page string="Medicaments">
                         <field name="prescription_lines" colspan="4"/>
                     </page>

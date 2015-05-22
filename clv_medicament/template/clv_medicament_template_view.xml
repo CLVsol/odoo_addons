@@ -37,7 +37,8 @@
                             <!--label for="medicament" class="oe_edit_only"/-->
                             <label for="medicament"/>
                             <h1>
-                                <field name="medicament" default_focus="1" placeholder="Medicament..." domain="[('is_product','=',0)]"/>
+                                <!--field name="medicament" default_focus="1" placeholder="Medicament..." domain="[('is_product','=',0)]"/-->
+                                <field name="medicament" default_focus="1" placeholder="Medicament..."/>
                             </h1>
                             <!--label for="medicament_code" class="oe_edit_only"/-->
                             <label for="medicament_code"/>
