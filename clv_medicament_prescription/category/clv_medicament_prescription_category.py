@@ -74,7 +74,7 @@ class clv_medicament_prescription_category(osv.osv):
                                  help="If unchecked, it will allow you to hide the category without removing it."),
         'parent_left': fields.integer('Left parent', select=True),
         'parent_right': fields.integer('Right parent', select=True),
-        'medicament_prescription_ids': fields.many2many('clv_medicament', 
+        'medicament_prescription_ids': fields.many2many('clv_medicament_prescription', 
                                                         'clv_medicament_prescription_category_rel', 
                                                         'category_id', 
                                                         'medicament_id', 
