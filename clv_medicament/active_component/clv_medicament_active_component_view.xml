@@ -172,9 +172,15 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="code" position="after">
+                    <field name="manufacturer"/>
                     <field name="active_component"/>
                 </field>
+                <filter string="Missing Concentration" position="before">
+                    <filter string="Missing Manufacturer" name="missing_manufacturer" domain="[('manufacturer','=',False)]"/>
+                    <filter string="Missing Active Component" name="missing_active_component" domain="[('active_component','=',False)]"/>
+                </filter>
                 <group string="Group By..." position="inside">
+                    <filter string="Manufacturer" domain="[]" context="{'group_by': 'manufacturer'}"/>
                     <filter string="Active Component" domain="[]" context="{'group_by':'active_component'}"/>
                 </group>
             </field>
