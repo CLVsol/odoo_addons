@@ -66,6 +66,7 @@ class clv_medicament_template(osv.Model):
         'admin_times': fields.char(size=256, string='Administration hours', 
                                    help='Suggested administration hours. For example, at 08:00, 13:00'\
                                         ' and 18:00 can be encoded like 08 13 18'),
+        'notes': fields.text(string='Notes'),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the medicament template without removing it."),
         }

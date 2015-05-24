@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Pharmacies -->
+        <menuitem name="Pharmacies" id="menu_pharmacy_medicament_pharmacies"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_pharmacy_user"
+            sequence="50"
+            action="clv_pharmacy.act_open_clv_pharmacy_view"/>
+
+        <!-- Pharmacy/Configuration/Configuration/Pharmacy-->
+        <menuitem name="Pharmacy" id="menu_pharmacy_config_config_pharmacy"  
+            parent="clv_base.menu_pharmacy_config_config"
+            groups="clv_base.group_base_user"
+            sequence="50"/>
+            <!-- Pharmacy/Configuration/Configuration/Pharmacy/Categories -->
+            <menuitem name="Categories" id="menu_pharmacy_config_config_pharmacy_categories" 
+                parent="menu_pharmacy_config_config_pharmacy"
+                groups="clv_base.group_pharmacy_user"
+                sequence="10"
+                action="clv_pharmacy.act_open_clv_pharmacy_category_view"/>
+
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
+<!--         <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
+            parent="clv_base.menu_pharmacy_config_config_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="10"
+            action="clv_medicament.act_open_clv_medicament_category_view"/>
+ -->
+    </data>
+</openerp>
