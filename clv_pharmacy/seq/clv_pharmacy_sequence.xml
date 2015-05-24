@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_pharmacy.seq_type_clv_pharmacy" model="ir.sequence.type">
+            <field name="name">Pharmacy Sequence</field>
+            <field name="code">clv_pharmacy.code</field>
+        </record>
+        
+        <record id="clv_pharmacy.seq_clv_pharmacy" model="ir.sequence">
+            <field name="name">Pharmacy Sequence</field>
+            <field name="code">clv_pharmacy.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>

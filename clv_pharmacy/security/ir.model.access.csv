@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_clv_pharmacy_pharmacy_user,clv_pharmacy,model_clv_pharmacy,clv_base.group_pharmacy_user,1,0,0,0
+access_clv_pharmacy_pharmacy_manager,clv_pharmacy,model_clv_pharmacy,clv_base.group_pharmacy_manager,1,1,1,0
+access_clv_pharmacy_base_smanager,clv_pharmacy,model_clv_pharmacy,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_pharmacy_category_pharmacy_user,clv_pharmacy.category,model_clv_pharmacy_category,clv_base.group_pharmacy_user,1,0,0,0
+access_clv_pharmacy_category_pharmacy_manager,clv_pharmacy.category,model_clv_pharmacy_category,clv_base.group_pharmacy_manager,1,1,1,0
+access_clv_pharmacy_category_base_smanager,clv_pharmacy.category,model_clv_pharmacy_category,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_pharmacy_history_pharmacy_user,clv_pharmacy.history,model_clv_pharmacy_history,clv_base.group_pharmacy_user,1,0,0,0
+access_clv_pharmacy_history_pharmacy_manager,clv_pharmacy.history,model_clv_pharmacy_history,clv_base.group_pharmacy_manager,1,1,1,0
+access_clv_pharmacy_history_base_smanager,clv_pharmacy.history,model_clv_pharmacy_history,clv_base.group_base_smanager,1,1,1,1

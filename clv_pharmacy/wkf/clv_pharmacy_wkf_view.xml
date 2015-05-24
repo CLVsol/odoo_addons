@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_pharmacy_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_pharmacy.tree</field>
+            <field name="model">clv_pharmacy</field>
+            <field name="inherit_id" ref="clv_pharmacy.view_clv_pharmacy_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state_date"/>
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_pharmacy_form_wkf" model="ir.ui.view">
+            <field name="name">clv_pharmacy.form</field>
+            <field name="model">clv_pharmacy</field>
+            <field name="inherit_id" ref="clv_pharmacy.view_clv_pharmacy_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Pharmacy" position="before">
+                    <header>
+                        <button string="Activate" name="button_activate" states="new,canceled,suspended" type="workflow" groups="clv_base.group_pharmacy_manager" class="oe_highlight"/>
+                        <button string="Cancel" name="button_cancel" states="new,active,suspended" type="workflow" groups="clv_base.group_pharmacy_manager"/>
+                        <button string="Suspend" name="button_suspend" states="new,active,canceled" type="workflow" groups="clv_base.group_pharmacy_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,active,canceled,suspended"
+                        statusbar_colors='{"new":"blue","active":"green","canceled":"red","suspended":"red"}'/>
+                    </header>
+                </sheet>
+                <field name="date_inclusion" position="after">
+                    <field name="state_date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_pharmacy_search_wkf" model="ir.ui.view">
+            <field name="name">clv_pharmacy.search</field>
+            <field name="model">clv_pharmacy</field>
+            <field name="inherit_id" ref="clv_pharmacy.view_clv_pharmacy_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
