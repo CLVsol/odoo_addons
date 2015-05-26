@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Price Lists -->
+        <menuitem name="Price Lists" id="menu_pharmacy_medicament_price_lists"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_price_list_user"
+            sequence="60"
+            action="clv_medicament_price_list.act_open_clv_medicament_price_list_view"/>
+            <!-- Pharmacy/Medicament/Price Lists/Items -->
+            <menuitem name="Items" id="menu_pharmacy_medicament_price_lists_items"
+                parent="menu_pharmacy_medicament_price_lists"
+                groups="clv_base.group_medicament_price_list_user"
+                sequence="10"
+                action="clv_medicament_price_list.act_open_clv_medicament_price_list_item_view"/>
+
+        <!-- Pharmacy/Configuration/Configuration/Price List-->
+        <menuitem name="Price List" id="menu_pharmacy_config_config_medicament_price_list"  
+            parent="clv_base.menu_pharmacy_config_config"
+            groups="clv_base.group_base_user"
+            sequence="60"/>
+            <!-- Pharmacy/Configuration/Configuration/Price List/Categories -->
+<!--             <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_price_list_categories" 
+                parent="menu_pharmacy_config_config_medicament_price_list"
+                groups="clv_base.group_medicament_price_list_user"
+                sequence="10"
+                action="clv_medicament_price_list.act_open_clv_medicament_price_list_category_view"/>
+ -->
+    </data>
+</openerp>
