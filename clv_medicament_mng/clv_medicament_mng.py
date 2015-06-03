@@ -25,7 +25,7 @@ class clv_medicament_mng(osv.osv):
     _name = 'clv_medicament_mng'
 
     _columns = {
-        'product_name': fields.char('Product Name', size=128, required=False, select=True),
+        'product_name': fields.char('Product Name', size=256, required=False, select=True),
         # 'medicament_name': fields.char(size=256, string='Name'),
         'name': fields.char('Name', size=256, required=False, select=True),
         # 'code': fields.char(size=64, string='Medicament Code', required=False),
