@@ -26,6 +26,7 @@
                         <button string="Waiting" name="button_waiting" states="draft,revised" type="workflow" groups="clv_base.group_medicament_prescription_manager"/>
                         <button string="Done" name="button_done" states="draft,revised,waiting" type="workflow" groups="clv_base.group_medicament_prescription_manager" class="oe_highlight"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done"/>
+                        <button name="set_to_draft" states="revised,waiting,done" string="Set to draft" type="object"  groups="clv_base.group_base_smanager"/>
                     </header>
                 </sheet>
             </field>

@@ -32,7 +32,12 @@
                 </sheet>
                 <field name="date_inclusion" position="before">
                     <field name="state_date"/>
-                    <field name="state_age"/>
+                    <!--field name="state_age"/-->
+                </field>
+                <field name="date_inclusion" position="after">
+                    <field name="date_activation"/>
+                    <field name="date_cancelation"/>
+                    <!--field name="date_suspension"/-->
                 </field>
             </field>
         </record>
@@ -45,8 +50,8 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="state"/>
-                    <!--field name="date_activation"/-->
-                    <!--field name="date_inactivation"/-->
+                    <field name="date_activation"/>
+                    <field name="date_cancelation"/>
                     <!--field name="date_suspension"/-->
                 </field>
                 <group string="Group By..." position="inside">

@@ -26,10 +26,9 @@ class clv_insured(models.Model):
 
     state_date = fields.Datetime("Status change date", required=True, readonly=True,
                                  default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    state_age = fields.Char('Status Age', size=32, compute='_state_age', store=False)
-    # date_activation = fields.Datetime("Activation date", required=False, readonly=False)
-    # date_inactivation = fields.Datetime("Inactivation date", required=False, readonly=False)
-    # date_suspension = fields.Datetime("Suspension date", required=False, readonly=False)
+    # state_age = fields.Char('Status Age', size=32, compute='_state_age', store=False)
+    date_activation = fields.Date("Activation date", required=False, readonly=False)
+    date_cancelation = fields.Date("Cancelation date", required=False, readonly=False)
     state = fields.Selection([('new','New'),
                               ('processing','Processing'),
                               ('active','Active'),
@@ -37,16 +36,16 @@ class clv_insured(models.Model):
                               ('canceled','Canceled')
                               ], string='Status', default='new', readonly=True, required=True, help="")
 
-    @api.one
-    @api.depends('state_date')
-    def _state_age(self):
-        now = datetime.now()
-        if self.state_date:
-            dob = datetime.strptime(self.state_date,'%Y-%m-%d %H:%M:%S')
-            delta=relativedelta (now, dob)
-            self.state_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
-        else:
-            self.state_age = "No Status change date!"
+    # @api.one
+    # @api.depends('state_date')
+    # def _state_age(self):
+    #     now = datetime.now()
+    #     if self.state_date:
+    #         dob = datetime.strptime(self.state_date,'%Y-%m-%d %H:%M:%S')
+    #         delta=relativedelta (now, dob)
+    #         self.state_age = str(delta.years) +"y "+ str(delta.months) +"m "+ str(delta.days)+"d"
+    #     else:
+    #         self.state_age = "No Status change date!"
 
     @api.one
     def button_new(self):
@@ -61,23 +60,20 @@ class clv_insured(models.Model):
     @api.one
     def button_activate(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_activation:
-        #     self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
+        if not self.date_activation:
+            self.date_activation = datetime.now().strftime('%Y-%m-%d')
+            time.sleep(1.0)
         self.state = 'active'
 
     @api.one
     def button_suspend(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_suspension:
-        #     self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
         self.state = 'suspended'
 
     @api.one
     def button_cancel(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_inactivation:
-        #     self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
+        if not self.date_cancelation:
+            self.date_cancelation = datetime.now().strftime('%Y-%m-%d')
+            time.sleep(1.0)
         self.state = 'canceled'

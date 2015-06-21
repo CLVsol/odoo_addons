@@ -17,41 +17,43 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from datetime import *
+from openerp.osv import fields, osv
 
-class clv_medicament_prescription(models.Model):
-    _inherit = 'clv_medicament_prescription'
+from openerp import netsvc
 
-    state = fields.Selection([('draft','Draft'),
-                              ('revised','Revised'),
-                              ('waiting','Waiting'),
-                              ('done','Done')
-                              ], string='Status', default='draft', readonly=True, required=True, help="")
+class clv_medicament_template(osv.osv):
+    _inherit = 'clv_medicament.template'
 
-    @api.one
-    def button_draft(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'draft'
+    _columns = {
+        'state': fields.selection([('draft','Draft'),
+                                   ('revised','Revised'),
+                                   ('waiting','Waiting'),
+                                   ('done','Done'),
+                                   ('canceled','Canceled'),
+                                   ], string='Status', readonly=True, required=True, help=""),
+        }
+    
+    _defaults = {
+        'state': 'draft',
+        }
 
-    @api.one
-    def button_revised(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'revised'
+    def button_draft(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'draft'})
 
-    @api.one
-    def button_waiting(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'waiting'
+    def button_revised(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'revised'})
 
-    @api.one
-    def button_done(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'done'
+    def button_waiting(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'waiting'})
 
-    @api.one
-    def set_to_draft(self, *args):
-        self.write({'state': 'draft'})
-        self.create_workflow()
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
+
+    def button_cancel(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'canceled'})
+
+    def set_to_draft(self, cr, uid, ids, *args):
+        self.write(cr, uid, ids, {'state': 'draft'})
+        self.create_workflow(cr, uid, ids)
         return True
 
