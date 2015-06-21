@@ -79,26 +79,23 @@ class clv_insured_card(models.Model):
     @api.one
     def button_activate(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_activation:
-        #     self.date_activation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
+        if not self.date_activation:
+            self.date_activation = datetime.now().strftime('%Y-%m-%d')
+            time.sleep(1.0)
         self.state = 'active'
         self.insert_clv_insured_card_history(self.id, 'active', '')
 
     @api.one
     def button_suspend(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_suspension:
-        #     self.date_suspension = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
         self.state = 'suspended'
         self.insert_clv_insured_card_history(self.id, 'suspended', '')
 
     @api.one
     def button_cancel(self):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # if not self.date_inactivation:
-        #     self.date_inactivation = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        #     time.sleep(1.0)
+        if not self.date_cancelation:
+            self.date_cancelation = datetime.now().strftime('%Y-%m-%d')
+            time.sleep(1.0)
         self.state = 'canceled'
         self.insert_clv_insured_card_history(self.id, 'canceled', '')
