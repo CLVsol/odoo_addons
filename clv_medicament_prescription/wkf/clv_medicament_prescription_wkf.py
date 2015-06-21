@@ -48,3 +48,10 @@ class clv_medicament_prescription(models.Model):
     def button_done(self):
         self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.state = 'done'
+
+    @api.one
+    def set_to_draft(self, *args):
+        self.write({'state': 'draft'})
+        self.create_workflow()
+        return True
+
