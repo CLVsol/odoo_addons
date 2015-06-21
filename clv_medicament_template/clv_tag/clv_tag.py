@@ -17,41 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-from datetime import *
+from openerp import models, fields
 
-class clv_medicament_prescription(models.Model):
-    _inherit = 'clv_medicament_prescription'
+class clv_tag(models.Model):
+    _inherit = 'clv_tag'
 
-    state = fields.Selection([('draft','Draft'),
-                              ('revised','Revised'),
-                              ('waiting','Waiting'),
-                              ('done','Done')
-                              ], string='Status', default='draft', readonly=True, required=True, help="")
+    medicament_template_ids = fields.Many2many('clv_medicament.template', 
+                                               'clv_medicament_template_clv_tag_rel', 
+                                               'tag_id', 
+                                               'medicament_template_id', 
+                                               'Annotations')
 
-    @api.one
-    def button_draft(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'draft'
+class clv_medicament_template(models.Model):
+    _inherit = 'clv_medicament.template'
 
-    @api.one
-    def button_revised(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'revised'
-
-    @api.one
-    def button_waiting(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'waiting'
-
-    @api.one
-    def button_done(self):
-        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.state = 'done'
-
-    @api.one
-    def set_to_draft(self, *args):
-        self.write({'state': 'draft'})
-        self.create_workflow()
-        return True
-
+    tag_ids = fields.Many2many('clv_tag', 
+                               'clv_medicament_template_clv_tag_rel', 
+                               'medicament_template_id', 
+                               'tag_id', 
+                               'Tags')
