@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_template_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament.template.tree</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="notes" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_template_form_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament.template.form</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Medicament Template" position="before">
+                    <header>
+                        <button string="Done" name="button_done" states="waiting" type="workflow" groups="clv_base.group_medicament_manager" class="oe_highlight"/>
+                        <button string="Cancel" name="button_cancel" states="draft,revised,waiting" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Revised" name="button_revised" states="draft,waiting" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <button string="Waiting" name="button_waiting" states="revised" type="workflow" groups="clv_base.group_medicament_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done,canceled"/>
+                        <button name="set_to_draft" states="draft,revised,waiting,done,canceled" string="Set to draft" type="object"  groups="clv_base.group_base_smanager"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_template_search_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament.template.search</field>
+            <field name="model">clv_medicament.template</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_template_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
