@@ -38,7 +38,7 @@
                             </h2>
                             <label for="code" class="oe_edit_only"/>
                             <h2>
-                                <field name="code" placeholder="Insurance Code..."/>
+                                <field name="code" placeholder="Pharmacy Code..."/>
                             </h2>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
