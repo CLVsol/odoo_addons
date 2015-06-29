@@ -49,7 +49,7 @@ class clv_medicament_group(osv.osv):
                                             string='Active Component', 
                                             help='Medicament Active Component'),
         'concentration': fields.char(size=256, string='Concentration'),
-        'pres_form': fields.char(size=256, string='Presentation Form'),
+        'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form'),
         'catalog_name': fields.related('catalog_id', 'name', type='char', string='Catalog Name', 
                                        readonly=True, store=True),
         }
