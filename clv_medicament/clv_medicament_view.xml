@@ -116,7 +116,8 @@
                     <filter string="Fraction" name="fraction" domain="[('is_fraction','=',1)]"/>
                     <filter string="Missing Medicament Code" name="product" domain="[('code','=',False)]"/>
                     <filter string="Missing Concentration" name="missing_active_component" domain="[('concentration','=',False)]"/>
-                    <filter string="Missing Presentastion Form" name="missing_active_component" domain="[('pres_form','=',False)]"/>
+                    <filter string="Missing Presentastion Form" name="missing_pres_form" domain="[('pres_form','=',False)]"/>
+                    <filter string="Missing Presentastion Form 2" name="missing_pres_form" domain="[('pres_form_2','=',False)]"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Concentration" domain="[]" context="{'group_by': 'concentration'}"/>
