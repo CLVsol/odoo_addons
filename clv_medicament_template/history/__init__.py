@@ -17,6 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_tag
-import wkf
-import history
+import clv_medicament_template_history
