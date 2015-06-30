@@ -35,6 +35,7 @@ Medicament Template
         'clv_medicament',
         ],
     'data': [
+        'security/ir.model.access.csv',
         'clv_tag/clv_tag_view.xml',
         'wkf/clv_medicament_template_workflow.xml',
         'wkf/clv_medicament_template_wkf_view.xml',
