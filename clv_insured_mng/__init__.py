@@ -29,3 +29,4 @@ import clv_insurance_client
 import role
 import address
 import clv_insured_card
+import relation

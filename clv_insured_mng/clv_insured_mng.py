@@ -52,7 +52,7 @@ class clv_insured_mng(models.Model):
                                 ('widower', 'Widower'), 
                                 ('divorced', 'Divorced'),
                                 ], 'Marital Status')
-    batch_name = fields.Char('Batch Name', required=True, size=64)
+    batch_name = fields.Char('Batch Name', required=False, size=64)
     active = fields.Boolean('Active', 
                             help="If unchecked, it will allow you to hide the insured without removing it.",
                             default=1)

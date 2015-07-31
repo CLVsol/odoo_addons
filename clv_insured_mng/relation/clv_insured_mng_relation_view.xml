@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_insured_mng_form_relation" model="ir.ui.view">
+            <field name="name">clv_insured_mng.form</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="clv_insured_mng.view_clv_insured_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Relations">
+                        <field name="relation_ids" colspan="4" nolabel="1">
+                            <tree string="Insured (Management) Relations">
+                                <field name="insured_mng_id"/>
+                                <field name="insured_id"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_mng_relation_form" model="ir.ui.view">
+            <field name="name">clv_insured_mng.relation.form</field>
+            <field name="model">clv_insured_mng.relation</field>
+            <field name="arch" type="xml">
+                <form string="Insured (Management) Relations" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="insured_mng_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="insured_mng_id" placeholder="Insured (Management)..." readonly="False"/>
+                            </h2>
+                            <label for="insured_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="insured_id" default_focus="1" placeholder="Related Insured..." readonly="False"/>
+                            </h1>
+                            <label for="notes" class="oe_edit_only"/>
+                            <field name="notes" placeholder="Notes..."/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_insured_mng_relation_tree" model="ir.ui.view">
+            <field name="name">clv_insured_mng.relation.tree</field>
+            <field name="model">clv_insured_mng.relation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Insured (Management) Relations">
+                    <field name="insured_mng_id"/>
+                    <field name="insured_id"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
