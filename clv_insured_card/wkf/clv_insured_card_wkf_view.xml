@@ -12,6 +12,9 @@
                     <field name="state_date"/>
                     <field name="state"/>
                 </field>
+                <tree string="Insured Card" position="attributes">
+                    <attribute name='colors'>red:state=='canceled';blue:state=='active'</attribute>
+                </tree>
             </field>
         </record>
 
