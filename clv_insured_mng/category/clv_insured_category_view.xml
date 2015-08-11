@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_insured_mng_tree_category" model="ir.ui.view">
+            <field name="name">clv_insured_mng.tree</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="category_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_mng_form_category" model="ir.ui.view">
+            <field name="name">clv_insured_mng.form</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="name" position="before">
+                    <label for="category_ids" class="oe_edit_only"/>
+                    <h2>
+                        <field name="category_ids" widget="many2many_tags" placeholder="Categories..."/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_mng_search_category" model="ir.ui.view">
+            <field name="name">clv_insured_mng.search</field>
+            <field name="model">clv_insured_mng</field>
+            <field name="inherit_id" ref="view_clv_insured_mng_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="category_ids"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

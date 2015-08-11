@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_mng_tree_medicament" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.tree</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="pres_quantity" position="after">
+                    <field name="medicament_code"/>
+                    <!--field name="notes"/-->
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_mng_form_medicament" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.form</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Medicament">
+                        <group>
+                            <group string="Medicament">
+                                <field name="associate_medicament"/>
+                                <field name="medicament_code" placeholder="Medicament Code..."/>
+                                <field name="medicament_id" placeholder="Medicament..."/>
+                                <field name="manufacturer_id" placeholder="Manufacturer..."/>
+                                <field name="active_component" placeholder="Active Component..."/>
+                            </group>
+                            <group string="Status">
+                                <field name="medicament_state"/>
+                                <field name="medicament_uid_inclusion"/>
+                                <field name="medicament_date_inclusion"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_mng_search_medicament" model="ir.ui.view">
+            <field name="name">clv_medicament_mng.search</field>
+            <field name="model">clv_medicament_mng</field>
+            <field name="inherit_id" ref="view_clv_medicament_mng_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="medicament_code"/>
+                    <field name="active_component"/>
+                    <field name="manufacturer_id"/>
+                    <field name="notes"/>
+                </field>
+                <filter string="Missing Concentration" position="before">
+                    <filter string="Missing Active Component" name="missing_active_component" domain="[('active_component','=',False)]"/>
+                    <filter string="Defined Active Component" name="missing_active_component" domain="[('active_component','!=',False)]"/>
+                </filter>
+                <filter string="Missing Concentration" position="after">
+                    <filter string="Missing Manufacturer" name="missing_manufacturer" domain="[('manufacturer_id','=',False)]"/>
+                </filter>
+                <filter string="Concentration" position="before">
+                    <filter string="Active Component Name" domain="[]" context="{'group_by': 'active_component_name'}"/>
+                </filter>
+                <filter string="Concentration" position="after">
+                    <filter string="Manufacturer" domain="[]" context="{'group_by': 'manufacturer_id'}"/>
+                </filter>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

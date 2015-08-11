@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Medicaments/Management -->
+        <menuitem name="Management" id="menu_pharmacy_medicament_medicaments_management"
+            parent="clv_medicament.menu_pharmacy_medicament_medicaments"
+            groups="clv_base.group_medicament_mng_user"
+            sequence="100"
+            action="clv_medicament_mng.act_open_clv_medicament_mng_view"/>
+
+    </data>
+</openerp>

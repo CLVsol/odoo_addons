@@ -1,0 +1,633 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_insured_mng
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-09 00:52+0000\n"
+"PO-Revision-Date: 2015-03-09 00:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_insured_mng
+#: model:ir.actions.act_window,help:clv_insured_mng.act_open_clv_insured_mng_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new insured.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo beneficiário.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,active:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Address"
+msgstr "Endereço"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_code:0
+msgid "Address Code"
+msgstr "Código do Endereço"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Address Code..."
+msgstr "Código do Endereço..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_alias:0
+#: field:clv_insured_mng,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_insured_mng
+#: view:clv_annotation:clv_insured_mng.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_annotation
+#: field:clv_insured_mng,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Birth"
+msgstr "Nascimento"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_category
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Citizenship & Other Info"
+msgstr "Nacionalidade & Outras Informações"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+#: field:clv_insured_mng,addr_city:0
+msgid "City"
+msgstr "Cidade"
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,addr_alias:0
+msgid "Common name that the Address is referred"
+msgstr "Nome comum com que o Endereço é conhecido"
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,alias:0
+msgid "Common name that the Insured is referred"
+msgstr "Nome comum com que o Beneficiário é conhecido"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+#: field:clv_insured_mng,addr_country_id:0
+msgid "Country"
+msgstr "País"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,create_uid:0
+#: field:clv_insured_mng.history,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,create_date:0
+#: field:clv_insured_mng.history,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,birthday:0
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,marital:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: clv_insured_mng
+#: sql_constraint:clv_insured_mng:0
+msgid "Error! The Insured Code must be unique!"
+msgstr "Erro! O Código do Beneficiário deve ser único!"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_fax:0
+msgid "Fax"
+msgstr "Fax"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,gender:0
+msgid "Female"
+msgstr "Feminino"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,gender:0
+msgid "Gender"
+msgstr "Gênero"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_clv_insurance
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_clv_insurance_client
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_role
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_wkf
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,holder_id:0
+msgid "Holder"
+msgstr "Titular"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_role
+msgid "Holder..."
+msgstr "Titular..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,address_home_id:0
+msgid "Home Address"
+msgstr "Endereço Pessoal"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,id:0
+#: field:clv_insured_mng.history,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desabilitar o histórico sem removê-lo."
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,active:0
+msgid "If unchecked, it will allow you to hide the insured without removing it."
+msgstr "Se desmarcado, será possível esconder o beneficiário sem removê-lo."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_clv_insurance
+#: field:clv_insured_mng,insurance_id:0
+msgid "Insurance"
+msgstr "Plano"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_clv_insurance_client
+#: field:clv_insured_mng,insurance_client_id:0
+msgid "Insurance Client"
+msgstr "Cliente"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_clv_insurance_client
+msgid "Insurance Client..."
+msgstr "Cliente..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_clv_insurance
+msgid "Insurance..."
+msgstr "Plano..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_tree
+#: field:clv_insured_mng.history,insured_mng_id:0
+msgid "Insured (Management)"
+msgstr "Beneficiário (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_history
+#: field:clv_insured_mng,history_ids:0
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_tree
+msgid "Insured (Management) History"
+msgstr "Histórico do Beneficiário (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+msgid "Insured (Management)..."
+msgstr "Beneficiário (Gerenciamento)..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,code:0
+msgid "Insured Code"
+msgstr "Código do Beneficiário"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Insured Code..."
+msgstr "Código do Beneficiário..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,identification_id:0
+msgid "Insured ID"
+msgstr "Identidade do Beneficiário"
+
+#. module: clv_insured_mng
+#: view:clv_insurance:clv_insured_mng.view_clv_insurance_form_clv_insured_mng_01
+msgid "Insureds"
+msgstr "Beneficiários"
+
+#. module: clv_insured_mng
+#: view:clv_annotation:clv_insured_mng.view_clv_annotation_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_tag:clv_insured_mng.view_clv_tag_form
+#: model:ir.actions.act_window,name:clv_insured_mng.act_open_clv_insured_mng_view
+msgid "Insureds (Management)"
+msgstr "Beneficiários (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: model:ir.ui.menu,name:clv_insured_mng.menu_insurance_insured_insureds_mng
+msgid "Management"
+msgstr "Gerenciamento"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,write_uid:0
+#: field:clv_insured_mng.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,write_date:0
+#: field:clv_insured_mng.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,gender:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,marital:0
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,marital:0
+msgid "Married"
+msgstr "Casado"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_mobile:0
+msgid "Mobile"
+msgstr "Celular"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_name:0
+#: field:clv_insured_mng,name:0
+#: field:clv_insured_mng,display_name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,country_id:0
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_notes:0
+#: field:clv_insured_mng,notes:0
+#: field:clv_insured_mng.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,otherid:0
+msgid "Other ID"
+msgstr "Outra Identidade"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Personal Information"
+msgstr "Informações Pessoais"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_phone:0
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Public Information"
+msgstr "Informações Públicas"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,reg_number:0
+msgid "Reg. Number"
+msgstr "Número de Registro"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_clv_insurance_client
+msgid "Reg. Number..."
+msgstr "Número de Registro..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Revised"
+msgstr "Revisado"
+
+#. module: clv_insured_mng
+#: view:clv_insurance:clv_insured_mng.view_clv_insurance_form_clv_insured_mng_01
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_annotation
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_history
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_role
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,marital:0
+msgid "Single"
+msgstr "Solteiro"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search_wkf
+msgid "Stage"
+msgstr "Status"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+msgid "Stage..."
+msgstr "Status..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+#: field:clv_insured_mng,addr_state_id:0
+msgid "State"
+msgstr "Estado"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+#: field:clv_insured_mng,state:0
+#: field:clv_insured_mng.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_street:0
+msgid "Street"
+msgstr "Logradouro"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "Street..."
+msgstr "Logradouro..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_street2:0
+msgid "Street2"
+msgstr "Complemento"
+
+#. module: clv_insured_mng
+#: view:clv_tag:clv_insured_mng.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng.history:clv_insured_mng.view_clv_insured_mng_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Waiting"
+msgstr "Aguardando"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,marital:0
+msgid "Widower"
+msgstr "Viúvo"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,work_email:0
+msgid "Work Email"
+msgstr "Email comercial"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,mobile_phone:0
+msgid "Work Mobile"
+msgstr "Celular Comercial"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,work_phone:0
+msgid "Work Phone"
+msgstr "Telefone Comercial"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,address_id:0
+msgid "Working Address"
+msgstr "Endereço Comercial"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "ZIP"
+msgstr "CEP"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,addr_zip:0
+msgid "Zip"
+msgstr "CEP"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_addr
+msgid "e.g. +32.81.81.37.00"
+msgstr "por ex. (19) 4445-8889"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,insured_id:0
+msgid "Insured"
+msgstr "Beneficiário"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+#: field:clv_insured_mng,insured_card_id:0
+msgid "Insured Card"
+msgstr "Cartão do Beneficiário"
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,crd_code:0
+msgid "Insured Card Code"
+msgstr "Código do Cartão"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Insured Card Code..."
+msgstr "Código do Cartão..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Insured Card..."
+msgstr "Cartão do Beneficiário..."
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Insured..."
+msgstr "Beneficiário..."
+
+#. module: clv_insured_mng
+#: help:clv_insured_mng,crd_name:0
+msgid "Name printed on the card."
+msgstr "Nome impresso no cartão."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,crd_name:0
+msgid "Printed Name"
+msgstr "Nome Impresso"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_crd
+msgid "Printed Name..."
+msgstr "Nome Impresso..."
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insured_mng_manager
+msgid "Insured Management Manager"
+msgstr "Gerente de Beneficiário (Gerenciamento)"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_insured_mng_user
+msgid "Insured Management User"
+msgstr "Usuário de Beneficiário (Gerenciamento)"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_search
+#: field:clv_insured_mng,batch_name:0
+msgid "Batch Name"
+msgstr "Nome do Lote"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form
+msgid "Batch Name..."
+msgstr "Nome do Lote..."
+
+#. module: clv_insured_mng
+#: field:clv_insured_mng,age:0
+msgid "Age"
+msgstr "Idade"
+
+#. module: clv_insured_mng
+#: view:clv_insured_mng:clv_insured_mng.view_clv_insured_mng_form_wkf
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: clv_insured_mng
+#: selection:clv_insured_mng,state:0
+#: selection:clv_insured_mng.history,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
