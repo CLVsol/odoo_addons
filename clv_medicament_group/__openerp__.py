@@ -40,7 +40,7 @@ Medicament Group
         'security/clv_medicament_group_security.xml',
         'security/ir.model.access.csv',
         'clv_medicament_group_view.xml',
-        'clv_medicament_catalog_view.xml',
+        # 'clv_medicament_catalog_view.xml',
         'category/clv_medicament_group_category_view.xml',
         'clv_tag/clv_tag_view.xml',
         'clv_annotation/clv_annotation_view.xml',

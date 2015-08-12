@@ -23,17 +23,17 @@ from datetime import datetime
 class clv_medicament_group(osv.osv):
     _name = 'clv_medicament_group'
 
-    def name_get(self, cr, uid, ids, context={}):
-        if not len(ids):
-            return []
-        reads = self.read(cr, uid, ids, ['name', 'catalog_name'], context=context)
-        res = []
-        for record in reads:
-            name = record['name']
-            if record['catalog_name']:
-                name = record['catalog_name'] + ', ' + name
-            res.append((record['id'], name))
-        return res
+    # def name_get(self, cr, uid, ids, context={}):
+    #     if not len(ids):
+    #         return []
+    #     reads = self.read(cr, uid, ids, ['name', 'catalog_name'], context=context)
+    #     res = []
+    #     for record in reads:
+    #         name = record['name']
+    #         if record['catalog_name']:
+    #             name = record['catalog_name'] + ', ' + name
+    #         res.append((record['id'], name))
+    #     return res
     
     _columns = {
         'name' : fields.char('Name', size=64, select=1, required=True, help='Medicament Group Name'),
@@ -41,7 +41,7 @@ class clv_medicament_group(osv.osv):
         'code': fields.char(size=64, string='Medicament Group Code', required=False),
         'notes':  fields.text(string='Notes'),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
-        'catalog_id': fields.many2one('clv_medicament_catalog', 'Catalog'),
+        # 'catalog_id': fields.many2one('clv_medicament_catalog', 'Catalog'),
         'active': fields.boolean('Active', 
                                  help="The active field allows you to hide the group without removing it."),
         'medicament_name': fields.char(size=256, string='Medicament Name'),
@@ -50,11 +50,12 @@ class clv_medicament_group(osv.osv):
                                             help='Medicament Active Component'),
         'concentration': fields.char(size=256, string='Concentration'),
         'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form'),
-        'catalog_name': fields.related('catalog_id', 'name', type='char', string='Catalog Name', 
-                                       readonly=True, store=True),
+        # 'catalog_name': fields.related('catalog_id', 'name', type='char', string='Catalog Name', 
+        #                                readonly=True, store=True),
         }
 
-    _order='catalog_name, name'
+    # _order='catalog_name, name'
+    _order='name'
 
     _defaults = {
         'date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

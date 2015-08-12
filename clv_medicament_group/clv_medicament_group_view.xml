@@ -14,7 +14,7 @@
                     <field name="active_component"/>
                     <field name="concentration"/>
                     <field name="pres_form"/>
-                    <field name="catalog_id"/>
+                    <!--field name="catalog_id"/-->
                     <field name="notes"/>
                 </tree>
             </field>
@@ -47,10 +47,10 @@
                             <h3>
                                 <field name="code" placeholder="Medicament Group Code..."/>
                             </h3>
-                            <label for="catalog_id"/>
+                            <!--label for="catalog_id"/>
                             <h2>
                                 <field name="catalog_id" placeholder="Catalogue..."/>
-                            </h2>
+                            </h2-->
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
@@ -90,7 +90,7 @@
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
-                    <field name="catalog_id"/>
+                    <!--field name="catalog_id"/-->
                     <field name="active_component"/>
                     <field name="concentration"/>
                     <field name="pres_form"/>
@@ -98,7 +98,7 @@
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Active Component" domain="[]" context="{'group_by': 'active_component'}"/>
-                        <filter string="Catalogue" domain="[]" context="{'group_by': 'catalog_id'}"/>
+                        <!--filter string="Catalogue" domain="[]" context="{'group_by': 'catalog_id'}"/-->
                     </group>
                 </search>
             </field>

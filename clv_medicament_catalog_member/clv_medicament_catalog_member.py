@@ -24,8 +24,8 @@ class clv_medicament_catalog_member(osv.Model):
     _name = 'clv_medicament_catalog_member'
 
     _columns = {
-        'catalog_id': fields.many2one('clv_medicament_catalog', string='Medicament Group',
-                                    help='Medicament Group', required=True),
+        'catalog_id': fields.many2one('clv_medicament_catalog', string='Medicament Catalog',
+                                    help='Medicament Catalog', required=True),
         'medicament_id': fields.many2one('clv_medicament', string='Medicament',
                                          help='Medicament Name', required=False),
         'notes':  fields.text(string='Notes'),

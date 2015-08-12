@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_clv_medicament_catalog_form" model="ir.ui.view">
+        <!--record id="view_clv_medicament_catalog_form" model="ir.ui.view">
             <field name="name">clv_medicament_catalog.form</field>
             <field name="model">clv_medicament_catalog</field>
             <field name="inherit_id" ref="clv_medicament_catalog.view_clv_medicament_catalog_form"/>
@@ -16,7 +16,7 @@
                     </page>
                 </page>
             </field>
-        </record>
+        </record-->
 
     </data>
 </openerp>
