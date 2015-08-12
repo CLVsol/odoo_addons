@@ -36,11 +36,12 @@ class clv_medicament_group_member(osv.Model):
                                  help="The active field allows you to hide the group member without removing it."),
         'group_name': fields.related('group_id', 'name', type='char', string='Group Name', 
                                        readonly=True, store=True),
-        'catalog_name': fields.related('group_id', 'catalog_name', type='char', string='Catalog Name', 
-                                       readonly=True, store=True),
+        # 'catalog_name': fields.related('group_id', 'catalog_name', type='char', string='Catalog Name', 
+        #                                readonly=True, store=True),
     }
     
-    _order='catalog_name, group_name, level, order'
+    # _order='catalog_name, group_name, level, order'
+    _order='group_name, level, order'
     
     _defaults = {
         'level': 9,
