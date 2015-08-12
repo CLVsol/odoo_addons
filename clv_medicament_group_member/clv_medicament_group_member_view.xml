@@ -8,12 +8,12 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament Group Member">
-                    <field name="catalog_name" />
-                    <field name="group_id" />
-                    <field name="medicament_id" />
-                    <field name="level" />
-                    <field name="order" />
-                    <field name="notes" />
+                    <field name="catalog_name"/>
+                    <field name="group_id"/>
+                    <field name="medicament_id"/>
+                    <field name="level"/>
+                    <field name="order"/>
+                    <field name="notes"/>
                 </tree>
             </field>
         </record>
@@ -68,7 +68,7 @@
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
                             <!--page string="Members">
-                                <field name="member_ids" colspan="4" nolabel="1" />
+                                <field name="member_ids" colspan="4" nolabel="1"/>
                             </page-->
                             <page string="Settings" groups="clv_base.group_base_rmanager">
                                 <group>
@@ -87,12 +87,12 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament Group Member">
-                    <field name="catalog_name" />
-                    <field name="group_id" />
-                    <field name="medicament_id" />
-                    <field name="level" />
-                    <field name="order" />
-                    <field name="notes" />
+                    <field name="catalog_name"/>
+                    <field name="group_id"/>
+                    <field name="medicament_id"/>
+                    <field name="level"/>
+                    <field name="order"/>
+                    <field name="notes"/>
                     <separator/>
                     <filter string="Level 0" name="level_0" domain="[('level','=',0)]"/>
                     <filter string="Level 1" name="level_1" domain="[('level','=',1)]"/>
