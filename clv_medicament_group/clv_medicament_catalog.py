@@ -19,11 +19,11 @@
 
 from openerp.osv import orm, fields
 
-class clv_medicament_catalog(orm.Model):
-    _inherit = 'clv_medicament_catalog'
+# class clv_medicament_catalog(orm.Model):
+#     _inherit = 'clv_medicament_catalog'
 
-    _columns = {
-        'medicament_group_ids': fields.one2many('clv_medicament_group',
-                                                'catalog_id',
-                                                'Medicament Groups'),
-    }
+#     _columns = {
+#         'medicament_group_ids': fields.one2many('clv_medicament_group',
+#                                                 'catalog_id',
+#                                                 'Medicament Groups'),
+#     }
