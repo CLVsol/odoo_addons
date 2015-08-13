@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_list_version_tree" model="ir.ui.view">
+            <field name="name">clv_medicament_list.version.tree</field>
+            <field name="model">clv_medicament_list.version</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament List Version">
+                    <field name="list_id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_list_version_form" model="ir.ui.view">
+            <field name="name">clv_medicament_list.version.form</field>
+            <field name="model">clv_medicament_list.version</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Medicament List Version" version="7.0">
+                    <sheet string="Medicament List Version">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <label for="list_id"/>
+                            <h2>
+                                <field name="list_id" placeholder="List Name..."/>
+                            </h2>
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h2>
+                                <field name="name" placeholder="List Version Name..."/>
+                            </h2>
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h2>
+                                <field name="code" placeholder="List Version Code..."/>
+                            </h2>
+                            <label for="description"/>
+                            <h3>
+                                <field name="description" placeholder="Description..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <page string="Public Information">
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_list_version_search" model="ir.ui.view">
+            <field name="name">clv_medicament_list.version.search</field>
+            <field name="model">clv_medicament_list.version</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Medicament List Version">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Medicament List" domain="[]" context="{'group_by': 'list_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_list_version_view">
+            <field name="name">Medicament List Version</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_medicament_list.version</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_medicament_list_version_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new Medicament List Version.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_list_version_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_list_version_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_medicament_list_version_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_list_version_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_list_version_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_medicament_list_version_tree"/>
+        </record>
+        
+        <record id="view_clv_medicament_list_tree_version" model="ir.ui.view">
+            <field name="name">clv_medicament_list.tree</field>
+            <field name="model">clv_medicament_list</field>
+            <field name="inherit_id" ref="clv_medicament_list.view_clv_medicament_list_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="current_version_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_list_form_version" model="ir.ui.view">
+            <field name="name">clv_medicament_list.form</field>
+            <field name="model">clv_medicament_list</field>
+            <field name="inherit_id" ref="clv_medicament_list.view_clv_medicament_list_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="current_version_id"/>
+                    <h3>
+                        <field name="current_version_id" placeholder="Current List Version..."/>
+                    </h3>
+                </div>
+                <page string="List Information" position="after">
+                    <page string="List Versions">
+                        <group>
+                            <field name="medicament_list_version_ids" colspan="4" nolabel="1"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
