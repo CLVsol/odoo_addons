@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Lists -->
+        <menuitem name="Lists" id="menu_pharmacy_medicament_lists"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_list_user"
+            sequence="25"
+            action="clv_medicament_list.act_open_clv_medicament_list_view"/>
+            <!-- Pharmacy/Medicament/Lists/Versions -->
+            <menuitem name="Versions" id="menu_pharmacy_medicament_lists_versions"
+                parent="clv_medicament_list.menu_pharmacy_medicament_lists"
+                groups="clv_base.group_medicament_list_user"
+                sequence="10"
+                action="clv_medicament_list.act_open_clv_medicament_list_version_view" />
+            <!-- Pharmacy/Medicament/Lists/Items -->
+            <menuitem name="Items" id="menu_pharmacy_medicament_lists_items"
+                parent="clv_medicament_list.menu_pharmacy_medicament_lists"
+                groups="clv_base.group_medicament_list_user"
+                sequence="20"
+                action="clv_medicament_list.act_open_clv_medicament_list_item_view" />
+
+        <!-- Pharmacy/Configuration/Configuration/List-->
+        <menuitem name="List" id="menu_pharmacy_config_config_medicament_list"  
+            parent="clv_base.menu_pharmacy_config_config"
+            groups="clv_base.group_base_user"
+            sequence="15"/>
+            <!-- Pharmacy/Configuration/Configuration/List/Categories -->
+            <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_list_categories" 
+                parent="menu_pharmacy_config_config_medicament_list"
+                groups="clv_base.group_medicament_list_user"
+                sequence="10"
+                action="clv_medicament_list.act_open_clv_medicament_list_category_view"/>
+
+    </data>
+</openerp>
