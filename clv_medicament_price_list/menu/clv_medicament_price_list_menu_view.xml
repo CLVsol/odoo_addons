@@ -8,11 +8,17 @@
             groups="clv_base.group_medicament_price_list_user"
             sequence="60"
             action="clv_medicament_price_list.act_open_clv_medicament_price_list_view"/>
+            <!-- Pharmacy/Medicament/Price Lists/Versions -->
+            <menuitem name="Versions" id="menu_pharmacy_medicament_price_lists_versions"
+                parent="menu_pharmacy_medicament_price_lists"
+                groups="clv_base.group_medicament_price_list_user"
+                sequence="10"
+                action="clv_medicament_price_list.act_open_clv_medicament_price_list_version_view" />
             <!-- Pharmacy/Medicament/Price Lists/Items -->
             <menuitem name="Items" id="menu_pharmacy_medicament_price_lists_items"
                 parent="menu_pharmacy_medicament_price_lists"
                 groups="clv_base.group_medicament_price_list_user"
-                sequence="10"
+                sequence="20"
                 action="clv_medicament_price_list.act_open_clv_medicament_price_list_item_view"/>
 
         <!-- Pharmacy/Configuration/Configuration/Price List-->

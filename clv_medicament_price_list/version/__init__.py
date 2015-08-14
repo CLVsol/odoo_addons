@@ -17,27 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
-# from datetime import datetime
-# from dateutil.relativedelta import relativedelta
-
-class clv_medicament_price_list_item(models.Model):
-    _name = 'clv_medicament_price_list.item'
-
-    price_list_id = fields.Many2one('clv_medicament_price_list', string='Medicament Price List',
-                                     help='Medicament Price List', required=True)
-    medicament_id = fields.Many2one('clv_medicament', string='Medicament',
-                                     help='Medicament Name', required=True)
-    notes = fields.Text(string='Notes')
-    consumer_price = fields.Float('Consumer Price')
-    production_price = fields.Float('Production Price')
-    refund_price = fields.Float('Refund Price')
-
-    _order='price_list_id, medicament_id'
-
-class clv_medicament_price_list(models.Model):
-    _inherit = 'clv_medicament_price_list'
-
-    medicament_ids = fields.One2many('clv_medicament_price_list.item',
-                                     'price_list_id',
-                                     'Medicaments')
+import clv_medicament_price_list_version
