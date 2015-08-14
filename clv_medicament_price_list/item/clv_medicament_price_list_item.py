@@ -17,12 +17,27 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_medicament_price_list
-# import category
-# import clv_tag
-# import clv_annotation
-# import seq
-# import wkf
-# import history
-import version
-import item
+from openerp import models, fields, api
+# from datetime import datetime
+# from dateutil.relativedelta import relativedelta
+
+class clv_medicament_price_list_item(models.Model):
+    _name = 'clv_medicament_price_list.item'
+
+    price_list_version_id = fields.Many2one('clv_medicament_price_list.version', string='Medicament Price List Version',
+                                            help='Medicament Price List Version', required=True)
+    medicament_id = fields.Many2one('clv_medicament', string='Medicament',
+                                     help='Medicament Name', required=True)
+    notes = fields.Text(string='Notes')
+    consumer_price = fields.Float('Consumer Price')
+    production_price = fields.Float('Production Price')
+    refund_price = fields.Float('Refund Price')
+
+    _order='price_list_version_id, medicament_id'
+
+class clv_medicament_price_list_version(models.Model):
+    _inherit = 'clv_medicament_price_list.version'
+
+    medicament_ids = fields.One2many('clv_medicament_price_list.item',
+                                     'price_list_version_id',
+                                     'Medicaments')
