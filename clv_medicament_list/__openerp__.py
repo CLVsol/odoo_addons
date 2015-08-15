@@ -36,7 +36,7 @@ Medicament List
         ],
     'data': [
         'security/clv_medicament_list_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_medicament_list_view.xml',
         'category/clv_medicament_list_category_view.xml',
         # 'clv_tag/clv_tag_view.xml',

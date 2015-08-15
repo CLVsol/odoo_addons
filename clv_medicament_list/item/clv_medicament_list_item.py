@@ -28,6 +28,8 @@ class clv_medicament_list_item(models.Model):
                                     help='Medicament', required=False)
     notes = fields.Text(string='Notes')
     order = fields.Integer(string='Order', default=10)
+    discount = fields.Float(string='Discount [%]')
+    subsidy = fields.Float(string='Subsidy [%]')
     active = fields.Boolean('Active', 
                             help='The active field allows you to hide the medicament list item without removing it.',
                             default=1)

@@ -11,6 +11,8 @@
                     <field name="list_version_id"/>
                     <field name="medicament_id"/>
                     <field name="order"/>
+                    <field name="discount"/>
+                    <field name="subsidy"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -42,6 +44,14 @@
                             <h3>
                                 <field name="order" placeholder="Order..."/>
                             </h3>
+                            <label for="discount"/>
+                            <h3>
+                                <field name="discount" placeholder="Discount..."/>
+                            </h3>
+                            <label for="subsidy"/>
+                            <h3>
+                                <field name="subsidy" placeholder="Subsidy..."/>
+                            </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
@@ -71,9 +81,13 @@
                     <field name="medicament_id"/>
                     <field name="order"/>
                     <field name="notes"/>
+                    <field name="discount"/>
+                    <field name="subsidy"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Medicament List Version" domain="[]" context="{'group_by': 'list_version_id'}"/>
+                        <filter string="Discount" domain="[]" context="{'group_by': 'discount'}"/>
+                        <filter string="Subsidy" domain="[]" context="{'group_by': 'subsidy'}"/>
                     </group>
                 </search>
             </field>
