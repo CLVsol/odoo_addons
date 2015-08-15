@@ -18,10 +18,11 @@
 ################################################################################
 
 import clv_medicament_price_list
-import clv_medicament_price_list_item
 # import category
 # import clv_tag
 # import clv_annotation
 # import seq
 # import wkf
 # import history
+import version
+import item

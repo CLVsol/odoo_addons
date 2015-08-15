@@ -8,7 +8,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Medicament Price List Item">
-                    <field name="price_list_id"/>
+                    <field name="price_list_version_id"/>
                     <field name="medicament_id"/>
                     <field name="notes" colspan="4"/>
                     <field name="consumer_price"/>
@@ -27,10 +27,10 @@
                     <sheet string="Medicament Price List Item">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
-                            <!--label for="price_list_id" class="oe_edit_only"/-->
-                            <label for="price_list_id"/>
+                            <!--label for="price_list_version_id" class="oe_edit_only"/-->
+                            <label for="price_list_version_id"/>
                             <h3>
-                                <field name="price_list_id" placeholder="Price List..."/>
+                                <field name="price_list_version_id" placeholder="Price List Version..."/>
                             </h3>
                             <!--label for="medicament_id" class="oe_edit_only"/-->
                             <label for="medicament_id"/>
@@ -75,12 +75,12 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Medicament Price List Item">
-                    <field name="price_list_id"/>
+                    <field name="price_list_version_id"/>
                     <field name="medicament_id"/>
                     <field name="notes" colspan="4"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Price List" domain="[]" context="{'group_by': 'price_list_id'}"/>
+                        <filter string="Price List" domain="[]" context="{'group_by': 'price_list_version_id'}"/>
                         <filter string="Medicament" domain="[]" context="{'group_by': 'medicament_id'}"/>
                     </group>
                 </search>
@@ -117,16 +117,16 @@
             <field name="view_id" ref="view_clv_medicament_price_list_item_tree"/>
         </record>
         
-        <record id="view_clv_medicament_price_list_form_item" model="ir.ui.view">
-            <field name="name">clv_medicament_price_list.form</field>
-            <field name="model">clv_medicament_price_list</field>
-            <field name="inherit_id" ref="view_clv_medicament_price_list_form"/>
+        <record id="view_clv_medicament_price_list_version_form_item" model="ir.ui.view">
+            <field name="name">clv_medicament_price_list.version.form</field>
+            <field name="model">clv_medicament_price_list.version</field>
+            <field name="inherit_id" ref="view_clv_medicament_price_list_version_form"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
                     <page string="Medicaments">
                         <group>
-                            <field name="medicament_ids" colspan="4" nolabel="1" />
+                            <field name="medicament_ids" colspan="4" nolabel="1"/>
                         </group>
                     </page>
                 </page>
