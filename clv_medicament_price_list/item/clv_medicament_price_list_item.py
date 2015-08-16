@@ -26,14 +26,20 @@ class clv_medicament_price_list_item(models.Model):
 
     price_list_version_id = fields.Many2one('clv_medicament_price_list.version', string='Medicament Price List Version',
                                             help='Medicament Price List Version', required=True)
-    medicament_id = fields.Many2one('clv_medicament', string='Medicament',
-                                     help='Medicament Name', required=True)
+    # medicament_id = fields.Many2one('clv_medicament', string='Medicament',
+    #                                  help='Medicament Name', required=True)
+    # medicament_id = fields.Reference([('clv_medicament', 'Medicament'),
+    #                                   ('clv_orizon_lpm', 'Medicament (Orizon LPM)'),
+    #                                   ])
+    medicament_id2 = fields.Reference([('clv_orizon_lpm', 'Medicament (Orizon LPM)'),
+                                       ('clv_medicament', 'Medicament'),
+                                       ])
     notes = fields.Text(string='Notes')
     consumer_price = fields.Float('Consumer Price')
     production_price = fields.Float('Production Price')
     refund_price = fields.Float('Refund Price')
 
-    _order='price_list_version_id, medicament_id'
+    _order='price_list_version_id, medicament_id2'
 
 class clv_medicament_price_list_version(models.Model):
     _inherit = 'clv_medicament_price_list.version'
