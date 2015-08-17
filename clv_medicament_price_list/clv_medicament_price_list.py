@@ -19,7 +19,6 @@
 
 from openerp import models, fields, api
 from datetime import datetime
-# from dateutil.relativedelta import relativedelta
 
 class clv_medicament_price_list(models.Model):
     _name = 'clv_medicament_price_list'
@@ -39,8 +38,3 @@ class clv_medicament_price_list(models.Model):
     _order='name'
 
     _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament Price List Code must be unique!')]
-
-    # @api.onchange('name')
-    # def _onchange_name(self):
-    #     if not self.alias:
-    #         self.alias = self.name

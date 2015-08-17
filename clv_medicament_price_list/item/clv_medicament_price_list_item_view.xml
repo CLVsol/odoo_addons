@@ -9,11 +9,12 @@
             <field name="arch" type="xml">
                 <tree string="Medicament Price List Item">
                     <field name="price_list_version_id"/>
-                    <field name="medicament_id2"/>
+                    <field name="medicament_id"/>
+                    <field name="medicament_ref"/>
                     <field name="notes" colspan="4"/>
                     <field name="consumer_price"/>
                     <field name="production_price"/>
-                    <field name="refund_price"/>
+                    <!--field name="refund_price"/-->
                 </tree>
             </field>
         </record>
@@ -33,9 +34,13 @@
                                 <field name="price_list_version_id" placeholder="Price List Version..."/>
                             </h3>
                             <!--label for="medicament_id" class="oe_edit_only"/-->
-                            <label for="medicament_id2"/>
+                            <label for="medicament_id"/>
                             <h3>
-                                <field name="medicament_id2" default_focus="1" placeholder="Medicament..."/>
+                                <field name="medicament_id" default_focus="1" placeholder="Medicament..."/>
+                            </h3>
+                            <label for="medicament_ref"/>
+                            <h3>
+                                <field name="medicament_ref" default_focus="1" placeholder="Medicament Reference..."/>
                             </h3>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
@@ -51,10 +56,10 @@
                                 <field name="production_price" placeholder="Production Price..."/>
                             </h3>
                             <!--label for="refund_price" class="oe_edit_only"/-->
-                            <label for="refund_price"/>
+                            <!--label for="refund_price"/>
                             <h3>
                                 <field name="refund_price" placeholder="Refund Price..."/>
-                            </h3>
+                            </h3-->
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
                             <!-- Put here related buttons -->
@@ -76,12 +81,14 @@
             <field name="arch" type="xml">
                 <search string="Medicament Price List Item">
                     <field name="price_list_version_id"/>
-                    <field name="medicament_id2"/>
+                    <field name="medicament_id"/>
+                    <!--field name="medicament_ref"/-->
                     <field name="notes" colspan="4"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Price List" domain="[]" context="{'group_by': 'price_list_version_id'}"/>
-                        <filter string="Medicament" domain="[]" context="{'group_by': 'medicament_id2'}"/>
+                        <filter string="Medicament" domain="[]" context="{'group_by': 'medicament_id'}"/>
+                        <!--filter string="Medicament Reference" domain="[]" context="{'group_by': 'medicament_ref'}"/-->
                     </group>
                 </search>
             </field>
