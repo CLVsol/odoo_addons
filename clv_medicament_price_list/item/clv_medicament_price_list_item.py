@@ -29,11 +29,15 @@ class clv_medicament_price_list_item(models.Model):
     medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
                                        ], 'Medicament Reference')
     notes = fields.Text(string='Notes')
+    order = fields.Integer(string='Order', default=10)
     consumer_price = fields.Float('Consumer Price')
     production_price = fields.Float('Production Price')
     # refund_price = fields.Float('Refund Price')
+    active = fields.Boolean('Active', 
+                            help='The active field allows you to hide the medicament price list item without removing it.',
+                            default=1)
 
-    _order='price_list_version_id, medicament_id'
+    _order='price_list_version_id, order'
 
 class clv_medicament_price_list_version(models.Model):
     _inherit = 'clv_medicament_price_list.version'
