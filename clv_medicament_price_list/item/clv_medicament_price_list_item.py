@@ -18,8 +18,6 @@
 ################################################################################
 
 from openerp import models, fields, api
-# from datetime import datetime
-# from dateutil.relativedelta import relativedelta
 
 class clv_medicament_price_list_item(models.Model):
     _name = 'clv_medicament_price_list.item'
@@ -27,13 +25,19 @@ class clv_medicament_price_list_item(models.Model):
     price_list_version_id = fields.Many2one('clv_medicament_price_list.version', string='Medicament Price List Version',
                                             help='Medicament Price List Version', required=True)
     medicament_id = fields.Many2one('clv_medicament', string='Medicament',
-                                     help='Medicament Name', required=True)
+                                            help='Medicament Name', required=False)
+    medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
+                                       ], 'Medicament Reference')
     notes = fields.Text(string='Notes')
+    order = fields.Integer(string='Order', default=10)
     consumer_price = fields.Float('Consumer Price')
     production_price = fields.Float('Production Price')
-    refund_price = fields.Float('Refund Price')
+    # refund_price = fields.Float('Refund Price')
+    active = fields.Boolean('Active', 
+                            help='The active field allows you to hide the medicament price list item without removing it.',
+                            default=1)
 
-    _order='price_list_version_id, medicament_id'
+    _order='price_list_version_id, order'
 
 class clv_medicament_price_list_version(models.Model):
     _inherit = 'clv_medicament_price_list.version'
