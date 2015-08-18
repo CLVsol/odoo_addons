@@ -11,6 +11,7 @@
                     <field name="price_list_version_id"/>
                     <field name="medicament_id"/>
                     <field name="medicament_ref"/>
+                    <field name="order"/>
                     <field name="notes" colspan="4"/>
                     <field name="consumer_price"/>
                     <field name="production_price"/>
@@ -41,6 +42,10 @@
                             <label for="medicament_ref"/>
                             <h3>
                                 <field name="medicament_ref" default_focus="1" placeholder="Medicament Reference..."/>
+                            </h3>
+                            <label for="order"/>
+                            <h3>
+                                <field name="order" placeholder="Order..."/>
                             </h3>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
@@ -83,6 +88,7 @@
                     <field name="price_list_version_id"/>
                     <field name="medicament_id"/>
                     <!--field name="medicament_ref"/-->
+                    <field name="order"/>
                     <field name="notes" colspan="4"/>
                     <newline/>
                     <group expand="0" string="Group By...">

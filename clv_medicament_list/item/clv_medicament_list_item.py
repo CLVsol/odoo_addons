@@ -23,9 +23,11 @@ class clv_medicament_list_item(models.Model):
     _name = 'clv_medicament_list.item'
 
     list_version_id = fields.Many2one('clv_medicament_list.version', string='Medicament List Version',
-                                      help='Medicament List Version', required=False)
+                                      help='Medicament List Version', required=True)
     medicament_id = fields.Many2one('clv_medicament', string='Medicament',
                                     help='Medicament', required=False)
+    medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
+                                       ], 'Medicament Reference')
     notes = fields.Text(string='Notes')
     order = fields.Integer(string='Order', default=10)
     discount = fields.Float(string='Discount [%]')
@@ -34,7 +36,7 @@ class clv_medicament_list_item(models.Model):
                             help='The active field allows you to hide the medicament list item without removing it.',
                             default=1)
     
-    _order='order'
+    _order='list_version_id, order'
 
 class clv_medicament_list_version(models.Model):
     _inherit = 'clv_medicament_list.version'

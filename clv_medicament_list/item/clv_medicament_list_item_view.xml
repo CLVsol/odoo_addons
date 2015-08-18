@@ -10,6 +10,7 @@
                 <tree string="Medicament List Item">
                     <field name="list_version_id"/>
                     <field name="medicament_id"/>
+                    <field name="medicament_ref"/>
                     <field name="order"/>
                     <field name="discount"/>
                     <field name="subsidy"/>
@@ -40,6 +41,10 @@
                             <h2>
                                 <field name="medicament_id" placeholder="Medicament..."/>
                             </h2>
+                            <label for="medicament_ref"/>
+                            <h3>
+                                <field name="medicament_ref" placeholder="Medicament Reference..."/>
+                            </h3>
                             <label for="order"/>
                             <h3>
                                 <field name="order" placeholder="Order..."/>
@@ -86,6 +91,7 @@
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="Medicament List Version" domain="[]" context="{'group_by': 'list_version_id'}"/>
+                        <filter string="Medicament" domain="[]" context="{'group_by': 'medicament_id'}"/>
                         <filter string="Discount" domain="[]" context="{'group_by': 'discount'}"/>
                         <filter string="Subsidy" domain="[]" context="{'group_by': 'subsidy'}"/>
                     </group>
