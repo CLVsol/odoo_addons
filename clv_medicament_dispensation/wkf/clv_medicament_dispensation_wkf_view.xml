@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_dispensation_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.tree</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="date"/>
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_form_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.form</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Medicament Dispensation" position="before">
+                    <header>
+                        <button string="Waiting" name="button_waiting" states="draft,not_authorized,canceled" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Do not Authorize" name="button_do_not_authorize" states="waiting" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Pre Authorize" name="button_pre_authorize" states="waiting" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <!--button string="Authorize" name="button_authorize" states="pre_authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager" class="oe_highlight"/-->
+                        <button string="Authorize" name="button_authorize" states="pre_authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Calcel" name="button_cancel" states="waiting,pre_authorized,authorized,proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Proceeding" name="button_proceeding" states="authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Reconcile" name="button_reconcile" states="authorized,proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Do not Reconcile" name="button_do_not_reconcile" states="proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,waiting,pre_authorized,authorized,proceeding,reconciled,not_authorized,not_reconciled,canceled"/>
+                    </header>
+                </sheet>
+                <label for="dispenser" position="before">
+                    <field name="date"/>
+                    <!--label for="date" class="oe_edit_only"/-->
+                    <label for="date"/>
+                    <h3>
+                        <field name="date" placeholder="Status change date..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_search_wkf" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.search</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
