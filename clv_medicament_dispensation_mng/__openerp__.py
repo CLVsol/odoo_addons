@@ -18,40 +18,24 @@
 ################################################################################
 
 {
-    'name': 'Medicament Dispensation Management for CLVhealth BioBox',
+    'name': 'Medicament Dispensation Management',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Medicament Dispensation Management for CLVhealth BioBox
-=======================================================
+Medicament Dispensation Management
+==================================
     ''',
     'images': [],
     'depends': [
-        # 'clv_base',
-        # 'clv_tag',
-        # 'clv_annotation',
-        # 'clv_medicament',
-        # 'clv_pharmacy',
-        # 'clv_professional',
-        # 'clv_insured_card',
         'clv_medicament_dispensation',
         ],
     'data': [
         'security/clv_medicament_dispensation_mng_security.xml',
         'security/ir.model.access.csv',
         'clv_medicament_dispensation_mng_view.xml',
-        # 'category/clv_medicament_dispensation_mng_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
-        # 'seq/clv_medicament_dispensation_mng_sequence.xml',
-        # 'seq/clv_medicament_dispensation_mng_category_sequence.xml',
-        # 'wkf/clv_medicament_dispensation_mng_workflow.xml',
-        # 'wkf/clv_medicament_dispensation_mng_wkf_view.xml',
-        # 'history/clv_medicament_dispensation_mng_history_view.xml',
-        # 'clv_medicament_template/clv_medicament_template_view.xml',
         'menu/clv_medicament_dispensation_mng_menu_view.xml',
         'clv_pharmacy/clv_pharmacy_view.xml',
         'clv_professional/clv_professional_view.xml',
