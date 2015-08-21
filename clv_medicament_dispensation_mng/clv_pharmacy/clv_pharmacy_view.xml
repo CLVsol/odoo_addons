@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_dispensation_mng_tree_pharmacy" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_mng.tree</field>
+            <field name="model">clv_medicament_dispensation_mng</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_mng.view_clv_medicament_dispensation_mng_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="pharmacy_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_mng_form_pharmacy" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_mng.form</field>
+            <field name="model">clv_medicament_dispensation_mng</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_mng.view_clv_medicament_dispensation_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="dispenser" position="before">
+                    <!--label for="pharmacy_id" class="oe_edit_only"/-->
+                    <label for="pharmacy_id"/>
+                    <h3>
+                        <field name="pharmacy_id" placeholder="Pharmacy..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_mng_search_pharmacy" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_mng.search</field>
+            <field name="model">clv_medicament_dispensation_mng</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_mng.view_clv_medicament_dispensation_mng_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medicament Dispensation Management" position="inside">
+                    <field name="pharmacy_id" />
+                </search>
+                <group string="Group By..." position="inside">
+                    <filter string="Pharmacy" domain="[]" context="{'group_by':'pharmacy_id'}" />
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

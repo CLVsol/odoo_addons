@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_dispensation_tree_professional" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.tree</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="prescriber_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_form_professional" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.form</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="dispenser" position="before">
+                    <!--label for="prescriber_id" class="oe_edit_only"/-->
+                    <label for="prescriber_id"/>
+                    <h3>
+                        <field name="prescriber_id" placeholder="Prescriber..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_search_professional" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.search</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medicament Dispensation" position="inside">
+                    <field name="prescriber_id" />
+                </search>
+                <group string="Group By..." position="inside">
+                    <filter string="Prescriber" domain="[]" context="{'group_by':'prescriber_id'}" />
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_professional_form_dispensation" model="ir.ui.view">
+            <field name="name">clv_professional.form</field>
+            <field name="model">clv_professional</field>
+            <field name="inherit_id" ref="clv_professional.view_clv_professional_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Dispensations">
+                        <field name="dispensation_ids" colspan="4"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

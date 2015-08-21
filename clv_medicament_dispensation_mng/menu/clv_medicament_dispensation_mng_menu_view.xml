@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Dispensations/Management -->
+        <menuitem name="Management" id="menu_pharmacy_medicament_dispensations_management"
+            parent="clv_medicament_dispensation.menu_pharmacy_medicament_dispensations"
+            groups="clv_base.group_medicament_dispensation_mng_user"
+            sequence="10"
+            action="clv_medicament_dispensation_mng.act_open_clv_medicament_dispensation_mng_view"/>
+
+    </data>
+</openerp>
