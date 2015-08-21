@@ -18,15 +18,15 @@
 ################################################################################
 
 {
-    'name': 'Medicament Dispensation for CLVhealth BioBox',
+    'name': 'Medicament Dispensation',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Medicament Dispensation for CLVhealth BioBox
-============================================
+Medicament Dispensation
+=======================
     ''',
     'images': [],
     'depends': [

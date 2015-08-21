@@ -43,6 +43,10 @@
                             <h3>
                                 <field name="medicament_code"/>
                             </h3>
+                            <label for="medicament_ref"/>
+                            <h3>
+                                <field name="medicament_ref" placeholder="Medicament Reference..."/>
+                            </h3>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
                         <div class="oe_title">
