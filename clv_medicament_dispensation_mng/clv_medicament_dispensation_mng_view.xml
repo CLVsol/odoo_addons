@@ -48,6 +48,10 @@
                             <h3>
                                 <field name="medicament_code"/>
                             </h3>
+                            <label for="medicament_ref"/>
+                            <h3>
+                                <field name="medicament_ref" placeholder="Medicament Reference..."/>
+                            </h3>
                             <!--label for="orizon_id" class="oe_edit_only"/-->
                             <label for="orizon_id"/>
                             <h3>
