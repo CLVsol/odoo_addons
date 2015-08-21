@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Dispensations -->
+        <menuitem name="Dispensations" id="menu_pharmacy_medicament_dispensations"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="07"
+            action="clv_medicament_dispensation.act_open_clv_medicament_dispensation_view"/>
+        <!-- Pharmacy/Medicament/Templates -->
+<!--         <menuitem name="Templates" id="menu_pharmacy_medicament_templates"
+            parent="clv_base.menu_pharmacy_medicament"
+            groups="clv_base.group_medicament_user"
+            sequence="40"
+            action="clv_medicament.act_open_clv_medicament_template_view"/>
+ -->
+        <!-- Pharmacy/Configuration/Configuration/Dispensation-->
+<!--         <menuitem name="Dispensation" id="menu_pharmacy_config_config_medicament_dispensation"  
+            parent="clv_base.menu_pharmacy_config_config"
+            groups="clv_base.group_base_user"
+            sequence="50"/>
+ -->            <!-- Pharmacy/Configuration/Configuration/Dispensation/Categories -->
+<!--             <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_dispensation_categories" 
+                parent="menu_pharmacy_config_config_medicament_dispensation"
+                groups="clv_base.group_medicament_user"
+                sequence="10"
+                action="clv_medicament_dispensation.act_open_clv_medicament_dispensation_category_view"/>
+ -->
+    </data>
+</openerp>
