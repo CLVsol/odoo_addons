@@ -53,6 +53,11 @@
                         </div>
                         <notebook>
                             <page string="Information">
+                                <group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
+                                </group>
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
                             <page string="Settings" groups="clv_base.group_base_rmanager">

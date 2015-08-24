@@ -18,6 +18,7 @@
 ################################################################################
 
 from openerp import models, fields, api
+from datetime import datetime
 
 class clv_medicament_list_version(models.Model):
     _name = 'clv_medicament_list.version'
@@ -39,6 +40,8 @@ class clv_medicament_list_version(models.Model):
     # complete_name = fields.Char(string='Full Name', compute='_name_get_fnc', store=False, readonly=True)
     code = fields.Char ('List Version Code',size=128, required=False)
     description = fields.Char(string='Description', size=256)
+    date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
+                                     default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active', 
                             help='The active field allows you to hide the list version without removing it.',
