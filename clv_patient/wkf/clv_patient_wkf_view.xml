@@ -31,9 +31,9 @@
                 </sheet>
                 <field name="patient_date_inclusion" position="before">
                     <field name="date"/>
-                    <field name="date_activation"/>
-                    <field name="date_inactivation"/>
-                    <field name="date_suspension"/>
+                    <!--field name="date_activation"/-->
+                    <!--field name="date_inactivation"/-->
+                    <!--field name="date_suspension"/-->
                 </field>
             </field>
         </record>
