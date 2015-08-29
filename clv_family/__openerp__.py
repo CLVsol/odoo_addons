@@ -18,14 +18,14 @@
 ################################################################################
 
 {
-    'name': 'Person',
+    'name': 'Family',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Person
+Family
 ======
     ''',
     'images': [],
@@ -37,8 +37,8 @@ Person
     'data': [
         'security/clv_family_security.xml',
         # 'security/ir.model.access.csv',
-        # 'clv_family_view.xml',
-        # 'category/clv_family_category_view.xml',
+        'clv_family_view.xml',
+        'category/clv_family_category_view.xml',
         # 'clv_tag/clv_tag_view.xml',
         # 'clv_annotation/clv_annotation_view.xml',
         # 'seq/clv_family_sequence.xml',
@@ -46,7 +46,7 @@ Person
         # 'wkf/clv_family_workflow.xml',
         # 'wkf/clv_family_wkf_view.xml',
         # 'history/clv_family_history_view.xml',
-        # 'menu/clv_family_menu_view.xml',
+        'menu/clv_family_menu_view.xml',
         ],
     'demo': [],
     'test': [],
