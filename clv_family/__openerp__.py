@@ -39,7 +39,7 @@ Family
         # 'security/ir.model.access.csv',
         'clv_family_view.xml',
         'category/clv_family_category_view.xml',
-        # 'clv_tag/clv_tag_view.xml',
+        'clv_tag/clv_tag_view.xml',
         # 'clv_annotation/clv_annotation_view.xml',
         # 'seq/clv_family_sequence.xml',
         # 'seq/clv_family_category_sequence.xml',
