@@ -20,7 +20,7 @@
 import clv_family
 import category
 import clv_tag
-# import clv_annotation
+import clv_annotation
 # import seq
 # import wkf
 # import history
