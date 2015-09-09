@@ -35,6 +35,8 @@ class clv_insured_outside(models.Model):
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     birthday = fields.Date("Date of Birth")
     age = fields.Char('Age', size=32, compute='_age', store=False)
+    identification_id = fields.Char('Insured ID', size=32)
+    otherid = fields.Char('Other ID', size=64)
     gender = fields.Selection([('M', 'Male'),
                                ('F', 'Female')
                                ], 'Gender')

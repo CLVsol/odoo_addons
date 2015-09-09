@@ -47,13 +47,17 @@
                         <notebook>
                             <page string="Public Information">
                                 <group>
-                                    <group string="Contact Information">
+                                    <group name="Other Info">
+                                        <field name="identification_id"/>
+                                        <field name="otherid"/>
+                                    </group>
+                                    <group name="Contact Information">
                                         <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
                                         <field name="email" widget="email"/>
                                         <field name="phone"/>
                                         <field name="mobile"/>
                                     </group>
-                                    <group string="Status">
+                                    <group name="Status">
                                         <!--field name="state" readonly="1"/-->
                                         <field name="date_inclusion"/>
                                     </group>
