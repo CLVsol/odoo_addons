@@ -17,7 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_outside
-import clv_insured
-import clv_insured_card
-import clv_tag
+from openerp import models, fields, api
+
+class clv_insured_outside(models.Model):
+    _inherit = 'clv_insured_outside'
+
+    tag_ids = fields.Many2many('clv_tag', 
+                               'clv_insured_outside_tag_rel', 
+                               'insured_outside_id', 
+                               'tag_id', 
+                               'Tags')
+
+class clv_tag(models.Model):
+    _inherit = 'clv_tag'
+
+    insured_outside_ids = fields.Many2many('clv_insured_outside', 
+                                           'clv_insured_outside_tag_rel', 
+                                           'tag_id', 
+                                           'insured_outside_id', 
+                                           'Insureds (Outside)')

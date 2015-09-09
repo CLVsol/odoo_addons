@@ -17,7 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_outside
-import clv_insured
-import clv_insured_card
 import clv_tag
