@@ -17,32 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insured (Outside)',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_address',
-        'clv_insured',
-        ],
-    'data': [
-        'security/clv_insured_outside_security.xml',
-        # 'security/ir.model.access.csv',
-        'clv_insured_outside_view.xml',
-        'menu/clv_insured_outside_menu_view.xml',
-        'clv_insured/clv_insured_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+
+class clv_insured_outside(models.Model):
+    _inherit = 'clv_insured_outside'
+
+    insured_id = fields.Many2one('clv_insured', 'Insured')
+
+class clv_insured(models.Model):
+    _inherit = 'clv_insured'
+
+    insured_outside_ids = fields.One2many('clv_insured_outside',
+                                          'insured_id',
+                                          'Insureds (Outside)')
