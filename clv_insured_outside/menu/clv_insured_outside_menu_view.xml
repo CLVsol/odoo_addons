@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insurance/Insured/Insureds/Outside -->
+        <menuitem name="Outside" id="menu_insurance_insured_insureds_outside"
+            parent="clv_insured.menu_insurance_insured_insureds"
+            groups="clv_base.group_insured_user"
+            sequence="70"
+            action="clv_insured_outside.act_open_clv_insured_outside_view"/>
+
+    </data>
+</openerp>

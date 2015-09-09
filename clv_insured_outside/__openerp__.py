@@ -27,10 +27,13 @@
     'images': [],
     'depends': [
         'clv_base',
+        'clv_address',
         ],
     'data': [
         'security/clv_insured_outside_security.xml',
         # 'security/ir.model.access.csv',
+        'clv_insured_outside_view.xml',
+        'menu/clv_insured_outside_menu_view.xml',
         ],
     'demo': [],
     'test': [],
