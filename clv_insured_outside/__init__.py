@@ -19,3 +19,4 @@
 
 import clv_insured_outside
 import clv_insured
+import clv_insured_card
