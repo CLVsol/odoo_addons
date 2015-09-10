@@ -17,8 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_outside
-import clv_insured
-import clv_insured_card
-import clv_tag
-import res_partner
+from openerp import models, fields, api
+
+class clv_insured_outside(models.Model):
+    _inherit = 'clv_insured_outside'
+
+    partner_id = fields.Many2one('res.partner', 'Partner')
+
+class res_partner(models.Model):
+    _inherit = 'res.partner'
+
+    insured_outside_ids = fields.One2many('clv_insured_outside',
+                                          'partner_id',
+                                          'Insureds (Outside)')

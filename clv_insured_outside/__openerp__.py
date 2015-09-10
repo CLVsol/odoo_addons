@@ -26,6 +26,7 @@
     'website': 'http://clvsol.com',
     'images': [],
     'depends': [
+        'base',
         'clv_base',
         'clv_tag',
         'clv_address',
@@ -40,6 +41,7 @@
         'menu/clv_insured_outside_menu_view.xml',
         'clv_insured/clv_insured_view.xml',
         'clv_insured_card/clv_insured_card_view.xml',
+        'res_partner/res_partner_view.xml',
         ],
     'demo': [],
     'test': [],
