@@ -17,40 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Insured (Outside)',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'images': [],
-    'depends': [
-        'base',
-        'clv_base',
-        'clv_tag',
-        'clv_address',
-        'clv_insured',
-        'clv_insured_card',
-        ],
-    'data': [
-        'security/clv_insured_outside_security.xml',
-        # 'security/ir.model.access.csv',
-        'clv_insured_outside_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'menu/clv_insured_outside_menu_view.xml',
-        'clv_insured/clv_insured_view.xml',
-        'clv_insured_card/clv_insured_card_view.xml',
-        'res_partner/res_partner_view.xml',
-        'wkf/clv_insured_outside_workflow.xml',
-        'wkf/clv_insured_outside_wkf_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_insured_outside_wkf

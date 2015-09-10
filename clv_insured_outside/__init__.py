@@ -22,3 +22,4 @@ import clv_insured
 import clv_insured_card
 import clv_tag
 import res_partner
+import wkf
