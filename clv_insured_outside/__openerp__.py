@@ -35,9 +35,10 @@
         ],
     'data': [
         'security/clv_insured_outside_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_insured_outside_view.xml',
         'clv_tag/clv_tag_view.xml',
+        'category/clv_insured_outside_category_view.xml',
         'menu/clv_insured_outside_menu_view.xml',
         'clv_insured/clv_insured_view.xml',
         'clv_insured_card/clv_insured_card_view.xml',

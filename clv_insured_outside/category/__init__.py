@@ -17,11 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_outside
-import category
-import clv_insured
-import clv_insured_card
-import clv_tag
-import res_partner
-import wkf
-import history
+import clv_insured_outside_category

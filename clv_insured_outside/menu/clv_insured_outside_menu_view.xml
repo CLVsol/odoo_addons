@@ -9,5 +9,12 @@
             sequence="70"
             action="clv_insured_outside.act_open_clv_insured_outside_view"/>
 
+        <!-- Insurance/Configuration/Configuration/Insured/Outside Categories -->
+        <menuitem name="Outside Categories" id="menu_insurance_config_config_insured_outside_categories" 
+            parent="clv_base.menu_insurance_config_config_insured"
+            groups="clv_base.group_insured_outside_user"
+            sequence="30"
+            action="clv_insured_outside.act_open_clv_insured_outside_category_view"/>
+
     </data>
 </openerp>
