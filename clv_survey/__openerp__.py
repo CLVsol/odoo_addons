@@ -43,7 +43,7 @@ user name and password for the invitation of the survey.
         'clv_survey_report.xml',
         #'clv_survey_data.xml',
         'wizard/clv_survey_selection.xml',
-        # 'wizard/clv_survey_answer.xml',
+        'wizard/clv_survey_answer.xml',
         'security/clv_survey_security.xml',
         'security/ir.model.access.csv',
         'clv_survey_view.xml',
@@ -57,6 +57,7 @@ user name and password for the invitation of the survey.
 	    'clv_survey_request_view.xml',
         'clv_patient_view.xml',
         'clv_family_view.xml',
+        'menu/clv_survey_menu_view.xml',
         ],
     'demo': [
         'clv_survey_demo.xml'
