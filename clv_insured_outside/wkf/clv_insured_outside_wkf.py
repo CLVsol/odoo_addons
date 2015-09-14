@@ -45,7 +45,7 @@ class clv_insured_outside(models.Model):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         if not self.date_activation:
             self.date_activation = datetime.now().strftime('%Y-%m-%d')
-            time.sleep(1.0)
+            # time.sleep(1.0)
         self.state = 'active'
 
     @api.one
@@ -63,5 +63,5 @@ class clv_insured_outside(models.Model):
         self.state_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         if not self.date_cancelation:
             self.date_cancelation = datetime.now().strftime('%Y-%m-%d')
-            time.sleep(1.0)
+            # time.sleep(1.0)
         self.state = 'canceled'
