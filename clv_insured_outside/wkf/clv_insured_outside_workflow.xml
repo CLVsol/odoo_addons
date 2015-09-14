@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="workflow_clv_insured_outside" model="workflow">
+            <field name="name">clv_insured_outside.wkf</field>
+            <field name="osv">clv_insured_outside</field>
+            <field name="on_create" eval='True' />
+        </record>
+
+         <record id="act_new" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured_outside" />
+            <field name="flow_start" eval='True' />
+            <field name="name">new</field>
+            <field name="kind">function</field>
+            <field name="action">button_new()</field>
+        </record>
+
+        <record id="act_process" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured_outside" />
+            <field name="name">processing</field>
+            <field name="kind">function</field>
+            <field name="action">button_process()</field>
+        </record>
+
+        <record id="act_activate" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured_outside" />
+            <field name="name">active</field>
+            <field name="kind">function</field>
+            <field name="action">button_activate()</field>
+        </record>
+
+        <record id="act_cancel" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured_outside" />
+            <field name="name">canceled</field>
+            <field name="kind">function</field>
+            <field name="action">button_cancel()</field>
+        </record>
+
+        <record id="act_suspend" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_clv_insured_outside" />
+            <field name="name">suspended</field>
+            <field name="kind">function</field>
+            <field name="action">button_suspend()</field>
+        </record>
+
+        <record id="t1" model="workflow.transition">
+            <field name="act_from" ref="act_new" />
+            <field name="act_to" ref="act_process" />
+            <field name="signal">button_process</field>
+        </record>
+
+        <record id="t2" model="workflow.transition">
+            <field name="act_from" ref="act_process" />
+            <field name="act_to" ref="act_activate" />
+            <field name="signal">button_activate</field>
+        </record>
+
+        <record id="t3" model="workflow.transition">
+            <field name="act_from" ref="act_process" />
+            <field name="act_to" ref="act_cancel" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+        <record id="t4" model="workflow.transition">
+            <field name="act_from" ref="act_activate" />
+            <field name="act_to" ref="act_cancel" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+        <record id="t5" model="workflow.transition">
+            <field name="act_from" ref="act_activate" />
+            <field name="act_to" ref="act_suspend" />
+            <field name="signal">button_suspend</field>
+        </record>
+
+        <record id="t6" model="workflow.transition">
+            <field name="act_from" ref="act_cancel" />
+            <field name="act_to" ref="act_activate" />
+            <field name="signal">button_activate</field>
+        </record>
+
+        <record id="t7" model="workflow.transition">
+            <field name="act_from" ref="act_cancel" />
+            <field name="act_to" ref="act_suspend" />
+            <field name="signal">button_suspend</field>
+        </record>
+
+        <record id="t8" model="workflow.transition">
+            <field name="act_from" ref="act_suspend" />
+            <field name="act_to" ref="act_activate" />
+            <field name="signal">button_activate</field>
+        </record>
+
+        <record id="t9" model="workflow.transition">
+            <field name="act_from" ref="act_suspend" />
+            <field name="act_to" ref="act_cancel" />
+            <field name="signal">button_cancel</field>
+        </record>
+
+    </data>
+</openerp>
