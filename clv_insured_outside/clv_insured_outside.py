@@ -40,6 +40,15 @@ class clv_insured_outside(models.Model):
     gender = fields.Selection([('M', 'Male'),
                                ('F', 'Female')
                                ], 'Gender')
+    synchronized = fields.Boolean('Synchronized', 
+                                  help="If not checked, the Insured Information needs sincronization.",
+                                  default=False)
+    processing_synchronization = fields.Boolean('Processing Synchronization', 
+                                                help="If checked, the synchronization is in process.",
+                                                default=False)
+    date_synchronization = fields.Datetime("Synchronization Date", required=False, readonly=False)
+    date_previous_synchronization = fields.Datetime("Previous Synchronization Date", 
+                                                    required=False, readonly=False)
     active = fields.Boolean('Active', 
                             help="If unchecked, it will allow you to hide the insured_outside without removing it.",
                             default=1)

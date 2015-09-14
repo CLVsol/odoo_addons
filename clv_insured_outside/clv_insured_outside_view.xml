@@ -13,6 +13,10 @@
                     <field name="code"/>
                     <field name="birthday"/>
                     <field name="age"/>
+                    <field name="synchronized"/>
+                    <field name="date_synchronization"/>
+                    <field name="processing_synchronization"/>
+                    <field name="date_previous_synchronization"/>
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -59,6 +63,10 @@
                                     </group>
                                     <group name="Status">
                                         <!--field name="state" readonly="1"/-->
+                                        <field name="synchronized"/>
+                                        <field name="date_synchronization"/>
+                                        <field name="processing_synchronization"/>
+                                        <field name="date_previous_synchronization"/>
                                         <field name="date_inclusion"/>
                                     </group>
                                 </group>
@@ -99,9 +107,17 @@
                 <search string="Insured (Outside)">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="synchronized"/>
+                    <field name="date_synchronization"/>
+                    <field name="processing_synchronization"/>
+                    <field name="date_previous_synchronization"/>
                     <field name="notes"/>
                     <newline/>
                     <group expand="0" string="Group By...">
+                        <filter string="Synchronized" domain="[]" context="{'group_by': 'synchronized'}"/>
+                        <filter string="Synchronization Date" domain="[]" context="{'group_by': 'date_synchronization'}"/>
+                        <filter string="Processing Synchronization" domain="[]" context="{'group_by': 'processing_synchronization'}"/>
+                        <filter string="Previous Synchronization Date" domain="[]" context="{'group_by': 'date_previous_synchronization'}"/>
                     </group>
                 </search>
             </field>
