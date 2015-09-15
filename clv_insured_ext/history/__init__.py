@@ -17,4 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_insured_outside_history
+import clv_insured_ext_history

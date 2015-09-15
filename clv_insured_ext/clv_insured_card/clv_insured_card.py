@@ -30,3 +30,9 @@ class clv_insured_card(models.Model):
     insured_ext_ids = fields.One2many('clv_insured_ext',
                                       'insured_card_id',
                                       'Insureds (Ext)')
+
+    partner_ids = fields.Many2many('res.partner', 
+                                   'clv_insured_card_partner_rel', 
+                                   'insured_card_id', 
+                                   'partner_id', 
+                                   'Partners')

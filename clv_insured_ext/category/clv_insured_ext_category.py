@@ -36,10 +36,10 @@ class clv_insured_ext_category(models.Model):
     parent_left = fields.Integer('Left parent', select=True)
     parent_right = fields.Integer('Right parent', select=True)
     insured_ext_ids = fields.Many2many('clv_insured_ext', 
-                                        'clv_insured_ext_category_rel', 
-                                        'category_id', 
-                                        'insured_ext_id', 
-                                        'Insureds (Ext)')
+                                       'clv_insured_ext_category_rel', 
+                                       'category_id', 
+                                       'insured_ext_id', 
+                                       'Insureds (Ext)')
 
     _sql_constraints = [
         ('uniq_category_code', 'unique(code)', "Error! The Category Code must be unique!"),
