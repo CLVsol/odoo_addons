@@ -51,16 +51,6 @@
                         <notebook>
                             <page string="Public Information">
                                 <group>
-                                    <group name="Other Info">
-                                        <field name="identification_id"/>
-                                        <field name="otherid"/>
-                                    </group>
-                                    <group name="Contact Information">
-                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
-                                        <field name="email" widget="email"/>
-                                        <field name="phone"/>
-                                        <field name="mobile"/>
-                                    </group>
                                     <group name="Status">
                                         <!--field name="state" readonly="1"/-->
                                         <field name="synchronized"/>
@@ -74,11 +64,22 @@
                             </page>
                             <page string="Personal Information" groups="clv_base.group_base_suser">
                                 <group>
+                                    <group name="Other Info">
+                                        <field name="identification_id"/>
+                                        <field name="otherid"/>
+                                    </group>
                                     <group name="Contact Information">
+                                        <field name="zip_code"/>
+                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                                        <field name="email" widget="email"/>
+                                        <field name="phone"/>
+                                        <field name="mobile"/>
+                                    </group>
+                                    <!--group name="Contact Information">
                                         <field name="address_id"
                                             context="{'show_address': 1}"
                                             options='{"always_reload": True, "highlight_first_line": True}'/>
-                                    </group>
+                                    </group-->
                                     <group name="Status">
                                         <field name="gender"/>
                                     </group>

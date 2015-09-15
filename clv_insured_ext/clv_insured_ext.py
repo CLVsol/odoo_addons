@@ -26,10 +26,11 @@ class clv_insured_ext(models.Model):
 
     name = fields.Char('Name', required=True, size=64)
     code = fields.Char(size=64, string='Insured (Ext) Code')
+    zip_code = fields.Char('Zip Code', size=24)
     address_id = fields.Many2one('clv_address', 'Address', ondelete='restrict')
-    phone = fields.Char('Work Phone', size=32)
-    mobile = fields.Char('Work Mobile', size=32)
-    email = fields.Char('Work Email', size=240)
+    phone = fields.Char('Phone', size=32)
+    mobile = fields.Char('Mobile', size=32)
+    email = fields.Char('Email', size=240)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
