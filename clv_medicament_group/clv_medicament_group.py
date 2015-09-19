@@ -36,7 +36,7 @@ class clv_medicament_group(osv.osv):
     #     return res
     
     _columns = {
-        'name' : fields.char('Name', size=64, select=1, required=True, help='Medicament Group Name'),
+        'name' : fields.char('Name', size=256, select=1, required=True, help='Medicament Group Name'),
         'alias' : fields.char('Alias', size=64, help='Common name that the Medicament Group is referred'),
         'code': fields.char(size=64, string='Medicament Group Code', required=False),
         'notes':  fields.text(string='Notes'),
