@@ -39,6 +39,9 @@
                 <search string="Dispensation (Ext)" position="inside">
                     <field name="prescriber_id" />
                 </search>
+                <group string="Group By..." position="before">
+                    <filter string="Missing Prescriber" name="missing_prescriber" domain="[('prescriber_id','=',False)]"/>
+                </group>
                 <group string="Group By..." position="inside">
                     <filter string="Prescriber" domain="[]" context="{'group_by':'prescriber_id'}" />
                 </group>
