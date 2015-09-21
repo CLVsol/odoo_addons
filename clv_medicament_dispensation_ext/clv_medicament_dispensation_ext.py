@@ -26,6 +26,7 @@ class clv_medicament_dispensation_ext(models.Model):
 
     name = fields.Char(size=32, string='Dispensation Code', required=False,
                        help='Type in the Code of this dispensation (ext)')
+    authorization_code = fields.Char(size=32, string='Authorization Code', required=False)
     dispensation_date = fields.Date(string='Dispensation Date', required=False)
     insured_card_code = fields.Char(size=32, string='Insured Card Code', required=False)
     insured_name = fields.Char(size=256, string='Insured Name', required=False)
@@ -36,8 +37,8 @@ class clv_medicament_dispensation_ext(models.Model):
     medicament_description = fields.Char(size=256, string='Medicament Description', required=False)
     notes = fields.Text(string='Dispensation Notes')
     # dispenser = fields.Many2one ('res.users', 'Dispenser')
-    # medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
-    #                                    ], 'Medicament Reference')
+    medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
+                                       ], 'Medicament Reference')
     # medicament = fields.Many2one('clv_medicament', string='Dispensed Medicament', required=False, 
     #                               help='Dispensed Medicament')
     # max_retail_price = fields.Float('Maximum Retail Price')
