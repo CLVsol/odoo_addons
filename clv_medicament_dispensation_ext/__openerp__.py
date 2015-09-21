@@ -31,7 +31,7 @@
         # 'clv_annotation',
         # 'clv_medicament',
         'clv_pharmacy',
-        # 'clv_professional',
+        'clv_professional',
         # 'clv_insured_card',
         ],
     'data': [
@@ -49,7 +49,7 @@
         # 'clv_medicament_template/clv_medicament_template_view.xml',
         'menu/clv_medicament_dispensation_ext_menu_view.xml',
         'clv_pharmacy/clv_pharmacy_view.xml',
-        # 'clv_professional/clv_professional_view.xml',
+        'clv_professional/clv_professional_view.xml',
         # 'clv_insured_card/clv_insured_card_view.xml',
         ],
     'demo': [],
