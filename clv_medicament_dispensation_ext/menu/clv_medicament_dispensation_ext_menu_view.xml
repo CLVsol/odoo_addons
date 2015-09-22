@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Dispensations/Ext -->
+        <menuitem name="Ext" id="menu_pharmacy_medicament_dispensations_ext"
+            parent="clv_medicament_dispensation.menu_pharmacy_medicament_dispensations"
+            groups="clv_base.group_medicament_dispensation_ext_user"
+            sequence="5"
+            action="clv_medicament_dispensation_ext.act_open_clv_medicament_dispensation_ext_view"/>
+
+    </data>
+</openerp>

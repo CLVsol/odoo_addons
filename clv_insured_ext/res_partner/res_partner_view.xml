@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_insured_ext_tree_partner" model="ir.ui.view">
+            <field name="name">clv_insured_ext.tree</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="view_clv_insured_ext_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="partner_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_ext_form_partner" model="ir.ui.view">
+            <field name="name">clv_insured_ext.form</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="view_clv_insured_ext_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="partner_id"/>
+                    <h3>
+                        <field name="partner_id" placeholder="Partner..." domain="[('is_company', '=', True)]"/>
+                    </h3>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_clv_insured_ext_search_partner" model="ir.ui.view">
+            <field name="name">clv_insured_ext.search</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="view_clv_insured_ext_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="partner_id"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_partner_form_insured_ext" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Contacts" position="before">
+                    <page string="Insureds (Ext)" attrs="{'invisible': [('is_company','=',False),]}">
+                        <group>
+                            <field name="insured_ext_ids" colspan="4" nolabel="1"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

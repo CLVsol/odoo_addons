@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Insurance/Insured/Insureds/Ext -->
+        <menuitem name="Ext" id="menu_insurance_insured_insureds_ext"
+            parent="clv_insured.menu_insurance_insured_insureds"
+            groups="clv_base.group_insured_user"
+            sequence="70"
+            action="clv_insured_ext.act_open_clv_insured_ext_view"/>
+
+        <!-- Insurance/Configuration/Configuration/Insured/Ext Categories -->
+        <menuitem name="Ext Categories" id="menu_insurance_config_config_insured_ext_categories" 
+            parent="clv_base.menu_insurance_config_config_insured"
+            groups="clv_base.group_insured_ext_user"
+            sequence="30"
+            action="clv_insured_ext.act_open_clv_insured_ext_category_view"/>
+
+    </data>
+</openerp>
