@@ -17,14 +17,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_medicament_dispensation_ext
-import category
-import clv_tag
-import clv_annotation
-# import seq
-import wkf
-import history
-import clv_pharmacy
-import clv_professional
-import clv_insured_card
-# import clv_medicament_template
+from openerp.osv import fields, osv
+
+class clv_medicament_dispensation_ext(osv.osv):
+    _inherit = 'clv_medicament_dispensation_ext'
+
+    _columns = {
+        'annotation_ids': fields.many2many('clv_annotation', 
+                                           'clv_medicament_dispensation_ext_annotation_rel', 
+                                           'medicament_dispensation_ext_id', 
+                                           'annotation_id', 
+                                           'Annotations')
+        }
+
+class clv_annotation(osv.osv):
+    _inherit = 'clv_annotation'
+
+    _columns = {
+        'medicament_dispensation_ext_ids': fields.many2many('clv_medicament_dispensation_ext', 
+                                                            'clv_medicament_dispensation_ext_annotation_rel', 
+                                                            'annotation_id', 
+                                                            'medicament_dispensation_ext_id', 
+                                                            'Medicament Dispensations (Ext)')
+        }

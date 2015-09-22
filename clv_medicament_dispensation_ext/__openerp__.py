@@ -28,7 +28,7 @@
     'depends': [
         'clv_base',
         'clv_tag',
-        # 'clv_annotation',
+        'clv_annotation',
         'clv_medicament',
         'clv_pharmacy',
         'clv_professional',
@@ -40,7 +40,7 @@
         'clv_medicament_dispensation_ext_view.xml',
         'category/clv_medicament_dispensation_ext_category_view.xml',
         'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
+        'clv_annotation/clv_annotation_view.xml',
         # 'seq/clv_medicament_dispensation_sequence.xml',
         # 'seq/clv_medicament_dispensation_category_sequence.xml',
         'wkf/clv_medicament_dispensation_ext_workflow.xml',
