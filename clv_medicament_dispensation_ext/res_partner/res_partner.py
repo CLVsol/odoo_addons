@@ -17,14 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_medicament_dispensation_ext
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import clv_pharmacy
-import clv_professional
-import clv_insured_card
-import res_partner
+from openerp import models, fields, api
+
+class clv_medicament_dispensation_ext(models.Model):
+    _inherit = 'clv_medicament_dispensation_ext'
+
+    partner_id = fields.Many2one('res.partner', 'Partner')
+
+class res_partner(models.Model):
+    _inherit = 'res.partner'
+
+    medicament_dispensation_ext_ids = fields.One2many('clv_medicament_dispensation_ext',
+                                                      'partner_id',
+                                                      'Dispensations (Ext)')

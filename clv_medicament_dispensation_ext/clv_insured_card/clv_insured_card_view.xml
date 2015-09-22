@@ -39,6 +39,9 @@
                 <search string="Dispensation (Ext)" position="inside">
                     <field name="insured_card_id" />
                 </search>
+                <group string="Group By..." position="before">
+                    <filter string="Missing Insured Card" name="missing_insured_card" domain="[('insured_card_id','=',False)]"/>
+                </group>
                 <group string="Group By..." position="inside">
                     <filter string="Insured Card" domain="[]" context="{'group_by':'insured_card_id'}" />
                 </group>

@@ -12,7 +12,7 @@
                     <field name="dispensation_date"/>
                     <!--field name="dispenser"/-->
                     <field name="medicament_ref"/>
-                    <!--field name="medicament_code"/-->
+                    <field name="medicament"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -42,10 +42,10 @@
                             <h3>
                                 <field name="medicament_code"/>
                             </h3-->
-                            <!--label for="medicament_ref"/>
+                            <label for="medicament"/>
                             <h3>
-                                <field name="medicament_ref" placeholder="Medicament Reference..."/>
-                            </h3-->
+                                <field name="medicament" placeholder="Medicament..."/>
+                            </h3>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
                         <div class="oe_title">
@@ -124,12 +124,14 @@
                 <search string="Dispensation (Ext)">
                     <field name="name"/>
                     <field name="dispensation_date"/>
-                    <!--field name="dispenser"/-->
+                    <field name="medicament_ref"/>
+                    <field name="medicament"/>
                     <field name="notes"/>
                     <separator/>
+                    <filter string="Missing Medicament Reference" name="missing_medicament_reference" domain="[('medicament_ref','=',False)]"/>
+                    <filter string="Missing Medicament" name="missing_medicament" domain="[('medicament','=',False)]"/>
                     <group expand="0" string="Group By...">
                         <filter string="Dispensation Date" domain="[]" context="{'group_by': 'dispensation_date'}"/>
-                        <!--filter string="Dispenser" domain="[]" context="{'group_by': 'dispenser'}"/-->
                     </group>
                 </search>
             </field>

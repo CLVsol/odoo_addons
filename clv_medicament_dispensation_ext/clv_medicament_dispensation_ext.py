@@ -39,8 +39,8 @@ class clv_medicament_dispensation_ext(models.Model):
     # dispenser = fields.Many2one ('res.users', 'Dispenser')
     medicament_ref = fields.Reference([('clv_medicament', 'Medicament'),
                                        ], 'Medicament Reference')
-    # medicament = fields.Many2one('clv_medicament', string='Dispensed Medicament', required=False, 
-    #                               help='Dispensed Medicament')
+    medicament = fields.Many2one('clv_medicament', string='Dispensed Medicament', required=False, 
+                                  help='Dispensed Medicament')
     # max_retail_price = fields.Float('Maximum Retail Price')
     pack_quantity = fields.Integer(string='Pack Quantity',
                                    help='Quantity of packs of the medicament')

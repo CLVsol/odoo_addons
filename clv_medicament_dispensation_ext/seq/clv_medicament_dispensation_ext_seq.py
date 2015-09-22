@@ -53,7 +53,7 @@ class clv_medicament_dispensation_ext(osv.osv):
     _inherit = 'clv_medicament_dispensation_ext'
 
     _columns = {
-        'name': fields.char('Dispensation Code', size=256, select=1, required=True, readonly=False, default='/',
+        'name': fields.char('Dispensation Code', size=256, select=1, required=False, readonly=False, default='/',
                             help='Use "/" to get an automatic new Dispensation Code.'),
         }
     
