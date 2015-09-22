@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_dispensation_ext_tree_insured_card" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.tree</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="insured_card_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_ext_form_insured_card" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.form</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="medicament_ref" position="before">
+                    <!--label for="insured_card_id" class="oe_edit_only"/-->
+                    <label for="insured_card_id"/>
+                    <h3>
+                        <field name="insured_card_id" placeholder="Insured Card..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_ext_search_insured_card" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.search</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Dispensation (Ext)" position="inside">
+                    <field name="insured_card_id" />
+                </search>
+                <group string="Group By..." position="before">
+                    <filter string="Missing Insured Card" name="missing_insured_card" domain="[('insured_card_id','=',False)]"/>
+                </group>
+                <group string="Group By..." position="inside">
+                    <filter string="Insured Card" domain="[]" context="{'group_by':'insured_card_id'}" />
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

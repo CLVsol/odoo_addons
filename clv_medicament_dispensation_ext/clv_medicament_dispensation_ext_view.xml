@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_dispensation_ext_tree" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.tree</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Dispensation (Ext)">
+                    <field name="name"/>
+                    <field name="dispensation_date"/>
+                    <!--field name="dispenser"/-->
+                    <field name="medicament_ref"/>
+                    <field name="medicament"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_dispensation_ext_form" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.form</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Dispensations (Ext)" version="7.0">
+                    <sheet string="Dispensation (Ext)">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Dispensation Code..."/>
+                            </h1>
+                            <!--label for="medicament_ref" class="oe_edit_only"/-->
+                            <label for="medicament_ref"/>
+                            <h3>
+                                <field name="medicament_ref" default_focus="1" placeholder="Medicament (Ref)..."/>
+                            </h3>
+                            <!--label for="medicament_code" class="oe_edit_only"/-->
+                            <!--label for="medicament_code"/>
+                            <h3>
+                                <field name="medicament_code"/>
+                            </h3-->
+                            <label for="medicament"/>
+                            <h3>
+                                <field name="medicament" placeholder="Medicament..."/>
+                            </h3>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="dispensation_date" class="oe_edit_only"/-->
+                            <label for="dispensation_date"/>
+                            <h3>
+                                <field name="dispensation_date" placeholder="Dispensation Date..."/>
+                            </h3>
+                            <!--label for="dispenser" class="oe_edit_only"/-->
+                            <!--label for="dispenser"/>
+                            <h3>
+                                <field name="dispenser" placeholder="Trasncriber..."/>
+                            </h3-->
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                            <!--label for="max_retail_price"/>
+                            <h3>
+                                <field name="max_retail_price" placeholder="Maximum Retail Price..."/>
+                            </h3-->
+                            <label for="pack_quantity"/>
+                            <h3>
+                                <field name="pack_quantity" placeholder="Pack Quantity..."/>
+                            </h3>
+                            <!--label for="refund_price"/>
+                            <h3>
+                                <field name="refund_price" placeholder="Refund Price..."/>
+                            </h3-->
+                            <!--label for="total_refund_price"/>
+                            <h3>
+                                <field name="total_refund_price" placeholder="Refund Value..."/>
+                            </h3-->
+                            <label for="sale_value"/>
+                            <h3>
+                                <field name="sale_value" placeholder="Sale Value..."/>
+                            </h3>
+                            <label for="subsidy_value"/>
+                            <h3>
+                                <field name="subsidy_value" placeholder="Subsidy Value..."/>
+                            </h3>
+                            <label for="at_sight_value"/>
+                            <h3>
+                                <field name="at_sight_value" placeholder="At Sight Value..."/>
+                            </h3>
+                        </div>
+                        <notebook>
+                            <page string="Dispensation Information">
+                                <group>
+                                    <field name="authorization_code"/>
+                                    <field name="insured_card_code"/>
+                                    <field name="insured_name"/>
+                                    <field name="prescriber_code"/>
+                                    <field name="pharmacy_code"/>
+                                    <field name="pharmacy_name"/>
+                                    <field name="medicament_code"/>
+                                    <field name="medicament_description"/>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_medicament_dispensation_ext_search" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.search</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Dispensation (Ext)">
+                    <field name="name"/>
+                    <field name="dispensation_date"/>
+                    <field name="medicament_ref"/>
+                    <field name="medicament"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <filter string="Missing Medicament Reference" name="missing_medicament_reference" domain="[('medicament_ref','=',False)]"/>
+                    <filter string="Missing Medicament" name="missing_medicament" domain="[('medicament','=',False)]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Dispensation Date" domain="[]" context="{'group_by': 'dispensation_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_medicament_dispensation_ext_view">
+            <field name="name">Dispensations (Ext)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_medicament_dispensation_ext</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_medicament_dispensation_ext_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new medicament dispensation (ext).
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_dispensation_ext_view_form">
+            <field name="act_window_id" ref="act_open_clv_medicament_dispensation_ext_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_medicament_dispensation_ext_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_medicament_dispensation_ext_view_tree">
+            <field name="act_window_id" ref="act_open_clv_medicament_dispensation_ext_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_medicament_dispensation_ext_tree"/>
+        </record>
+        
+    </data>
+</openerp>
