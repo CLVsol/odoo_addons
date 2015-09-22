@@ -36,7 +36,7 @@
         ],
     'data': [
         'security/clv_medicament_dispensation_ext_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_medicament_dispensation_ext_view.xml',
         'category/clv_medicament_dispensation_ext_category_view.xml',
         'clv_tag/clv_tag_view.xml',
@@ -45,7 +45,7 @@
         # 'seq/clv_medicament_dispensation_category_sequence.xml',
         'wkf/clv_medicament_dispensation_ext_workflow.xml',
         'wkf/clv_medicament_dispensation_ext_wkf_view.xml',
-        # 'history/clv_medicament_dispensation_history_view.xml',
+        'history/clv_medicament_dispensation_ext_history_view.xml',
         # 'clv_medicament_template/clv_medicament_template_view.xml',
         'menu/clv_medicament_dispensation_ext_menu_view.xml',
         'clv_pharmacy/clv_pharmacy_view.xml',
