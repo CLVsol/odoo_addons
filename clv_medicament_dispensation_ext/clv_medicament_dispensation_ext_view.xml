@@ -34,9 +34,9 @@
                             </h1>
                             <!--label for="medicament_ref" class="oe_edit_only"/-->
                             <label for="medicament_ref"/>
-                            <h1>
+                            <h3>
                                 <field name="medicament_ref" default_focus="1" placeholder="Medicament (Ref)..."/>
-                            </h1>
+                            </h3>
                             <!--label for="medicament_code" class="oe_edit_only"/-->
                             <!--label for="medicament_code"/>
                             <h3>
