@@ -59,6 +59,8 @@ class clv_medicament_dispensation_ext(models.Model):
         ('uniq_name', 'unique(name)', "Error! The Dispensation (Ext) Code must be unique!"),
         ]
 
+    _order = 'name'
+
     # _defaults={
     #     dispenser = lambda obj,cr,uid,context: uid, 
     #     }
