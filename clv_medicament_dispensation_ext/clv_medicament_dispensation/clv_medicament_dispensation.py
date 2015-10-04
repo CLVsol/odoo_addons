@@ -17,15 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_medicament_dispensation_ext
-import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
-import clv_pharmacy
-import clv_professional
-import clv_insured_card
-import res_partner
-import clv_medicament_dispensation
+from openerp import models, fields, api
+
+class clv_medicament_dispensation_ext(models.Model):
+    _inherit = 'clv_medicament_dispensation_ext'
+
+    dispensation_id = fields.Many2one('clv_medicament_dispensation',
+                                      string='Dispensation')
+
+    @api.onchange('dispensation_id')
+    def _onchange_dispensation_id(self):
+        disp = self.env['clv_medicament_dispensation'].search([('id', '=', self.dispens.id)])
+        disp_ext = self.env['clv_medicament_dispensation_ext'].search([('name', '=', self.name)])
+        disp.write({'disp_ext_id': disp_ext.id})
+
+class clv_medicament_dispensation(models.Model):
+    _inherit = 'clv_medicament_dispensation'
+
+    dispensation_ext_id = fields.Many2one('clv_medicament_dispensation_ext',
+                                          string='Dispensation (Ext)')

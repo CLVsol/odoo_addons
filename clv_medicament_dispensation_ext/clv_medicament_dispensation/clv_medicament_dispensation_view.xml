@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_medicament_dispensation_ext_tree_dispensation" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.tree</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="dispensation_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_ext_form_dispensation" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.form</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="medicament_ref" position="before">
+                    <!--label for="dispensation_id" class="oe_edit_only"/-->
+                    <label for="dispensation_id"/>
+                    <h3>
+                        <field name="dispensation_id" placeholder="Dispensation..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_ext_search_dispensation" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation_ext.search</field>
+            <field name="model">clv_medicament_dispensation_ext</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation_ext.view_clv_medicament_dispensation_ext_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Dispensation (Ext)" position="inside">
+                    <field name="dispensation_id" />
+                </search>
+                <group string="Group By..." position="before">
+                    <filter string="Missing Dispensation" name="missing_dispensation" domain="[('dispensation_id','=',False)]"/>
+                </group>
+                <group string="Group By..." position="inside">
+                    <filter string="Dispensation" domain="[]" context="{'group_by':'dispensation_id'}" />
+                </group>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_dispensation_form_dispensation_ext" model="ir.ui.view">
+            <field name="name">clv_medicament_dispensation.form</field>
+            <field name="model">clv_medicament_dispensation</field>
+            <field name="inherit_id" ref="clv_medicament_dispensation.view_clv_medicament_dispensation_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <label for="dispensation_ext_id"/>
+                    <h3>
+                        <field name="dispensation_ext_id" placeholder="Dispensation (Ext)..."/>
+                    </h3>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</openerp>

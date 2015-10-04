@@ -52,6 +52,7 @@
         'clv_professional/clv_professional_view.xml',
         'clv_insured_card/clv_insured_card_view.xml',
         'res_partner/res_partner_view.xml',
+        'clv_medicament_dispensation/clv_medicament_dispensation_view.xml',
         ],
     'demo': [],
     'test': [],

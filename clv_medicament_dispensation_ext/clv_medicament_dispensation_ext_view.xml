@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <tree string="Dispensation (Ext)">
                     <field name="name"/>
+                    <field name="authorization_code"/>
                     <field name="dispensation_date"/>
                     <!--field name="dispenser"/-->
                     <field name="medicament_ref"/>
@@ -123,6 +124,7 @@
             <field name="arch" type="xml">
                 <search string="Dispensation (Ext)">
                     <field name="name"/>
+                    <field name="authorization_code"/>
                     <field name="dispensation_date"/>
                     <field name="medicament_ref"/>
                     <field name="medicament"/>
@@ -131,6 +133,7 @@
                     <filter string="Missing Medicament Reference" name="missing_medicament_reference" domain="[('medicament_ref','=',False)]"/>
                     <filter string="Missing Medicament" name="missing_medicament" domain="[('medicament','=',False)]"/>
                     <group expand="0" string="Group By...">
+                        <filter string="Authorization Code" domain="[]" context="{'group_by': 'authorization_code'}"/>
                         <filter string="Dispensation Date" domain="[]" context="{'group_by': 'dispensation_date'}"/>
                     </group>
                 </search>
