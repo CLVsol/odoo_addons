@@ -28,7 +28,7 @@
                         <button string="Pre Authorize" name="button_pre_authorize" states="waiting" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
                         <!--button string="Authorize" name="button_authorize" states="pre_authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager" class="oe_highlight"/-->
                         <button string="Authorize" name="button_authorize" states="pre_authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
-                        <button string="Calcel" name="button_cancel" states="waiting,pre_authorized,authorized,proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
+                        <button string="Cancel" name="button_cancel" states="waiting,pre_authorized,authorized,proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
                         <button string="Proceeding" name="button_proceeding" states="authorized" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
                         <button string="Reconcile" name="button_reconcile" states="authorized,proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
                         <button string="Do not Reconcile" name="button_do_not_reconcile" states="proceeding" type="workflow" groups="clv_base.group_medicament_dispensation_manager"/>
