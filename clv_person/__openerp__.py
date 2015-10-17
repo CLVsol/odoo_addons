@@ -33,6 +33,7 @@ Person
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_address',
         ],
     'data': [
         'security/clv_person_security.xml',
