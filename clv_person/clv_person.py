@@ -27,7 +27,7 @@ class clv_person(models.Model):
     name = fields.Char('Name', required=True, size=64)
     alias = fields.Char('Alias', size=64, help='Common name that the Person is referred')
     code = fields.Char(size=64, string='Person Code', required=False)
-    address_id = fields.Many2one('res.partner', 'Person Address', ondelete='restrict')
+    address_id = fields.Many2one('clv_address', 'Person Address', ondelete='restrict')
     person_phone = fields.Char('Person Phone', size=32)
     mobile_phone = fields.Char('Person Mobile', size=32)
     person_email = fields.Char('Person Email', size=240)
