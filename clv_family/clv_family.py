@@ -27,7 +27,7 @@ class clv_family(models.Model):
     name = fields.Char('Name', required=True, size=64)
     alias = fields.Char('Alias', size=64, help='Common name that the Family is referred')
     code = fields.Char(size=64, string='Family Code', required=False)
-    address_id = fields.Many2one('res.partner', 'Family Address', ondelete='restrict')
+    address_id = fields.Many2one('clv_address', 'Family Address', ondelete='restrict')
     family_phone = fields.Char('Family Phone', size=32)
     mobile_phone = fields.Char('Family Mobile', size=32)
     family_email = fields.Char('Family Email', size=240)
