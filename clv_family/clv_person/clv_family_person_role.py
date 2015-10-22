@@ -17,48 +17,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Family',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Family
-======
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_patient',
-        ],
-    'data': [
-        'security/clv_family_security.xml',
-        'security/ir.model.access.csv',
-        'clv_family_view.xml',
-        'category/clv_family_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_family_sequence.xml',
-        'seq/clv_family_category_sequence.xml',
-        'wkf/clv_family_workflow.xml',
-        'wkf/clv_family_wkf_view.xml',
-        'history/clv_family_history_view.xml',
-        'clv_person/clv_family_person_view.xml',
-        'clv_person/clv_family_person_role_view.xml',
-        'clv_patient/clv_family_patient_view.xml',
-        'menu/clv_family_menu_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+
+class clv_family_person_role(models.Model):
+    _name = 'clv_family.person_role'
+
+    name = fields.Char(size=256, 
+                       string='Family Person Role', required=True, 
+                       help='Role of a Person in an Family')
+    description = fields.Text(string='Description')
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active', 
+                            help="If unchecked, it will allow you to hide the role without removing it.",
+                            default=1)
+    _order='name'
+
+    _sql_constraints = [('role_name_uniq', 'unique(name)', 
+                         u'Error! The Role Name must be unique!')]
