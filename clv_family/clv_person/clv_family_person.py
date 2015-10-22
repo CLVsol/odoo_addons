@@ -17,48 +17,33 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Family',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Family
-======
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        # 'clv_patient',
-        ],
-    'data': [
-        'security/clv_family_security.xml',
-        'security/ir.model.access.csv',
-        'clv_family_view.xml',
-        'category/clv_family_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_family_sequence.xml',
-        'seq/clv_family_category_sequence.xml',
-        'wkf/clv_family_workflow.xml',
-        'wkf/clv_family_wkf_view.xml',
-        'history/clv_family_history_view.xml',
-        'clv_person/clv_family_person_view.xml',
-        'clv_person/clv_family_person_role_view.xml',
-        # 'clv_patient/clv_family_person_view.xml',
-        'menu/clv_family_menu_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields, api
+
+class clv_family_person(models.Model):
+    _name = 'clv_family.person'
+
+    family_id = fields.Many2one('clv_family', string='Family',
+                                help='Family', required=False)
+    person_id = fields.Many2one('clv_person', string='Person')
+    role = fields.Many2one('clv_family.person_role', 'Role', required=False)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active', 
+                            help="If unchecked, it will allow you to hide the person without removing it.",
+                            default=1)
+
+class clv_family(models.Model):
+    _inherit = 'clv_family'
+
+    person_ids = fields.One2many('clv_family.person',
+                                 'family_id',
+                                 'Persons')
+
+class clv_person(models.Model):
+    _inherit = 'clv_person'
+
+    family_ids = fields.One2many('clv_family.person',
+                                 'person_id',
+                                 'Families')
+    family_ids2 = fields.One2many('clv_family.person',
+                                  'person_id',
+                                  'Families')
