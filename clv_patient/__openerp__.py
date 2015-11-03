@@ -34,6 +34,7 @@ Patient
         'clv_tag',
         'clv_annotation',
         'clv_person',
+        'clv_family',
         ],
     'data': [
         'security/clv_patient_security.xml',
@@ -48,6 +49,7 @@ Patient
         'wkf/clv_patient_workflow.xml',
         'wkf/clv_patient_wkf_view.xml',
         'history/clv_patient_history_view.xml',
+        'clv_family/clv_family_patient_view.xml',
         'menu/clv_patient_menu_view.xml',
         ],
     'demo': [],
