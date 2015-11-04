@@ -342,7 +342,7 @@ msgstr "Notas"
 #. module: clv_address
 #: view:clv_address.history:clv_address.view_clv_address_history_form
 msgid "Notes..."
-msgstr "Notes..."
+msgstr "Notas..."
 
 #. module: clv_address
 #: view:clv_address:clv_address.view_clv_address_form
