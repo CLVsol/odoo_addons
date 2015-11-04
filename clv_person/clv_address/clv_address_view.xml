@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_address_form_person" model="ir.ui.view">
+            <field name="name">clv_address.form</field>
+            <field name="model">clv_address</field>
+            <field name="inherit_id" ref="clv_address.view_clv_address_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Information" position="after">
+                    <page string="Persons">
+                        <group>
+                            <field name="person_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
