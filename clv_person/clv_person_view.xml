@@ -109,7 +109,7 @@
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                        <filter string="Address" domain="[]" context="{'group_by': 'address_id'}"/>
                     </group>
                 </search>
             </field>

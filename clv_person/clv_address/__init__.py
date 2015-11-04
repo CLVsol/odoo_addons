@@ -17,47 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Patient',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Patient
-=======
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_person',
-        'clv_family',
-        ],
-    'data': [
-        'security/clv_patient_security.xml',
-        'security/ir.model.access.csv',
-        'clv_patient_view.xml',
-        'clv_person_view.xml',
-        'category/clv_patient_category_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'seq/clv_patient_sequence.xml',
-        'seq/clv_patient_category_sequence.xml',
-        'wkf/clv_patient_workflow.xml',
-        'wkf/clv_patient_wkf_view.xml',
-        'history/clv_patient_history_view.xml',
-        'clv_family/clv_family_patient_view.xml',
-        'menu/clv_patient_menu_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+import clv_address

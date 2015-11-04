@@ -34,7 +34,6 @@ Family
         'clv_tag',
         'clv_annotation',
         'clv_person',
-        'clv_patient',
         ],
     'data': [
         'security/clv_family_security.xml',
@@ -50,7 +49,6 @@ Family
         'history/clv_family_history_view.xml',
         'clv_person/clv_family_person_view.xml',
         'clv_person/clv_family_person_role_view.xml',
-        'clv_patient/clv_family_patient_view.xml',
         'menu/clv_family_menu_view.xml',
         ],
     'demo': [],
