@@ -1,0 +1,594 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_family
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-04 22:37+0000\n"
+"PO-Revision-Date: 2015-11-04 22:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_family
+#: model:ir.actions.act_window,help:clv_family.act_open_clv_family_category_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new family category.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova categoria de família.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_family
+#: model:ir.actions.act_window,help:clv_family.act_open_clv_family_member_role_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new family member role.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adici9onar um novo papel de membro de família.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_family
+#: model:ir.actions.act_window,help:clv_family.act_open_clv_family_member_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new family member.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um novo membro de família.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_family
+#: model:ir.actions.act_window,help:clv_family.act_open_clv_family_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new family.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova família.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_wkf
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: clv_family
+#: field:clv_family,active:0
+#: selection:clv_family,state:0
+#: field:clv_family.category,active:0
+#: selection:clv_family.history,state:0
+#: field:clv_family.member,active:0
+#: field:clv_family.member_role,active:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_family
+#: field:clv_family,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_search
+msgid "Address"
+msgstr "Endereço"
+
+#. module: clv_family
+#: field:clv_family,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+msgid "Alias..."
+msgstr "Apelido..."
+
+#. module: clv_family
+#: view:clv_annotation:clv_family.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_annotation
+#: field:clv_family,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_family
+#: field:clv_family,category_ids:0
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_category
+msgid "Categories..."
+msgstr "Categorias..."
+
+#. module: clv_family
+#: field:clv_family.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: clv_family
+#: field:clv_family.category,code:0
+msgid "Category Code"
+msgstr "Código da Categoria"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+msgid "Category Code..."
+msgstr "Código da Categoria..."
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+#: field:clv_family.category,child_ids:0
+msgid "Child Categories"
+msgstr "Categorias Subordinadas"
+
+#. module: clv_family
+#: help:clv_family,alias:0
+msgid "Common name that the Family is referred"
+msgstr "Nome comum com que a Família é referenciada"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#. module: clv_family
+#: field:clv_family,create_uid:0
+#: field:clv_family.category,create_uid:0
+#: field:clv_family.history,create_uid:0
+#: field:clv_family.member,create_uid:0
+#: field:clv_family.member_role,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_family
+#: field:clv_family,create_date:0
+#: field:clv_family.category,create_date:0
+#: field:clv_family.history,create_date:0
+#: field:clv_family.member,create_date:0
+#: field:clv_family.member_role,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_family
+#: field:clv_family.history,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_family
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_family
+#: field:clv_family.category,description:0
+#: field:clv_family.member_role,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_family
+#: sql_constraint:clv_family.category:0
+msgid "Error! The Category Code must be unique!"
+msgstr "Erro! O Código da Categoria deve ser único!"
+
+#. module: clv_family
+#: sql_constraint:clv_family:0
+msgid "Error! The Family Code must be unique!"
+msgstr "Erro! O Código da Família deve ser único!"
+
+#. module: clv_family
+#: sql_constraint:clv_family.member_role:0
+msgid "Error! The Member Role Name must be unique!"
+msgstr "Erro! O do Papel do Membro deve ser único!"
+
+#. module: clv_family
+#: constraint:clv_family.category:0
+msgid "Error! You can not create recursive categories."
+msgstr "Erro! Não é possível criar categorias recursivas."
+
+#. module: clv_family
+#: view:clv_address:clv_family.view_clv_address_form_family
+#: field:clv_address,family_ids:0
+#: view:clv_annotation:clv_family.view_clv_annotation_form
+#: field:clv_annotation,family_ids:0
+#: view:clv_family:clv_family.view_clv_family_form
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+#: field:clv_family.category,family_ids:0
+#: view:clv_tag:clv_family.view_clv_tag_form
+#: field:clv_tag,family_ids:0
+#: model:ir.actions.act_window,name:clv_family.act_open_clv_family_view
+#: model:ir.ui.menu,name:clv_family.menu_commutity_community_families
+msgid "Families"
+msgstr "Famílias"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+#: view:clv_family:clv_family.view_clv_family_form_wkf
+#: view:clv_family:clv_family.view_clv_family_search
+#: view:clv_family:clv_family.view_clv_family_tree
+#: field:clv_family.history,family_id:0
+#: view:clv_family.member:clv_family.view_clv_family_member_search
+#: field:clv_family.member,family_id:0
+#: help:clv_family.member,family_id:0
+msgid "Family"
+msgstr "Família"
+
+#. module: clv_family
+#: field:clv_family,address_id:0
+msgid "Family Address"
+msgstr "Endereço da Família"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+#: view:clv_family.category:clv_family.view_clv_family_category_tree
+#: model:ir.actions.act_window,name:clv_family.act_open_clv_family_category_view
+#: model:ir.ui.menu,name:clv_family.menu_commutity_community_config_family_categories
+msgid "Family Categories"
+msgstr "Categorias de Famílias"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_search
+msgid "Family Category"
+msgstr "Categoria de Família"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+msgid "Family Category..."
+msgstr "Categoria de Família..."
+
+#. module: clv_family
+#: field:clv_family,code:0
+msgid "Family Code"
+msgstr "Código da Família"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+msgid "Family Code..."
+msgstr "Código da Família..."
+
+#. module: clv_family
+#: field:clv_family,family_email:0
+msgid "Family Email"
+msgstr "Email"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_history
+#: field:clv_family,history_ids:0
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+#: view:clv_family.history:clv_family.view_clv_family_history_tree
+msgid "Family History"
+msgstr "Histórico da Família"
+
+#. module: clv_family
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_search
+#: field:clv_family.member_role,name:0
+msgid "Family Member Role"
+msgstr "Papel do Membro de Família"
+
+#. module: clv_family
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_form
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_tree
+#: model:ir.actions.act_window,name:clv_family.act_open_clv_family_member_role_view
+msgid "Family Member Roles"
+msgstr "Papeis de Membros de Famílias"
+
+#. module: clv_family
+#: view:clv_family.member:clv_family.view_clv_family_member_form
+#: view:clv_family.member:clv_family.view_clv_family_member_search
+#: view:clv_family.member:clv_family.view_clv_family_member_tree
+#: field:clv_person,family_member_ids:0
+#: model:ir.actions.act_window,name:clv_family.act_open_clv_family_member_view
+msgid "Family Members"
+msgstr "Membros de Famílias"
+
+#. module: clv_family
+#: field:clv_family,mobile_phone:0
+msgid "Family Mobile"
+msgstr "Celular"
+
+#. module: clv_family
+#: field:clv_family,family_phone:0
+msgid "Family Phone"
+msgstr "Telefone"
+
+#. module: clv_family
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+msgid "Family..."
+msgstr "Família..."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_search
+#: view:clv_family:clv_family.view_clv_family_search_wkf
+#: view:clv_family.category:clv_family.view_clv_family_category_search
+#: view:clv_family.member:clv_family.view_clv_family_member_search
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_family
+#: field:clv_family,id:0
+#: field:clv_family.category,id:0
+#: field:clv_family.history,id:0
+#: field:clv_family.member,id:0
+#: field:clv_family.member_role,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_family
+#: help:clv_family,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possivel desabilitar o histórico sem removê-lo."
+
+#. module: clv_family
+#: help:clv_family.category,active:0
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Se desmarcado, será possível esconder a categoria sem removê-la."
+
+#. module: clv_family
+#: help:clv_family.member,active:0
+msgid "If unchecked, it will allow you to hide the family member without removing it."
+msgstr "Se desmarcado, será possível esconder o membro da família sem removê-lo."
+
+#. module: clv_family
+#: help:clv_family,active:0
+msgid "If unchecked, it will allow you to hide the family without removing it."
+msgstr "Se desmarcado, será possível esconder a família sem removê-la."
+
+#. module: clv_family
+#: help:clv_family.member_role,active:0
+msgid "If unchecked, it will allow you to hide the member role without removing it."
+msgstr "Se desmarcado, será possível esconder o papel do memgro sem removê-lo."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_wkf
+msgid "Inactivate"
+msgstr "Inativar"
+
+#. module: clv_family
+#: selection:clv_family,state:0
+#: selection:clv_family.history,state:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_search
+msgid "Inactive Categories"
+msgstr "Categorias Inativas"
+
+#. module: clv_family
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_search
+msgid "Inactive Member Roles"
+msgstr "Papeis de Membros Inativos"
+
+#. module: clv_family
+#: field:clv_family,date_inclusion:0
+msgid "Inclusion Date"
+msgstr "Data da Inclusão"
+
+#. module: clv_family
+#: view:clv_address:clv_family.view_clv_address_form_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_family
+#: field:clv_family,write_uid:0
+#: field:clv_family.category,write_uid:0
+#: field:clv_family.history,write_uid:0
+#: field:clv_family.member,write_uid:0
+#: field:clv_family.member_role,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_family
+#: field:clv_family,write_date:0
+#: field:clv_family.category,write_date:0
+#: field:clv_family.history,write_date:0
+#: field:clv_family.member,write_date:0
+#: field:clv_family.member_role,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_family
+#: field:clv_family.category,parent_left:0
+msgid "Left parent"
+msgstr "Superior a esquerda"
+
+#. module: clv_family
+#: view:clv_family.member:clv_family.view_clv_family_member_search
+#: field:clv_family.member,member_id:0
+msgid "Member"
+msgstr "Membro"
+
+#. module: clv_family
+#: view:clv_family.member:clv_family.view_clv_family_member_search
+msgid "Member Role"
+msgstr "Papel do Membro"
+
+#. module: clv_family
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_form
+msgid "Member Role..."
+msgstr "Papel do Membro..."
+
+#. module: clv_family
+#: view:clv_person:clv_family.view_clv_person_form_family_member
+#: model:ir.ui.menu,name:clv_family.menu_commutity_community_config_member_roles_family
+msgid "Member Roles (Family)"
+msgstr "Papeis (Família)"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_person
+#: field:clv_family,member_ids:0
+#: model:ir.ui.menu,name:clv_family.menu_commutity_community_families_members
+msgid "Members"
+msgstr "Membros"
+
+#. module: clv_family
+#: field:clv_family,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: clv_family
+#: selection:clv_family,state:0
+#: selection:clv_family.history,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: clv_family
+#: field:clv_family,notes:0
+#: field:clv_family.category,notes:0
+#: field:clv_family.history,notes:0
+#: field:clv_family.member,notes:0
+#: field:clv_family.member_role,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_family
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+#: view:clv_family.member:clv_family.view_clv_family_member_form
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+msgid "Other Information ..."
+msgstr "Outras Ĩnformações ..."
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_search
+#: field:clv_family.category,parent_id:0
+msgid "Parent Category"
+msgstr "Categoria Superior"
+
+#. module: clv_family
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+msgid "Parent Category..."
+msgstr "Categoria Superior..."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+msgid "Public Information"
+msgstr "Informações Públicas"
+
+#. module: clv_family
+#: field:clv_family.category,parent_right:0
+msgid "Right parent"
+msgstr "Superior a direita"
+
+#. module: clv_family
+#: field:clv_family.member,role:0
+msgid "Role"
+msgstr "Papel"
+
+#. module: clv_family
+#: help:clv_family.member_role,name:0
+msgid "Role of a Member in an Family"
+msgstr "Papel do Membro em uma Família"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+#: view:clv_family:clv_family.view_clv_family_form_annotation
+#: view:clv_family:clv_family.view_clv_family_form_history
+#: view:clv_family:clv_family.view_clv_family_form_person
+#: view:clv_family.category:clv_family.view_clv_family_category_form
+#: view:clv_family.member:clv_family.view_clv_family_member_form
+#: view:clv_family.member_role:clv_family.view_clv_family_member_role_form
+#: view:clv_person:clv_family.view_clv_person_form_family_member
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form
+#: view:clv_family:clv_family.view_clv_family_search_wkf
+#: field:clv_family,state:0
+#: field:clv_family.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_family
+#: field:clv_family,date:0
+msgid "Status change date"
+msgstr "Data da mudança do Status"
+
+#. module: clv_family
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_wkf
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: clv_family
+#: selection:clv_family,state:0
+#: selection:clv_family.history,state:0
+msgid "Suspended"
+msgstr "Suspenso"
+
+#. module: clv_family
+#: view:clv_tag:clv_family.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_family
+#: field:clv_family,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_family
+#: view:clv_family:clv_family.view_clv_family_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_family
+#: help:clv_family.category,code:0
+msgid "Use \"/\" to get an automatic new Category Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Categoria."
+
+#. module: clv_family
+#: help:clv_family,code:0
+msgid "Use \"/\" to get an automatic new Family Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Família."
+
+#. module: clv_family
+#: field:clv_family.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_family
+#: view:clv_family.history:clv_family.view_clv_family_history_form
+msgid "User..."
+msgstr "Usuário..."
+

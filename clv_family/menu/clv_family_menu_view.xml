@@ -16,12 +16,12 @@
                     groups="clv_base.group_family_user"
                     sequence="20"
                     action="clv_family.act_open_clv_family_view"/>
-                    <!-- Community/Community/Family/Persons -->
-                    <menuitem name="Persons" id="menu_commutity_community_families_persons"
+                    <!-- Community/Community/Family/Members -->
+                    <menuitem name="Members" id="menu_commutity_community_families_members"
                         parent="menu_commutity_community_families"
                         groups="clv_base.group_family_user"
                         sequence="10"
-                        action="clv_family.act_open_clv_family_person_view"/>
+                        action="clv_family.act_open_clv_family_member_view"/>
                 <!-- Community/Community/Configuration -->
                 <!--menuitem name="Configuration" id="menu_commutity_community_config"  
                     parent="menu_commutity_community"
@@ -33,12 +33,12 @@
                         groups="clv_base.group_family_user"
                         sequence="20"
                         action="clv_family.act_open_clv_family_category_view"/>
-                    <!-- Community/Configuration/Family/Person Roles -->
-                    <menuitem name="Person Roles" id="menu_commutity_community_config_person_roles"
+                    <!-- Community/Configuration/Family/Member Roles (Family) -->
+                    <menuitem name="Member Roles (Family)" id="menu_commutity_community_config_member_roles_family"
                         parent="clv_base.menu_commutity_community_config"
                         groups="clv_base.group_base_manager"
                         sequence="25"
-                        action="clv_family.act_open_clv_family_person_role_view"/>
+                        action="clv_family.act_open_clv_family_member_role_view"/>
 
     </data>
 </openerp>

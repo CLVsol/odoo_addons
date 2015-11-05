@@ -31,12 +31,12 @@
             <field name="name">clv_family.history.form</field>
             <field name="model">clv_family.history</field>
             <field name="arch" type="xml">
-                <form string="Person History" version="7.0">
+                <form string="Family History" version="7.0">
                     <sheet>
                         <div class="oe_title">
                             <label for="family_id" class="oe_edit_only"/>
                             <h2>
-                                <field name="family_id" placeholder="Person..." readonly="True"/>
+                                <field name="family_id" placeholder="Family..." readonly="True"/>
                             </h2>
                             <label for="user_id" class="oe_edit_only"/>
                             <h1>
@@ -63,12 +63,12 @@
             <field name="model">clv_family.history</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Person History">
-                        <field name="family_id"/>
-                        <field name="user_id"/>
-                        <field name="date"/>
-                        <field name="state"/>
-                        <field name="notes"/>
+                <tree string="Family History">
+                    <field name="family_id"/>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <field name="notes"/>
                 </tree>
             </field>
         </record>

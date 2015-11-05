@@ -17,5 +17,33 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_family_person_role
-import clv_family_person
+from openerp import models, fields, api
+
+class clv_family_member(models.Model):
+    _name = 'clv_family.member'
+
+    family_id = fields.Many2one('clv_family', string='Family',
+                                help='Family', required=False)
+    member_id = fields.Many2one('clv_person', string='Member')
+    role = fields.Many2one('clv_family.member_role', 'Role', required=False)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active', 
+                            help="If unchecked, it will allow you to hide the family member without removing it.",
+                            default=1)
+
+class clv_family(models.Model):
+    _inherit = 'clv_family'
+
+    member_ids = fields.One2many('clv_family.member',
+                                 'family_id',
+                                 'Members')
+
+class clv_person(models.Model):
+    _inherit = 'clv_person'
+
+    family_member_ids = fields.One2many('clv_family.member',
+                                        'member_id',
+                                        'Family Members')
+    # family_member_ids2 = fields.One2many('clv_family.member',
+    #                                      'member_id',
+    #                                      'Family Members')
