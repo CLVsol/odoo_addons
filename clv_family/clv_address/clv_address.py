@@ -19,18 +19,9 @@
 
 from openerp import models, fields, api
 
-class clv_family_person_role(models.Model):
-    _name = 'clv_family.person_role'
+class clv_address(models.Model):
+    _inherit = 'clv_address'
 
-    name = fields.Char(size=256, 
-                       string='Family Person Role', required=True, 
-                       help='Role of a Person in an Family')
-    description = fields.Text(string='Description')
-    notes = fields.Text(string='Notes')
-    active = fields.Boolean('Active', 
-                            help="If unchecked, it will allow you to hide the role without removing it.",
-                            default=1)
-    _order='name'
-
-    _sql_constraints = [('role_name_uniq', 'unique(name)', 
-                         u'Error! The Role Name must be unique!')]
+    family_ids = fields.One2many('clv_family',
+                                 'address_id',
+                                 'Families')
