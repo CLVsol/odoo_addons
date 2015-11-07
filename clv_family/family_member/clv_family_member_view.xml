@@ -97,7 +97,7 @@
             <field name="inherit_id" ref="view_clv_family_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <page string="Settings" position="before">
+                <page string="Public Information" position="before">
                     <page string="Members">
                         <field name="member_ids" colspan="4" nolabel="1"/>
                     </page>
