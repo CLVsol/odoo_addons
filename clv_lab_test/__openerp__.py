@@ -59,6 +59,7 @@ Lab Test
         'wizard/create_lab_test.xml',
         'clv_lab_test_outcome_view.xml',
         'lab_test_data.xml',
+        'menu/clv_lab_test_menu_view.xml',
         ],
     'demo': [],
     'test': [],

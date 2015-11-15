@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Health -->
+        <!--menuitem name="Health" id="menu_health" 
+            groups="clv_base.group_base_user"
+            sequence="14"/-->
+            <!-- Health/Health -->
+            <!--menuitem name="Health" id="menu_health_health"  
+                parent="menu_health"
+                groups="clv_base.group_base_user"
+                sequence="10"/-->
+                <menuitem name="Patients" id="menu_health_health_patients"
+                    parent="clv_base.menu_health_health"
+                    groups="clv_base.group_patient_user"
+                    sequence="10"
+                    action="clv_patient.act_open_clv_patient_view"/>
+                <!-- Health/Health/Lab Tests -->
+                <menuitem name="Lab Tests" id="menu_health_health_lab_tests"
+                    parent="clv_base.menu_health_health"
+                    groups="clv_base.group_lab_test_user"
+                    sequence="20"
+                    action="clv_lab_test.clv_action_tree_lab_test"/>
+                    <!-- Health/Health/Lab Test Requests -->
+                    <menuitem name="Lab Test Requests" id="menu_health_health_lab_test_requests"
+                        parent="menu_health_health_lab_tests"
+                        groups="clv_base.group_lab_test_user"
+                        sequence="30"
+                        action="clv_lab_test.clv_action_lab_test_request"/>
+                    <!-- Health/Health/Lab Test Draft Requests -->
+                    <menuitem name="Lab Test Draft Requests" id="menu_health_health_lab_test_requests_draft_requests"
+                        parent="menu_health_health_lab_tests"
+                        groups="clv_base.group_lab_test_user"
+                        sequence="40"
+                        action="clv_lab_test.clv_action_draft_lab_test_request"/>
+                    <!-- Health/Health/Lab Test Today's Draft Requests -->
+                    <menuitem name="Lab Test Today's Draft Requests" id="menu_health_health_lab_test_requests_today"
+                        parent="menu_health_health_lab_tests"
+                        groups="clv_base.group_lab_test_user"
+                        sequence="50"
+                        action="clv_lab_test.clv_action_today_draft_lab_test_request"/>
+                <!-- Health/Health/Configuration -->
+                <!--menuitem name="Configuration" id="menu_health_health_config"  
+                    parent="menu_health_health"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/-->
+<!--                     <menuitem name="Patient Categories" id="menu_health_health_config_patient_categories" 
+                        parent="clv_base.menu_health_health_config"
+                        groups="clv_base.group_patient_user"
+                        sequence="10"
+                        action="clv_patient.act_open_clv_patient_category_view"/>
+ -->                    <!-- Health/Health/Configuration/Lab Test-->
+                    <menuitem name="Lab Test" id="menu_health_health_config_lab_test"
+                        parent="clv_base.menu_health_health_config"
+                        groups="clv_base.group_base_manager"
+                        sequence="60"/>
+                        <!-- Health/Health/Configuration/Lab Tes/Units-->
+                        <menuitem name="Units" id="menu_health_health_config_lab_test_units"
+                            parent="menu_health_health_config_lab_test"
+                            groups="clv_base.group_base_manager"
+                            sequence="10"
+                            action="clv_lab_test.act_open_clv_lab_test_unit_view"/>
+                        <!-- Health/Health/Configuration/Lab Tes/Outcomes-->
+                        <menuitem name="Outcomes" id="menu_health_health_config_lab_test_outcomes" 
+                            parent="menu_health_health_config_lab_test"
+                            groups="clv_base.group_base_manager"
+                            sequence="20"
+                            action="clv_lab_test.act_open_clv_lab_test_outcome_view"/>
+                        <!-- Health/Health/Configuration/Lab Tes/Types-->
+                        <menuitem name="Types" id="menu_health_health_config_lab_test_types"
+                            parent="menu_health_health_config_lab_test"
+                            groups="clv_base.group_base_manager"
+                            sequence="30"
+                            action="clv_lab_test.clv_action_form_lab_test_type"/>
+        
+    </data>
+</openerp>
