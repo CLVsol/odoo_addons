@@ -58,8 +58,8 @@
 	                                    <field name="result"/>
 	                                    <field name="normal_range"/>
                                         <field name="unit"/>
-                                        <field name="outcome_ids"/>
-                                        <field name="valid_values"/>
+                                        <!--field name="outcome_ids"/-->
+                                        <!--field name="valid_values"/-->
 	                                </tree>
 	                                <form string="Test Cases">
 	                                    <field name="name"/>

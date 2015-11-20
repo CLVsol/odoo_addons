@@ -17,7 +17,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields
+
 
 class clv_lab_test_criterion(models.Model):
     _name = "clv_lab_test.criterion"
@@ -25,16 +26,16 @@ class clv_lab_test_criterion(models.Model):
     name = fields.Char('Test', size=64)
     result = fields.Text('Result')
     normal_range = fields.Text('Normal Range')
-    outcome_ids = fields.Many2many('clv_lab_test.outcome', 
-                                   'clv_lab_test_outcome_rel', 
-                                   'criterion_id', 
-                                   'outcome_id', 
-                                   'Outcomes')
-    valid_values = fields.Text('Valid Values')
+    # outcome_ids = fields.Many2many('clv_lab_test.outcome',
+    #                                'clv_lab_test_outcome_rel',
+    #                                'criterion_id',
+    #                                'outcome_id',
+    #                                'Outcomes')
+    # valid_values = fields.Text('Valid Values')
     unit = fields.Many2one('clv_lab_test.unit', 'Units')
-    lab_test_type_id = fields.Many2one('clv_lab_test.type','Test type')
-    lab_test_id = fields.Many2one('clv_lab_test','Test Cases')
+    lab_test_type_id = fields.Many2one('clv_lab_test.type', 'Test type')
+    lab_test_id = fields.Many2one('clv_lab_test', 'Test Cases')
     sequence = fields.Integer('Sequence',
-                              default=lambda *a : 1)       
+                              default=lambda *a: 1)
 
     _order = "sequence"
