@@ -30,7 +30,7 @@ Lab Test
     ''',
     'images': [],
     'depends': [
-        'product',
+        # 'product',
         'clv_base',
         'clv_tag',
         'clv_annotation',
