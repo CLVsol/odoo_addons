@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_lab_test_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_lab_test.tree</field>
+            <field name="model">clv_lab_test</field>
+            <field name="inherit_id" ref="clv_lab_test.view_clv_lab_test_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="date_analysis" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_lab_test_form_wkf" model="ir.ui.view">
+            <field name="name">clv_lab_test.form</field>
+            <field name="model">clv_lab_test</field>
+            <field name="inherit_id" ref="clv_lab_test.clv_lab_test_view"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet string="Laboratory Test" position="before">
+                    <header>
+                        <button string="Collected" name="button_collected" states="draft,canceled" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <button string="Testing" name="button_testing" states="collected,canceled" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <button string="Done" name="button_done" states="testing" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <button string="Approve" name="button_approve" states="done" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <button string="Cancel" name="button_cancel" states="draft,collected,testing,done" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,collected,testing,done,approved,canceled"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <!--record id="view_clv_lab_test_search_wkf" model="ir.ui.view">
+            <field name="name">clv_lab_test.search</field>
+            <field name="model">clv_lab_test</field>
+            <field name="inherit_id" ref="clv_lab_test.view_clv_lab_test_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Stage" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record-->
+
+    </data>
+</openerp>
