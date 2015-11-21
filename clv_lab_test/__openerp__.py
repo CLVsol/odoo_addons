@@ -49,7 +49,7 @@ Lab Test
         # 'seq/clv_patient_category_sequence.xml',
         'wkf/clv_lab_test_workflow.xml',
         'wkf/clv_lab_test_wkf_view.xml',
-        # 'history/clv_patient_history_view.xml',
+        'history/clv_lab_test_history_view.xml',
         # 'clv_lab_test_workflow.xml',
         'clv_lab_test_unit_view.xml',
         'clv_lab_test_type_view.xml',

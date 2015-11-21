@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_lab_test_form_history" model="ir.ui.view">
+            <field name="name">clv_lab_test.form</field>
+            <field name="model">clv_lab_test</field>
+            <field name="inherit_id" ref="clv_lab_test.clv_lab_test_view"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Extra Info" position="after">
+                    <page string="History" groups="clv_base.group_base_suser" attrs="{'invisible': ['|', ('active_history', '=', False)]}">
+                        <field name="active_history"/>
+                        <field name="history_ids" colspan="4" nolabel="1">
+                            <tree string="Lab Test History">
+                                <!--field name="lab_test_id"/-->
+                                <field name="user_id"/>
+                                <field name="date"/>
+                                <field name="state"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+                <!--field name="active" position="after">
+                    <field name="active_history"/>
+                </field-->
+            </field>
+        </record>
+
+        <record id="view_clv_lab_test_history_form" model="ir.ui.view">
+            <field name="name">clv_lab_test.history.form</field>
+            <field name="model">clv_lab_test.history</field>
+            <field name="arch" type="xml">
+                <form string="Lab Test History" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="lab_test_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="lab_test_id" placeholder="Lab Test..." readonly="True"/>
+                            </h2>
+                            <label for="user_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="user_id" default_focus="1" placeholder="User..." readonly="True"/>
+                            </h1>
+                            <label for="date" class="oe_edit_only"/>
+                            <h3>
+                                <field name="date" placeholder="Date..." readonly="True"/>
+                            </h3>
+                            <label for="state" class="oe_edit_only"/>
+                            <h3>
+                                <field name="state" placeholder="Status..." readonly="True"/>
+                            </h3>
+                            <label for="notes" class="oe_edit_only"/>
+                            <field name="notes" placeholder="Notes..."/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_lab_test_history_tree" model="ir.ui.view">
+            <field name="name">clv_lab_test.history.tree</field>
+            <field name="model">clv_lab_test.history</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Lab Test History">
+                        <field name="lab_test_id"/>
+                        <field name="user_id"/>
+                        <field name="date"/>
+                        <field name="state"/>
+                        <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

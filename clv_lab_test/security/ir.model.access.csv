@@ -19,3 +19,7 @@ access_clv_lab_test_type_base_smanager,clv.lab_test.type,model_clv_lab_test_type
 access_clv_lab_test_patient_lab_test_user,clv.lab_test.patient,model_clv_lab_test_patient,clv_base.group_lab_test_user,1,0,0,0
 access_clv_lab_test_patient_lab_test_manager,clv.lab_test.patient,model_clv_lab_test_patient,clv_base.group_lab_test_manager,1,1,1,0
 access_clv_lab_test_patient_base_smanager,clv.lab_test.patient,model_clv_lab_test_patient,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_lab_test_history_lab_test_user,clv.lab_test.history,model_clv_lab_test_history,clv_base.group_lab_test_user,1,0,0,0
+access_clv_lab_test_history_lab_test_manager,clv.lab_test.history,model_clv_lab_test_history,clv_base.group_lab_test_manager,1,1,1,0
+access_clv_lab_test_history_base_smanager,clv.lab_test.history,model_clv_lab_test_history,clv_base.group_base_smanager,1,1,1,1
