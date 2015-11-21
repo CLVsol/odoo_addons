@@ -17,7 +17,7 @@
         <record id="view_clv_lab_test_form_wkf" model="ir.ui.view">
             <field name="name">clv_lab_test.form</field>
             <field name="model">clv_lab_test</field>
-            <field name="inherit_id" ref="clv_lab_test.clv_lab_test_view"/>
+            <field name="inherit_id" ref="clv_lab_test.view_clv_lab_test_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <sheet string="Laboratory Test" position="before">
@@ -33,20 +33,20 @@
             </field>
         </record>
 
-        <!--record id="view_clv_lab_test_search_wkf" model="ir.ui.view">
+        <record id="view_clv_lab_test_search_wkf" model="ir.ui.view">
             <field name="name">clv_lab_test.search</field>
             <field name="model">clv_lab_test</field>
             <field name="inherit_id" ref="clv_lab_test.view_clv_lab_test_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="code" position="after">
+                <field name="name" position="after">
                     <field name="state"/>
                 </field>
                 <group string="Group By..." position="inside">
-                    <filter string="Stage" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
                 </group>
             </field>
-        </record-->
+        </record>
 
     </data>
 </openerp>

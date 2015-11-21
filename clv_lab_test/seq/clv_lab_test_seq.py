@@ -54,8 +54,8 @@ def format_code(code_seq):
 class clv_lab_test(models.Model):
     _inherit = 'clv_lab_test'
 
-    name = fields.Char('ID', size=128, select=1, required=False, readonly=False, default='/',
-                       help='Use "/" to get an automatic new Lab Test ID.')
+    name = fields.Char('Lab Test Code', size=128, select=1, required=False, readonly=False, default='/',
+                       help='Use "/" to get an automatic new Lab Test Code.')
 
     @api.model
     def create(self, vals):
