@@ -11,12 +11,12 @@
                 parent="menu_health"
                 groups="clv_base.group_base_user"
                 sequence="10"/-->
-                <menuitem name="Patients" id="menu_health_health_patients"
+<!--                 <menuitem name="Patients" id="menu_health_health_patients"
                     parent="clv_base.menu_health_health"
                     groups="clv_base.group_patient_user"
                     sequence="10"
                     action="clv_patient.act_open_clv_patient_view"/>
-                <!-- Health/Health/Lab Tests -->
+ -->                <!-- Health/Health/Lab Tests -->
                 <menuitem name="Lab Tests" id="menu_health_health_lab_tests"
                     parent="clv_base.menu_health_health"
                     groups="clv_base.group_lab_test_user"
@@ -62,12 +62,12 @@
                             sequence="10"
                             action="clv_lab_test.act_open_clv_lab_test_unit_view"/>
                         <!-- Health/Health/Configuration/Lab Tes/Outcomes-->
-                        <menuitem name="Outcomes" id="menu_health_health_config_lab_test_outcomes" 
+<!--                         <menuitem name="Outcomes" id="menu_health_health_config_lab_test_outcomes" 
                             parent="menu_health_health_config_lab_test"
                             groups="clv_base.group_base_manager"
                             sequence="20"
                             action="clv_lab_test.act_open_clv_lab_test_outcome_view"/>
-                        <!-- Health/Health/Configuration/Lab Tes/Types-->
+ -->                        <!-- Health/Health/Configuration/Lab Tes/Types-->
                         <menuitem name="Types" id="menu_health_health_config_lab_test_types"
                             parent="menu_health_health_config_lab_test"
                             groups="clv_base.group_base_manager"

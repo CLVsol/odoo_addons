@@ -17,17 +17,47 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_lab_test_unit
-import clv_lab_test_type
-# import clv_lab_test_outcome
-import clv_lab_test_criterion
-import clv_lab_test
-import clv_lab_test_patient
-import wizard
-import clv_patient
-# import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
+from openerp import models, fields, api
+from datetime import *
+
+
+class clv_lab_test(models.Model):
+    _inherit = 'clv_lab_test'
+
+    state = fields.Selection([('draft', 'Draft'),
+                              ('collected', 'Collected'),
+                              ('testing', 'Testing'),
+                              ('done', 'Done'),
+                              ('approved', 'Approved'),
+                              ('canceled', 'Canceled'),
+                              ], string='Status', default='draft', readonly=True, required=True, help="")
+
+    @api.one
+    def button_draft(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'draft'
+
+    @api.one
+    def button_collected(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'collected'
+
+    @api.one
+    def button_testing(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'testing'
+
+    @api.one
+    def button_done(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'done'
+
+    @api.one
+    def button_approve(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'approved'
+
+    @api.one
+    def button_cancel(self):
+        self.date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.state = 'canceled'

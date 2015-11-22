@@ -20,7 +20,7 @@
                                     <field name="name"/>
                                     <field name="normal_range"/>
                                     <field name="unit"/>
-                                    <field name="outcome_ids" widget="many2many_tags"/>
+                                    <!--field name="outcome_ids" widget="many2many_tags"/-->
                                 </tree>
                                 <form string="Test Cases">
                                     <field name="name"/>
@@ -28,12 +28,12 @@
                                     <field name="sequence"/>
                                     <newline/>
                                     <field name="normal_range"/>
-                                    <field name="outcome_ids" widget="many2many_tags"/>
+                                    <!--field name="outcome_ids" widget="many2many_tags"/-->
                                 </form>
                             </field>
-                            <group>
+                            <!--group>
                                 <field name="product_id"/>
-                            </group>
+                            </group-->
                         </page>
                         <page string="Extra Info">
                             <field name="info"></field>

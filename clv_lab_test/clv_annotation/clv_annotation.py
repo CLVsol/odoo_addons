@@ -17,17 +17,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_lab_test_unit
-import clv_lab_test_type
-# import clv_lab_test_outcome
-import clv_lab_test_criterion
-import clv_lab_test
-import clv_lab_test_patient
-import wizard
-import clv_patient
-# import category
-import clv_tag
-import clv_annotation
-import seq
-import wkf
-import history
+from openerp import models, fields
+
+
+class clv_lab_test(models.Model):
+    _inherit = 'clv_lab_test'
+
+    annotation_ids = fields.Many2many('clv_annotation',
+                                      'clv_lab_test_annotation_rel',
+                                      'lab_test_id',
+                                      'annotation_id',
+                                      'Annotations')
+
+
+class clv_annotation(models.Model):
+    _inherit = 'clv_annotation'
+
+    lab_test_ids = fields.Many2many('clv_lab_test',
+                                    'clv_lab_test_annotation_rel',
+                                    'annotation_id',
+                                    'lab_test_id',
+                                    'Lab Tests')

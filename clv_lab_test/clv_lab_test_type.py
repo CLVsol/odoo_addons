@@ -17,19 +17,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields
+
 
 class clv_lab_test_type (models.Model):
     _name = "clv_lab_test.type"
 
-    name = fields.Char ('Test',size=128, help="Test type, eg X-Ray, hemogram, biopsy...")
-    code = fields.Char ('Code',size=32, help="Short name - code for the test")
-    info = fields.Text ('Description')
+    name = fields.Char('Test', size=128, help="Test type, eg X-Ray, hemogram, biopsy...")
+    code = fields.Char('Code', size=32, help="Short name - code for the test")
+    info = fields.Text('Description')
     # product_id = fields.Many2one('product.product', 'Service', required=True)
-    product_id = fields.Many2one('product.product', 'Service', required=False)
-    criteria = fields.One2many('clv_lab_test.criterion','lab_test_type_id','Test Cases')
+    # product_id = fields.Many2one('product.product', 'Service', required=False)
+    criteria = fields.One2many('clv_lab_test.criterion', 'lab_test_type_id', 'Test Cases')
 
     _sql_constraints = [
-    	('name_uniq', 'unique (name)', 'The Lab Test name must be unique'),
+        ('name_uniq', 'unique (name)', 'The Lab Test name must be unique'),
         ('code_uniq', 'unique (code)', 'The Lab Test code must be unique')
         ]

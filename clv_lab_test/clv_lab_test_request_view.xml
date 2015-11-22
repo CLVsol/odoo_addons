@@ -10,7 +10,7 @@
                     <group>
                         <field name="name" required="1"/>
                         <field name="date"/>
-                        <field name="patient_id" required="1"/>
+                        <field name="patient_id" required="0"/>
                         <!--field name="professional_id"/-->
                         <field name="state"/>
                         <field name="lab_test_id"></field>

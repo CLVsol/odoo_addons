@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="clv_lab_test.seq_type_clv_lab_test" model="ir.sequence.type">
+            <field name="name">Lab Test Sequence</field>
+            <field name="code">clv_lab_test.code</field>
+        </record>
+        
+        <record id="clv_lab_test.seq_clv_lab_test" model="ir.sequence">
+            <field name="name">Lab Test Sequence</field>
+            <field name="code">clv_lab_test.code</field>
+            <field name="padding" eval="9"/>
+            <field name="prefix">00000</field>
+        </record>
+
+    </data>
+</openerp>

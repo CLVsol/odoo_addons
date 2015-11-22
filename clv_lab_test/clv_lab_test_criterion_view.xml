@@ -16,7 +16,7 @@
                                 <field name="sequence"/>
                                 <newline/>
                                 <field name="normal_range"/>
-                                <field name="outcome_ids" widget="many2many_tags"/>
+                                <!--field name="outcome_ids" widget="many2many_tags"/-->
                             </group>
                         </page>
                     </notebook>
@@ -35,7 +35,7 @@
                     <field name="result"/>
                     <field name="unit"/>
                     <field name="normal_range"/>
-                    <field name="outcome_ids" widget="many2many_tags"/>
+                    <!--field name="outcome_ids" widget="many2many_tags"/-->
                 </tree>
             </field>
         </record>
