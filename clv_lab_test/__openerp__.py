@@ -44,7 +44,7 @@ Lab Test
         # 'clv_person_view.xml',
         # 'category/clv_patient_category_view.xml',
         'clv_tag/clv_tag_view.xml',
-        # 'clv_annotation/clv_annotation_view.xml',
+        'clv_annotation/clv_annotation_view.xml',
         'seq/clv_lab_test_sequence.xml',
         # 'seq/clv_patient_category_sequence.xml',
         'wkf/clv_lab_test_workflow.xml',
