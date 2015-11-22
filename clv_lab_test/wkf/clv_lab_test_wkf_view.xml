@@ -25,7 +25,7 @@
                         <button string="Collected" name="button_collected" states="draft,canceled" type="workflow" groups="clv_base.group_lab_test_manager"/>
                         <button string="Testing" name="button_testing" states="collected,canceled" type="workflow" groups="clv_base.group_lab_test_manager"/>
                         <button string="Done" name="button_done" states="testing" type="workflow" groups="clv_base.group_lab_test_manager"/>
-                        <button string="Approve" name="button_approve" states="done" type="workflow" groups="clv_base.group_lab_test_manager"/>
+                        <button string="Approve" name="button_approve" states="done" type="workflow" groups="clv_base.group_lab_test_approver"/>
                         <button string="Cancel" name="button_cancel" states="draft,collected,testing,done" type="workflow" groups="clv_base.group_lab_test_manager"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,collected,testing,done,approved,canceled"/>
                     </header>
