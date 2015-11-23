@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_employee_tree" model="ir.ui.view">
+            <field name="name">hr.employee.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="code"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="category_ids" position="before">
+                    <label for="code" class="oe_edit_only"/>
+                    <h2>
+                        <field name="code"/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="hr_kanban_view_employees" model="ir.ui.view">
+            <field name="name">HR - Employess Kanban</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <li t-if="record.job_id.raw_value" position="replace">
+                    <li t-if="record.code.raw_value"><field name="code"/></li>
+                    <li t-if="record.job_id.raw_value"><field name="job_id"/></li>
+                </li>
+            </field>
+        </record>
+
+    </data>
+</openerp>
