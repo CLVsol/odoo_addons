@@ -17,7 +17,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
+from openerp import models, fields, api
+
 
 def format_code(code_seq):
     code = map(int, str(code_seq))
@@ -49,35 +50,29 @@ def format_code(code_seq):
         code_form = code_str[14 - code_len:21]
     return code_form
 
-class clv_document(osv.osv):
+
+class clv_document(models.Model):
     _inherit = 'clv_document'
 
-    _columns = {
-        'code': fields.char('Document Code', size=64, select=1, required=False, readonly=False, default='/',
-                            help='Use "/" to get an automatic new Document Code.'),
-        }
-    
-    _defaults = {
-        'code': '/',
-        }
-    
-    def create(self, cr, uid, vals, context=None):
-        if context is None:
-            context = {}
-        if not 'code' in vals or ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_document.code')
-            vals['code'] = format_code(code_seq)
-        return super(clv_document, self).create(cr, uid, vals, context)
+    name = fields.Char('Document Code', size=128, select=1, required=False, readonly=False, default='/',
+                       help='Use "/" to get an automatic new Document Code.')
 
-    def write(self, cr, uid, ids, vals, context=None):
-        if context is None:
-            context = {}
-        if ('code' in vals and vals['code'] == '/'):
-            code_seq = self.pool.get('ir.sequence').get(cr, uid, 'clv_document.code')
-            vals['code'] = format_code(code_seq)
-        return super(clv_document, self).write(cr, uid, ids, vals, context)
+    @api.model
+    def create(self, vals):
+        if 'name' not in vals or ('name' in vals and vals['name'] == '/'):
+            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_document.code')
+            vals['name'] = format_code(code_seq)
+        return super(clv_document, self).create(vals)
 
-    def copy(self, cr, uid, id, default={}, context=None):
+    @api.multi
+    def write(self, vals):
+        if 'name' in vals and vals['name'] == '/':
+            code_seq = self.pool.get('ir.sequence').get(self._cr, self._uid, 'clv_document.code')
+            vals['name'] = format_code(code_seq)
+        return super(clv_document, self).write(vals)
+
+    @api.one
+    def copy(self, default=None):
         default = dict(default or {})
-        default.update({'code': '/',})
-        return super(clv_document, self).copy(cr, uid, id, default, context)
+        default.update({'name': '/', })
+        return super(clv_document, self).copy(default)
