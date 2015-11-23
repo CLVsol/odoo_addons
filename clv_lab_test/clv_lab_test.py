@@ -21,10 +21,10 @@ from openerp import models, fields
 from datetime import datetime
 
 
-class clv_lab_test (models.Model):
+class clv_lab_test(models.Model):
     _name = "clv_lab_test"
 
-    name = fields.Char('Lab Test Code', size=128, help="Lab Teste result Code")
+    name = fields.Char('Lab Test Code', size=128, help="Lab Test result Code")
     test = fields.Many2one('clv_lab_test.type', 'Lab Test type', help="Lab test type")
     patient = fields.Many2one('clv_patient', 'Patient', help="Patient")
     # 'pathologist' : fields.many2one('clv_professional','Pathologist',help="Pathologist"),
