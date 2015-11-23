@@ -18,27 +18,21 @@
 ################################################################################
 
 from openerp import models, fields
-from datetime import datetime
 
 
-class clv_lab_test(models.Model):
-    _name = "clv_lab_test"
+class clv_document_type (models.Model):
+    _name = "clv_document.type"
 
-    name = fields.Char('Lab Test Code', size=128, help="Lab Test result Code")
-    test = fields.Many2one('clv_lab_test.type', 'Lab Test type', help="Lab test type")
-    patient = fields.Many2one('clv_patient', 'Patient', help="Patient")
-    # 'pathologist' : fields.many2one('clv_professional','Pathologist',help="Pathologist"),
-    # 'requester' : fields.many2one('clv_professional', 'Doctor', help="Doctor who requested the test"),
-    results = fields.Text('Results')
-    diagnosis = fields.Text('Diagnosis')
-    criteria = fields.One2many('clv_lab_test.criterion',
-                               'lab_test_id',
-                               'Test Cases')
-    date_requested = fields.Datetime('Date requested',
-                                     default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    date_analysis = fields.Datetime('Date of the Analysis')
+    name = fields.Char('Document Type', size=128, help="Document Type")
+    code = fields.Char('Document Type Code', size=32, help="Short name for the document type")
+    description = fields.Text('Description')
+    # criteria = fields.One2many('clv_document.criterion', 'document_type_id', 'Test Cases')
     active = fields.Boolean('Active',
-                            help="If unchecked, it will allow you to hide the lab test without removing it.",
+                            help="If unchecked, it will allow you to hide the document type without removing it.",
                             default=1)
 
-    _sql_constraints = [('name_uniq', 'unique (name)', 'Error! The Lab Test Code must be unique!')]
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', 'The Document Type name must be unique'),
+        ('code_uniq', 'unique (code)', 'The Document Type code must be unique')
+        ]

@@ -17,13 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
-
-class clv_patient(osv.osv):
-    _inherit = "clv_patient"
-    _name = "clv_patient"
-    _columns = {
-        'survey_ids': fields.one2many('clv_survey.response',
-        	                          'patient_id',
-        	                          'Surveys'),
-    }
+import clv_document_type

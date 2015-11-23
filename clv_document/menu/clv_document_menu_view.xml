@@ -22,12 +22,23 @@
                     parent="menu_base_base"
                     groups="clv_base.group_base_manager"
                     sequence="90"/-->
-                    <!-- Base/Configuration/Configuration/Document Categories -->
-                    <menuitem name="Document Categories" id="menu_base_config_config_document_categories" 
+                    <!-- Base/Configuration/Configuration/Document-->
+                    <menuitem name="Document" id="menu_base_config_config_document"
                         parent="clv_base.menu_base_config_config"
-                        groups="clv_base.group_document_user"
-                        sequence="20"
-                        action="clv_document.act_open_clv_document_category_view"/>
+                        groups="clv_base.group_base_manager"
+                        sequence="30"/>
+                        <!-- Base/Configuration/Configuration/Document Categories -->
+                        <!--menuitem name="Document Categories" id="menu_base_config_config_document_categories" 
+                            parent="clv_base.menu_base_config_config"
+                            groups="clv_base.group_document_user"
+                            sequence="20"
+                            action="clv_document.act_open_clv_document_category_view"/-->
+                        <!-- Base/Configuration/Configuration/Document/Types-->
+                        <menuitem name="Types" id="menu_base_config_config_document_types"
+                            parent="menu_base_config_config_document"
+                            groups="clv_base.group_base_manager"
+                            sequence="30"
+                            action="clv_document.act_open_clv_document_type_view"/>
 
     </data>
 </openerp>

@@ -17,26 +17,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
+from openerp import models, fields
 
-class clv_tag(osv.osv):
+
+class clv_tag(models.Model):
     _inherit = 'clv_tag'
 
-    _columns = {
-        'document_ids': fields.many2many('clv_document', 
-                                         'clv_document_clv_tag_rel', 
-                                         'tag_id', 
-                                         'document_id', 
-                                         'Documents'),
-        }
+    document_ids = fields.Many2many('clv_document',
+                                    'clv_document_clv_tag_rel',
+                                    'tag_id',
+                                    'document_id',
+                                    'Documents')
 
-class clv_document(osv.osv):
+
+class clv_document(models.Model):
     _inherit = 'clv_document'
 
-    _columns = {
-        'tag_ids': fields.many2many('clv_tag', 
-                                    'clv_document_clv_tag_rel', 
-                                    'document_id', 
-                                    'tag_id', 
-                                    'Tags'),
-        }
+    tag_ids = fields.Many2many('clv_tag',
+                               'clv_document_clv_tag_rel',
+                               'document_id',
+                               'tag_id',
+                               'Tags')

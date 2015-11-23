@@ -17,29 +17,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
+from openerp import models, fields
 from datetime import datetime
 
-class clv_document(osv.osv):
-    _name = 'clv_document'
 
-    _columns = {
-        'name': fields.char('Name', required=True, size=64),
-        'alias': fields.char('Alias', size=64, help='Common name that the Document is referred'),
-        'code': fields.char(size=64, string='Document Code', required=False),
-        'notes': fields.text(string='Notes'),
-        'date': fields.datetime("Date", required=False, readonly=False),
-        'active': fields.boolean('Active', 
-                                 help="If unchecked, it will allow you to hide the document without removing it."),
-        'responsible': fields.many2one('res.users', 'Responsible', required=False, readonly=False),
-        }
+class clv_document(models.Model):
+    _name = "clv_document"
 
-    _defaults = {
-        'date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'active': 1,
-        # 'responsible': lambda obj,cr,uid,context: uid,
-        }
-    
-    _sql_constraints = [('document_code_uniq', 'unique(code)', u'Error! The Document Code must be unique!')]
+    name = fields.Char('Document Code', size=128, help="Document result Code")
+    doc_type = fields.Many2one('clv_document.type', 'Document type', help="Document type")
+    # patient = fields.Many2one('clv_patient', 'Patient', help="Patient")
+    # 'pathologist' : fields.many2one('clv_professional','Pathologist',help="Pathologist"),
+    # 'requester' : fields.many2one('clv_professional', 'Doctor', help="Doctor who requested the test"),
+    # results = fields.Text('Results')
+    # diagnosis = fields.Text('Diagnosis')
+    # criteria = fields.One2many('clv_document.criterion',
+    #                            'document_id',
+    #                            'Test Cases')
+    date_requested = fields.Datetime('Date requested',
+                                     default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    date_document = fields.Datetime('Document Date')
+    responsible = fields.Many2one('res.users', 'Document Responsible', required=False, readonly=False)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active',
+                            help="If unchecked, it will allow you to hide the document without removing it.",
+                            default=1)
 
-    _order='name'
+    _sql_constraints = [('name_uniq', 'unique (name)', 'Error! The Document Code must be unique!')]
+
+    _order = 'name'

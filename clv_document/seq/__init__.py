@@ -18,4 +18,4 @@
 ################################################################################
 
 import clv_document_seq
-import clv_document_category_seq
+# import clv_document_category_seq
