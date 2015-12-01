@@ -36,7 +36,7 @@ Document
         ],
     'data': [
         'security/clv_document_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_document_view.xml',
         'doc_type/clv_document_type_view.xml',
         # 'category/clv_document_category_view.xml',
