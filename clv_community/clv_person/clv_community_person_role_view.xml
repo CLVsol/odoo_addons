@@ -71,9 +71,6 @@
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to add a new community person_role.
-              </p><p>
-                With just a quick glance on the community person_role screen, you
-                can easily find all the information you need for each community person_role.
               </p>
             </field>
         </record>
