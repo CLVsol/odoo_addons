@@ -73,9 +73,6 @@
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to add a new community person.
-              </p><p>
-                With just a quick glance on the community person screen, you
-                can easily find all the information you need for each community person.
               </p>
             </field>
         </record>
