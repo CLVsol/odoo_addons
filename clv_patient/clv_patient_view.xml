@@ -5,13 +5,13 @@
         <record id="view_clv_patient_tree" model="ir.ui.view">
             <field name="name">clv_patient.tree</field>
             <field name="model">clv_patient</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Patient">
                     <field name="name"/>
                     <field name="alias"/>
-                    <field name="patient_code" />
-                    <field name="birthday" />
+                    <field name="patient_code"/>
+                    <field name="birthday"/>
                 </tree>
             </field>
         </record>
@@ -19,7 +19,7 @@
         <record id="view_clv_patient_form" model="ir.ui.view">
             <field name="name">clv_patient.form</field>
             <field name="model">clv_patient</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Patients" version="7.0">
                     <sheet string="Patient">
@@ -96,15 +96,16 @@
         <record id="view_clv_patient_search" model="ir.ui.view">
             <field name="name">clv_patient.search</field>
             <field name="model">clv_patient</field>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Patient">
-                    <field name="name" />
+                    <field name="name"/>
                     <field name="alias"/>
-                    <field name="patient_code" />
+                    <field name="patient_code"/>
+                    <field name="address_id"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                        <filter string="Address" domain="[]" context="{'group_by': 'address_id'}"/>
                     </group>
                 </search>
             </field>
@@ -127,17 +128,17 @@
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_patient_view_form">
-            <field name="act_window_id" ref="act_open_clv_patient_view" />
-            <field name="sequence" eval="20" />
+            <field name="act_window_id" ref="act_open_clv_patient_view"/>
+            <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_clv_patient_form" />
+            <field name="view_id" ref="view_clv_patient_form"/>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_clv_patient_view_tree">
-            <field name="act_window_id" ref="act_open_clv_patient_view" />
-            <field name="sequence" eval="10" />
+            <field name="act_window_id" ref="act_open_clv_patient_view"/>
+            <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_clv_patient_tree" />
+            <field name="view_id" ref="view_clv_patient_tree"/>
         </record>
         
     </data>
