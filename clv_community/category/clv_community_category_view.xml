@@ -35,7 +35,7 @@
                                     <field name="child_ids" colspan="4" nolabel="1"/>
                                 </group>
                             </page>
-                            <page string="Communitys">
+                            <page string="Communities">
                                 <group>
                                     <field name="community_ids" colspan="4" nolabel="1"/>
                                 </group>

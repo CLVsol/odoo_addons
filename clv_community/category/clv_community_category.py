@@ -78,7 +78,7 @@ class clv_community_category(osv.osv):
                                        'clv_community_category_rel', 
                                        'category_id', 
                                        'community_id', 
-                                       'communitys'),
+                                       'Communities'),
         }
 
     _sql_constraints = [

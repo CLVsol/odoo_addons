@@ -27,7 +27,7 @@ class clv_community_history(osv.osv):
     _order = "date desc"
 
     _columns = {
-        'community_id': fields.many2one('clv_community', 'community', required=True, ondelete='cascade'),
+        'community_id': fields.many2one('clv_community', 'Community', required=True, ondelete='cascade'),
         'user_id': fields.many2one('res.users', 'User', required=True),
         'date': fields.datetime("Date", required=True),
         'state': fields.selection([('new', 'New'),
