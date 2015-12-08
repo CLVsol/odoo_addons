@@ -17,29 +17,27 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import api
 from openerp.osv import osv, fields
 from datetime import datetime
 
+
 class clv_patient(osv.Model):
     _name = 'clv_patient'
-    _inherits={
-               'clv_person': 'person',
-               }
+    _inherits = {'clv_person': 'person', }
 
     _columns = {
         'person': fields.many2one('clv_person', 'Related Person', required=True,
                                   ondelete='restrict', help='Person-related data of the patient'),
-        #we need a related field in order to be able to sort the patient by name
-        'name_related': fields.related('person', 'name', type='char', string='Related Person', 
+        # we need a related field in order to be able to sort the patient by name
+        'name_related': fields.related('person', 'name', type='char', string='Related Person',
                                        readonly=True, store=True),
         'patient_code': fields.char(size=64, string='Patient Code', required=False),
         'patient_date_inclusion':  fields.datetime("Inclusion Date", required=False, readonly=False),
-        'active': fields.boolean('Active', 
+        'active': fields.boolean('Active',
                                  help="If unchecked, it will allow you to hide the patient without removing it."),
     }
 
-    _order='name_related'
+    _order = 'name_related'
 
     _sql_constraints = [('patient_code_uniq', 'unique(patient_code)', u'Error! The Patient Code must be unique!')]
 
@@ -47,4 +45,3 @@ class clv_patient(osv.Model):
         'patient_date_inclusion': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'active': 1,
     }
-    
