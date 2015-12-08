@@ -33,7 +33,7 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Clique para adici9onar um novo papel de membro de família.\n"
+"                Clique para adicionar um novo papel de membro de família.\n"
 "              </p>\n"
 "            "
 
@@ -361,7 +361,7 @@ msgstr "Se desmarcado, será possível esconder a família sem removê-la."
 #. module: clv_family
 #: help:clv_family.member_role,active:0
 msgid "If unchecked, it will allow you to hide the member role without removing it."
-msgstr "Se desmarcado, será possível esconder o papel do memgro sem removê-lo."
+msgstr "Se desmarcado, será possível esconder o papel do membro sem removê-lo."
 
 #. module: clv_family
 #: view:clv_family:clv_family.view_clv_family_form_wkf
