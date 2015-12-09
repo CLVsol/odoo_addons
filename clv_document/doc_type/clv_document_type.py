@@ -31,8 +31,7 @@ class clv_document_type (models.Model):
                             help="If unchecked, it will allow you to hide the document type without removing it.",
                             default=1)
 
-
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', 'The Document Type name must be unique'),
-        ('code_uniq', 'unique (code)', 'The Document Type code must be unique')
+        ('name_uniq', 'unique (name)', 'Error! The Document Type name must be unique!'),
+        ('code_uniq', 'unique (code)', 'Error! The Document Type code must be unique!')
         ]
