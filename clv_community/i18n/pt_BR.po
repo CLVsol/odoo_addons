@@ -320,7 +320,7 @@ msgstr "Informações de Contato"
 #: field:clv_community.person,create_uid:0
 #: field:clv_community.person_role,create_uid:0
 msgid "Created by"
-msgstr "Criado por""
+msgstr "Criado por"
 
 #. module: clv_community
 #: field:clv_community,create_date:0
@@ -331,7 +331,7 @@ msgstr "Criado por""
 #: field:clv_community.person,create_date:0
 #: field:clv_community.person_role,create_date:0
 msgid "Created on"
-msgstr "Criado poem
+msgstr "Criado em"
 
 #. module: clv_community
 #: field:clv_community.history,date:0
