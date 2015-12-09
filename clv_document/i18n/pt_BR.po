@@ -370,3 +370,18 @@ msgstr "Usuário..."
 msgid "Waiting"
 msgstr "Aguardando"
 
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_document_approver
+msgid "Document Approver"
+msgstr "Aprovador de Documento"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_document_manager
+msgid "Document Manager"
+msgstr "Gerente de Documento"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_document_user
+msgid "Document User"
+msgstr "Usuário de Documento"
+
