@@ -474,3 +474,13 @@ msgstr "Papeis (Comunidade)"
 msgid "Address"
 msgstr "Endereço"
 
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_patient_manager
+msgid "Patient Manager"
+msgstr "Gerente de Paciente"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_patient_user
+msgid "Patient User"
+msgstr "Usuários de Paciente"
+
