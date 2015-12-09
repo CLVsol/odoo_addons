@@ -592,3 +592,13 @@ msgstr "Usuário"
 msgid "User..."
 msgstr "Usuário..."
 
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_family_manager
+msgid "Family Manager"
+msgstr "Gerente de Família"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_family_user
+msgid "Family User"
+msgstr "Usuário de Família"
+
