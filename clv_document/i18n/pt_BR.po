@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* clv_document
+#   * clv_document
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 13:09+0000\n"
-"PO-Revision-Date: 2015-12-09 13:09+0000\n"
+"POT-Creation-Date: 2015-12-09 15:51+0000\n"
+"PO-Revision-Date: 2015-12-09 15:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,11 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: clv_document
+#: field:clv_document,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_document
 #: view:clv_annotation:clv_document.view_clv_annotation_form
 msgid "Annotation for"
 msgstr "Anotação para"
@@ -56,15 +61,22 @@ msgstr "Anotações"
 
 #. module: clv_document
 #: field:clv_document,create_uid:0
+#: field:clv_document.history,create_uid:0
 #: field:clv_document.type,create_uid:0
 msgid "Created by"
 msgstr "Criado por"
 
 #. module: clv_document
 #: field:clv_document,create_date:0
+#: field:clv_document.history,create_date:0
 #: field:clv_document.type,create_date:0
 msgid "Created on"
 msgstr "Criado em"
+
+#. module: clv_document
+#: field:clv_document.history,date:0
+msgid "Date"
+msgstr "Data"
 
 #. module: clv_document
 #: field:clv_document,date_requested:0
@@ -75,6 +87,11 @@ msgstr "Data da Requisição"
 #: view:clv_document:clv_document.view_clv_document_form
 msgid "Date requested..."
 msgstr "Data da Requisição..."
+
+#. module: clv_document
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+msgid "Date..."
+msgstr "Data..."
 
 #. module: clv_document
 #: field:clv_document.type,description:0
@@ -88,8 +105,10 @@ msgstr "Descrição..."
 
 #. module: clv_document
 #: view:clv_document:clv_document.view_clv_document_form
+#: view:clv_document:clv_document.view_clv_document_form_wkf
 #: view:clv_document:clv_document.view_clv_document_search
 #: view:clv_document:clv_document.view_clv_document_tree
+#: field:clv_document.history,document_id:0
 #: model:ir.ui.menu,name:clv_document.menu_base_config_config_document
 msgid "Document"
 msgstr "Documento"
@@ -114,6 +133,14 @@ msgstr "Data do Documento"
 #: view:clv_document:clv_document.view_clv_document_form
 msgid "Document Date..."
 msgstr "Data do Documento..."
+
+#. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_form_history
+#: field:clv_document,history_ids:0
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+#: view:clv_document.history:clv_document.view_clv_document_history_tree
+msgid "Document History"
+msgstr "Histórico do Documento"
 
 #. module: clv_document
 #: view:clv_document:clv_document.view_clv_document_search
@@ -164,6 +191,11 @@ msgid "Document type"
 msgstr "Tipo de Documento"
 
 #. module: clv_document
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+msgid "Document..."
+msgstr "Documento..."
+
+#. module: clv_document
 #: view:clv_annotation:clv_document.view_clv_annotation_form
 #: field:clv_annotation,document_ids:0
 #: view:clv_document:clv_document.view_clv_document_form
@@ -175,9 +207,32 @@ msgid "Documents"
 msgstr "Documentos"
 
 #. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_form_wkf
+#: selection:clv_document,state:0
+#: selection:clv_document.history,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: clv_document
+#: selection:clv_document,state:0
+#: selection:clv_document.history,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_document
 #: sql_constraint:clv_document:0
 msgid "Error! The Document Code must be unique!"
 msgstr "Erro! O Código de Documento deve ser único!"
+
+#. module: clv_document
+#: sql_constraint:clv_document.type:0
+msgid "Error! The Document Type code must be unique!"
+msgstr "Erro! O Código do Tipo de Documento deve ser único!"
+
+#. module: clv_document
+#: sql_constraint:clv_document.type:0
+msgid "Error! The Document Type name must be unique!"
+msgstr "Erro! O Nome do Tipo de Documento deve ser único!"
 
 #. module: clv_document
 #: view:clv_document:clv_document.view_clv_document_search
@@ -185,10 +240,21 @@ msgid "Group By..."
 msgstr "Agrupar por..."
 
 #. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_document
 #: field:clv_document,id:0
+#: field:clv_document.history,id:0
 #: field:clv_document.type,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: clv_document
+#: help:clv_document,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possivel desabilitar o histórico sem removê-lo."
 
 #. module: clv_document
 #: help:clv_document.type,active:0
@@ -202,20 +268,35 @@ msgstr "Se desmarcado, será possível esconder o documento sem removê-lo."
 
 #. module: clv_document
 #: field:clv_document,write_uid:0
+#: field:clv_document.history,write_uid:0
 #: field:clv_document.type,write_uid:0
 msgid "Last Updated by"
 msgstr "Última Atualização por"
 
 #. module: clv_document
 #: field:clv_document,write_date:0
+#: field:clv_document.history,write_date:0
 #: field:clv_document.type,write_date:0
 msgid "Last Updated on"
 msgstr "Última Atualização em"
 
 #. module: clv_document
 #: field:clv_document,notes:0
+#: field:clv_document.history,notes:0
 msgid "Notes"
 msgstr "Notas"
+
+#. module: clv_document
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_form_wkf
+#: selection:clv_document,state:0
+#: selection:clv_document.history,state:0
+msgid "Revised"
+msgstr "Revisado"
 
 #. module: clv_document
 #: view:clv_document.type:clv_document.view_clv_document_type_search
@@ -225,6 +306,7 @@ msgstr "Procurar por Tipos de Docuentos"
 #. module: clv_document
 #: view:clv_document:clv_document.view_clv_document_form
 #: view:clv_document:clv_document.view_clv_document_form_annotation
+#: view:clv_document:clv_document.view_clv_document_form_history
 #: view:clv_document.type:clv_document.view_clv_document_type_form
 msgid "Settings"
 msgstr "Configurações"
@@ -233,6 +315,18 @@ msgstr "Configurações"
 #: help:clv_document.type,code:0
 msgid "Short name for the document type"
 msgstr "Nome abreviado do tipo de documento"
+
+#. module: clv_document
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+msgid "Stage..."
+msgstr "Stage..."
+
+#. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_search_wkf
+#: field:clv_document,state:0
+#: field:clv_document.history,state:0
+msgid "Status"
+msgstr "Status"
 
 #. module: clv_document
 #: view:clv_tag:clv_document.view_clv_tag_form
@@ -250,16 +344,6 @@ msgid "Tags..."
 msgstr "Etiquetas..."
 
 #. module: clv_document
-#: sql_constraint:clv_document.type:0
-msgid "Error! The Document Type code must be unique!"
-msgstr "Erro! O Código do Tipo de Documento deve ser único!"
-
-#. module: clv_document
-#: sql_constraint:clv_document.type:0
-msgid "Error! The Document Type name must be unique!"
-msgstr "Erro! O Nome do Tipo de Documento deve ser único!"
-
-#. module: clv_document
 #: model:ir.ui.menu,name:clv_document.menu_base_config_config_document_types
 msgid "Types"
 msgstr "Tipos"
@@ -268,4 +352,21 @@ msgstr "Tipos"
 #: help:clv_document,name:0
 msgid "Use \"/\" to get an automatic new Document Code."
 msgstr "Use \"/\" para obter automaticamente um novo Código de Documento."
+
+#. module: clv_document
+#: field:clv_document.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_document
+#: view:clv_document.history:clv_document.view_clv_document_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_document
+#: view:clv_document:clv_document.view_clv_document_form_wkf
+#: selection:clv_document,state:0
+#: selection:clv_document.history,state:0
+msgid "Waiting"
+msgstr "Aguardando"
 
