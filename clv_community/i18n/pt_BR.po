@@ -741,3 +741,13 @@ msgstr "Comunidade"
 msgid "Communities"
 msgstr "Comunidades"
 
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_community_manager
+msgid "Community Manager"
+msgstr "Gerente de Comunidade"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_community_user
+msgid "Community User"
+msgstr "Usuário de Comunidade"
+
