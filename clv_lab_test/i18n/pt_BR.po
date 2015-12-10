@@ -269,7 +269,7 @@ msgstr "Informações"
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_tree
 #: model:ir.ui.menu,name:clv_lab_test.menu_health_health_config_lab_test
 msgid "Lab Test"
-msgstr "Exame"
+msgstr "Exame de Laboratório"
 
 #. module: clv_lab_test
 #: field:clv_lab_test,name:0
@@ -291,7 +291,7 @@ msgstr "Padrão de Exame"
 #. module: clv_lab_test
 #: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests_draft_requests
 msgid "Lab Test Draft Requests"
-msgstr "Solicitações de Exames"
+msgstr "Requisições (Rascunho)"
 
 #. module: clv_lab_test
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_history
@@ -307,12 +307,12 @@ msgstr "Histórico do Exame"
 #: model:ir.actions.act_window,name:clv_lab_test.clv_action_lab_test_request
 #: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests
 msgid "Lab Test Requests"
-msgstr "Requisições de Exames"
+msgstr "Requisições"
 
 #. module: clv_lab_test
 #: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests_today
 msgid "Lab Test Today's Draft Requests"
-msgstr "Requisições de Hoje"
+msgstr "Requisições de Hoje (Rascunho)"
 
 #. module: clv_lab_test
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
@@ -358,28 +358,28 @@ msgstr "Exame..."
 #: field:clv_tag,lab_test_ids:0
 #: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_tests
 msgid "Lab Tests"
-msgstr "Lab Tests"
+msgstr "Exames de Laboratório"
 
 #. module: clv_lab_test
 #: model:ir.actions.act_window,name:clv_lab_test.clv_action_tree_lab_test
 msgid "Lab Tests Results"
-msgstr "Lab Tests Results"
+msgstr "Resultados de Exames"
 
 #. module: clv_lab_test
 #: help:clv_lab_test,test:0
 msgid "Lab test type"
-msgstr "Tipo de Exame"
+msgstr "Tipo de Exame de Laboratório"
 
 #. module: clv_lab_test
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
 msgid "Laboratory Test"
-msgstr "Exame"
+msgstr "Exame de Laboratório"
 
 #. module: clv_lab_test
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
 msgid "Laboratory Tests"
-msgstr "Exames"
+msgstr "Exames de Laboratório"
 
 #. module: clv_lab_test
 #: field:clv_lab_test,write_uid:0
@@ -442,7 +442,7 @@ msgstr "Histórico do Exame"
 #. module: clv_lab_test
 #: field:clv_lab_test.patient,lab_test_id:0
 msgid "Lab Test"
-msgstr "Exame"
+msgstr "Exame de Laboratório"
 
 #. module: clv_lab_test
 #: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
@@ -451,8 +451,8 @@ msgstr "Paciente..."
 
 #. module: clv_lab_test
 #: field:clv_lab_test.criterion,result:0
-msgid "Result"
-msgstr "Resultado"
+msgid "Results"
+msgstr "Resultados"
 
 #. module: clv_lab_test
 #: field:clv_lab_test,results:0
@@ -641,7 +641,7 @@ msgstr "Usuário..."
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_lab_test_approver
 msgid "Lab Test Approver"
-msgstr "Aprovador de Exame"
+msgstr "Aprovador de Exames de Laboratório"
 
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_lab_test_manager

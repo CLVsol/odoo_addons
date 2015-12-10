@@ -24,7 +24,7 @@ class clv_lab_test_criterion(models.Model):
     _name = "clv_lab_test.criterion"
 
     name = fields.Char('Test', size=64)
-    result = fields.Text('Result')
+    result = fields.Text('Results')
     normal_range = fields.Text('Normal Range')
     # outcome_ids = fields.Many2many('clv_lab_test.outcome',
     #                                'clv_lab_test_outcome_rel',
