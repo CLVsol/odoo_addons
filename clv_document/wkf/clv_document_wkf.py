@@ -20,17 +20,18 @@
 from openerp.osv import fields, osv
 from datetime import *
 
+
 class clv_document(osv.osv):
     _inherit = 'clv_document'
 
     _columns = {
-        'state': fields.selection([('draft','Draft'),
-                                   ('revised','Revised'),
-                                   ('waiting','Waiting'),
-                                   ('done','Done')
+        'state': fields.selection([('draft', 'Draft'),
+                                   ('revised', 'Revised'),
+                                   ('waiting', 'Waiting'),
+                                   ('done', 'Done')
                                    ], string='Status', readonly=True, required=True, help="")
         }
-    
+
     _defaults = {
         'state': 'draft',
         }

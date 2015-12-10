@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="clv_document.view_clv_document_tree"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <field name="code" position="after">
+                <field name="responsible" position="after">
                     <field name="state" />
                 </field>
             </field>
@@ -37,12 +37,12 @@
             <field name="inherit_id" ref="clv_document.view_clv_document_search"/>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <field name="code" position="after">
+                <field name="responsible" position="after">
                     <field name="state" />
                 </field>
-                <filter string="Date" position="before">
-                    <filter string="Stage" domain="[]" context="{'group_by':'state'}" />
-                </filter>
+                <field name="notes" position="after">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}" />
+                </field>
             </field>
         </record>
 

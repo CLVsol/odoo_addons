@@ -19,7 +19,7 @@
 
 from openerp import models, fields, api
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
+
 
 class clv_family(models.Model):
     _name = 'clv_family'
@@ -34,21 +34,24 @@ class clv_family(models.Model):
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    active = fields.Boolean('Active', 
+    active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the family without removing it.",
                             default=1)
 
-    _order='name'
+    _order = 'name'
 
     _sql_constraints = [('family_code_uniq', 'unique(code)', u'Error! The Family Code must be unique!')]
 
-    @api.onchange('name')
-    def _onchange_name(self):
-        if not self.alias:
-            self.alias = self.name
+    # @api.onchange('name')
+    # def _onchange_name(self):
+    #     if not self.alias:
+    #         self.alias = self.name
 
     def onchange_address_id(self, cr, uid, ids, address, context=None):
         if address:
             address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'family_phone': address.phone, 'mobile_phone': address.mobile, 'family_email': address.email}}
+            return {'value': {'family_phone': address.phone,
+                              'mobile_phone': address.mobile,
+                              'family_email': address.email
+                              }}
         return {'value': {}}

@@ -52,7 +52,7 @@
                         sequence="20"
                         action="clv_community.act_open_clv_community_family_role_view"/>
                     <!-- Community/Community/Configuration/Community/Person Roles -->
-                    <menuitem name="Person Roles)" id="menu_commutity_community_config_community_person_roles"
+                    <menuitem name="Person Roles" id="menu_commutity_community_config_community_person_roles"
                         parent="menu_commutity_community_config_community"
                         groups="clv_base.group_base_manager"
                         sequence="30"

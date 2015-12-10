@@ -1,0 +1,655 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* clv_lab_test
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-09 18:29+0000\n"
+"PO-Revision-Date: 2015-12-09 18:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clv_lab_test
+#: model:ir.actions.act_window,help:clv_lab_test.act_open_clv_lab_test_unit_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new lab test unit.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                lique para adicionar uma nova unidade de resultado de exame.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_lab_test
+#: field:clv_lab_test,active:0
+#: field:clv_lab_test.unit,active:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,active_history:0
+msgid "Active History"
+msgstr "Histórico Ativo"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
+msgid "Analysis Date"
+msgstr "Data da Analise"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+msgid "Analysis Date..."
+msgstr "Data da Analise..."
+
+#. module: clv_lab_test
+#: view:clv_annotation:clv_lab_test.view_clv_annotation_form
+msgid "Annotation for"
+msgstr "Anotação para"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_annotation
+#: field:clv_lab_test,annotation_ids:0
+msgid "Annotations"
+msgstr "Anotações"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+msgid "Approve"
+msgstr "Aprovar"
+
+#. module: clv_lab_test
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+#: view:clv_lab_test.create:clv_lab_test.view_lab_make_test
+#: selection:clv_lab_test.patient,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: clv_lab_test
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.type,code:0
+#: field:clv_lab_test.unit,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+msgid "Collected"
+msgstr "Coletado"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.create:clv_lab_test.view_lab_make_test
+#: model:ir.actions.act_window,name:clv_lab_test.action_create_lab_test
+msgid "Create Lab Test"
+msgstr "Criar um Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.create:clv_lab_test.view_lab_make_test
+msgid "Create Lab Tests"
+msgstr "Criar Exames de Labortório"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.create:clv_lab_test.view_lab_make_test
+msgid "Create Tests"
+msgstr "Criar Testes"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,create_uid:0
+#: field:clv_lab_test.create,create_uid:0
+#: field:clv_lab_test.criterion,create_uid:0
+#: field:clv_lab_test.history,create_uid:0
+#: field:clv_lab_test.patient,create_uid:0
+#: field:clv_lab_test.type,create_uid:0
+#: field:clv_lab_test.unit,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,create_date:0
+#: field:clv_lab_test.create,create_date:0
+#: field:clv_lab_test.criterion,create_date:0
+#: field:clv_lab_test.history,create_date:0
+#: field:clv_lab_test.patient,create_date:0
+#: field:clv_lab_test.type,create_date:0
+#: field:clv_lab_test.unit,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.history,date:0
+#: field:clv_lab_test.patient,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,date_analysis:0
+msgid "Date of the Analysis"
+msgstr "Data da Analise"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,date_requested:0
+msgid "Date requested"
+msgstr "Data da requisição"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+msgid "Date..."
+msgstr "Data..."
+
+#. module: clv_lab_test
+#: field:clv_lab_test.type,info:0
+#: field:clv_lab_test.unit,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Description..."
+msgstr "Descrição..."
+
+#. module: clv_lab_test
+#: field:clv_lab_test,diagnosis:0
+msgid "Diagnosis"
+msgstr "Diagnóstico"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.create:clv_lab_test.view_lab_make_test
+msgid "Do you want to generate the test(s) ?"
+msgstr "Você deseja gerar o(s) teste(s)?"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: clv_lab_test
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+#: selection:clv_lab_test.patient,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: clv_lab_test
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_draft_lab_test_request
+msgid "Draft Lab Test Requests"
+msgstr "Requisições de Exames"
+
+#. module: clv_lab_test
+#: sql_constraint:clv_lab_test:0
+msgid "Error! The Lab Test Code must be unique!"
+msgstr "Erro! O Código de Exame deve ser único!"
+
+#. module: clv_lab_test
+#: sql_constraint:clv_lab_test.unit:0
+msgid "Error. The Unit code must be unique"
+msgstr "Erro! O código da unidade deve ser único!"
+
+#. module: clv_lab_test
+#: sql_constraint:clv_lab_test.unit:0
+msgid "Error. The Unit name must be unique!"
+msgstr "Erro! O nome da unidade deve ser único!"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+#: view:clv_lab_test.type:clv_lab_test.clv_lab_test_type_view
+msgid "Extra Info"
+msgstr "Informações Adicionais"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search_wkf
+#: view:clv_lab_test.criterion:clv_lab_test.view_clv_lab_test_criterion_search
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_search
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_history
+msgid "History"
+msgstr "Histórico"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,id:0
+#: field:clv_lab_test.create,id:0
+#: field:clv_lab_test.criterion,id:0
+#: field:clv_lab_test.history,id:0
+#: field:clv_lab_test.patient,id:0
+#: field:clv_lab_test.type,id:0
+#: field:clv_lab_test.unit,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: clv_lab_test
+#: help:clv_lab_test,active_history:0
+msgid "If unchecked, it will allow you to disable the history without removing it."
+msgstr "Se desmarcado, será possível desabilitar o histórico sem removê-lo."
+
+#. module: clv_lab_test
+#: help:clv_lab_test,active:0
+msgid "If unchecked, it will allow you to hide the lab test without removing it."
+msgstr "Se desmarcado, será possível desabilitar o exame sem removê-lo."
+
+#. module: clv_lab_test
+#: help:clv_lab_test.unit,active:0
+msgid "If unchecked, it will allow you to hide the unit without removing it."
+msgstr "Se desmarcado, será possível desabilitar a unidade sem removê-la."
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_search
+msgid "Inactive Units"
+msgstr "Unidades inativas"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Information"
+msgstr "Informações"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_tree
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_config_lab_test
+msgid "Lab Test"
+msgstr "Exame de Laboratório"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,name:0
+msgid "Lab Test Code"
+msgstr "Código do Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+msgid "Lab Test Code..."
+msgstr "Código do Exame..."
+
+#. module: clv_lab_test
+#: view:clv_lab_test.criterion:clv_lab_test.clv_lab_test_criterion_tree
+#: view:clv_lab_test.criterion:clv_lab_test.clv_lab_test_criterion_view
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_form_lab_test_criterion
+msgid "Lab Test Criteria"
+msgstr "Padrão de Exame"
+
+#. module: clv_lab_test
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests_draft_requests
+msgid "Lab Test Draft Requests"
+msgstr "Requisições (Rascunho)"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_history
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_tree
+msgid "Lab Test History"
+msgstr "Histórico do Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.patient:clv_lab_test.clv_lab_test_request_form
+#: view:clv_patient:clv_lab_test.view_clv_patient_form_lab_test
+#: field:clv_patient,lab_test_request_ids:0
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_lab_test_request
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests
+msgid "Lab Test Requests"
+msgstr "Requisições"
+
+#. module: clv_lab_test
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_test_requests_today
+msgid "Lab Test Today's Draft Requests"
+msgstr "Requisições de Hoje (Rascunho)"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
+#: view:clv_lab_test.criterion:clv_lab_test.view_clv_lab_test_criterion_search
+#: field:clv_lab_test.patient,name:0
+#: view:clv_lab_test.type:clv_lab_test.clv_lab_test_type_tree
+msgid "Lab Test Type"
+msgstr "Tipo de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.type:clv_lab_test.clv_lab_test_type_view
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_form_lab_test_type
+msgid "Lab Test Types"
+msgstr "Tipos de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_search
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_tree
+msgid "Lab Test Unit"
+msgstr "Unidade do Exame"
+
+#. module: clv_lab_test
+#: model:ir.actions.act_window,name:clv_lab_test.act_open_clv_lab_test_unit_view
+msgid "Lab Test Units"
+msgstr "Unidades de Exame"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,test:0
+msgid "Lab Test type"
+msgstr "Tipo de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+msgid "Lab Test..."
+msgstr "Exame..."
+
+#. module: clv_lab_test
+#: view:clv_annotation:clv_lab_test.view_clv_annotation_form
+#: field:clv_annotation,lab_test_ids:0
+#: view:clv_patient:clv_lab_test.view_clv_patient_form_lab_test
+#: field:clv_patient,lab_test_ids:0
+#: view:clv_tag:clv_lab_test.view_clv_tag_form
+#: field:clv_tag,lab_test_ids:0
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_lab_tests
+msgid "Lab Tests"
+msgstr "Exames de Laboratório"
+
+#. module: clv_lab_test
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_tree_lab_test
+msgid "Lab Tests Results"
+msgstr "Resultados de Exames"
+
+#. module: clv_lab_test
+#: help:clv_lab_test,test:0
+msgid "Lab test type"
+msgstr "Tipo de Exame de Laboratório"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+msgid "Laboratory Test"
+msgstr "Exame de Laboratório"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+msgid "Laboratory Tests"
+msgstr "Exames de Laboratório"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,write_uid:0
+#: field:clv_lab_test.create,write_uid:0
+#: field:clv_lab_test.criterion,write_uid:0
+#: field:clv_lab_test.history,write_uid:0
+#: field:clv_lab_test.patient,write_uid:0
+#: field:clv_lab_test.type,write_uid:0
+#: field:clv_lab_test.unit,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,write_date:0
+#: field:clv_lab_test.create,write_date:0
+#: field:clv_lab_test.criterion,write_date:0
+#: field:clv_lab_test.history,write_date:0
+#: field:clv_lab_test.patient,write_date:0
+#: field:clv_lab_test.type,write_date:0
+#: field:clv_lab_test.unit,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+#: view:clv_lab_test.criterion:clv_lab_test.clv_lab_test_criterion_view
+#: view:clv_lab_test.type:clv_lab_test.clv_lab_test_type_view
+msgid "Main Info"
+msgstr "Informações"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,normal_range:0
+msgid "Normal Range"
+msgstr "Valores de Referência"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.history,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search
+#: field:clv_lab_test,patient:0
+#: help:clv_lab_test,patient:0
+#: field:clv_lab_test.history,lab_test_id:0
+#: field:clv_lab_test.patient,patient_id:0
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,history_ids:0
+msgid "Lab Test History"
+msgstr "Histórico do Exame"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.patient,lab_test_id:0
+msgid "Lab Test"
+msgstr "Exame de Laboratório"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+msgid "Patient..."
+msgstr "Paciente..."
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,result:0
+msgid "Results"
+msgstr "Resultados"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,results:0
+msgid "Results"
+msgstr "Resultados"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.criterion:clv_lab_test.view_clv_lab_test_criterion_search
+msgid "Search Lab Test Criteria"
+msgstr "Search Lab Test Criteria"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.type:clv_lab_test.view_clv_lab_test_type_search
+msgid "Search Lab Test Types"
+msgstr "Procurar Tipos de Exames"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.patient:clv_lab_test.view_clv_lab_test_filter
+msgid "Search Lab Tests Requests"
+msgstr "Procurar Requisições de Exames"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,sequence:0
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_annotation
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_history
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+#: view:clv_patient:clv_lab_test.view_clv_patient_form_lab_test
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: clv_lab_test
+#: help:clv_lab_test.type,code:0
+msgid "Short name - code for the test"
+msgstr "Mneumônico - código para o exame"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.patient,state:0
+msgid "State"
+msgstr "Status"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_search_wkf
+#: field:clv_lab_test,state:0
+#: field:clv_lab_test.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+msgid "Status..."
+msgstr "Status..."
+
+#. module: clv_lab_test
+#: view:clv_tag:clv_lab_test.view_clv_tag_form
+msgid "Tag for"
+msgstr "Etiqueta para"
+
+#. module: clv_lab_test
+#: field:clv_lab_test,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_tag
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,name:0
+#: field:clv_lab_test.type,name:0
+msgid "Test"
+msgstr "Exames"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+#: field:clv_lab_test,criteria:0
+#: field:clv_lab_test.criterion,lab_test_id:0
+#: view:clv_lab_test.type:clv_lab_test.clv_lab_test_type_view
+#: field:clv_lab_test.type,criteria:0
+msgid "Test Cases"
+msgstr "Itens de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.patient:clv_lab_test.clv_lab_test_request_tree
+msgid "Test Requests"
+msgstr "Requisições de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form
+msgid "Test Type..."
+msgstr "Tipo de Exame..."
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Test Unit"
+msgstr "Unidade de Exame"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Test Units"
+msgstr "Unidades de Exame"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,lab_test_type_id:0
+msgid "Test type"
+msgstr "Tipo de Exame"
+
+#. module: clv_lab_test
+#: help:clv_lab_test.type,name:0
+msgid "Test type, eg X-Ray, hemogram, biopsy..."
+msgstr "Tipo de Exame, ex Raio X, Hemograma, Biopsia..."
+
+#. module: clv_lab_test
+#: selection:clv_lab_test.patient,state:0
+msgid "Tested"
+msgstr "Realizado"
+
+#. module: clv_lab_test
+#: view:clv_lab_test:clv_lab_test.view_clv_lab_test_form_wkf
+#: selection:clv_lab_test,state:0
+#: selection:clv_lab_test.history,state:0
+msgid "Testing"
+msgstr "Realizando"
+
+#. module: clv_lab_test
+#: sql_constraint:clv_lab_test.type:0
+msgid "The Lab Test code must be unique"
+msgstr "Erro! O código do Exame deve ser único!"
+
+#. module: clv_lab_test
+#: sql_constraint:clv_lab_test.type:0
+msgid "The Lab Test name must be unique"
+msgstr "Erro! O nome do Exame deve ser único!"
+
+#. module: clv_lab_test
+#: model:ir.actions.act_window,name:clv_lab_test.clv_action_today_draft_lab_test_request
+msgid "Today's Draft Lab Test Requests"
+msgstr "Requisições de Exames de Hoje"
+
+#. module: clv_lab_test
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_config_lab_test_types
+msgid "Types"
+msgstr "Tipos"
+
+#. module: clv_lab_test
+#: field:clv_lab_test.unit,name:0
+msgid "Unit"
+msgstr "Unidade"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Unit Code..."
+msgstr "Código da Unidade..."
+
+#. module: clv_lab_test
+#: view:clv_lab_test.unit:clv_lab_test.view_clv_lab_test_unit_form
+msgid "Unit..."
+msgstr "Unidade..."
+
+#. module: clv_lab_test
+#: field:clv_lab_test.criterion,unit:0
+#: model:ir.ui.menu,name:clv_lab_test.menu_health_health_config_lab_test_units
+msgid "Units"
+msgstr "Unidades"
+
+#. module: clv_lab_test
+#: help:clv_lab_test,name:0
+msgid "Use \"/\" to get an automatic new Lab Test Code."
+msgstr "Use \"/\" para obter automaticamente um novo Código de Exame."
+
+#. module: clv_lab_test
+#: field:clv_lab_test.history,user_id:0
+msgid "User"
+msgstr "Usuário"
+
+#. module: clv_lab_test
+#: view:clv_lab_test.history:clv_lab_test.view_clv_lab_test_history_form
+msgid "User..."
+msgstr "Usuário..."
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_lab_test_approver
+msgid "Lab Test Approver"
+msgstr "Aprovador de Exames de Laboratório"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_lab_test_manager
+msgid "Lab Test Manager"
+msgstr "Gerente de Exames de Laboratório"
+
+#. module: clv_base
+#: model:res.groups,name:clv_base.group_lab_test_user
+msgid "Lab Test User"
+msgstr "Usuário de Exames de Laboratório"
+

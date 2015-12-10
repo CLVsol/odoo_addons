@@ -54,7 +54,7 @@ class clv_community(osv.osv):
 
     _columns = {
         'code': fields.char('Reference', size=64, select=1, required=False, readonly=False, default='/',
-                            help='Use "/" to get an automatic new Reference.'),
+                            help='Use "/" to get an automatic new Community Code.'),
         }
     
     _defaults = {

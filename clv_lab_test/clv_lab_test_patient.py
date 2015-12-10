@@ -51,7 +51,7 @@ class clv_lab_test_patient(models.Model):
     #                                    ('tobe', 'To be Invoiced'),
     #                                    ('no', 'No Invoice'),
     #                                    ], 'Invoice Status')
-    lab_test_id = fields.Many2one('clv_lab_test', 'Patient Lab Test')
+    lab_test_id = fields.Many2one('clv_lab_test', 'Lab Test')
 
     _defaults = {
        'state': lambda *a: 'draft',

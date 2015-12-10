@@ -44,7 +44,7 @@ class clv_lab_test_history(models.Model):
 class clv_lab_test(models.Model):
     _inherit = 'clv_lab_test'
 
-    history_ids = fields.One2many('clv_lab_test.history', 'lab_test_id', 'Patient History', readonly=True)
+    history_ids = fields.One2many('clv_lab_test.history', 'lab_test_id', 'Lab Test History', readonly=True)
     active_history = fields.Boolean('Active History',
                                     help="If unchecked, it will allow you to disable the history without removing it.",
                                     default=False)

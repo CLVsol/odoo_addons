@@ -76,7 +76,7 @@ class clv_community(osv.osv):
         'notes': fields.text(string='Notes'),
         'complete_name': fields.function(_name_get_fnc, type="char", string='Name', store=False),
         'child_ids': fields.one2many('clv_community', 'parent_id', 'Child Communities'),
-        'comm_location': fields.char('Comm Location', size=32),
+        'comm_location': fields.char('Community Location', size=32),
         'date_inclusion': fields.datetime("Inclusion Date", required=False, readonly=False),
         'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the community without removing it."),
         'parent_left': fields.integer('Left parent', select=True),

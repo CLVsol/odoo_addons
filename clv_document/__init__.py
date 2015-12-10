@@ -23,6 +23,6 @@ import doc_type
 import clv_tag
 import clv_annotation
 import seq
-# import wkf
-# import history
+import wkf
+import history
 # import question
