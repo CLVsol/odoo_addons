@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_mng_form_addr" model="ir.ui.view">
+            <field name="name">clv_person_mng.form</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Public Information" position="before">
+                    <page string="Address">
+                            <group>
+                                <field name="addr_name" default_focus="1" placeholder="Name..."/>
+                                <field name="addr_alias" placeholder="Alias..."/>
+                                <field name="addr_code" placeholder="Address Code..."/>
+                            </group>
+                        <group>
+                            <group>
+                                <label for="addr_street" string="Address"/>
+                                <div>
+                                    <field name="addr_street" placeholder="Street..."/>
+                                    <field name="addr_street2"/>
+                                    <div class="address_format">
+                                        <field name="addr_city" placeholder="City" style="width: 40%%"/>
+                                        <field name="addr_state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_addr_state(addr_state_id)"/>
+                                        <field name="addr_zip" placeholder="ZIP" style="width: 20%%"/>
+                                    </div>
+                                    <field name="addr_country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True, "no_create": True}'/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="addr_phone"/>
+                                <field name="addr_mobile"/>
+                                <field name="addr_fax"/>
+                                <field name="addr_email" widget="email"/>
+                            </group>
+                            <field name="addr_notes" placeholder="Other Information ..." colspan="4"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
