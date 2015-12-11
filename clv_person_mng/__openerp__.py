@@ -39,7 +39,7 @@ Person Management
         ],
     'data': [
         'security/clv_person_mng_security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'clv_person_mng_view.xml',
         # 'category/clv_person_category_view.xml',
         'clv_tag/clv_tag_view.xml',
