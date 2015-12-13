@@ -78,7 +78,7 @@ class clv_person(models.Model):
 
     def onchange_address_id(self, cr, uid, ids, address, context=None):
         if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+            address = self.pool.get('clv_address').browse(cr, uid, address, context=context)
             return {'value': {'person_phone': address.phone,
                               'mobile_phone': address.mobile,
                               'person_email': address.email
