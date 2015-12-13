@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Community/Person/Persons/Management -->
+        <menuitem name="Management" id="menu_commutity_community_persons_persons_mng"
+            parent="clv_person.menu_commutity_community_persons"
+            groups="clv_base.group_person_user"
+            sequence="80"
+            action="clv_person_mng.act_open_clv_person_mng_view"/>
+
+    </data>
+</openerp>

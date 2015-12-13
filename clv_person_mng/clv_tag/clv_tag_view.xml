@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_clv_person_mng_tree_tag" model="ir.ui.view">
+            <field name="name">clv_person_mng.tree</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_person_mng_form_tag" model="ir.ui.view">
+            <field name="name">clv_person_mng.form</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <label for="name" position="before">
+                    <label for="tag_ids"  groups="clv_base.group_tag_user" class="oe_edit_only"/>
+                    <h2>
+                        <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." groups="clv_base.group_tag_user"/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_person_mng_search_tag" model="ir.ui.view">
+            <field name="name">clv_person_mng.search</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="tag_ids" groups="clv_base.group_tag_user"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_tag_form" model="ir.ui.view">
+            <field name="name">clv_tag.form</field>
+            <field name="model">clv_tag</field>
+            <field name="inherit_id" ref="clv_tag.view_clv_tag_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Tag for" position="inside">
+                    <group string="Persons (Management)">
+                        <field name="person_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

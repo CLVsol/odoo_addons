@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_mng_tree_wkf" model="ir.ui.view">
+            <field name="name">clv_person_mng.tree</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_person_mng_form_wkf" model="ir.ui.view">
+            <field name="name">clv_person_mng.form</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <sheet string="Person (Management)" position="before">
+                    <header>
+                        <button string="Revised" name="button_revised" states="draft,waiting" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <button string="Waiting" name="button_waiting" states="revised" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <!--button string="Done" name="button_done" states="revised,waiting" type="workflow" groups="clv_base.group_person_mng_manager" class="oe_highlight"/-->
+                        <button string="Done" name="button_done" states="revised,waiting" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <button string="Cancel" name="button_cancel" states="draft,revised,waiting" type="workflow" groups="clv_base.group_person_mng_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,revised,waiting,done,canceled"/>
+                    </header>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_clv_person_mng_search_wkf" model="ir.ui.view">
+            <field name="name">clv_person_mng.search</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="state" />
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}" />
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>
