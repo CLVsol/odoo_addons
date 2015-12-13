@@ -42,5 +42,17 @@
             </field>
         </record>
 
+        <record id="view_clv_person_mng_search_addr" model="ir.ui.view">
+            <field name="name">clv_person_mng.search</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="view_clv_person_mng_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <filter string="Batch Name"  position="after">
+                    <filter string="Street" domain="[]" context="{'group_by': 'addr_street'}"/>
+                </filter>
+            </field>
+        </record>
+
     </data>
 </openerp>
