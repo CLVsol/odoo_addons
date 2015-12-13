@@ -90,11 +90,11 @@
                                         <field name="responsible"/>
                                         <field name="responsible_id"/>
                                     </group>
-                                    <group string="Contact Information">
+                                    <!--group string="Contact Information">
                                         <field name="address_id"
                                             context="{'show_address': 1, 'default_customer': False}"
                                             options='{"always_reload": True, "highlight_first_line": True}'/>
-                                    </group>
+                                    </group-->
                                     <group string="Status">
                                         <field name="gender"/>
                                         <field name="marital"/>
