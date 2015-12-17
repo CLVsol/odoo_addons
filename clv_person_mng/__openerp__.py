@@ -54,6 +54,7 @@ Person Management
         'address/clv_person_mng_view.xml',
         # 'clv_patient/clv_person_mng_view.xml',
         # 'relation/clv_person_mng_relation_view.xml',
+        'clv_person/clv_person_view.xml',
         ],
     'demo': [],
     'test': [],
