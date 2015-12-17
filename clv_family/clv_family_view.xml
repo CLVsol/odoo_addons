@@ -55,6 +55,7 @@
                                         <field name="family_email" widget="email"/>
                                         <field name="family_phone"/>
                                         <field name="mobile_phone"/>
+                                        <field name="address_name" invisible="1"/>
                                     </group>
                                     <group string="Status">
                                         <field name="date_inclusion"/>
