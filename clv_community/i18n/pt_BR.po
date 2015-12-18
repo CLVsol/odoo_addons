@@ -375,12 +375,16 @@ msgstr "Erro! Não é possível criar comunidades recursivas."
 #. module: clv_community
 #: view:clv_community:clv_community.view_clv_community_form_family
 #: field:clv_community,family_ids:0
-#: field:clv_family,community_ids:0
-#: field:clv_person,community_ids:0
-#: field:clv_person,community_ids2:0
 #: model:ir.ui.menu,name:clv_community.menu_commutity_community_communities_families
 msgid "Families"
 msgstr "Famílias"
+
+#. module: clv_community
+#: field:clv_family,community_ids:0
+#: field:clv_person,community_ids:0
+#: field:clv_person,community_ids2:0
+msgid "Communities"
+msgstr "Comunidades"
 
 #. module: clv_community
 #: view:clv_community.family:clv_community.view_clv_community_family_search
