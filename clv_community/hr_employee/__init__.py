@@ -17,42 +17,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp.osv import fields, osv
-
-
-class clv_community_family(osv.osv):
-    _name = 'clv_community.family'
-
-    _columns = {
-        'community_id': fields.many2one('clv_community', string='Community',
-                                        help='Community', required=False),
-        'family_id': fields.many2one('clv_family', string='Family'),
-        'role': fields.many2one('clv_community.family_role', 'Role', required=False),
-        'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active',
-                                 help="If unchecked, it will allow you to hide the family without removing it."),
-        }
-
-    _defaults = {
-        'active': 1,
-        }
-
-
-class clv_community(osv.osv):
-    _inherit = 'clv_community'
-
-    _columns = {
-        'family_ids': fields.one2many('clv_community.family',
-                                      'community_id',
-                                      'Families'),
-    }
-
-
-class clv_family(osv.osv):
-    _inherit = 'clv_family'
-
-    _columns = {
-        'community_ids': fields.one2many('clv_community.family',
-                                         'family_id',
-                                         'Communities'),
-        }
+import clv_community_employee_role
+import clv_community_employee

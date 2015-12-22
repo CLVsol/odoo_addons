@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-08 18:54+0000\n"
-"PO-Revision-Date: 2015-12-08 18:54+0000\n"
+"PO-Revision-Date: 2015-12-22 10:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,24 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 "            "
 
 #. module: clv_community
-#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_family_view
+#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_employee_role_view
 msgid "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a new community family member.\n"
+"                Click to add a new community employee member role.\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Clique para adicionar uma nova família em uma communidade.\n"
+"                Click to add a new community employee member role.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_community
+#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_employee_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new community employee member.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new community employee member.\n"
 "              </p>\n"
 "            "
 
@@ -49,13 +60,13 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 "            "
 
 #. module: clv_community
-#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_person_view
+#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_family_view
 msgid "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a new community person member.\n"
+"                Click to add a new community family member.\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Clique para adicionar uma nova pessoa em uma communidade.\n"
+"                Clique para adicionar uma nova família em uma communidade.\n"
 "              </p>\n"
 "            "
 
@@ -67,6 +78,17 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
 "                Clique para adicionar um novo papel de membro (pessoa) de comunidade.\n"
+"              </p>\n"
+"            "
+
+#. module: clv_community
+#: model:ir.actions.act_window,help:clv_community.act_open_clv_community_person_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new community person member.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma nova pessoa em uma communidade.\n"
 "              </p>\n"
 "            "
 
@@ -90,6 +112,8 @@ msgstr "Ativar"
 #: field:clv_community,active:0
 #: selection:clv_community,state:0
 #: field:clv_community.category,active:0
+#: field:clv_community.employee,active:0
+#: field:clv_community.employee_role,active:0
 #: field:clv_community.family,active:0
 #: field:clv_community.family_role,active:0
 #: selection:clv_community.history,state:0
@@ -162,11 +186,6 @@ msgid "Child Communities"
 msgstr "Comunidades Subordinadas"
 
 #. module: clv_community
-#: field:clv_community,comm_location:0
-msgid "Community Location"
-msgstr "Localização da Comunidade"
-
-#. module: clv_community
 #: help:clv_community,alias:0
 msgid "Common name that the Community is referred"
 msgstr "Nome comum com que a Comunidade é referenciada"
@@ -175,8 +194,13 @@ msgstr "Nome comum com que a Comunidade é referenciada"
 #: view:clv_annotation:clv_community.view_clv_annotation_form
 #: field:clv_annotation,community_ids:0
 #: view:clv_community:clv_community.view_clv_community_form
+#: view:clv_community.category:clv_community.view_clv_community_category_form
+#: field:clv_community.category,community_ids:0
+#: field:clv_person,community_ids:0
+#: field:clv_person,community_ids2:0
 #: view:clv_tag:clv_community.view_clv_tag_form
 #: field:clv_tag,community_ids:0
+#: field:hr.employee,community_ids:0
 #: model:ir.actions.act_window,name:clv_community.act_open_clv_community_view
 #: model:ir.ui.menu,name:clv_community.menu_commutity_community_communities
 msgid "Communities"
@@ -188,9 +212,13 @@ msgstr "Comunidades"
 #: view:clv_community:clv_community.view_clv_community_search
 #: view:clv_community:clv_community.view_clv_community_tree
 #: field:clv_community,name:0
+#: view:clv_community.employee:clv_community.view_clv_community_employee_search
+#: field:clv_community.employee,community_id:0
+#: help:clv_community.employee,community_id:0
 #: view:clv_community.family:clv_community.view_clv_community_family_search
 #: field:clv_community.family,community_id:0
 #: help:clv_community.family,community_id:0
+#: field:clv_community.history,community_id:0
 #: view:clv_community.person:clv_community.view_clv_community_person_search
 #: field:clv_community.person,community_id:0
 #: help:clv_community.person,community_id:0
@@ -231,6 +259,27 @@ msgid "Community Email"
 msgstr "Email"
 
 #. module: clv_community
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_search
+#: field:clv_community.employee_role,name:0
+msgid "Community Employee Role"
+msgstr "Community Employee Role"
+
+#. module: clv_community
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_form
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_tree
+#: model:ir.actions.act_window,name:clv_community.act_open_clv_community_employee_role_view
+msgid "Community Employee Roles"
+msgstr "Community Employee Roles"
+
+#. module: clv_community
+#: view:clv_community.employee:clv_community.view_clv_community_employee_form
+#: view:clv_community.employee:clv_community.view_clv_community_employee_search
+#: view:clv_community.employee:clv_community.view_clv_community_employee_tree
+#: model:ir.actions.act_window,name:clv_community.act_open_clv_community_employee_view
+msgid "Community Employees"
+msgstr "Community Employees"
+
+#. module: clv_community
 #: view:clv_community.family:clv_community.view_clv_community_family_form
 #: view:clv_community.family:clv_community.view_clv_community_family_search
 #: view:clv_community.family:clv_community.view_clv_community_family_tree
@@ -258,6 +307,11 @@ msgstr "Papeis (Família) na Comunidade"
 #: view:clv_community.history:clv_community.view_clv_community_history_tree
 msgid "Community History"
 msgstr "Histórico da Família"
+
+#. module: clv_community
+#: field:clv_community,comm_location:0
+msgid "Community Location"
+msgstr "Localização da Comunidade"
 
 #. module: clv_community
 #: field:clv_community,mobile_phone:0
@@ -293,6 +347,7 @@ msgstr "Telefone"
 #. module: clv_community
 #: view:clv_family:clv_community.view_clv_family_form_community_family
 #: view:clv_person:clv_community.view_clv_person_form_community_person
+#: view:hr.employee:clv_community.view_employee_form_community_employee
 msgid "Community Roles"
 msgstr "Papeis (Comunidade)"
 
@@ -302,11 +357,6 @@ msgid "Community..."
 msgstr "Comunidade..."
 
 #. module: clv_community
-#: view:Communities.category:clv_community.view_clv_community_category_form
-msgid "Communitys"
-msgstr "Comunidades"
-
-#. module: clv_community
 #: view:clv_community:clv_community.view_clv_community_form
 msgid "Contact Information"
 msgstr "Informações de Contato"
@@ -314,6 +364,8 @@ msgstr "Informações de Contato"
 #. module: clv_community
 #: field:clv_community,create_uid:0
 #: field:clv_community.category,create_uid:0
+#: field:clv_community.employee,create_uid:0
+#: field:clv_community.employee_role,create_uid:0
 #: field:clv_community.family,create_uid:0
 #: field:clv_community.family_role,create_uid:0
 #: field:clv_community.history,create_uid:0
@@ -325,6 +377,8 @@ msgstr "Criado por"
 #. module: clv_community
 #: field:clv_community,create_date:0
 #: field:clv_community.category,create_date:0
+#: field:clv_community.employee,create_date:0
+#: field:clv_community.employee_role,create_date:0
 #: field:clv_community.family,create_date:0
 #: field:clv_community.family_role,create_date:0
 #: field:clv_community.history,create_date:0
@@ -345,6 +399,7 @@ msgstr "Data..."
 
 #. module: clv_community
 #: field:clv_community.category,description:0
+#: field:clv_community.employee_role,description:0
 #: field:clv_community.family_role,description:0
 #: field:clv_community.person_role,description:0
 msgid "Description"
@@ -352,10 +407,39 @@ msgstr "Descrição"
 
 #. module: clv_community
 #: view:clv_community.category:clv_community.view_clv_community_category_form
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_form
 #: view:clv_community.family_role:clv_community.view_clv_community_family_role_form
 #: view:clv_community.person_role:clv_community.view_clv_community_person_role_form
 msgid "Description..."
 msgstr "Descrição..."
+
+#. module: clv_community
+#: view:clv_community.employee:clv_community.view_clv_community_employee_search
+#: model:ir.model,name:clv_community.model_hr_employee
+msgid "Employee"
+msgstr "Funcionário"
+
+#. module: clv_community
+#: view:clv_community.employee:clv_community.view_clv_community_employee_search
+msgid "Employee Role"
+msgstr "Employee Role"
+
+#. module: clv_community
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_form
+msgid "Employee Role..."
+msgstr "Employee Role..."
+
+#. module: clv_community
+#: model:ir.ui.menu,name:clv_community.menu_commutity_community_config_community_employee_roles
+msgid "Employee Roles"
+msgstr "Employee Roles"
+
+#. module: clv_community
+#: view:clv_community:clv_community.view_clv_community_form_employee
+#: field:clv_community,employee_ids:0
+#: model:ir.ui.menu,name:clv_community.menu_commutity_community_communities_employees
+msgid "Employees"
+msgstr "Funcionários"
 
 #. module: clv_community
 #: sql_constraint:clv_community.category:0
@@ -378,13 +462,6 @@ msgstr "Erro! Não é possível criar comunidades recursivas."
 #: model:ir.ui.menu,name:clv_community.menu_commutity_community_communities_families
 msgid "Families"
 msgstr "Famílias"
-
-#. module: clv_community
-#: field:clv_family,community_ids:0
-#: field:clv_person,community_ids:0
-#: field:clv_person,community_ids2:0
-msgid "Communities"
-msgstr "Comunidades"
 
 #. module: clv_community
 #: view:clv_community.family:clv_community.view_clv_community_family_search
@@ -416,10 +493,16 @@ msgstr "Categoria Completa"
 #: view:clv_community:clv_community.view_clv_community_search
 #: view:clv_community:clv_community.view_clv_community_search_wkf
 #: view:clv_community.category:clv_community.view_clv_community_category_search
+#: view:clv_community.employee:clv_community.view_clv_community_employee_search
 #: view:clv_community.family:clv_community.view_clv_community_family_search
 #: view:clv_community.person:clv_community.view_clv_community_person_search
 msgid "Group By..."
 msgstr "Agrupar por..."
+
+#. module: clv_community
+#: view:hr.employee:clv_community.view_employee_form_community_employee
+msgid "HR Settings"
+msgstr "Configurações de RH"
 
 #. module: clv_community
 #: view:clv_community:clv_community.view_clv_community_form_history
@@ -429,6 +512,8 @@ msgstr "Histórico"
 #. module: clv_community
 #: field:clv_community,id:0
 #: field:clv_community.category,id:0
+#: field:clv_community.employee,id:0
+#: field:clv_community.employee_role,id:0
 #: field:clv_community.family,id:0
 #: field:clv_community.family_role,id:0
 #: field:clv_community.history,id:0
@@ -453,6 +538,11 @@ msgid "If unchecked, it will allow you to hide the community without removing it
 msgstr "Se desmarcado, será possível esconder a comunidade sem removê-la."
 
 #. module: clv_community
+#: help:clv_community.employee,active:0
+msgid "If unchecked, it will allow you to hide the employee without removing it."
+msgstr "If unchecked, it will allow you to hide the employee without removing it."
+
+#. module: clv_community
 #: help:clv_community.family,active:0
 msgid "If unchecked, it will allow you to hide the family without removing it."
 msgstr "Se desmarcado, será possível esconder o membro (família) da comunidade sem removê-lo."
@@ -463,6 +553,7 @@ msgid "If unchecked, it will allow you to hide the person without removing it."
 msgstr "Se desmarcado, será possível esconder o membro (pessoa) da comunidade sem removê-lo."
 
 #. module: clv_community
+#: help:clv_community.employee_role,active:0
 #: help:clv_community.family_role,active:0
 #: help:clv_community.person_role,active:0
 msgid "If unchecked, it will allow you to hide the role without removing it."
@@ -483,6 +574,11 @@ msgstr "Inativo"
 #: view:clv_community.category:clv_community.view_clv_community_category_search
 msgid "Inactive Categories"
 msgstr "Categorias Inativas"
+
+#. module: clv_community
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_search
+msgid "Inactive Employee Roles"
+msgstr "Inactive Employee Roles"
 
 #. module: clv_community
 #: view:clv_community.family_role:clv_community.view_clv_community_family_role_search
@@ -507,6 +603,8 @@ msgstr "Informações"
 #. module: clv_community
 #: field:clv_community,write_uid:0
 #: field:clv_community.category,write_uid:0
+#: field:clv_community.employee,write_uid:0
+#: field:clv_community.employee_role,write_uid:0
 #: field:clv_community.family,write_uid:0
 #: field:clv_community.family_role,write_uid:0
 #: field:clv_community.history,write_uid:0
@@ -518,6 +616,8 @@ msgstr "Última Atualização por"
 #. module: clv_community
 #: field:clv_community,write_date:0
 #: field:clv_community.category,write_date:0
+#: field:clv_community.employee,write_date:0
+#: field:clv_community.employee_role,write_date:0
 #: field:clv_community.family,write_date:0
 #: field:clv_community.family_role,write_date:0
 #: field:clv_community.history,write_date:0
@@ -551,6 +651,8 @@ msgstr "Novo"
 #. module: clv_community
 #: field:clv_community,notes:0
 #: field:clv_community.category,notes:0
+#: field:clv_community.employee,notes:0
+#: field:clv_community.employee_role,notes:0
 #: field:clv_community.family,notes:0
 #: field:clv_community.family_role,notes:0
 #: field:clv_community.history,notes:0
@@ -560,6 +662,8 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: clv_community
+#: view:clv_community.employee:clv_community.view_clv_community_employee_form
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_form
 #: view:clv_community.family:clv_community.view_clv_community_family_form
 #: view:clv_community.family_role:clv_community.view_clv_community_family_role_form
 #: view:clv_community.history:clv_community.view_clv_community_history_form
@@ -596,6 +700,7 @@ msgid "Parent Community..."
 msgstr "Comunidade Superior..."
 
 #. module: clv_community
+#: field:clv_community.employee,employee_id:0
 #: view:clv_community.person:clv_community.view_clv_community_person_search
 #: field:clv_community.person,person_id:0
 msgid "Person"
@@ -640,10 +745,16 @@ msgid "Right parent"
 msgstr "Superior a direita"
 
 #. module: clv_community
+#: field:clv_community.employee,role:0
 #: field:clv_community.family,role:0
 #: field:clv_community.person,role:0
 msgid "Role"
 msgstr "Papel"
+
+#. module: clv_community
+#: help:clv_community.employee_role,name:0
+msgid "Role of a Employee in an Community"
+msgstr "Role of a Employee in an Community"
 
 #. module: clv_community
 #: help:clv_community.family_role,name:0
@@ -658,10 +769,13 @@ msgstr "Papel do Membro (Person) em uma Comunidade"
 #. module: clv_community
 #: view:clv_community:clv_community.view_clv_community_form
 #: view:clv_community:clv_community.view_clv_community_form_annotation
+#: view:clv_community:clv_community.view_clv_community_form_employee
 #: view:clv_community:clv_community.view_clv_community_form_family
 #: view:clv_community:clv_community.view_clv_community_form_history
 #: view:clv_community:clv_community.view_clv_community_form_person
 #: view:clv_community.category:clv_community.view_clv_community_category_form
+#: view:clv_community.employee:clv_community.view_clv_community_employee_form
+#: view:clv_community.employee_role:clv_community.view_clv_community_employee_role_form
 #: view:clv_community.family:clv_community.view_clv_community_family_form
 #: view:clv_community.family_role:clv_community.view_clv_community_family_role_form
 #: view:clv_community.person:clv_community.view_clv_community_person_form
@@ -735,16 +849,6 @@ msgstr "Usuário"
 msgid "User..."
 msgstr "Usuário..."
 
-#. module: clv_community
-#: field:clv_community.history,community_id:0
-msgid "Community"
-msgstr "Comunidade"
-
-#. module: clv_community
-#: field:clv_community.category,community_ids:0
-msgid "Communities"
-msgstr "Comunidades"
-
 #. module: clv_base
 #: model:res.groups,name:clv_base.group_community_manager
 msgid "Community Manager"
@@ -754,4 +858,9 @@ msgstr "Gerente de Comunidade"
 #: model:res.groups,name:clv_base.group_community_user
 msgid "Community User"
 msgstr "Usuário de Comunidade"
+
+#. module: clv_community
+#: field:clv_family,community_ids:0
+msgid "Communities"
+msgstr "Comunidades"
 

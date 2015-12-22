@@ -20,17 +20,17 @@
 from openerp.osv import fields, osv
 
 
-class clv_community_family(osv.osv):
-    _name = 'clv_community.family'
+class clv_community_employee(osv.osv):
+    _name = 'clv_community.employee'
 
     _columns = {
         'community_id': fields.many2one('clv_community', string='Community',
                                         help='Community', required=False),
-        'family_id': fields.many2one('clv_family', string='Family'),
-        'role': fields.many2one('clv_community.family_role', 'Role', required=False),
+        'employee_id': fields.many2one('hr.employee', string='Person'),
+        'role': fields.many2one('clv_community.employee_role', 'Role', required=False),
         'notes': fields.text(string='Notes'),
         'active': fields.boolean('Active',
-                                 help="If unchecked, it will allow you to hide the family without removing it."),
+                                 help="If unchecked, it will allow you to hide the employee without removing it."),
         }
 
     _defaults = {
@@ -42,17 +42,20 @@ class clv_community(osv.osv):
     _inherit = 'clv_community'
 
     _columns = {
-        'family_ids': fields.one2many('clv_community.family',
-                                      'community_id',
-                                      'Families'),
+        'employee_ids': fields.one2many('clv_community.employee',
+                                        'community_id',
+                                        'Employees'),
     }
 
 
-class clv_family(osv.osv):
-    _inherit = 'clv_family'
+class hr_employee(osv.osv):
+    _inherit = 'hr.employee'
 
     _columns = {
-        'community_ids': fields.one2many('clv_community.family',
-                                         'family_id',
+        'community_ids': fields.one2many('clv_community.employee',
+                                         'employee_id',
                                          'Communities'),
+        # 'community_ids2': fields.one2many('clv_community.employee',
+        #                                   'employee_id',
+        #                                   'Communities'),
         }

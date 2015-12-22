@@ -35,6 +35,7 @@ Community
         'clv_annotation',
         'clv_person',
         'clv_family',
+        'hr',
         ],
     'data': [
         'security/clv_community_security.xml',
@@ -52,6 +53,8 @@ Community
         'clv_person/clv_community_person_role_view.xml',
         'clv_family/clv_community_family_view.xml',
         'clv_family/clv_community_family_role_view.xml',
+        'hr_employee/clv_community_employee_view.xml',
+        'hr_employee/clv_community_employee_role_view.xml',
         'menu/clv_community_menu_view.xml',
         ],
     'demo': [],

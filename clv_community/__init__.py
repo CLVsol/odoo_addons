@@ -26,3 +26,4 @@ import wkf
 import history
 import clv_person
 import clv_family
+import hr_employee
