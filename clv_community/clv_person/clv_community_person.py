@@ -19,6 +19,7 @@
 
 from openerp.osv import fields, osv
 
+
 class clv_community_person(osv.osv):
     _name = 'clv_community.person'
 
@@ -28,14 +29,15 @@ class clv_community_person(osv.osv):
         'person_id': fields.many2one('clv_person', string='Person'),
         'role': fields.many2one('clv_community.person_role', 'Role', required=False),
         'notes': fields.text(string='Notes'),
-        'active': fields.boolean('Active', 
+        'active': fields.boolean('Active',
                                  help="If unchecked, it will allow you to hide the person without removing it."),
         }
 
     _defaults = {
         'active': 1,
         }
-    
+
+
 class clv_community(osv.osv):
     _inherit = 'clv_community'
 
@@ -45,15 +47,15 @@ class clv_community(osv.osv):
                                       'Persons'),
     }
 
+
 class clv_person(osv.osv):
     _inherit = 'clv_person'
 
     _columns = {
         'community_ids': fields.one2many('clv_community.person',
                                          'person_id',
-                                         'Communities'),
-        'community_ids2': fields.one2many('clv_community.person',
-                                          'person_id',
-                                          'Communities'),
+                                         'Community Roles'),
+        # 'community_ids2': fields.one2many('clv_community.person',
+        #                                   'person_id',
+        #                                   'Communities'),
         }
-

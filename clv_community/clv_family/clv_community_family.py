@@ -54,5 +54,5 @@ class clv_family(osv.osv):
     _columns = {
         'community_ids': fields.one2many('clv_community.family',
                                          'family_id',
-                                         'Communities'),
+                                         'Community Roles'),
         }
