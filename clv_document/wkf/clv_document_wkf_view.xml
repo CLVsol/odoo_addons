@@ -6,10 +6,10 @@
             <field name="name">clv_document.tree</field>
             <field name="model">clv_document</field>
             <field name="inherit_id" ref="clv_document.view_clv_document_tree"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="responsible" position="after">
-                    <field name="state" />
+                    <field name="state"/>
                 </field>
             </field>
         </record>
@@ -18,7 +18,7 @@
             <field name="name">clv_document.form</field>
             <field name="model">clv_document</field>
             <field name="inherit_id" ref="clv_document.view_clv_document_form"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <sheet string="Document" position="before">
                     <header>
@@ -35,14 +35,14 @@
             <field name="name">clv_document.search</field>
             <field name="model">clv_document</field>
             <field name="inherit_id" ref="clv_document.view_clv_document_search"/>
-            <field name="priority" eval="8" />
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name="responsible" position="after">
-                    <field name="state" />
+                    <field name="state"/>
                 </field>
-                <field name="notes" position="after">
-                    <filter string="Status" domain="[]" context="{'group_by':'state'}" />
-                </field>
+                <filter string="Document Date" position="after">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </filter>
             </field>
         </record>
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_form_person_mng" model="ir.ui.view">
+            <field name="name">clv_person.form</field>
+            <field name="model">clv_person</field>
+            <field name="inherit_id" ref="clv_person.view_clv_person_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Persons (Management)">
+                        <group>
+                            <field name="person_mng_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

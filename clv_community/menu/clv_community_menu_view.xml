@@ -29,6 +29,12 @@
                         groups="clv_base.group_community_user"
                         sequence="20"
                         action="clv_community.act_open_clv_community_person_view"/>
+                    <!-- Community/Community/Community/Employees -->
+                    <menuitem name="Employees" id="menu_commutity_community_communities_employees"
+                        parent="menu_commutity_community_communities"
+                        groups="clv_base.group_community_user"
+                        sequence="30"
+                        action="clv_community.act_open_clv_community_employee_view"/>
                 <!-- Community/Community/Configuration -->
                 <!--menuitem name="Configuration" id="menu_commutity_community_config"  
                     parent="menu_commutity_community"
@@ -57,6 +63,12 @@
                         groups="clv_base.group_base_manager"
                         sequence="30"
                         action="clv_community.act_open_clv_community_person_role_view"/>
+                    <!-- Community/Community/Configuration/Community/Employee Roles -->
+                    <menuitem name="Employee Roles" id="menu_commutity_community_config_community_employee_roles"
+                        parent="menu_commutity_community_config_community"
+                        groups="clv_base.group_base_manager"
+                        sequence="40"
+                        action="clv_community.act_open_clv_community_employee_role_view"/>
 
     </data>
 </openerp>

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
 #                                                                              #
-# Copyright (C) 2015-Today  Carlos Eduardo Vercelino - CLVsol                  #
+# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
 #                                                                              #
 # This program is free software: you can redistribute it and/or modify         #
 # it under the terms of the GNU Affero General Public License as published by  #
@@ -17,17 +17,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_person_mng
-# import category
-import clv_tag
-# import clv_annotation
-# import seq
-import wkf
-import history
-# import clv_insurance
-# import clv_insurance_client
-# import role
-import address
-# import clv_patient
-# import relation
-import clv_person
+from openerp.osv import orm, fields
+
+
+class clv_person(orm.Model):
+    _inherit = 'clv_person'
+
+    _columns = {
+        'person_mng_ids': fields.one2many('clv_person_mng',
+                                          'person_id',
+                                          'Persons (Management)'),
+    }

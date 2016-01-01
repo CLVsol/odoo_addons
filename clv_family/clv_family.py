@@ -24,10 +24,11 @@ from datetime import datetime
 class clv_family(models.Model):
     _name = 'clv_family'
 
-    name = fields.Char('Name', required=True, size=64)
+    name = fields.Char('Name', required=True, size=128)
     alias = fields.Char('Alias', size=64, help='Common name that the Family is referred')
     code = fields.Char(size=64, string='Family Code', required=False)
     address_id = fields.Many2one('clv_address', 'Family Address', ondelete='restrict')
+    address_name = fields.Char('Address Name', required=False, size=128)
     family_phone = fields.Char('Family Phone', size=32)
     mobile_phone = fields.Char('Family Mobile', size=32)
     family_email = fields.Char('Family Email', size=240)
@@ -49,9 +50,10 @@ class clv_family(models.Model):
 
     def onchange_address_id(self, cr, uid, ids, address, context=None):
         if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
+            address = self.pool.get('clv_address').browse(cr, uid, address, context=context)
             return {'value': {'family_phone': address.phone,
                               'mobile_phone': address.mobile,
-                              'family_email': address.email
+                              'family_email': address.email,
+                              'address_name': address.name
                               }}
         return {'value': {}}
