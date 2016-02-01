@@ -12,6 +12,7 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="insurance_client_id"/>
+                    <field name="medicament_list_id"/>
                     <field name="notes" colspan="4"/>
                 </tree>
             </field>
@@ -44,6 +45,10 @@
                             <label for="insurance_client_id" class="oe_edit_only"/>
                             <h2>
                                 <field name="insurance_client_id" placeholder="Insurance Client..."/>
+                            </h2>
+                            <label for="medicament_list_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="medicament_list_id" placeholder="Medicament List..."/>
                             </h2>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -79,10 +84,12 @@
                     <field name="alias"/>
                     <field name="code"/>
                     <field name="insurance_client_id"/>
+                    <field name="medicament_list_id"/>
                     <field name="notes"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Insurance Client" domain="[]" context="{'group_by':'insurance_client_id'}"/>
+                        <filter string="Medicament List" domain="[]" context="{'group_by':'medicament_list_id'}"/>
                     </group>
                 </search>
             </field>

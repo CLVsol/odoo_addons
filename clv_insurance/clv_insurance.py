@@ -28,6 +28,7 @@ class clv_insurance(models.Model):
     alias = fields.Char('Alias', size=64, help='Common name that the Insurance is referred')
     code = fields.Char(size=64, string='Insurance Code', required=False)
     insurance_client_id = fields.Many2one('clv_insurance_client', 'Insurance Client', ondelete='restrict')
+    medicament_list_id = fields.Many2one('clv_medicament_list', 'Medicament List', ondelete='restrict')
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Date('Inclusion Date')
     active = fields.Boolean('Active',
