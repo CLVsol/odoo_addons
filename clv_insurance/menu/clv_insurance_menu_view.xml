@@ -16,5 +16,12 @@
             sequence="10"
             action="clv_insurance.act_open_clv_insurance_category_view"/>
 
+        <!-- Insurance/Configuration/Configuration/Insurance/Types -->
+        <menuitem name="Insurance Types" id="menu_insurance_config_config_insurance_insurance_types" 
+            parent="clv_base.menu_insurance_config_config_insurance"
+            groups="clv_base.group_insurance_user"
+            sequence="10"
+            action="clv_insurance.act_open_clv_insurance_type_view"/>
+
     </data>
 </openerp>

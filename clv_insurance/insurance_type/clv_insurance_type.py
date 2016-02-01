@@ -34,3 +34,9 @@ class clv_insurance_type (models.Model):
         ('name_uniq', 'unique (name)', 'Error! The Insurance Type name must be unique!'),
         ('code_uniq', 'unique (code)', 'Error! The Insurance Type code must be unique!')
         ]
+
+
+class clv_insurance(models.Model):
+    _inherit = 'clv_insurance'
+
+    insurance_type_id = fields.Many2one('clv_insurance.type', 'Insurance Type', ondelete='restrict')

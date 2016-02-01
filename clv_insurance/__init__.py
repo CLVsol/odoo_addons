@@ -24,3 +24,4 @@ import clv_tag
 import seq
 import wkf
 import history
+import insurance_type

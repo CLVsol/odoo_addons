@@ -107,5 +107,47 @@
             <field name="view_id" ref="view_clv_insurance_type_tree"/>
         </record-->
         
+        <record id="view_clv_insurance_tree_insurance_type" model="ir.ui.view">
+            <field name="name">clv_insurance.tree</field>
+            <field name="model">clv_insurance</field>
+            <field name="inherit_id" ref="view_clv_insurance_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="insurance_type_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_insurance_form_insurance_type" model="ir.ui.view">
+            <field name="name">clv_insurance.form</field>
+            <field name="model">clv_insurance</field>
+            <field name="inherit_id" ref="view_clv_insurance_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="code" position="before">
+                    <label for="insurance_type_id" class="oe_edit_only"/>
+                    <h2>
+                        <field name="insurance_type_id" placeholder="Insurance Type..."/>
+                    </h2>
+                </label>
+            </field>
+        </record>
+
+        <record id="view_clv_insurance_search_insurance_type" model="ir.ui.view">
+            <field name="name">clv_insurance.search</field>
+            <field name="model">clv_insurance</field>
+            <field name="inherit_id" ref="view_clv_insurance_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="insurance_type_id"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <filter string="Insurance Type" domain="[]" context="{'group_by':'insurance_type_id'}"/>
+                </group>
+            </field>
+        </record>
+
     </data>
 </openerp>
