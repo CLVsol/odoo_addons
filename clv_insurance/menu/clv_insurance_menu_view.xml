@@ -20,7 +20,7 @@
         <menuitem name="Insurance Types" id="menu_insurance_config_config_insurance_insurance_types" 
             parent="clv_base.menu_insurance_config_config_insurance"
             groups="clv_base.group_insurance_user"
-            sequence="10"
+            sequence="15"
             action="clv_insurance.act_open_clv_insurance_type_view"/>
 
     </data>
