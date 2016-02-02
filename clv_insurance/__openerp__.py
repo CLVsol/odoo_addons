@@ -33,6 +33,8 @@ Insurance
         'clv_base',
         'clv_tag',
         'clv_annotation',
+        'clv_insurance_client',
+        'clv_medicament_list',
         ],
     'data': [
         'security/clv_insurance_security.xml',

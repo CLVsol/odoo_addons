@@ -65,6 +65,8 @@
                     <field name="name" select="1"/>
                     <field name="code" select="1"/>
                     <newline/>
+                    <group expand="0" string="Group By...">
+                    </group>
                 </search>
             </field>
         </record>
