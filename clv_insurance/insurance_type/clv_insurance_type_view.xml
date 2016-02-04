@@ -30,7 +30,7 @@
                             <!--label for="code" class="oe_edit_only"/-->
                             <label for="code"/>
                             <h2>
-                                <field name="code" default_focus="1" placeholder="Insurance Type Code..."/>
+                                <field name="code" placeholder="Insurance Type Code..."/>
                             </h2>
                         </div>
                         <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
