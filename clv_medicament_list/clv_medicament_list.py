@@ -17,22 +17,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields
 from datetime import datetime
+
 
 class clv_medicament_list(models.Model):
     _name = 'clv_medicament_list'
-    
+
     name = fields.Char('Medicament List Name', required=True, size=64, translate=True)
     alias = fields.Char('Alias', size=64, help='Common name that the Medicament List is referred')
     code = fields.Char(size=64, string='Medicament List Code', required=False)
+    partner_id = fields.Many2one('res.partner', 'Partner')
+    ext_code = fields.Char(size=64, string='External Medicament List Code', required=False)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    active = fields.Boolean('Active', 
-                             help="The active field allows you to hide the medicament list without removing it.",
-                             default=1)
+    active = fields.Boolean('Active',
+                            help="The active field allows you to hide the medicament list without removing it.",
+                            default=1)
 
     _sql_constraints = [('code_uniq', 'unique(code)', u'Error! The Medicament List Code must be unique!')]
-    
+
     _order = 'name'

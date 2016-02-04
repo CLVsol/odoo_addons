@@ -11,6 +11,8 @@
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="ext_code"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -42,6 +44,14 @@
                             <label for="code"/>
                             <h3>
                                 <field name="code" placeholder="Medicament List Code..."/>
+                            </h3>
+                            <label for="partner_id"/>
+                            <h3>
+                                <field name="partner_id" placeholder="Partner..." domain="[('is_company', '=', True)]"/>
+                            </h3>
+                            <label for="ext_code"/>
+                            <h3>
+                                <field name="ext_code" placeholder="External Medicament List Code..."/>
                             </h3>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -76,10 +86,12 @@
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="ext_code"/>
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                        <filter string="External Code" domain="[]" context="{'group_by': 'ext_code'}"/>
                     </group>
                 </search>
             </field>
